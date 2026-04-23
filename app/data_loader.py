@@ -437,6 +437,27 @@ def get_multiomics_feature(source_id: str, feature_type: str, feature_id: str) -
     return None
 
 
+def multiomics_feature_counts() -> dict[str, Any]:
+    counts = {
+        "source_count": 0,
+        "feature_count": 0,
+        "by_modality": {},
+        "by_feature_type": {},
+    }
+    for source in load_multiomics_sources():
+        features = _flatten_multiomics_features(source["source_id"])
+        if not features:
+            continue
+        counts["source_count"] += 1
+        counts["feature_count"] += len(features)
+        for feature in features:
+            modality = feature.get("modality", "unknown")
+            feature_type = feature.get("feature_type", "unknown")
+            counts["by_modality"][modality] = counts["by_modality"].get(modality, 0) + 1
+            counts["by_feature_type"][feature_type] = counts["by_feature_type"].get(feature_type, 0) + 1
+    return counts
+
+
 @lru_cache(maxsize=8)
 def load_gene_expression_summary(accession: str) -> dict[str, Any] | None:
     path = PROCESSED_DIR / accession / "gene_expression_summary.json"
@@ -582,6 +603,7 @@ def nar_readiness() -> dict[str, Any]:
     studies = load_studies()
     omics_layers = load_omics_layers()
     multiomics_sources = load_multiomics_sources()
+    multiomics_counts = multiomics_feature_counts()
     public_studies = [study for study in studies if study.get("public_access") == "open"]
     processed = [
         study
@@ -612,7 +634,7 @@ def nar_readiness() -> dict[str, Any]:
             {
                 "criterion": "Value-added database, not a repository listing",
                 "status": "in_progress",
-                "evidence": "Registry captures standardized transplant states, sample origins, modalities, and planned evidence summaries.",
+                "evidence": f"Registry now exposes standardized transplant states, cross-study gene evidence, and {multiomics_counts['feature_count']} searchable non-transcriptomic features.",
             },
             {
                 "criterion": "Underlying primary omics data already public",
@@ -642,4 +664,8 @@ def nar_readiness() -> dict[str, Any]:
         "signature_ready_study_count": sum(
             1 for study in studies if load_signature_scores(study["accession"]) is not None
         ),
+        "multiomics_feature_source_count": multiomics_counts["source_count"],
+        "multiomics_feature_count": multiomics_counts["feature_count"],
+        "multiomics_feature_counts_by_modality": multiomics_counts["by_modality"],
+        "multiomics_feature_counts_by_feature_type": multiomics_counts["by_feature_type"],
     }

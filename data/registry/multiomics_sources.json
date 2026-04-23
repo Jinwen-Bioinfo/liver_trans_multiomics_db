@@ -32,19 +32,21 @@
         "Connects fecal metabolite concentrations, microbiome dysbiosis, and clinical infection outcomes.",
         "Supports gut-liver axis and infection-risk use cases that transcriptomics alone cannot answer."
       ],
-      "local_status": "processed_summary_ready",
+      "local_status": "processed_feature_ready",
       "processed_artifacts": [
         "data/processed/DFI_MICROBIOME_LT_2024/source_file_inventory.json",
         "data/processed/DFI_MICROBIOME_LT_2024/cohort_summary.json",
         "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json",
+        "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json",
         "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json",
+        "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json",
         "data/processed/DFI_MICROBIOME_LT_2024/provenance.json"
       ],
       "next_ingest_steps": [
-        "Download the Zenodo archive or Git LFS data objects.",
-        "Inventory RDS/RData objects and identify de-identified sample, metabolite, microbiome, and outcome tables.",
-        "Build metabolite feature metadata with HMDB/ChEBI/PubChem identifiers where available.",
-        "Build microbiome taxon/pathobiont summaries and infection-risk contrasts with provenance."
+        "Normalize metabolite feature labels to HMDB, ChEBI, and PubChem identifiers where available.",
+        "Normalize MetaPhlAn lineage labels to NCBI taxonomy identifiers.",
+        "Reproduce or expose the manuscript's multivariable infection-risk models after feature identity normalization.",
+        "Add per-sample feature matrices or controlled-size slices for downloadable analysis workflows."
       ],
       "source_check": {
         "checked_at_utc": "2026-04-23T03:30:00Z",

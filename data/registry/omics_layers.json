@@ -57,8 +57,11 @@
       ],
       "registered_accessions": ["DFI_MICROBIOME_LT_2024"],
       "processed_accessions": ["DFI_MICROBIOME_LT_2024"],
-      "current_artifacts": [],
-      "readiness": "processed_summary_ready"
+      "current_artifacts": [
+        "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json",
+        "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json"
+      ],
+      "readiness": "processed_feature_ready"
     },
     {
       "layer_id": "microbiome",
@@ -71,8 +74,11 @@
       ],
       "registered_accessions": ["DFI_MICROBIOME_LT_2024"],
       "processed_accessions": ["DFI_MICROBIOME_LT_2024"],
-      "current_artifacts": [],
-      "readiness": "processed_summary_ready"
+      "current_artifacts": [
+        "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json",
+        "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json"
+      ],
+      "readiness": "processed_feature_ready"
     },
     {
       "layer_id": "immunogenetics",

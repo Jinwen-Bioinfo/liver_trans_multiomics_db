@@ -36,18 +36,18 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 - [ ] Verify file-level public access for each accession.
 - [ ] Store original sample labels and standardized transplant labels.
 - [ ] Add study-level QC pages.
-- [ ] Add data download endpoints for normalized matrices and derived tables.
-- [ ] Add provenance for every derived result.
+- [ ] Add data download endpoints for normalized matrices and derived tables. Transcriptome summaries/contrasts and DFI metabolomics/microbiome feature tables are already downloadable.
+- [ ] Add provenance for every derived result. Baseline provenance exists for processed GEO studies and the DFI feature ingest; release-level provenance remains pending.
 - [ ] Add release versioning.
 
 ### V2: Value-Added Biology
 
-- [ ] Differential expression for priority contrasts.
-- [ ] Signature scoring across studies.
-- [ ] Gene pages with cross-study evidence.
+- [ ] Differential expression for priority contrasts. Started for GSE145780, GSE13440, and GSE11881.
+- [ ] Signature scoring across studies. Started for processed transcriptome cohorts; signature validation caveats remain visible.
+- [x] Gene pages with cross-study evidence.
 - [ ] Cell-type pages for single-cell studies.
 - [ ] Pathway and marker-gene summaries.
-- [ ] Case studies demonstrating rejection, donor liver quality, and blood monitoring use cases.
+- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, and blood monitoring use cases.
 
 ### V3: Submission Package
 
@@ -63,7 +63,6 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 
 The strongest NAR argument should be:
 
-LiverTx-OmicsDB is not another repository. It transforms scattered public liver transplantation omics studies into a curated, queryable evidence graph centered on transplant phase, graft state, sample origin, omics modality, genes, pathways, and cell types.
+LiverTx-OmicsDB is not another repository. It transforms scattered public liver transplantation omics studies into a curated, queryable evidence graph centered on transplant phase, graft state, sample origin, omics modality, genes, metabolites, taxa, pathways, and cell types.
 
 The submission should avoid claiming new primary biological discoveries as the main contribution. The main contribution should be the online resource, its curation model, and its retrieval/analysis functions.
-

@@ -18,7 +18,7 @@ The resource asks:
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | Dataset registered |
 | Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC operational-tolerance expression contrast is processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | Datasets registered |
-| Gut-liver microbiome | Do microbial taxa/functions associate with infection, rejection-like inflammation, or immunosuppression? | Omics layer registered; public dataset discovery pending |
+| Gut-liver microbiome/metabolome | Do microbial taxa and fecal metabolites associate with postoperative infection risk or immune dysregulation? | DFI_MICROBIOME_LT_2024 processed to feature-level metabolite and taxon summaries |
 | Immunosuppression pharmacogenomics | How do drug exposure and pharmacogenetic context relate to graft molecular state? | Metadata model ready; data discovery pending |
 
 ## NAR Case Study Plan
@@ -35,8 +35,11 @@ The resource asks:
 4. **Blood immune monitoring**
    Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. This is intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
 
-5. **Non-transcriptomic evidence expansion**
-   Treat proteome, metabolome, microbiome, and immunogenetics as first-class omics layers. They should remain discovery/registered layers until public datasets are actually ingested and linked to artifacts.
+5. **Gut-liver infection-risk evidence**
+   Use DFI_MICROBIOME_LT_2024 to expose stool metabolomics and microbiome features linked to postoperative infection status. The current resource provides 156 metabolite features and 769 MetaPhlAn taxon features with unadjusted infection-positive versus infection-negative summaries. These are searchable feature-level database records, not a reproduced clinical prediction model.
+
+6. **Remaining non-transcriptomic expansion**
+   Treat proteome, additional metabolome, microbiome, and immunogenetics records as first-class omics layers. Proteomics and immunogenetics should remain reference/registered layers until public datasets are actually ingested and linked to artifacts.
 
 ## What This Database Should Not Claim Yet
 
@@ -50,5 +53,6 @@ The resource asks:
 
 - Public data can be curated into transplant-specific states.
 - Molecular evidence can be queried by gene, signature, dataset, clinical state, and omics layer.
+- Non-transcriptomic liver transplant features can be queried by metabolite or taxon when public reusable tables exist.
 - Each derived result preserves accession provenance and processing rules.
 - The resource offers a transplant-centered layer that generic repositories do not provide.

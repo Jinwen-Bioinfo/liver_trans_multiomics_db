@@ -55,6 +55,9 @@ def test_nar_readiness_exposes_criteria() -> None:
     assert payload["registered_omics_layer_count"] >= 6
     assert payload["registered_multiomics_source_count"] >= 2
     assert payload["curated_study_count"] >= 1
+    assert payload["multiomics_feature_count"] >= 900
+    assert payload["multiomics_feature_counts_by_modality"]["metabolomics"] >= 100
+    assert payload["multiomics_feature_counts_by_modality"]["microbiome"] >= 700
 
 
 def test_processed_samples_endpoint_is_stable_when_empty_or_loaded() -> None:
@@ -262,6 +265,15 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "PXD012615" in proteome["registered_accessions"]
 
 
+def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
+    metabolome = client.get("/api/omics-layers/metabolome").json()
+    microbiome = client.get("/api/omics-layers/microbiome").json()
+    assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in metabolome["current_artifacts"]
+    assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in microbiome["current_artifacts"]
+    assert metabolome["readiness"] == "processed_feature_ready"
+    assert microbiome["readiness"] == "processed_feature_ready"
+
+
 def test_multiomics_source_registry_exposes_direct_liver_transplant_layer() -> None:
     response = client.get("/api/multiomics-sources/DFI_MICROBIOME_LT_2024")
     assert response.status_code == 200
@@ -269,7 +281,9 @@ def test_multiomics_source_registry_exposes_direct_liver_transplant_layer() -> N
     assert "metabolomics" in payload["omics_modalities"]
     assert "microbiome" in payload["omics_modalities"]
     assert payload["source_type"] == "author_repository"
-    assert payload["local_status"] == "processed_summary_ready"
+    assert payload["local_status"] == "processed_feature_ready"
+    assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in payload["processed_artifacts"]
+    assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in payload["processed_artifacts"]
 
 
 def test_source_type_registry_includes_supplementary_tables() -> None:
@@ -368,6 +382,7 @@ def test_use_case_registry_exposes_scientific_questions() -> None:
     ids = {item["use_case_id"] for item in payload["use_cases"]}
     assert "MOLECULAR_TCMR_DIAGNOSIS" in ids
     assert "DONOR_LIVER_QUALITY" in ids
+    assert "HOST_MICROBIOME_INFECTION_REJECTION" in ids
 
 
 def test_use_case_detail_links_data_and_signatures() -> None:
@@ -377,3 +392,13 @@ def test_use_case_detail_links_data_and_signatures() -> None:
     assert "GSE145780" in payload["primary_datasets"]
     assert "TCMR_IFNG_CYTOTOXIC" in payload["signatures"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE145780"
+
+
+def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
+    response = client.get("/api/use-cases/HOST_MICROBIOME_INFECTION_REJECTION")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["readiness"] == "feature_level_infection_evidence"
+    assert "DFI_MICROBIOME_LT_2024" in payload["primary_datasets"]
+    assert payload["primary_dataset_records"][0]["accession"] == "DFI_MICROBIOME_LT_2024"
+    assert any("156 metabolite" in line for line in payload["current_evidence"])

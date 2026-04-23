@@ -127,20 +127,22 @@
       "title": "Gut-liver axis after liver transplantation",
       "clinical_question": "Can microbiome features contextualize infection risk, immune activation, rejection-like inflammation, or immunosuppression exposure after liver transplantation?",
       "why_it_matters": "Post-transplant infection and immune dysregulation are clinically entangled. Microbiome evidence could add a non-host layer that transcriptomics alone cannot answer.",
-      "primary_datasets": [],
+      "primary_datasets": ["DFI_MICROBIOME_LT_2024"],
       "supporting_datasets": [],
       "markers": [],
       "signatures": [],
       "current_evidence": [
-        "No microbiome dataset has been ingested yet.",
-        "The database schema now treats microbiome as a first-class omics layer rather than a future note."
+        "DFI_MICROBIOME_LT_2024 is processed as a direct liver-transplant stool metabolomics and microbiome source for postoperative infection risk.",
+        "The current feature layer exposes 156 metabolite records and 769 MetaPhlAn taxon records with unadjusted infection-positive versus infection-negative summaries.",
+        "Example searchable features include Enterococcus faecium and bile-acid metabolites such as 12-oxochenodeoxycholic acid."
       ],
       "next_validation": [
-        "Search MGnify/ENA/SRA for liver transplantation stool, bile, or blood microbiome accessions.",
-        "Map taxa and microbial pathways to infection, rejection, bile complication, and immunosuppression metadata where public labels exist."
+        "Normalize metabolite names to HMDB/ChEBI/PubChem and taxon names to NCBI taxonomy identifiers.",
+        "Reproduce the publication's multivariable infection-risk models before claiming predictive performance.",
+        "Search MGnify/ENA/SRA for additional liver transplantation stool, bile, or blood microbiome accessions."
       ],
-      "omics_layers": ["microbiome"],
-      "readiness": "discovery_needed"
+      "omics_layers": ["microbiome", "metabolome"],
+      "readiness": "feature_level_infection_evidence"
     },
     {
       "use_case_id": "IMMUNOSUPPRESSION_PHARMACO_OMICS",
