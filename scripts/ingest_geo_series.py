@@ -105,6 +105,30 @@ GEO_SERIES = {
         "transplant_phase": "donor_recovery",
         "assay_modality": "bulk_rna",
         "count_matrix_column_field": "description",
+    },
+    "GSE200340": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200340/matrix/GSE200340_series_matrix.txt.gz",
+        "characteristic_label_field": "clinical metadata (time-point)",
+        "characteristic_label_map": {
+            "pre-tx": {
+                "original_label": "Pre-Tx",
+                "clinical_state": "pre_transplant_blood",
+                "display_label": "Pre-transplant blood sample",
+            },
+            "early post tx": {
+                "original_label": "Early Post Tx",
+                "clinical_state": "early_post_transplant_blood",
+                "display_label": "Early post-transplant blood sample",
+            },
+            "late post tx": {
+                "original_label": "late post tx",
+                "clinical_state": "late_post_transplant_blood",
+                "display_label": "Late post-transplant blood sample",
+            },
+        },
+        "sample_origin": "recipient_blood",
+        "transplant_phase": "mixed_pre_post_transplant",
+        "assay_modality": "bulk_rna",
     }
 }
 

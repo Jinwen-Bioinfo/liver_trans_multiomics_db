@@ -7,6 +7,7 @@ import hashlib
 import json
 import math
 import shutil
+import tarfile
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -25,6 +26,7 @@ NORMALIZED_URLS = {
     "GSE13440": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
     "GSE11881": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE11nnn/GSE11881/matrix/GSE11881_series_matrix.txt.gz",
     "GSE243887": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE243nnn/GSE243887/suppl/GSE243887_Raw_counts.txt.gz",
+    "GSE200340": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200340/suppl/GSE200340_RAW.tar",
 }
 PLATFORM_URLS = {
     "GPL15207": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
@@ -85,6 +87,23 @@ STUDY_CONFIG = {
             "GSE243887 is a donor-liver selection cohort; accepted/rejected labels are organ-use decisions, not post-transplant graft outcomes.",
             "RNA-seq counts are normalized as log2(CPM + 1) for exploratory database evidence; this is not a DESeq2/edgeR model and does not reproduce the publication's full analysis.",
             "Expression values are analyzed within-study only; cross-platform harmonization with microarray studies is not implemented yet.",
+        ],
+    },
+    "GSE200340": {
+        "platform": "RSEM_GENE_SYMBOL",
+        "matrix_filename": "GSE200340_RAW.tar",
+        "matrix_source": "rsem_gene_results_tar",
+        "sample_match": "geo_accession",
+        "assay_scale": "log2CPM",
+        "contrasts": [
+            ("early_post_transplant_blood", "pre_transplant_blood"),
+            ("late_post_transplant_blood", "pre_transplant_blood"),
+            ("late_post_transplant_blood", "early_post_transplant_blood"),
+        ],
+        "limitations": [
+            "GSE200340 GEO metadata exposes blood sampling time points but not rejection outcome labels, so this database layer is longitudinal monitoring evidence rather than an ACR classifier.",
+            "RSEM expected_count values are normalized as log2(CPM + 1) for exploratory database evidence; this does not reproduce the publication's network-module machine-learning model.",
+            "Whole-blood/PBMC signals should not be interpreted as graft tissue biology without paired biopsy validation.",
         ],
     },
 }
@@ -286,6 +305,34 @@ def parse_gencode_v40(force: bool = False) -> dict[str, Any]:
     return payload
 
 
+def read_rsem_gene_tar(raw_path: Path, sample_ids: set[str]) -> tuple[list[str], dict[str, dict[str, float]]]:
+    values_by_gene: dict[str, dict[str, float]] = defaultdict(dict)
+    observed_samples: list[str] = []
+    with tarfile.open(raw_path, "r") as archive:
+        for member in archive:
+            if not member.isfile() or not member.name.endswith("_RSEM.genes.results.gz"):
+                continue
+            sample_id = member.name.split("_", 1)[0]
+            if sample_id not in sample_ids:
+                continue
+            extracted = archive.extractfile(member)
+            if extracted is None:
+                continue
+            observed_samples.append(sample_id)
+            with gzip.open(extracted, "rt", encoding="utf-8", errors="replace", newline="") as handle:
+                reader = csv.DictReader(handle, delimiter="\t")
+                for row in reader:
+                    gene_symbol = row.get("gene_id", "").strip().upper()
+                    if not gene_symbol:
+                        continue
+                    try:
+                        expected_count = float(row.get("expected_count", "nan"))
+                    except ValueError:
+                        continue
+                    values_by_gene[gene_symbol][sample_id] = expected_count
+    return observed_samples, values_by_gene
+
+
 def read_expression_matrix(
     raw_path: Path,
     *,
@@ -357,7 +404,50 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
     gene_meta: dict[str, dict[str, Any]] = {}
     observed_probe_count = 0
 
-    if config["matrix_source"] == "raw_counts_ensembl":
+    if config["matrix_source"] == "rsem_gene_results_tar":
+        platform_map = {
+            "raw_file": file_record(raw_path),
+            "source_url": NORMALIZED_URLS[accession],
+            "gene_count": 0,
+        }
+        selected_matrix_sample_names, raw_gene_values_by_sample = read_rsem_gene_tar(
+            raw_path,
+            set(matrix_sample_to_sample),
+        )
+        sample_ids = selected_matrix_sample_names
+        library_sizes = np.zeros(len(sample_ids), dtype=float)
+        raw_gene_arrays: dict[str, np.ndarray] = {}
+        sample_index = {sample_id: index for index, sample_id in enumerate(sample_ids)}
+        for symbol, values_by_sample in raw_gene_values_by_sample.items():
+            counts = np.full(len(sample_ids), np.nan, dtype=float)
+            for sample_id, value in values_by_sample.items():
+                counts[sample_index[sample_id]] = value
+            mask = ~np.isnan(counts)
+            library_sizes[mask] += counts[mask]
+            raw_gene_arrays[symbol] = counts
+            gene_meta[symbol] = {
+                "gene_symbol": symbol,
+                "gene_title": symbol,
+                "entrez_gene": None,
+                "ensembl_gene": None,
+                "platform": platform,
+                "probe_ids": [symbol],
+                "mapping_source": "RSEM gene_id field from GEO supplementary gene-level results",
+                "mapping_source_url": NORMALIZED_URLS[accession],
+            }
+            observed_probe_count += 1
+
+        for symbol, counts in raw_gene_arrays.items():
+            cpm = np.divide(
+                counts * 1_000_000,
+                library_sizes,
+                out=np.full_like(counts, np.nan),
+                where=library_sizes != 0,
+            )
+            gene_sums[symbol] = np.log2(cpm + 1)
+            gene_counts[symbol] = np.where(~np.isnan(gene_sums[symbol]), 1.0, 0.0)
+        platform_map["gene_count"] = len(gene_sums)
+    elif config["matrix_source"] == "raw_counts_ensembl":
         gencode_map = parse_gencode_v40(force=force)
         gene_id_to_symbol = gencode_map["ensembl_gene_to_symbol"]
         platform_map = gencode_map
@@ -542,7 +632,13 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         "observed_platform_probe_count": observed_probe_count,
         "contrast_method": "Welch two-sample t-test on gene-level within-study expression values; Benjamini-Hochberg FDR within each contrast.",
         "raw_path": str(raw_path.relative_to(ROOT)),
-        "normalization_method": "log2(CPM + 1) from raw counts" if config["matrix_source"] == "raw_counts_ensembl" else "source-provided normalized expression values",
+        "normalization_method": (
+            "log2(CPM + 1) from RSEM expected_count values"
+            if config["matrix_source"] == "rsem_gene_results_tar"
+            else "log2(CPM + 1) from raw counts"
+            if config["matrix_source"] == "raw_counts_ensembl"
+            else "source-provided normalized expression values"
+        ),
         "genes": gene_summaries,
     }
     output_path = output_dir / "gene_expression_summary.json"
@@ -576,12 +672,25 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
                 **file_record(raw_path),
             },
             "platform_annotation": {
-                "url": GENCODE_V40_GTF_URL if platform == "GENCODE_V40" else PLATFORM_URLS[platform],
+                "url": (
+                    GENCODE_V40_GTF_URL
+                    if platform == "GENCODE_V40"
+                    else NORMALIZED_URLS[accession]
+                    if platform == "RSEM_GENE_SYMBOL"
+                    else PLATFORM_URLS[platform]
+                ),
                 **platform_map["raw_file"],
             },
         },
         "outputs": output_records,
         "methods": (
+            [
+                "GEO supplementary tar archive was parsed for per-sample RSEM *.genes.results files.",
+                "RSEM expected_count values were library-size normalized to counts per million and transformed as log2(CPM + 1).",
+                "Welch two-sample t-test is computed on gene-level log2CPM values; Benjamini-Hochberg FDR is applied within each contrast.",
+            ]
+            if platform == "RSEM_GENE_SYMBOL"
+            else
             [
                 "GENCODE v40 GTF gene records were parsed to map Ensembl gene identifiers to HGNC-style gene symbols.",
                 "Raw counts were collapsed by gene symbol when needed, library-size normalized to counts per million, and transformed as log2(CPM + 1).",

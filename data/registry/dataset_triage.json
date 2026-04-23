@@ -16,8 +16,8 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_summary": 1,
-      "processed_expression": 1,
-      "ready_to_ingest": 100,
+      "processed_expression": 2,
+      "ready_to_ingest": 99,
       "registered_reference": 1,
       "source_review_needed": 136
     },
@@ -40,7 +40,7 @@
       "unknown": 523
     },
     "p0_or_p1_count": 104,
-    "ready_or_processed_count": 104
+    "ready_or_processed_count": 105
   },
   "priority_queue": [
     {
@@ -1130,7 +1130,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_expression",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics",
@@ -1140,7 +1140,9 @@
         "blood_pbmc"
       ],
       "clinical_states": [
-        "TCMR_or_ACR"
+        "pre_transplant_blood",
+        "early_post_transplant_blood",
+        "late_post_transplant_blood"
       ],
       "organisms": [
         "Homo sapiens"
@@ -1151,9 +1153,13 @@
         "OmicsDI:liver transplant",
         "OmicsDI:liver transplant rejection"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "pediatric liver transplant blood monitoring",
+        "pre versus post transplant longitudinal transcriptome",
+        "non-invasive immune monitoring"
+      ],
+      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
+      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
     },
     {
       "accession": "GSE201695",
@@ -2908,7 +2914,9 @@
         "not_curated"
       ],
       "clinical_states": [
-        "TCMR_or_ACR"
+        "pre_transplant_blood",
+        "early_post_transplant_blood",
+        "late_post_transplant_blood"
       ],
       "organisms": [
         "Homo sapiens"
@@ -2918,9 +2926,13 @@
         "OmicsDI:liver transplant",
         "OmicsDI:liver transplant rejection"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "pediatric liver transplant blood monitoring",
+        "pre versus post transplant longitudinal transcriptome",
+        "non-invasive immune monitoring"
+      ],
+      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
+      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
     },
     {
       "accession": "GSE118182",
@@ -3732,7 +3744,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_expression",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics",
@@ -3742,7 +3754,9 @@
         "blood_pbmc"
       ],
       "clinical_states": [
-        "TCMR_or_ACR"
+        "pre_transplant_blood",
+        "early_post_transplant_blood",
+        "late_post_transplant_blood"
       ],
       "organisms": [
         "Homo sapiens"
@@ -3753,9 +3767,13 @@
         "OmicsDI:liver transplant",
         "OmicsDI:liver transplant rejection"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "pediatric liver transplant blood monitoring",
+        "pre versus post transplant longitudinal transcriptome",
+        "non-invasive immune monitoring"
+      ],
+      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
+      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
     },
     {
       "accession": "GSE201695",

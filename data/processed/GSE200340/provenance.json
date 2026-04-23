@@ -1,0 +1,40 @@
+{
+  "study_accession": "GSE200340",
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200340/matrix/GSE200340_series_matrix.txt.gz",
+  "raw_path": "data/raw/geo/GSE200340/GSE200340_series_matrix.txt.gz",
+  "source_file": {
+    "path": "data/raw/geo/GSE200340/GSE200340_series_matrix.txt.gz",
+    "bytes": 11559,
+    "sha256": "6f39b56760379f4cf5869312420c47e5429d2a6945ade22a761063e0525b9d91"
+  },
+  "generated_at_utc": "2026-04-23T09:09:47.739883+00:00",
+  "parser": "scripts/ingest_geo_series.py",
+  "standardization_rules": {
+    "cluster_field": null,
+    "cluster_map": null,
+    "characteristic_label_field": "clinical metadata (time-point)",
+    "characteristic_label_map": {
+      "pre-tx": {
+        "original_label": "Pre-Tx",
+        "clinical_state": "pre_transplant_blood",
+        "display_label": "Pre-transplant blood sample"
+      },
+      "early post tx": {
+        "original_label": "Early Post Tx",
+        "clinical_state": "early_post_transplant_blood",
+        "display_label": "Early post-transplant blood sample"
+      },
+      "late post tx": {
+        "original_label": "late post tx",
+        "clinical_state": "late_post_transplant_blood",
+        "display_label": "Late post-transplant blood sample"
+      }
+    },
+    "title_label_rules": null
+  },
+  "series_title": "A network-based approach to identify expression modules underlying rejection in pediatric liver transplantation",
+  "series_pubmed_id": [
+    "35492246"
+  ],
+  "series_summary": "Selecting the right immunosuppressant to ensure rejection-free outcomes poses unique challenges in pediatric liver transplant (LT) recipients. A molecular predictor can comprehensively address these challenges. Although early acute cellular rejection (ACR) is mediated by cytotoxic T-cells, late rejection also includes antibody-mediated damage in addition to cell-mediated injury. Currently, there are no well-validated blood-based biomarkers for pediatric LT recipients either pre- or post- transplant. Here, we discover and validate separate pre- and post- transplant molecular signatures of LT outcome from whole blood transcriptomes. Using an integrative machine learning approach, we combine transcriptomic data with the high-quality reference human protein interactome network to identify differentially regulated functional sub-components of the network, or \u201cnetwork module signatures\u201d, which drive ACR. Unlike gene signatures, our approach is inherently multivariate, more robust to replication and captures the structure of the underlying molecular network, encapsulating additive effects. We also identify, in a patient-specific manner, network module signatures that can be targeted by current anti-rejection drugs and other mechanisms that can be repurposed. Overall, our approach can enable personalized adjustment of drug regimens for the dominant targetable pathways in pre- and post- LT in children."
+}

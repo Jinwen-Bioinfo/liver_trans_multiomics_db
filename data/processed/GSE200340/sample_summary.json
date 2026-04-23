@@ -1,0 +1,19 @@
+{
+  "sample_count": 185,
+  "by_clinical_state": {
+    "early_post_transplant_blood": 55,
+    "late_post_transplant_blood": 55,
+    "pre_transplant_blood": 75
+  },
+  "by_original_label": {
+    "Early Post Tx": 55,
+    "Pre-Tx": 75,
+    "late post tx": 55
+  },
+  "by_sample_origin": {
+    "recipient_blood": 185
+  },
+  "by_assay_modality": {
+    "bulk_rna": 185
+  }
+}

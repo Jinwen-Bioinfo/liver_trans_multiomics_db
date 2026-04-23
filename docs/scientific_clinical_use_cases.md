@@ -16,7 +16,7 @@ The resource asks:
 | Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; injury pathway/proteome/metabolome layers pending |
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | GSE243887 donor liver RNA-seq processed with accepted-vs-rejected log2CPM gene contrasts |
-| Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC operational-tolerance expression contrast is processed |
+| Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC tolerance contrast and GSE200340 pediatric blood time-point RNA-seq are processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | Datasets registered |
 | Gut-liver microbiome/metabolome | Do microbial taxa and fecal metabolites associate with postoperative infection risk or immune dysregulation? | DFI_MICROBIOME_LT_2024 processed to feature-level metabolite and taxon summaries |
 | Immunosuppression pharmacogenomics | How do drug exposure and pharmacogenetic context relate to graft molecular state? | Metadata model ready; data discovery pending |
@@ -33,7 +33,7 @@ The resource asks:
    Use registered single-cell datasets to map bulk rejection markers to cell types such as CD8_TRM, myeloid cells, endothelial cells, and B cells.
 
 4. **Blood immune monitoring**
-   Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. This is intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
+   Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. Use GSE200340 to expose pediatric blood/PBMC RNA-seq evidence across pre-transplant, early post-transplant, and late post-transplant time points. These are intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
 
 5. **Gut-liver infection-risk evidence**
    Use DFI_MICROBIOME_LT_2024 to expose stool metabolomics and microbiome features linked to postoperative infection status. The current resource provides 156 metabolite features and 769 MetaPhlAn taxon features with unadjusted infection-positive versus infection-negative summaries. These are searchable feature-level database records, not a reproduced clinical prediction model.

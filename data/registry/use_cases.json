@@ -93,15 +93,17 @@
       "markers": ["CXCL10", "ISG15", "IFI27", "IL7R"],
       "signatures": [],
       "current_evidence": [
-        "GSE200340 is registered as a candidate blood transcriptomics monitoring dataset.",
-        "Phenotype labels and sample timing need verification."
+        "GSE200340 provides 185 pediatric liver transplant whole-blood/PBMC RNA-seq samples across pre-transplant, early post-transplant, and late post-transplant time points.",
+        "RSEM expected_count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus early/late post-transplant versus pre-transplant contrasts.",
+        "CXCL10, ISG15, IFI27, and IL7R can now be queried as longitudinal blood monitoring markers."
       ],
       "next_validation": [
-        "Verify sample timing and clinical outcome labels.",
-        "Compare blood interferon and T cell signatures with liver graft biopsy signatures."
+        "Recover or curate rejection outcome labels from publication supplementary material if publicly reusable.",
+        "Compare blood interferon and T cell signatures with liver graft biopsy signatures.",
+        "Treat the current layer as time-point monitoring evidence, not a rejection-outcome classifier."
       ],
       "omics_layers": ["transcriptome_bulk", "proteome", "metabolome"],
-      "readiness": "registered_not_processed"
+      "readiness": "blood_timepoint_expression_evidence_ready"
     },
     {
       "use_case_id": "SINGLE_CELL_MECHANISM",

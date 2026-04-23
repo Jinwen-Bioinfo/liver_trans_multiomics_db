@@ -105,6 +105,12 @@ def test_independent_geo_metadata_ingest_is_available() -> None:
     assert gse243887["sample_summary"]["by_clinical_state"]["accepted_donor_liver"] == 10
     assert gse243887["sample_summary"]["by_clinical_state"]["rejected_donor_liver"] == 22
 
+    gse200340 = client.get("/api/studies/GSE200340").json()
+    assert gse200340["sample_summary"]["sample_count"] == 185
+    assert gse200340["sample_summary"]["by_clinical_state"]["pre_transplant_blood"] == 75
+    assert gse200340["sample_summary"]["by_clinical_state"]["early_post_transplant_blood"] == 55
+    assert gse200340["sample_summary"]["by_clinical_state"]["late_post_transplant_blood"] == 55
+
 
 def test_donor_liver_samples_filter_by_selection_state() -> None:
     response = client.get(
@@ -280,6 +286,32 @@ def test_donor_liver_quality_downloads_expression_artifacts() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_blood_monitoring_dataset_has_timepoint_expression_evidence() -> None:
+    response = client.get("/api/features/CXCL10/expression")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["expression_evidence"] if item["study_accession"] == "GSE200340")
+    contrast = evidence["statistical_contrasts"]["early_post_transplant_blood_vs_pre_transplant_blood"]
+    assert contrast["case_state"] == "early_post_transplant_blood"
+    assert contrast["control_state"] == "pre_transplant_blood"
+    assert contrast["effect_scale"] == "log2CPM"
+    assert "mean_difference" in contrast
+    assert "p_value" in contrast
+    assert "adj_p_value_bh" in contrast
+
+
+def test_blood_monitoring_dataset_downloads_expression_artifacts() -> None:
+    response = client.get("/api/studies/GSE200340/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "gene_expression_summary" in artifacts
+    assert "gene_sample_values" in artifacts
+    assert "differential_expression" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -297,7 +329,9 @@ def test_omics_layer_detail_links_processed_artifacts() -> None:
     payload = response.json()
     assert "GSE145780" in payload["processed_accessions"]
     assert "GSE243887" in payload["processed_accessions"]
+    assert "GSE200340" in payload["processed_accessions"]
     assert "data/processed/GSE243887/gene_expression_summary.json" in payload["current_artifacts"]
+    assert "data/processed/GSE200340/gene_expression_summary.json" in payload["current_artifacts"]
 
 
 def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
@@ -366,6 +400,14 @@ def test_dataset_triage_marks_donor_liver_quality_processed() -> None:
     payload = response.json()
     assert payload["triage_status"] == "processed_expression"
     assert "donor-liver quality RNA-seq evidence" in payload["next_action"]
+
+
+def test_dataset_triage_marks_blood_monitoring_processed() -> None:
+    response = client.get("/api/dataset-triage/GSE200340")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_expression"
+    assert "blood time-point monitoring evidence" in payload["next_action"]
 
 
 def test_data_model_schema_exposes_core_entities() -> None:
@@ -463,3 +505,13 @@ def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
     assert "DFI_MICROBIOME_LT_2024" in payload["primary_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "DFI_MICROBIOME_LT_2024"
     assert any("156 metabolite" in line for line in payload["current_evidence"])
+
+
+def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> None:
+    response = client.get("/api/use-cases/BLOOD_MONITORING")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["readiness"] == "blood_timepoint_expression_evidence_ready"
+    assert "GSE200340" in payload["primary_datasets"]
+    assert payload["primary_dataset_records"][0]["accession"] == "GSE200340"
+    assert any("185 pediatric" in line for line in payload["current_evidence"])

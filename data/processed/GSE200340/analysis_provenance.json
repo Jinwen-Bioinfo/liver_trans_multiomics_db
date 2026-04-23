@@ -1,0 +1,47 @@
+{
+  "study_accession": "GSE200340",
+  "generated_at_utc": "2026-04-23T09:35:58.669411+00:00",
+  "parser": "scripts/build_gene_evidence.py",
+  "processing_code_version": "full-platform-gene-expression-v2",
+  "source_files": {
+    "normalized_expression": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200340/suppl/GSE200340_RAW.tar",
+      "path": "data/raw/geo/GSE200340/GSE200340_RAW.tar",
+      "bytes": 347709440,
+      "sha256": "adab01735a3d79064140a15bb66d95be71ccada6ce054202186b85a1e87e4b4c"
+    },
+    "platform_annotation": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE200nnn/GSE200340/suppl/GSE200340_RAW.tar",
+      "path": "data/raw/geo/GSE200340/GSE200340_RAW.tar",
+      "bytes": 347709440,
+      "sha256": "adab01735a3d79064140a15bb66d95be71ccada6ce054202186b85a1e87e4b4c"
+    }
+  },
+  "outputs": [
+    {
+      "path": "data/processed/GSE200340/gene_expression_summary.json",
+      "bytes": 78332871,
+      "sha256": "437f74d22f7bd356fc13a7181c97fc1bb88e0bc1302f3bb2a06a4d0f20dda12e"
+    },
+    {
+      "path": "data/processed/GSE200340/gene_sample_values.json",
+      "bytes": 89859141,
+      "sha256": "d396b9e82b34389b164ec1de91b036ae83fdc05573ecd6e22f9010bdc607e742"
+    },
+    {
+      "path": "data/processed/GSE200340/differential_expression.json",
+      "bytes": 42362164,
+      "sha256": "aa60bbb8762eed927deb241fdeb60b678e437b750a3df6b931798c453be799be"
+    }
+  ],
+  "methods": [
+    "GEO supplementary tar archive was parsed for per-sample RSEM *.genes.results files.",
+    "RSEM expected_count values were library-size normalized to counts per million and transformed as log2(CPM + 1).",
+    "Welch two-sample t-test is computed on gene-level log2CPM values; Benjamini-Hochberg FDR is applied within each contrast."
+  ],
+  "limitations": [
+    "GSE200340 GEO metadata exposes blood sampling time points but not rejection outcome labels, so this database layer is longitudinal monitoring evidence rather than an ACR classifier.",
+    "RSEM expected_count values are normalized as log2(CPM + 1) for exploratory database evidence; this does not reproduce the publication's network-module machine-learning model.",
+    "Whole-blood/PBMC signals should not be interpreted as graft tissue biology without paired biopsy validation."
+  ]
+}
