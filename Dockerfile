@@ -27,6 +27,7 @@ RUN pip install -r requirements.txt
 COPY app ./app
 COPY scripts ./scripts
 COPY data/registry ./data/registry
+COPY data/schema ./data/schema
 COPY data/discovery ./data/discovery
 COPY docs ./docs
 COPY tests ./tests

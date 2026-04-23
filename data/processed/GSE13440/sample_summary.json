@@ -1,0 +1,17 @@
+{
+  "sample_count": 22,
+  "by_clinical_state": {
+    "ACR": 9,
+    "RHC_no_ACR": 13
+  },
+  "by_original_label": {
+    "ACR-predominant with superimposed RHC": 9,
+    "RHC with no ACR": 13
+  },
+  "by_sample_origin": {
+    "graft_liver_biopsy": 22
+  },
+  "by_assay_modality": {
+    "bulk_rna": 22
+  }
+}

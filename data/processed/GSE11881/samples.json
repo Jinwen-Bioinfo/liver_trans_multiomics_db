@@ -1,0 +1,359 @@
+[
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124575",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_1",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood obtained from non-tolerant liver transplant recipient with hepatitis C virus infection"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124575/suppl/GSM124575.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124646",
+    "title": "Tolerant PBMC_TOL_VHC_2",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from tolerant liver transplant recipient with hepatitis C virus infection."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124646/suppl/GSM124646.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124648",
+    "title": "Tolerant PBMC_TOL_VHC_7",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells from tolerant liver transplant recipient with hepatitis C virus infection"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124648/suppl/GSM124648.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124675",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_9",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from non-tolerant liver transplant recipient with hepatitis C infection, under treatment with tacrolimus."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124675/suppl/GSM124675.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124748",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_10",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells from a non-tolerant human liver transplant recipient with hepatitis C virus infection and under treatment with cyclosporine A."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124748/suppl/GSM124748.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124753",
+    "title": "Tolerant PBMC_TOL_14",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from a tolerant liver transplant recipient (no immunosuppressive drugs)"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124753/suppl/GSM124753.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124833",
+    "title": "Non-tolerant PBMCs_NoTOL_16",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from non-tolerant liver transplant recipient, hepatitis C virus negative, under treatment with tacrolimus."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124833/suppl/GSM124833.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124834",
+    "title": "Tolerant PBMC_TOL_17",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from a tolerant liver transplant recipient, virus hepatitis C negative"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124834/suppl/GSM124834.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124836",
+    "title": "Tolerant PBMC_TOL_18",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from tolerant liver transplant recipient, virus hepatitis C negative"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124836/suppl/GSM124836.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124838",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_19",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from non-tolerant liver transplant recipient, with hepatitis C infection and under treatment with cyclosporine A."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124838/suppl/GSM124838.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124840",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_20",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from non-tolerant liver transplant recipient with hepatitis C infection and under treatment with tacrolimus."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124840/suppl/GSM124840.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124842",
+    "title": "Non-tolerant PBMCs_NoTOL_VHC_21",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from non-tolerant liver transplant recipient with hepatitis C infection and under treatment with cyclosporine A."
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124842/suppl/GSM124842.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124845",
+    "title": "Tolerant PBMC_TOL_25",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from tolerant liver transplant recipient, virus hepatitis C negative"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124845/suppl/GSM124845.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124850",
+    "title": "Tolerant PBMC_TOL_VHC_26",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from a tolerant liver transplant recipient with hepatitis C virus infection"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124850/suppl/GSM124850.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124851",
+    "title": "Tolerant PBMC_TOL_27",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtaiend from a tolerant liver transplant recipient, virus hepatitis C negative"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124851/suppl/GSM124851.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124853",
+    "title": "Tolerant PBMC_TOL_28",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "tolerant_liver_transplant_recipient",
+    "display_label": "Operationally tolerant liver transplant recipient",
+    "clinical_state": "operational_tolerance",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from a tolerant liver transplant recipient, hepatitis C virus negative"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124853/suppl/GSM124853.CEL.gz",
+    "platform_id": "GPL570"
+  },
+  {
+    "study_accession": "GSE11881",
+    "sample_accession": "GSM124863",
+    "title": "Non-tolerant PBMCs_NoTOL_15",
+    "organism": "Homo sapiens",
+    "source_name": "Peripheral blood mononuclear cells",
+    "sample_origin": "recipient_blood",
+    "transplant_phase": "post_transplant",
+    "assay_modality": "bulk_rna",
+    "original_cluster": null,
+    "original_label": "non_tolerant_liver_transplant_recipient",
+    "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+    "clinical_state": "non_tolerant",
+    "standardization_confidence": "high",
+    "standardization_rule": "title_or_characteristics_regex:^Non-tolerant PBMC",
+    "raw_characteristics": [
+      "Peripheral blood mononuclear cells obtained from a non-tolerant liver transplant recipient under tacrolimus treatment, no hepatitis C virus infection"
+    ],
+    "supplementary_file": "ftp://ftp.ncbi.nlm.nih.gov/geo/samples/GSM124nnn/GSM124863/suppl/GSM124863.CEL.gz",
+    "platform_id": "GPL570"
+  }
+]

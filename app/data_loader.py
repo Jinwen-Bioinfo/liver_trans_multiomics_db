@@ -14,6 +14,7 @@ OMICS_LAYER_REGISTRY = ROOT / "data" / "registry" / "omics_layers.json"
 MULTIOMICS_SOURCE_REGISTRY = ROOT / "data" / "registry" / "multiomics_sources.json"
 SOURCE_TYPE_REGISTRY = ROOT / "data" / "registry" / "source_types.json"
 DATASET_TRIAGE_REGISTRY = ROOT / "data" / "registry" / "dataset_triage.json"
+DATA_MODEL_SCHEMA = ROOT / "data" / "schema" / "livertx_omicsdb_schema.json"
 PROCESSED_DIR = ROOT / "data" / "processed"
 DOWNLOAD_ARTIFACTS = {
     "samples": "samples.json",
@@ -107,6 +108,12 @@ def get_dataset_triage(accession: str) -> dict[str, Any] | None:
         if item.get("accession", "").upper() == accession:
             return item
     return None
+
+
+@lru_cache(maxsize=1)
+def load_data_model_schema() -> dict[str, Any]:
+    with DATA_MODEL_SCHEMA.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
 
 
 def list_multiomics_sources(layer: str | None = None) -> list[dict[str, Any]]:

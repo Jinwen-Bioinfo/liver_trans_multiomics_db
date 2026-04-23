@@ -18,6 +18,8 @@ def test_study_registry_lists_priority_accessions() -> None:
     payload = response.json()
     accessions = {study["accession"] for study in payload["studies"]}
     assert "GSE145780" in accessions
+    assert "GSE13440" in accessions
+    assert "GSE11881" in accessions
     assert "GSE243887" in accessions
     assert "DFI_MICROBIOME_LT_2024" in accessions
 
@@ -82,6 +84,18 @@ def test_processed_study_detail_includes_sample_summary() -> None:
     summary = response.json()["sample_summary"]
     assert summary["sample_count"] == 235
     assert summary["by_clinical_state"]["TCMR"] == 37
+
+
+def test_independent_geo_metadata_ingest_is_available() -> None:
+    gse13440 = client.get("/api/studies/GSE13440").json()
+    assert gse13440["sample_summary"]["sample_count"] == 22
+    assert gse13440["sample_summary"]["by_clinical_state"]["ACR"] == 9
+    assert gse13440["sample_summary"]["by_clinical_state"]["RHC_no_ACR"] == 13
+
+    gse11881 = client.get("/api/studies/GSE11881").json()
+    assert gse11881["sample_summary"]["sample_count"] == 17
+    assert gse11881["sample_summary"]["by_clinical_state"]["operational_tolerance"] == 9
+    assert gse11881["sample_summary"]["by_clinical_state"]["non_tolerant"] == 8
 
 
 def test_processed_provenance_is_available() -> None:
@@ -198,6 +212,19 @@ def test_dataset_triage_detail_explains_next_action() -> None:
     assert payload["triage_status"] == "ready_to_ingest"
     assert payload["priority"] == "P0"
     assert "independent transcriptome replication" in payload["next_action"]
+
+
+def test_data_model_schema_exposes_core_entities() -> None:
+    response = client.get("/api/data-model")
+    assert response.status_code == 200
+    payload = response.json()
+    entities = {item["entity"] for item in payload["entities"]}
+    assert "study" in entities
+    assert "sample" in entities
+    assert "assay" in entities
+    assert "feature" in entities
+    assert "analysis_result" in entities
+    assert "provenance" in entities
 
 
 def test_fibrosis_marker_has_expected_direction() -> None:

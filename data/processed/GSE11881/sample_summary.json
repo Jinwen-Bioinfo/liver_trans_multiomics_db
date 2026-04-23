@@ -1,0 +1,17 @@
+{
+  "sample_count": 17,
+  "by_clinical_state": {
+    "non_tolerant": 8,
+    "operational_tolerance": 9
+  },
+  "by_original_label": {
+    "non_tolerant_liver_transplant_recipient": 8,
+    "tolerant_liver_transplant_recipient": 9
+  },
+  "by_sample_origin": {
+    "recipient_blood": 17
+  },
+  "by_assay_modality": {
+    "bulk_rna": 17
+  }
+}

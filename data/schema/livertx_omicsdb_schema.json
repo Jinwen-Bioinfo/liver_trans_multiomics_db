@@ -1,0 +1,270 @@
+{
+  "schema_id": "livertx_omicsdb_core_v0_1",
+  "title": "LiverTx-OmicsDB core data model",
+  "version": "0.1.0",
+  "status": "draft_locked_for_v1_ingest",
+  "description": "Canonical entities required for a reproducible public liver transplantation multi-omics database.",
+  "entities": [
+    {
+      "entity": "study",
+      "primary_key": "study_id",
+      "description": "A public repository accession, author repository, supplementary table source, or controlled-access metadata record.",
+      "required_fields": [
+        "study_id",
+        "accession",
+        "title",
+        "repository",
+        "source_type",
+        "public_access",
+        "curation_status",
+        "processing_status"
+      ],
+      "recommended_fields": [
+        "repository_url",
+        "publication",
+        "organism",
+        "omics_modalities",
+        "sample_origins",
+        "clinical_states",
+        "license",
+        "limitations"
+      ]
+    },
+    {
+      "entity": "sample",
+      "primary_key": "sample_id",
+      "description": "A biospecimen or analyzed sample with both original labels and standardized transplant-state labels.",
+      "required_fields": [
+        "sample_id",
+        "study_id",
+        "original_sample_id",
+        "organism",
+        "sample_origin",
+        "transplant_phase",
+        "clinical_state",
+        "standardization_confidence"
+      ],
+      "recommended_fields": [
+        "donor_recipient_role",
+        "timepoint",
+        "histology_label",
+        "original_label",
+        "raw_characteristics",
+        "privacy_status"
+      ]
+    },
+    {
+      "entity": "assay",
+      "primary_key": "assay_id",
+      "description": "A measurement layer attached to one or more samples.",
+      "required_fields": [
+        "assay_id",
+        "study_id",
+        "omics_modality",
+        "platform",
+        "measurement_scale",
+        "feature_namespace",
+        "processing_pipeline"
+      ],
+      "recommended_fields": [
+        "library_strategy",
+        "genome_build",
+        "normalization_method",
+        "batch_variables",
+        "raw_data_available"
+      ]
+    },
+    {
+      "entity": "feature",
+      "primary_key": "feature_id",
+      "description": "A gene, probe, transcript, protein, metabolite, taxon, cell type, pathway, or methylation region.",
+      "required_fields": [
+        "feature_id",
+        "feature_type",
+        "display_name",
+        "namespace"
+      ],
+      "recommended_fields": [
+        "gene_symbol",
+        "ensembl_id",
+        "uniprot_id",
+        "hmdb_id",
+        "chebi_id",
+        "pubchem_cid",
+        "ncbi_taxon_id",
+        "synonyms",
+        "mapping_confidence"
+      ]
+    },
+    {
+      "entity": "measurement_summary",
+      "primary_key": "measurement_summary_id",
+      "description": "Study-level or group-level feature summaries used by the feature explorer.",
+      "required_fields": [
+        "measurement_summary_id",
+        "study_id",
+        "assay_id",
+        "feature_id",
+        "grouping_variable",
+        "group_summary",
+        "sample_count"
+      ],
+      "recommended_fields": [
+        "missingness",
+        "probe_or_feature_members",
+        "measurement_scale",
+        "normalization_method"
+      ]
+    },
+    {
+      "entity": "analysis_result",
+      "primary_key": "analysis_result_id",
+      "description": "A statistical contrast, signature score, validation result, or cross-study evidence statement.",
+      "required_fields": [
+        "analysis_result_id",
+        "study_id",
+        "analysis_type",
+        "comparison",
+        "method",
+        "result_table",
+        "limitations"
+      ],
+      "recommended_fields": [
+        "model_formula",
+        "effect_size",
+        "p_value",
+        "adjusted_p_value",
+        "confidence_interval",
+        "validation_dataset_id",
+        "direction_expected",
+        "direction_observed"
+      ]
+    },
+    {
+      "entity": "artifact",
+      "primary_key": "artifact_id",
+      "description": "A local or remote file generated or consumed by the database.",
+      "required_fields": [
+        "artifact_id",
+        "study_id",
+        "artifact_type",
+        "path_or_url",
+        "format",
+        "bytes",
+        "sha256"
+      ],
+      "recommended_fields": [
+        "created_at_utc",
+        "source_last_modified",
+        "compression",
+        "is_public_download",
+        "derived_from"
+      ]
+    },
+    {
+      "entity": "provenance",
+      "primary_key": "provenance_id",
+      "description": "Reproducibility record for download, parsing, normalization, analysis, and manual curation.",
+      "required_fields": [
+        "provenance_id",
+        "study_id",
+        "step",
+        "generated_at_utc",
+        "script",
+        "code_commit",
+        "inputs",
+        "outputs"
+      ],
+      "recommended_fields": [
+        "reviewer",
+        "source_url",
+        "source_checksum",
+        "software_versions",
+        "manual_rules",
+        "caveats"
+      ]
+    }
+  ],
+  "controlled_vocabularies": {
+    "source_type": [
+      "repository_accession",
+      "author_repository",
+      "supplementary_table",
+      "controlled_access",
+      "figure_only",
+      "literature_only"
+    ],
+    "omics_modality": [
+      "bulk_transcriptomics",
+      "single_cell_rna",
+      "proteomics",
+      "metabolomics",
+      "microbiome",
+      "methylation_cfdna",
+      "small_rna",
+      "pathology_metadata",
+      "immunogenetics"
+    ],
+    "sample_origin": [
+      "graft_liver_biopsy",
+      "donor_liver",
+      "recipient_blood",
+      "plasma_serum",
+      "stool",
+      "reference_liver_cells",
+      "not_curated"
+    ],
+    "transplant_phase": [
+      "donor_recovery",
+      "pre_transplant",
+      "peri_transplant",
+      "early_post_transplant",
+      "late_post_transplant",
+      "post_transplant",
+      "reference"
+    ],
+    "clinical_state": [
+      "no_rejection",
+      "TCMR",
+      "ACR",
+      "AMR",
+      "early_injury",
+      "ischemia_reperfusion",
+      "fibrosis",
+      "chronic_graft_injury",
+      "operational_tolerance",
+      "postoperative_infection",
+      "donor_liver_accepted",
+      "donor_liver_rejected",
+      "stable",
+      "reference",
+      "to_verify"
+    ],
+    "processing_status": [
+      "registered",
+      "ready_to_ingest",
+      "raw_downloaded",
+      "metadata_processed",
+      "feature_processed",
+      "analysis_ready",
+      "processed_summary",
+      "processed_baseline",
+      "controlled_access_register_only",
+      "deferred"
+    ]
+  },
+  "normalization_policy": {
+    "bulk_transcriptomics_microarray": "Parse platform annotation; map probes to gene symbols; retain probe IDs; collapse to gene-level summaries; use log2 scale when source data are log-like; record platform and collapse rule.",
+    "bulk_transcriptomics_rnaseq": "Prefer raw counts plus DESeq2/edgeR-style analysis when available; otherwise preserve TPM/FPKM/normalized source scale with explicit caveat.",
+    "single_cell_rna": "Keep source object metadata; export cell-type counts, marker summaries, and sample-level pseudobulk where permitted.",
+    "proteomics": "Use protein group identifiers, map to UniProt/gene symbols, retain missingness and intensity scale.",
+    "metabolomics": "Retain source compound names and quantitative/qualitative scale; map to HMDB/ChEBI/PubChem when possible.",
+    "microbiome": "Retain taxon names and ranks; map to NCBI taxonomy where possible; distinguish relative abundance from counts."
+  },
+  "artifact_contract": {
+    "raw": "Original public files cached under data/raw and excluded from Git.",
+    "processed": "Small processed summaries may be versioned; large matrices should move to releases/object storage or Git LFS.",
+    "registry": "Curated metadata and triage registries are versioned in Git.",
+    "provenance": "Each processed dataset must include provenance with checksums and script names before being shown as evidence-ready."
+  }
+}

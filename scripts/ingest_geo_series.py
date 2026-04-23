@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import csv
 import gzip
+import hashlib
 import json
 import re
 import shutil
@@ -44,6 +45,46 @@ GEO_SERIES = {
         "sample_origin": "graft_liver",
         "transplant_phase": "post_transplant",
         "assay_modality": "bulk_rna",
+    },
+    "GSE13440": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
+        "title_label_rules": [
+            {
+                "pattern": "ACR-predominant",
+                "original_label": "ACR-predominant with superimposed RHC",
+                "clinical_state": "ACR",
+                "display_label": "Acute cellular rejection predominant with recurrent HCV",
+            },
+            {
+                "pattern": "RHC with no ACR",
+                "original_label": "RHC with no ACR",
+                "clinical_state": "RHC_no_ACR",
+                "display_label": "Recurrent hepatitis C without acute cellular rejection",
+            },
+        ],
+        "sample_origin": "graft_liver_biopsy",
+        "transplant_phase": "post_transplant",
+        "assay_modality": "bulk_rna",
+    },
+    "GSE11881": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE11nnn/GSE11881/matrix/GSE11881_series_matrix.txt.gz",
+        "title_label_rules": [
+            {
+                "pattern": "^Tolerant PBMC",
+                "original_label": "tolerant_liver_transplant_recipient",
+                "clinical_state": "operational_tolerance",
+                "display_label": "Operationally tolerant liver transplant recipient",
+            },
+            {
+                "pattern": "^Non-tolerant PBMC",
+                "original_label": "non_tolerant_liver_transplant_recipient",
+                "clinical_state": "non_tolerant",
+                "display_label": "Non-tolerant liver transplant recipient under immunosuppression",
+            },
+        ],
+        "sample_origin": "recipient_blood",
+        "transplant_phase": "post_transplant",
+        "assay_modality": "bulk_rna",
     }
 }
 
@@ -67,6 +108,14 @@ def download(url: str, target: Path, force: bool = False) -> None:
     with urlopen(url, timeout=90) as response, tmp.open("wb") as handle:
         shutil.copyfileobj(response, handle)
     tmp.replace(target)
+
+
+def sha256_file(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def parse_series_matrix(path: Path) -> dict[str, Any]:
@@ -127,8 +176,25 @@ def parse_characteristics(values: list[str]) -> dict[str, str]:
 
 def standardize_sample(sample: dict[str, Any], config: dict[str, Any], accession: str) -> dict[str, Any]:
     characteristics = parse_characteristics(sample.get("characteristics_ch1", []))
-    cluster_value = characteristics.get(config["cluster_field"])
-    cluster = config["cluster_map"].get(str(cluster_value), {})
+    cluster_value = None
+    cluster: dict[str, str] = {}
+    standardization_rule = "unmapped"
+    if "cluster_field" in config:
+        cluster_value = characteristics.get(config["cluster_field"])
+        cluster = config["cluster_map"].get(str(cluster_value), {})
+        standardization_rule = f"characteristics:{config['cluster_field']}={cluster_value}"
+    elif "title_label_rules" in config:
+        title = str(sample.get("title", ""))
+        haystack = " ".join([title, *sample.get("characteristics_ch1", [])])
+        for rule in config["title_label_rules"]:
+            if re.search(rule["pattern"], haystack, flags=re.IGNORECASE):
+                cluster = {
+                    "original_label": rule["original_label"],
+                    "clinical_state": rule["clinical_state"],
+                    "display_label": rule["display_label"],
+                }
+                standardization_rule = f"title_or_characteristics_regex:{rule['pattern']}"
+                break
     standardized_state = cluster.get("clinical_state", "to_verify")
 
     return {
@@ -145,6 +211,7 @@ def standardize_sample(sample: dict[str, Any], config: dict[str, Any], accession
         "display_label": cluster.get("display_label", "To verify"),
         "clinical_state": standardized_state,
         "standardization_confidence": "high" if cluster else "needs_review",
+        "standardization_rule": standardization_rule,
         "raw_characteristics": sample.get("characteristics_ch1", []),
         "supplementary_file": sample.get("supplementary_file"),
         "platform_id": sample.get("platform_id"),
@@ -186,11 +253,17 @@ def ingest(accession: str, force: bool = False) -> dict[str, Any]:
         "study_accession": accession,
         "source_url": config["url"],
         "raw_path": str(raw_path.relative_to(ROOT)),
+        "source_file": {
+            "path": str(raw_path.relative_to(ROOT)),
+            "bytes": raw_path.stat().st_size,
+            "sha256": sha256_file(raw_path),
+        },
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "parser": "scripts/ingest_geo_series.py",
         "standardization_rules": {
-            "cluster_field": config["cluster_field"],
-            "cluster_map": config["cluster_map"],
+            "cluster_field": config.get("cluster_field"),
+            "cluster_map": config.get("cluster_map"),
+            "title_label_rules": config.get("title_label_rules"),
         },
         "series_title": parsed["series"].get("title", [None])[0],
         "series_pubmed_id": parsed["series"].get("pubmed_id", []),

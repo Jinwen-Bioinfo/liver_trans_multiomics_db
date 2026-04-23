@@ -10,6 +10,7 @@ from app.data_loader import (
     get_study,
     get_download_path,
     get_dataset_triage,
+    load_data_model_schema,
     list_studies,
     list_dataset_triage,
     load_study_provenance,
@@ -171,6 +172,11 @@ def multiomics_source_detail(source_id: str) -> dict[str, object]:
 @app.get("/api/source-types")
 def source_types() -> dict[str, object]:
     return list_source_types()
+
+
+@app.get("/api/data-model")
+def data_model() -> dict[str, object]:
+    return load_data_model_schema()
 
 
 @app.get("/api/dataset-triage")
