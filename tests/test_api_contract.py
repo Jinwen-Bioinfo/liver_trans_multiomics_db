@@ -111,6 +111,13 @@ def test_independent_geo_metadata_ingest_is_available() -> None:
     assert gse200340["sample_summary"]["by_clinical_state"]["early_post_transplant_blood"] == 55
     assert gse200340["sample_summary"]["by_clinical_state"]["late_post_transplant_blood"] == 55
 
+    gse189539 = client.get("/api/studies/GSE189539").json()
+    assert gse189539["sample_summary"]["sample_count"] == 8
+    assert gse189539["sample_summary"]["cell_count"] == 58243
+    assert gse189539["sample_summary"]["by_clinical_state"]["cold_perfusion_before_lt"] == 4
+    assert gse189539["sample_summary"]["by_clinical_state"]["portal_reperfusion_after_lt"] == 4
+    assert gse189539["sample_summary"]["cell_to_sample_mapping_status"] == "unavailable_in_geo_filtered_matrix"
+
 
 def test_donor_liver_samples_filter_by_selection_state() -> None:
     response = client.get(
@@ -312,6 +319,32 @@ def test_blood_monitoring_dataset_downloads_expression_artifacts() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_single_cell_marker_endpoint_returns_gse189539_evidence() -> None:
+    response = client.get("/api/features/NKG7/single-cell")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["single_cell_evidence"] if item["study_accession"] == "GSE189539")
+    assert evidence["cell_count"] == 58243
+    assert evidence["cell_to_sample_mapping_status"] == "unavailable_in_geo_filtered_matrix"
+    assert evidence["whole_matrix_summary"]["pct_cells_detected"] > 60
+    assert evidence["statistical_contrasts"] == {}
+
+
+def test_single_cell_modules_and_downloads_are_available() -> None:
+    modules = client.get("/api/studies/GSE189539/single-cell/modules")
+    assert modules.status_code == 200
+    module_payload = modules.json()
+    assert module_payload["module_count"] >= 1
+    assert "EAD_PATHOGENIC_IMMUNE_NICHE" in module_payload["modules"]
+
+    downloads = client.get("/api/studies/GSE189539/downloads")
+    assert downloads.status_code == 200
+    artifacts = {item["artifact"] for item in downloads.json()["downloads"]}
+    assert "single_cell_marker_summary" in artifacts
+    assert "single_cell_module_summary" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -332,6 +365,11 @@ def test_omics_layer_detail_links_processed_artifacts() -> None:
     assert "GSE200340" in payload["processed_accessions"]
     assert "data/processed/GSE243887/gene_expression_summary.json" in payload["current_artifacts"]
     assert "data/processed/GSE200340/gene_expression_summary.json" in payload["current_artifacts"]
+
+    single_cell = client.get("/api/omics-layers/single_cell").json()
+    assert single_cell["readiness"] == "marker_matrix_evidence_ready"
+    assert "GSE189539" in single_cell["processed_accessions"]
+    assert "data/processed/GSE189539/single_cell_marker_summary.json" in single_cell["current_artifacts"]
 
 
 def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
@@ -408,6 +446,14 @@ def test_dataset_triage_marks_blood_monitoring_processed() -> None:
     payload = response.json()
     assert payload["triage_status"] == "processed_expression"
     assert "blood time-point monitoring evidence" in payload["next_action"]
+
+
+def test_dataset_triage_marks_single_cell_marker_matrix_processed() -> None:
+    response = client.get("/api/dataset-triage/GSE189539")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_single_cell_marker"
+    assert "single-cell marker matrix evidence" in payload["next_action"]
 
 
 def test_data_model_schema_exposes_core_entities() -> None:
@@ -505,6 +551,16 @@ def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
     assert "DFI_MICROBIOME_LT_2024" in payload["primary_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "DFI_MICROBIOME_LT_2024"
     assert any("156 metabolite" in line for line in payload["current_evidence"])
+
+
+def test_single_cell_use_case_links_gse189539_marker_evidence() -> None:
+    response = client.get("/api/use-cases/SINGLE_CELL_MECHANISM")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["readiness"] == "single_cell_marker_matrix_ready"
+    assert "GSE189539" in payload["primary_datasets"]
+    assert payload["primary_dataset_records"][0]["accession"] == "GSE189539"
+    assert any("58,243 cells" in line for line in payload["current_evidence"])
 
 
 def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> None:

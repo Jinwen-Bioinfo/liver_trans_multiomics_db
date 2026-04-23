@@ -17,7 +17,8 @@
       "processed_baseline": 1,
       "processed_summary": 1,
       "processed_expression": 2,
-      "ready_to_ingest": 99,
+      "processed_single_cell_marker": 1,
+      "ready_to_ingest": 98,
       "registered_reference": 1,
       "source_review_needed": 136
     },
@@ -40,7 +41,7 @@
       "unknown": 523
     },
     "p0_or_p1_count": 104,
-    "ready_or_processed_count": 105
+    "ready_or_processed_count": 106
   },
   "priority_queue": [
     {
@@ -909,7 +910,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_single_cell_marker",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics",
@@ -932,9 +933,13 @@
         "OmicsDI:liver allograft",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "direct graft-liver single-cell RNA-seq",
+        "early allograft dysfunction and reperfusion injury biology",
+        "marker-level immune niche evidence"
+      ],
+      "next_action": "Use as a single-cell marker matrix evidence layer; expose whole-matrix marker detectability for EAD immune niche genes while flagging unavailable cell-to-sample metadata.",
+      "triage_reason": "Processed locally from GEO series metadata and public filtered single-cell count matrix."
     },
     {
       "accession": "GSE192989",
@@ -3523,7 +3528,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_single_cell_marker",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics",
@@ -3546,9 +3551,13 @@
         "OmicsDI:liver allograft",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "direct graft-liver single-cell RNA-seq",
+        "early allograft dysfunction and reperfusion injury biology",
+        "marker-level immune niche evidence"
+      ],
+      "next_action": "Use as a single-cell marker matrix evidence layer; expose whole-matrix marker detectability for EAD immune niche genes while flagging unavailable cell-to-sample metadata.",
+      "triage_reason": "Processed locally from GEO series metadata and public filtered single-cell count matrix."
     },
     {
       "accession": "GSE192989",

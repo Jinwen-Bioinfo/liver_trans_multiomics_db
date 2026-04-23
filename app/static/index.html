@@ -477,6 +477,7 @@
 
           <div id="use-cases" class="use-case-list"></div>
           <div id="gene-evidence"></div>
+          <div id="single-cell-evidence"></div>
           <div id="multiomics-evidence"></div>
           <div id="signature-evidence"></div>
           <div id="detail-panel"></div>
@@ -756,6 +757,38 @@
         `;
       }
 
+      async function loadSingleCellEvidence() {
+        const query = document.getElementById("query").value.trim();
+        const panel = document.getElementById("single-cell-evidence");
+        if (!/^[A-Za-z0-9-]{2,20}$/.test(query)) {
+          panel.innerHTML = "";
+          return;
+        }
+        const response = await fetch(`/api/features/${encodeURIComponent(query)}/single-cell`);
+        const data = await response.json();
+        if (!data.evidence_count) {
+          panel.innerHTML = "";
+          return;
+        }
+        panel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${data.feature} Single-cell Evidence</h2>
+            <p class="lead">${data.evidence_count} processed single-cell datasets with marker-level evidence.</p>
+            ${data.single_cell_evidence.map((evidence) => {
+              const summary = evidence.whole_matrix_summary || {};
+              return `
+                <div class="mini">
+                  <strong>${evidence.study_accession}</strong>
+                  <span>${evidence.cell_count} cells · ${evidence.sample_count} samples · ${evidence.assay_scale}</span>
+                  <span>${summary.pct_cells_detected}% cells detected · mean log1p UMI ${summary.mean_log1p_umi_per_cell}</span>
+                  <span>${evidence.cell_to_sample_mapping_status}</span>
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+      }
+
       async function showMultiomicsFeature(sourceId, featureType, featureId) {
         const response = await fetch(`/api/multiomics-features/${sourceId}/${featureType}/${featureId}`);
         const feature = await response.json();
@@ -866,6 +899,7 @@
       controls.forEach((control) => control.addEventListener("input", () => {
         loadStudies();
         loadGeneEvidence();
+        loadSingleCellEvidence();
         loadMultiomicsEvidence();
       }));
       loadStudies();
@@ -873,6 +907,7 @@
       loadDatasetTriage();
       loadOmicsLayers();
       loadGeneEvidence();
+      loadSingleCellEvidence();
       loadMultiomicsEvidence();
       loadSignatureEvidence();
       loadReadiness();

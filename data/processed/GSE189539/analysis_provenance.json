@@ -1,0 +1,123 @@
+{
+  "generated_at_utc": "2026-04-23T10:15:53.539915+00:00",
+  "limitations": [
+    "The GEO supplementary matrix provides cell-level counts but no reusable cell-to-sample or cell-type annotation table.",
+    "This V1 layer summarizes pre-specified marker genes and marker programs across the full public matrix; it is not a full re-clustering, sample-level contrast, or cell-type composition analysis.",
+    "The public sample labels capture before-LT cold perfusion and after-LT portal reperfusion states, not biopsy-proven rejection outcomes."
+  ],
+  "marker_programs": {
+    "EAD_PATHOGENIC_IMMUNE_NICHE": {
+      "genes": [
+        "S100A12",
+        "S100A8",
+        "S100A9",
+        "GZMB",
+        "GZMK",
+        "NKG7",
+        "GNLY",
+        "KLRB1",
+        "TRAV1-2"
+      ],
+      "interpretation": "Marker program drawn from the reported MAIT, GZMB+GZMK+ NK, and S100A12+ neutrophil niche.",
+      "label": "Early allograft dysfunction immune niche markers"
+    },
+    "ENDOTHELIAL_ACTIVATION": {
+      "genes": [
+        "PECAM1",
+        "VWF",
+        "KDR",
+        "SELE",
+        "ICAM1"
+      ],
+      "interpretation": "Endothelial and vascular activation marker program.",
+      "label": "Endothelial activation"
+    },
+    "HEPATOCYTE_FUNCTION": {
+      "genes": [
+        "ALB",
+        "APOA1",
+        "APOB",
+        "CYP3A4",
+        "TTR"
+      ],
+      "interpretation": "Parenchymal liver function marker program.",
+      "label": "Hepatocyte function"
+    },
+    "MYELOID_MONOCYTE": {
+      "genes": [
+        "LST1",
+        "LYZ",
+        "FCGR3A",
+        "S100A8",
+        "S100A9"
+      ],
+      "interpretation": "Monocyte/myeloid inflammatory marker program.",
+      "label": "Myeloid and monocyte markers"
+    },
+    "NEUTROPHIL_INFLAMMATION": {
+      "genes": [
+        "S100A8",
+        "S100A9",
+        "S100A12",
+        "FCGR3B",
+        "CSF3R"
+      ],
+      "interpretation": "Neutrophil-associated inflammatory marker program.",
+      "label": "Neutrophil inflammation"
+    },
+    "T_NK_CYTOTOXICITY": {
+      "genes": [
+        "NKG7",
+        "GNLY",
+        "GZMB",
+        "GZMK",
+        "PRF1",
+        "IFNG"
+      ],
+      "interpretation": "Cytotoxic lymphocyte marker program for graft immune activation.",
+      "label": "T/NK cytotoxicity"
+    }
+  },
+  "methods": [
+    "GEO series metadata was ingested separately to map the eight samples to before-LT cold perfusion or after-LT portal reperfusion states.",
+    "The public filtered single-cell gene-count matrix was scanned for a pre-specified marker panel instead of serializing the full cell-by-gene matrix.",
+    "The GEO matrix column IDs do not contain sample accessions and no public cell metadata table was found in the GEO record, so marker evidence is summarized across the full matrix only.",
+    "For each marker gene, evidence is summarized as percent detected cells, mean UMI per cell, and mean log1p UMI per cell across all cells.",
+    "No sample-level, phase-level, cell-type-level, or rejection-outcome statistical contrast is computed in this V1 artifact."
+  ],
+  "outputs": {
+    "analysis_provenance": {
+      "bytes": 4361,
+      "path": "data/processed/GSE189539/analysis_provenance.json",
+      "sha256": "775c97a6f6fff08187f02628c1daab2dc67abb7bee2c8e3c72835f31b5a4d461"
+    },
+    "sample_summary": {
+      "bytes": 421,
+      "path": "data/processed/GSE189539/sample_summary.json",
+      "sha256": "152c5e3b4d7e65db0c6361d65b1449fdb0f6af227307a68a6e75ad48b8c81465"
+    },
+    "samples": {
+      "bytes": 6803,
+      "path": "data/processed/GSE189539/samples.json",
+      "sha256": "db69e190e41b8f5876e36ee97f14c99bfae4d6cf996ed65556ed67cf2fef10c0"
+    },
+    "single_cell_marker_summary": {
+      "bytes": 9922,
+      "path": "data/processed/GSE189539/single_cell_marker_summary.json",
+      "sha256": "a7d0f45c9b0535991dec30679b5761adc9a388315ce34b8acf508fbb509f9383"
+    },
+    "single_cell_module_summary": {
+      "bytes": 4641,
+      "path": "data/processed/GSE189539/single_cell_module_summary.json",
+      "sha256": "034214259663894bb098b5a00c79eff6121d02d0088e2e8231047499d55ccce4"
+    }
+  },
+  "parser": "scripts/build_single_cell_marker_evidence.py",
+  "source": {
+    "bytes": 102310962,
+    "path": "data/raw/GSE189539/GSE189539_Filtered_gene_counts_matrix.csv.gz",
+    "sha256": "a25b325b993ea44e5a4c14465ba6c6467e46659daf648ecb8e5d5632f129b997",
+    "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE189nnn/GSE189539/suppl/GSE189539_Filtered_gene_counts_matrix.csv.gz"
+  },
+  "study_accession": "GSE189539"
+}

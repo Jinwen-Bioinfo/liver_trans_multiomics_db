@@ -31,6 +31,8 @@ DOWNLOAD_ARTIFACTS = {
     "metabolomics_features": "metabolomics_features.json",
     "microbiome_summary": "microbiome_summary.json",
     "microbiome_features": "microbiome_features.json",
+    "single_cell_marker_summary": "single_cell_marker_summary.json",
+    "single_cell_module_summary": "single_cell_module_summary.json",
 }
 
 
@@ -511,6 +513,69 @@ def get_feature_expression(symbol: str) -> dict[str, Any]:
     }
 
 
+@lru_cache(maxsize=8)
+def load_single_cell_marker_summary(accession: str) -> dict[str, Any] | None:
+    path = PROCESSED_DIR / accession / "single_cell_marker_summary.json"
+    if not path.exists():
+        return None
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+@lru_cache(maxsize=8)
+def load_single_cell_module_summary(accession: str) -> dict[str, Any] | None:
+    path = PROCESSED_DIR / accession / "single_cell_module_summary.json"
+    if not path.exists():
+        return None
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def get_feature_single_cell(symbol: str) -> dict[str, Any]:
+    symbol_upper = symbol.upper()
+    evidence = []
+    for study in load_studies():
+        marker_payload = load_single_cell_marker_summary(study["accession"])
+        if not marker_payload:
+            continue
+        marker = marker_payload.get("markers", {}).get(symbol_upper)
+        if not marker:
+            continue
+        evidence.append(
+            {
+                "study_accession": study["accession"],
+                "study_title": study["title"],
+                "repository": study["repository"],
+                "repository_url": study["repository_url"],
+                "sample_count": marker_payload.get("sample_count"),
+                "cell_count": marker_payload.get("cell_count"),
+                "cell_to_sample_mapping_status": marker_payload.get("cell_to_sample_mapping_status"),
+                "contrast_method": marker_payload.get("contrast_method"),
+                **marker,
+            }
+        )
+    return {
+        "feature": symbol_upper,
+        "feature_type": "gene",
+        "evidence_count": len(evidence),
+        "single_cell_evidence": evidence,
+    }
+
+
+def get_single_cell_modules(accession: str) -> dict[str, Any] | None:
+    study = get_study(accession)
+    if study is None:
+        return None
+    module_payload = load_single_cell_module_summary(accession)
+    if not module_payload:
+        return None
+    return {
+        "study_accession": accession,
+        "study_title": study["title"],
+        **module_payload,
+    }
+
+
 @lru_cache(maxsize=1)
 def load_signatures() -> list[dict[str, Any]]:
     with SIGNATURE_REGISTRY.open("r", encoding="utf-8") as handle:
@@ -668,4 +733,7 @@ def nar_readiness() -> dict[str, Any]:
         "multiomics_feature_count": multiomics_counts["feature_count"],
         "multiomics_feature_counts_by_modality": multiomics_counts["by_modality"],
         "multiomics_feature_counts_by_feature_type": multiomics_counts["by_feature_type"],
+        "single_cell_marker_ready_study_count": sum(
+            1 for study in studies if load_single_cell_marker_summary(study["accession"]) is not None
+        ),
     }

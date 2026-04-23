@@ -45,9 +45,9 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 - [ ] Differential expression for priority contrasts. Started for GSE145780, GSE13440, and GSE11881.
 - [ ] Signature scoring across studies. Started for processed transcriptome cohorts; signature validation caveats remain visible.
 - [x] Gene pages with cross-study evidence.
-- [ ] Cell-type pages for single-cell studies.
+- [ ] Cell-type pages for single-cell studies. GSE189539 now has a conservative marker-matrix evidence layer, but cell-type pages require recovered cell metadata or a full annotation workflow.
 - [ ] Pathway and marker-gene summaries.
-- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, and blood monitoring use cases. Donor liver quality now has GSE243887 gene-level evidence and blood monitoring has GSE11881/GSE200340 evidence; written tutorials remain pending.
+- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, blood monitoring, and single-cell mechanism use cases. Donor liver quality now has GSE243887 gene-level evidence, blood monitoring has GSE11881/GSE200340 evidence, and GSE189539 adds single-cell marker evidence; written tutorials remain pending.
 
 ### V3: Submission Package
 

@@ -110,21 +110,22 @@
       "title": "Single-cell mechanism of rejection",
       "clinical_question": "Which cell types produce rejection-associated markers and which immune compartments expand during graft rejection?",
       "why_it_matters": "Bulk molecular signals need cellular interpretation before they can guide mechanism, biomarkers, or therapeutic hypotheses.",
-      "primary_datasets": ["HRA002091", "HRA007802"],
-      "supporting_datasets": ["GSE145780"],
+      "primary_datasets": ["GSE189539"],
+      "supporting_datasets": ["GSE145780", "HRA002091", "HRA007802"],
       "markers": ["CXCL9", "CXCL10", "NKG7", "GZMB", "LST1"],
       "signatures": ["TCMR_IFNG_CYTOTOXIC"],
       "current_evidence": [
-        "Single-cell liver transplant datasets are registered for rejection/stable graft comparisons.",
-        "Processed single-cell matrices and cell-type summaries are not built yet."
+        "GSE189539 provides a public filtered single-cell graft-liver count matrix with 58,243 cells from before-LT cold perfusion and after-LT portal reperfusion samples.",
+        "V1 exposes queryable marker evidence for EAD-associated immune niche genes including S100A12, GZMB, GZMK, NKG7, and related marker programs.",
+        "The GEO matrix does not expose a reusable cell-to-sample or cell-type metadata table, so this layer is marker-level evidence rather than a full cell-composition contrast."
       ],
       "next_validation": [
-        "Verify file-level accessibility and processed matrix availability.",
+        "Recover public cell metadata or author-processed annotations from Figshare/HCA before claiming cell-type proportions.",
         "Annotate CD8_TRM, myeloid, endothelial, B cell, and parenchymal compartments.",
-        "Link cell-type marker expression back to bulk rejection signatures."
+        "Link cell-type marker expression back to bulk rejection signatures and independent rejection single-cell cohorts."
       ],
       "omics_layers": ["single_cell"],
-      "readiness": "registered_not_processed"
+      "readiness": "single_cell_marker_matrix_ready"
     },
     {
       "use_case_id": "HOST_MICROBIOME_INFECTION_REJECTION",

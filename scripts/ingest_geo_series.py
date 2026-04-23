@@ -129,6 +129,25 @@ GEO_SERIES = {
         "sample_origin": "recipient_blood",
         "transplant_phase": "mixed_pre_post_transplant",
         "assay_modality": "bulk_rna",
+    },
+    "GSE189539": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE189nnn/GSE189539/matrix/GSE189539_series_matrix.txt.gz",
+        "characteristic_label_field": "condition",
+        "characteristic_label_map": {
+            "before lt": {
+                "original_label": "before LT",
+                "clinical_state": "cold_perfusion_before_lt",
+                "display_label": "Cold-perfused donor liver before transplantation",
+            },
+            "after lt": {
+                "original_label": "after LT",
+                "clinical_state": "portal_reperfusion_after_lt",
+                "display_label": "Liver graft after portal reperfusion",
+            },
+        },
+        "sample_origin": "graft_liver",
+        "transplant_phase": "intraoperative_pre_post_reperfusion",
+        "assay_modality": "single_cell_rna",
     }
 }
 

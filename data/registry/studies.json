@@ -141,6 +141,26 @@
       "keywords": ["blood", "pediatric", "monitoring", "RNA-seq"]
     },
     {
+      "accession": "GSE189539",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189539",
+      "title": "Single-cell landscape of human liver transplantation and early allograft dysfunction",
+      "summary": "Human graft liver single-cell RNA-seq dataset sampled before liver transplantation during cold perfusion and after portal reperfusion. V1 exposes marker-level evidence across the public filtered matrix; cell-to-sample and cell-type metadata are not available in the GEO matrix.",
+      "organism": "Homo sapiens",
+      "omics_modalities": ["single_cell_rna"],
+      "sample_origins": ["graft_liver"],
+      "transplant_phases": ["intraoperative_pre_post_reperfusion"],
+      "clinical_states": ["cold_perfusion_before_lt", "portal_reperfusion_after_lt"],
+      "public_access": "open",
+      "curation_status": "curated_metadata",
+      "processing_status": "single_cell_marker_evidence_ready",
+      "qc_status": "metadata_qc_pass_marker_matrix_qc_pass_cell_metadata_unavailable",
+      "featured_genes": ["S100A12", "GZMB", "GZMK", "NKG7", "ALB"],
+      "featured_cell_types": ["MAIT_cell", "NK_cell", "neutrophil", "hepatocyte", "endothelial_cell"],
+      "featured_pathways": ["early_allograft_dysfunction", "cytotoxicity", "neutrophil_inflammation"],
+      "keywords": ["single-cell", "liver transplant", "early allograft dysfunction", "portal reperfusion", "immune niche"]
+    },
+    {
       "accession": "DFI_MICROBIOME_LT_2024",
       "repository": "GitHub/Zenodo",
       "repository_url": "https://github.com/DFI-Bioinformatics/Microbiome_Liver_Transplant",

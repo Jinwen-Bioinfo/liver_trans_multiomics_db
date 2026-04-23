@@ -35,10 +35,13 @@
         "Which immune, stromal, endothelial, biliary, and parenchymal compartments drive bulk rejection signals?",
         "Do CD8 tissue-resident memory, myeloid, B cell, or endothelial programs explain rejection heterogeneity?"
       ],
-      "registered_accessions": ["HRA002091", "HRA007802"],
-      "processed_accessions": [],
-      "current_artifacts": [],
-      "readiness": "registered_not_processed"
+      "registered_accessions": ["HRA002091", "HRA007802", "GSE189539"],
+      "processed_accessions": ["GSE189539"],
+      "current_artifacts": [
+        "data/processed/GSE189539/single_cell_marker_summary.json",
+        "data/processed/GSE189539/single_cell_module_summary.json"
+      ],
+      "readiness": "marker_matrix_evidence_ready"
     },
     {
       "layer_id": "proteome",

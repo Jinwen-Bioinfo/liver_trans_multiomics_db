@@ -1,0 +1,33 @@
+{
+  "study_accession": "GSE189539",
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE189nnn/GSE189539/matrix/GSE189539_series_matrix.txt.gz",
+  "raw_path": "data/raw/geo/GSE189539/GSE189539_series_matrix.txt.gz",
+  "source_file": {
+    "path": "data/raw/geo/GSE189539/GSE189539_series_matrix.txt.gz",
+    "bytes": 3528,
+    "sha256": "0ad9829f5a311f7ac8dc227cafd0c0373acae1d1782c780f7cb04e6ab2960b3b"
+  },
+  "generated_at_utc": "2026-04-23T10:04:56.565356+00:00",
+  "parser": "scripts/ingest_geo_series.py",
+  "standardization_rules": {
+    "cluster_field": null,
+    "cluster_map": null,
+    "characteristic_label_field": "condition",
+    "characteristic_label_map": {
+      "before lt": {
+        "original_label": "before LT",
+        "clinical_state": "cold_perfusion_before_lt",
+        "display_label": "Cold-perfused donor liver before transplantation"
+      },
+      "after lt": {
+        "original_label": "after LT",
+        "clinical_state": "portal_reperfusion_after_lt",
+        "display_label": "Liver graft after portal reperfusion"
+      }
+    },
+    "title_label_rules": null
+  },
+  "series_title": "A single-cell landscape of human liver transplantation reveals a pathogenic immune niche associated with early allograft dysfunction",
+  "series_pubmed_id": [],
+  "series_summary": "Liver transplantation (LT) is the standard therapy for individuals afflicted with end-stage liver disease. Despite notable advancements in LT technology during recent decades, the incidence of early allograft dysfunction (EAD) remains a critical concern, exacerbating the current organ shortage and detrimentally affecting the prognosis of recipients. Unfortunately, the perplexing hepatic heterogeneity has impeded our comprehension of the cellular traits and molecular events that contribute to EAD. Herein, we constructed the pioneering single-cell transcriptomic landscape of human transplanted livers derived from non-EAD and EAD patients, with 12 liver samples from 7 donors collected at the stages of cold perfusion and portal reperfusion. By comparing 75,231 cells of non-EAD and EAD patients, we identified an EAD-associated immune niche comprising MAIT, GZMB+ GZMK+ NK cells, and S100A12+ neutrophils, which were significantly elevated in EAD patients. Moreover, we verified this immune niche and its association with EAD occurrence in two independent cohorts. Our findings clarified the cellular characteristics of transplanted livers and the EAD-associated pathogenic immune niche at the single-cell level, offering valuable insights into the EAD onset. The updated data see FigShare (https://figshare.com/articles/dataset/24521662)"
+}

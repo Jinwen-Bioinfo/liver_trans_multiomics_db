@@ -17,7 +17,7 @@ The resource asks:
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | GSE243887 donor liver RNA-seq processed with accepted-vs-rejected log2CPM gene contrasts |
 | Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC tolerance contrast and GSE200340 pediatric blood time-point RNA-seq are processed |
-| Single-cell mechanism | Which cell types drive rejection markers and immune activation? | Datasets registered |
+| Single-cell mechanism | Which cell types drive rejection markers and immune activation? | GSE189539 single-cell graft-liver matrix processed to marker/module evidence; cell metadata still needed for cell-type proportions |
 | Gut-liver microbiome/metabolome | Do microbial taxa and fecal metabolites associate with postoperative infection risk or immune dysregulation? | DFI_MICROBIOME_LT_2024 processed to feature-level metabolite and taxon summaries |
 | Immunosuppression pharmacogenomics | How do drug exposure and pharmacogenetic context relate to graft molecular state? | Metadata model ready; data discovery pending |
 
@@ -29,8 +29,8 @@ The resource asks:
 2. **Fibrosis molecular evidence**
    Use GSE145780 to evaluate an ECM marker panel and fibrosis contrasts, with an explicit caveat that the fibrosis group has only eight samples.
 
-3. **Future single-cell interpretation**
-   Use registered single-cell datasets to map bulk rejection markers to cell types such as CD8_TRM, myeloid cells, endothelial cells, and B cells.
+3. **Single-cell marker interpretation**
+   Use GSE189539 to expose searchable marker evidence across a public 58,243-cell graft-liver matrix for EAD-associated immune niche genes such as S100A12, GZMB, GZMK, and NKG7. This is deliberately presented as marker-level evidence because the GEO matrix does not include reusable cell-to-sample or cell-type metadata; cell-type proportion claims require recovered annotations or a full reanalysis.
 
 4. **Blood immune monitoring**
    Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. Use GSE200340 to expose pediatric blood/PBMC RNA-seq evidence across pre-transplant, early post-transplant, and late post-transplant time points. These are intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
@@ -57,5 +57,6 @@ The resource asks:
 - Public data can be curated into transplant-specific states.
 - Molecular evidence can be queried by gene, signature, dataset, clinical state, and omics layer.
 - Non-transcriptomic liver transplant features can be queried by metabolite or taxon when public reusable tables exist.
+- Single-cell marker evidence can be queried where public count matrices are available, with visible caveats when cell metadata are missing.
 - Each derived result preserves accession provenance and processing rules.
 - The resource offers a transplant-centered layer that generic repositories do not provide.

@@ -18,7 +18,9 @@ from app.data_loader import (
     load_study_sample_summary,
     load_study_samples,
     get_feature_expression,
+    get_feature_single_cell,
     get_signature_score,
+    get_single_cell_modules,
     get_use_case,
     get_multiomics_source,
     get_omics_layer,
@@ -236,6 +238,19 @@ def dataset_triage_detail(accession: str) -> dict[str, object]:
 @app.get("/api/features/{symbol}/expression")
 def feature_expression(symbol: str) -> dict[str, object]:
     return get_feature_expression(symbol)
+
+
+@app.get("/api/features/{symbol}/single-cell")
+def feature_single_cell(symbol: str) -> dict[str, object]:
+    return get_feature_single_cell(symbol)
+
+
+@app.get("/api/studies/{accession}/single-cell/modules")
+def study_single_cell_modules(accession: str) -> dict[str, object]:
+    modules = get_single_cell_modules(accession)
+    if modules is None:
+        raise HTTPException(status_code=404, detail="Single-cell module evidence is not available")
+    return modules
 
 
 @app.get("/api/signatures")

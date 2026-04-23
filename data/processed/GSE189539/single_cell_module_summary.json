@@ -1,0 +1,178 @@
+{
+  "assay_modality": "single_cell_rna",
+  "cell_count": 58243,
+  "cell_to_sample_mapping_status": "unavailable_in_geo_filtered_matrix",
+  "generated_at_utc": "2026-04-23T10:15:53.539915+00:00",
+  "module_count": 6,
+  "modules": {
+    "EAD_PATHOGENIC_IMMUNE_NICHE": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "S100A12",
+        "S100A8",
+        "S100A9",
+        "GZMB",
+        "GZMK",
+        "NKG7",
+        "GNLY",
+        "KLRB1",
+        "TRAV1-2"
+      ],
+      "genes": [
+        "S100A12",
+        "S100A8",
+        "S100A9",
+        "GZMB",
+        "GZMK",
+        "NKG7",
+        "GNLY",
+        "KLRB1",
+        "TRAV1-2"
+      ],
+      "interpretation": "Marker program drawn from the reported MAIT, GZMB+GZMK+ NK, and S100A12+ neutrophil niche.",
+      "label": "Early allograft dysfunction immune niche markers",
+      "module_id": "EAD_PATHOGENIC_IMMUNE_NICHE",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 9,
+        "cell_count": 58243,
+        "mean_module_score": 0.6809
+      }
+    },
+    "ENDOTHELIAL_ACTIVATION": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "PECAM1",
+        "VWF",
+        "KDR",
+        "SELE",
+        "ICAM1"
+      ],
+      "genes": [
+        "PECAM1",
+        "VWF",
+        "KDR",
+        "SELE",
+        "ICAM1"
+      ],
+      "interpretation": "Endothelial and vascular activation marker program.",
+      "label": "Endothelial activation",
+      "module_id": "ENDOTHELIAL_ACTIVATION",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 5,
+        "cell_count": 58243,
+        "mean_module_score": 0.081
+      }
+    },
+    "HEPATOCYTE_FUNCTION": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "ALB",
+        "APOA1",
+        "APOB",
+        "CYP3A4",
+        "TTR"
+      ],
+      "genes": [
+        "ALB",
+        "APOA1",
+        "APOB",
+        "CYP3A4",
+        "TTR"
+      ],
+      "interpretation": "Parenchymal liver function marker program.",
+      "label": "Hepatocyte function",
+      "module_id": "HEPATOCYTE_FUNCTION",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 5,
+        "cell_count": 58243,
+        "mean_module_score": 0.0189
+      }
+    },
+    "MYELOID_MONOCYTE": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "LST1",
+        "LYZ",
+        "FCGR3A",
+        "S100A8",
+        "S100A9"
+      ],
+      "genes": [
+        "LST1",
+        "LYZ",
+        "FCGR3A",
+        "S100A8",
+        "S100A9"
+      ],
+      "interpretation": "Monocyte/myeloid inflammatory marker program.",
+      "label": "Myeloid and monocyte markers",
+      "module_id": "MYELOID_MONOCYTE",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 5,
+        "cell_count": 58243,
+        "mean_module_score": 0.5354
+      }
+    },
+    "NEUTROPHIL_INFLAMMATION": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "S100A8",
+        "S100A9",
+        "S100A12",
+        "FCGR3B",
+        "CSF3R"
+      ],
+      "genes": [
+        "S100A8",
+        "S100A9",
+        "S100A12",
+        "FCGR3B",
+        "CSF3R"
+      ],
+      "interpretation": "Neutrophil-associated inflammatory marker program.",
+      "label": "Neutrophil inflammation",
+      "module_id": "NEUTROPHIL_INFLAMMATION",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 5,
+        "cell_count": 58243,
+        "mean_module_score": 0.4704
+      }
+    },
+    "T_NK_CYTOTOXICITY": {
+      "assay_scale": "mean marker-level log1p UMI per cell",
+      "available_genes": [
+        "NKG7",
+        "GNLY",
+        "GZMB",
+        "GZMK",
+        "PRF1",
+        "IFNG"
+      ],
+      "genes": [
+        "NKG7",
+        "GNLY",
+        "GZMB",
+        "GZMK",
+        "PRF1",
+        "IFNG"
+      ],
+      "interpretation": "Cytotoxic lymphocyte marker program for graft immune activation.",
+      "label": "T/NK cytotoxicity",
+      "module_id": "T_NK_CYTOTOXICITY",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "available_gene_count": 6,
+        "cell_count": 58243,
+        "mean_module_score": 0.7466
+      }
+    }
+  },
+  "sample_count": 8,
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE189nnn/GSE189539/suppl/GSE189539_Filtered_gene_counts_matrix.csv.gz",
+  "study_accession": "GSE189539"
+}

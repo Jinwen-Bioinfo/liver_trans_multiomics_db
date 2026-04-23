@@ -1,0 +1,327 @@
+{
+  "assay_modality": "single_cell_rna",
+  "assay_scale": "mean_log1p_umi_per_cell",
+  "cell_count": 58243,
+  "cell_to_sample_mapping_status": "unavailable_in_geo_filtered_matrix",
+  "contrast_method": "Not computed because the GEO filtered matrix does not expose a reusable cell-to-sample or cell-type metadata table.",
+  "generated_at_utc": "2026-04-23T10:15:53.539915+00:00",
+  "marker_gene_count": 26,
+  "markers": {
+    "ALB": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "ALB",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 3115,
+        "mean_log1p_umi_per_cell": 0.0558,
+        "mean_umi_per_cell": 1.0384,
+        "pct_cells_detected": 5.348
+      }
+    },
+    "APOA1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "APOA1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 1090,
+        "mean_log1p_umi_per_cell": 0.0189,
+        "mean_umi_per_cell": 0.22,
+        "pct_cells_detected": 1.871
+      }
+    },
+    "APOB": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "APOB",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 394,
+        "mean_log1p_umi_per_cell": 0.0084,
+        "mean_umi_per_cell": 0.0401,
+        "pct_cells_detected": 0.676
+      }
+    },
+    "CSF3R": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "CSF3R",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 7720,
+        "mean_log1p_umi_per_cell": 0.1435,
+        "mean_umi_per_cell": 0.2991,
+        "pct_cells_detected": 13.255
+      }
+    },
+    "CYP3A4": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "CYP3A4",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 39,
+        "mean_log1p_umi_per_cell": 0.001,
+        "mean_umi_per_cell": 0.0047,
+        "pct_cells_detected": 0.067
+      }
+    },
+    "FCGR3A": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "FCGR3A",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 16094,
+        "mean_log1p_umi_per_cell": 0.3984,
+        "mean_umi_per_cell": 1.1975,
+        "pct_cells_detected": 27.633
+      }
+    },
+    "FCGR3B": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "FCGR3B",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 7131,
+        "mean_log1p_umi_per_cell": 0.134,
+        "mean_umi_per_cell": 0.2854,
+        "pct_cells_detected": 12.244
+      }
+    },
+    "GNLY": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "GNLY",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 13293,
+        "mean_log1p_umi_per_cell": 0.5282,
+        "mean_umi_per_cell": 4.162,
+        "pct_cells_detected": 22.823
+      }
+    },
+    "GZMB": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "GZMB",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 19184,
+        "mean_log1p_umi_per_cell": 0.5973,
+        "mean_umi_per_cell": 2.8481,
+        "pct_cells_detected": 32.938
+      }
+    },
+    "GZMK": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "GZMK",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 21768,
+        "mean_log1p_umi_per_cell": 0.5831,
+        "mean_umi_per_cell": 1.8096,
+        "pct_cells_detected": 37.374
+      }
+    },
+    "ICAM1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "ICAM1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 14892,
+        "mean_log1p_umi_per_cell": 0.2516,
+        "mean_umi_per_cell": 0.4988,
+        "pct_cells_detected": 25.569
+      }
+    },
+    "IFNG": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "IFNG",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 17005,
+        "mean_log1p_umi_per_cell": 0.4224,
+        "mean_umi_per_cell": 1.7627,
+        "pct_cells_detected": 29.197
+      }
+    },
+    "KDR": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "KDR",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 1627,
+        "mean_log1p_umi_per_cell": 0.0281,
+        "mean_umi_per_cell": 0.057,
+        "pct_cells_detected": 2.793
+      }
+    },
+    "KLRB1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "KLRB1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 26422,
+        "mean_log1p_umi_per_cell": 0.8232,
+        "mean_umi_per_cell": 3.2832,
+        "pct_cells_detected": 45.365
+      }
+    },
+    "LST1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "LST1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 10888,
+        "mean_log1p_umi_per_cell": 0.2003,
+        "mean_umi_per_cell": 0.5116,
+        "pct_cells_detected": 18.694
+      }
+    },
+    "LYZ": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "LYZ",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 9707,
+        "mean_log1p_umi_per_cell": 0.2864,
+        "mean_umi_per_cell": 2.4196,
+        "pct_cells_detected": 16.666
+      }
+    },
+    "NKG7": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "NKG7",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 39227,
+        "mean_log1p_umi_per_cell": 1.5196,
+        "mean_umi_per_cell": 9.5039,
+        "pct_cells_detected": 67.351
+      }
+    },
+    "PECAM1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "PECAM1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 7737,
+        "mean_log1p_umi_per_cell": 0.1182,
+        "mean_umi_per_cell": 0.2395,
+        "pct_cells_detected": 13.284
+      }
+    },
+    "PRF1": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "PRF1",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 28610,
+        "mean_log1p_umi_per_cell": 0.8291,
+        "mean_umi_per_cell": 2.9911,
+        "pct_cells_detected": 49.122
+      }
+    },
+    "S100A12": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "S100A12",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 8252,
+        "mean_log1p_umi_per_cell": 0.2825,
+        "mean_umi_per_cell": 1.906,
+        "pct_cells_detected": 14.168
+      }
+    },
+    "S100A8": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "S100A8",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 23110,
+        "mean_log1p_umi_per_cell": 0.9634,
+        "mean_umi_per_cell": 30.8099,
+        "pct_cells_detected": 39.679
+      }
+    },
+    "S100A9": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "S100A9",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 22826,
+        "mean_log1p_umi_per_cell": 0.8285,
+        "mean_umi_per_cell": 13.3288,
+        "pct_cells_detected": 39.191
+      }
+    },
+    "SELE": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "SELE",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 40,
+        "mean_log1p_umi_per_cell": 0.0009,
+        "mean_umi_per_cell": 0.003,
+        "pct_cells_detected": 0.069
+      }
+    },
+    "TRAV1-2": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "TRAV1-2",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 154,
+        "mean_log1p_umi_per_cell": 0.0019,
+        "mean_umi_per_cell": 0.0028,
+        "pct_cells_detected": 0.264
+      }
+    },
+    "TTR": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "TTR",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 410,
+        "mean_log1p_umi_per_cell": 0.0102,
+        "mean_umi_per_cell": 0.1033,
+        "pct_cells_detected": 0.704
+      }
+    },
+    "VWF": {
+      "assay_scale": "mean_log1p_umi_per_cell",
+      "gene_symbol": "VWF",
+      "statistical_contrasts": {},
+      "whole_matrix_summary": {
+        "cell_count": 58243,
+        "detected_cell_count": 302,
+        "mean_log1p_umi_per_cell": 0.0064,
+        "mean_umi_per_cell": 0.0221,
+        "pct_cells_detected": 0.519
+      }
+    }
+  },
+  "observed_gene_count": 19988,
+  "sample_count": 8,
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE189nnn/GSE189539/suppl/GSE189539_Filtered_gene_counts_matrix.csv.gz",
+  "study_accession": "GSE189539"
+}

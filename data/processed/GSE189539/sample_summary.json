@@ -1,0 +1,14 @@
+{
+  "assay_modality": "single_cell_rna",
+  "by_clinical_state": {
+    "cold_perfusion_before_lt": 4,
+    "portal_reperfusion_after_lt": 4
+  },
+  "cell_count": 58243,
+  "cell_count_by_clinical_state": {},
+  "cell_count_by_sample": {},
+  "cell_to_sample_mapping_status": "unavailable_in_geo_filtered_matrix",
+  "generated_at_utc": "2026-04-23T10:15:53.539915+00:00",
+  "sample_count": 8,
+  "study_accession": "GSE189539"
+}
