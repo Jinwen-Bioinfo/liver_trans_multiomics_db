@@ -23,10 +23,12 @@ ROOT = Path(__file__).resolve().parents[1]
 NORMALIZED_URLS = {
     "GSE145780": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/suppl/GSE145780_normalized_data_with_all_controls.txt.gz",
     "GSE13440": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
+    "GSE11881": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE11nnn/GSE11881/matrix/GSE11881_series_matrix.txt.gz",
 }
 PLATFORM_URLS = {
     "GPL15207": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
     "GPL1291": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL1291&targ=self&form=text&view=data",
+    "GPL570": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570&targ=self&form=text&view=data",
 }
 STUDY_CONFIG = {
     "GSE145780": {
@@ -56,6 +58,18 @@ STUDY_CONFIG = {
         "limitations": [
             "GSE13440 compares ACR-predominant biopsies against recurrent hepatitis C without ACR, so rejection signals are interpreted in the recurrent-HCV context.",
             "The source matrix is a GEO series-matrix expression table from a two-color microarray platform; values are analyzed within-study only.",
+        ],
+    },
+    "GSE11881": {
+        "platform": "GPL570",
+        "matrix_filename": "GSE11881_series_matrix.txt.gz",
+        "matrix_source": "series_matrix_table",
+        "sample_match": "geo_accession",
+        "assay_scale": "source-normalized Affymetrix microarray intensity",
+        "contrasts": [("operational_tolerance", "non_tolerant")],
+        "limitations": [
+            "GSE11881 is a peripheral blood PBMC study, so signals should be interpreted as non-invasive immune monitoring rather than graft tissue biology.",
+            "The source matrix is analyzed within-study only; cross-platform harmonization with graft biopsy arrays is not implemented yet.",
         ],
     },
 }
@@ -110,6 +124,15 @@ def summarize_values(values: list[float]) -> dict[str, float | int]:
         "min": round(min(clean), 4),
         "max": round(max(clean), 4),
     }
+
+
+def safe_log2_fold_change(delta: float, assay_scale: str) -> float:
+    if math.isnan(delta) or "log" not in assay_scale.lower():
+        return math.nan
+    try:
+        return round(math.pow(2, delta), 4)
+    except OverflowError:
+        return math.nan
 
 
 def first_token(value: str, separator: str = " /// ") -> str | None:
@@ -354,8 +377,10 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
                 "n_control": int(len(control_clean)),
                 "mean_case": round(mean_case, 4) if not math.isnan(mean_case) else math.nan,
                 "mean_control": round(mean_control, 4) if not math.isnan(mean_control) else math.nan,
+                "mean_difference": round(delta, 4) if not math.isnan(delta) else math.nan,
+                "effect_scale": config["assay_scale"],
                 "mean_difference_log2_scale": round(delta, 4) if not math.isnan(delta) else math.nan,
-                "fold_change_approx": round(math.pow(2, delta), 4) if not math.isnan(delta) else math.nan,
+                "fold_change_approx": safe_log2_fold_change(delta, config["assay_scale"]),
                 "welch_t": round(test["statistic"], 4) if not math.isnan(test["statistic"]) else math.nan,
                 "p_value": test["p_value"],
             }

@@ -99,6 +99,8 @@ Every dataset must preserve:
 - 19,460 gene-level summaries
 - Welch t-test contrasts with Benjamini-Hochberg FDR
 - signed within-study z-score signature scoring
+- independent GSE13440 ACR-vs-recurrent-HCV graft-biopsy expression evidence
+- GSE11881 PBMC operational-tolerance expression evidence
 - registered external fecal metabolome/microbiome source for liver transplant postoperative infection
 - registered human liver cell proteome reference source
 

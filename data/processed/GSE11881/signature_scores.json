@@ -1,0 +1,396 @@
+{
+  "study_accession": "GSE11881",
+  "generated_at_utc": "2026-04-23T08:13:14.137345+00:00",
+  "method": "Signed within-study z-score signature scoring with explicit missing-gene reporting.",
+  "signatures": {
+    "TCMR_IFNG_CYTOTOXIC": {
+      "signature_id": "TCMR_IFNG_CYTOTOXIC",
+      "name": "TCMR IFN-gamma cytotoxic signature",
+      "description": "A compact demonstration signature for T cell-mediated rejection, combining IFN-gamma chemokines and cytotoxic T/NK markers.",
+      "genes": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB"
+      ],
+      "directions": {
+        "CXCL9": 1,
+        "CXCL10": 1,
+        "IFNG": 1,
+        "GZMB": 1
+      },
+      "expected_high_state": "TCMR",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE11881",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 17,
+      "gene_count_requested": 4,
+      "gene_count_observed": 4,
+      "genes_observed": [
+        "CXCL10",
+        "CXCL9",
+        "GZMB",
+        "IFNG"
+      ],
+      "missing_genes": [],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "non_tolerant": {
+          "n": 8,
+          "mean": -0.3586,
+          "median": -0.3604,
+          "sd": 0.3872,
+          "min": -0.918,
+          "max": 0.3902
+        },
+        "operational_tolerance": {
+          "n": 9,
+          "mean": 0.3188,
+          "median": 0.3472,
+          "sd": 0.4108,
+          "min": -0.2817,
+          "max": 1.0134
+        }
+      },
+      "best_state_by_mean": "operational_tolerance",
+      "expected_pattern_observed": false,
+      "sample_scores": [
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_1",
+          "sample_key": "GSM124575",
+          "sample_accession": "GSM124575",
+          "clinical_state": "non_tolerant",
+          "score": -0.4189,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_2",
+          "sample_key": "GSM124646",
+          "sample_accession": "GSM124646",
+          "clinical_state": "operational_tolerance",
+          "score": 1.0134,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_7",
+          "sample_key": "GSM124648",
+          "sample_accession": "GSM124648",
+          "clinical_state": "operational_tolerance",
+          "score": 0.3472,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_9",
+          "sample_key": "GSM124675",
+          "sample_accession": "GSM124675",
+          "clinical_state": "non_tolerant",
+          "score": 0.3902,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_10",
+          "sample_key": "GSM124748",
+          "sample_accession": "GSM124748",
+          "clinical_state": "non_tolerant",
+          "score": -0.1812,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_14",
+          "sample_key": "GSM124753",
+          "sample_accession": "GSM124753",
+          "clinical_state": "operational_tolerance",
+          "score": 0.4824,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_16",
+          "sample_key": "GSM124833",
+          "sample_accession": "GSM124833",
+          "clinical_state": "non_tolerant",
+          "score": -0.3409,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_17",
+          "sample_key": "GSM124834",
+          "sample_accession": "GSM124834",
+          "clinical_state": "operational_tolerance",
+          "score": 0.1787,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_18",
+          "sample_key": "GSM124836",
+          "sample_accession": "GSM124836",
+          "clinical_state": "operational_tolerance",
+          "score": 0.3931,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_19",
+          "sample_key": "GSM124838",
+          "sample_accession": "GSM124838",
+          "clinical_state": "non_tolerant",
+          "score": -0.3799,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_20",
+          "sample_key": "GSM124840",
+          "sample_accession": "GSM124840",
+          "clinical_state": "non_tolerant",
+          "score": -0.7269,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_21",
+          "sample_key": "GSM124842",
+          "sample_accession": "GSM124842",
+          "clinical_state": "non_tolerant",
+          "score": -0.918,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_25",
+          "sample_key": "GSM124845",
+          "sample_accession": "GSM124845",
+          "clinical_state": "operational_tolerance",
+          "score": -0.2817,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_26",
+          "sample_key": "GSM124850",
+          "sample_accession": "GSM124850",
+          "clinical_state": "operational_tolerance",
+          "score": -0.0359,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_27",
+          "sample_key": "GSM124851",
+          "sample_accession": "GSM124851",
+          "clinical_state": "operational_tolerance",
+          "score": -0.0138,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_28",
+          "sample_key": "GSM124853",
+          "sample_accession": "GSM124853",
+          "clinical_state": "operational_tolerance",
+          "score": 0.7855,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_15",
+          "sample_key": "GSM124863",
+          "sample_accession": "GSM124863",
+          "clinical_state": "non_tolerant",
+          "score": -0.2934,
+          "genes_observed": 4
+        }
+      ]
+    },
+    "FIBROSIS_ECM": {
+      "signature_id": "FIBROSIS_ECM",
+      "name": "Fibrosis extracellular matrix signature",
+      "description": "A compact ECM/fibrosis marker panel for graft fibrosis exploration; not a clinical classifier.",
+      "genes": [
+        "COL1A1",
+        "COL3A1",
+        "ACTA2",
+        "TAGLN",
+        "LUM",
+        "DCN",
+        "TGFBI"
+      ],
+      "directions": {
+        "COL1A1": 1,
+        "COL3A1": 1,
+        "ACTA2": 1,
+        "TAGLN": 1,
+        "LUM": 1,
+        "DCN": 1,
+        "TGFBI": 1
+      },
+      "expected_high_state": "fibrosis",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE11881",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 17,
+      "gene_count_requested": 7,
+      "gene_count_observed": 7,
+      "genes_observed": [
+        "ACTA2",
+        "COL1A1",
+        "COL3A1",
+        "DCN",
+        "LUM",
+        "TAGLN",
+        "TGFBI"
+      ],
+      "missing_genes": [],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "non_tolerant": {
+          "n": 8,
+          "mean": -0.1864,
+          "median": -0.3817,
+          "sd": 0.6412,
+          "min": -0.8017,
+          "max": 1.1308
+        },
+        "operational_tolerance": {
+          "n": 9,
+          "mean": 0.1657,
+          "median": 0.0752,
+          "sd": 0.4248,
+          "min": -0.6722,
+          "max": 0.8236
+        }
+      },
+      "best_state_by_mean": "operational_tolerance",
+      "expected_pattern_observed": false,
+      "sample_scores": [
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_1",
+          "sample_key": "GSM124575",
+          "sample_accession": "GSM124575",
+          "clinical_state": "non_tolerant",
+          "score": -0.8017,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_2",
+          "sample_key": "GSM124646",
+          "sample_accession": "GSM124646",
+          "clinical_state": "operational_tolerance",
+          "score": 0.0752,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_7",
+          "sample_key": "GSM124648",
+          "sample_accession": "GSM124648",
+          "clinical_state": "operational_tolerance",
+          "score": 0.0429,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_9",
+          "sample_key": "GSM124675",
+          "sample_accession": "GSM124675",
+          "clinical_state": "non_tolerant",
+          "score": -0.6806,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_10",
+          "sample_key": "GSM124748",
+          "sample_accession": "GSM124748",
+          "clinical_state": "non_tolerant",
+          "score": 0.1862,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_14",
+          "sample_key": "GSM124753",
+          "sample_accession": "GSM124753",
+          "clinical_state": "operational_tolerance",
+          "score": 0.0048,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_16",
+          "sample_key": "GSM124833",
+          "sample_accession": "GSM124833",
+          "clinical_state": "non_tolerant",
+          "score": 0.0592,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_17",
+          "sample_key": "GSM124834",
+          "sample_accession": "GSM124834",
+          "clinical_state": "operational_tolerance",
+          "score": 0.1322,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_18",
+          "sample_key": "GSM124836",
+          "sample_accession": "GSM124836",
+          "clinical_state": "operational_tolerance",
+          "score": -0.6722,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_19",
+          "sample_key": "GSM124838",
+          "sample_accession": "GSM124838",
+          "clinical_state": "non_tolerant",
+          "score": -0.2162,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_20",
+          "sample_key": "GSM124840",
+          "sample_accession": "GSM124840",
+          "clinical_state": "non_tolerant",
+          "score": -0.5472,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_VHC_21",
+          "sample_key": "GSM124842",
+          "sample_accession": "GSM124842",
+          "clinical_state": "non_tolerant",
+          "score": -0.622,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_25",
+          "sample_key": "GSM124845",
+          "sample_accession": "GSM124845",
+          "clinical_state": "operational_tolerance",
+          "score": 0.5885,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_VHC_26",
+          "sample_key": "GSM124850",
+          "sample_accession": "GSM124850",
+          "clinical_state": "operational_tolerance",
+          "score": 0.4299,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_27",
+          "sample_key": "GSM124851",
+          "sample_accession": "GSM124851",
+          "clinical_state": "operational_tolerance",
+          "score": 0.0668,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Tolerant PBMC_TOL_28",
+          "sample_key": "GSM124853",
+          "sample_accession": "GSM124853",
+          "clinical_state": "operational_tolerance",
+          "score": 0.8236,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "Non-tolerant PBMCs_NoTOL_15",
+          "sample_key": "GSM124863",
+          "sample_accession": "GSM124863",
+          "clinical_state": "non_tolerant",
+          "score": 1.1308,
+          "genes_observed": 7
+        }
+      ]
+    }
+  }
+}

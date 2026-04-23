@@ -16,7 +16,7 @@ The resource asks:
 | Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; injury pathway/proteome/metabolome layers pending |
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | Dataset registered |
-| Blood monitoring | Can blood signatures support non-invasive graft monitoring? | Dataset registered |
+| Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC operational-tolerance expression contrast is processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | Datasets registered |
 | Gut-liver microbiome | Do microbial taxa/functions associate with infection, rejection-like inflammation, or immunosuppression? | Omics layer registered; public dataset discovery pending |
 | Immunosuppression pharmacogenomics | How do drug exposure and pharmacogenetic context relate to graft molecular state? | Metadata model ready; data discovery pending |
@@ -32,7 +32,10 @@ The resource asks:
 3. **Future single-cell interpretation**
    Use registered single-cell datasets to map bulk rejection markers to cell types such as CD8_TRM, myeloid cells, endothelial cells, and B cells.
 
-4. **Non-transcriptomic evidence expansion**
+4. **Blood immune monitoring**
+   Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. This is intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
+
+5. **Non-transcriptomic evidence expansion**
    Treat proteome, metabolome, microbiome, and immunogenetics as first-class omics layers. They should remain discovery/registered layers until public datasets are actually ingested and linked to artifacts.
 
 ## What This Database Should Not Claim Yet

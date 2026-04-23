@@ -170,6 +170,29 @@ def test_independent_rejection_dataset_downloads_expression_artifacts() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_operational_tolerance_dataset_has_blood_expression_evidence() -> None:
+    response = client.get("/api/features/FOXP3/expression")
+    assert response.status_code == 200
+    payload = response.json()
+    accessions = {item["study_accession"] for item in payload["expression_evidence"]}
+    assert "GSE11881" in accessions
+    evidence = next(item for item in payload["expression_evidence"] if item["study_accession"] == "GSE11881")
+    contrast = evidence["statistical_contrasts"]["operational_tolerance_vs_non_tolerant"]
+    assert contrast["case_state"] == "operational_tolerance"
+    assert contrast["control_state"] == "non_tolerant"
+    assert contrast["effect_scale"] == "source-normalized Affymetrix microarray intensity"
+    assert contrast["fold_change_approx"] is None
+
+
+def test_operational_tolerance_dataset_downloads_expression_artifacts() -> None:
+    response = client.get("/api/studies/GSE11881/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "gene_expression_summary" in artifacts
+    assert "differential_expression" in artifacts
+    assert "signature_scores" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200

@@ -1,0 +1,47 @@
+{
+  "study_accession": "GSE11881",
+  "generated_at_utc": "2026-04-23T08:13:13.811334+00:00",
+  "parser": "scripts/build_gene_evidence.py",
+  "processing_code_version": "full-platform-gene-expression-v2",
+  "source_files": {
+    "normalized_expression": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE11nnn/GSE11881/matrix/GSE11881_series_matrix.txt.gz",
+      "path": "data/raw/geo/GSE11881/GSE11881_series_matrix.txt.gz",
+      "bytes": 1775046,
+      "sha256": "6be853905d8e4de5d4457a37fb7b6e9a8da3bb5b2bdf099b0f6e263e0d2ba86e"
+    },
+    "platform_annotation": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570&targ=self&form=text&view=data",
+      "path": "data/raw/geo/GPL570/GPL570_platform_table.txt",
+      "bytes": 79501528,
+      "sha256": "ebb6df22d8e0b00a5029151329e5ba37f4dbad54a1866c7469b22b2c9dd3394b"
+    }
+  },
+  "outputs": [
+    {
+      "path": "data/processed/GSE11881/gene_expression_summary.json",
+      "bytes": 38373683,
+      "sha256": "408df6ca44f1da8441bfa5932846587ac54a6b3d642aea0398f8d0ca1418ce6a"
+    },
+    {
+      "path": "data/processed/GSE11881/gene_sample_values.json",
+      "bytes": 7032235,
+      "sha256": "aa3648a72cda786571fafa19beb1d4820fd2b90c6c5a60a64e5b0a792d32a959"
+    },
+    {
+      "path": "data/processed/GSE11881/differential_expression.json",
+      "bytes": 13962968,
+      "sha256": "17c9f4eb6fcfd22c69b6276ac2f12d214135db3a43f59608d7b6360d2c04f8d2"
+    }
+  ],
+  "methods": [
+    "GEO GPL570 platform table parsed from !platform_table_begin/!platform_table_end.",
+    "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
+    "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
+    "Welch two-sample t-test is computed on gene-level within-study expression values; Benjamini-Hochberg FDR is applied within each contrast."
+  ],
+  "limitations": [
+    "GSE11881 is a peripheral blood PBMC study, so signals should be interpreted as non-invasive immune monitoring rather than graft tissue biology.",
+    "The source matrix is analyzed within-study only; cross-platform harmonization with graft biopsy arrays is not implemented yet."
+  ]
+}
