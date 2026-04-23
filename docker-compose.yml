@@ -1,0 +1,25 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: docker.1ms.run/python:3.11-slim-bookworm
+        APT_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/debian
+        APT_SECURITY_MIRROR: https://mirrors.tuna.tsinghua.edu.cn/debian-security
+        PIP_INDEX_URL: https://pypi.tuna.tsinghua.edu.cn/simple
+    image: livertx-omicsdb:latest
+    container_name: livertx-omicsdb-api
+    ports:
+      - "8010:8000"
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+    restart: unless-stopped
+
+  worker:
+    image: livertx-omicsdb:latest
+    profiles: ["worker"]
+    volumes:
+      - ./data:/app/data
+      - ./artifacts:/app/artifacts
+    command: ["pytest", "-q"]

@@ -1,0 +1,40 @@
+{
+  "GPL15207": {
+    "CXCL9": {
+      "gene_symbol": "CXCL9",
+      "gene_title": "chemokine (C-X-C motif) ligand 9",
+      "probes": ["11719943_at"],
+      "source": "GEO GPL15207 platform table",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    },
+    "CXCL10": {
+      "gene_symbol": "CXCL10",
+      "gene_title": "chemokine (C-X-C motif) ligand 10",
+      "probes": ["11720298_at"],
+      "source": "GEO GPL15207 platform table",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    },
+    "GZMB": {
+      "gene_symbol": "GZMB",
+      "gene_title": "granzyme B",
+      "probes": ["11724900_a_at"],
+      "source": "GEO GPL15207 platform table",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    },
+    "IFNG": {
+      "gene_symbol": "IFNG",
+      "gene_title": "interferon, gamma",
+      "probes": ["11730947_at"],
+      "source": "GEO GPL15207 platform table",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    },
+    "COL1A1": {
+      "gene_symbol": "COL1A1",
+      "gene_title": "collagen, type I, alpha 1",
+      "probes": ["11715350_a_at", "11715351_at", "11715352_x_at"],
+      "source": "GEO GPL15207 platform table",
+      "source_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    }
+  }
+}
+

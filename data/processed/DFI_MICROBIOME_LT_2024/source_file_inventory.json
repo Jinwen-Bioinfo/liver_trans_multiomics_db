@@ -1,0 +1,127 @@
+{
+  "source_id": "DFI_MICROBIOME_LT_2024",
+  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "source_repository": "https://github.com/DFI-Bioinformatics/Microbiome_Liver_Transplant",
+  "raw_files": [
+    {
+      "filename": "demo_anon.rds",
+      "bytes": 2135,
+      "sha256": "838166375df83a8967ff89881c071d1f367ae6aad57ce7211c91dc11e1f2f557",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [107, 32],
+      "columns": ["patientID", "age", "race", "sex", "any_infection", "event_type", "Alcoholic Hepatitis", "Alcoholic Cirrhosis", "NAFLD/NASH", "Primary Sclerosing Cholangitis", "Primary Biliary Cirrhosis", "Acute Viral Hepatitis", "Chronic Hepatitis B", "Chronic Hepatitis C", "Autoimmune", "Wilson's Disease", "Alpha-1 Antitrypsin", "Hemachromatosis", "Congestive Hepatopathy", "Drug Induced Liver Injury or Toxin", "Budd Chiari", "Cryptogenic", "Malignancy", "Other", "Dialysis", "Pressers", "Mechanical Ventilation", "meld_transplant", "clin_stat_transplant", "event_type.factor", "clin_stat_transplant.factor", "infection_status"]
+    },
+    {
+      "filename": "first_samps_anon.rds",
+      "bytes": 619,
+      "sha256": "d69fc6a04b06d88dad7f1d8cae89435026499e7bcf469bd41194078a6c6470c0",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [107, 2],
+      "columns": ["patientID", "sampleID"]
+    },
+    {
+      "filename": "metab_qual_anonym.rds",
+      "bytes": 98909,
+      "sha256": "022a3a705f9ba3a0ccc8c1c8fb0187cb743e7d2240e776672ba6bc869eb221b8",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [18851, 4],
+      "columns": ["patientID", "sampleID", "compound", "mvalue"]
+    },
+    {
+      "filename": "metab_quant_anonym.rds",
+      "bytes": 12190,
+      "sha256": "0287dd8f7079507d8c57c86227b4537441980eefc708effcc8b3c29d99a826cb",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [3308, 4],
+      "columns": ["patientID", "sampleID", "compound", "mvalue"]
+    },
+    {
+      "filename": "metaphlan_anon.rds",
+      "bytes": 543707,
+      "sha256": "424fa6001071a16e850d2e2a9fab7a718fd26c1cf89960a3d43319833b959b36",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [13823, 20],
+      "columns": ["patientID", "sampleID", "#clade_name", "clade_taxid", "relative_abundance", "coverage", "estimated_number_of_reads_from_the_clade", "taxid", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "pctseqs", "Total", "genLab", "countType", "count"]
+    },
+    {
+      "filename": "metaphlan_peri_anon.rds",
+      "bytes": 293506,
+      "sha256": "502fd29c633f675c2efcba02d0b02d86b7064f5f4fc8c6c07224c951446c9743",
+      "class": ["grouped_df", "tbl_df", "tbl", "data.frame"],
+      "dim": [5159, 42],
+      "columns": ["patientID", "sampleID", "#clade_name", "clade_taxid", "relative_abundance", "coverage", "estimated_number_of_reads_from_the_clade", "taxid", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "pctseqs", "Total", "genLab", "countType", "count", "bact_infection_present", "eday", "infx_stool", "Staphylococcus aureus", "Escherichia coli", "Enterococcus faecalis", "Enterococcus avium", "Enterococcus faecium", "Klebsiella pneumoniae", "Candida tropicalis", "Pseudomonas aeruginosa", "Stenotrophomonas maltophila", "Proteus mirabilis", "Bacteroides ovatus/xylanisolvens", "Candida glabrata", "Clostridioides difficile", "Alternaria sp.", "Helicobacter pylori", "Citrobacter freundii", "enterococcus_rel_abundance", "enterobacterales_rel_abundance", "copy_number"]
+    },
+    {
+      "filename": "abx_anon.rds",
+      "bytes": 264399,
+      "sha256": "9a14719ad31b8c186f44a1babe30cc296ca029577f8a13fa6a0263f8ac430ef2",
+      "class": ["data.table", "data.frame"],
+      "dim": [43339, 16],
+      "columns": ["patientID", "sampleID", "db", "bact_infection_present", "any_infection", "eday", "infx_stool", "enterococcus_infection", "enterobacterales_infection", "days_transplant", "medication_name", "med_pharm_class", "med_pharm_sub_class", "mar_action", "dose_units", "ordering_mode"]
+    },
+    {
+      "filename": "original_cohort_abx.rds",
+      "bytes": 86789,
+      "sha256": "656df81dd9b3be1b43a6f6baf4636fbd007554cb6f2c731a4b30b49e57b1950d",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [16378, 14],
+      "columns": ["patientID", "sampleID", "db", "bact_infection_present", "any_infection", "eday", "infx_stool", "days_transplant", "medication_name", "pharm_class", "pharm_sub_class", "mar_action", "dose_units", "ordering_mode"]
+    },
+    {
+      "filename": "peri_criteria_all_anon.rds",
+      "bytes": 3450,
+      "sha256": "d15142ac6cad4987e96e936974a1dfad75e0841de44e5abf38ed07650e47220e",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [134, 15],
+      "columns": ["patientID", "sampleID", "bact_infection_present", "eday", "infx_stool", "db", "variable", "value", "num", "key", "org_cat", "organism1", "diag_cat2", "diag_cat", "micro1.factor"]
+    },
+    {
+      "filename": "peri_criteria_best_anon.rds",
+      "bytes": 3001,
+      "sha256": "92ab4b9e742ece15ee542c5d9516e1a1675dbe5d56a5ad4c8bebcdada133e79c",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [107, 15],
+      "columns": ["patientID", "sampleID", "bact_infection_present", "eday", "infx_stool", "db", "variable", "value", "num", "key", "org_cat", "organism1", "diag_cat2", "diag_cat", "micro1.factor"]
+    },
+    {
+      "filename": "sample_lookup.rds",
+      "bytes": 1218,
+      "sha256": "74e836169de753aec1362bcab0b9774b435fa126d20b666fcc21920d91bc6981",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [164, 4],
+      "columns": ["patientID", "sampleID", "db", "sample_days_from_transplant"]
+    },
+    {
+      "filename": "validation_cohort_demo.rds",
+      "bytes": 1292,
+      "sha256": "a112bfb97b760721f7155db378f873049c9c2060369018ae6b7d11e386a29c44",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [35, 32],
+      "columns": ["patientID", "age", "race", "sex", "any_infection", "event_type", "Alcoholic Hepatitis", "Alcoholic Cirrhosis", "NAFLD/NASH", "Primary Sclerosing Cholangitis", "Primary Biliary Cirrhosis", "Acute Viral Hepatitis", "Chronic Hepatitis B", "Chronic Hepatitis C", "Autoimmune", "Wilson's Disease", "Alpha-1 Antitrypsin", "Hemachromatosis", "Congestive Hepatopathy", "Drug Induced Liver Injury or Toxin", "Budd Chiari", "Cryptogenic", "Malignancy", "Other", "Dialysis", "Pressers", "Mechanical Ventilation", "meld_transplant", "clin_stat_transplant", "event_type.factor", "clin_stat_transplant.factor", "infection_status"]
+    },
+    {
+      "filename": "validation_cohort_metab_qual.rds",
+      "bytes": 50239,
+      "sha256": "e1246353b9ae2e4aa049ca3717eada1fd72e217dfd4aea0cb35bfa9a9a2d699c",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [7898, 5],
+      "columns": ["patientID", "sampleID", "compound", "mvalue", "panel"]
+    },
+    {
+      "filename": "validation_cohort_metaphlan.rds",
+      "bytes": 97484,
+      "sha256": "9f9f71fc25fa274bcbc85383d1f446a432a17b53acb31ab0efa2abc71b0ef80f",
+      "class": ["tbl_df", "tbl", "data.frame"],
+      "dim": [1686, 20],
+      "columns": ["patientID", "sampleID", "#clade_name", "clade_taxid", "relative_abundance", "coverage", "estimated_number_of_reads_from_the_clade", "taxid", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "pctseqs", "Total", "genLab", "countType", "count"]
+    },
+    {
+      "filename": "validation_cohort_peri_infection.rds",
+      "bytes": 109762,
+      "sha256": "ad40dad735a59eb135e26c0abe4c5b3afae422446d5f34c27208b3cf7251bf6f",
+      "class": ["grouped_df", "tbl_df", "tbl", "data.frame"],
+      "dim": [3599, 29],
+      "columns": ["patientID", "sampleID", "#clade_name", "clade_taxid", "relative_abundance", "coverage", "estimated_number_of_reads_from_the_clade", "taxid", "Kingdom", "Phylum", "Class", "Order", "Family", "Genus", "Species", "pctseqs", "Total", "genLab", "countType", "count", "bact_infection_present", "eday", "infx_stool", "Enterococcus faecium", "Klebsiella pneumoniae", "Candida glabrata", "Clostridioides difficile", "enteroccus_rel_abundance", "enterobacterales_rel_abundance"]
+    }
+  ]
+}

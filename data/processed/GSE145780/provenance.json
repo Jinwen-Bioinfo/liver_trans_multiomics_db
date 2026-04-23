@@ -1,0 +1,37 @@
+{
+  "study_accession": "GSE145780",
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/matrix/GSE145780_series_matrix.txt.gz",
+  "raw_path": "data/raw/geo/GSE145780/GSE145780_series_matrix.txt.gz",
+  "generated_at_utc": "2026-04-23T00:32:18.114100+00:00",
+  "parser": "scripts/ingest_geo_series.py",
+  "standardization_rules": {
+    "cluster_field": "cluster (1, 2, 3, 4)",
+    "cluster_map": {
+      "1": {
+        "original_label": "R1normal",
+        "clinical_state": "no_rejection",
+        "display_label": "R1 normal/no rejection"
+      },
+      "2": {
+        "original_label": "R2TCMR",
+        "clinical_state": "TCMR",
+        "display_label": "R2 T cell-mediated rejection"
+      },
+      "3": {
+        "original_label": "R3injury",
+        "clinical_state": "early_injury",
+        "display_label": "R3 early injury"
+      },
+      "4": {
+        "original_label": "R4late",
+        "clinical_state": "fibrosis",
+        "display_label": "R4 late/fibrosis"
+      }
+    }
+  },
+  "series_title": "The molecular diagnosis of rejection in liver transplant biopsies: First results of the INTERLIVER study",
+  "series_pubmed_id": [
+    "32090446"
+  ],
+  "series_summary": "Molecular diagnosis of rejection is emerging in kidney, heart, and lung transplant biopsies and could offer insights for liver transplant biopsies. Groups differed in median time post-transplant e.g. R3injury 99 days vs. R4late 3117 days. R2TCMR biopsies expressed typical TCMR-related transcripts e.g. intense IFNG-induced effects. R3injury displayed increased expression of parenchymal injury transcripts (e.g. hypoxia-inducible factor EGLN1). R4late biopsies showed immunoglobulin transcripts and injury-related transcripts. R2TCMR correlated with histologic rejection although with many discrepancies, and R4late with fibrosis. R2TCMR, R3injury, and R4late correlated with liver function abnormalities. Supervised classifiers trained on histologic rejection showed less agreement with histology than unsupervised R2TCMR scores. No confirmed cases of clinical ABMR were present in the population, and strategies that previously revealed antibody-mediated rejection (ABMR) in kidney and heart transplants failed to reveal a liver ABMR phenotype. In conclusion,  molecular analysis of liver transplant biopsies detects rejection, has the potential to resolve ambiguities, and could assist with immunosuppressive management."
+}

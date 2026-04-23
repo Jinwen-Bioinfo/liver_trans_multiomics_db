@@ -1,0 +1,3446 @@
+{
+  "study_accession": "GSE145780",
+  "generated_at_utc": "2026-04-23T03:13:50.200631+00:00",
+  "method": "Signed within-study z-score signature scoring with explicit missing-gene reporting.",
+  "signatures": {
+    "TCMR_IFNG_CYTOTOXIC": {
+      "signature_id": "TCMR_IFNG_CYTOTOXIC",
+      "name": "TCMR IFN-gamma cytotoxic signature",
+      "description": "A compact demonstration signature for T cell-mediated rejection, combining IFN-gamma chemokines and cytotoxic T/NK markers.",
+      "genes": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB"
+      ],
+      "directions": {
+        "CXCL9": 1,
+        "CXCL10": 1,
+        "IFNG": 1,
+        "GZMB": 1
+      },
+      "expected_high_state": "TCMR",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE145780",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 235,
+      "gene_count_requested": 4,
+      "gene_count_observed": 4,
+      "genes_observed": [
+        "CXCL10",
+        "CXCL9",
+        "GZMB",
+        "IFNG"
+      ],
+      "missing_genes": [],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "TCMR": {
+          "n": 37,
+          "mean": 1.3806,
+          "median": 1.2482,
+          "sd": 0.7068,
+          "min": -0.0768,
+          "max": 3.3984
+        },
+        "early_injury": {
+          "n": 61,
+          "mean": -0.2016,
+          "median": -0.1783,
+          "sd": 0.69,
+          "min": -1.5166,
+          "max": 1.35
+        },
+        "fibrosis": {
+          "n": 8,
+          "mean": 0.2178,
+          "median": 0.0731,
+          "sd": 0.5127,
+          "min": -0.3544,
+          "max": 1.0352
+        },
+        "no_rejection": {
+          "n": 129,
+          "mean": -0.3142,
+          "median": -0.3632,
+          "sd": 0.5386,
+          "min": -1.4893,
+          "max": 1.1064
+        }
+      },
+      "best_state_by_mean": "TCMR",
+      "expected_pattern_observed": true,
+      "sample_scores": [
+        {
+          "sample_title": "liver181",
+          "sample_accession": "GSM4332655",
+          "clinical_state": "no_rejection",
+          "score": 0.2115,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver145",
+          "sample_accession": "GSM4332656",
+          "clinical_state": "no_rejection",
+          "score": -0.2081,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver204",
+          "sample_accession": "GSM4332657",
+          "clinical_state": "TCMR",
+          "score": 1.0744,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver177",
+          "sample_accession": "GSM4332658",
+          "clinical_state": "early_injury",
+          "score": 0.1105,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver187",
+          "sample_accession": "GSM4332659",
+          "clinical_state": "no_rejection",
+          "score": -0.452,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver131",
+          "sample_accession": "GSM4332660",
+          "clinical_state": "TCMR",
+          "score": 0.8162,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver3",
+          "sample_accession": "GSM4332661",
+          "clinical_state": "no_rejection",
+          "score": 0.6957,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver121",
+          "sample_accession": "GSM4332662",
+          "clinical_state": "TCMR",
+          "score": 1.3577,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver149",
+          "sample_accession": "GSM4332663",
+          "clinical_state": "no_rejection",
+          "score": -0.6323,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver166",
+          "sample_accession": "GSM4332664",
+          "clinical_state": "early_injury",
+          "score": -0.132,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver21",
+          "sample_accession": "GSM4332665",
+          "clinical_state": "no_rejection",
+          "score": 0.6779,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver138",
+          "sample_accession": "GSM4332666",
+          "clinical_state": "early_injury",
+          "score": -0.9755,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver18",
+          "sample_accession": "GSM4332667",
+          "clinical_state": "no_rejection",
+          "score": -0.7394,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver98",
+          "sample_accession": "GSM4332668",
+          "clinical_state": "early_injury",
+          "score": -0.7544,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver227",
+          "sample_accession": "GSM4332669",
+          "clinical_state": "no_rejection",
+          "score": -0.2671,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver87",
+          "sample_accession": "GSM4332670",
+          "clinical_state": "early_injury",
+          "score": -0.5185,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver150",
+          "sample_accession": "GSM4332671",
+          "clinical_state": "early_injury",
+          "score": -0.3901,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver147",
+          "sample_accession": "GSM4332672",
+          "clinical_state": "no_rejection",
+          "score": -0.5661,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver109",
+          "sample_accession": "GSM4332673",
+          "clinical_state": "early_injury",
+          "score": -0.1783,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver61",
+          "sample_accession": "GSM4332674",
+          "clinical_state": "early_injury",
+          "score": -0.8588,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver185",
+          "sample_accession": "GSM4332675",
+          "clinical_state": "no_rejection",
+          "score": 0.1108,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver48",
+          "sample_accession": "GSM4332676",
+          "clinical_state": "no_rejection",
+          "score": -0.2209,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver117",
+          "sample_accession": "GSM4332677",
+          "clinical_state": "no_rejection",
+          "score": -0.7017,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver139",
+          "sample_accession": "GSM4332678",
+          "clinical_state": "early_injury",
+          "score": 1.35,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver162",
+          "sample_accession": "GSM4332679",
+          "clinical_state": "early_injury",
+          "score": -0.6476,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver45",
+          "sample_accession": "GSM4332680",
+          "clinical_state": "early_injury",
+          "score": -1.251,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver205",
+          "sample_accession": "GSM4332681",
+          "clinical_state": "early_injury",
+          "score": 0.3337,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver101",
+          "sample_accession": "GSM4332682",
+          "clinical_state": "early_injury",
+          "score": -1.4374,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver158",
+          "sample_accession": "GSM4332683",
+          "clinical_state": "early_injury",
+          "score": -0.6772,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver63",
+          "sample_accession": "GSM4332684",
+          "clinical_state": "early_injury",
+          "score": -0.6112,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver176",
+          "sample_accession": "GSM4332685",
+          "clinical_state": "early_injury",
+          "score": -0.1689,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver200",
+          "sample_accession": "GSM4332686",
+          "clinical_state": "no_rejection",
+          "score": -0.2758,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver106",
+          "sample_accession": "GSM4332687",
+          "clinical_state": "no_rejection",
+          "score": -1.4159,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver16",
+          "sample_accession": "GSM4332688",
+          "clinical_state": "no_rejection",
+          "score": 0.7177,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver9",
+          "sample_accession": "GSM4332689",
+          "clinical_state": "TCMR",
+          "score": 1.8596,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver175",
+          "sample_accession": "GSM4332690",
+          "clinical_state": "no_rejection",
+          "score": -0.4299,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver14",
+          "sample_accession": "GSM4332691",
+          "clinical_state": "no_rejection",
+          "score": -0.3841,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver152",
+          "sample_accession": "GSM4332692",
+          "clinical_state": "no_rejection",
+          "score": -0.0955,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver180",
+          "sample_accession": "GSM4332693",
+          "clinical_state": "fibrosis",
+          "score": -0.0819,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver6",
+          "sample_accession": "GSM4332694",
+          "clinical_state": "no_rejection",
+          "score": -0.3658,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver144",
+          "sample_accession": "GSM4332695",
+          "clinical_state": "no_rejection",
+          "score": -0.0528,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver60",
+          "sample_accession": "GSM4332696",
+          "clinical_state": "no_rejection",
+          "score": -0.7957,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver224",
+          "sample_accession": "GSM4332697",
+          "clinical_state": "no_rejection",
+          "score": -0.4127,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver7",
+          "sample_accession": "GSM4332698",
+          "clinical_state": "no_rejection",
+          "score": -0.5364,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver62",
+          "sample_accession": "GSM4332699",
+          "clinical_state": "early_injury",
+          "score": 0.0971,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver113",
+          "sample_accession": "GSM4332700",
+          "clinical_state": "no_rejection",
+          "score": 0.7679,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver71",
+          "sample_accession": "GSM4332701",
+          "clinical_state": "TCMR",
+          "score": 1.924,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver197",
+          "sample_accession": "GSM4332702",
+          "clinical_state": "fibrosis",
+          "score": 0.9265,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver182",
+          "sample_accession": "GSM4332703",
+          "clinical_state": "no_rejection",
+          "score": 1.1064,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver110",
+          "sample_accession": "GSM4332704",
+          "clinical_state": "no_rejection",
+          "score": -0.8068,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver17",
+          "sample_accession": "GSM4332705",
+          "clinical_state": "no_rejection",
+          "score": 0.0103,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver28",
+          "sample_accession": "GSM4332706",
+          "clinical_state": "no_rejection",
+          "score": -0.8846,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver232",
+          "sample_accession": "GSM4332707",
+          "clinical_state": "fibrosis",
+          "score": -0.2201,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver24",
+          "sample_accession": "GSM4332708",
+          "clinical_state": "TCMR",
+          "score": 1.2482,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver209",
+          "sample_accession": "GSM4332709",
+          "clinical_state": "no_rejection",
+          "score": -0.0996,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver188",
+          "sample_accession": "GSM4332710",
+          "clinical_state": "no_rejection",
+          "score": -0.3948,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver79",
+          "sample_accession": "GSM4332711",
+          "clinical_state": "early_injury",
+          "score": 0.2908,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver146",
+          "sample_accession": "GSM4332712",
+          "clinical_state": "early_injury",
+          "score": -1.5166,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver78",
+          "sample_accession": "GSM4332713",
+          "clinical_state": "fibrosis",
+          "score": 0.291,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver206",
+          "sample_accession": "GSM4332714",
+          "clinical_state": "early_injury",
+          "score": -0.4327,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver58",
+          "sample_accession": "GSM4332715",
+          "clinical_state": "TCMR",
+          "score": 2.0141,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver174",
+          "sample_accession": "GSM4332716",
+          "clinical_state": "early_injury",
+          "score": -0.0778,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver22",
+          "sample_accession": "GSM4332717",
+          "clinical_state": "TCMR",
+          "score": 1.7586,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver178",
+          "sample_accession": "GSM4332718",
+          "clinical_state": "no_rejection",
+          "score": -0.1237,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver103",
+          "sample_accession": "GSM4332719",
+          "clinical_state": "no_rejection",
+          "score": -1.2473,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver104",
+          "sample_accession": "GSM4332720",
+          "clinical_state": "no_rejection",
+          "score": 0.5829,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver135",
+          "sample_accession": "GSM4332721",
+          "clinical_state": "early_injury",
+          "score": 0.5168,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver125",
+          "sample_accession": "GSM4332722",
+          "clinical_state": "early_injury",
+          "score": 0.1043,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver208",
+          "sample_accession": "GSM4332723",
+          "clinical_state": "TCMR",
+          "score": 1.853,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver229",
+          "sample_accession": "GSM4332724",
+          "clinical_state": "early_injury",
+          "score": -1.3613,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver212",
+          "sample_accession": "GSM4332725",
+          "clinical_state": "TCMR",
+          "score": 1.0877,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver74",
+          "sample_accession": "GSM4332726",
+          "clinical_state": "TCMR",
+          "score": 1.1579,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver172",
+          "sample_accession": "GSM4332727",
+          "clinical_state": "early_injury",
+          "score": 0.6647,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver91",
+          "sample_accession": "GSM4332728",
+          "clinical_state": "no_rejection",
+          "score": -0.6907,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver81",
+          "sample_accession": "GSM4332729",
+          "clinical_state": "no_rejection",
+          "score": 0.2066,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver55",
+          "sample_accession": "GSM4332730",
+          "clinical_state": "TCMR",
+          "score": 1.6466,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver66",
+          "sample_accession": "GSM4332731",
+          "clinical_state": "no_rejection",
+          "score": 0.1997,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver52",
+          "sample_accession": "GSM4332732",
+          "clinical_state": "early_injury",
+          "score": -1.0222,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver39",
+          "sample_accession": "GSM4332733",
+          "clinical_state": "no_rejection",
+          "score": -0.2199,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver211",
+          "sample_accession": "GSM4332734",
+          "clinical_state": "no_rejection",
+          "score": -0.89,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver86",
+          "sample_accession": "GSM4332735",
+          "clinical_state": "no_rejection",
+          "score": -0.8437,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver195",
+          "sample_accession": "GSM4332736",
+          "clinical_state": "no_rejection",
+          "score": -0.4907,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver99",
+          "sample_accession": "GSM4332737",
+          "clinical_state": "early_injury",
+          "score": 0.6548,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver64",
+          "sample_accession": "GSM4332738",
+          "clinical_state": "early_injury",
+          "score": 0.5966,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver220",
+          "sample_accession": "GSM4332739",
+          "clinical_state": "TCMR",
+          "score": 0.815,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver154",
+          "sample_accession": "GSM4332740",
+          "clinical_state": "no_rejection",
+          "score": -0.5532,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver189",
+          "sample_accession": "GSM4332741",
+          "clinical_state": "early_injury",
+          "score": 0.2001,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver132",
+          "sample_accession": "GSM4332742",
+          "clinical_state": "no_rejection",
+          "score": -0.7802,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver128",
+          "sample_accession": "GSM4332743",
+          "clinical_state": "no_rejection",
+          "score": 0.3766,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver130",
+          "sample_accession": "GSM4332744",
+          "clinical_state": "no_rejection",
+          "score": -1.0336,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver57",
+          "sample_accession": "GSM4332745",
+          "clinical_state": "no_rejection",
+          "score": -0.4751,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver38",
+          "sample_accession": "GSM4332746",
+          "clinical_state": "TCMR",
+          "score": 1.6075,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver160",
+          "sample_accession": "GSM4332747",
+          "clinical_state": "early_injury",
+          "score": -0.813,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver37",
+          "sample_accession": "GSM4332748",
+          "clinical_state": "early_injury",
+          "score": 0.1267,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver70",
+          "sample_accession": "GSM4332749",
+          "clinical_state": "TCMR",
+          "score": 1.9212,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver84",
+          "sample_accession": "GSM4332750",
+          "clinical_state": "early_injury",
+          "score": 0.7766,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver30",
+          "sample_accession": "GSM4332751",
+          "clinical_state": "no_rejection",
+          "score": 0.6227,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver201",
+          "sample_accession": "GSM4332752",
+          "clinical_state": "no_rejection",
+          "score": 0.3318,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver164",
+          "sample_accession": "GSM4332753",
+          "clinical_state": "no_rejection",
+          "score": -1.0581,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver218",
+          "sample_accession": "GSM4332754",
+          "clinical_state": "no_rejection",
+          "score": -0.9231,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver151",
+          "sample_accession": "GSM4332755",
+          "clinical_state": "no_rejection",
+          "score": -1.3053,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver27",
+          "sample_accession": "GSM4332756",
+          "clinical_state": "no_rejection",
+          "score": -0.2697,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver90",
+          "sample_accession": "GSM4332757",
+          "clinical_state": "TCMR",
+          "score": 1.1845,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver89",
+          "sample_accession": "GSM4332758",
+          "clinical_state": "no_rejection",
+          "score": -0.8646,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver173",
+          "sample_accession": "GSM4332759",
+          "clinical_state": "TCMR",
+          "score": 1.6514,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver222",
+          "sample_accession": "GSM4332760",
+          "clinical_state": "no_rejection",
+          "score": 0.6875,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver170",
+          "sample_accession": "GSM4332761",
+          "clinical_state": "fibrosis",
+          "score": -0.3544,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver5",
+          "sample_accession": "GSM4332762",
+          "clinical_state": "fibrosis",
+          "score": 0.1557,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver179",
+          "sample_accession": "GSM4332763",
+          "clinical_state": "early_injury",
+          "score": -0.994,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver23",
+          "sample_accession": "GSM4332764",
+          "clinical_state": "early_injury",
+          "score": 0.0846,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver92",
+          "sample_accession": "GSM4332765",
+          "clinical_state": "early_injury",
+          "score": 0.3241,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver214",
+          "sample_accession": "GSM4332766",
+          "clinical_state": "no_rejection",
+          "score": 0.246,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver219",
+          "sample_accession": "GSM4332767",
+          "clinical_state": "early_injury",
+          "score": 1.1225,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver157",
+          "sample_accession": "GSM4332768",
+          "clinical_state": "no_rejection",
+          "score": -1.0314,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver97",
+          "sample_accession": "GSM4332769",
+          "clinical_state": "early_injury",
+          "score": 0.5722,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver32",
+          "sample_accession": "GSM4332770",
+          "clinical_state": "no_rejection",
+          "score": -0.7491,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver143",
+          "sample_accession": "GSM4332771",
+          "clinical_state": "no_rejection",
+          "score": 0.4457,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver226",
+          "sample_accession": "GSM4332772",
+          "clinical_state": "early_injury",
+          "score": -1.3112,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver122",
+          "sample_accession": "GSM4332773",
+          "clinical_state": "early_injury",
+          "score": 0.9871,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver15",
+          "sample_accession": "GSM4332774",
+          "clinical_state": "TCMR",
+          "score": 2.1422,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver116",
+          "sample_accession": "GSM4332775",
+          "clinical_state": "no_rejection",
+          "score": -0.9358,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver100",
+          "sample_accession": "GSM4332776",
+          "clinical_state": "early_injury",
+          "score": -0.4139,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver186",
+          "sample_accession": "GSM4332777",
+          "clinical_state": "no_rejection",
+          "score": -0.5265,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver93",
+          "sample_accession": "GSM4332778",
+          "clinical_state": "no_rejection",
+          "score": -1.3346,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver85",
+          "sample_accession": "GSM4332779",
+          "clinical_state": "no_rejection",
+          "score": -0.6112,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver168",
+          "sample_accession": "GSM4332780",
+          "clinical_state": "no_rejection",
+          "score": -0.4323,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver153",
+          "sample_accession": "GSM4332781",
+          "clinical_state": "no_rejection",
+          "score": 0.164,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver112",
+          "sample_accession": "GSM4332782",
+          "clinical_state": "early_injury",
+          "score": -0.4223,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver137",
+          "sample_accession": "GSM4332783",
+          "clinical_state": "no_rejection",
+          "score": 0.047,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver83",
+          "sample_accession": "GSM4332784",
+          "clinical_state": "no_rejection",
+          "score": 0.057,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver223",
+          "sample_accession": "GSM4332785",
+          "clinical_state": "no_rejection",
+          "score": 0.1455,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver82",
+          "sample_accession": "GSM4332786",
+          "clinical_state": "no_rejection",
+          "score": -0.2397,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver44",
+          "sample_accession": "GSM4332787",
+          "clinical_state": "TCMR",
+          "score": 0.9295,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver8",
+          "sample_accession": "GSM4332788",
+          "clinical_state": "no_rejection",
+          "score": -0.6235,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver163",
+          "sample_accession": "GSM4332789",
+          "clinical_state": "no_rejection",
+          "score": -0.9236,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver156",
+          "sample_accession": "GSM4332790",
+          "clinical_state": "TCMR",
+          "score": 1.186,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver120",
+          "sample_accession": "GSM4332791",
+          "clinical_state": "early_injury",
+          "score": 0.5636,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver167",
+          "sample_accession": "GSM4332792",
+          "clinical_state": "no_rejection",
+          "score": 0.1706,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver140",
+          "sample_accession": "GSM4332793",
+          "clinical_state": "no_rejection",
+          "score": 0.3522,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver19",
+          "sample_accession": "GSM4332794",
+          "clinical_state": "TCMR",
+          "score": 0.7218,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver136",
+          "sample_accession": "GSM4332795",
+          "clinical_state": "TCMR",
+          "score": 0.557,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver234",
+          "sample_accession": "GSM4332796",
+          "clinical_state": "TCMR",
+          "score": 0.3261,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver169",
+          "sample_accession": "GSM4332797",
+          "clinical_state": "TCMR",
+          "score": 0.5247,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver102",
+          "sample_accession": "GSM4332798",
+          "clinical_state": "no_rejection",
+          "score": -0.9282,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver171",
+          "sample_accession": "GSM4332799",
+          "clinical_state": "no_rejection",
+          "score": 0.2303,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver47",
+          "sample_accession": "GSM4332800",
+          "clinical_state": "no_rejection",
+          "score": 0.3379,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver203",
+          "sample_accession": "GSM4332801",
+          "clinical_state": "no_rejection",
+          "score": -0.531,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver165",
+          "sample_accession": "GSM4332802",
+          "clinical_state": "early_injury",
+          "score": -0.3542,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver67",
+          "sample_accession": "GSM4332803",
+          "clinical_state": "early_injury",
+          "score": -0.2111,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver126",
+          "sample_accession": "GSM4332804",
+          "clinical_state": "early_injury",
+          "score": -0.2323,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver161",
+          "sample_accession": "GSM4332805",
+          "clinical_state": "early_injury",
+          "score": -0.268,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver124",
+          "sample_accession": "GSM4332806",
+          "clinical_state": "no_rejection",
+          "score": -0.088,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver46",
+          "sample_accession": "GSM4332807",
+          "clinical_state": "no_rejection",
+          "score": -0.4951,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver77",
+          "sample_accession": "GSM4332808",
+          "clinical_state": "no_rejection",
+          "score": -0.8222,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver210",
+          "sample_accession": "GSM4332809",
+          "clinical_state": "no_rejection",
+          "score": -0.1604,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver202",
+          "sample_accession": "GSM4332810",
+          "clinical_state": "no_rejection",
+          "score": -0.5586,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver142",
+          "sample_accession": "GSM4332811",
+          "clinical_state": "TCMR",
+          "score": 2.369,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver94",
+          "sample_accession": "GSM4332812",
+          "clinical_state": "no_rejection",
+          "score": 0.2798,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver118",
+          "sample_accession": "GSM4332813",
+          "clinical_state": "no_rejection",
+          "score": 0.3558,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver35",
+          "sample_accession": "GSM4332814",
+          "clinical_state": "no_rejection",
+          "score": -0.9894,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver141",
+          "sample_accession": "GSM4332815",
+          "clinical_state": "TCMR",
+          "score": 3.1397,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver50",
+          "sample_accession": "GSM4332816",
+          "clinical_state": "TCMR",
+          "score": 3.3984,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver25",
+          "sample_accession": "GSM4332817",
+          "clinical_state": "early_injury",
+          "score": -0.5837,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver76",
+          "sample_accession": "GSM4332818",
+          "clinical_state": "no_rejection",
+          "score": -0.7372,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver159",
+          "sample_accession": "GSM4332819",
+          "clinical_state": "early_injury",
+          "score": 0.0408,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver88",
+          "sample_accession": "GSM4332820",
+          "clinical_state": "early_injury",
+          "score": 0.0716,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver68",
+          "sample_accession": "GSM4332821",
+          "clinical_state": "TCMR",
+          "score": 1.084,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver184",
+          "sample_accession": "GSM4332822",
+          "clinical_state": "early_injury",
+          "score": 0.4825,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver231",
+          "sample_accession": "GSM4332823",
+          "clinical_state": "no_rejection",
+          "score": -0.1059,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver105",
+          "sample_accession": "GSM4332824",
+          "clinical_state": "no_rejection",
+          "score": 0.2324,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver95",
+          "sample_accession": "GSM4332825",
+          "clinical_state": "TCMR",
+          "score": 1.6346,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver65",
+          "sample_accession": "GSM4332826",
+          "clinical_state": "no_rejection",
+          "score": -1.067,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver11",
+          "sample_accession": "GSM4332827",
+          "clinical_state": "no_rejection",
+          "score": 0.0038,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver59",
+          "sample_accession": "GSM4332828",
+          "clinical_state": "fibrosis",
+          "score": -0.0096,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver49",
+          "sample_accession": "GSM4332829",
+          "clinical_state": "no_rejection",
+          "score": -0.1913,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver155",
+          "sample_accession": "GSM4332830",
+          "clinical_state": "TCMR",
+          "score": 0.6489,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver80",
+          "sample_accession": "GSM4332831",
+          "clinical_state": "early_injury",
+          "score": -1.375,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver192",
+          "sample_accession": "GSM4332832",
+          "clinical_state": "early_injury",
+          "score": -0.2839,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver111",
+          "sample_accession": "GSM4332833",
+          "clinical_state": "no_rejection",
+          "score": 0.3271,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver41",
+          "sample_accession": "GSM4332834",
+          "clinical_state": "no_rejection",
+          "score": 0.0698,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver96",
+          "sample_accession": "GSM4332835",
+          "clinical_state": "no_rejection",
+          "score": 0.3389,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver216",
+          "sample_accession": "GSM4332836",
+          "clinical_state": "early_injury",
+          "score": 0.1888,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver20",
+          "sample_accession": "GSM4332837",
+          "clinical_state": "no_rejection",
+          "score": -0.0563,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver119",
+          "sample_accession": "GSM4332838",
+          "clinical_state": "TCMR",
+          "score": 1.2515,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver2",
+          "sample_accession": "GSM4332839",
+          "clinical_state": "no_rejection",
+          "score": -0.1042,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver207",
+          "sample_accession": "GSM4332840",
+          "clinical_state": "early_injury",
+          "score": -0.8582,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver215",
+          "sample_accession": "GSM4332841",
+          "clinical_state": "TCMR",
+          "score": 1.5798,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver228",
+          "sample_accession": "GSM4332842",
+          "clinical_state": "no_rejection",
+          "score": -0.4063,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver233",
+          "sample_accession": "GSM4332843",
+          "clinical_state": "no_rejection",
+          "score": -0.5957,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver33",
+          "sample_accession": "GSM4332844",
+          "clinical_state": "TCMR",
+          "score": 1.5102,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver198",
+          "sample_accession": "GSM4332845",
+          "clinical_state": "no_rejection",
+          "score": -0.2241,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver53",
+          "sample_accession": "GSM4332846",
+          "clinical_state": "no_rejection",
+          "score": -0.4568,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver133",
+          "sample_accession": "GSM4332847",
+          "clinical_state": "early_injury",
+          "score": 0.4008,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver199",
+          "sample_accession": "GSM4332848",
+          "clinical_state": "early_injury",
+          "score": -0.1066,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver75",
+          "sample_accession": "GSM4332849",
+          "clinical_state": "early_injury",
+          "score": -1.394,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver129",
+          "sample_accession": "GSM4332850",
+          "clinical_state": "TCMR",
+          "score": 0.7284,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver10",
+          "sample_accession": "GSM4332851",
+          "clinical_state": "early_injury",
+          "score": 0.6688,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver108",
+          "sample_accession": "GSM4332852",
+          "clinical_state": "TCMR",
+          "score": 1.2077,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver26",
+          "sample_accession": "GSM4332853",
+          "clinical_state": "TCMR",
+          "score": 1.2409,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver1",
+          "sample_accession": "GSM4332854",
+          "clinical_state": "no_rejection",
+          "score": -0.6581,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver54",
+          "sample_accession": "GSM4332855",
+          "clinical_state": "no_rejection",
+          "score": -0.8384,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver183",
+          "sample_accession": "GSM4332856",
+          "clinical_state": "no_rejection",
+          "score": -0.3103,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver123",
+          "sample_accession": "GSM4332857",
+          "clinical_state": "no_rejection",
+          "score": -1.4893,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver134",
+          "sample_accession": "GSM4332858",
+          "clinical_state": "TCMR",
+          "score": -0.0768,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver13",
+          "sample_accession": "GSM4332859",
+          "clinical_state": "no_rejection",
+          "score": -0.3632,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver196",
+          "sample_accession": "GSM4332860",
+          "clinical_state": "no_rejection",
+          "score": -0.2377,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver73",
+          "sample_accession": "GSM4332861",
+          "clinical_state": "no_rejection",
+          "score": -0.0825,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver225",
+          "sample_accession": "GSM4332862",
+          "clinical_state": "no_rejection",
+          "score": -0.5549,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver191",
+          "sample_accession": "GSM4332863",
+          "clinical_state": "no_rejection",
+          "score": -0.4148,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver72",
+          "sample_accession": "GSM4332864",
+          "clinical_state": "no_rejection",
+          "score": -0.6714,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver69",
+          "sample_accession": "GSM4332865",
+          "clinical_state": "no_rejection",
+          "score": -0.1766,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver221",
+          "sample_accession": "GSM4332866",
+          "clinical_state": "no_rejection",
+          "score": -0.3026,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver43",
+          "sample_accession": "GSM4332867",
+          "clinical_state": "no_rejection",
+          "score": -0.1231,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver31",
+          "sample_accession": "GSM4332868",
+          "clinical_state": "fibrosis",
+          "score": 1.0352,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver56",
+          "sample_accession": "GSM4332869",
+          "clinical_state": "no_rejection",
+          "score": -1.354,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver213",
+          "sample_accession": "GSM4332870",
+          "clinical_state": "no_rejection",
+          "score": 0.0611,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver115",
+          "sample_accession": "GSM4332871",
+          "clinical_state": "no_rejection",
+          "score": -0.7719,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver217",
+          "sample_accession": "GSM4332872",
+          "clinical_state": "no_rejection",
+          "score": -0.3032,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver36",
+          "sample_accession": "GSM4332873",
+          "clinical_state": "no_rejection",
+          "score": 0.1496,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver127",
+          "sample_accession": "GSM4332874",
+          "clinical_state": "no_rejection",
+          "score": -0.2799,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver190",
+          "sample_accession": "GSM4332875",
+          "clinical_state": "no_rejection",
+          "score": -0.4232,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver107",
+          "sample_accession": "GSM4332876",
+          "clinical_state": "early_injury",
+          "score": 0.1875,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver4",
+          "sample_accession": "GSM4332877",
+          "clinical_state": "early_injury",
+          "score": -0.8966,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver12",
+          "sample_accession": "GSM4332878",
+          "clinical_state": "no_rejection",
+          "score": -0.7474,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver114",
+          "sample_accession": "GSM4332879",
+          "clinical_state": "early_injury",
+          "score": -0.2847,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver34",
+          "sample_accession": "GSM4332880",
+          "clinical_state": "no_rejection",
+          "score": 0.0826,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver148",
+          "sample_accession": "GSM4332881",
+          "clinical_state": "no_rejection",
+          "score": -0.5158,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver42",
+          "sample_accession": "GSM4332882",
+          "clinical_state": "no_rejection",
+          "score": -0.84,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver230",
+          "sample_accession": "GSM4332883",
+          "clinical_state": "no_rejection",
+          "score": -0.9231,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver40",
+          "sample_accession": "GSM4332884",
+          "clinical_state": "no_rejection",
+          "score": -0.9409,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver29",
+          "sample_accession": "GSM4332885",
+          "clinical_state": "no_rejection",
+          "score": 0.0307,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver193",
+          "sample_accession": "GSM4332886",
+          "clinical_state": "no_rejection",
+          "score": 0.8261,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver235",
+          "sample_accession": "GSM4332887",
+          "clinical_state": "no_rejection",
+          "score": -1.1721,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver194",
+          "sample_accession": "GSM4332888",
+          "clinical_state": "no_rejection",
+          "score": 0.6873,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "liver51",
+          "sample_accession": "GSM4332889",
+          "clinical_state": "no_rejection",
+          "score": -0.5473,
+          "genes_observed": 4
+        }
+      ]
+    },
+    "FIBROSIS_ECM": {
+      "signature_id": "FIBROSIS_ECM",
+      "name": "Fibrosis extracellular matrix signature",
+      "description": "A compact ECM/fibrosis marker panel for graft fibrosis exploration; not a clinical classifier.",
+      "genes": [
+        "COL1A1",
+        "COL3A1",
+        "ACTA2",
+        "TAGLN",
+        "LUM",
+        "DCN",
+        "TGFBI"
+      ],
+      "directions": {
+        "COL1A1": 1,
+        "COL3A1": 1,
+        "ACTA2": 1,
+        "TAGLN": 1,
+        "LUM": 1,
+        "DCN": 1,
+        "TGFBI": 1
+      },
+      "expected_high_state": "fibrosis",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE145780",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 235,
+      "gene_count_requested": 7,
+      "gene_count_observed": 7,
+      "genes_observed": [
+        "ACTA2",
+        "COL1A1",
+        "COL3A1",
+        "DCN",
+        "LUM",
+        "TAGLN",
+        "TGFBI"
+      ],
+      "missing_genes": [],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "TCMR": {
+          "n": 37,
+          "mean": 0.2802,
+          "median": 0.1954,
+          "sd": 0.661,
+          "min": -0.8244,
+          "max": 1.6498
+        },
+        "early_injury": {
+          "n": 61,
+          "mean": 0.1343,
+          "median": -0.0391,
+          "sd": 0.8476,
+          "min": -1.199,
+          "max": 2.0663
+        },
+        "fibrosis": {
+          "n": 8,
+          "mean": 2.1685,
+          "median": 1.9945,
+          "sd": 0.9839,
+          "min": 0.5279,
+          "max": 3.5565
+        },
+        "no_rejection": {
+          "n": 129,
+          "mean": -0.2783,
+          "median": -0.3337,
+          "sd": 0.5573,
+          "min": -1.3537,
+          "max": 1.2152
+        }
+      },
+      "best_state_by_mean": "fibrosis",
+      "expected_pattern_observed": true,
+      "sample_scores": [
+        {
+          "sample_title": "liver181",
+          "sample_accession": "GSM4332655",
+          "clinical_state": "no_rejection",
+          "score": -0.4461,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver145",
+          "sample_accession": "GSM4332656",
+          "clinical_state": "no_rejection",
+          "score": -0.2063,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver204",
+          "sample_accession": "GSM4332657",
+          "clinical_state": "TCMR",
+          "score": 1.0145,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver177",
+          "sample_accession": "GSM4332658",
+          "clinical_state": "early_injury",
+          "score": -0.2718,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver187",
+          "sample_accession": "GSM4332659",
+          "clinical_state": "no_rejection",
+          "score": -0.6598,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver131",
+          "sample_accession": "GSM4332660",
+          "clinical_state": "TCMR",
+          "score": 0.7901,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver3",
+          "sample_accession": "GSM4332661",
+          "clinical_state": "no_rejection",
+          "score": 0.3086,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver121",
+          "sample_accession": "GSM4332662",
+          "clinical_state": "TCMR",
+          "score": -0.0816,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver149",
+          "sample_accession": "GSM4332663",
+          "clinical_state": "no_rejection",
+          "score": 0.2404,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver166",
+          "sample_accession": "GSM4332664",
+          "clinical_state": "early_injury",
+          "score": -0.4788,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver21",
+          "sample_accession": "GSM4332665",
+          "clinical_state": "no_rejection",
+          "score": -0.0471,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver138",
+          "sample_accession": "GSM4332666",
+          "clinical_state": "early_injury",
+          "score": -0.6603,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver18",
+          "sample_accession": "GSM4332667",
+          "clinical_state": "no_rejection",
+          "score": -0.6254,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver98",
+          "sample_accession": "GSM4332668",
+          "clinical_state": "early_injury",
+          "score": -0.0974,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver227",
+          "sample_accession": "GSM4332669",
+          "clinical_state": "no_rejection",
+          "score": -0.3225,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver87",
+          "sample_accession": "GSM4332670",
+          "clinical_state": "early_injury",
+          "score": 0.631,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver150",
+          "sample_accession": "GSM4332671",
+          "clinical_state": "early_injury",
+          "score": 0.011,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver147",
+          "sample_accession": "GSM4332672",
+          "clinical_state": "no_rejection",
+          "score": -0.0973,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver109",
+          "sample_accession": "GSM4332673",
+          "clinical_state": "early_injury",
+          "score": 0.2138,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver61",
+          "sample_accession": "GSM4332674",
+          "clinical_state": "early_injury",
+          "score": -1.0122,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver185",
+          "sample_accession": "GSM4332675",
+          "clinical_state": "no_rejection",
+          "score": 0.3243,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver48",
+          "sample_accession": "GSM4332676",
+          "clinical_state": "no_rejection",
+          "score": -1.0698,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver117",
+          "sample_accession": "GSM4332677",
+          "clinical_state": "no_rejection",
+          "score": -0.7783,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver139",
+          "sample_accession": "GSM4332678",
+          "clinical_state": "early_injury",
+          "score": 1.4214,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver162",
+          "sample_accession": "GSM4332679",
+          "clinical_state": "early_injury",
+          "score": -0.1646,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver45",
+          "sample_accession": "GSM4332680",
+          "clinical_state": "early_injury",
+          "score": -0.8117,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver205",
+          "sample_accession": "GSM4332681",
+          "clinical_state": "early_injury",
+          "score": -0.4491,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver101",
+          "sample_accession": "GSM4332682",
+          "clinical_state": "early_injury",
+          "score": -0.1557,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver158",
+          "sample_accession": "GSM4332683",
+          "clinical_state": "early_injury",
+          "score": -0.3108,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver63",
+          "sample_accession": "GSM4332684",
+          "clinical_state": "early_injury",
+          "score": -0.6187,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver176",
+          "sample_accession": "GSM4332685",
+          "clinical_state": "early_injury",
+          "score": -0.772,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver200",
+          "sample_accession": "GSM4332686",
+          "clinical_state": "no_rejection",
+          "score": -0.2657,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver106",
+          "sample_accession": "GSM4332687",
+          "clinical_state": "no_rejection",
+          "score": -0.187,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver16",
+          "sample_accession": "GSM4332688",
+          "clinical_state": "no_rejection",
+          "score": 0.8739,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver9",
+          "sample_accession": "GSM4332689",
+          "clinical_state": "TCMR",
+          "score": 0.3327,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver175",
+          "sample_accession": "GSM4332690",
+          "clinical_state": "no_rejection",
+          "score": -0.9353,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver14",
+          "sample_accession": "GSM4332691",
+          "clinical_state": "no_rejection",
+          "score": 0.3472,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver152",
+          "sample_accession": "GSM4332692",
+          "clinical_state": "no_rejection",
+          "score": -0.2533,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver180",
+          "sample_accession": "GSM4332693",
+          "clinical_state": "fibrosis",
+          "score": 1.537,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver6",
+          "sample_accession": "GSM4332694",
+          "clinical_state": "no_rejection",
+          "score": -0.479,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver144",
+          "sample_accession": "GSM4332695",
+          "clinical_state": "no_rejection",
+          "score": -0.1033,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver60",
+          "sample_accession": "GSM4332696",
+          "clinical_state": "no_rejection",
+          "score": -0.1593,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver224",
+          "sample_accession": "GSM4332697",
+          "clinical_state": "no_rejection",
+          "score": 0.36,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver7",
+          "sample_accession": "GSM4332698",
+          "clinical_state": "no_rejection",
+          "score": -0.0848,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver62",
+          "sample_accession": "GSM4332699",
+          "clinical_state": "early_injury",
+          "score": 2.0663,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver113",
+          "sample_accession": "GSM4332700",
+          "clinical_state": "no_rejection",
+          "score": -0.2166,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver71",
+          "sample_accession": "GSM4332701",
+          "clinical_state": "TCMR",
+          "score": 0.0621,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver197",
+          "sample_accession": "GSM4332702",
+          "clinical_state": "fibrosis",
+          "score": 0.5279,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver182",
+          "sample_accession": "GSM4332703",
+          "clinical_state": "no_rejection",
+          "score": 0.1056,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver110",
+          "sample_accession": "GSM4332704",
+          "clinical_state": "no_rejection",
+          "score": 0.0172,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver17",
+          "sample_accession": "GSM4332705",
+          "clinical_state": "no_rejection",
+          "score": -0.0217,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver28",
+          "sample_accession": "GSM4332706",
+          "clinical_state": "no_rejection",
+          "score": -0.4615,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver232",
+          "sample_accession": "GSM4332707",
+          "clinical_state": "fibrosis",
+          "score": 2.0191,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver24",
+          "sample_accession": "GSM4332708",
+          "clinical_state": "TCMR",
+          "score": 0.7967,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver209",
+          "sample_accession": "GSM4332709",
+          "clinical_state": "no_rejection",
+          "score": 0.1124,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver188",
+          "sample_accession": "GSM4332710",
+          "clinical_state": "no_rejection",
+          "score": -0.6415,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver79",
+          "sample_accession": "GSM4332711",
+          "clinical_state": "early_injury",
+          "score": -0.01,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver146",
+          "sample_accession": "GSM4332712",
+          "clinical_state": "early_injury",
+          "score": -1.199,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver78",
+          "sample_accession": "GSM4332713",
+          "clinical_state": "fibrosis",
+          "score": 3.5565,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver206",
+          "sample_accession": "GSM4332714",
+          "clinical_state": "early_injury",
+          "score": 0.7406,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver58",
+          "sample_accession": "GSM4332715",
+          "clinical_state": "TCMR",
+          "score": 0.8925,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver174",
+          "sample_accession": "GSM4332716",
+          "clinical_state": "early_injury",
+          "score": -0.0672,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver22",
+          "sample_accession": "GSM4332717",
+          "clinical_state": "TCMR",
+          "score": 1.0382,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver178",
+          "sample_accession": "GSM4332718",
+          "clinical_state": "no_rejection",
+          "score": 0.1863,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver103",
+          "sample_accession": "GSM4332719",
+          "clinical_state": "no_rejection",
+          "score": -0.8097,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver104",
+          "sample_accession": "GSM4332720",
+          "clinical_state": "no_rejection",
+          "score": 0.8205,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver135",
+          "sample_accession": "GSM4332721",
+          "clinical_state": "early_injury",
+          "score": 0.8611,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver125",
+          "sample_accession": "GSM4332722",
+          "clinical_state": "early_injury",
+          "score": -0.0391,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver208",
+          "sample_accession": "GSM4332723",
+          "clinical_state": "TCMR",
+          "score": -0.3206,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver229",
+          "sample_accession": "GSM4332724",
+          "clinical_state": "early_injury",
+          "score": -0.4461,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver212",
+          "sample_accession": "GSM4332725",
+          "clinical_state": "TCMR",
+          "score": 0.1294,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver74",
+          "sample_accession": "GSM4332726",
+          "clinical_state": "TCMR",
+          "score": 0.3157,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver172",
+          "sample_accession": "GSM4332727",
+          "clinical_state": "early_injury",
+          "score": 1.2638,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver91",
+          "sample_accession": "GSM4332728",
+          "clinical_state": "no_rejection",
+          "score": 0.4702,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver81",
+          "sample_accession": "GSM4332729",
+          "clinical_state": "no_rejection",
+          "score": 0.9498,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver55",
+          "sample_accession": "GSM4332730",
+          "clinical_state": "TCMR",
+          "score": 0.2527,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver66",
+          "sample_accession": "GSM4332731",
+          "clinical_state": "no_rejection",
+          "score": -0.4914,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver52",
+          "sample_accession": "GSM4332732",
+          "clinical_state": "early_injury",
+          "score": -0.1151,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver39",
+          "sample_accession": "GSM4332733",
+          "clinical_state": "no_rejection",
+          "score": -0.6513,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver211",
+          "sample_accession": "GSM4332734",
+          "clinical_state": "no_rejection",
+          "score": -0.446,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver86",
+          "sample_accession": "GSM4332735",
+          "clinical_state": "no_rejection",
+          "score": -1.054,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver195",
+          "sample_accession": "GSM4332736",
+          "clinical_state": "no_rejection",
+          "score": 0.3751,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver99",
+          "sample_accession": "GSM4332737",
+          "clinical_state": "early_injury",
+          "score": -0.4712,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver64",
+          "sample_accession": "GSM4332738",
+          "clinical_state": "early_injury",
+          "score": -0.3943,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver220",
+          "sample_accession": "GSM4332739",
+          "clinical_state": "TCMR",
+          "score": -0.7254,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver154",
+          "sample_accession": "GSM4332740",
+          "clinical_state": "no_rejection",
+          "score": -0.0324,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver189",
+          "sample_accession": "GSM4332741",
+          "clinical_state": "early_injury",
+          "score": 2.0389,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver132",
+          "sample_accession": "GSM4332742",
+          "clinical_state": "no_rejection",
+          "score": -0.8561,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver128",
+          "sample_accession": "GSM4332743",
+          "clinical_state": "no_rejection",
+          "score": -0.3521,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver130",
+          "sample_accession": "GSM4332744",
+          "clinical_state": "no_rejection",
+          "score": -0.2873,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver57",
+          "sample_accession": "GSM4332745",
+          "clinical_state": "no_rejection",
+          "score": 0.3969,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver38",
+          "sample_accession": "GSM4332746",
+          "clinical_state": "TCMR",
+          "score": -0.4331,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver160",
+          "sample_accession": "GSM4332747",
+          "clinical_state": "early_injury",
+          "score": 1.8713,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver37",
+          "sample_accession": "GSM4332748",
+          "clinical_state": "early_injury",
+          "score": 0.0748,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver70",
+          "sample_accession": "GSM4332749",
+          "clinical_state": "TCMR",
+          "score": 0.5491,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver84",
+          "sample_accession": "GSM4332750",
+          "clinical_state": "early_injury",
+          "score": -0.951,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver30",
+          "sample_accession": "GSM4332751",
+          "clinical_state": "no_rejection",
+          "score": -0.9419,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver201",
+          "sample_accession": "GSM4332752",
+          "clinical_state": "no_rejection",
+          "score": 0.2668,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver164",
+          "sample_accession": "GSM4332753",
+          "clinical_state": "no_rejection",
+          "score": -0.26,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver218",
+          "sample_accession": "GSM4332754",
+          "clinical_state": "no_rejection",
+          "score": -0.4069,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver151",
+          "sample_accession": "GSM4332755",
+          "clinical_state": "no_rejection",
+          "score": -0.7355,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver27",
+          "sample_accession": "GSM4332756",
+          "clinical_state": "no_rejection",
+          "score": -0.5208,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver90",
+          "sample_accession": "GSM4332757",
+          "clinical_state": "TCMR",
+          "score": 0.1471,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver89",
+          "sample_accession": "GSM4332758",
+          "clinical_state": "no_rejection",
+          "score": -0.6262,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver173",
+          "sample_accession": "GSM4332759",
+          "clinical_state": "TCMR",
+          "score": 0.9597,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver222",
+          "sample_accession": "GSM4332760",
+          "clinical_state": "no_rejection",
+          "score": -0.0486,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver170",
+          "sample_accession": "GSM4332761",
+          "clinical_state": "fibrosis",
+          "score": 2.7001,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver5",
+          "sample_accession": "GSM4332762",
+          "clinical_state": "fibrosis",
+          "score": 1.9699,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver179",
+          "sample_accession": "GSM4332763",
+          "clinical_state": "early_injury",
+          "score": 2.0202,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver23",
+          "sample_accession": "GSM4332764",
+          "clinical_state": "early_injury",
+          "score": 1.8618,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver92",
+          "sample_accession": "GSM4332765",
+          "clinical_state": "early_injury",
+          "score": 0.6245,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver214",
+          "sample_accession": "GSM4332766",
+          "clinical_state": "no_rejection",
+          "score": 0.4207,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver219",
+          "sample_accession": "GSM4332767",
+          "clinical_state": "early_injury",
+          "score": -0.0177,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver157",
+          "sample_accession": "GSM4332768",
+          "clinical_state": "no_rejection",
+          "score": 0.1807,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver97",
+          "sample_accession": "GSM4332769",
+          "clinical_state": "early_injury",
+          "score": 1.1602,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver32",
+          "sample_accession": "GSM4332770",
+          "clinical_state": "no_rejection",
+          "score": -0.5243,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver143",
+          "sample_accession": "GSM4332771",
+          "clinical_state": "no_rejection",
+          "score": -0.0557,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver226",
+          "sample_accession": "GSM4332772",
+          "clinical_state": "early_injury",
+          "score": -0.8239,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver122",
+          "sample_accession": "GSM4332773",
+          "clinical_state": "early_injury",
+          "score": 0.1137,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver15",
+          "sample_accession": "GSM4332774",
+          "clinical_state": "TCMR",
+          "score": 1.5209,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver116",
+          "sample_accession": "GSM4332775",
+          "clinical_state": "no_rejection",
+          "score": -0.7823,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver100",
+          "sample_accession": "GSM4332776",
+          "clinical_state": "early_injury",
+          "score": 0.6771,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver186",
+          "sample_accession": "GSM4332777",
+          "clinical_state": "no_rejection",
+          "score": -1.1281,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver93",
+          "sample_accession": "GSM4332778",
+          "clinical_state": "no_rejection",
+          "score": -0.9344,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver85",
+          "sample_accession": "GSM4332779",
+          "clinical_state": "no_rejection",
+          "score": -1.0454,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver168",
+          "sample_accession": "GSM4332780",
+          "clinical_state": "no_rejection",
+          "score": -0.3069,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver153",
+          "sample_accession": "GSM4332781",
+          "clinical_state": "no_rejection",
+          "score": 1.2152,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver112",
+          "sample_accession": "GSM4332782",
+          "clinical_state": "early_injury",
+          "score": 1.0165,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver137",
+          "sample_accession": "GSM4332783",
+          "clinical_state": "no_rejection",
+          "score": -0.2416,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver83",
+          "sample_accession": "GSM4332784",
+          "clinical_state": "no_rejection",
+          "score": -0.3206,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver223",
+          "sample_accession": "GSM4332785",
+          "clinical_state": "no_rejection",
+          "score": -0.4997,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver82",
+          "sample_accession": "GSM4332786",
+          "clinical_state": "no_rejection",
+          "score": -0.7044,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver44",
+          "sample_accession": "GSM4332787",
+          "clinical_state": "TCMR",
+          "score": 0.1954,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver8",
+          "sample_accession": "GSM4332788",
+          "clinical_state": "no_rejection",
+          "score": -1.0139,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver163",
+          "sample_accession": "GSM4332789",
+          "clinical_state": "no_rejection",
+          "score": -1.2776,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver156",
+          "sample_accession": "GSM4332790",
+          "clinical_state": "TCMR",
+          "score": 1.0764,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver120",
+          "sample_accession": "GSM4332791",
+          "clinical_state": "early_injury",
+          "score": 1.2831,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver167",
+          "sample_accession": "GSM4332792",
+          "clinical_state": "no_rejection",
+          "score": -1.2448,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver140",
+          "sample_accession": "GSM4332793",
+          "clinical_state": "no_rejection",
+          "score": -1.3537,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver19",
+          "sample_accession": "GSM4332794",
+          "clinical_state": "TCMR",
+          "score": -0.5819,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver136",
+          "sample_accession": "GSM4332795",
+          "clinical_state": "TCMR",
+          "score": 0.4239,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver234",
+          "sample_accession": "GSM4332796",
+          "clinical_state": "TCMR",
+          "score": -0.5174,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver169",
+          "sample_accession": "GSM4332797",
+          "clinical_state": "TCMR",
+          "score": -0.3151,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver102",
+          "sample_accession": "GSM4332798",
+          "clinical_state": "no_rejection",
+          "score": -1.0971,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver171",
+          "sample_accession": "GSM4332799",
+          "clinical_state": "no_rejection",
+          "score": -0.3157,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver47",
+          "sample_accession": "GSM4332800",
+          "clinical_state": "no_rejection",
+          "score": -0.3986,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver203",
+          "sample_accession": "GSM4332801",
+          "clinical_state": "no_rejection",
+          "score": -0.8628,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver165",
+          "sample_accession": "GSM4332802",
+          "clinical_state": "early_injury",
+          "score": -0.5191,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver67",
+          "sample_accession": "GSM4332803",
+          "clinical_state": "early_injury",
+          "score": -0.6106,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver126",
+          "sample_accession": "GSM4332804",
+          "clinical_state": "early_injury",
+          "score": 0.2154,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver161",
+          "sample_accession": "GSM4332805",
+          "clinical_state": "early_injury",
+          "score": 0.2418,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver124",
+          "sample_accession": "GSM4332806",
+          "clinical_state": "no_rejection",
+          "score": 0.3093,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver46",
+          "sample_accession": "GSM4332807",
+          "clinical_state": "no_rejection",
+          "score": -1.0458,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver77",
+          "sample_accession": "GSM4332808",
+          "clinical_state": "no_rejection",
+          "score": -0.5197,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver210",
+          "sample_accession": "GSM4332809",
+          "clinical_state": "no_rejection",
+          "score": 0.5512,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver202",
+          "sample_accession": "GSM4332810",
+          "clinical_state": "no_rejection",
+          "score": -0.8395,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver142",
+          "sample_accession": "GSM4332811",
+          "clinical_state": "TCMR",
+          "score": 1.6498,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver94",
+          "sample_accession": "GSM4332812",
+          "clinical_state": "no_rejection",
+          "score": -0.4502,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver118",
+          "sample_accession": "GSM4332813",
+          "clinical_state": "no_rejection",
+          "score": -1.0582,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver35",
+          "sample_accession": "GSM4332814",
+          "clinical_state": "no_rejection",
+          "score": -0.7198,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver141",
+          "sample_accession": "GSM4332815",
+          "clinical_state": "TCMR",
+          "score": 0.0803,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver50",
+          "sample_accession": "GSM4332816",
+          "clinical_state": "TCMR",
+          "score": -0.1107,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver25",
+          "sample_accession": "GSM4332817",
+          "clinical_state": "early_injury",
+          "score": -1.0934,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver76",
+          "sample_accession": "GSM4332818",
+          "clinical_state": "no_rejection",
+          "score": 0.5657,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver159",
+          "sample_accession": "GSM4332819",
+          "clinical_state": "early_injury",
+          "score": -0.5017,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver88",
+          "sample_accession": "GSM4332820",
+          "clinical_state": "early_injury",
+          "score": 0.9861,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver68",
+          "sample_accession": "GSM4332821",
+          "clinical_state": "TCMR",
+          "score": 0.9043,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver184",
+          "sample_accession": "GSM4332822",
+          "clinical_state": "early_injury",
+          "score": 1.0183,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver231",
+          "sample_accession": "GSM4332823",
+          "clinical_state": "no_rejection",
+          "score": -0.9876,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver105",
+          "sample_accession": "GSM4332824",
+          "clinical_state": "no_rejection",
+          "score": 0.5027,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver95",
+          "sample_accession": "GSM4332825",
+          "clinical_state": "TCMR",
+          "score": -0.1979,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver65",
+          "sample_accession": "GSM4332826",
+          "clinical_state": "no_rejection",
+          "score": -0.9604,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver11",
+          "sample_accession": "GSM4332827",
+          "clinical_state": "no_rejection",
+          "score": 0.0129,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver59",
+          "sample_accession": "GSM4332828",
+          "clinical_state": "fibrosis",
+          "score": 1.7536,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver49",
+          "sample_accession": "GSM4332829",
+          "clinical_state": "no_rejection",
+          "score": 0.4137,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver155",
+          "sample_accession": "GSM4332830",
+          "clinical_state": "TCMR",
+          "score": 0.0119,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver80",
+          "sample_accession": "GSM4332831",
+          "clinical_state": "early_injury",
+          "score": -0.486,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver192",
+          "sample_accession": "GSM4332832",
+          "clinical_state": "early_injury",
+          "score": 0.0664,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver111",
+          "sample_accession": "GSM4332833",
+          "clinical_state": "no_rejection",
+          "score": -0.6055,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver41",
+          "sample_accession": "GSM4332834",
+          "clinical_state": "no_rejection",
+          "score": -0.4889,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver96",
+          "sample_accession": "GSM4332835",
+          "clinical_state": "no_rejection",
+          "score": 0.3746,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver216",
+          "sample_accession": "GSM4332836",
+          "clinical_state": "early_injury",
+          "score": 0.873,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver20",
+          "sample_accession": "GSM4332837",
+          "clinical_state": "no_rejection",
+          "score": 0.1256,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver119",
+          "sample_accession": "GSM4332838",
+          "clinical_state": "TCMR",
+          "score": -0.5319,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver2",
+          "sample_accession": "GSM4332839",
+          "clinical_state": "no_rejection",
+          "score": -0.599,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver207",
+          "sample_accession": "GSM4332840",
+          "clinical_state": "early_injury",
+          "score": -0.353,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver215",
+          "sample_accession": "GSM4332841",
+          "clinical_state": "TCMR",
+          "score": -0.8244,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver228",
+          "sample_accession": "GSM4332842",
+          "clinical_state": "no_rejection",
+          "score": -0.6833,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver233",
+          "sample_accession": "GSM4332843",
+          "clinical_state": "no_rejection",
+          "score": -0.7691,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver33",
+          "sample_accession": "GSM4332844",
+          "clinical_state": "TCMR",
+          "score": -0.6667,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver198",
+          "sample_accession": "GSM4332845",
+          "clinical_state": "no_rejection",
+          "score": -0.7137,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver53",
+          "sample_accession": "GSM4332846",
+          "clinical_state": "no_rejection",
+          "score": -0.142,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver133",
+          "sample_accession": "GSM4332847",
+          "clinical_state": "early_injury",
+          "score": -0.6008,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver199",
+          "sample_accession": "GSM4332848",
+          "clinical_state": "early_injury",
+          "score": -0.2571,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver75",
+          "sample_accession": "GSM4332849",
+          "clinical_state": "early_injury",
+          "score": 0.0179,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver129",
+          "sample_accession": "GSM4332850",
+          "clinical_state": "TCMR",
+          "score": 1.0414,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver10",
+          "sample_accession": "GSM4332851",
+          "clinical_state": "early_injury",
+          "score": 0.2909,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver108",
+          "sample_accession": "GSM4332852",
+          "clinical_state": "TCMR",
+          "score": -0.0066,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver26",
+          "sample_accession": "GSM4332853",
+          "clinical_state": "TCMR",
+          "score": 1.2511,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver1",
+          "sample_accession": "GSM4332854",
+          "clinical_state": "no_rejection",
+          "score": -0.8051,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver54",
+          "sample_accession": "GSM4332855",
+          "clinical_state": "no_rejection",
+          "score": -1.0134,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver183",
+          "sample_accession": "GSM4332856",
+          "clinical_state": "no_rejection",
+          "score": -0.6623,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver123",
+          "sample_accession": "GSM4332857",
+          "clinical_state": "no_rejection",
+          "score": -0.536,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver134",
+          "sample_accession": "GSM4332858",
+          "clinical_state": "TCMR",
+          "score": 0.2463,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver13",
+          "sample_accession": "GSM4332859",
+          "clinical_state": "no_rejection",
+          "score": 0.1574,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver196",
+          "sample_accession": "GSM4332860",
+          "clinical_state": "no_rejection",
+          "score": 0.5753,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver73",
+          "sample_accession": "GSM4332861",
+          "clinical_state": "no_rejection",
+          "score": -0.3428,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver225",
+          "sample_accession": "GSM4332862",
+          "clinical_state": "no_rejection",
+          "score": -0.9051,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver191",
+          "sample_accession": "GSM4332863",
+          "clinical_state": "no_rejection",
+          "score": 0.8455,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver72",
+          "sample_accession": "GSM4332864",
+          "clinical_state": "no_rejection",
+          "score": -0.5535,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver69",
+          "sample_accession": "GSM4332865",
+          "clinical_state": "no_rejection",
+          "score": -0.6239,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver221",
+          "sample_accession": "GSM4332866",
+          "clinical_state": "no_rejection",
+          "score": -0.8749,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver43",
+          "sample_accession": "GSM4332867",
+          "clinical_state": "no_rejection",
+          "score": 0.0926,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver31",
+          "sample_accession": "GSM4332868",
+          "clinical_state": "fibrosis",
+          "score": 3.2836,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver56",
+          "sample_accession": "GSM4332869",
+          "clinical_state": "no_rejection",
+          "score": -0.3436,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver213",
+          "sample_accession": "GSM4332870",
+          "clinical_state": "no_rejection",
+          "score": -0.3357,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver115",
+          "sample_accession": "GSM4332871",
+          "clinical_state": "no_rejection",
+          "score": -0.1974,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver217",
+          "sample_accession": "GSM4332872",
+          "clinical_state": "no_rejection",
+          "score": -0.9848,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver36",
+          "sample_accession": "GSM4332873",
+          "clinical_state": "no_rejection",
+          "score": 0.2666,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver127",
+          "sample_accession": "GSM4332874",
+          "clinical_state": "no_rejection",
+          "score": 0.3452,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver190",
+          "sample_accession": "GSM4332875",
+          "clinical_state": "no_rejection",
+          "score": -0.5004,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver107",
+          "sample_accession": "GSM4332876",
+          "clinical_state": "early_injury",
+          "score": 0.6004,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver4",
+          "sample_accession": "GSM4332877",
+          "clinical_state": "early_injury",
+          "score": -0.5177,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver12",
+          "sample_accession": "GSM4332878",
+          "clinical_state": "no_rejection",
+          "score": 0.3047,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver114",
+          "sample_accession": "GSM4332879",
+          "clinical_state": "early_injury",
+          "score": -0.7941,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver34",
+          "sample_accession": "GSM4332880",
+          "clinical_state": "no_rejection",
+          "score": -0.4493,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver148",
+          "sample_accession": "GSM4332881",
+          "clinical_state": "no_rejection",
+          "score": -0.067,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver42",
+          "sample_accession": "GSM4332882",
+          "clinical_state": "no_rejection",
+          "score": -0.8428,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver230",
+          "sample_accession": "GSM4332883",
+          "clinical_state": "no_rejection",
+          "score": -0.1968,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver40",
+          "sample_accession": "GSM4332884",
+          "clinical_state": "no_rejection",
+          "score": -0.3337,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver29",
+          "sample_accession": "GSM4332885",
+          "clinical_state": "no_rejection",
+          "score": 0.0048,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver193",
+          "sample_accession": "GSM4332886",
+          "clinical_state": "no_rejection",
+          "score": 0.6255,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver235",
+          "sample_accession": "GSM4332887",
+          "clinical_state": "no_rejection",
+          "score": 0.5284,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver194",
+          "sample_accession": "GSM4332888",
+          "clinical_state": "no_rejection",
+          "score": 1.1241,
+          "genes_observed": 7
+        },
+        {
+          "sample_title": "liver51",
+          "sample_accession": "GSM4332889",
+          "clinical_state": "no_rejection",
+          "score": 0.2359,
+          "genes_observed": 7
+        }
+      ]
+    }
+  }
+}

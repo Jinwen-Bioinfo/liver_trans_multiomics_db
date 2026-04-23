@@ -1,0 +1,22 @@
+{
+  "signatures": [
+    {
+      "signature_id": "TCMR_IFNG_CYTOTOXIC",
+      "name": "TCMR IFN-gamma cytotoxic signature",
+      "description": "A compact demonstration signature for T cell-mediated rejection, combining IFN-gamma chemokines and cytotoxic T/NK markers.",
+      "genes": ["CXCL9", "CXCL10", "IFNG", "GZMB"],
+      "directions": {"CXCL9": 1, "CXCL10": 1, "IFNG": 1, "GZMB": 1},
+      "expected_high_state": "TCMR",
+      "status": "pre_specified_marker_panel"
+    },
+    {
+      "signature_id": "FIBROSIS_ECM",
+      "name": "Fibrosis extracellular matrix signature",
+      "description": "A compact ECM/fibrosis marker panel for graft fibrosis exploration; not a clinical classifier.",
+      "genes": ["COL1A1", "COL3A1", "ACTA2", "TAGLN", "LUM", "DCN", "TGFBI"],
+      "directions": {"COL1A1": 1, "COL3A1": 1, "ACTA2": 1, "TAGLN": 1, "LUM": 1, "DCN": 1, "TGFBI": 1},
+      "expected_high_state": "fibrosis",
+      "status": "pre_specified_marker_panel"
+    }
+  ]
+}

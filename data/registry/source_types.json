@@ -1,0 +1,62 @@
+{
+  "source_types": [
+    {
+      "source_type": "repository_accession",
+      "label": "Public repository accession",
+      "counts_as_database_source": true,
+      "examples": ["GEO", "SRA", "PRIDE", "MetaboLights", "MGnify", "BioProject"],
+      "processed_layer_requirement": "Downloaded or API-fetched metadata plus reusable matrix/table/object with checksum and provenance."
+    },
+    {
+      "source_type": "author_repository",
+      "label": "Author repository",
+      "counts_as_database_source": true,
+      "examples": ["GitHub", "Zenodo", "Figshare", "Dryad", "OSF"],
+      "processed_layer_requirement": "Repository files must be inventoried with URLs, checksums, file sizes, and parser outputs."
+    },
+    {
+      "source_type": "supplementary_table",
+      "label": "Article supplementary table",
+      "counts_as_database_source": true,
+      "examples": ["Supplementary Excel", "CSV/TSV supplement", "journal-hosted source data"],
+      "processed_layer_requirement": "Supplementary file must be downloaded, checksummed, sheet/table names recorded, and sample/feature/phenotype fields mapped."
+    },
+    {
+      "source_type": "controlled_access",
+      "label": "Controlled-access human data",
+      "counts_as_database_source": true,
+      "examples": ["EGA", "dbGaP", "NGDC controlled human data"],
+      "processed_layer_requirement": "Can be indexed as metadata, but not exposed as public processed evidence unless access terms permit derived public summaries."
+    },
+    {
+      "source_type": "figure_only",
+      "label": "Figure-only quantitative evidence",
+      "counts_as_database_source": false,
+      "examples": ["Heatmap image", "bar plot without source values"],
+      "processed_layer_requirement": "Do not use as primary database data. Only record as literature evidence unless source values are available."
+    },
+    {
+      "source_type": "literature_only",
+      "label": "Literature-only claim",
+      "counts_as_database_source": false,
+      "examples": ["Narrative result", "review statement", "abstract-only association"],
+      "processed_layer_requirement": "Can support prioritization but not feature-level evidence."
+    }
+  ],
+  "supplementary_table_minimum_metadata": [
+    "article_pmid",
+    "article_doi",
+    "journal",
+    "supplementary_file_url",
+    "file_name",
+    "file_type",
+    "checksum",
+    "table_name",
+    "sample_id_columns",
+    "feature_id_columns",
+    "phenotype_columns",
+    "omics_layer",
+    "processable_status",
+    "license_or_reuse_note"
+  ]
+}

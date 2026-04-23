@@ -1,0 +1,92 @@
+{
+  "omics_layers": [
+    {
+      "layer_id": "transcriptome_bulk",
+      "label": "Bulk transcriptome",
+      "feature_types": ["gene"],
+      "sample_origins": ["graft_liver", "donor_liver", "recipient_blood"],
+      "scientific_questions": [
+        "Which genes and pathways distinguish TCMR, early graft injury, fibrosis, and no rejection?",
+        "Which donor-liver expression programs track accepted versus rejected organs?",
+        "Can blood transcriptional programs support non-invasive graft monitoring?"
+      ],
+      "registered_accessions": ["GSE145780", "GSE243887", "GSE200340"],
+      "processed_accessions": ["GSE145780"],
+      "current_artifacts": [
+        "data/processed/GSE145780/gene_expression_summary.json",
+        "data/processed/GSE145780/differential_expression.json"
+      ],
+      "readiness": "partially_processed"
+    },
+    {
+      "layer_id": "single_cell",
+      "label": "Single-cell and single-nucleus transcriptome",
+      "feature_types": ["gene", "cell_type"],
+      "sample_origins": ["graft_liver", "recipient_blood"],
+      "scientific_questions": [
+        "Which immune, stromal, endothelial, biliary, and parenchymal compartments drive bulk rejection signals?",
+        "Do CD8 tissue-resident memory, myeloid, B cell, or endothelial programs explain rejection heterogeneity?"
+      ],
+      "registered_accessions": ["HRA002091", "HRA007802"],
+      "processed_accessions": [],
+      "current_artifacts": [],
+      "readiness": "registered_not_processed"
+    },
+    {
+      "layer_id": "proteome",
+      "label": "Proteome",
+      "feature_types": ["protein", "gene"],
+      "sample_origins": ["graft_liver", "serum", "plasma"],
+      "scientific_questions": [
+        "Which rejection, complement, coagulation, fibrosis, and hepatocyte proteins are detectable beyond RNA?",
+        "Which protein markers can bridge biopsy biology and clinically measurable blood assays?"
+      ],
+      "registered_accessions": ["PXD012615"],
+      "processed_accessions": [],
+      "current_artifacts": [],
+      "readiness": "reference_registered_not_ingested"
+    },
+    {
+      "layer_id": "metabolome",
+      "label": "Metabolome",
+      "feature_types": ["metabolite", "pathway"],
+      "sample_origins": ["graft_liver", "serum", "plasma", "bile"],
+      "scientific_questions": [
+        "Which bile acid, mitochondrial, urea-cycle, oxidative stress, and drug-metabolism programs track graft injury?",
+        "Can metabolic readouts separate hepatocyte dysfunction from immune rejection?"
+      ],
+      "registered_accessions": ["DFI_MICROBIOME_LT_2024"],
+      "processed_accessions": ["DFI_MICROBIOME_LT_2024"],
+      "current_artifacts": [],
+      "readiness": "processed_summary_ready"
+    },
+    {
+      "layer_id": "microbiome",
+      "label": "Microbiome",
+      "feature_types": ["taxon", "microbial_pathway"],
+      "sample_origins": ["stool", "bile", "blood"],
+      "scientific_questions": [
+        "Which microbial taxa or functions associate with infection risk, rejection, bile complications, or immunosuppression exposure?",
+        "Can gut-liver axis signals contextualize post-transplant inflammation?"
+      ],
+      "registered_accessions": ["DFI_MICROBIOME_LT_2024"],
+      "processed_accessions": ["DFI_MICROBIOME_LT_2024"],
+      "current_artifacts": [],
+      "readiness": "processed_summary_ready"
+    },
+    {
+      "layer_id": "immunogenetics",
+      "label": "Immunogenetics and histocompatibility",
+      "feature_types": ["hla_allele", "variant", "donor_recipient_pair"],
+      "sample_origins": ["donor_recipient_metadata"],
+      "scientific_questions": [
+        "How do HLA mismatch, donor-recipient compatibility, and immune pharmacogenetics interact with molecular rejection states?",
+        "Which public datasets expose enough de-identified histocompatibility metadata to support evidence links?"
+      ],
+      "registered_accessions": [],
+      "processed_accessions": [],
+      "current_artifacts": [],
+      "readiness": "metadata_model_ready"
+    }
+  ]
+}

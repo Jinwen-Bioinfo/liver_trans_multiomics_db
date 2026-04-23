@@ -1,0 +1,21 @@
+{
+  "sample_count": 235,
+  "by_clinical_state": {
+    "TCMR": 37,
+    "early_injury": 61,
+    "fibrosis": 8,
+    "no_rejection": 129
+  },
+  "by_original_label": {
+    "R1normal": 129,
+    "R2TCMR": 37,
+    "R3injury": 61,
+    "R4late": 8
+  },
+  "by_sample_origin": {
+    "graft_liver": 235
+  },
+  "by_assay_modality": {
+    "bulk_rna": 235
+  }
+}

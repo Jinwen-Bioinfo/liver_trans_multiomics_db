@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LiverTx-OmicsDB</title>
+    <style>
+      :root {
+        --ink: #1d2528;
+        --muted: #5f6f74;
+        --line: #d7e1df;
+        --paper: #f7faf9;
+        --teal: #0b7774;
+        --green: #6d8c3f;
+        --gold: #c79329;
+        --white: #ffffff;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--paper);
+      }
+
+      header {
+        border-bottom: 1px solid var(--line);
+        background: var(--white);
+      }
+
+      .wrap {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 68px;
+        gap: 20px;
+      }
+
+      .brand {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .brand strong {
+        font-size: 22px;
+      }
+
+      .brand span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      nav {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: var(--teal);
+        text-decoration: none;
+        font-weight: 650;
+      }
+
+      main {
+        padding: 30px 0 56px;
+      }
+
+      .workspace {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) 340px;
+        gap: 24px;
+        align-items: start;
+      }
+
+      .search-panel,
+      .side-panel,
+      .dataset,
+      .section {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+      }
+
+      .search-panel {
+        padding: 22px;
+      }
+
+      h1 {
+        margin: 0 0 14px;
+        font-size: clamp(32px, 5vw, 58px);
+        line-height: 1;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        color: var(--muted);
+        max-width: 760px;
+        margin: 0 0 22px;
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: minmax(240px, 1.4fr) repeat(3, minmax(150px, 0.7fr));
+        gap: 10px;
+      }
+
+      input,
+      select {
+        width: 100%;
+        min-height: 44px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        padding: 0 12px;
+        font: inherit;
+        background: var(--white);
+        color: var(--ink);
+      }
+
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .stat {
+        border-left: 4px solid var(--teal);
+        padding: 10px 12px;
+        background: #eef7f4;
+      }
+
+      .stat strong {
+        display: block;
+        font-size: 24px;
+      }
+
+      .stat span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .side-panel {
+        padding: 18px;
+      }
+
+      h2 {
+        margin: 0 0 12px;
+        font-size: 20px;
+      }
+
+      .check {
+        display: flex;
+        justify-content: space-between;
+        gap: 14px;
+        padding: 10px 0;
+        border-top: 1px solid var(--line);
+        font-size: 14px;
+      }
+
+      .check:first-of-type {
+        border-top: 0;
+      }
+
+      .layer-list {
+        display: grid;
+        gap: 10px;
+        margin: 16px 0 22px;
+      }
+
+      .layer {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 12px;
+        background: #fbfdfc;
+      }
+
+      .layer strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .layer span {
+        color: var(--muted);
+        display: block;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        min-height: 24px;
+        padding: 0 9px;
+        border-radius: 999px;
+        background: #eef4e2;
+        color: #49601f;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+      }
+
+      .dataset-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 18px;
+      }
+
+      .dataset {
+        padding: 18px;
+      }
+
+      .dataset h3 {
+        margin: 0 0 8px;
+        font-size: 19px;
+      }
+
+      .dataset p {
+        color: var(--muted);
+        line-height: 1.5;
+        margin: 0 0 12px;
+      }
+
+      .summary {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 0 0 12px;
+      }
+
+      .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 12px;
+        color: var(--muted);
+      }
+
+      .section {
+        margin-top: 24px;
+        padding: 22px;
+      }
+
+      .use-case-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .use-case {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: #fbfdfc;
+      }
+
+      .use-case h3 {
+        margin: 0 0 8px;
+        font-size: 17px;
+      }
+
+      .use-case p {
+        margin: 0 0 10px;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+
+      .actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-top: 12px;
+      }
+
+      button,
+      .link-button {
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 6px;
+        background: var(--white);
+        color: var(--teal);
+        padding: 0 10px;
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+      }
+
+      button:hover,
+      .link-button:hover {
+        border-color: var(--teal);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+
+      .evidence-panel {
+        margin-top: 18px;
+        padding: 16px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #fbfdfc;
+      }
+
+      .bar-row {
+        display: grid;
+        grid-template-columns: 130px minmax(0, 1fr) 70px;
+        gap: 10px;
+        align-items: center;
+        margin: 8px 0;
+        font-size: 13px;
+      }
+
+      .bar {
+        height: 12px;
+        border-radius: 999px;
+        background: #dce8e5;
+        overflow: hidden;
+      }
+
+      .bar span {
+        display: block;
+        height: 100%;
+        background: var(--teal);
+      }
+
+      .mini {
+        border-left: 4px solid var(--gold);
+        background: #fff9ec;
+        padding: 12px;
+      }
+
+      .sample-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 12px;
+        font-size: 13px;
+      }
+
+      .sample-table th,
+      .sample-table td {
+        border-top: 1px solid var(--line);
+        padding: 8px 6px;
+        text-align: left;
+        vertical-align: top;
+      }
+
+      .mini strong {
+        display: block;
+        margin-bottom: 6px;
+      }
+
+      .mini span {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      @media (max-width: 900px) {
+        .workspace,
+        .controls,
+        .grid,
+        .stats {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap topbar">
+        <div class="brand">
+          <strong>LiverTx-OmicsDB</strong>
+          <span>Public multi-omics evidence for liver transplantation</span>
+        </div>
+        <nav>
+          <a href="/docs">API</a>
+          <a href="#help">Help</a>
+          <a href="#about">About</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <div class="workspace">
+        <section class="search-panel">
+          <h1>Liver transplantation omics evidence</h1>
+          <p class="lead">
+            Search curated public datasets by accession, transplant state, sample origin, omics modality, genes,
+            cell types, and pathways.
+          </p>
+
+          <div class="controls">
+            <input id="query" type="search" placeholder="Search CXCL9, rejection, donor liver, GSE145780" />
+            <select id="modality">
+              <option value="">All modalities</option>
+              <option value="bulk_rna">Bulk RNA</option>
+              <option value="single_cell_rna">Single-cell RNA</option>
+              <option value="pathology_metadata">Pathology metadata</option>
+            </select>
+            <select id="origin">
+              <option value="">All sample origins</option>
+              <option value="graft_liver">Graft liver</option>
+              <option value="donor_liver">Donor liver</option>
+              <option value="recipient_blood">Recipient blood</option>
+            </select>
+            <select id="state">
+              <option value="">All states</option>
+              <option value="TCMR">TCMR</option>
+              <option value="rejection">Rejection</option>
+              <option value="stable">Stable</option>
+              <option value="fibrosis">Fibrosis</option>
+              <option value="accepted_donor_liver">Accepted donor liver</option>
+              <option value="rejected_donor_liver">Rejected donor liver</option>
+            </select>
+          </div>
+
+          <div class="stats">
+            <div class="stat"><strong id="study-count">0</strong><span>registered studies</span></div>
+            <div class="stat"><strong id="open-count">0</strong><span>open public records</span></div>
+            <div class="stat"><strong id="modality-count">0</strong><span>modalities represented</span></div>
+          </div>
+
+          <div id="use-cases" class="use-case-list"></div>
+          <div id="gene-evidence"></div>
+          <div id="signature-evidence"></div>
+          <div id="detail-panel"></div>
+
+          <div id="datasets" class="dataset-list"></div>
+        </section>
+
+        <aside class="side-panel">
+          <h2>Omics Layers</h2>
+          <div id="omics-layers" class="layer-list"></div>
+          <h2>NAR Readiness</h2>
+          <div id="readiness"></div>
+        </aside>
+      </div>
+
+      <section class="section" id="help">
+        <h2>Help</h2>
+        <div class="grid">
+          <div class="mini">
+            <strong>Dataset browser</strong>
+            <span>Filter studies by transplant state, omics modality, and sample origin.</span>
+          </div>
+          <div class="mini">
+            <strong>Gene evidence</strong>
+            <span>Use the search box for marker genes such as CXCL9, CXCL10, IFNG, GZMB, or COL1A1.</span>
+          </div>
+          <div class="mini">
+            <strong>Submission status</strong>
+            <span>The NAR panel tracks what remains before a credible Database Issue pre-submission inquiry.</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <h2>About</h2>
+        <p class="lead">
+          LiverTx-OmicsDB integrates public liver transplantation omics datasets into a curated evidence model.
+          It preserves public accession provenance while adding transplant-specific labels, QC status, and
+          biological summaries.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const controls = ["query", "modality", "origin", "state"].map((id) => document.getElementById(id));
+
+      function tag(value) {
+        return `<span class="tag">${value}</span>`;
+      }
+
+      async function loadStudies() {
+        const params = new URLSearchParams();
+        const query = document.getElementById("query").value.trim();
+        const modality = document.getElementById("modality").value;
+        const origin = document.getElementById("origin").value;
+        const state = document.getElementById("state").value;
+        if (query) params.set("query", query);
+        if (modality) params.set("modality", modality);
+        if (origin) params.set("sample_origin", origin);
+        if (state) params.set("clinical_state", state);
+
+        const response = await fetch(`/api/studies?${params}`);
+        const data = await response.json();
+        document.getElementById("study-count").textContent = data.count;
+        document.getElementById("open-count").textContent = data.studies.filter((study) => study.public_access === "open").length;
+        const modalities = new Set(data.studies.flatMap((study) => study.omics_modalities));
+        document.getElementById("modality-count").textContent = modalities.size;
+
+        document.getElementById("datasets").innerHTML = data.studies.map((study) => {
+          const summary = study.sample_summary;
+          const summaryHtml = summary ? `
+            <div class="summary">
+              ${tag(`${summary.sample_count} samples`)}
+              ${Object.entries(summary.by_clinical_state).map(([label, count]) => tag(`${label}: ${count}`)).join("")}
+            </div>
+          ` : "";
+          return `
+          <article class="dataset">
+            <h3>${study.accession}: ${study.title}</h3>
+            <p>${study.summary}</p>
+            ${summaryHtml}
+            <div class="tags">
+              ${study.omics_modalities.map(tag).join("")}
+              ${study.sample_origins.map(tag).join("")}
+              ${study.clinical_states.map(tag).join("")}
+              ${tag(study.public_access)}
+              ${tag(study.processing_status)}
+            </div>
+            <div class="actions">
+              <button type="button" data-action="details" data-accession="${study.accession}" onclick="showStudy('${study.accession}')">Details</button>
+              <button type="button" data-action="samples" data-accession="${study.accession}" onclick="showSamples('${study.accession}', '')">Samples</button>
+              <a class="link-button" href="${study.repository_url}" target="_blank" rel="noreferrer">Repository</a>
+            </div>
+          </article>
+        `}).join("");
+      }
+
+      async function loadUseCases() {
+        const response = await fetch("/api/use-cases");
+        const data = await response.json();
+        document.getElementById("use-cases").innerHTML = data.use_cases.map((item) => `
+          <article class="use-case">
+            <h3>${item.title}</h3>
+            <p>${item.clinical_question}</p>
+            <div class="tags">
+              ${item.primary_datasets.map(tag).join("")}
+              ${(item.omics_layers || []).map(tag).join("")}
+              ${item.markers.slice(0, 4).map(tag).join("")}
+              ${tag(item.readiness)}
+            </div>
+            <div class="actions">
+              <button type="button" onclick="showUseCase('${item.use_case_id}')">Open question</button>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      async function showUseCase(useCaseId) {
+        const response = await fetch(`/api/use-cases/${useCaseId}`);
+        const item = await response.json();
+        document.getElementById("detail-panel").innerHTML = `
+          <div class="evidence-panel">
+            <h2>${item.title}</h2>
+            <p class="lead">${item.why_it_matters}</p>
+            <strong>Current evidence</strong>
+            <ul>${item.current_evidence.map((line) => `<li>${line}</li>`).join("")}</ul>
+            <strong>Next validation</strong>
+            <ul>${item.next_validation.map((line) => `<li>${line}</li>`).join("")}</ul>
+            <div class="tags">
+              ${item.primary_datasets.map(tag).join("")}
+              ${item.supporting_datasets.map(tag).join("")}
+              ${(item.omics_layers || []).map(tag).join("")}
+              ${item.signatures.map(tag).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      async function showStudy(accession) {
+        const [detailResponse, downloadResponse] = await Promise.all([
+          fetch(`/api/studies/${accession}`),
+          fetch(`/api/studies/${accession}/downloads`)
+        ]);
+        const study = await detailResponse.json();
+        const downloads = await downloadResponse.json();
+        const summary = study.sample_summary;
+        document.getElementById("detail-panel").innerHTML = `
+          <div class="evidence-panel">
+            <h2>${study.accession}</h2>
+            <p class="lead">${study.title}</p>
+            <p>${study.summary}</p>
+            ${summary ? `<div class="summary">${tag(`${summary.sample_count} samples`)}${Object.entries(summary.by_clinical_state).map(([label, count]) => tag(`${label}: ${count}`)).join("")}</div>` : ""}
+            <div class="actions">
+              ${downloads.downloads.map((item) => `<a class="link-button" href="${item.url}" target="_blank" rel="noreferrer">${item.artifact}</a>`).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      async function showSamples(accession, clinicalState) {
+        const params = new URLSearchParams({ limit: "12" });
+        if (clinicalState) params.set("clinical_state", clinicalState);
+        const response = await fetch(`/api/studies/${accession}/samples?${params}`);
+        const data = await response.json();
+        document.getElementById("detail-panel").innerHTML = `
+          <div class="evidence-panel">
+            <h2>${accession} Samples</h2>
+            <p class="lead">${data.count} matching samples; showing ${data.samples.length}</p>
+            <div class="actions">
+              <button type="button" onclick="showSamples('${accession}', 'TCMR')">TCMR</button>
+              <button type="button" onclick="showSamples('${accession}', 'no_rejection')">No rejection</button>
+              <button type="button" onclick="showSamples('${accession}', 'early_injury')">Early injury</button>
+              <button type="button" onclick="showSamples('${accession}', 'fibrosis')">Fibrosis</button>
+            </div>
+            <table class="sample-table">
+              <thead><tr><th>Sample</th><th>Title</th><th>State</th><th>Origin</th></tr></thead>
+              <tbody>
+                ${data.samples.map((sample) => `
+                  <tr>
+                    <td>${sample.sample_accession}</td>
+                    <td>${sample.title}</td>
+                    <td>${sample.clinical_state}</td>
+                    <td>${sample.sample_origin}</td>
+                  </tr>
+                `).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+
+      async function loadGeneEvidence() {
+        const query = document.getElementById("query").value.trim();
+        const panel = document.getElementById("gene-evidence");
+        if (!/^[A-Za-z0-9-]{2,20}$/.test(query)) {
+          panel.innerHTML = "";
+          return;
+        }
+        const response = await fetch(`/api/features/${encodeURIComponent(query)}/expression`);
+        const data = await response.json();
+        if (!data.evidence_count) {
+          panel.innerHTML = "";
+          return;
+        }
+        const evidence = data.expression_evidence[0];
+        const groups = Object.entries(evidence.group_summary);
+        const maxMean = Math.max(...groups.map(([, item]) => item.mean));
+        panel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${data.feature} Expression Evidence</h2>
+            <p class="lead">${evidence.study_accession} · ${evidence.assay_scale} · ${evidence.probe_ids.join(", ")}</p>
+            ${evidence.statistical_contrasts && evidence.statistical_contrasts.TCMR_vs_no_rejection ? `
+              <p class="lead">TCMR vs no_rejection: Δlog2 ${evidence.statistical_contrasts.TCMR_vs_no_rejection.mean_difference_log2_scale}, FDR ${Number(evidence.statistical_contrasts.TCMR_vs_no_rejection.adj_p_value_bh).toExponential(2)}</p>
+            ` : ""}
+            ${groups.map(([state, item]) => `
+              <div class="bar-row">
+                <span>${state}</span>
+                <div class="bar"><span style="width:${Math.max(4, (item.mean / maxMean) * 100)}%"></span></div>
+                <span>${item.mean}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      async function loadSignatureEvidence() {
+        const panel = document.getElementById("signature-evidence");
+        const response = await fetch("/api/signatures/TCMR_IFNG_CYTOTOXIC/scores");
+        const data = await response.json();
+        if (!data.evidence_count) {
+          panel.innerHTML = "";
+          return;
+        }
+        const evidence = data.signature_evidence[0];
+        const groups = Object.entries(evidence.group_summary);
+        const maxMean = Math.max(...groups.map(([, item]) => item.mean));
+        panel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>TCMR Signature Score</h2>
+            <p class="lead">${evidence.study_accession} · ${evidence.genes.join(", ")} · expected high state: ${evidence.expected_high_state}</p>
+            ${groups.map(([state, item]) => `
+              <div class="bar-row">
+                <span>${state}</span>
+                <div class="bar"><span style="width:${Math.max(4, (item.mean / maxMean) * 100)}%"></span></div>
+                <span>${item.mean}</span>
+              </div>
+            `).join("")}
+          </div>
+        `;
+      }
+
+      async function loadOmicsLayers() {
+        const response = await fetch("/api/omics-layers");
+        const data = await response.json();
+        document.getElementById("omics-layers").innerHTML = data.omics_layers.map((layer) => `
+          <article class="layer">
+            <strong>${layer.label}</strong>
+            <span>${layer.readiness}</span>
+            <div class="tags">
+              ${layer.feature_types.slice(0, 3).map(tag).join("")}
+              ${tag(`${layer.processed_accessions.length}/${layer.registered_accessions.length} processed`)}
+              ${layer.registered_source_records.length ? tag(`${layer.registered_source_records.length} source`) : ""}
+            </div>
+          </article>
+        `).join("");
+      }
+
+      async function loadReadiness() {
+        const response = await fetch("/api/nar/readiness");
+        const data = await response.json();
+        document.getElementById("readiness").innerHTML = data.criteria.map((item) => `
+          <div class="check">
+            <span>${item.criterion}</span>
+            <span class="badge">${item.status}</span>
+          </div>
+        `).join("");
+      }
+
+      controls.forEach((control) => control.addEventListener("input", () => {
+        loadStudies();
+        loadGeneEvidence();
+      }));
+      loadStudies();
+      loadUseCases();
+      loadOmicsLayers();
+      loadGeneEvidence();
+      loadSignatureEvidence();
+      loadReadiness();
+    </script>
+  </body>
+</html>

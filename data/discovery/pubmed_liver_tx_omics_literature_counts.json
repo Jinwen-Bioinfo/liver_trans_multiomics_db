@@ -1,0 +1,172 @@
+{
+  "generated_at_utc": "2026-04-23T06:00:44.966359+00:00",
+  "source": "NCBI PubMed E-utilities esearch",
+  "counts": {
+    "liver_transplant_all_broad": {
+      "query": "(\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab])",
+      "count": 96751,
+      "top_pmids": [
+        "7598483",
+        "34343613",
+        "34564024",
+        "33158465",
+        "32684007"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "liver_transplant_omics_any": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (omics[tiab] OR multiomics[tiab] OR \"multi-omics\"[tiab] OR transcriptom*[tiab] OR proteom*[tiab] OR metabolom*[tiab] OR metagenom*[tiab] OR microbiom*[tiab] OR \"single-cell\"[tiab] OR \"single cell\"[tiab] OR scRNA[tiab] OR methylom*[tiab] OR epigenom*[tiab] OR \"cell-free DNA\"[tiab] OR cfDNA[tiab] OR \"gene expression\"[tiab] OR microarray[tiab] OR \"RNA-seq\"[tiab] OR sequencing[tiab]))",
+      "count": 2067,
+      "top_pmids": [
+        "37208107",
+        "33602855",
+        "35567372",
+        "37858181",
+        "33278149"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28omics%5Btiab%5D+OR+multiomics%5Btiab%5D+OR+%22multi-omics%22%5Btiab%5D+OR+transcriptom%2A%5Btiab%5D+OR+proteom%2A%5Btiab%5D+OR+metabolom%2A%5Btiab%5D+OR+metagenom%2A%5Btiab%5D+OR+microbiom%2A%5Btiab%5D+OR+%22single-cell%22%5Btiab%5D+OR+%22single+cell%22%5Btiab%5D+OR+scRNA%5Btiab%5D+OR+methylom%2A%5Btiab%5D+OR+epigenom%2A%5Btiab%5D+OR+%22cell-free+DNA%22%5Btiab%5D+OR+cfDNA%5Btiab%5D+OR+%22gene+expression%22%5Btiab%5D+OR+microarray%5Btiab%5D+OR+%22RNA-seq%22%5Btiab%5D+OR+sequencing%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "gene_expression_transcriptomics": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (transcriptom*[tiab] OR \"gene expression\"[tiab] OR microarray[tiab] OR \"RNA-seq\"[tiab] OR \"RNA seq\"[tiab] OR \"messenger RNA\"[tiab]))",
+      "count": 999,
+      "top_pmids": [
+        "38065978",
+        "37858181",
+        "33278149",
+        "35619708",
+        "38600871"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28transcriptom%2A%5Btiab%5D+OR+%22gene+expression%22%5Btiab%5D+OR+microarray%5Btiab%5D+OR+%22RNA-seq%22%5Btiab%5D+OR+%22RNA+seq%22%5Btiab%5D+OR+%22messenger+RNA%22%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "single_cell": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (\"single-cell\"[tiab] OR \"single cell\"[tiab] OR scRNA[tiab] OR snRNA[tiab] OR \"single-nucleus\"[tiab] OR \"single nucleus\"[tiab]))",
+      "count": 135,
+      "top_pmids": [
+        "38693268",
+        "37695548",
+        "33602855",
+        "36626620",
+        "35750137"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28%22single-cell%22%5Btiab%5D+OR+%22single+cell%22%5Btiab%5D+OR+scRNA%5Btiab%5D+OR+snRNA%5Btiab%5D+OR+%22single-nucleus%22%5Btiab%5D+OR+%22single+nucleus%22%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "proteomics": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (proteom*[tiab] OR peptidom*[tiab] OR \"mass spectrometry\"[tiab]))",
+      "count": 453,
+      "top_pmids": [
+        "38834654",
+        "38065978",
+        "37858181",
+        "24388027",
+        "38608023"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28proteom%2A%5Btiab%5D+OR+peptidom%2A%5Btiab%5D+OR+%22mass+spectrometry%22%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "metabolomics": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (metabolom*[tiab] OR metabonom*[tiab] OR metabolite*[tiab] OR \"bile acid*\"[tiab] OR lipidom*[tiab]))",
+      "count": 1311,
+      "top_pmids": [
+        "40082445",
+        "38065978",
+        "31346820",
+        "37858181",
+        "40517782"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28metabolom%2A%5Btiab%5D+OR+metabonom%2A%5Btiab%5D+OR+metabolite%2A%5Btiab%5D+OR+%22bile+acid%2A%22%5Btiab%5D+OR+lipidom%2A%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "microbiome": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (microbiom*[tiab] OR microbiota[tiab] OR metagenom*[tiab] OR pathobiont*[tiab] OR dysbiosis[tiab]))",
+      "count": 434,
+      "top_pmids": [
+        "36866864",
+        "30643227",
+        "40082445",
+        "27747458",
+        "29316191"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28microbiom%2A%5Btiab%5D+OR+microbiota%5Btiab%5D+OR+metagenom%2A%5Btiab%5D+OR+pathobiont%2A%5Btiab%5D+OR+dysbiosis%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "methylation_cfdna_epigenomics": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (methylom*[tiab] OR methylation[tiab] OR epigenom*[tiab] OR \"cell-free DNA\"[tiab] OR cfDNA[tiab] OR \"donor-derived cell-free DNA\"[tiab] OR ddcfDNA[tiab]))",
+      "count": 156,
+      "top_pmids": [
+        "39242496",
+        "31045868",
+        "37188899",
+        "34948375",
+        "34510498"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28methylom%2A%5Btiab%5D+OR+methylation%5Btiab%5D+OR+epigenom%2A%5Btiab%5D+OR+%22cell-free+DNA%22%5Btiab%5D+OR+cfDNA%5Btiab%5D+OR+%22donor-derived+cell-free+DNA%22%5Btiab%5D+OR+ddcfDNA%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "genomics_variants_hla": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (genom*[tiab] OR polymorphism*[tiab] OR variant*[tiab] OR SNP[tiab] OR HLA[tiab] OR histocompatib*[tiab]))",
+      "count": 3819,
+      "top_pmids": [
+        "34343613",
+        "32892374",
+        "36816626",
+        "32983177",
+        "28708813"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28genom%2A%5Btiab%5D+OR+polymorphism%2A%5Btiab%5D+OR+variant%2A%5Btiab%5D+OR+SNP%5Btiab%5D+OR+HLA%5Btiab%5D+OR+histocompatib%2A%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "spatial_pathology_imaging_omics": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (spatial[tiab] OR histopatholog*[tiab] OR pathology[tiab] OR imaging[tiab]) AND (omics[tiab] OR transcriptom*[tiab] OR proteom*[tiab] OR metabolom*[tiab]))",
+      "count": 77,
+      "top_pmids": [
+        "37208107",
+        "35750137",
+        "39178365",
+        "40345627",
+        "38608023"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28spatial%5Btiab%5D+OR+histopatholog%2A%5Btiab%5D+OR+pathology%5Btiab%5D+OR+imaging%5Btiab%5D%29+AND+%28omics%5Btiab%5D+OR+transcriptom%2A%5Btiab%5D+OR+proteom%2A%5Btiab%5D+OR+metabolom%2A%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    },
+    "multiomics_explicit": {
+      "query": "((\"Liver Transplantation\"[Mesh] OR \"liver transplant*\"[tiab] OR \"hepatic transplant*\"[tiab] OR \"liver allograft*\"[tiab] OR \"hepatic allograft*\"[tiab]) AND (multiomics[tiab] OR \"multi-omics\"[tiab] OR \"multi omics\"[tiab]))",
+      "count": 46,
+      "top_pmids": [
+        "35750137",
+        "38065978",
+        "34146477",
+        "37858181",
+        "38510071"
+      ],
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=pubmed&term=%28%28%22Liver+Transplantation%22%5BMesh%5D+OR+%22liver+transplant%2A%22%5Btiab%5D+OR+%22hepatic+transplant%2A%22%5Btiab%5D+OR+%22liver+allograft%2A%22%5Btiab%5D+OR+%22hepatic+allograft%2A%22%5Btiab%5D%29+AND+%28multiomics%5Btiab%5D+OR+%22multi-omics%22%5Btiab%5D+OR+%22multi+omics%22%5Btiab%5D%29%29&retmode=json&retmax=5&sort=relevance"
+    }
+  },
+  "omics_any_year_counts": {
+    "2000": 13,
+    "2001": 19,
+    "2002": 17,
+    "2003": 36,
+    "2004": 21,
+    "2005": 25,
+    "2006": 39,
+    "2007": 36,
+    "2008": 37,
+    "2009": 46,
+    "2010": 52,
+    "2011": 57,
+    "2012": 57,
+    "2013": 50,
+    "2014": 64,
+    "2015": 75,
+    "2016": 81,
+    "2017": 86,
+    "2018": 106,
+    "2019": 100,
+    "2020": 119,
+    "2021": 180,
+    "2022": 182,
+    "2023": 176,
+    "2024": 207,
+    "2025": 229,
+    "2026": 99
+  },
+  "interpretation_notes": [
+    "PubMed counts are literature hit counts, not unique public datasets.",
+    "Broad omics terms include adjacent liver disease, transplant medicine, biomarker, and review articles.",
+    "Dataset-ready studies require a second pass for accession, supplementary table, controlled-access status, and reusable matrix availability."
+  ]
+}

@@ -1,0 +1,1363 @@
+{
+  "source_id": "DFI_MICROBIOME_LT_2024",
+  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "modality": "metabolomics",
+  "qualitative": {
+    "row_count": 18851,
+    "patient_count": 128,
+    "sample_count": 168,
+    "compound_count": 121,
+    "top_compounds_by_sample_count": [
+      {
+        "compound": "12-dioxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.0125,
+          "median": 0,
+          "min": 0,
+          "max": 1.124
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0,
+          "median": 0,
+          "min": 0,
+          "max": 0
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0219,
+          "median": 0,
+          "min": 0,
+          "max": 1.124
+        }
+      },
+      {
+        "compound": "12-oxochenodeoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 2.1985,
+          "median": 0.0338,
+          "min": 0,
+          "max": 93.8504
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 3.3806,
+          "median": 0.0159,
+          "min": 0,
+          "max": 39.6605
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 1.9111,
+          "median": 0.0324,
+          "min": 0,
+          "max": 93.8504
+        }
+      },
+      {
+        "compound": "12-oxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.3679,
+          "median": 0.0106,
+          "min": 0,
+          "max": 5.1672
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.2557,
+          "median": 0.002,
+          "min": 0,
+          "max": 5.1672
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.1027,
+          "median": 0.0091,
+          "min": 0,
+          "max": 3.112
+        }
+      },
+      {
+        "compound": "2-hydroxy-3-methylbutyrate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.0085,
+          "median": 0,
+          "min": 0,
+          "max": 0.1051
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0023,
+          "median": 0,
+          "min": 0,
+          "max": 0.023
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0121,
+          "median": 0,
+          "min": 0,
+          "max": 0.1051
+        }
+      },
+      {
+        "compound": "2-hydroxyhexanoate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.0202,
+          "median": 0,
+          "min": 0,
+          "max": 0.432
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0045,
+          "median": 0,
+          "min": 0,
+          "max": 0.0489
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0259,
+          "median": 0,
+          "min": 0,
+          "max": 0.393
+        }
+      },
+      {
+        "compound": "2-hydroxyisocaproate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.0083,
+          "median": 0,
+          "min": 0,
+          "max": 0.1051
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0028,
+          "median": 0,
+          "min": 0,
+          "max": 0.0237
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0121,
+          "median": 0,
+          "min": 0,
+          "max": 0.1051
+        }
+      },
+      {
+        "compound": "2-methylbutyrate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 1.8892,
+          "median": 0.3818,
+          "min": 0,
+          "max": 19.6614
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 1.1083,
+          "median": 0.023,
+          "min": 0,
+          "max": 11.4115
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 1.6879,
+          "median": 0.3695,
+          "min": 0,
+          "max": 19.6614
+        }
+      },
+      {
+        "compound": "3-aminoisobutyrate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.0553,
+          "median": 0.0206,
+          "min": 0,
+          "max": 1.081
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0198,
+          "median": 0.0107,
+          "min": 0,
+          "max": 0.1702
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0776,
+          "median": 0.0261,
+          "min": 0,
+          "max": 1.081
+        }
+      },
+      {
+        "compound": "3-deoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.0177,
+          "median": 0.0028,
+          "min": 0,
+          "max": 1.822
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.004,
+          "median": 0.0019,
+          "min": 0,
+          "max": 0.038
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0253,
+          "median": 0.0023,
+          "min": 0,
+          "max": 1.822
+        }
+      },
+      {
+        "compound": "3-epicholic acid or omega-muricholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.6126,
+          "median": 0.0338,
+          "min": 0,
+          "max": 21.9925
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.2306,
+          "median": 0.0071,
+          "min": 0,
+          "max": 4.1613
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.8953,
+          "median": 0.0437,
+          "min": 0,
+          "max": 21.9925
+        }
+      },
+      {
+        "compound": "3-hydroxyl anthralic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 150,
+          "mean": 0.0189,
+          "median": 0.0059,
+          "min": 0,
+          "max": 0.3596
+        },
+        "infection_positive": {
+          "n": 41,
+          "mean": 0.0082,
+          "median": 0.0023,
+          "min": 0,
+          "max": 0.0928
+        },
+        "infection_negative": {
+          "n": 88,
+          "mean": 0.0245,
+          "median": 0.0097,
+          "min": 0,
+          "max": 0.3596
+        }
+      },
+      {
+        "compound": "3-oxocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.3345,
+          "median": 0.026,
+          "min": 0,
+          "max": 12.8277
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.2698,
+          "median": 0.0161,
+          "min": 0,
+          "max": 2.9002
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.4342,
+          "median": 0.0254,
+          "min": 0,
+          "max": 12.8277
+        }
+      },
+      {
+        "compound": "3-oxodeoxycholic-or-3-oxochenodeoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 1.2781,
+          "median": 0.0303,
+          "min": 0,
+          "max": 16.504
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.4956,
+          "median": 0.0051,
+          "min": 0,
+          "max": 11.7377
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.4763,
+          "median": 0.015,
+          "min": 0,
+          "max": 14.7706
+        }
+      },
+      {
+        "compound": "3-oxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.5474,
+          "median": 0.0097,
+          "min": 0,
+          "max": 9.9127
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.3045,
+          "median": 0.0038,
+          "min": 0,
+          "max": 6.6911
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.382,
+          "median": 0.0091,
+          "min": 0,
+          "max": 9.9127
+        }
+      },
+      {
+        "compound": "4-ethylphenol",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.0085,
+          "median": 0,
+          "min": 0,
+          "max": 0.2475
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0065,
+          "median": 0,
+          "min": 0,
+          "max": 0.1288
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0029,
+          "median": 0,
+          "min": 0,
+          "max": 0.081
+        }
+      },
+      {
+        "compound": "4-methylvalerate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 0.145,
+          "median": 0.0226,
+          "min": 0,
+          "max": 5.6154
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 0.0241,
+          "median": 0.0097,
+          "min": 0,
+          "max": 0.1547
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.2146,
+          "median": 0.0245,
+          "min": 0,
+          "max": 5.6154
+        }
+      },
+      {
+        "compound": "5-aminovalerate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 3.7509,
+          "median": 0.2508,
+          "min": 0,
+          "max": 84.7675
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 2.3932,
+          "median": 0.0355,
+          "min": 0,
+          "max": 41.5789
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 5.1097,
+          "median": 0.3944,
+          "min": 0,
+          "max": 84.7675
+        }
+      },
+      {
+        "compound": "5-hiaa",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 150,
+          "mean": 0.0168,
+          "median": 0.0087,
+          "min": 0,
+          "max": 0.109
+        },
+        "infection_positive": {
+          "n": 41,
+          "mean": 0.0125,
+          "median": 0.0053,
+          "min": 0,
+          "max": 0.0928
+        },
+        "infection_negative": {
+          "n": 88,
+          "mean": 0.0187,
+          "median": 0.0107,
+          "min": 0,
+          "max": 0.109
+        }
+      },
+      {
+        "compound": "5-hydroxyl tryptophan",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 150,
+          "mean": 0.0146,
+          "median": 0.0067,
+          "min": 0,
+          "max": 0.1311
+        },
+        "infection_positive": {
+          "n": 41,
+          "mean": 0.0164,
+          "median": 0.0068,
+          "min": 0,
+          "max": 0.0928
+        },
+        "infection_negative": {
+          "n": 88,
+          "mean": 0.0166,
+          "median": 0.0095,
+          "min": 0,
+          "max": 0.1311
+        }
+      },
+      {
+        "compound": "7-12-dioxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.0118,
+          "median": 0.001,
+          "min": 0,
+          "max": 0.628
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.0084,
+          "median": 0.0014,
+          "min": 0,
+          "max": 0.2389
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.0146,
+          "median": 0.0005,
+          "min": 0,
+          "max": 0.628
+        }
+      },
+      {
+        "compound": "7-oxo-or-6-oxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.2865,
+          "median": 0.001,
+          "min": 0,
+          "max": 6.9871
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.1985,
+          "median": 0.001,
+          "min": 0,
+          "max": 6.2648
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.3401,
+          "median": 0,
+          "min": 0,
+          "max": 6.9871
+        }
+      },
+      {
+        "compound": "7-oxodeoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 0.8401,
+          "median": 0.0298,
+          "min": 0,
+          "max": 41.2261
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 0.4522,
+          "median": 0.0069,
+          "min": 0,
+          "max": 12.0184
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 1.1976,
+          "median": 0.0299,
+          "min": 0,
+          "max": 41.2261
+        }
+      },
+      {
+        "compound": "acetate",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 5.006,
+          "median": 2.1721,
+          "min": 0.0211,
+          "max": 63.7757
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 3.857,
+          "median": 1.5821,
+          "min": 0.0382,
+          "max": 33.8633
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 6.0398,
+          "median": 3.228,
+          "min": 0.0211,
+          "max": 63.7757
+        }
+      },
+      {
+        "compound": "alanine",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 154,
+          "mean": 10.0028,
+          "median": 4.1856,
+          "min": 0.0884,
+          "max": 142.2033
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 10.7043,
+          "median": 7.8354,
+          "min": 0.0884,
+          "max": 36.2584
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 11.5336,
+          "median": 3.9902,
+          "min": 0.3664,
+          "max": 142.2033
+        }
+      },
+      {
+        "compound": "allocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 1.2288,
+          "median": 0.0522,
+          "min": 0,
+          "max": 111.5382
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 2.9868,
+          "median": 0.047,
+          "min": 0,
+          "max": 111.5382
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.5672,
+          "median": 0.0514,
+          "min": 0.0003,
+          "max": 9.9819
+        }
+      }
+    ]
+  },
+  "quantitative": {
+    "row_count": 3308,
+    "patient_count": 128,
+    "sample_count": 168,
+    "compound_count": 37,
+    "top_compounds_by_sample_count": [
+      {
+        "compound": "3-oxolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 10.9233,
+          "median": 0.1195,
+          "min": 0,
+          "max": 330.09
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 7.505,
+          "median": 0.03,
+          "min": 0,
+          "max": 209.07
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 7.8863,
+          "median": 0.1,
+          "min": 0,
+          "max": 330.09
+        }
+      },
+      {
+        "compound": "alloisolithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 2.2051,
+          "median": 0.2,
+          "min": 0,
+          "max": 40.165
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 1.0159,
+          "median": 0.06,
+          "min": 0,
+          "max": 14.407
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 0.6778,
+          "median": 0.11,
+          "min": 0,
+          "max": 16.11
+        }
+      },
+      {
+        "compound": "cholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 319.4553,
+          "median": 12.69,
+          "min": 0,
+          "max": 5532.94
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 496.5008,
+          "median": 34.745,
+          "min": 0,
+          "max": 5532.94
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 301.3185,
+          "median": 17.79,
+          "min": 0,
+          "max": 5200.04
+        }
+      },
+      {
+        "compound": "deoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 114.2096,
+          "median": 0.565,
+          "min": 0,
+          "max": 3484.29
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 55.3462,
+          "median": 0.3255,
+          "min": 0,
+          "max": 592.427
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 26.7222,
+          "median": 0.42,
+          "min": 0,
+          "max": 437.61
+        }
+      },
+      {
+        "compound": "glycocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 110.8518,
+          "median": 0.6785,
+          "min": 0,
+          "max": 4401.97
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 174.3061,
+          "median": 0.985,
+          "min": 0,
+          "max": 4401.97
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 103.6984,
+          "median": 0.78,
+          "min": 0,
+          "max": 2903.91
+        }
+      },
+      {
+        "compound": "isodeoxycholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 10.9266,
+          "median": 0.39,
+          "min": 0,
+          "max": 348.15
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 3.1806,
+          "median": 0.04,
+          "min": 0,
+          "max": 78.42
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 3.0911,
+          "median": 0.16,
+          "min": 0,
+          "max": 82.76
+        }
+      },
+      {
+        "compound": "lithocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 78.2482,
+          "median": 0.365,
+          "min": 0,
+          "max": 1076.98
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 34.2163,
+          "median": 0.19,
+          "min": 0,
+          "max": 538.81
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 39.2275,
+          "median": 0.26,
+          "min": 0,
+          "max": 841.9
+        }
+      },
+      {
+        "compound": "taurocholic acid",
+        "row_count": 168,
+        "patient_count": 127,
+        "sample_count": 158,
+        "all_samples": {
+          "n": 156,
+          "mean": 69.5005,
+          "median": 0.56,
+          "min": 0,
+          "max": 1438.068
+        },
+        "infection_positive": {
+          "n": 46,
+          "mean": 140.842,
+          "median": 0.73,
+          "min": 0,
+          "max": 1438.068
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 48.9097,
+          "median": 0.98,
+          "min": 0,
+          "max": 1021.04
+        }
+      },
+      {
+        "compound": "acetate",
+        "row_count": 166,
+        "patient_count": 127,
+        "sample_count": 156,
+        "all_samples": {
+          "n": 154,
+          "mean": 21.5347,
+          "median": 13.12,
+          "min": 0,
+          "max": 114.03
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 15.7136,
+          "median": 11.57,
+          "min": 0,
+          "max": 81.55
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 18.1324,
+          "median": 10.06,
+          "min": 0,
+          "max": 114.03
+        }
+      },
+      {
+        "compound": "butyrate",
+        "row_count": 166,
+        "patient_count": 127,
+        "sample_count": 156,
+        "all_samples": {
+          "n": 154,
+          "mean": 4.0068,
+          "median": 0.835,
+          "min": 0,
+          "max": 38.53
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 1.9023,
+          "median": 0.51,
+          "min": 0,
+          "max": 11.88
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 2.3931,
+          "median": 0.61,
+          "min": 0,
+          "max": 26.61
+        }
+      },
+      {
+        "compound": "propionate",
+        "row_count": 166,
+        "patient_count": 127,
+        "sample_count": 156,
+        "all_samples": {
+          "n": 154,
+          "mean": 5.9329,
+          "median": 1.53,
+          "min": 0,
+          "max": 28.86
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 3.67,
+          "median": 0.76,
+          "min": 0,
+          "max": 23.89
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 4.5939,
+          "median": 0.82,
+          "min": 0,
+          "max": 27.98
+        }
+      },
+      {
+        "compound": "succinate",
+        "row_count": 166,
+        "patient_count": 127,
+        "sample_count": 156,
+        "all_samples": {
+          "n": 154,
+          "mean": 2.7249,
+          "median": 1.035,
+          "min": 0,
+          "max": 56.17
+        },
+        "infection_positive": {
+          "n": 44,
+          "mean": 2.152,
+          "median": 1.135,
+          "min": 0,
+          "max": 12.07
+        },
+        "infection_negative": {
+          "n": 89,
+          "mean": 2.8376,
+          "median": 0.99,
+          "min": 0,
+          "max": 56.17
+        }
+      },
+      {
+        "compound": "desaminotyrosine",
+        "row_count": 131,
+        "patient_count": 118,
+        "sample_count": 121,
+        "all_samples": {
+          "n": 119,
+          "mean": 49.0532,
+          "median": 0,
+          "min": 0,
+          "max": 1546.39
+        },
+        "infection_positive": {
+          "n": 23,
+          "mean": 83.1609,
+          "median": 0,
+          "min": 0,
+          "max": 1350.89
+        },
+        "infection_negative": {
+          "n": 77,
+          "mean": 42.287,
+          "median": 0,
+          "min": 0,
+          "max": 1546.39
+        }
+      },
+      {
+        "compound": "5-hiaa",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.6166,
+          "median": 0.35,
+          "min": 0,
+          "max": 7.32
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 0.3826,
+          "median": 0.185,
+          "min": 0,
+          "max": 2.54
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 0.7618,
+          "median": 0.36,
+          "min": 0,
+          "max": 7.32
+        }
+      },
+      {
+        "compound": "anthranilic acid",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.195,
+          "median": 0.06,
+          "min": 0,
+          "max": 3.01
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 0.0997,
+          "median": 0.045,
+          "min": 0,
+          "max": 0.7
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 0.3078,
+          "median": 0.06,
+          "min": 0.01,
+          "max": 3.01
+        }
+      },
+      {
+        "compound": "kynurenic acid",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 5.9128,
+          "median": 2.99,
+          "min": 0.03,
+          "max": 83.85
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 8.4482,
+          "median": 3.33,
+          "min": 0.16,
+          "max": 83.85
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 5.1845,
+          "median": 3.71,
+          "min": 0.03,
+          "max": 34.73
+        }
+      },
+      {
+        "compound": "kynurenine",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.71,
+          "median": 0.32,
+          "min": 0.04,
+          "max": 13.71
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 1.1234,
+          "median": 0.675,
+          "min": 0.06,
+          "max": 13.71
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 0.5876,
+          "median": 0.29,
+          "min": 0.05,
+          "max": 4.61
+        }
+      },
+      {
+        "compound": "melatonin",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.0221,
+          "median": 0.01,
+          "min": 0,
+          "max": 0.43
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 0.0145,
+          "median": 0.01,
+          "min": 0,
+          "max": 0.07
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 0.0314,
+          "median": 0.01,
+          "min": 0,
+          "max": 0.43
+        }
+      },
+      {
+        "compound": "niacin",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 69.3518,
+          "median": 29.18,
+          "min": 0.07,
+          "max": 457.7
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 36.9929,
+          "median": 11.77,
+          "min": 0.08,
+          "max": 283.48
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 41.6618,
+          "median": 17.23,
+          "min": 0.07,
+          "max": 226.44
+        }
+      },
+      {
+        "compound": "phenylalanine",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 1257.0181,
+          "median": 647.88,
+          "min": 23.44,
+          "max": 13434.87
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 1644.6168,
+          "median": 1411.65,
+          "min": 23.44,
+          "max": 6920.64
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 1292.0955,
+          "median": 607.45,
+          "min": 79.19,
+          "max": 13434.87
+        }
+      },
+      {
+        "compound": "serotonin",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.9644,
+          "median": 0.38,
+          "min": 0,
+          "max": 7.42
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 0.3939,
+          "median": 0.145,
+          "min": 0,
+          "max": 2.58
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 0.8316,
+          "median": 0.33,
+          "min": 0,
+          "max": 7.19
+        }
+      },
+      {
+        "compound": "tryptamine",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 3.7257,
+          "median": 0.26,
+          "min": 0,
+          "max": 72.06
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 1.5826,
+          "median": 0.27,
+          "min": 0,
+          "max": 26.84
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 6.1324,
+          "median": 0.19,
+          "min": 0,
+          "max": 72.06
+        }
+      },
+      {
+        "compound": "tryptophan",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 423.4998,
+          "median": 167.405,
+          "min": 9.01,
+          "max": 2461.6
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 599.6892,
+          "median": 470.39,
+          "min": 9.01,
+          "max": 2020.01
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 422.1788,
+          "median": 223.4,
+          "min": 10.87,
+          "max": 2461.6
+        }
+      },
+      {
+        "compound": "tyrosine",
+        "row_count": 120,
+        "patient_count": 89,
+        "sample_count": 110,
+        "all_samples": {
+          "n": 108,
+          "mean": 562.1639,
+          "median": 342.105,
+          "min": 2.35,
+          "max": 3709.06
+        },
+        "infection_positive": {
+          "n": 38,
+          "mean": 446.6389,
+          "median": 88.695,
+          "min": 2.35,
+          "max": 3288.3
+        },
+        "infection_negative": {
+          "n": 51,
+          "mean": 710.3459,
+          "median": 370.39,
+          "min": 14.32,
+          "max": 3709.06
+        }
+      },
+      {
+        "compound": "allocholic acid",
+        "row_count": 23,
+        "patient_count": 13,
+        "sample_count": 13,
+        "all_samples": {
+          "n": 12,
+          "mean": 1.8838,
+          "median": 0.5875,
+          "min": 0.044,
+          "max": 9.746
+        },
+        "infection_positive": {
+          "n": 0
+        },
+        "infection_negative": {
+          "n": 0
+        }
+      }
+    ]
+  }
+}

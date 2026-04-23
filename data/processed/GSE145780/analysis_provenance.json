@@ -1,0 +1,47 @@
+{
+  "study_accession": "GSE145780",
+  "generated_at_utc": "2026-04-23T03:12:29.741284+00:00",
+  "parser": "scripts/build_gene_evidence.py",
+  "processing_code_version": "full-platform-gene-expression-v2",
+  "source_files": {
+    "normalized_expression": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/suppl/GSE145780_normalized_data_with_all_controls.txt.gz",
+      "path": "data/raw/geo/GSE145780/GSE145780_normalized_data_with_all_controls.txt.gz",
+      "bytes": 17702865,
+      "sha256": "f9f28c85d20d4bc07ee8bb5c421d66c2e164486040890fdac771e4994b770541"
+    },
+    "platform_annotation": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
+      "path": "data/raw/geo/GPL15207/GPL15207_platform_table.txt",
+      "bytes": 311433607,
+      "sha256": "fb203f7699e619530a3a1473d8b41ed384301bf99518a66c4cab6c2ae40e7d9a"
+    }
+  },
+  "outputs": [
+    {
+      "path": "data/processed/GSE145780/gene_expression_summary.json",
+      "bytes": 69044724,
+      "sha256": "5f972cf85c8413723f3a92b247eda04c81c65b41df349d2a254836e99f23eac7"
+    },
+    {
+      "path": "data/processed/GSE145780/gene_sample_values.json",
+      "bytes": 74086437,
+      "sha256": "0e27d7b0d9cd11ace3a3a2d1b8f9bb78b9139d658829712f7adbeb66cea010ff"
+    },
+    {
+      "path": "data/processed/GSE145780/differential_expression.json",
+      "bytes": 38311208,
+      "sha256": "c36f396d5d784fbf4526171c5a6a2bec952be36de38705543ea384ad3528c8b9"
+    }
+  ],
+  "methods": [
+    "GEO GPL15207 platform table parsed from !platform_table_begin/!platform_table_end.",
+    "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
+    "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
+    "Welch two-sample t-test is computed on gene-level log2 intensities; Benjamini-Hochberg FDR is applied within each contrast."
+  ],
+  "limitations": [
+    "GSE145780 molecular states come from the source study labels, so diagnostic claims require independent validation.",
+    "Microarray values are suitable for within-study comparison; cross-platform harmonization is not implemented yet."
+  ]
+}

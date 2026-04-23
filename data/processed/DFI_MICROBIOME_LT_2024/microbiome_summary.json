@@ -1,0 +1,720 @@
+{
+  "source_id": "DFI_MICROBIOME_LT_2024",
+  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "modality": "microbiome",
+  "full_sample_set": {
+    "row_count": 13823,
+    "patient_count": 128,
+    "sample_count": 158,
+    "taxon_count": 772,
+    "species_count": 769,
+    "top_species_by_sample_count": [
+      {
+        "taxon": "Firmicutes-Lactobacillales-Streptococcaceae-Streptococcus-Streptococcus thermophilus",
+        "taxon_rank": "Species",
+        "row_count": 176,
+        "patient_count": 92,
+        "sample_count": 104,
+        "all_samples": {
+          "n": 176,
+          "mean": 2.5715,
+          "median": 0.1747,
+          "min": 0.0024,
+          "max": 49.5705
+        },
+        "infection_positive": {
+          "n": 48,
+          "mean": 1.8218,
+          "median": 0.1897,
+          "min": 0.0024,
+          "max": 11.647
+        },
+        "infection_negative": {
+          "n": 114,
+          "mean": 3.1272,
+          "median": 0.2114,
+          "min": 0.0031,
+          "max": 49.5705
+        }
+      },
+      {
+        "taxon": "Firmicutes-Lactobacillales-Streptococcaceae-Streptococcus-Streptococcus parasanguinis",
+        "taxon_rank": "Species",
+        "row_count": 162,
+        "patient_count": 85,
+        "sample_count": 96,
+        "all_samples": {
+          "n": 162,
+          "mean": 1.3617,
+          "median": 0.1634,
+          "min": 0.0007,
+          "max": 16.834
+        },
+        "infection_positive": {
+          "n": 41,
+          "mean": 1.3863,
+          "median": 0.5742,
+          "min": 0.0007,
+          "max": 10.981
+        },
+        "infection_negative": {
+          "n": 105,
+          "mean": 1.5538,
+          "median": 0.1771,
+          "min": 0.0038,
+          "max": 16.834
+        }
+      },
+      {
+        "taxon": "Firmicutes-Lactobacillales-Enterococcaceae-Enterococcus-Enterococcus faecium",
+        "taxon_rank": "Species",
+        "row_count": 135,
+        "patient_count": 66,
+        "sample_count": 83,
+        "all_samples": {
+          "n": 135,
+          "mean": 28.1472,
+          "median": 2.3342,
+          "min": 0.0006,
+          "max": 97.9715
+        },
+        "infection_positive": {
+          "n": 47,
+          "mean": 39.2133,
+          "median": 22.7349,
+          "min": 0.0024,
+          "max": 97.9715
+        },
+        "infection_negative": {
+          "n": 84,
+          "mean": 23.2836,
+          "median": 1.7507,
+          "min": 0.0006,
+          "max": 95.4171
+        }
+      },
+      {
+        "taxon": "Firmicutes-Lactobacillales-Streptococcaceae-Streptococcus-Streptococcus salivarius",
+        "taxon_rank": "Species",
+        "row_count": 133,
+        "patient_count": 77,
+        "sample_count": 82,
+        "all_samples": {
+          "n": 133,
+          "mean": 1.0054,
+          "median": 0.2488,
+          "min": 0.0018,
+          "max": 11.4472
+        },
+        "infection_positive": {
+          "n": 34,
+          "mean": 1.7319,
+          "median": 0.3916,
+          "min": 0.0022,
+          "max": 11.4472
+        },
+        "infection_negative": {
+          "n": 81,
+          "mean": 0.8567,
+          "median": 0.2488,
+          "min": 0.0018,
+          "max": 8.1205
+        }
+      },
+      {
+        "taxon": "Firmicutes-Lactobacillales-Lactobacillaceae-Lacticaseibacillus-Lacticaseibacillus rhamnosus",
+        "taxon_rank": "Species",
+        "row_count": 126,
+        "patient_count": 62,
+        "sample_count": 75,
+        "all_samples": {
+          "n": 126,
+          "mean": 7.5236,
+          "median": 0.5213,
+          "min": 0.0001,
+          "max": 99.5975
+        },
+        "infection_positive": {
+          "n": 37,
+          "mean": 2.2124,
+          "median": 0.7224,
+          "min": 0.0001,
+          "max": 15.2043
+        },
+        "infection_negative": {
+          "n": 87,
+          "mean": 9.9547,
+          "median": 0.4374,
+          "min": 0.0007,
+          "max": 99.5975
+        }
+      },
+      {
+        "taxon": "Actinobacteria-Bifidobacteriales-Bifidobacteriaceae-Bifidobacterium-Bifidobacterium longum",
+        "taxon_rank": "Species",
+        "row_count": 130,
+        "patient_count": 67,
+        "sample_count": 74,
+        "all_samples": {
+          "n": 130,
+          "mean": 6.4839,
+          "median": 0.7402,
+          "min": 0.0008,
+          "max": 64.4269
+        },
+        "infection_positive": {
+          "n": 28,
+          "mean": 2.0298,
+          "median": 0.059,
+          "min": 0.0008,
+          "max": 15.0634
+        },
+        "infection_negative": {
+          "n": 87,
+          "mean": 8.761,
+          "median": 1.1508,
+          "min": 0.0139,
+          "max": 64.4269
+        }
+      },
+      {
+        "taxon": "Firmicutes-Erysipelotrichales-Erysipelotrichaceae-Erysipelatoclostridium-[Clostridium] innocuum",
+        "taxon_rank": "Species",
+        "row_count": 122,
+        "patient_count": 62,
+        "sample_count": 69,
+        "all_samples": {
+          "n": 122,
+          "mean": 1.2392,
+          "median": 0.2138,
+          "min": 0.0013,
+          "max": 20.4647
+        },
+        "infection_positive": {
+          "n": 23,
+          "mean": 1.5723,
+          "median": 0.2631,
+          "min": 0.0013,
+          "max": 14.942
+        },
+        "infection_negative": {
+          "n": 90,
+          "mean": 1.2746,
+          "median": 0.257,
+          "min": 0.0024,
+          "max": 20.4647
+        }
+      },
+      {
+        "taxon": "Proteobacteria-Enterobacterales-Enterobacteriaceae-Escherichia-Escherichia coli",
+        "taxon_rank": "Species",
+        "row_count": 119,
+        "patient_count": 62,
+        "sample_count": 69,
+        "all_samples": {
+          "n": 119,
+          "mean": 4.7304,
+          "median": 0.5832,
+          "min": 0.0067,
+          "max": 61.8858
+        },
+        "infection_positive": {
+          "n": 28,
+          "mean": 8.2476,
+          "median": 5.0645,
+          "min": 0.0105,
+          "max": 50.2344
+        },
+        "infection_negative": {
+          "n": 84,
+          "mean": 3.9281,
+          "median": 0.5265,
+          "min": 0.0067,
+          "max": 61.8858
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Oscillospiraceae-Flavonifractor-Flavonifractor plautii",
+        "taxon_rank": "Species",
+        "row_count": 113,
+        "patient_count": 62,
+        "sample_count": 68,
+        "all_samples": {
+          "n": 113,
+          "mean": 0.5495,
+          "median": 0.3471,
+          "min": 0.0011,
+          "max": 5.5865
+        },
+        "infection_positive": {
+          "n": 22,
+          "mean": 0.538,
+          "median": 0.4147,
+          "min": 0.01,
+          "max": 2.4704
+        },
+        "infection_negative": {
+          "n": 75,
+          "mean": 0.6266,
+          "median": 0.3938,
+          "min": 0.0011,
+          "max": 5.5865
+        }
+      },
+      {
+        "taxon": "Bacteroidetes-Bacteroidales-Bacteroidaceae-Phocaeicola-Phocaeicola vulgatus",
+        "taxon_rank": "Species",
+        "row_count": 117,
+        "patient_count": 64,
+        "sample_count": 67,
+        "all_samples": {
+          "n": 117,
+          "mean": 6.7592,
+          "median": 1.7488,
+          "min": 0.0158,
+          "max": 73.4442
+        },
+        "infection_positive": {
+          "n": 18,
+          "mean": 4.0176,
+          "median": 2.2029,
+          "min": 0.4887,
+          "max": 11.4033
+        },
+        "infection_negative": {
+          "n": 81,
+          "mean": 7.7049,
+          "median": 1.6449,
+          "min": 0.0158,
+          "max": 73.4442
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Lachnospiraceae-Enterocloster-Enterocloster bolteae",
+        "taxon_rank": "Species",
+        "row_count": 107,
+        "patient_count": 60,
+        "sample_count": 65,
+        "all_samples": {
+          "n": 107,
+          "mean": 1.2026,
+          "median": 0.3284,
+          "min": 0.0014,
+          "max": 11.242
+        },
+        "infection_positive": {
+          "n": 21,
+          "mean": 2.0457,
+          "median": 1.3953,
+          "min": 0.0033,
+          "max": 11.242
+        },
+        "infection_negative": {
+          "n": 71,
+          "mean": 1.1992,
+          "median": 0.4902,
+          "min": 0.0068,
+          "max": 8.8429
+        }
+      },
+      {
+        "taxon": "Bacteroidetes-Bacteroidales-Bacteroidaceae-Bacteroides-Bacteroides ovatus",
+        "taxon_rank": "Species",
+        "row_count": 104,
+        "patient_count": 59,
+        "sample_count": 64,
+        "all_samples": {
+          "n": 104,
+          "mean": 1.3672,
+          "median": 0.7388,
+          "min": 0.0004,
+          "max": 8.0279
+        },
+        "infection_positive": {
+          "n": 17,
+          "mean": 1.2227,
+          "median": 1.2313,
+          "min": 0.2483,
+          "max": 3.3105
+        },
+        "infection_negative": {
+          "n": 67,
+          "mean": 1.4833,
+          "median": 0.7388,
+          "min": 0.0004,
+          "max": 8.0279
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Lachnospiraceae--Lachnospiraceae bacterium",
+        "taxon_rank": "Species",
+        "row_count": 101,
+        "patient_count": 58,
+        "sample_count": 63,
+        "all_samples": {
+          "n": 101,
+          "mean": 0.5922,
+          "median": 0.2896,
+          "min": 0.0008,
+          "max": 5.1052
+        },
+        "infection_positive": {
+          "n": 15,
+          "mean": 0.5169,
+          "median": 0.2896,
+          "min": 0.0163,
+          "max": 1.3917
+        },
+        "infection_negative": {
+          "n": 65,
+          "mean": 0.3913,
+          "median": 0.2408,
+          "min": 0.0008,
+          "max": 1.6754
+        }
+      },
+      {
+        "taxon": "Bacteroidetes-Bacteroidales-Bacteroidaceae-Bacteroides-Bacteroides uniformis",
+        "taxon_rank": "Species",
+        "row_count": 102,
+        "patient_count": 57,
+        "sample_count": 62,
+        "all_samples": {
+          "n": 102,
+          "mean": 2.5048,
+          "median": 1.1109,
+          "min": 0.0044,
+          "max": 16.2195
+        },
+        "infection_positive": {
+          "n": 18,
+          "mean": 1.3529,
+          "median": 1.5489,
+          "min": 0.0333,
+          "max": 3.2415
+        },
+        "infection_negative": {
+          "n": 64,
+          "mean": 2.7604,
+          "median": 0.9096,
+          "min": 0.0044,
+          "max": 16.2195
+        }
+      },
+      {
+        "taxon": "Actinobacteria-Eggerthellales-Eggerthellaceae-Eggerthella-Eggerthella lenta",
+        "taxon_rank": "Species",
+        "row_count": 108,
+        "patient_count": 59,
+        "sample_count": 61,
+        "all_samples": {
+          "n": 108,
+          "mean": 0.667,
+          "median": 0.3708,
+          "min": 0.0004,
+          "max": 4.0401
+        },
+        "infection_positive": {
+          "n": 16,
+          "mean": 0.8031,
+          "median": 0.8279,
+          "min": 0.2367,
+          "max": 1.4407
+        },
+        "infection_negative": {
+          "n": 76,
+          "mean": 0.7344,
+          "median": 0.3708,
+          "min": 0.0004,
+          "max": 4.0401
+        }
+      },
+      {
+        "taxon": "Actinobacteria-Micrococcales-Micrococcaceae-Rothia-Rothia mucilaginosa",
+        "taxon_rank": "Species",
+        "row_count": 106,
+        "patient_count": 55,
+        "sample_count": 61,
+        "all_samples": {
+          "n": 106,
+          "mean": 1.1194,
+          "median": 0.0575,
+          "min": 0.0002,
+          "max": 45.0873
+        },
+        "infection_positive": {
+          "n": 31,
+          "mean": 0.542,
+          "median": 0.0575,
+          "min": 0.0088,
+          "max": 11.4847
+        },
+        "infection_negative": {
+          "n": 71,
+          "mean": 1.4343,
+          "median": 0.0607,
+          "min": 0.0002,
+          "max": 45.0873
+        }
+      },
+      {
+        "taxon": "Firmicutes----Clostridia bacterium",
+        "taxon_rank": "Species",
+        "row_count": 95,
+        "patient_count": 56,
+        "sample_count": 61,
+        "all_samples": {
+          "n": 95,
+          "mean": 1.7254,
+          "median": 0.6869,
+          "min": 0.004,
+          "max": 21.1325
+        },
+        "infection_positive": {
+          "n": 14,
+          "mean": 2.5586,
+          "median": 3.1232,
+          "min": 0.2094,
+          "max": 4.7765
+        },
+        "infection_negative": {
+          "n": 60,
+          "mean": 1.4978,
+          "median": 0.2425,
+          "min": 0.004,
+          "max": 21.1325
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Oscillospiraceae-Faecalibacterium-Faecalibacterium prausnitzii",
+        "taxon_rank": "Species",
+        "row_count": 97,
+        "patient_count": 57,
+        "sample_count": 61,
+        "all_samples": {
+          "n": 97,
+          "mean": 3.9868,
+          "median": 1.6855,
+          "min": 0.0014,
+          "max": 38.7321
+        },
+        "infection_positive": {
+          "n": 18,
+          "mean": 2.1461,
+          "median": 2.6192,
+          "min": 0.0055,
+          "max": 4.7919
+        },
+        "infection_negative": {
+          "n": 58,
+          "mean": 3.9365,
+          "median": 0.5333,
+          "min": 0.0014,
+          "max": 38.7321
+        }
+      },
+      {
+        "taxon": "Bacteroidetes-Bacteroidales-Tannerellaceae-Parabacteroides-Parabacteroides distasonis",
+        "taxon_rank": "Species",
+        "row_count": 98,
+        "patient_count": 55,
+        "sample_count": 59,
+        "all_samples": {
+          "n": 98,
+          "mean": 1.5997,
+          "median": 0.6165,
+          "min": 0.0006,
+          "max": 23.4021
+        },
+        "infection_positive": {
+          "n": 18,
+          "mean": 0.8798,
+          "median": 0.6458,
+          "min": 0.0709,
+          "max": 2.5821
+        },
+        "infection_negative": {
+          "n": 62,
+          "mean": 2.0645,
+          "median": 0.6409,
+          "min": 0.0006,
+          "max": 23.4021
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Lachnospiraceae-Mediterraneibacter-[Ruminococcus] gnavus",
+        "taxon_rank": "Species",
+        "row_count": 103,
+        "patient_count": 56,
+        "sample_count": 59,
+        "all_samples": {
+          "n": 103,
+          "mean": 1.6731,
+          "median": 0.3836,
+          "min": 0.0023,
+          "max": 44.3515
+        },
+        "infection_positive": {
+          "n": 19,
+          "mean": 1.1239,
+          "median": 0.8219,
+          "min": 0.0023,
+          "max": 7.5904
+        },
+        "infection_negative": {
+          "n": 69,
+          "mean": 2.0342,
+          "median": 0.3836,
+          "min": 0.0133,
+          "max": 44.3515
+        }
+      },
+      {
+        "taxon": "Firmicutes-Veillonellales-Veillonellaceae-Veillonella-Veillonella parvula",
+        "taxon_rank": "Species",
+        "row_count": 114,
+        "patient_count": 51,
+        "sample_count": 58,
+        "all_samples": {
+          "n": 114,
+          "mean": 1.2031,
+          "median": 0.177,
+          "min": 0.0011,
+          "max": 8.7072
+        },
+        "infection_positive": {
+          "n": 29,
+          "mean": 1.8785,
+          "median": 0.1718,
+          "min": 0.0018,
+          "max": 8.7072
+        },
+        "infection_negative": {
+          "n": 82,
+          "mean": 1.0078,
+          "median": 0.2082,
+          "min": 0.0019,
+          "max": 7.2038
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Lachnospiraceae-Blautia-Blautia wexlerae",
+        "taxon_rank": "Species",
+        "row_count": 93,
+        "patient_count": 55,
+        "sample_count": 57,
+        "all_samples": {
+          "n": 93,
+          "mean": 2.9516,
+          "median": 1.1922,
+          "min": 0.0081,
+          "max": 19.0395
+        },
+        "infection_positive": {
+          "n": 15,
+          "mean": 2.6763,
+          "median": 0.5734,
+          "min": 0.0712,
+          "max": 8.946
+        },
+        "infection_negative": {
+          "n": 57,
+          "mean": 2.608,
+          "median": 0.5779,
+          "min": 0.0081,
+          "max": 19.0395
+        }
+      },
+      {
+        "taxon": "Firmicutes-Eubacteriales-Lachnospiraceae-Mediterraneibacter-[Ruminococcus] torques",
+        "taxon_rank": "Species",
+        "row_count": 94,
+        "patient_count": 55,
+        "sample_count": 57,
+        "all_samples": {
+          "n": 94,
+          "mean": 1.9144,
+          "median": 1.0477,
+          "min": 0.0214,
+          "max": 9.6389
+        },
+        "infection_positive": {
+          "n": 13,
+          "mean": 1.9676,
+          "median": 2.3444,
+          "min": 0.1565,
+          "max": 4.1861
+        },
+        "infection_negative": {
+          "n": 60,
+          "mean": 2.1529,
+          "median": 0.6626,
+          "min": 0.0351,
+          "max": 9.6389
+        }
+      },
+      {
+        "taxon": "Firmicutes-Erysipelotrichales-Erysipelotrichaceae-Erysipelatoclostridium-Erysipelatoclostridium ramosum",
+        "taxon_rank": "Species",
+        "row_count": 100,
+        "patient_count": 50,
+        "sample_count": 55,
+        "all_samples": {
+          "n": 100,
+          "mean": 0.9937,
+          "median": 0.1356,
+          "min": 0.0024,
+          "max": 19.0869
+        },
+        "infection_positive": {
+          "n": 24,
+          "mean": 0.5262,
+          "median": 0.0791,
+          "min": 0.0219,
+          "max": 3.1584
+        },
+        "infection_negative": {
+          "n": 68,
+          "mean": 1.2467,
+          "median": 0.1575,
+          "min": 0.0024,
+          "max": 19.0869
+        }
+      },
+      {
+        "taxon": "Firmicutes-Lactobacillales-Streptococcaceae-Lactococcus-Lactococcus lactis",
+        "taxon_rank": "Species",
+        "row_count": 83,
+        "patient_count": 51,
+        "sample_count": 55,
+        "all_samples": {
+          "n": 83,
+          "mean": 3.976,
+          "median": 0.0855,
+          "min": 0.0003,
+          "max": 82.3111
+        },
+        "infection_positive": {
+          "n": 25,
+          "mean": 5.7725,
+          "median": 0.0855,
+          "min": 0.0003,
+          "max": 82.3111
+        },
+        "infection_negative": {
+          "n": 50,
+          "mean": 3.6968,
+          "median": 0.0798,
+          "min": 0.0011,
+          "max": 54.6262
+        }
+      }
+    ]
+  },
+  "peri_transplant_set": {
+    "row_count": 5159,
+    "patient_count": 107,
+    "sample_count": 112,
+    "taxon_count": 704
+  }
+}

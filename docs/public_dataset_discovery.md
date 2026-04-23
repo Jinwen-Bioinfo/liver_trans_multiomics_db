@@ -1,0 +1,175 @@
+# Public Liver Transplant Omics Dataset Discovery
+
+Generated from `scripts/discover_public_liver_tx_datasets.py` on 2026-04-23.
+
+## Scope
+
+This is a broad discovery pass, not a curated ingest list. It searches public liver transplantation and liver-allograft omics datasets across:
+
+- OmicsDI indexed repositories
+- NCBI GEO / GDS
+- NCBI SRA
+- NCBI BioProject
+- PubMed literature hit counts for omics terms
+- BioStudies / ArrayExpress evidence as surfaced through OmicsDI
+
+Output artifact:
+
+- `data/discovery/public_liver_tx_dataset_discovery.json`
+
+## Current Counts
+
+| Metric | Count |
+| --- | ---: |
+| Unique candidate records | 898 |
+| Direct liver-transplant candidates | 510 |
+| Probable liver-transplant candidates | 82 |
+
+## Literature Counts
+
+PubMed literature is much larger than the accession-level dataset map. The literature count artifact is:
+
+- `data/discovery/pubmed_liver_tx_omics_literature_counts.json`
+
+| PubMed query bucket | Count |
+| --- | ---: |
+| Broad liver transplantation literature | 96,751 |
+| Liver transplantation + any omics/sequence/expression term | 2,067 |
+| Gene expression / transcriptomics | 999 |
+| Single-cell / single-nucleus | 135 |
+| Proteomics / mass spectrometry | 453 |
+| Metabolomics / metabolite / bile acid / lipidomics | 1,311 |
+| Microbiome / metagenomics / dysbiosis | 434 |
+| Methylation / cfDNA / epigenomics | 156 |
+| Genomics / variants / HLA | 3,819 |
+| Spatial/pathology/imaging plus omics terms | 77 |
+| Explicit multiomics / multi-omics | 46 |
+
+Recent annual counts for the broad liver-transplant omics query:
+
+| Year | Count |
+| --- | ---: |
+| 2021 | 180 |
+| 2022 | 182 |
+| 2023 | 176 |
+| 2024 | 207 |
+| 2025 | 229 |
+| 2026 | 99 |
+
+Interpretation: literature counts include reviews, clinical biomarker papers, adjacent liver disease studies, and transplant-related mechanistic work. They are evidence discovery inputs, not ingest-ready dataset counts.
+
+## Supplementary Material Counts
+
+Supplementary tables and source-data files count as database sources when they can be downloaded, checksummed, parsed, and mapped. A first Europe PMC `HAS_SUPPL:y` scan is stored in:
+
+- `data/discovery/supplementary_source_discovery.json`
+
+| Europe PMC supplementary bucket | Count |
+| --- | ---: |
+| Broad liver transplant + omics terms with supplementary material | 4,395 |
+| Transcriptomics/gene-expression terms with supplementary material | see JSON |
+| Proteomics/mass-spectrometry terms with supplementary material | see JSON |
+| Metabolomics/metabolite terms with supplementary material | see JSON |
+| Microbiome/metagenomics terms with supplementary material | see JSON |
+| cfDNA/methylation terms with supplementary material | see JSON |
+| Explicit multiomics/multi-omics terms with supplementary material | 562 |
+
+These are deliberately broad literature signals. They require manual triage before promotion because supplementary material can include protocols, checklists, images, or non-reusable PDFs rather than machine-readable tables.
+
+## Source Type Policy
+
+The source type schema is stored in:
+
+- `data/registry/source_types.json`
+
+Sources that count as database data:
+
+- public repository accession
+- author repository
+- supplementary table
+- controlled-access metadata, with derived public evidence only when terms permit
+
+Sources that do not count as primary database data:
+
+- figure-only values
+- literature-only claims
+
+Direct liver-transplant modality signal counts are broad keyword/API labels and can overlap:
+
+| Modality signal | Count |
+| --- | ---: |
+| bulk_transcriptomics | 115 |
+| proteomics | 106 |
+| Proteomics | 81 |
+| Genomics | 42 |
+| single_cell | 31 |
+| Transcriptomics | 25 |
+| methylation_cfDNA | 21 |
+| small_rna | 21 |
+| microbiome | 12 |
+| metabolomics | 11 |
+| Metabolomics | 6 |
+
+## Repository Hit Counts
+
+These counts are query hits, not manually curated ingest-ready datasets.
+
+| Source/query | Count |
+| --- | ---: |
+| OmicsDI: liver transplant | 5,492 |
+| OmicsDI: liver transplantation | 10,835 |
+| OmicsDI: liver allograft | 535 |
+| OmicsDI: hepatic allograft | 106 |
+| OmicsDI: INTERLIVER | 6 |
+| OmicsDI: post-transplant NASH | 37 |
+| OmicsDI: liver transplant rejection | 548 |
+| OmicsDI: liver transplant biopsy | 299 |
+| OmicsDI: liver transplant microbiome | 103 |
+| OmicsDI: liver transplant metabolomics | 78 |
+| OmicsDI: liver transplant proteomics | 131 |
+| OmicsDI: liver transplant single cell | 236 |
+| OmicsDI: liver transplant cell-free DNA | 47 |
+| NCBI GDS: liver transplant/transplantation | 1,842 |
+| NCBI GDS: liver/hepatic allograft | 99 |
+| NCBI SRA: liver transplant/transplantation | 5,965 |
+| NCBI BioProject: liver transplant/transplantation | 290 |
+| NCBI PubMed omics query | 2,288 |
+
+## Priority Human Liver-Transplant Dataset Leads
+
+These should be manually verified first, then promoted into `data/registry/studies.json` with conservative processing status.
+
+| Accession | Primary layer | Why it matters |
+| --- | --- | --- |
+| GSE145780 | bulk transcriptomics | INTERLIVER molecular rejection biopsy dataset already processed locally. |
+| GSE193135 | bulk transcriptomics | INTERLIVER injury, steatohepatitis, and fibrosis extension. |
+| GSE277334 | bulk transcriptomics | INTERLIVER NK-cell-enriched rejection-like phenotype. |
+| GSE243887 | donor liver bulk transcriptomics + pathology | Accepted versus rejected donor liver molecular quality. |
+| GSE189539 | single-cell / bulk transcriptomics | Human liver transplantation single-cell landscape and early allograft dysfunction. |
+| GSE171539 | single-cell / transplant IRI | Single-cell graft ischemia-reperfusion injury during liver transplantation. |
+| GSE218121 | single-cell / immune therapy | Liver allograft tissue after regulatory dendritic cell therapy versus standard of care. |
+| GSE263243 | cfDNA / methylation reference | Cell-free methylated DNA study reference cell-type chromatin. |
+| GSE262273 | cfDNA / methylation | Liver transplant recipient cell-free DNA samples. |
+| GSE262274 | cfDNA / methylation | Liver transplant recipient reference cell-type methylation data. |
+| GSE28842 / GDS3282 | blood transcriptomics | Immunosuppression withdrawal and operational tolerance. |
+| GSE11881 | immune profiling / transcriptomics | Operational tolerance immune profiling. |
+| GSE13440 | transcriptomics | Acute cellular rejection in recurrent HCV after liver transplantation. |
+| GSE14951 | transcriptomics | Human orthotopic liver transplantation gene expression. |
+| GSE15480 | transcriptomics | Deceased donor liver transplantation with ischemic preconditioning. |
+| GSE165568 | donor liver transcriptomics | Discarded human livers during normothermic machine perfusion. |
+| GSE290062 | small RNA / exosome | Plasma exosomal small RNAs after liver transplantation. |
+| DFI_MICROBIOME_LT_2024 | metabolomics + microbiome | Direct liver transplant fecal metabolite/microbiome infection-risk dataset from GitHub/Zenodo. |
+
+## Immediate Build Implication
+
+The database should stop being framed as a small hand-picked registry. The next build should become a two-stage resource:
+
+1. **Discovery catalog:** broad, auditable candidate map with directness, modality, organism, sample origin, and ingest readiness.
+2. **Processed evidence layer:** only datasets with downloaded artifacts, checksums, QC, summaries, and analysis provenance.
+
+## Caveats
+
+- Automated directness labels are intentionally permissive and include false positives.
+- OmicsDI and NCBI hit counts are not unique datasets.
+- Some EGA, NGDC, SRA, and supplementary-data resources may be controlled-access or require manual downloads.
+- Non-transcriptomic layers need feature normalization before they can support gene/protein/metabolite/taxon pages.

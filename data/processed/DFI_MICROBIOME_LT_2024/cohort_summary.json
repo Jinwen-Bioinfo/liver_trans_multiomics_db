@@ -1,0 +1,26 @@
+{
+  "source_id": "DFI_MICROBIOME_LT_2024",
+  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "patient_count": 107,
+  "first_sample_patient_count": 107,
+  "infection_counts": {
+    "0": 82,
+    "1": 25
+  },
+  "event_type_counts": {
+    "2": 107
+  },
+  "sex_counts": {
+    "Male": 60,
+    "Female": 47
+  },
+  "age_summary": {
+    "n": 107,
+    "mean": 51.9626,
+    "median": 56,
+    "min": 2,
+    "max": 77
+  },
+  "antibiotic_row_count": 43339,
+  "original_cohort_antibiotic_row_count": 16378
+}
