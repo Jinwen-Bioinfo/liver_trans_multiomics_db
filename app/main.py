@@ -10,6 +10,7 @@ from app.data_loader import (
     get_study,
     get_download_path,
     get_dataset_triage,
+    get_multiomics_feature,
     load_data_model_schema,
     list_studies,
     list_dataset_triage,
@@ -23,6 +24,7 @@ from app.data_loader import (
     get_omics_layer,
     list_source_types,
     list_signature_scores,
+    list_multiomics_features,
     list_multiomics_sources,
     list_omics_layers,
     nar_readiness,
@@ -167,6 +169,33 @@ def multiomics_source_detail(source_id: str) -> dict[str, object]:
     if item is None:
         raise HTTPException(status_code=404, detail="Multi-omics source is not registered")
     return item
+
+
+@app.get("/api/multiomics-features")
+def multiomics_features(
+    query: str | None = None,
+    modality: str | None = None,
+    feature_type: str | None = None,
+    source_id: str | None = None,
+    limit: int = Query(50, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> dict[str, object]:
+    return list_multiomics_features(
+        query=query,
+        modality=modality,
+        feature_type=feature_type,
+        source_id=source_id,
+        limit=limit,
+        offset=offset,
+    )
+
+
+@app.get("/api/multiomics-features/{source_id}/{feature_type}/{feature_id}")
+def multiomics_feature_detail(source_id: str, feature_type: str, feature_id: str) -> dict[str, object]:
+    feature = get_multiomics_feature(source_id, feature_type, feature_id)
+    if feature is None:
+        raise HTTPException(status_code=404, detail="Multi-omics feature is not available")
+    return feature
 
 
 @app.get("/api/source-types")

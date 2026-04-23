@@ -1,6 +1,6 @@
 {
   "source_id": "DFI_MICROBIOME_LT_2024",
-  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "generated_at_utc": "2026-04-23T08:25:20Z",
   "modality": "metabolomics",
   "qualitative": {
     "row_count": 18851,
@@ -33,7 +33,8 @@
           "median": 0,
           "min": 0,
           "max": 1.124
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0219
       },
       {
         "compound": "12-oxochenodeoxycholic acid",
@@ -60,7 +61,8 @@
           "median": 0.0324,
           "min": 0,
           "max": 93.8504
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 1.4695
       },
       {
         "compound": "12-oxolithocholic acid",
@@ -87,7 +89,8 @@
           "median": 0.0091,
           "min": 0,
           "max": 3.112
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.153
       },
       {
         "compound": "2-hydroxy-3-methylbutyrate",
@@ -114,7 +117,8 @@
           "median": 0,
           "min": 0,
           "max": 0.1051
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0098
       },
       {
         "compound": "2-hydroxyhexanoate",
@@ -141,7 +145,8 @@
           "median": 0,
           "min": 0,
           "max": 0.393
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0214
       },
       {
         "compound": "2-hydroxyisocaproate",
@@ -168,7 +173,8 @@
           "median": 0,
           "min": 0,
           "max": 0.1051
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0093
       },
       {
         "compound": "2-methylbutyrate",
@@ -195,7 +201,8 @@
           "median": 0.3695,
           "min": 0,
           "max": 19.6614
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.5795
       },
       {
         "compound": "3-aminoisobutyrate",
@@ -222,7 +229,8 @@
           "median": 0.0261,
           "min": 0,
           "max": 1.081
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0578
       },
       {
         "compound": "3-deoxycholic acid",
@@ -249,7 +257,8 @@
           "median": 0.0023,
           "min": 0,
           "max": 1.822
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0213
       },
       {
         "compound": "3-epicholic acid or omega-muricholic acid",
@@ -276,7 +285,8 @@
           "median": 0.0437,
           "min": 0,
           "max": 21.9925
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.6648
       },
       {
         "compound": "3-hydroxyl anthralic acid",
@@ -303,7 +313,8 @@
           "median": 0.0097,
           "min": 0,
           "max": 0.3596
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0163
       },
       {
         "compound": "3-oxocholic acid",
@@ -330,7 +341,8 @@
           "median": 0.0254,
           "min": 0,
           "max": 12.8277
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.1644
       },
       {
         "compound": "3-oxodeoxycholic-or-3-oxochenodeoxycholic acid",
@@ -357,7 +369,8 @@
           "median": 0.015,
           "min": 0,
           "max": 14.7706
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.0194
       },
       {
         "compound": "3-oxolithocholic acid",
@@ -384,7 +397,8 @@
           "median": 0.0091,
           "min": 0,
           "max": 9.9127
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0775
       },
       {
         "compound": "4-ethylphenol",
@@ -411,7 +425,8 @@
           "median": 0,
           "min": 0,
           "max": 0.081
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.0036
       },
       {
         "compound": "4-methylvalerate",
@@ -438,7 +453,8 @@
           "median": 0.0245,
           "min": 0,
           "max": 5.6154
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.1905
       },
       {
         "compound": "5-aminovalerate",
@@ -465,7 +481,8 @@
           "median": 0.3944,
           "min": 0,
           "max": 84.7675
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -2.7165
       },
       {
         "compound": "5-hiaa",
@@ -492,7 +509,8 @@
           "median": 0.0107,
           "min": 0,
           "max": 0.109
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0062
       },
       {
         "compound": "5-hydroxyl tryptophan",
@@ -519,7 +537,8 @@
           "median": 0.0095,
           "min": 0,
           "max": 0.1311
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0001
       },
       {
         "compound": "7-12-dioxolithocholic acid",
@@ -546,7 +565,8 @@
           "median": 0.0005,
           "min": 0,
           "max": 0.628
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0062
       },
       {
         "compound": "7-oxo-or-6-oxolithocholic acid",
@@ -573,7 +593,8 @@
           "median": 0,
           "min": 0,
           "max": 6.9871
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.1416
       },
       {
         "compound": "7-oxodeoxycholic acid",
@@ -600,7 +621,8 @@
           "median": 0.0299,
           "min": 0,
           "max": 41.2261
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.7454
       },
       {
         "compound": "acetate",
@@ -627,7 +649,8 @@
           "median": 3.228,
           "min": 0.0211,
           "max": 63.7757
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -2.1828
       },
       {
         "compound": "alanine",
@@ -654,7 +677,8 @@
           "median": 3.9902,
           "min": 0.3664,
           "max": 142.2033
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.8293
       },
       {
         "compound": "allocholic acid",
@@ -681,7 +705,8 @@
           "median": 0.0514,
           "min": 0.0003,
           "max": 9.9819
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 2.4196
       }
     ]
   },
@@ -716,7 +741,8 @@
           "median": 0.1,
           "min": 0,
           "max": 330.09
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.3813
       },
       {
         "compound": "alloisolithocholic acid",
@@ -743,7 +769,8 @@
           "median": 0.11,
           "min": 0,
           "max": 16.11
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.3381
       },
       {
         "compound": "cholic acid",
@@ -770,7 +797,8 @@
           "median": 17.79,
           "min": 0,
           "max": 5200.04
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 195.1823
       },
       {
         "compound": "deoxycholic acid",
@@ -797,7 +825,8 @@
           "median": 0.42,
           "min": 0,
           "max": 437.61
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 28.624
       },
       {
         "compound": "glycocholic acid",
@@ -824,7 +853,8 @@
           "median": 0.78,
           "min": 0,
           "max": 2903.91
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 70.6077
       },
       {
         "compound": "isodeoxycholic acid",
@@ -851,7 +881,8 @@
           "median": 0.16,
           "min": 0,
           "max": 82.76
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.0895
       },
       {
         "compound": "lithocholic acid",
@@ -878,7 +909,8 @@
           "median": 0.26,
           "min": 0,
           "max": 841.9
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -5.0112
       },
       {
         "compound": "taurocholic acid",
@@ -905,7 +937,8 @@
           "median": 0.98,
           "min": 0,
           "max": 1021.04
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 91.9323
       },
       {
         "compound": "acetate",
@@ -932,7 +965,8 @@
           "median": 10.06,
           "min": 0,
           "max": 114.03
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -2.4187
       },
       {
         "compound": "butyrate",
@@ -959,7 +993,8 @@
           "median": 0.61,
           "min": 0,
           "max": 26.61
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.4909
       },
       {
         "compound": "propionate",
@@ -986,7 +1021,8 @@
           "median": 0.82,
           "min": 0,
           "max": 27.98
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.9239
       },
       {
         "compound": "succinate",
@@ -1013,7 +1049,8 @@
           "median": 0.99,
           "min": 0,
           "max": 56.17
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.6856
       },
       {
         "compound": "desaminotyrosine",
@@ -1040,7 +1077,8 @@
           "median": 0,
           "min": 0,
           "max": 1546.39
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 40.8739
       },
       {
         "compound": "5-hiaa",
@@ -1067,7 +1105,8 @@
           "median": 0.36,
           "min": 0,
           "max": 7.32
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.3791
       },
       {
         "compound": "anthranilic acid",
@@ -1094,7 +1133,8 @@
           "median": 0.06,
           "min": 0.01,
           "max": 3.01
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.2081
       },
       {
         "compound": "kynurenic acid",
@@ -1121,7 +1161,8 @@
           "median": 3.71,
           "min": 0.03,
           "max": 34.73
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 3.2636
       },
       {
         "compound": "kynurenine",
@@ -1148,7 +1189,8 @@
           "median": 0.29,
           "min": 0.05,
           "max": 4.61
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 0.5358
       },
       {
         "compound": "melatonin",
@@ -1175,7 +1217,8 @@
           "median": 0.01,
           "min": 0,
           "max": 0.43
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.0169
       },
       {
         "compound": "niacin",
@@ -1202,7 +1245,8 @@
           "median": 17.23,
           "min": 0.07,
           "max": 226.44
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -4.6689
       },
       {
         "compound": "phenylalanine",
@@ -1229,7 +1273,8 @@
           "median": 607.45,
           "min": 79.19,
           "max": 13434.87
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 352.5214
       },
       {
         "compound": "serotonin",
@@ -1256,7 +1301,8 @@
           "median": 0.33,
           "min": 0,
           "max": 7.19
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -0.4376
       },
       {
         "compound": "tryptamine",
@@ -1283,7 +1329,8 @@
           "median": 0.19,
           "min": 0,
           "max": 72.06
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -4.5497
       },
       {
         "compound": "tryptophan",
@@ -1310,7 +1357,8 @@
           "median": 223.4,
           "min": 10.87,
           "max": 2461.6
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": 177.5104
       },
       {
         "compound": "tyrosine",
@@ -1337,7 +1385,8 @@
           "median": 370.39,
           "min": 14.32,
           "max": 3709.06
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": -263.7069
       },
       {
         "compound": "allocholic acid",
@@ -1356,7 +1405,8 @@
         },
         "infection_negative": {
           "n": 0
-        }
+        },
+        "infection_positive_vs_negative_mean_difference": null
       }
     ]
   }

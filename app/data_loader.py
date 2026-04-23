@@ -28,7 +28,9 @@ DOWNLOAD_ARTIFACTS = {
     "source_file_inventory": "source_file_inventory.json",
     "cohort_summary": "cohort_summary.json",
     "metabolomics_summary": "metabolomics_summary.json",
+    "metabolomics_features": "metabolomics_features.json",
     "microbiome_summary": "microbiome_summary.json",
+    "microbiome_features": "microbiome_features.json",
 }
 
 
@@ -347,6 +349,92 @@ def get_download_path(accession: str, artifact: str) -> Path | None:
     if not path.exists():
         return None
     return path
+
+
+@lru_cache(maxsize=16)
+def load_multiomics_feature_payload(source_id: str, artifact: str) -> dict[str, Any] | None:
+    filename = DOWNLOAD_ARTIFACTS.get(artifact)
+    if filename is None:
+        return None
+    path = PROCESSED_DIR / source_id / filename
+    if not path.exists():
+        return None
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def _flatten_multiomics_features(source_id: str) -> list[dict[str, Any]]:
+    records: list[dict[str, Any]] = []
+    metabolomics = load_multiomics_feature_payload(source_id, "metabolomics_features")
+    if metabolomics:
+        for scope in ("qualitative", "quantitative"):
+            for feature in metabolomics.get(scope, {}).get("features", []):
+                records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
+
+    microbiome = load_multiomics_feature_payload(source_id, "microbiome_features")
+    if microbiome:
+        for scope in ("full_sample_set", "peri_transplant_set"):
+            for feature in microbiome.get(scope, {}).get("features", []):
+                records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
+    return records
+
+
+def list_multiomics_features(
+    *,
+    query: str | None = None,
+    modality: str | None = None,
+    feature_type: str | None = None,
+    source_id: str | None = None,
+    limit: int = 50,
+    offset: int = 0,
+) -> dict[str, Any]:
+    source_ids = [source_id] if source_id else [source["source_id"] for source in load_multiomics_sources()]
+    query_lower = query.lower() if query else None
+    records: list[dict[str, Any]] = []
+    for current_source_id in source_ids:
+        for feature in _flatten_multiomics_features(current_source_id):
+            if modality and feature.get("modality") != modality:
+                continue
+            if feature_type and feature.get("feature_type") != feature_type:
+                continue
+            if query_lower:
+                haystack = " ".join(
+                    str(value)
+                    for value in [
+                        feature.get("feature_id"),
+                        feature.get("display_name"),
+                        feature.get("source_table"),
+                        feature.get("assay_scope"),
+                    ]
+                    if value is not None
+                ).lower()
+                if query_lower not in haystack:
+                    continue
+            records.append(feature)
+
+    records.sort(
+        key=lambda item: (
+            item.get("modality", ""),
+            item.get("display_name", "").lower(),
+            item.get("assay_scope", ""),
+        )
+    )
+    total = len(records)
+    limit = max(1, min(limit, 500))
+    offset = max(0, offset)
+    return {
+        "count": total,
+        "limit": limit,
+        "offset": offset,
+        "features": records[offset : offset + limit],
+    }
+
+
+def get_multiomics_feature(source_id: str, feature_type: str, feature_id: str) -> dict[str, Any] | None:
+    for feature in _flatten_multiomics_features(source_id):
+        if feature.get("feature_type") == feature_type and feature.get("feature_id") == feature_id:
+            return feature
+    return None
 
 
 @lru_cache(maxsize=8)

@@ -1,12 +1,12 @@
 {
   "source_id": "DFI_MICROBIOME_LT_2024",
-  "generated_at_utc": "2026-04-23T06:06:02Z",
+  "generated_at_utc": "2026-04-23T08:25:20Z",
   "parser": "scripts/ingest_dfi_microbiome.R",
   "source_urls": {
     "github": "https://github.com/DFI-Bioinformatics/Microbiome_Liver_Transplant",
     "article": "https://www.sciencedirect.com/science/article/pii/S1931312823004651",
     "doi": "https://doi.org/10.1016/j.chom.2023.11.016"
   },
-  "outputs": ["data/processed/DFI_MICROBIOME_LT_2024/source_file_inventory.json", "data/processed/DFI_MICROBIOME_LT_2024/cohort_summary.json", "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json", "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json"],
+  "outputs": ["data/processed/DFI_MICROBIOME_LT_2024/source_file_inventory.json", "data/processed/DFI_MICROBIOME_LT_2024/cohort_summary.json", "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json", "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json", "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json", "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json"],
   "limitations": ["RDS/RData objects are processed public analysis objects from the source repository, not raw mass spectrometry or shotgun sequencing reads.", "This ingest summarizes cohort, metabolite, and taxon tables; it does not yet reproduce the manuscript's multivariable infection-risk models.", "Metabolite and taxon identifiers require additional normalization to HMDB/ChEBI/PubChem and NCBI taxonomy."]
 }

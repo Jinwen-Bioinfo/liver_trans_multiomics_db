@@ -122,7 +122,48 @@ def test_download_registry_exposes_processed_non_transcriptomic_artifacts() -> N
     artifacts = {item["artifact"] for item in response.json()["downloads"]}
     assert "cohort_summary" in artifacts
     assert "metabolomics_summary" in artifacts
+    assert "metabolomics_features" in artifacts
     assert "microbiome_summary" in artifacts
+    assert "microbiome_features" in artifacts
+
+
+def test_multiomics_feature_search_finds_metabolites() -> None:
+    response = client.get(
+        "/api/multiomics-features",
+        params={"query": "oxochenodeoxycholic", "modality": "metabolomics"},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] >= 1
+    feature = payload["features"][0]
+    assert feature["source_id"] == "DFI_MICROBIOME_LT_2024"
+    assert feature["feature_type"] == "metabolite"
+    assert "infection_positive_vs_negative" in feature["contrasts"]
+
+
+def test_multiomics_feature_search_finds_microbiome_taxa() -> None:
+    response = client.get(
+        "/api/multiomics-features",
+        params={"query": "Enterococcus faecium", "modality": "microbiome"},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] >= 1
+    feature = payload["features"][0]
+    assert feature["feature_type"] == "taxon"
+    assert feature["measurement"] == "relative_abundance"
+    assert feature["sample_count"] >= 1
+
+
+def test_multiomics_feature_detail_returns_full_record() -> None:
+    response = client.get(
+        "/api/multiomics-features/DFI_MICROBIOME_LT_2024/taxon/"
+        "firmicutes_lactobacillales_enterococcaceae_enterococcus_enterococcus_faecium"
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["display_name"].endswith("Enterococcus faecium")
+    assert payload["contrasts"]["infection_positive_vs_negative"]["case_state"] == "infection_positive"
 
 
 def test_download_endpoint_serves_json_artifact() -> None:

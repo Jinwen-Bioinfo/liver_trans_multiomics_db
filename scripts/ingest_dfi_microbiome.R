@@ -76,6 +76,22 @@ numeric_summary <- function(values) {
   )
 }
 
+mean_difference <- function(case_summary, control_summary) {
+  if (is.null(case_summary$mean) || is.null(control_summary$mean)) {
+    return(NULL)
+  }
+  round(case_summary$mean - control_summary$mean, 6)
+}
+
+slugify <- function(values) {
+  slugs <- tolower(values)
+  slugs <- gsub("[^a-z0-9]+", "_", slugs)
+  slugs <- gsub("^_+|_+$", "", slugs)
+  slugs <- gsub("_+", "_", slugs)
+  slugs[slugs == ""] <- "feature"
+  make.unique(slugs, sep = "_")
+}
+
 summarize_rds <- function(filename) {
   path <- file.path(raw_dir, filename)
   obj <- readRDS(path)
@@ -114,14 +130,17 @@ summarize_metabolites <- function(df) {
     sub <- df[df$compound == compound, , drop = FALSE]
     infected <- sub[sub$any_infection %in% TRUE, , drop = FALSE]
     not_infected <- sub[sub$any_infection %in% FALSE, , drop = FALSE]
+    infected_summary <- numeric_summary(infected$mvalue)
+    not_infected_summary <- numeric_summary(not_infected$mvalue)
     list(
       compound = compound,
       row_count = nrow(sub),
       patient_count = length(unique(sub$patientID)),
       sample_count = length(unique(sub$sampleID)),
       all_samples = numeric_summary(sub$mvalue),
-      infection_positive = numeric_summary(infected$mvalue),
-      infection_negative = numeric_summary(not_infected$mvalue)
+      infection_positive = infected_summary,
+      infection_negative = not_infected_summary,
+      infection_positive_vs_negative_mean_difference = mean_difference(infected_summary, not_infected_summary)
     )
   })
   rows[order(vapply(rows, function(x) x$sample_count, numeric(1)), decreasing = TRUE)]
@@ -135,18 +154,91 @@ summarize_taxa <- function(df) {
     sub <- df[df[[name_col]] == taxon, , drop = FALSE]
     infected <- sub[sub$any_infection %in% TRUE, , drop = FALSE]
     not_infected <- sub[sub$any_infection %in% FALSE, , drop = FALSE]
+    infected_summary <- numeric_summary(infected[[value_col]])
+    not_infected_summary <- numeric_summary(not_infected[[value_col]])
     list(
       taxon = taxon,
       taxon_rank = name_col,
+      value_column = value_col,
       row_count = nrow(sub),
       patient_count = length(unique(sub$patientID)),
       sample_count = length(unique(sub$sampleID)),
       all_samples = numeric_summary(sub[[value_col]]),
-      infection_positive = numeric_summary(infected[[value_col]]),
-      infection_negative = numeric_summary(not_infected[[value_col]])
+      infection_positive = infected_summary,
+      infection_negative = not_infected_summary,
+      infection_positive_vs_negative_mean_difference = mean_difference(infected_summary, not_infected_summary)
     )
   })
   rows[order(vapply(rows, function(x) x$sample_count, numeric(1)), decreasing = TRUE)]
+}
+
+metabolite_feature_records <- function(rows, source_table, assay_scope) {
+  slugs <- slugify(vapply(rows, function(row) row$compound, character(1)))
+  Map(function(row, slug) {
+    list(
+      feature_id = slug,
+      feature_type = "metabolite",
+      display_name = row$compound,
+      modality = "metabolomics",
+      source_id = source_id,
+      source_table = source_table,
+      assay_scope = assay_scope,
+      measurement = "mvalue",
+      row_count = row$row_count,
+      patient_count = row$patient_count,
+      sample_count = row$sample_count,
+      all_samples = row$all_samples,
+      infection_positive = row$infection_positive,
+      infection_negative = row$infection_negative,
+      contrasts = list(
+        infection_positive_vs_negative = list(
+          case_state = "infection_positive",
+          control_state = "infection_negative",
+          mean_difference = row$infection_positive_vs_negative_mean_difference,
+          effect_scale = "source-provided metabolomics mvalue"
+        )
+      ),
+      limitations = c(
+        "Feature identifiers are source-repository metabolite labels; HMDB/ChEBI/PubChem normalization is pending.",
+        "Summaries are unadjusted group summaries by any_infection and do not reproduce multivariable infection-risk models."
+      )
+    )
+  }, rows, slugs)
+}
+
+taxon_feature_records <- function(rows, source_table, assay_scope) {
+  slugs <- slugify(vapply(rows, function(row) row$taxon, character(1)))
+  Map(function(row, slug) {
+    list(
+      feature_id = slug,
+      feature_type = "taxon",
+      display_name = row$taxon,
+      modality = "microbiome",
+      source_id = source_id,
+      source_table = source_table,
+      assay_scope = assay_scope,
+      taxon_rank_column = row$taxon_rank,
+      measurement = row$value_column,
+      row_count = row$row_count,
+      patient_count = row$patient_count,
+      sample_count = row$sample_count,
+      all_samples = row$all_samples,
+      infection_positive = row$infection_positive,
+      infection_negative = row$infection_negative,
+      contrasts = list(
+        infection_positive_vs_negative = list(
+          case_state = "infection_positive",
+          control_state = "infection_negative",
+          mean_difference = row$infection_positive_vs_negative_mean_difference,
+          effect_scale = "source-provided MetaPhlAn relative abundance"
+        )
+      ),
+      limitations = c(
+        "Taxon labels are source-repository MetaPhlAn lineage labels; NCBI taxonomy normalization is pending.",
+        "Summaries are unadjusted group summaries by any_infection and do not reproduce multivariable infection-risk models."
+      )
+    )
+  }, rows, slugs)
 }
 
 inventory <- list(
@@ -155,6 +247,10 @@ inventory <- list(
   source_repository = "https://github.com/DFI-Bioinformatics/Microbiome_Liver_Transplant",
   raw_files = lapply(files[file.exists(file.path(raw_dir, files))], summarize_rds)
 )
+
+qualitative_metabolites <- summarize_metabolites(metab_qual_annot)
+quantitative_metabolites <- summarize_metabolites(metab_quant_annot)
+microbiome_taxa <- summarize_taxa(metaphlan_annot)
 
 cohort_summary <- list(
   source_id = source_id,
@@ -178,14 +274,37 @@ metabolomics_summary <- list(
     patient_count = length(unique(metab_qual$patientID)),
     sample_count = length(unique(metab_qual$sampleID)),
     compound_count = length(unique(metab_qual$compound)),
-    top_compounds_by_sample_count = head(summarize_metabolites(metab_qual_annot), 25)
+    top_compounds_by_sample_count = head(qualitative_metabolites, 25)
   ),
   quantitative = list(
     row_count = nrow(metab_quant),
     patient_count = length(unique(metab_quant$patientID)),
     sample_count = length(unique(metab_quant$sampleID)),
     compound_count = length(unique(metab_quant$compound)),
-    top_compounds_by_sample_count = head(summarize_metabolites(metab_quant_annot), 25)
+    top_compounds_by_sample_count = head(quantitative_metabolites, 25)
+  )
+)
+
+metabolomics_features <- list(
+  source_id = source_id,
+  generated_at_utc = inventory$generated_at_utc,
+  modality = "metabolomics",
+  feature_count = length(qualitative_metabolites) + length(quantitative_metabolites),
+  qualitative = list(
+    feature_count = length(qualitative_metabolites),
+    features = metabolite_feature_records(
+      qualitative_metabolites,
+      "metab_qual_anonym.rds",
+      "qualitative"
+    )
+  ),
+  quantitative = list(
+    feature_count = length(quantitative_metabolites),
+    features = metabolite_feature_records(
+      quantitative_metabolites,
+      "metab_quant_anonym.rds",
+      "quantitative"
+    )
   )
 )
 
@@ -199,13 +318,28 @@ microbiome_summary <- list(
     sample_count = length(unique(metaphlan$sampleID)),
     taxon_count = length(unique(metaphlan$`#clade_name`)),
     species_count = length(unique(metaphlan$Species[!is.na(metaphlan$Species) & metaphlan$Species != ""])),
-    top_species_by_sample_count = head(summarize_taxa(metaphlan_annot), 25)
+    top_species_by_sample_count = head(microbiome_taxa, 25)
   ),
   peri_transplant_set = list(
     row_count = nrow(metaphlan_peri),
     patient_count = length(unique(metaphlan_peri$patientID)),
     sample_count = length(unique(metaphlan_peri$sampleID)),
     taxon_count = length(unique(metaphlan_peri$`#clade_name`))
+  )
+)
+
+microbiome_features <- list(
+  source_id = source_id,
+  generated_at_utc = inventory$generated_at_utc,
+  modality = "microbiome",
+  feature_count = length(microbiome_taxa),
+  full_sample_set = list(
+    feature_count = length(microbiome_taxa),
+    features = taxon_feature_records(
+      microbiome_taxa,
+      "metaphlan_anon.rds",
+      "full_sample_set"
+    )
   )
 )
 
@@ -222,7 +356,9 @@ provenance <- list(
     "data/processed/DFI_MICROBIOME_LT_2024/source_file_inventory.json",
     "data/processed/DFI_MICROBIOME_LT_2024/cohort_summary.json",
     "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json",
-    "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json"
+    "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json",
+    "data/processed/DFI_MICROBIOME_LT_2024/microbiome_summary.json",
+    "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json"
   ),
   limitations = c(
     "RDS/RData objects are processed public analysis objects from the source repository, not raw mass spectrometry or shotgun sequencing reads.",
@@ -238,7 +374,9 @@ write_json <- function(x, filename) {
 write_json(inventory, "source_file_inventory.json")
 write_json(cohort_summary, "cohort_summary.json")
 write_json(metabolomics_summary, "metabolomics_summary.json")
+write_json(metabolomics_features, "metabolomics_features.json")
 write_json(microbiome_summary, "microbiome_summary.json")
+write_json(microbiome_features, "microbiome_features.json")
 write_json(provenance, "provenance.json")
 
 cat(toJSON(list(

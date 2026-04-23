@@ -439,15 +439,17 @@
           <h1>Liver transplantation omics evidence</h1>
           <p class="lead">
             Search curated public datasets by accession, transplant state, sample origin, omics modality, genes,
-            cell types, and pathways.
+            cell types, pathways, metabolites, and microbiome taxa.
           </p>
 
           <div class="controls">
-            <input id="query" type="search" placeholder="Search CXCL9, rejection, donor liver, GSE145780" />
+            <input id="query" type="search" placeholder="Search CXCL9, Enterococcus faecium, bile acid, GSE145780" />
             <select id="modality">
               <option value="">All modalities</option>
               <option value="bulk_rna">Bulk RNA</option>
               <option value="single_cell_rna">Single-cell RNA</option>
+              <option value="metabolomics">Metabolomics</option>
+              <option value="microbiome">Microbiome</option>
               <option value="pathology_metadata">Pathology metadata</option>
             </select>
             <select id="origin">
@@ -475,6 +477,7 @@
 
           <div id="use-cases" class="use-case-list"></div>
           <div id="gene-evidence"></div>
+          <div id="multiomics-evidence"></div>
           <div id="signature-evidence"></div>
           <div id="detail-panel"></div>
 
@@ -502,6 +505,10 @@
           <div class="mini">
             <strong>Gene evidence</strong>
             <span>Use the search box for marker genes such as CXCL9, CXCL10, IFNG, GZMB, or COL1A1.</span>
+          </div>
+          <div class="mini">
+            <strong>Multi-omics features</strong>
+            <span>Search DFI metabolites and taxa such as oxochenodeoxycholic acid or Enterococcus faecium.</span>
           </div>
           <div class="mini">
             <strong>Submission status</strong>
@@ -702,6 +709,77 @@
         `;
       }
 
+      async function loadMultiomicsEvidence() {
+        const query = document.getElementById("query").value.trim();
+        const selectedModality = document.getElementById("modality").value;
+        const panel = document.getElementById("multiomics-evidence");
+        if (query.length < 3) {
+          panel.innerHTML = "";
+          return;
+        }
+        const params = new URLSearchParams({ query, limit: "8" });
+        if (["metabolomics", "microbiome"].includes(selectedModality)) {
+          params.set("modality", selectedModality);
+        }
+        const response = await fetch(`/api/multiomics-features?${params}`);
+        const data = await response.json();
+        if (!data.count) {
+          panel.innerHTML = "";
+          return;
+        }
+        panel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>Multi-omics Feature Evidence</h2>
+            <p class="lead">${data.count} metabolite/taxon matches; showing ${data.features.length}</p>
+            <div class="grid">
+              ${data.features.map((feature) => {
+                const contrast = feature.contrasts && feature.contrasts.infection_positive_vs_negative;
+                return `
+                  <div class="mini">
+                    <strong>${feature.display_name}</strong>
+                    <span>${feature.modality} · ${feature.feature_type} · ${feature.sample_count} samples</span>
+                    ${contrast ? `<span>infection Δmean: ${contrast.mean_difference}</span>` : ""}
+                    <div class="actions">
+                      <button type="button" onclick="showMultiomicsFeature('${feature.source_id}', '${feature.feature_type}', '${feature.feature_id}')">Details</button>
+                    </div>
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          </div>
+        `;
+      }
+
+      async function showMultiomicsFeature(sourceId, featureType, featureId) {
+        const response = await fetch(`/api/multiomics-features/${sourceId}/${featureType}/${featureId}`);
+        const feature = await response.json();
+        const contrast = feature.contrasts && feature.contrasts.infection_positive_vs_negative;
+        document.getElementById("detail-panel").innerHTML = `
+          <div class="evidence-panel">
+            <h2>${feature.display_name}</h2>
+            <p class="lead">${feature.source_id} · ${feature.modality} · ${feature.feature_type} · ${feature.assay_scope}</p>
+            <div class="summary">
+              ${tag(`${feature.patient_count} patients`)}
+              ${tag(`${feature.sample_count} samples`)}
+              ${tag(feature.measurement)}
+              ${tag(feature.source_table)}
+            </div>
+            ${contrast ? `
+              <p class="lead">${contrast.case_state} vs ${contrast.control_state}: Δmean ${contrast.mean_difference} on ${contrast.effect_scale}</p>
+            ` : ""}
+            <table class="sample-table">
+              <thead><tr><th>Group</th><th>n</th><th>Mean</th><th>Median</th><th>Min</th><th>Max</th></tr></thead>
+              <tbody>
+                ${["all_samples", "infection_positive", "infection_negative"].map((group) => {
+                  const item = feature[group] || {};
+                  return `<tr><td>${group}</td><td>${item.n || 0}</td><td>${item.mean ?? ""}</td><td>${item.median ?? ""}</td><td>${item.min ?? ""}</td><td>${item.max ?? ""}</td></tr>`;
+                }).join("")}
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+
       async function loadSignatureEvidence() {
         const panel = document.getElementById("signature-evidence");
         const response = await fetch("/api/signatures/TCMR_IFNG_CYTOTOXIC/scores");
@@ -782,12 +860,14 @@
       controls.forEach((control) => control.addEventListener("input", () => {
         loadStudies();
         loadGeneEvidence();
+        loadMultiomicsEvidence();
       }));
       loadStudies();
       loadUseCases();
       loadDatasetTriage();
       loadOmicsLayers();
       loadGeneEvidence();
+      loadMultiomicsEvidence();
       loadSignatureEvidence();
       loadReadiness();
     </script>
