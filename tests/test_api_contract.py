@@ -180,6 +180,26 @@ def test_source_type_registry_includes_supplementary_tables() -> None:
     assert "author_repository" in source_types
 
 
+def test_dataset_triage_exposes_priority_queue() -> None:
+    response = client.get("/api/dataset-triage", params={"priority": "P0"})
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] >= 4
+    accessions = {item["accession"] for item in payload["candidates"]}
+    assert "GSE145780" in accessions
+    assert "GSE13440" in accessions
+    assert "DFI_MICROBIOME_LT_2024" in accessions
+
+
+def test_dataset_triage_detail_explains_next_action() -> None:
+    response = client.get("/api/dataset-triage/GSE13440")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "ready_to_ingest"
+    assert payload["priority"] == "P0"
+    assert "independent transcriptome replication" in payload["next_action"]
+
+
 def test_fibrosis_marker_has_expected_direction() -> None:
     response = client.get("/api/features/COL1A1/expression")
     assert response.status_code == 200

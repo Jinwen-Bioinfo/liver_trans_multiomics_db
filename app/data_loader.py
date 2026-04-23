@@ -13,6 +13,7 @@ USE_CASE_REGISTRY = ROOT / "data" / "registry" / "use_cases.json"
 OMICS_LAYER_REGISTRY = ROOT / "data" / "registry" / "omics_layers.json"
 MULTIOMICS_SOURCE_REGISTRY = ROOT / "data" / "registry" / "multiomics_sources.json"
 SOURCE_TYPE_REGISTRY = ROOT / "data" / "registry" / "source_types.json"
+DATASET_TRIAGE_REGISTRY = ROOT / "data" / "registry" / "dataset_triage.json"
 PROCESSED_DIR = ROOT / "data" / "processed"
 DOWNLOAD_ARTIFACTS = {
     "samples": "samples.json",
@@ -63,6 +64,49 @@ def load_source_type_payload() -> dict[str, Any]:
 
 def list_source_types() -> dict[str, Any]:
     return load_source_type_payload()
+
+
+@lru_cache(maxsize=1)
+def load_dataset_triage_payload() -> dict[str, Any]:
+    with DATASET_TRIAGE_REGISTRY.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def list_dataset_triage(
+    *,
+    status: str | None = None,
+    priority: str | None = None,
+    modality: str | None = None,
+    limit: int = 100,
+    offset: int = 0,
+) -> dict[str, Any]:
+    payload = load_dataset_triage_payload()
+    candidates = payload.get("candidates", [])
+    if status:
+        candidates = [item for item in candidates if item.get("triage_status") == status]
+    if priority:
+        candidates = [item for item in candidates if item.get("priority") == priority]
+    if modality:
+        candidates = [item for item in candidates if modality in item.get("omics_modalities", [])]
+    total = len(candidates)
+    limit = max(1, min(limit, 500))
+    offset = max(0, offset)
+    return {
+        "generated_at_utc": payload.get("generated_at_utc"),
+        "summary": payload.get("summary", {}),
+        "count": total,
+        "limit": limit,
+        "offset": offset,
+        "candidates": candidates[offset : offset + limit],
+    }
+
+
+def get_dataset_triage(accession: str) -> dict[str, Any] | None:
+    accession = accession.upper()
+    for item in load_dataset_triage_payload().get("candidates", []):
+        if item.get("accession", "").upper() == accession:
+            return item
+    return None
 
 
 def list_multiomics_sources(layer: str | None = None) -> list[dict[str, Any]]:

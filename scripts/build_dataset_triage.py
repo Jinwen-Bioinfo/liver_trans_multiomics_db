@@ -1,0 +1,371 @@
+from __future__ import annotations
+
+import json
+import re
+from collections import Counter
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DISCOVERY_PATH = ROOT / "data" / "discovery" / "public_liver_tx_dataset_discovery.json"
+SUPPLEMENTARY_PATH = ROOT / "data" / "discovery" / "supplementary_source_discovery.json"
+OUT_PATH = ROOT / "data" / "registry" / "dataset_triage.json"
+
+CURATED_PRIORITY_ACCESSIONS = {
+    "GSE145780": {
+        "priority": "P0",
+        "triage_status": "processed_baseline",
+        "next_action": "Keep as the initial INTERLIVER bulk-transcriptome baseline, but mark same-study marker evidence as exploratory until independently reproduced.",
+        "scientific_value": ["TCMR molecular biopsy phenotypes", "fibrosis/chronic injury markers", "graft transcriptome reference"],
+    },
+    "GSE13440": {
+        "priority": "P0",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Download GEO matrix and metadata; test acute cellular rejection contrasts as an independent transcriptome replication layer.",
+        "scientific_value": ["independent rejection replication", "recurrent hepatitis C confounding context"],
+    },
+    "GSE11881": {
+        "priority": "P0",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Download GEO/GDS data; curate operational tolerance versus immune activation phenotypes for blood-based transplant monitoring.",
+        "scientific_value": ["operational tolerance", "blood immune monitoring", "cross-organ transplant biomarker comparison"],
+    },
+    "GDS3282": {
+        "priority": "P0",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Resolve GDS3282 to its GEO series/platform, download matrix, and map PBMC tolerance phenotypes.",
+        "scientific_value": ["operational tolerance", "PBMC transcriptome", "non-invasive monitoring"],
+    },
+    "GSE14951": {
+        "priority": "P1",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Ingest liver graft expression data and map orthotopic transplant time/state labels.",
+        "scientific_value": ["orthotopic liver transplantation", "graft expression trajectory"],
+    },
+    "GSE15480": {
+        "priority": "P1",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Ingest donor liver ischemic preconditioning expression data; map donor/graft quality and ischemia phenotypes.",
+        "scientific_value": ["ischemia/reperfusion", "donor liver quality", "early graft injury"],
+    },
+    "E-MTAB-11688": {
+        "priority": "P1",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Use ArrayExpress/BioStudies files to ingest post-transplant NASH and fibrosis transcriptome contrasts.",
+        "scientific_value": ["post-transplant NASH", "rapid fibrosis", "graft chronic injury"],
+    },
+    "DFI_MICROBIOME_LT_2024": {
+        "priority": "P0",
+        "triage_status": "processed_summary",
+        "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
+        "scientific_value": ["postoperative infection", "fecal metabolome", "gut microbiome"],
+    },
+    "PXD012615": {
+        "priority": "P1",
+        "triage_status": "registered_reference",
+        "next_action": "Use PRIDE metadata and protein tables as a human liver proteome reference layer; keep separate from transplant-specific evidence.",
+        "scientific_value": ["liver proteome reference", "protein feature normalization"],
+    },
+}
+
+CONTROLLED_ACCESS_PREFIXES = ("EGA", "EGAD", "EGAS", "PHSA", "EGA")
+REPOSITORY_URL_PREFIX = {
+    "GSE": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=",
+    "GDS": "https://www.ncbi.nlm.nih.gov/sites/GDSbrowser?acc=",
+    "PXD": "https://www.ebi.ac.uk/pride/archive/projects/",
+    "MTBLS": "https://www.ebi.ac.uk/metabolights/",
+}
+SUPPLEMENTARY_READY_REPOS = {"biostudies-arrayexpress", "arrayexpress", "biostudies"}
+
+
+def load_json(path: Path) -> dict[str, Any]:
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def accession_family(accession: str) -> str:
+    if accession.startswith("GSE"):
+        return "GEO Series"
+    if accession.startswith("GDS"):
+        return "GEO DataSet"
+    if accession.startswith("E-MTAB"):
+        return "ArrayExpress/BioStudies"
+    if accession.startswith(("EGAD", "EGAS")):
+        return "EGA controlled access"
+    if accession.startswith("PXD"):
+        return "PRIDE"
+    if accession.startswith("MTBLS"):
+        return "MetaboLights"
+    if accession.startswith("SRP") or accession.startswith("PRJ"):
+        return "SRA/BioProject"
+    return "other"
+
+
+def source_type_for(candidate: dict[str, Any]) -> str:
+    accession = candidate.get("accession", "")
+    repo = str(candidate.get("repository", "")).lower()
+    if accession.startswith(CONTROLLED_ACCESS_PREFIXES) or repo == "ega":
+        return "controlled_access"
+    if repo in SUPPLEMENTARY_READY_REPOS or accession.startswith("E-MTAB"):
+        return "repository_accession"
+    if accession.startswith(("GSE", "GDS", "PXD", "MTBLS", "SRP", "PRJ")):
+        return "repository_accession"
+    return "literature_or_index_record"
+
+
+def canonical_url(candidate: dict[str, Any]) -> str | None:
+    accession = candidate.get("accession", "")
+    for prefix, base in REPOSITORY_URL_PREFIX.items():
+        if accession.startswith(prefix):
+            return base + accession
+    return candidate.get("repository_url")
+
+
+def normalized_modalities(candidate: dict[str, Any]) -> list[str]:
+    aliases = {
+        "Transcriptomics": "bulk_transcriptomics",
+        "Genomics": "genomics",
+        "Genomic": "genomics",
+        "Proteomics": "proteomics",
+        "Metabolomics": "metabolomics",
+        "Other": "other",
+        "Unknown": "unknown",
+    }
+    labels = []
+    for modality in candidate.get("inferred_modalities", []) + candidate.get("omics_modalities", []):
+        labels.append(aliases.get(modality, modality))
+    return sorted(set(labels)) or ["unknown"]
+
+
+def infer_sample_origins(text: str) -> list[str]:
+    rules = {
+        "graft_liver_biopsy": ["biopsy", "allograft", "graft", "transplanted liver", "liver tissue"],
+        "blood_pbmc": ["pbmc", "peripheral blood", "blood"],
+        "plasma_serum": ["plasma", "serum", "cell-free", "cfdna"],
+        "stool": ["stool", "fecal", "faecal", "gut microbiome"],
+        "donor_liver": ["donor liver", "deceased donor", "living donor"],
+    }
+    origins = [label for label, keywords in rules.items() if any(keyword in text for keyword in keywords)]
+    return origins or ["not_curated"]
+
+
+def infer_clinical_states(text: str) -> list[str]:
+    rules = {
+        "TCMR_or_ACR": ["acute cellular rejection", "t cell-mediated rejection", "tcmr", "rejection"],
+        "operational_tolerance": ["operational tolerance", "tolerance", "tolerant"],
+        "ischemia_reperfusion": ["ischemia", "ischaemia", "reperfusion", "preconditioning"],
+        "post_transplant_nash_fibrosis": ["nash", "fibrosis", "steatohepatitis"],
+        "postoperative_infection": ["infection", "pathobiont"],
+        "donor_graft_quality": ["donor", "graft quality", "living donor", "deceased donor"],
+    }
+    states = [label for label, keywords in rules.items() if any(keyword in text for keyword in keywords)]
+    return states or ["not_curated"]
+
+
+def default_triage(candidate: dict[str, Any]) -> tuple[str, str, str]:
+    accession = candidate.get("accession", "")
+    source_type = source_type_for(candidate)
+    directness = candidate.get("directness")
+    modalities = set(normalized_modalities(candidate))
+    if source_type == "controlled_access":
+        return (
+            "controlled_access_register_only",
+            "P3",
+            "Register metadata only; do not ingest into public demo until access permissions and redistribution rules are clear.",
+        )
+    if directness != "direct_liver_transplant":
+        return (
+            "defer_false_positive_or_adjacent",
+            "P3",
+            "Manual review needed; automated search matched liver/transplant text but not a clear liver transplantation omics dataset.",
+        )
+    if accession.startswith(("GSE", "GDS", "E-MTAB")) and modalities & {"bulk_transcriptomics", "single_cell", "proteomics"}:
+        return (
+            "ready_to_ingest",
+            "P1",
+            "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
+        )
+    if modalities & {"microbiome", "metabolomics", "proteomics", "methylation_cfDNA", "small_rna"}:
+        return (
+            "source_review_needed",
+            "P2",
+            "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
+        )
+    return (
+        "manual_review_needed",
+        "P2",
+        "Review title, abstract, and repository landing page before promotion.",
+    )
+
+
+def score_sort_key(item: dict[str, Any]) -> tuple[int, str, str]:
+    priority_order = {"P0": 0, "P1": 1, "P2": 2, "P3": 3}
+    status_order = {
+        "processed_baseline": 0,
+        "processed_summary": 1,
+        "ready_to_ingest": 2,
+        "source_review_needed": 3,
+        "manual_review_needed": 4,
+        "registered_reference": 5,
+        "controlled_access_register_only": 6,
+        "defer_false_positive_or_adjacent": 7,
+    }
+    return (
+        priority_order.get(item["priority"], 9),
+        status_order.get(item["triage_status"], 9),
+        item["accession"],
+    )
+
+
+def build_candidate_item(candidate: dict[str, Any]) -> dict[str, Any]:
+    accession = candidate["accession"]
+    text = " ".join(
+        str(candidate.get(field, ""))
+        for field in ["title", "description", "repository", "accession"]
+    ).lower()
+    status, priority, next_action = default_triage(candidate)
+    curated = CURATED_PRIORITY_ACCESSIONS.get(accession)
+    if curated:
+        status = curated["triage_status"]
+        priority = curated["priority"]
+        next_action = curated["next_action"]
+    item = {
+        "accession": accession,
+        "title": candidate.get("title", ""),
+        "repository": candidate.get("repository", ""),
+        "repository_url": canonical_url(candidate),
+        "accession_family": accession_family(accession),
+        "source_type": source_type_for(candidate),
+        "directness": candidate.get("directness"),
+        "triage_status": status,
+        "priority": priority,
+        "omics_modalities": normalized_modalities(candidate),
+        "sample_origins": infer_sample_origins(text),
+        "clinical_states": infer_clinical_states(text),
+        "organisms": candidate.get("organisms", []),
+        "publication_date": candidate.get("publication_date"),
+        "discovered_via": candidate.get("discovered_via", []),
+        "scientific_value": curated.get("scientific_value", []) if curated else [],
+        "next_action": next_action,
+        "triage_reason": triage_reason(status, candidate),
+    }
+    return item
+
+
+def triage_reason(status: str, candidate: dict[str, Any]) -> str:
+    if status.startswith("processed"):
+        return "Already has local processed artifacts and is part of the current demo evidence layer."
+    if status == "ready_to_ingest":
+        return "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+    if status == "source_review_needed":
+        return "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
+    if status == "controlled_access_register_only":
+        return "Human data appear controlled-access; metadata can be listed but public redistribution requires permission."
+    if status == "registered_reference":
+        return "Useful normalization/reference layer but not direct transplant evidence."
+    if status == "defer_false_positive_or_adjacent":
+        return "Automated discovery signal is adjacent or likely false positive for liver transplantation."
+    return "Requires manual curation before promotion."
+
+
+def supplementary_overview() -> dict[str, Any]:
+    if not SUPPLEMENTARY_PATH.exists():
+        return {}
+    payload = load_json(SUPPLEMENTARY_PATH)
+    results = payload.get("results", {})
+    return {
+        "source": payload.get("source"),
+        "generated_at_utc": payload.get("generated_at_utc"),
+        "query_counts": {
+            name: result.get("count")
+            for name, result in results.items()
+        },
+        "note": "Supplementary material counts are broad hit counts. Individual articles need file-level review before registry promotion.",
+    }
+
+
+def main() -> None:
+    discovery = load_json(DISCOVERY_PATH)
+    candidates = [build_candidate_item(item) for item in discovery.get("all_candidates", [])]
+
+    existing_accessions = {item["accession"] for item in candidates}
+    for accession, curated in CURATED_PRIORITY_ACCESSIONS.items():
+        if accession in existing_accessions:
+            continue
+        candidates.append(
+            {
+                "accession": accession,
+                "title": accession,
+                "repository": "external_curated_registry",
+                "repository_url": None,
+                "accession_family": accession_family(accession),
+                "source_type": "author_repository" if accession.startswith("DFI_") else source_type_for({"accession": accession}),
+                "directness": "direct_liver_transplant",
+                "triage_status": curated["triage_status"],
+                "priority": curated["priority"],
+                "omics_modalities": ["microbiome", "metabolomics"] if accession.startswith("DFI_") else ["proteomics"],
+                "sample_origins": ["stool"] if accession.startswith("DFI_") else ["liver_reference"],
+                "clinical_states": ["postoperative_infection"] if accession.startswith("DFI_") else ["reference"],
+                "organisms": ["Homo sapiens"],
+                "publication_date": None,
+                "discovered_via": ["manual_curated_source"],
+                "scientific_value": curated["scientific_value"],
+                "next_action": curated["next_action"],
+                "triage_reason": "Manually curated source already registered outside the automated discovery payload.",
+            }
+        )
+
+    candidates = sorted(candidates, key=score_sort_key)
+    status_counts = Counter(item["triage_status"] for item in candidates)
+    priority_counts = Counter(item["priority"] for item in candidates)
+    modality_counts = Counter(modality for item in candidates for modality in item["omics_modalities"])
+
+    payload = {
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "source_discovery_file": str(DISCOVERY_PATH.relative_to(ROOT)),
+        "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
+        "triage_policy": {
+            "ready_to_ingest": "Direct liver transplantation public repository accessions with likely reusable matrices or tables.",
+            "source_review_needed": "Relevant non-transcriptomic or ambiguous public records requiring file-level verification.",
+            "controlled_access_register_only": "Human controlled-access records; metadata only until permissions are resolved.",
+            "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build.",
+        },
+        "summary": {
+            "candidate_count": len(candidates),
+            "status_counts": dict(sorted(status_counts.items())),
+            "priority_counts": dict(sorted(priority_counts.items())),
+            "modality_counts": dict(sorted(modality_counts.items())),
+            "p0_or_p1_count": sum(1 for item in candidates if item["priority"] in {"P0", "P1"}),
+            "ready_or_processed_count": sum(
+                1
+                for item in candidates
+                if item["triage_status"] in {"ready_to_ingest", "processed_baseline", "processed_summary"}
+            ),
+        },
+        "priority_queue": [
+            item for item in candidates if item["priority"] in {"P0", "P1"} and item["triage_status"] != "defer_false_positive_or_adjacent"
+        ][:80],
+        "candidates": candidates,
+        "supplementary_source_overview": supplementary_overview(),
+        "limitations": [
+            "This file is a build-planning registry, not a final curated dataset registry.",
+            "Automated labels must be verified at accession landing pages and publication supplements before ingest.",
+            "Controlled-access records are not public redistributable data until access and license conditions are resolved.",
+        ],
+    }
+    OUT_PATH.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    print(
+        json.dumps(
+            {
+                "output_path": str(OUT_PATH.relative_to(ROOT)),
+                **payload["summary"],
+            },
+            indent=2,
+        )
+    )
+
+
+if __name__ == "__main__":
+    main()

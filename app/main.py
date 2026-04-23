@@ -9,7 +9,9 @@ from app.data_loader import (
     filter_study_samples,
     get_study,
     get_download_path,
+    get_dataset_triage,
     list_studies,
+    list_dataset_triage,
     load_study_provenance,
     load_study_sample_summary,
     load_study_samples,
@@ -169,6 +171,31 @@ def multiomics_source_detail(source_id: str) -> dict[str, object]:
 @app.get("/api/source-types")
 def source_types() -> dict[str, object]:
     return list_source_types()
+
+
+@app.get("/api/dataset-triage")
+def dataset_triage(
+    status: str | None = None,
+    priority: str | None = None,
+    modality: str | None = None,
+    limit: int = Query(100, ge=1, le=500),
+    offset: int = Query(0, ge=0),
+) -> dict[str, object]:
+    return list_dataset_triage(
+        status=status,
+        priority=priority,
+        modality=modality,
+        limit=limit,
+        offset=offset,
+    )
+
+
+@app.get("/api/dataset-triage/{accession}")
+def dataset_triage_detail(accession: str) -> dict[str, object]:
+    item = get_dataset_triage(accession)
+    if item is None:
+        raise HTTPException(status_code=404, detail="Dataset triage record is not available")
+    return item
 
 
 @app.get("/api/features/{symbol}/expression")

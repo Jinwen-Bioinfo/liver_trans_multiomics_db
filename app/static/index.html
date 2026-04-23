@@ -199,6 +199,35 @@
         line-height: 1.4;
       }
 
+      .queue-list {
+        display: grid;
+        gap: 10px;
+        margin: 12px 0 22px;
+      }
+
+      .queue-item {
+        border-top: 1px solid var(--line);
+        padding-top: 10px;
+      }
+
+      .queue-item:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .queue-item strong {
+        display: block;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+
+      .queue-item span {
+        color: var(--muted);
+        display: block;
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
       .badge {
         display: inline-flex;
         align-items: center;
@@ -453,6 +482,9 @@
         </section>
 
         <aside class="side-panel">
+          <h2>Ingest Queue</h2>
+          <div id="triage-summary"></div>
+          <div id="triage-queue" class="queue-list"></div>
           <h2>Omics Layers</h2>
           <div id="omics-layers" class="layer-list"></div>
           <h2>NAR Readiness</h2>
@@ -712,6 +744,30 @@
         `).join("");
       }
 
+      async function loadDatasetTriage() {
+        const [summaryResponse, queueResponse] = await Promise.all([
+          fetch("/api/dataset-triage?limit=1"),
+          fetch("/api/dataset-triage?priority=P0&limit=8")
+        ]);
+        const summary = await summaryResponse.json();
+        const queue = await queueResponse.json();
+        const counts = summary.summary || {};
+        document.getElementById("triage-summary").innerHTML = `
+          <div class="summary">
+            ${tag(`${counts.candidate_count || 0} candidates`)}
+            ${tag(`${counts.ready_or_processed_count || 0} ready/processed`)}
+            ${tag(`${counts.p0_or_p1_count || 0} P0/P1`)}
+          </div>
+        `;
+        document.getElementById("triage-queue").innerHTML = queue.candidates.map((item) => `
+          <article class="queue-item">
+            <strong>${item.accession}</strong>
+            <span>${item.triage_status} · ${item.omics_modalities.slice(0, 2).join(", ")}</span>
+            <span>${item.next_action}</span>
+          </article>
+        `).join("");
+      }
+
       async function loadReadiness() {
         const response = await fetch("/api/nar/readiness");
         const data = await response.json();
@@ -729,6 +785,7 @@
       }));
       loadStudies();
       loadUseCases();
+      loadDatasetTriage();
       loadOmicsLayers();
       loadGeneEvidence();
       loadSignatureEvidence();
