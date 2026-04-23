@@ -1,0 +1,47 @@
+{
+  "study_accession": "GSE13440",
+  "generated_at_utc": "2026-04-23T07:52:33.770939+00:00",
+  "parser": "scripts/build_gene_evidence.py",
+  "processing_code_version": "full-platform-gene-expression-v2",
+  "source_files": {
+    "normalized_expression": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
+      "path": "data/raw/geo/GSE13440/GSE13440_series_matrix.txt.gz",
+      "bytes": 2561593,
+      "sha256": "d4d25bf1a99ff74a7e0a920da4142f5a1be0456529dced88aaadb4c5d32c4127"
+    },
+    "platform_annotation": {
+      "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL1291&targ=self&form=text&view=data",
+      "path": "data/raw/geo/GPL1291/GPL1291_platform_table.txt",
+      "bytes": 7948832,
+      "sha256": "bf101a443652712a5a7094d7723f9c77cf2d2b96c132a26ff1f492a74a9a6c45"
+    }
+  },
+  "outputs": [
+    {
+      "path": "data/processed/GSE13440/gene_expression_summary.json",
+      "bytes": 21644764,
+      "sha256": "46c345cf46f4b7baaad986b64467b12ef7776c45a363c23ed9fae13019f0712b"
+    },
+    {
+      "path": "data/processed/GSE13440/gene_sample_values.json",
+      "bytes": 4728738,
+      "sha256": "7bf5ba173fe36d7b7809c6b749b4fed3b5ee53b99c65e9b02dd1128f16928784"
+    },
+    {
+      "path": "data/processed/GSE13440/differential_expression.json",
+      "bytes": 6958045,
+      "sha256": "c7f6275b9949ee6a8a66bcdd56b108a89e2fc69754fb36943c31f7a6836764d5"
+    }
+  ],
+  "methods": [
+    "GEO GPL1291 platform table parsed from !platform_table_begin/!platform_table_end.",
+    "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
+    "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
+    "Welch two-sample t-test is computed on gene-level within-study expression values; Benjamini-Hochberg FDR is applied within each contrast."
+  ],
+  "limitations": [
+    "GSE13440 compares ACR-predominant biopsies against recurrent hepatitis C without ACR, so rejection signals are interpreted in the recurrent-HCV context.",
+    "The source matrix is a GEO series-matrix expression table from a two-color microarray platform; values are analyzed within-study only."
+  ]
+}

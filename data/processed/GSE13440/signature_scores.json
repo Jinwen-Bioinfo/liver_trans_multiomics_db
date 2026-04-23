@@ -1,0 +1,469 @@
+{
+  "study_accession": "GSE13440",
+  "generated_at_utc": "2026-04-23T07:56:05.676148+00:00",
+  "method": "Signed within-study z-score signature scoring with explicit missing-gene reporting.",
+  "signatures": {
+    "TCMR_IFNG_CYTOTOXIC": {
+      "signature_id": "TCMR_IFNG_CYTOTOXIC",
+      "name": "TCMR IFN-gamma cytotoxic signature",
+      "description": "A compact demonstration signature for T cell-mediated rejection, combining IFN-gamma chemokines and cytotoxic T/NK markers.",
+      "genes": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB"
+      ],
+      "directions": {
+        "CXCL9": 1,
+        "CXCL10": 1,
+        "IFNG": 1,
+        "GZMB": 1
+      },
+      "expected_high_state": "TCMR",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE13440",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 21,
+      "gene_count_requested": 4,
+      "gene_count_observed": 4,
+      "genes_observed": [
+        "CXCL10",
+        "CXCL9",
+        "GZMB",
+        "IFNG"
+      ],
+      "missing_genes": [],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "ACR": {
+          "n": 9,
+          "mean": 0.1139,
+          "median": 0.3576,
+          "sd": 0.921,
+          "min": -1.8885,
+          "max": 1.1823
+        },
+        "RHC_no_ACR": {
+          "n": 12,
+          "mean": -0.226,
+          "median": -0.208,
+          "sd": 0.7559,
+          "min": -2.0505,
+          "max": 1.3245
+        }
+      },
+      "best_state_by_mean": "ACR",
+      "expected_pattern_observed": false,
+      "sample_scores": [
+        {
+          "sample_title": "Recipient 1 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339241",
+          "sample_accession": "GSM339241",
+          "clinical_state": "ACR",
+          "score": 0.3576,
+          "genes_observed": 3
+        },
+        {
+          "sample_title": "Recipient 2 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339242",
+          "sample_accession": "GSM339242",
+          "clinical_state": "ACR",
+          "score": 1.1823,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 3 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339243",
+          "sample_accession": "GSM339243",
+          "clinical_state": "ACR",
+          "score": 0.3086,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 4 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339244",
+          "sample_accession": "GSM339244",
+          "clinical_state": "ACR",
+          "score": -1.8885,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 5 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339245",
+          "sample_accession": "GSM339245",
+          "clinical_state": "ACR",
+          "score": -0.7076,
+          "genes_observed": 3
+        },
+        {
+          "sample_title": "Recipient 6 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339246",
+          "sample_accession": "GSM339246",
+          "clinical_state": "ACR",
+          "score": 0.5474,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 7 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339247",
+          "sample_accession": "GSM339247",
+          "clinical_state": "ACR",
+          "score": -0.0256,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 8 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339248",
+          "sample_accession": "GSM339248",
+          "clinical_state": "ACR",
+          "score": 0.882,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 9 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339249",
+          "sample_accession": "GSM339249",
+          "clinical_state": "ACR",
+          "score": 0.3689,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 1 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339250",
+          "sample_accession": "GSM339250",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.1015,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 2 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339251",
+          "sample_accession": "GSM339251",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.0744,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 3 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339252",
+          "sample_accession": "GSM339252",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.3319,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 4 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339253",
+          "sample_accession": "GSM339253",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.1552,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 5 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339254",
+          "sample_accession": "GSM339254",
+          "clinical_state": "RHC_no_ACR",
+          "score": 1.3245,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 6 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339255",
+          "sample_accession": "GSM339255",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.4747,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 7 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339256",
+          "sample_accession": "GSM339256",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.4384,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 8 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339257",
+          "sample_accession": "GSM339257",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.227,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 9 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339258",
+          "sample_accession": "GSM339258",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.5137,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 11 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339260",
+          "sample_accession": "GSM339260",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.189,
+          "genes_observed": 2
+        },
+        {
+          "sample_title": "Recipient 12 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339261",
+          "sample_accession": "GSM339261",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.1418,
+          "genes_observed": 1
+        },
+        {
+          "sample_title": "Recipient 13 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339262",
+          "sample_accession": "GSM339262",
+          "clinical_state": "RHC_no_ACR",
+          "score": -2.0505,
+          "genes_observed": 1
+        }
+      ]
+    },
+    "FIBROSIS_ECM": {
+      "signature_id": "FIBROSIS_ECM",
+      "name": "Fibrosis extracellular matrix signature",
+      "description": "A compact ECM/fibrosis marker panel for graft fibrosis exploration; not a clinical classifier.",
+      "genes": [
+        "COL1A1",
+        "COL3A1",
+        "ACTA2",
+        "TAGLN",
+        "LUM",
+        "DCN",
+        "TGFBI"
+      ],
+      "directions": {
+        "COL1A1": 1,
+        "COL3A1": 1,
+        "ACTA2": 1,
+        "TAGLN": 1,
+        "LUM": 1,
+        "DCN": 1,
+        "TGFBI": 1
+      },
+      "expected_high_state": "fibrosis",
+      "status": "pre_specified_marker_panel",
+      "study_accession": "GSE13440",
+      "assay_scale": "mean signed within-study z-score across observed signature genes",
+      "sample_count": 22,
+      "gene_count_requested": 7,
+      "gene_count_observed": 6,
+      "genes_observed": [
+        "COL1A1",
+        "COL3A1",
+        "DCN",
+        "LUM",
+        "TAGLN",
+        "TGFBI"
+      ],
+      "missing_genes": [
+        "ACTA2"
+      ],
+      "scoring_method": "For each gene, z-score normalized log2 intensity across all study samples is multiplied by the curated direction (+1/-1); sample score is the mean of observed signed z-scores.",
+      "group_summary": {
+        "ACR": {
+          "n": 9,
+          "mean": -0.1291,
+          "median": -0.2239,
+          "sd": 0.753,
+          "min": -1.0594,
+          "max": 1.1105
+        },
+        "RHC_no_ACR": {
+          "n": 13,
+          "mean": 0.0481,
+          "median": 0.2182,
+          "sd": 0.4261,
+          "min": -0.9036,
+          "max": 0.6844
+        }
+      },
+      "best_state_by_mean": "RHC_no_ACR",
+      "expected_pattern_observed": false,
+      "sample_scores": [
+        {
+          "sample_title": "Recipient 1 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339241",
+          "sample_accession": "GSM339241",
+          "clinical_state": "ACR",
+          "score": 1.0118,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 2 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339242",
+          "sample_accession": "GSM339242",
+          "clinical_state": "ACR",
+          "score": 0.0578,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 3 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339243",
+          "sample_accession": "GSM339243",
+          "clinical_state": "ACR",
+          "score": -0.1482,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 4 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339244",
+          "sample_accession": "GSM339244",
+          "clinical_state": "ACR",
+          "score": -0.6976,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 5 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339245",
+          "sample_accession": "GSM339245",
+          "clinical_state": "ACR",
+          "score": -1.0594,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 6 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339246",
+          "sample_accession": "GSM339246",
+          "clinical_state": "ACR",
+          "score": -0.673,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 7 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339247",
+          "sample_accession": "GSM339247",
+          "clinical_state": "ACR",
+          "score": -0.2239,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 8 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339248",
+          "sample_accession": "GSM339248",
+          "clinical_state": "ACR",
+          "score": 1.1105,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 9 diagnosed as ACR-predominant with superimposed RHC",
+          "sample_key": "GSM339249",
+          "sample_accession": "GSM339249",
+          "clinical_state": "ACR",
+          "score": -0.5398,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 1 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339250",
+          "sample_accession": "GSM339250",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.294,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 2 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339251",
+          "sample_accession": "GSM339251",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.2751,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 3 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339252",
+          "sample_accession": "GSM339252",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.0415,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 4 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339253",
+          "sample_accession": "GSM339253",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.6844,
+          "genes_observed": 6
+        },
+        {
+          "sample_title": "Recipient 5 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339254",
+          "sample_accession": "GSM339254",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.2182,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 6 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339255",
+          "sample_accession": "GSM339255",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.4688,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 7 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339256",
+          "sample_accession": "GSM339256",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.3386,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 8 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339257",
+          "sample_accession": "GSM339257",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.272,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 9 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339258",
+          "sample_accession": "GSM339258",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.2015,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 10 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339259",
+          "sample_accession": "GSM339259",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.0988,
+          "genes_observed": 5
+        },
+        {
+          "sample_title": "Recipient 11 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339260",
+          "sample_accession": "GSM339260",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.9036,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 12 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339261",
+          "sample_accession": "GSM339261",
+          "clinical_state": "RHC_no_ACR",
+          "score": 0.3546,
+          "genes_observed": 4
+        },
+        {
+          "sample_title": "Recipient 13 diagnosed as RHC with no ACR",
+          "sample_key": "GSM339262",
+          "sample_accession": "GSM339262",
+          "clinical_state": "RHC_no_ACR",
+          "score": -0.358,
+          "genes_observed": 5
+        }
+      ]
+    }
+  }
+}

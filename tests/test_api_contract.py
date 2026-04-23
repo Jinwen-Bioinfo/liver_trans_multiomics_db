@@ -146,6 +146,30 @@ def test_feature_expression_endpoint_returns_marker_evidence() -> None:
         assert "adj_p_value_bh" in contrast
 
 
+def test_feature_expression_includes_independent_rejection_dataset() -> None:
+    response = client.get("/api/features/CXCL9/expression")
+    assert response.status_code == 200
+    payload = response.json()
+    accessions = {item["study_accession"] for item in payload["expression_evidence"]}
+    assert "GSE145780" in accessions
+    assert "GSE13440" in accessions
+    independent = next(item for item in payload["expression_evidence"] if item["study_accession"] == "GSE13440")
+    assert "ACR_vs_RHC_no_ACR" in independent["statistical_contrasts"]
+    contrast = independent["statistical_contrasts"]["ACR_vs_RHC_no_ACR"]
+    assert contrast["case_state"] == "ACR"
+    assert contrast["control_state"] == "RHC_no_ACR"
+    assert "adj_p_value_bh" in contrast
+
+
+def test_independent_rejection_dataset_downloads_expression_artifacts() -> None:
+    response = client.get("/api/studies/GSE13440/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "gene_expression_summary" in artifacts
+    assert "differential_expression" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200

@@ -40,7 +40,10 @@ def build_signature_scores(accession: str) -> dict[str, Any]:
     sample_values = load_json(processed_dir / "gene_sample_values.json")
     signatures = load_json(ROOT / "data" / "registry" / "signatures.json")["signatures"]
 
-    sample_by_title = {sample["title"]: sample for sample in samples}
+    sample_by_key = {}
+    for sample in samples:
+        sample_by_key[sample["title"]] = sample
+        sample_by_key[sample["sample_accession"]] = sample
     signature_payload: dict[str, Any] = {}
 
     for signature in signatures:
@@ -56,7 +59,11 @@ def build_signature_scores(accession: str) -> dict[str, Any]:
             gene_sds[gene] = safe_stdev(values) or 1.0
         sample_scores = []
         scores_by_state: dict[str, list[float]] = defaultdict(list)
-        for sample_title, sample in sample_by_title.items():
+        observed_sample_keys = sorted({key for gene in genes for key in sample_values.get(gene, {})})
+        for sample_title in observed_sample_keys:
+            sample = sample_by_key.get(sample_title)
+            if sample is None:
+                continue
             gene_values = [
                 directions[gene] * ((sample_values[gene][sample_title] - gene_means[gene]) / gene_sds[gene])
                 for gene in genes
@@ -69,7 +76,8 @@ def build_signature_scores(accession: str) -> dict[str, Any]:
                 continue
             score = mean(gene_values)
             row = {
-                "sample_title": sample_title,
+                "sample_title": sample.get("title"),
+                "sample_key": sample_title,
                 "sample_accession": sample["sample_accession"],
                 "clinical_state": sample["clinical_state"],
                 "score": round(score, 4),

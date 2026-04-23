@@ -21,18 +21,44 @@ from statsmodels.stats.multitest import multipletests
 
 ROOT = Path(__file__).resolve().parents[1]
 NORMALIZED_URLS = {
-    "GSE145780": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/suppl/GSE145780_normalized_data_with_all_controls.txt.gz"
+    "GSE145780": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/suppl/GSE145780_normalized_data_with_all_controls.txt.gz",
+    "GSE13440": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
 }
 PLATFORM_URLS = {
-    "GPL15207": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data"
+    "GPL15207": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
+    "GPL1291": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL1291&targ=self&form=text&view=data",
 }
-STUDY_PLATFORM = {"GSE145780": "GPL15207"}
-CONTRASTS = [
-    ("TCMR", "no_rejection"),
-    ("early_injury", "no_rejection"),
-    ("fibrosis", "no_rejection"),
-    ("TCMR", "early_injury"),
-]
+STUDY_CONFIG = {
+    "GSE145780": {
+        "platform": "GPL15207",
+        "matrix_filename": "GSE145780_normalized_data_with_all_controls.txt.gz",
+        "matrix_source": "supplementary_matrix",
+        "sample_match": "title_cel",
+        "assay_scale": "normalized log2 microarray intensity",
+        "contrasts": [
+            ("TCMR", "no_rejection"),
+            ("early_injury", "no_rejection"),
+            ("fibrosis", "no_rejection"),
+            ("TCMR", "early_injury"),
+        ],
+        "limitations": [
+            "GSE145780 molecular states come from the source study labels, so diagnostic claims require independent validation.",
+            "Microarray values are suitable for within-study comparison; cross-platform harmonization is not implemented yet.",
+        ],
+    },
+    "GSE13440": {
+        "platform": "GPL1291",
+        "matrix_filename": "GSE13440_series_matrix.txt.gz",
+        "matrix_source": "series_matrix_table",
+        "sample_match": "geo_accession",
+        "assay_scale": "source-normalized microarray log ratio",
+        "contrasts": [("ACR", "RHC_no_ACR")],
+        "limitations": [
+            "GSE13440 compares ACR-predominant biopsies against recurrent hepatitis C without ACR, so rejection signals are interpreted in the recurrent-HCV context.",
+            "The source matrix is a GEO series-matrix expression table from a two-color microarray platform; values are analyzed within-study only.",
+        ],
+    },
+}
 
 
 def download(url: str, target: Path, force: bool = False) -> None:
@@ -94,6 +120,14 @@ def first_token(value: str, separator: str = " /// ") -> str | None:
     return None
 
 
+def first_present(row: dict[str, str], columns: list[str]) -> str:
+    for column in columns:
+        value = row.get(column, "").strip()
+        if value:
+            return value
+    return ""
+
+
 def parse_platform(platform: str, force: bool = False) -> dict[str, Any]:
     if platform not in PLATFORM_URLS:
         raise ValueError(f"Unsupported platform {platform}")
@@ -125,18 +159,19 @@ def parse_platform(platform: str, force: bool = False) -> dict[str, Any]:
     ambiguous_symbol_count = 0
     for row in rows:
         probe_id = row.get("ID", "").strip()
-        symbol = first_token(row.get("Gene Symbol", ""))
+        symbol = first_token(first_present(row, ["Gene Symbol", "Symbol", "GENE_SYMBOL", "gene_assignment"]))
         if not probe_id or not symbol:
             continue
-        raw_symbols = [item.strip() for item in row.get("Gene Symbol", "").split(" /// ") if item.strip() and item != "---"]
+        raw_symbol_field = first_present(row, ["Gene Symbol", "Symbol", "GENE_SYMBOL", "gene_assignment"])
+        raw_symbols = [item.strip() for item in raw_symbol_field.split(" /// ") if item.strip() and item != "---"]
         if len(raw_symbols) > 1:
             ambiguous_symbol_count += 1
         symbol = symbol.upper()
         record = {
             "probe_id": probe_id,
             "gene_symbol": symbol,
-            "gene_title": first_token(row.get("Gene Title", "")) or "",
-            "entrez_gene": first_token(row.get("Entrez Gene", "")),
+            "gene_title": first_token(first_present(row, ["Gene Title", "GeneName", "Description"])) or "",
+            "entrez_gene": first_token(first_present(row, ["Entrez Gene", "Entrez Gene ID", "ENTREZ_GENE_ID"])),
             "ensembl_gene": first_token(row.get("Ensembl", "")),
             "chromosomal_location": first_token(row.get("Chromosomal Location", "")),
         }
@@ -161,6 +196,44 @@ def parse_platform(platform: str, force: bool = False) -> dict[str, Any]:
     return payload
 
 
+def read_expression_matrix(
+    raw_path: Path,
+    *,
+    matrix_source: str,
+) -> tuple[list[str], list[list[str]]]:
+    rows: list[list[str]] = []
+    opener = gzip.open if raw_path.suffix == ".gz" else open
+    with opener(raw_path, "rt", encoding="utf-8", errors="replace", newline="") as handle:
+        if matrix_source == "series_matrix_table":
+            for line in handle:
+                if line.rstrip("\n") == "!series_matrix_table_begin":
+                    break
+        reader = csv.reader(handle, delimiter="\t")
+        header = next(reader)
+        for row in reader:
+            if not row:
+                continue
+            if row[0] == "!series_matrix_table_end":
+                break
+            rows.append(row)
+    return [clean_header(value) for value in header], rows
+
+
+def clean_header(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == '"' and value[-1] == '"':
+        return value[1:-1]
+    return value
+
+
+def sample_key_for(sample: dict[str, Any], mode: str) -> str:
+    if mode == "title_cel":
+        return f"{sample['title']}.CEL"
+    if mode == "geo_accession":
+        return sample["sample_accession"]
+    raise ValueError(f"Unsupported sample match mode: {mode}")
+
+
 def welch_result(values_a: np.ndarray, values_b: np.ndarray) -> dict[str, Any]:
     values_a = values_a[~np.isnan(values_a)]
     values_b = values_b[~np.isnan(values_b)]
@@ -178,62 +251,60 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         supported = ", ".join(sorted(NORMALIZED_URLS))
         raise ValueError(f"Unsupported accession {accession}. Supported: {supported}")
 
-    platform = STUDY_PLATFORM[accession]
+    config = STUDY_CONFIG[accession]
+    platform = config["platform"]
     platform_map = parse_platform(platform, force=force)
     probe_to_gene = platform_map["probe_to_gene"]
 
     samples = load_json(ROOT / "data" / "processed" / accession / "samples.json")
-    raw_path = ROOT / "data" / "raw" / "geo" / accession / f"{accession}_normalized_data_with_all_controls.txt.gz"
+    raw_path = ROOT / "data" / "raw" / "geo" / accession / config["matrix_filename"]
     output_dir = ROOT / "data" / "processed" / accession
     output_dir.mkdir(parents=True, exist_ok=True)
     download(NORMALIZED_URLS[accession], raw_path, force=force)
 
-    title_to_sample = {f"{sample['title']}.CEL": sample for sample in samples}
-    sample_titles: list[str] = []
+    matrix_sample_to_sample = {sample_key_for(sample, config["sample_match"]): sample for sample in samples}
+    sample_ids: list[str] = []
     gene_sums: dict[str, np.ndarray] = {}
     gene_counts: dict[str, np.ndarray] = {}
     gene_meta: dict[str, dict[str, Any]] = {}
     observed_probe_count = 0
 
-    with gzip.open(raw_path, "rt", encoding="utf-8", errors="replace") as handle:
-        reader = csv.reader(handle, delimiter="\t")
-        header = next(reader)
-        matrix_sample_columns = header[1:]
-        sample_titles = [sample_name.removesuffix(".CEL") for sample_name in matrix_sample_columns if sample_name in title_to_sample]
-        sample_indices = [index for index, sample_name in enumerate(matrix_sample_columns) if sample_name in title_to_sample]
-        for row in reader:
-            if not row:
-                continue
-            probe_id = row[0]
-            mapping = probe_to_gene.get(probe_id)
-            if not mapping:
-                continue
-            symbol = mapping["gene_symbol"]
-            if symbol not in gene_sums:
-                gene_sums[symbol] = np.zeros(len(sample_indices), dtype=float)
-                gene_counts[symbol] = np.zeros(len(sample_indices), dtype=float)
-                gene_meta[symbol] = {
-                    "gene_symbol": symbol,
-                    "gene_title": mapping.get("gene_title", ""),
-                    "entrez_gene": mapping.get("entrez_gene"),
-                    "ensembl_gene": mapping.get("ensembl_gene"),
-                    "platform": platform,
-                    "probe_ids": [],
-                    "mapping_source": "GEO platform annotation",
-                    "mapping_source_url": PLATFORM_URLS[platform],
-                }
-            gene_meta[symbol]["probe_ids"].append(probe_id)
-            observed_probe_count += 1
-            values = []
-            for index in sample_indices:
-                value = row[index + 1]
-                values.append(float(value) if value not in {"", "NA"} else math.nan)
-            vector = np.array(values, dtype=float)
-            mask = ~np.isnan(vector)
-            gene_sums[symbol][mask] += vector[mask]
-            gene_counts[symbol][mask] += 1
+    header, matrix_rows = read_expression_matrix(raw_path, matrix_source=config["matrix_source"])
+    matrix_sample_columns = header[1:]
+    sample_ids = [sample_name.removesuffix(".CEL") for sample_name in matrix_sample_columns if sample_name in matrix_sample_to_sample]
+    sample_indices = [index for index, sample_name in enumerate(matrix_sample_columns) if sample_name in matrix_sample_to_sample]
+    selected_matrix_sample_names = [matrix_sample_columns[index] for index in sample_indices]
+    for row in matrix_rows:
+        probe_id = clean_header(row[0])
+        mapping = probe_to_gene.get(probe_id)
+        if not mapping:
+            continue
+        symbol = mapping["gene_symbol"]
+        if symbol not in gene_sums:
+            gene_sums[symbol] = np.zeros(len(sample_indices), dtype=float)
+            gene_counts[symbol] = np.zeros(len(sample_indices), dtype=float)
+            gene_meta[symbol] = {
+                "gene_symbol": symbol,
+                "gene_title": mapping.get("gene_title", ""),
+                "entrez_gene": mapping.get("entrez_gene"),
+                "ensembl_gene": mapping.get("ensembl_gene"),
+                "platform": platform,
+                "probe_ids": [],
+                "mapping_source": "GEO platform annotation",
+                "mapping_source_url": PLATFORM_URLS[platform],
+            }
+        gene_meta[symbol]["probe_ids"].append(probe_id)
+        observed_probe_count += 1
+        values = []
+        for index in sample_indices:
+            value = row[index + 1] if index + 1 < len(row) else ""
+            values.append(float(value) if value not in {"", "NA", "null"} else math.nan)
+        vector = np.array(values, dtype=float)
+        mask = ~np.isnan(vector)
+        gene_sums[symbol][mask] += vector[mask]
+        gene_counts[symbol][mask] += 1
 
-    sample_states = [title_to_sample[f"{title}.CEL"]["clinical_state"] for title in sample_titles]
+    sample_states = [matrix_sample_to_sample[name]["clinical_state"] for name in selected_matrix_sample_names]
     indices_by_state: dict[str, list[int]] = defaultdict(list)
     for index, state in enumerate(sample_states):
         indices_by_state[state].append(index)
@@ -241,7 +312,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
     gene_vectors: dict[str, np.ndarray] = {}
     gene_sample_payload: dict[str, dict[str, float]] = {}
     gene_summaries: dict[str, Any] = {}
-    contrast_rows: dict[str, list[dict[str, Any]]] = {f"{case}_vs_{control}": [] for case, control in CONTRASTS}
+    contrast_rows: dict[str, list[dict[str, Any]]] = {f"{case}_vs_{control}": [] for case, control in config["contrasts"]}
 
     for symbol in sorted(gene_sums):
         values = np.divide(
@@ -252,8 +323,8 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         )
         gene_vectors[symbol] = values
         gene_sample_payload[symbol] = {
-            sample_title: round(float(value), 4)
-            for sample_title, value in zip(sample_titles, values, strict=True)
+            sample_id: round(float(value), 4)
+            for sample_id, value in zip(sample_ids, values, strict=True)
             if not math.isnan(float(value))
         }
 
@@ -262,7 +333,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
             for state, indices in sorted(indices_by_state.items())
         }
         contrasts: dict[str, Any] = {}
-        for case, control in CONTRASTS:
+        for case, control in config["contrasts"]:
             contrast_id = f"{case}_vs_{control}"
             if case not in indices_by_state or control not in indices_by_state:
                 continue
@@ -293,7 +364,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
 
         gene_summaries[symbol] = {
             **gene_meta[symbol],
-            "assay_scale": "normalized log2 microarray intensity",
+            "assay_scale": config["assay_scale"],
             "sample_count": int(np.sum(~np.isnan(values))),
             "probe_count": len(gene_meta[symbol]["probe_ids"]),
             "probe_ids": sorted(gene_meta[symbol]["probe_ids"]),
@@ -318,11 +389,11 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source_url": NORMALIZED_URLS[accession],
         "platform": platform,
-        "assay_scale": "normalized log2 microarray intensity",
-        "sample_count": len(sample_titles),
+        "assay_scale": config["assay_scale"],
+        "sample_count": len(sample_ids),
         "gene_count": len(gene_summaries),
         "observed_platform_probe_count": observed_probe_count,
-        "contrast_method": "Welch two-sample t-test on gene-level log2 intensities; Benjamini-Hochberg FDR within each contrast.",
+        "contrast_method": "Welch two-sample t-test on gene-level within-study expression values; Benjamini-Hochberg FDR within each contrast.",
         "raw_path": str(raw_path.relative_to(ROOT)),
         "genes": gene_summaries,
     }
@@ -363,15 +434,12 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         },
         "outputs": output_records,
         "methods": [
-            "GEO GPL15207 platform table parsed from !platform_table_begin/!platform_table_end.",
+            f"GEO {platform} platform table parsed from !platform_table_begin/!platform_table_end.",
             "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
             "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
-            "Welch two-sample t-test is computed on gene-level log2 intensities; Benjamini-Hochberg FDR is applied within each contrast.",
+            "Welch two-sample t-test is computed on gene-level within-study expression values; Benjamini-Hochberg FDR is applied within each contrast.",
         ],
-        "limitations": [
-            "GSE145780 molecular states come from the source study labels, so diagnostic claims require independent validation.",
-            "Microarray values are suitable for within-study comparison; cross-platform harmonization is not implemented yet.",
-        ],
+        "limitations": config["limitations"],
     }
     provenance_path.write_text(json.dumps(provenance_payload, indent=2) + "\n", encoding="utf-8")
 
@@ -379,7 +447,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         "accession": accession,
         "platform": platform,
         "gene_count": len(gene_summaries),
-        "sample_count": len(sample_titles),
+        "sample_count": len(sample_ids),
         "observed_platform_probe_count": observed_probe_count,
         "output_path": str(output_path.relative_to(ROOT)),
         "sample_value_path": str(sample_value_path.relative_to(ROOT)),
@@ -390,7 +458,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build gene-level expression evidence for a processed study.")
-    parser.add_argument("accession", choices=sorted(NORMALIZED_URLS))
+    parser.add_argument("accession", choices=sorted(STUDY_CONFIG))
     parser.add_argument("--force", action="store_true", help="Redownload the normalized matrix/platform table even if cached.")
     args = parser.parse_args()
     print(json.dumps(build_expression_summary(args.accession, force=args.force), indent=2))

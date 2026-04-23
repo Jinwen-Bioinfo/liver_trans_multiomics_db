@@ -12,7 +12,7 @@ The resource asks:
 
 | Use case | Clinical/scientific question | V1 evidence status |
 | --- | --- | --- |
-| Molecular TCMR diagnosis | Can molecular signals separate TCMR from no rejection? | Full-platform bulk expression contrast in GSE145780; independent validation still required |
+| Molecular TCMR/ACR evidence | Can molecular signals separate rejection-like states from non-rejection or confounded graft injury states? | Full-platform bulk expression contrast in GSE145780; independent ACR-vs-recurrent-HCV expression contrast started in GSE13440 |
 | Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; injury pathway/proteome/metabolome layers pending |
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | Dataset registered |
@@ -23,8 +23,8 @@ The resource asks:
 
 ## NAR Case Study Plan
 
-1. **TCMR molecular evidence**
-   Use GSE145780 to expose full-platform gene summaries and `TCMR_vs_no_rejection` contrasts with BH-FDR. IFN-gamma/cytotoxic markers are pre-specified evidence examples, not circular diagnostic validation.
+1. **TCMR/ACR molecular evidence**
+   Use GSE145780 to expose full-platform gene summaries and `TCMR_vs_no_rejection` contrasts with BH-FDR. Use GSE13440 as an independent ACR-predominant liver-allograft biopsy dataset, comparing ACR with recurrent hepatitis C without ACR. IFN-gamma/cytotoxic markers are pre-specified evidence examples, not clinical diagnostic validation.
 
 2. **Fibrosis molecular evidence**
    Use GSE145780 to evaluate an ECM marker panel and fibrosis contrasts, with an explicit caveat that the fibrosis group has only eight samples.
@@ -41,7 +41,7 @@ The resource asks:
 - It should not claim causality from public observational datasets alone.
 - It should not treat small demonstration signatures as final clinical classifiers.
 - It should not combine human, mouse, liver, blood, and donor data without visible caveats.
-- It should not call itself multi-omics on the strength of transcriptome data alone; non-transcriptomic layers must be visibly marked as pending until processed.
+- It should not call every rejection-associated signal replicated just because it has the same direction in one small independent dataset; sample size, missingness, and confounding by recurrent hepatitis C must remain visible.
 
 ## What It Can Credibly Claim in V1
 
