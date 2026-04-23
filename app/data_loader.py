@@ -31,6 +31,8 @@ DOWNLOAD_ARTIFACTS = {
     "metabolomics_features": "metabolomics_features.json",
     "microbiome_summary": "microbiome_summary.json",
     "microbiome_features": "microbiome_features.json",
+    "proteomics_summary": "proteomics_summary.json",
+    "protein_features": "protein_features.json",
     "single_cell_marker_summary": "single_cell_marker_summary.json",
     "single_cell_module_summary": "single_cell_module_summary.json",
 }
@@ -562,6 +564,45 @@ def get_feature_single_cell(symbol: str) -> dict[str, Any]:
     }
 
 
+@lru_cache(maxsize=8)
+def load_protein_features(accession: str) -> dict[str, Any] | None:
+    path = PROCESSED_DIR / accession / "protein_features.json"
+    if not path.exists():
+        return None
+    with path.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def get_feature_protein(symbol: str) -> dict[str, Any]:
+    symbol_upper = symbol.upper()
+    evidence = []
+    for study in load_studies():
+        protein_payload = load_protein_features(study["accession"])
+        if not protein_payload:
+            continue
+        feature = protein_payload.get("proteins", {}).get(symbol_upper)
+        if not feature:
+            continue
+        evidence.append(
+            {
+                "study_accession": study["accession"],
+                "study_title": study["title"],
+                "repository": study["repository"],
+                "repository_url": study["repository_url"],
+                "assay_scale": protein_payload.get("assay_scale"),
+                "sample_scope": protein_payload.get("sample_scope"),
+                "limitations": protein_payload.get("limitations", []),
+                **feature,
+            }
+        )
+    return {
+        "feature": symbol_upper,
+        "feature_type": "gene_or_protein",
+        "evidence_count": len(evidence),
+        "protein_evidence": evidence,
+    }
+
+
 def get_single_cell_modules(accession: str) -> dict[str, Any] | None:
     study = get_study(accession)
     if study is None:
@@ -735,5 +776,8 @@ def nar_readiness() -> dict[str, Any]:
         "multiomics_feature_counts_by_feature_type": multiomics_counts["by_feature_type"],
         "single_cell_marker_ready_study_count": sum(
             1 for study in studies if load_single_cell_marker_summary(study["accession"]) is not None
+        ),
+        "protein_feature_ready_study_count": sum(
+            1 for study in studies if load_protein_features(study["accession"]) is not None
         ),
     }

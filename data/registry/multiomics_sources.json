@@ -85,11 +85,16 @@
         "Provides protein-level context for hepatocyte and non-parenchymal liver cell programs.",
         "Useful as a reference layer when transplant-specific proteomics is sparse."
       ],
-      "local_status": "reference_registered_not_ingested",
+      "local_status": "protein_feature_reference_ready",
+      "processed_artifacts": [
+        "data/processed/PXD012615/proteomics_summary.json",
+        "data/processed/PXD012615/protein_features.json",
+        "data/processed/PXD012615/analysis_provenance.json"
+      ],
       "next_ingest_steps": [
-        "Download PRIDE project metadata and processed protein tables if available.",
-        "Map proteins to UniProt and HGNC symbols.",
-        "Mark all evidence as liver reference, not transplant direct evidence."
+        "Map all UniProt accessions to reviewed canonical identifiers where possible.",
+        "Add protein feature pages that cross-link RNA expression, single-cell markers, and protein reference compartments.",
+        "Keep all PXD012615 evidence marked as liver reference, not transplant direct evidence."
       ],
       "source_check": {
         "checked_at_utc": "2026-04-23T03:30:00Z",

@@ -477,6 +477,7 @@
 
           <div id="use-cases" class="use-case-list"></div>
           <div id="gene-evidence"></div>
+          <div id="protein-evidence"></div>
           <div id="single-cell-evidence"></div>
           <div id="multiomics-evidence"></div>
           <div id="signature-evidence"></div>
@@ -789,6 +790,45 @@
         `;
       }
 
+      async function loadProteinEvidence() {
+        const query = document.getElementById("query").value.trim();
+        const panel = document.getElementById("protein-evidence");
+        if (!/^[A-Za-z0-9-]{2,20}$/.test(query)) {
+          panel.innerHTML = "";
+          return;
+        }
+        const response = await fetch(`/api/features/${encodeURIComponent(query)}/protein`);
+        const data = await response.json();
+        if (!data.evidence_count) {
+          panel.innerHTML = "";
+          return;
+        }
+        panel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${data.feature} Protein Evidence</h2>
+            <p class="lead">${data.evidence_count} processed proteomics reference datasets with queryable protein evidence.</p>
+            ${data.protein_evidence.map((evidence) => {
+              const summaries = Object.entries(evidence.cell_type_summary || {});
+              const maxMean = Math.max(...summaries.map(([, item]) => item.mean_log2_intensity || 0), 1);
+              return `
+                <div class="mini">
+                  <strong>${evidence.study_accession}</strong>
+                  <span>${evidence.primary_uniprot} · ${evidence.protein_name || evidence.gene_symbol}</span>
+                  <span>best reference compartment: ${evidence.best_cell_type_by_mean_log2_intensity || "not detected"}</span>
+                  ${summaries.map(([cellType, item]) => `
+                    <div class="bar-row">
+                      <span>${cellType}</span>
+                      <div class="bar"><span style="width:${Math.max(4, ((item.mean_log2_intensity || 0) / maxMean) * 100)}%"></span></div>
+                      <span>${item.mean_log2_intensity ?? ""}</span>
+                    </div>
+                  `).join("")}
+                </div>
+              `;
+            }).join("")}
+          </div>
+        `;
+      }
+
       async function showMultiomicsFeature(sourceId, featureType, featureId) {
         const response = await fetch(`/api/multiomics-features/${sourceId}/${featureType}/${featureId}`);
         const feature = await response.json();
@@ -899,6 +939,7 @@
       controls.forEach((control) => control.addEventListener("input", () => {
         loadStudies();
         loadGeneEvidence();
+        loadProteinEvidence();
         loadSingleCellEvidence();
         loadMultiomicsEvidence();
       }));
@@ -907,6 +948,7 @@
       loadDatasetTriage();
       loadOmicsLayers();
       loadGeneEvidence();
+      loadProteinEvidence();
       loadSingleCellEvidence();
       loadMultiomicsEvidence();
       loadSignatureEvidence();

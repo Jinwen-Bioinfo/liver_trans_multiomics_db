@@ -1,0 +1,79 @@
+{
+  "generated_at_utc": "2026-04-23T10:56:50.627445+00:00",
+  "limitations": [
+    "PXD012615 is a human liver cell reference proteome, not a liver transplant cohort.",
+    "Protein evidence is cell-type reference context and should not be interpreted as rejection or donor-outcome evidence.",
+    "MaxQuant intensity values are summarized within this dataset only; no cross-study proteomics normalization is performed."
+  ],
+  "methods": [
+    "Downloaded PRIDE MaxQuant output archive and parsed proteinGroups.txt.",
+    "Filtered reverse hits, potential contaminants, site-only identifications, and rows without gene symbols.",
+    "Mapped MaxQuant intensity columns HC, EC, KC, and SC to hepatocyte, liver sinusoidal endothelial cell, Kupffer cell, and hepatic stellate cell reference compartments.",
+    "For each gene symbol, retained the highest-scoring protein group and summarized replicate intensities as log2(intensity + 1)."
+  ],
+  "outputs": {
+    "analysis_provenance": {
+      "bytes": 3260,
+      "path": "data/processed/PXD012615/analysis_provenance.json",
+      "sha256": "bd4f5489ff716266251f4856d8157750895ac47c3625890ef867197335971a6b"
+    },
+    "protein_features": {
+      "bytes": 17153881,
+      "path": "data/processed/PXD012615/protein_features.json",
+      "sha256": "27d1f39ec3e55f1591766b904a9280325db023330f70aea04310c747d3162c6f"
+    },
+    "proteomics_summary": {
+      "bytes": 1128,
+      "path": "data/processed/PXD012615/proteomics_summary.json",
+      "sha256": "237380a87b13e2c909e90e21e56c61a2479adc1068ecb3248ceb0b4bebe4c327"
+    }
+  },
+  "parser": "scripts/build_proteome_reference.py",
+  "source": {
+    "bytes": 649364487,
+    "download_url": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD012615/MaxQuant_Output.zip",
+    "files_api": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012615/files?pageSize=200",
+    "path": "data/raw/PXD012615/MaxQuant_Output.zip",
+    "pride_file_metadata": {
+      "accession": "bfbdf155784af1c14bd752323d295368de3e5b0a2a4c9e817401c30ea3515415",
+      "additionalAttributes": [],
+      "checksum": "c8795979d596025878ba25b03acab943fbffe810",
+      "compress": false,
+      "fileCategory": {
+        "@type": "CvParam",
+        "accession": "PRIDE:0000408",
+        "cvLabel": "PRIDE",
+        "name": "Search engine output file URI",
+        "value": "SEARCH"
+      },
+      "fileName": "MaxQuant_Output.zip",
+      "fileSizeBytes": 649364487,
+      "projectAccessions": [
+        "PXD012615"
+      ],
+      "publicFileLocations": [
+        {
+          "@type": "CvParam",
+          "accession": "PRIDE:0000469",
+          "cvLabel": "PRIDE",
+          "name": "FTP Protocol",
+          "value": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2020/04/PXD012615/MaxQuant_Output.zip"
+        },
+        {
+          "@type": "CvParam",
+          "accession": "PRIDE:0000468",
+          "cvLabel": "PRIDE",
+          "name": "Aspera Protocol",
+          "value": "prd_ascp@fasp.ebi.ac.uk:pride/data/archive/2020/04/PXD012615/MaxQuant_Output.zip"
+        }
+      ],
+      "publicationDate": "2020-04-09T16:52:19.000+00:00",
+      "submissionDate": "2019-02-07T12:01:15.000+00:00",
+      "totalDownloads": 285,
+      "updatedDate": "2019-02-07T16:02:48.000+00:00"
+    },
+    "project_api": "https://www.ebi.ac.uk/pride/ws/archive/v2/projects/PXD012615",
+    "sha256": "106edbea58f8d0e9c8c9ea69c37fdec93547091e86b2f50abd3a5ec6185b6015"
+  },
+  "study_accession": "PXD012615"
+}

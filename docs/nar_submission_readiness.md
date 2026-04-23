@@ -36,7 +36,7 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 - [ ] Verify file-level public access for each accession.
 - [ ] Store original sample labels and standardized transplant labels.
 - [ ] Add study-level QC pages.
-- [ ] Add data download endpoints for normalized matrices and derived tables. Transcriptome summaries/contrasts and DFI metabolomics/microbiome feature tables are already downloadable.
+- [ ] Add data download endpoints for normalized matrices and derived tables. Transcriptome summaries/contrasts, DFI metabolomics/microbiome feature tables, GSE189539 single-cell marker summaries, and PXD012615 protein feature tables are already downloadable.
 - [ ] Add provenance for every derived result. Baseline provenance exists for processed GEO studies and the DFI feature ingest; release-level provenance remains pending.
 - [ ] Add release versioning.
 
@@ -45,9 +45,10 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 - [ ] Differential expression for priority contrasts. Started for GSE145780, GSE13440, and GSE11881.
 - [ ] Signature scoring across studies. Started for processed transcriptome cohorts; signature validation caveats remain visible.
 - [x] Gene pages with cross-study evidence.
+- [x] Protein reference evidence endpoint for processed proteomics sources.
 - [ ] Cell-type pages for single-cell studies. GSE189539 now has a conservative marker-matrix evidence layer, but cell-type pages require recovered cell metadata or a full annotation workflow.
 - [ ] Pathway and marker-gene summaries.
-- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, blood monitoring, and single-cell mechanism use cases. Donor liver quality now has GSE243887 gene-level evidence, blood monitoring has GSE11881/GSE200340 evidence, and GSE189539 adds single-cell marker evidence; written tutorials remain pending.
+- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, blood monitoring, single-cell mechanism, and protein reference use cases. Donor liver quality now has GSE243887 gene-level evidence, blood monitoring has GSE11881/GSE200340 evidence, GSE189539 adds single-cell marker evidence, and PXD012615 adds protein feature context; written tutorials remain pending.
 
 ### V3: Submission Package
 

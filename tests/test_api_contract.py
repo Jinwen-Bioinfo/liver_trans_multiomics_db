@@ -345,6 +345,26 @@ def test_single_cell_modules_and_downloads_are_available() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_protein_reference_endpoint_returns_pxd012615_evidence() -> None:
+    response = client.get("/api/features/CYP3A4/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["protein_evidence"] if item["study_accession"] == "PXD012615")
+    assert evidence["primary_uniprot"] == "P08684"
+    assert evidence["best_cell_type_by_mean_log2_intensity"] == "hepatocyte"
+    assert evidence["cell_type_summary"]["hepatocyte"]["detected_replicate_count"] == 3
+    assert evidence["sample_scope"] == "reference_human_liver_cells"
+
+
+def test_protein_reference_downloads_are_available() -> None:
+    response = client.get("/api/studies/PXD012615/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "proteomics_summary" in artifacts
+    assert "protein_features" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -379,15 +399,19 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "DFI_MICROBIOME_LT_2024" in metabolome["registered_accessions"]
     assert "DFI_MICROBIOME_LT_2024" in microbiome["registered_accessions"]
     assert "PXD012615" in proteome["registered_accessions"]
+    assert "PXD012615" in proteome["processed_accessions"]
 
 
 def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     metabolome = client.get("/api/omics-layers/metabolome").json()
     microbiome = client.get("/api/omics-layers/microbiome").json()
+    proteome = client.get("/api/omics-layers/proteome").json()
     assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in metabolome["current_artifacts"]
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in microbiome["current_artifacts"]
+    assert "data/processed/PXD012615/protein_features.json" in proteome["current_artifacts"]
     assert metabolome["readiness"] == "processed_feature_ready"
     assert microbiome["readiness"] == "processed_feature_ready"
+    assert proteome["readiness"] == "protein_feature_reference_ready"
 
 
 def test_multiomics_source_registry_exposes_direct_liver_transplant_layer() -> None:
@@ -400,6 +424,15 @@ def test_multiomics_source_registry_exposes_direct_liver_transplant_layer() -> N
     assert payload["local_status"] == "processed_feature_ready"
     assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in payload["processed_artifacts"]
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_protein_reference_layer() -> None:
+    response = client.get("/api/multiomics-sources/PXD012615")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["local_status"] == "protein_feature_reference_ready"
+    assert "proteomics" in payload["omics_modalities"]
+    assert "data/processed/PXD012615/protein_features.json" in payload["processed_artifacts"]
 
 
 def test_source_type_registry_includes_supplementary_tables() -> None:
@@ -454,6 +487,14 @@ def test_dataset_triage_marks_single_cell_marker_matrix_processed() -> None:
     payload = response.json()
     assert payload["triage_status"] == "processed_single_cell_marker"
     assert "single-cell marker matrix evidence" in payload["next_action"]
+
+
+def test_dataset_triage_marks_protein_reference_processed() -> None:
+    response = client.get("/api/dataset-triage/PXD012615")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_protein_reference"
+    assert "human liver cell proteome reference" in payload["next_action"]
 
 
 def test_data_model_schema_exposes_core_entities() -> None:

@@ -53,9 +53,12 @@
         "Which protein markers can bridge biopsy biology and clinically measurable blood assays?"
       ],
       "registered_accessions": ["PXD012615"],
-      "processed_accessions": [],
-      "current_artifacts": [],
-      "readiness": "reference_registered_not_ingested"
+      "processed_accessions": ["PXD012615"],
+      "current_artifacts": [
+        "data/processed/PXD012615/proteomics_summary.json",
+        "data/processed/PXD012615/protein_features.json"
+      ],
+      "readiness": "protein_feature_reference_ready"
     },
     {
       "layer_id": "metabolome",

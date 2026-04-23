@@ -19,8 +19,9 @@
       "processed_expression": 2,
       "processed_single_cell_marker": 1,
       "ready_to_ingest": 98,
-      "registered_reference": 1,
-      "source_review_needed": 136
+      "registered_reference": 0,
+      "source_review_needed": 136,
+      "processed_protein_reference": 1
     },
     "priority_counts": {
       "P0": 5,
@@ -41,7 +42,7 @@
       "unknown": 523
     },
     "p0_or_p1_count": 104,
-    "ready_or_processed_count": 106
+    "ready_or_processed_count": 107
   },
   "priority_queue": [
     {
@@ -6014,12 +6015,12 @@
     {
       "accession": "PXD012615",
       "title": "PXD012615",
-      "repository": "external_curated_registry",
-      "repository_url": null,
+      "repository": "PRIDE",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",
       "accession_family": "PRIDE",
       "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "registered_reference",
+      "directness": "reference_liver_not_transplant_cohort",
+      "triage_status": "processed_protein_reference",
       "priority": "P1",
       "omics_modalities": [
         "proteomics"
@@ -6039,10 +6040,11 @@
       ],
       "scientific_value": [
         "liver proteome reference",
-        "protein feature normalization"
+        "protein feature normalization",
+        "cell-compartment protein context"
       ],
-      "next_action": "Use PRIDE metadata and protein tables as a human liver proteome reference layer; keep separate from transplant-specific evidence.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "next_action": "Use as a processed human liver cell proteome reference layer; expose protein feature evidence while keeping it separate from transplant cohort contrasts.",
+      "triage_reason": "Processed locally from PRIDE MaxQuant proteinGroups.txt into queryable protein feature evidence."
     },
     {
       "accession": "GSE262273",

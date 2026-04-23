@@ -18,6 +18,7 @@ from app.data_loader import (
     load_study_sample_summary,
     load_study_samples,
     get_feature_expression,
+    get_feature_protein,
     get_feature_single_cell,
     get_signature_score,
     get_single_cell_modules,
@@ -243,6 +244,11 @@ def feature_expression(symbol: str) -> dict[str, object]:
 @app.get("/api/features/{symbol}/single-cell")
 def feature_single_cell(symbol: str) -> dict[str, object]:
     return get_feature_single_cell(symbol)
+
+
+@app.get("/api/features/{symbol}/protein")
+def feature_protein(symbol: str) -> dict[str, object]:
+    return get_feature_protein(symbol)
 
 
 @app.get("/api/studies/{accession}/single-cell/modules")

@@ -13,8 +13,8 @@ The resource asks:
 | Use case | Clinical/scientific question | V1 evidence status |
 | --- | --- | --- |
 | Molecular TCMR/ACR evidence | Can molecular signals separate rejection-like states from non-rejection or confounded graft injury states? | Full-platform bulk expression contrast in GSE145780; independent ACR-vs-recurrent-HCV expression contrast started in GSE13440 |
-| Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; injury pathway/proteome/metabolome layers pending |
-| Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
+| Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; PXD012615 adds liver cell protein reference context; injury pathway/metabolome layers pending |
+| Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; PXD012615 provides stellate-cell protein context for COL1A1 |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | GSE243887 donor liver RNA-seq processed with accepted-vs-rejected log2CPM gene contrasts |
 | Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC tolerance contrast and GSE200340 pediatric blood time-point RNA-seq are processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | GSE189539 single-cell graft-liver matrix processed to marker/module evidence; cell metadata still needed for cell-type proportions |
@@ -41,8 +41,11 @@ The resource asks:
 6. **Donor liver molecular quality**
    Use GSE243887 to expose donor liver RNA-seq evidence for accepted versus rejected donor organs. These labels describe organ selection decisions, not post-transplant outcome, so the resource should present this as donor-quality context rather than graft-survival prediction.
 
-7. **Remaining non-transcriptomic expansion**
-   Treat proteome, additional metabolome, microbiome, and immunogenetics records as first-class omics layers. Proteomics and immunogenetics should remain reference/registered layers until public datasets are actually ingested and linked to artifacts.
+7. **Protein reference context**
+   Use PXD012615 to expose a processed human liver cell proteome reference layer across hepatocyte, liver sinusoidal endothelial, Kupffer, and hepatic stellate compartments. Example protein evidence includes CYP3A4 as hepatocyte-high, COL1A1 as stellate-high, VWF as endothelial-high, and LST1 as Kupffer-high. This is reference biology, not transplant outcome evidence.
+
+8. **Remaining non-transcriptomic expansion**
+   Treat additional transplant-specific proteome, metabolome, microbiome, and immunogenetics records as first-class omics layers. Immunogenetics should remain a registered layer until public datasets are ingested and linked to artifacts.
 
 ## What This Database Should Not Claim Yet
 
@@ -57,6 +60,7 @@ The resource asks:
 - Public data can be curated into transplant-specific states.
 - Molecular evidence can be queried by gene, signature, dataset, clinical state, and omics layer.
 - Non-transcriptomic liver transplant features can be queried by metabolite or taxon when public reusable tables exist.
+- Protein reference evidence can be queried by gene/protein and linked to liver cell compartments.
 - Single-cell marker evidence can be queried where public count matrices are available, with visible caveats when cell metadata are missing.
 - Each derived result preserves accession provenance and processing rules.
 - The resource offers a transplant-centered layer that generic repositories do not provide.

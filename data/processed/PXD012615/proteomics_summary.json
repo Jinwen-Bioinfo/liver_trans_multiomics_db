@@ -1,0 +1,34 @@
+{
+  "assay_modality": "proteomics",
+  "by_best_cell_type": {
+    "hepatic_stellate_cell": 1916,
+    "hepatocyte": 1582,
+    "kupffer_cell": 1583,
+    "liver_sinusoidal_endothelial_cell": 3946
+  },
+  "cell_types": [
+    "hepatocyte",
+    "liver_sinusoidal_endothelial_cell",
+    "kupffer_cell",
+    "hepatic_stellate_cell"
+  ],
+  "gene_symbol_count": 9037,
+  "generated_at_utc": "2026-04-23T10:56:50.627445+00:00",
+  "kept_protein_group_rows": 9445,
+  "limitations": [
+    "PXD012615 is a human liver cell reference proteome, not a liver transplant cohort.",
+    "Protein evidence is cell-type reference context and should not be interpreted as rejection or donor-outcome evidence.",
+    "MaxQuant intensity values are summarized within this dataset only; no cross-study proteomics normalization is performed."
+  ],
+  "protein_group_rows": 10138,
+  "sample_scope": "reference_human_liver_cells",
+  "source_counts": {
+    "contaminant_rows": 156,
+    "kept_rows": 9445,
+    "missing_gene_symbol_rows": 28,
+    "protein_group_rows": 10138,
+    "reverse_rows": 184,
+    "site_only_rows": 325
+  },
+  "study_accession": "PXD012615"
+}
