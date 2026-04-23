@@ -31,7 +31,10 @@ files <- c(
 )
 
 sha256_file <- function(path) {
-  parts <- strsplit(system2("shasum", c("-a", "256", path), stdout = TRUE), "\\s+")[[1]]
+  has_sha256sum <- nzchar(Sys.which("sha256sum"))
+  command <- if (has_sha256sum) "sha256sum" else "shasum"
+  args <- if (has_sha256sum) path else c("-a", "256", path)
+  parts <- strsplit(system2(command, args, stdout = TRUE), "\\s+")[[1]]
   parts[[1]]
 }
 
