@@ -85,6 +85,26 @@ GEO_SERIES = {
         "sample_origin": "recipient_blood",
         "transplant_phase": "post_transplant",
         "assay_modality": "bulk_rna",
+    },
+    "GSE243887": {
+        "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE243nnn/GSE243887/matrix/GSE243887_series_matrix.txt.gz",
+        "characteristic_label_field": "transplant-selection",
+        "characteristic_label_map": {
+            "accepted": {
+                "original_label": "Accepted donor liver",
+                "clinical_state": "accepted_donor_liver",
+                "display_label": "Donor liver accepted for transplantation",
+            },
+            "rejected": {
+                "original_label": "Rejected donor liver",
+                "clinical_state": "rejected_donor_liver",
+                "display_label": "Donor liver rejected for transplantation",
+            },
+        },
+        "sample_origin": "donor_liver",
+        "transplant_phase": "donor_recovery",
+        "assay_modality": "bulk_rna",
+        "count_matrix_column_field": "description",
     }
 }
 
@@ -183,6 +203,11 @@ def standardize_sample(sample: dict[str, Any], config: dict[str, Any], accession
         cluster_value = characteristics.get(config["cluster_field"])
         cluster = config["cluster_map"].get(str(cluster_value), {})
         standardization_rule = f"characteristics:{config['cluster_field']}={cluster_value}"
+    elif "characteristic_label_field" in config:
+        label_field = config["characteristic_label_field"]
+        label_value = characteristics.get(label_field, "")
+        cluster = config["characteristic_label_map"].get(label_value.lower(), {})
+        standardization_rule = f"characteristics:{label_field}={label_value}"
     elif "title_label_rules" in config:
         title = str(sample.get("title", ""))
         haystack = " ".join([title, *sample.get("characteristics_ch1", [])])
@@ -215,6 +240,7 @@ def standardize_sample(sample: dict[str, Any], config: dict[str, Any], accession
         "raw_characteristics": sample.get("characteristics_ch1", []),
         "supplementary_file": sample.get("supplementary_file"),
         "platform_id": sample.get("platform_id"),
+        "matrix_sample_id": sample.get(config.get("count_matrix_column_field", ""), sample.get("geo_accession")),
     }
 
 
@@ -263,6 +289,8 @@ def ingest(accession: str, force: bool = False) -> dict[str, Any]:
         "standardization_rules": {
             "cluster_field": config.get("cluster_field"),
             "cluster_map": config.get("cluster_map"),
+            "characteristic_label_field": config.get("characteristic_label_field"),
+            "characteristic_label_map": config.get("characteristic_label_map"),
             "title_label_rules": config.get("title_label_rules"),
         },
         "series_title": parsed["series"].get("title", [None])[0],

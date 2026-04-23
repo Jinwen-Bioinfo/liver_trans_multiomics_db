@@ -24,12 +24,14 @@ NORMALIZED_URLS = {
     "GSE145780": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE145nnn/GSE145780/suppl/GSE145780_normalized_data_with_all_controls.txt.gz",
     "GSE13440": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE13nnn/GSE13440/matrix/GSE13440_series_matrix.txt.gz",
     "GSE11881": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE11nnn/GSE11881/matrix/GSE11881_series_matrix.txt.gz",
+    "GSE243887": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE243nnn/GSE243887/suppl/GSE243887_Raw_counts.txt.gz",
 }
 PLATFORM_URLS = {
     "GPL15207": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL15207&targ=self&form=text&view=data",
     "GPL1291": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL1291&targ=self&form=text&view=data",
     "GPL570": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GPL570&targ=self&form=text&view=data",
 }
+GENCODE_V40_GTF_URL = "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_40/gencode.v40.annotation.gtf.gz"
 STUDY_CONFIG = {
     "GSE145780": {
         "platform": "GPL15207",
@@ -70,6 +72,19 @@ STUDY_CONFIG = {
         "limitations": [
             "GSE11881 is a peripheral blood PBMC study, so signals should be interpreted as non-invasive immune monitoring rather than graft tissue biology.",
             "The source matrix is analyzed within-study only; cross-platform harmonization with graft biopsy arrays is not implemented yet.",
+        ],
+    },
+    "GSE243887": {
+        "platform": "GENCODE_V40",
+        "matrix_filename": "GSE243887_Raw_counts.txt.gz",
+        "matrix_source": "raw_counts_ensembl",
+        "sample_match": "matrix_sample_id",
+        "assay_scale": "log2CPM",
+        "contrasts": [("accepted_donor_liver", "rejected_donor_liver")],
+        "limitations": [
+            "GSE243887 is a donor-liver selection cohort; accepted/rejected labels are organ-use decisions, not post-transplant graft outcomes.",
+            "RNA-seq counts are normalized as log2(CPM + 1) for exploratory database evidence; this is not a DESeq2/edgeR model and does not reproduce the publication's full analysis.",
+            "Expression values are analyzed within-study only; cross-platform harmonization with microarray studies is not implemented yet.",
         ],
     },
 }
@@ -219,6 +234,58 @@ def parse_platform(platform: str, force: bool = False) -> dict[str, Any]:
     return payload
 
 
+def parse_gtf_attributes(value: str) -> dict[str, str]:
+    attributes: dict[str, str] = {}
+    for item in value.rstrip(";").split(";"):
+        item = item.strip()
+        if not item or " " not in item:
+            continue
+        key, raw_value = item.split(" ", 1)
+        attributes[key] = raw_value.strip().strip('"')
+    return attributes
+
+
+def parse_gencode_v40(force: bool = False) -> dict[str, Any]:
+    raw_path = ROOT / "data" / "raw" / "reference" / "gencode.v40.annotation.gtf.gz"
+    download(GENCODE_V40_GTF_URL, raw_path, force=force)
+
+    gene_to_symbol: dict[str, dict[str, Any]] = {}
+    with gzip.open(raw_path, "rt", encoding="utf-8", errors="replace") as handle:
+        for line in handle:
+            if not line or line.startswith("#"):
+                continue
+            fields = line.rstrip("\n").split("\t")
+            if len(fields) < 9 or fields[2] != "gene":
+                continue
+            attributes = parse_gtf_attributes(fields[8])
+            gene_id = attributes.get("gene_id", "")
+            gene_symbol = attributes.get("gene_name", "")
+            if not gene_id or not gene_symbol:
+                continue
+            stable_gene_id = gene_id.split(".", 1)[0]
+            gene_to_symbol[stable_gene_id] = {
+                "ensembl_gene": stable_gene_id,
+                "ensembl_gene_version": gene_id,
+                "gene_symbol": gene_symbol.upper(),
+                "gene_title": attributes.get("gene_name", ""),
+                "gene_type": attributes.get("gene_type", attributes.get("gene_biotype", "")),
+            }
+
+    output_dir = ROOT / "data" / "processed" / "GENCODE_V40"
+    output_dir.mkdir(parents=True, exist_ok=True)
+    output_path = output_dir / "ensembl_gene_map.json"
+    payload = {
+        "platform": "GENCODE_V40",
+        "generated_at_utc": datetime.now(timezone.utc).isoformat(),
+        "source_url": GENCODE_V40_GTF_URL,
+        "raw_file": file_record(raw_path),
+        "gene_count": len(gene_to_symbol),
+        "ensembl_gene_to_symbol": gene_to_symbol,
+    }
+    output_path.write_text(json.dumps(payload, separators=(",", ":")) + "\n", encoding="utf-8")
+    return payload
+
+
 def read_expression_matrix(
     raw_path: Path,
     *,
@@ -254,6 +321,8 @@ def sample_key_for(sample: dict[str, Any], mode: str) -> str:
         return f"{sample['title']}.CEL"
     if mode == "geo_accession":
         return sample["sample_accession"]
+    if mode == "matrix_sample_id":
+        return sample["matrix_sample_id"]
     raise ValueError(f"Unsupported sample match mode: {mode}")
 
 
@@ -276,9 +345,6 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
 
     config = STUDY_CONFIG[accession]
     platform = config["platform"]
-    platform_map = parse_platform(platform, force=force)
-    probe_to_gene = platform_map["probe_to_gene"]
-
     samples = load_json(ROOT / "data" / "processed" / accession / "samples.json")
     raw_path = ROOT / "data" / "raw" / "geo" / accession / config["matrix_filename"]
     output_dir = ROOT / "data" / "processed" / accession
@@ -286,46 +352,102 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
     download(NORMALIZED_URLS[accession], raw_path, force=force)
 
     matrix_sample_to_sample = {sample_key_for(sample, config["sample_match"]): sample for sample in samples}
-    sample_ids: list[str] = []
     gene_sums: dict[str, np.ndarray] = {}
     gene_counts: dict[str, np.ndarray] = {}
     gene_meta: dict[str, dict[str, Any]] = {}
     observed_probe_count = 0
 
-    header, matrix_rows = read_expression_matrix(raw_path, matrix_source=config["matrix_source"])
-    matrix_sample_columns = header[1:]
-    sample_ids = [sample_name.removesuffix(".CEL") for sample_name in matrix_sample_columns if sample_name in matrix_sample_to_sample]
-    sample_indices = [index for index, sample_name in enumerate(matrix_sample_columns) if sample_name in matrix_sample_to_sample]
-    selected_matrix_sample_names = [matrix_sample_columns[index] for index in sample_indices]
-    for row in matrix_rows:
-        probe_id = clean_header(row[0])
-        mapping = probe_to_gene.get(probe_id)
-        if not mapping:
-            continue
-        symbol = mapping["gene_symbol"]
-        if symbol not in gene_sums:
-            gene_sums[symbol] = np.zeros(len(sample_indices), dtype=float)
-            gene_counts[symbol] = np.zeros(len(sample_indices), dtype=float)
-            gene_meta[symbol] = {
-                "gene_symbol": symbol,
-                "gene_title": mapping.get("gene_title", ""),
-                "entrez_gene": mapping.get("entrez_gene"),
-                "ensembl_gene": mapping.get("ensembl_gene"),
-                "platform": platform,
-                "probe_ids": [],
-                "mapping_source": "GEO platform annotation",
-                "mapping_source_url": PLATFORM_URLS[platform],
-            }
-        gene_meta[symbol]["probe_ids"].append(probe_id)
-        observed_probe_count += 1
-        values = []
-        for index in sample_indices:
-            value = row[index + 1] if index + 1 < len(row) else ""
-            values.append(float(value) if value not in {"", "NA", "null"} else math.nan)
-        vector = np.array(values, dtype=float)
-        mask = ~np.isnan(vector)
-        gene_sums[symbol][mask] += vector[mask]
-        gene_counts[symbol][mask] += 1
+    if config["matrix_source"] == "raw_counts_ensembl":
+        gencode_map = parse_gencode_v40(force=force)
+        gene_id_to_symbol = gencode_map["ensembl_gene_to_symbol"]
+        platform_map = gencode_map
+        header, matrix_rows = read_expression_matrix(raw_path, matrix_source=config["matrix_source"])
+        matrix_sample_columns = header[1:]
+        sample_indices = [index for index, sample_name in enumerate(matrix_sample_columns) if sample_name in matrix_sample_to_sample]
+        selected_matrix_sample_names = [matrix_sample_columns[index] for index in sample_indices]
+        sample_ids = [matrix_sample_to_sample[name]["sample_accession"] for name in selected_matrix_sample_names]
+        raw_gene_values: dict[str, np.ndarray] = {}
+        library_sizes = np.zeros(len(sample_indices), dtype=float)
+
+        for row in matrix_rows:
+            ensembl_with_version = clean_header(row[0])
+            stable_ensembl = ensembl_with_version.split(".", 1)[0]
+            mapping = gene_id_to_symbol.get(stable_ensembl)
+            if not mapping:
+                continue
+            symbol = mapping["gene_symbol"]
+            if symbol not in raw_gene_values:
+                raw_gene_values[symbol] = np.zeros(len(sample_indices), dtype=float)
+                gene_counts[symbol] = np.zeros(len(sample_indices), dtype=float)
+                gene_meta[symbol] = {
+                    "gene_symbol": symbol,
+                    "gene_title": mapping.get("gene_title", ""),
+                    "entrez_gene": None,
+                    "ensembl_gene": stable_ensembl,
+                    "platform": platform,
+                    "probe_ids": [],
+                    "mapping_source": "GENCODE v40 gene annotation",
+                    "mapping_source_url": GENCODE_V40_GTF_URL,
+                    "gene_type": mapping.get("gene_type", ""),
+                }
+            gene_meta[symbol]["probe_ids"].append(ensembl_with_version)
+            observed_probe_count += 1
+            values = []
+            for index in sample_indices:
+                value = row[index + 1] if index + 1 < len(row) else ""
+                values.append(float(value) if value not in {"", "NA", "null"} else math.nan)
+            vector = np.array(values, dtype=float)
+            mask = ~np.isnan(vector)
+            raw_gene_values[symbol][mask] += vector[mask]
+            gene_counts[symbol][mask] += 1
+            library_sizes[mask] += vector[mask]
+
+        for symbol, counts in raw_gene_values.items():
+            cpm = np.divide(
+                counts * 1_000_000,
+                library_sizes,
+                out=np.full_like(counts, np.nan),
+                where=library_sizes != 0,
+            )
+            gene_sums[symbol] = np.log2(cpm + 1)
+            gene_counts[symbol] = np.where(~np.isnan(gene_sums[symbol]), 1.0, 0.0)
+    else:
+        platform_map = parse_platform(platform, force=force)
+        probe_to_gene = platform_map["probe_to_gene"]
+        header, matrix_rows = read_expression_matrix(raw_path, matrix_source=config["matrix_source"])
+        matrix_sample_columns = header[1:]
+        sample_indices = [index for index, sample_name in enumerate(matrix_sample_columns) if sample_name in matrix_sample_to_sample]
+        selected_matrix_sample_names = [matrix_sample_columns[index] for index in sample_indices]
+        sample_ids = [sample_name.removesuffix(".CEL") for sample_name in selected_matrix_sample_names]
+        for row in matrix_rows:
+            probe_id = clean_header(row[0])
+            mapping = probe_to_gene.get(probe_id)
+            if not mapping:
+                continue
+            symbol = mapping["gene_symbol"]
+            if symbol not in gene_sums:
+                gene_sums[symbol] = np.zeros(len(sample_indices), dtype=float)
+                gene_counts[symbol] = np.zeros(len(sample_indices), dtype=float)
+                gene_meta[symbol] = {
+                    "gene_symbol": symbol,
+                    "gene_title": mapping.get("gene_title", ""),
+                    "entrez_gene": mapping.get("entrez_gene"),
+                    "ensembl_gene": mapping.get("ensembl_gene"),
+                    "platform": platform,
+                    "probe_ids": [],
+                    "mapping_source": "GEO platform annotation",
+                    "mapping_source_url": PLATFORM_URLS[platform],
+                }
+            gene_meta[symbol]["probe_ids"].append(probe_id)
+            observed_probe_count += 1
+            values = []
+            for index in sample_indices:
+                value = row[index + 1] if index + 1 < len(row) else ""
+                values.append(float(value) if value not in {"", "NA", "null"} else math.nan)
+            vector = np.array(values, dtype=float)
+            mask = ~np.isnan(vector)
+            gene_sums[symbol][mask] += vector[mask]
+            gene_counts[symbol][mask] += 1
 
     sample_states = [matrix_sample_to_sample[name]["clinical_state"] for name in selected_matrix_sample_names]
     indices_by_state: dict[str, list[int]] = defaultdict(list)
@@ -420,6 +542,7 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
         "observed_platform_probe_count": observed_probe_count,
         "contrast_method": "Welch two-sample t-test on gene-level within-study expression values; Benjamini-Hochberg FDR within each contrast.",
         "raw_path": str(raw_path.relative_to(ROOT)),
+        "normalization_method": "log2(CPM + 1) from raw counts" if config["matrix_source"] == "raw_counts_ensembl" else "source-provided normalized expression values",
         "genes": gene_summaries,
     }
     output_path = output_dir / "gene_expression_summary.json"
@@ -453,17 +576,25 @@ def build_expression_summary(accession: str, force: bool = False) -> dict[str, A
                 **file_record(raw_path),
             },
             "platform_annotation": {
-                "url": PLATFORM_URLS[platform],
+                "url": GENCODE_V40_GTF_URL if platform == "GENCODE_V40" else PLATFORM_URLS[platform],
                 **platform_map["raw_file"],
             },
         },
         "outputs": output_records,
-        "methods": [
-            f"GEO {platform} platform table parsed from !platform_table_begin/!platform_table_end.",
-            "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
-            "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
-            "Welch two-sample t-test is computed on gene-level within-study expression values; Benjamini-Hochberg FDR is applied within each contrast.",
-        ],
+        "methods": (
+            [
+                "GENCODE v40 GTF gene records were parsed to map Ensembl gene identifiers to HGNC-style gene symbols.",
+                "Raw counts were collapsed by gene symbol when needed, library-size normalized to counts per million, and transformed as log2(CPM + 1).",
+                "Welch two-sample t-test is computed on gene-level log2CPM values; Benjamini-Hochberg FDR is applied within each contrast.",
+            ]
+            if platform == "GENCODE_V40"
+            else [
+                f"GEO {platform} platform table parsed from !platform_table_begin/!platform_table_end.",
+                "Probe sets mapped to the first non-empty Gene Symbol entry; probes with ambiguous symbols are counted in platform metadata.",
+                "Multiple probes per gene are averaged per sample before group summaries and contrasts.",
+                "Welch two-sample t-test is computed on gene-level within-study expression values; Benjamini-Hochberg FDR is applied within each contrast.",
+            ]
+        ),
         "limitations": config["limitations"],
     }
     provenance_path.write_text(json.dumps(provenance_payload, indent=2) + "\n", encoding="utf-8")

@@ -15,7 +15,7 @@ The resource asks:
 | Molecular TCMR/ACR evidence | Can molecular signals separate rejection-like states from non-rejection or confounded graft injury states? | Full-platform bulk expression contrast in GSE145780; independent ACR-vs-recurrent-HCV expression contrast started in GSE13440 |
 | Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; injury pathway/proteome/metabolome layers pending |
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; fibrosis group is small |
-| Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | Dataset registered |
+| Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | GSE243887 donor liver RNA-seq processed with accepted-vs-rejected log2CPM gene contrasts |
 | Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC operational-tolerance expression contrast is processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | Datasets registered |
 | Gut-liver microbiome/metabolome | Do microbial taxa and fecal metabolites associate with postoperative infection risk or immune dysregulation? | DFI_MICROBIOME_LT_2024 processed to feature-level metabolite and taxon summaries |
@@ -38,7 +38,10 @@ The resource asks:
 5. **Gut-liver infection-risk evidence**
    Use DFI_MICROBIOME_LT_2024 to expose stool metabolomics and microbiome features linked to postoperative infection status. The current resource provides 156 metabolite features and 769 MetaPhlAn taxon features with unadjusted infection-positive versus infection-negative summaries. These are searchable feature-level database records, not a reproduced clinical prediction model.
 
-6. **Remaining non-transcriptomic expansion**
+6. **Donor liver molecular quality**
+   Use GSE243887 to expose donor liver RNA-seq evidence for accepted versus rejected donor organs. These labels describe organ selection decisions, not post-transplant outcome, so the resource should present this as donor-quality context rather than graft-survival prediction.
+
+7. **Remaining non-transcriptomic expansion**
    Treat proteome, additional metabolome, microbiome, and immunogenetics records as first-class omics layers. Proteomics and immunogenetics should remain reference/registered layers until public datasets are actually ingested and linked to artifacts.
 
 ## What This Database Should Not Claim Yet

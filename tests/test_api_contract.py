@@ -100,6 +100,23 @@ def test_independent_geo_metadata_ingest_is_available() -> None:
     assert gse11881["sample_summary"]["by_clinical_state"]["operational_tolerance"] == 9
     assert gse11881["sample_summary"]["by_clinical_state"]["non_tolerant"] == 8
 
+    gse243887 = client.get("/api/studies/GSE243887").json()
+    assert gse243887["sample_summary"]["sample_count"] == 32
+    assert gse243887["sample_summary"]["by_clinical_state"]["accepted_donor_liver"] == 10
+    assert gse243887["sample_summary"]["by_clinical_state"]["rejected_donor_liver"] == 22
+
+
+def test_donor_liver_samples_filter_by_selection_state() -> None:
+    response = client.get(
+        "/api/studies/GSE243887/samples",
+        params={"clinical_state": "accepted_donor_liver", "limit": 50},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] == 10
+    assert all(sample["clinical_state"] == "accepted_donor_liver" for sample in payload["samples"])
+    assert all(sample["matrix_sample_id"].startswith("HL") for sample in payload["samples"])
+
 
 def test_processed_provenance_is_available() -> None:
     response = client.get("/api/studies/GSE145780/provenance")
@@ -237,6 +254,32 @@ def test_operational_tolerance_dataset_downloads_expression_artifacts() -> None:
     assert "signature_scores" in artifacts
 
 
+def test_donor_liver_quality_dataset_has_expression_evidence() -> None:
+    response = client.get("/api/features/ALB/expression")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["expression_evidence"] if item["study_accession"] == "GSE243887")
+    contrast = evidence["statistical_contrasts"]["accepted_donor_liver_vs_rejected_donor_liver"]
+    assert contrast["case_state"] == "accepted_donor_liver"
+    assert contrast["control_state"] == "rejected_donor_liver"
+    assert contrast["effect_scale"] == "log2CPM"
+    assert "mean_difference" in contrast
+    assert "p_value" in contrast
+    assert "adj_p_value_bh" in contrast
+
+
+def test_donor_liver_quality_downloads_expression_artifacts() -> None:
+    response = client.get("/api/studies/GSE243887/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "gene_expression_summary" in artifacts
+    assert "gene_sample_values" in artifacts
+    assert "differential_expression" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -253,7 +296,8 @@ def test_omics_layer_detail_links_processed_artifacts() -> None:
     assert response.status_code == 200
     payload = response.json()
     assert "GSE145780" in payload["processed_accessions"]
-    assert payload["registered_study_records"][0]["accession"] == "GSE145780"
+    assert "GSE243887" in payload["processed_accessions"]
+    assert "data/processed/GSE243887/gene_expression_summary.json" in payload["current_artifacts"]
 
 
 def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
@@ -314,6 +358,14 @@ def test_dataset_triage_detail_explains_next_action() -> None:
     assert payload["triage_status"] == "ready_to_ingest"
     assert payload["priority"] == "P0"
     assert "independent transcriptome replication" in payload["next_action"]
+
+
+def test_dataset_triage_marks_donor_liver_quality_processed() -> None:
+    response = client.get("/api/dataset-triage/GSE243887")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_expression"
+    assert "donor-liver quality RNA-seq evidence" in payload["next_action"]
 
 
 def test_data_model_schema_exposes_core_entities() -> None:
@@ -392,6 +444,15 @@ def test_use_case_detail_links_data_and_signatures() -> None:
     assert "GSE145780" in payload["primary_datasets"]
     assert "TCMR_IFNG_CYTOTOXIC" in payload["signatures"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE145780"
+
+
+def test_donor_liver_quality_use_case_links_processed_expression() -> None:
+    response = client.get("/api/use-cases/DONOR_LIVER_QUALITY")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["readiness"] == "donor_expression_evidence_ready"
+    assert payload["primary_dataset_records"][0]["accession"] == "GSE243887"
+    assert any("log2(CPM + 1)" in line for line in payload["current_evidence"])
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:

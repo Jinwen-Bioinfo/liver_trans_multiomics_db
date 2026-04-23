@@ -1,0 +1,47 @@
+{
+  "study_accession": "GSE243887",
+  "generated_at_utc": "2026-04-23T08:53:37.874119+00:00",
+  "parser": "scripts/build_gene_evidence.py",
+  "processing_code_version": "full-platform-gene-expression-v2",
+  "source_files": {
+    "normalized_expression": {
+      "url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE243nnn/GSE243887/suppl/GSE243887_Raw_counts.txt.gz",
+      "path": "data/raw/geo/GSE243887/GSE243887_Raw_counts.txt.gz",
+      "bytes": 1705768,
+      "sha256": "0654638e7200294fc2df37833eaf8bb4073e4a4a6b7e5e138d50cd66d0025140"
+    },
+    "platform_annotation": {
+      "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_40/gencode.v40.annotation.gtf.gz",
+      "path": "data/raw/reference/gencode.v40.annotation.gtf.gz",
+      "bytes": 48043727,
+      "sha256": "6254e1c52470d74c37f5a7969ee5b1b7debdd9d6bbd9bf722e65fc3d873f3104"
+    }
+  },
+  "outputs": [
+    {
+      "path": "data/processed/GSE243887/gene_expression_summary.json",
+      "bytes": 97723481,
+      "sha256": "036e1d0f58abc15ce195bd6d8af2174aed84b1e907e62b6b6aa7310b37a383f6"
+    },
+    {
+      "path": "data/processed/GSE243887/gene_sample_values.json",
+      "bytes": 36355376,
+      "sha256": "5c6ac1b9371311a1e21449ba958b7499609f2e7190cbd8a38e6ce710e5af1ea9"
+    },
+    {
+      "path": "data/processed/GSE243887/differential_expression.json",
+      "bytes": 33186508,
+      "sha256": "4d6f9638e2c2ad2f471671b9260825b30279f9d0ae98dccb746f338842e98f86"
+    }
+  ],
+  "methods": [
+    "GENCODE v40 GTF gene records were parsed to map Ensembl gene identifiers to HGNC-style gene symbols.",
+    "Raw counts were collapsed by gene symbol when needed, library-size normalized to counts per million, and transformed as log2(CPM + 1).",
+    "Welch two-sample t-test is computed on gene-level log2CPM values; Benjamini-Hochberg FDR is applied within each contrast."
+  ],
+  "limitations": [
+    "GSE243887 is a donor-liver selection cohort; accepted/rejected labels are organ-use decisions, not post-transplant graft outcomes.",
+    "RNA-seq counts are normalized as log2(CPM + 1) for exploratory database evidence; this is not a DESeq2/edgeR model and does not reproduce the publication's full analysis.",
+    "Expression values are analyzed within-study only; cross-platform harmonization with microarray studies is not implemented yet."
+  ]
+}

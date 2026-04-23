@@ -1,0 +1,17 @@
+{
+  "sample_count": 32,
+  "by_clinical_state": {
+    "accepted_donor_liver": 10,
+    "rejected_donor_liver": 22
+  },
+  "by_original_label": {
+    "Accepted donor liver": 10,
+    "Rejected donor liver": 22
+  },
+  "by_sample_origin": {
+    "donor_liver": 32
+  },
+  "by_assay_modality": {
+    "bulk_rna": 32
+  }
+}

@@ -47,7 +47,7 @@ Current target: **pre-submission inquiry for the NAR Database Issue after the da
 - [x] Gene pages with cross-study evidence.
 - [ ] Cell-type pages for single-cell studies.
 - [ ] Pathway and marker-gene summaries.
-- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, and blood monitoring use cases.
+- [ ] Case studies demonstrating rejection, gut-liver infection risk, donor liver quality, and blood monitoring use cases. Donor liver quality now has GSE243887 gene-level evidence; written tutorial still pending.
 
 ### V3: Submission Package
 

@@ -11,12 +11,18 @@
         "Can blood transcriptional programs support non-invasive graft monitoring?"
       ],
       "registered_accessions": ["GSE145780", "GSE243887", "GSE200340"],
-      "processed_accessions": ["GSE145780"],
+      "processed_accessions": ["GSE145780", "GSE13440", "GSE11881", "GSE243887"],
       "current_artifacts": [
         "data/processed/GSE145780/gene_expression_summary.json",
-        "data/processed/GSE145780/differential_expression.json"
+        "data/processed/GSE145780/differential_expression.json",
+        "data/processed/GSE13440/gene_expression_summary.json",
+        "data/processed/GSE13440/differential_expression.json",
+        "data/processed/GSE11881/gene_expression_summary.json",
+        "data/processed/GSE11881/differential_expression.json",
+        "data/processed/GSE243887/gene_expression_summary.json",
+        "data/processed/GSE243887/differential_expression.json"
       ],
-      "readiness": "partially_processed"
+      "readiness": "multi_context_expression_ready"
     },
     {
       "layer_id": "single_cell",

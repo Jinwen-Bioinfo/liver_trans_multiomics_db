@@ -1,0 +1,35 @@
+{
+  "study_accession": "GSE243887",
+  "source_url": "https://ftp.ncbi.nlm.nih.gov/geo/series/GSE243nnn/GSE243887/matrix/GSE243887_series_matrix.txt.gz",
+  "raw_path": "data/raw/geo/GSE243887/GSE243887_series_matrix.txt.gz",
+  "source_file": {
+    "path": "data/raw/geo/GSE243887/GSE243887_series_matrix.txt.gz",
+    "bytes": 3899,
+    "sha256": "e643fc5aaebbca5e0642ce0a1adf54f7518c30cb824b6e4b4a280627aad4cb60"
+  },
+  "generated_at_utc": "2026-04-23T08:49:42.747912+00:00",
+  "parser": "scripts/ingest_geo_series.py",
+  "standardization_rules": {
+    "cluster_field": null,
+    "cluster_map": null,
+    "characteristic_label_field": "transplant-selection",
+    "characteristic_label_map": {
+      "accepted": {
+        "original_label": "Accepted donor liver",
+        "clinical_state": "accepted_donor_liver",
+        "display_label": "Donor liver accepted for transplantation"
+      },
+      "rejected": {
+        "original_label": "Rejected donor liver",
+        "clinical_state": "rejected_donor_liver",
+        "display_label": "Donor liver rejected for transplantation"
+      }
+    },
+    "title_label_rules": null
+  },
+  "series_title": "Uncovering shared Molecular and Histopathological features of accepted versus rejected donor livers for transplantation",
+  "series_pubmed_id": [
+    "38698335"
+  ],
+  "series_summary": "Liver transplantation is the solution for acute or chronic liver failure. There is an unmet demand for liver transplantation, as not all donated organs are transplanted. The clinical selection criteria for donated livers depends on histopathological evaluation and liver function tests. A fraction of the donor livers are rejected for transplantation due to the variability in applying the selection criteria. We applied an integrated transcriptomics and histopathological approach to characterize the donor livers evaluated for transplantation. We obtained liver biopsies from deceased donors during organ collection (n=10 accepted and n= 21 rejected for transplantation). We performed RNA sequencing to characterize the global gene expression profiles. We assessed steatosis, fibrosis, and necrosis via manual histopathological evaluation and a custom artificial intelligence-based image analysis. We identified two transcriptomically distinct subsets in the rejected donor liver group (termed rejected-1 and rejected-2), where the rejected-2 subset had a near complete transcriptomic overlap with the accepted livers, suggesting the potential for acceptability from a molecular standpoint. The liver metabolic functional genes were similarly upregulated in the accepted and rejected-2 groups compared to the rejected-1 subset. Expression levels of several extracellular matrix genes were similarly low in the accepted and rejected-2 groups compared to the rejected-1 subset. Filtering the rejected-2 subset based on histopathological evaluation identified the cases with borderline scores and extensive molecular overlap with the accepted group. Our integrated molecular and histopathological approach identified a subset of rejected donor livers that may be suitable for transplantation, thereby expanding the pool of transplantable livers."
+}

@@ -71,15 +71,17 @@
       "markers": ["ALB", "CYP3A4", "HMOX1", "COL1A1"],
       "signatures": [],
       "current_evidence": [
-        "GSE243887 is registered as the first donor liver quality dataset.",
-        "Processed expression evidence is not built yet."
+        "GSE243887 provides 32 deceased donor liver RNA-seq biopsies with accepted versus rejected transplant-selection labels.",
+        "Raw count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus accepted_donor_liver versus rejected_donor_liver Welch-test contrasts.",
+        "ALB, CYP3A4, APOA1, HMOX1, and COL1A1 can now be queried as donor-liver quality marker evidence."
       ],
       "next_validation": [
-        "Ingest sample metadata and accepted/rejected donor labels.",
-        "Build hepatocyte function, stress response, and fibrosis signatures."
+        "Add hepatocyte function, stress response, and fibrosis module scores for donor-quality interpretation.",
+        "Link expression evidence to histopathology metadata where reusable public tables are available.",
+        "Treat accepted/rejected labels as donor organ selection status, not post-transplant graft outcome."
       ],
       "omics_layers": ["transcriptome_bulk", "pathology_metadata", "metabolome"],
-      "readiness": "registered_not_processed"
+      "readiness": "donor_expression_evidence_ready"
     },
     {
       "use_case_id": "BLOOD_MONITORING",

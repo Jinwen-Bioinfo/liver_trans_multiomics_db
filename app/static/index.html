@@ -688,23 +688,29 @@
           panel.innerHTML = "";
           return;
         }
-        const evidence = data.expression_evidence[0];
-        const groups = Object.entries(evidence.group_summary);
-        const maxMean = Math.max(...groups.map(([, item]) => item.mean));
         panel.innerHTML = `
           <div class="evidence-panel">
             <h2>${data.feature} Expression Evidence</h2>
-            <p class="lead">${evidence.study_accession} · ${evidence.assay_scale} · ${evidence.probe_ids.join(", ")}</p>
-            ${evidence.statistical_contrasts && evidence.statistical_contrasts.TCMR_vs_no_rejection ? `
-              <p class="lead">TCMR vs no_rejection: Δlog2 ${evidence.statistical_contrasts.TCMR_vs_no_rejection.mean_difference_log2_scale}, FDR ${Number(evidence.statistical_contrasts.TCMR_vs_no_rejection.adj_p_value_bh).toExponential(2)}</p>
-            ` : ""}
-            ${groups.map(([state, item]) => `
-              <div class="bar-row">
-                <span>${state}</span>
-                <div class="bar"><span style="width:${Math.max(4, (item.mean / maxMean) * 100)}%"></span></div>
-                <span>${item.mean}</span>
-              </div>
-            `).join("")}
+            <p class="lead">${data.evidence_count} processed datasets with queryable gene-level evidence.</p>
+            ${data.expression_evidence.map((evidence) => {
+              const groups = Object.entries(evidence.group_summary);
+              const maxMean = Math.max(...groups.map(([, item]) => Math.abs(item.mean || 0)), 1);
+              const contrast = Object.values(evidence.statistical_contrasts || {})[0];
+              return `
+                <div class="mini">
+                  <strong>${evidence.study_accession}</strong>
+                  <span>${evidence.assay_scale} · ${evidence.sample_count} samples · ${evidence.probe_count} feature ids</span>
+                  ${contrast ? `<span>${contrast.case_state} vs ${contrast.control_state}: Δ ${contrast.mean_difference}, FDR ${Number(contrast.adj_p_value_bh).toExponential(2)}</span>` : ""}
+                  ${groups.map(([state, item]) => `
+                    <div class="bar-row">
+                      <span>${state}</span>
+                      <div class="bar"><span style="width:${Math.max(4, (Math.abs(item.mean || 0) / maxMean) * 100)}%"></span></div>
+                      <span>${item.mean}</span>
+                    </div>
+                  `).join("")}
+                </div>
+              `;
+            }).join("")}
           </div>
         `;
       }

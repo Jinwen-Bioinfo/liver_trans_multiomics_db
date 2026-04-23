@@ -16,7 +16,8 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_summary": 1,
-      "ready_to_ingest": 101,
+      "processed_expression": 1,
+      "ready_to_ingest": 100,
       "registered_reference": 1,
       "source_review_needed": 136
     },
@@ -39,7 +40,7 @@
       "unknown": 523
     },
     "p0_or_p1_count": 104,
-    "ready_or_processed_count": 103
+    "ready_or_processed_count": 104
   },
   "priority_queue": [
     {
@@ -285,8 +286,8 @@
         "OmicsDI:liver transplantation"
       ],
       "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
+      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE11361",
@@ -1867,7 +1868,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_expression",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics"
@@ -1887,9 +1888,13 @@
         "NCBI:gds_liver_transplant",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "donor liver quality",
+        "accepted versus rejected donor organ RNA-seq",
+        "organ utilization molecular context"
+      ],
+      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
+      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE246994",
@@ -1918,9 +1923,13 @@
       "discovered_via": [
         "NCBI:gds_liver_transplant"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "donor liver quality",
+        "accepted versus rejected donor organ RNA-seq",
+        "organ utilization molecular context"
+      ],
+      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
+      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE249913",
@@ -1949,9 +1958,13 @@
         "NCBI:gds_liver_transplant",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "donor liver quality",
+        "accepted versus rejected donor organ RNA-seq",
+        "organ utilization molecular context"
+      ],
+      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
+      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE25338",
@@ -4457,7 +4470,7 @@
       "accession_family": "GEO Series",
       "source_type": "repository_accession",
       "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
+      "triage_status": "processed_expression",
       "priority": "P1",
       "omics_modalities": [
         "bulk_transcriptomics"
@@ -4477,9 +4490,13 @@
         "NCBI:gds_liver_transplant",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+      "scientific_value": [
+        "donor liver quality",
+        "accepted versus rejected donor organ RNA-seq",
+        "organ utilization molecular context"
+      ],
+      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
+      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE246994",
