@@ -46,6 +46,7 @@
       ],
       "supporting_datasets": [
         "AGING_2020_LT_SERUM_PROTEOMICS",
+        "HO1_ACR_LIVER_TX_PROTEOMICS",
         "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS"
       ],
       "markers": [
@@ -55,6 +56,9 @@
         "GZMB",
         "ACLY",
         "FGA",
+        "HMOX1",
+        "BLVRA",
+        "HDAC1",
         "SAA2",
         "PLA2G2A",
         "PECAM1",
@@ -67,6 +71,7 @@
       "current_evidence": [
         "GSE145780 includes no_rejection, TCMR, early_injury, and fibrosis molecular states.",
         "AGING_2020_LT_SERUM_PROTEOMICS adds direct serum proteomic biomarker evidence separating stable post-transplant recipients from acute rejection and ischemic-type biliary lesion contexts through ACLY and FGA peak-linked protein features.",
+        "HO1_ACR_LIVER_TX_PROTEOMICS adds direct serum acute-cellular-rejection proteomics from a six-sample iTRAQ discovery training set, exposing OCR-recovered differential proteins such as HMOX1, BLVRA, ACLY, HDAC1, and CYP3A4.",
         "This use case still requires stronger independent tissue-level injury-versus-rejection cohorts before it should be presented as a resolved classifier.",
         "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS adds postreperfusion graft proteomics from a direct transplant tissue cohort, highlighting early AKI-linked inflammatory and endothelial proteins such as SAA2, PLA2G2A, PECAM1, and APOA1."
       ],
@@ -74,6 +79,7 @@
         "Add hypoxia, hepatocyte stress, and metabolic injury signatures.",
         "Compare early_injury with TCMR using differential expression, pathway enrichment, and metabolome/proteome evidence where public data exist.",
         "Validate whether serum ACLY and FGA shifts track biopsy-defined injury versus rejection in an independent cohort.",
+        "Treat the HO1_ACR_LIVER_TX_PROTEOMICS layer as small discovery-set biomarker evidence until the HO-1 axis is replicated in an independent transplant proteomics cohort.",
         "Compare graft-injury proteins such as SAA2, PLA2G2A, PECAM1, and APOA1 against TCMR-oriented transcriptomic markers to avoid conflating injury-context proteomics with rejection-specific evidence."
       ],
       "omics_layers": [

@@ -98,6 +98,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
         "scientific_value": ["acute rejection serum proteomics", "biliary complication biomarkers", "non-invasive graft monitoring"],
     },
+    "HO1_ACR_LIVER_TX_PROTEOMICS": {
+        "priority": "P0",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct acute cellular rejection proteomics layer for serum ACR versus non-rejection after liver transplantation, while keeping it framed as OCR-recovered supplementary-table evidence rather than a reusable per-sample iTRAQ matrix.",
+        "scientific_value": ["acute cellular rejection proteomics", "HO-1 axis biomarkers", "direct serum rejection evidence"],
+    },
     "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS": {
         "priority": "P1",
         "triage_status": "processed_feature_ready",
@@ -158,6 +164,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["plasma_serum"],
         "clinical_states": ["TCMR_or_ACR", "post_transplant_biliary_complications"],
+    },
+    "HO1_ACR_LIVER_TX_PROTEOMICS": {
+        "title": "Identification of HO-1 as a novel biomarker for graft acute cellular rejection and prognosis prediction after liver transplantation",
+        "repository": "ATM supplementary PNG tables",
+        "repository_url": "https://atm.amegroups.org/article/view/37242/html",
+        "source_type": "supplementary_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["TCMR_or_ACR"],
     },
     "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS": {
         "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
@@ -382,6 +398,12 @@ def build_candidate_item(candidate: dict[str, Any]) -> dict[str, Any]:
 def triage_reason(status: str, candidate: dict[str, Any]) -> str:
     if candidate.get("accession") == "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS":
         return "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
+    if candidate.get("accession") == "HO1_ACR_LIVER_TX_PROTEOMICS":
+        return "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
+    if candidate.get("accession") == "PXD010812":
+
+        return "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, but the reporter-channel mapping for ischemic versus reperfused graft samples still needs to be recovered before feature-level contrasts can be generated."
+
     if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     if candidate.get("accession") == "PXD062924":

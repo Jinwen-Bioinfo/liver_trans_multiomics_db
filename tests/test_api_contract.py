@@ -129,6 +129,11 @@ def test_independent_geo_metadata_ingest_is_available() -> None:
     assert ijms2022["sample_summary"]["by_clinical_state"]["moderate_severe_early_aki"] == 7
     assert ijms2022["sample_summary"]["by_clinical_state"]["no_early_aki"] == 7
 
+    ho1 = client.get("/api/studies/HO1_ACR_LIVER_TX_PROTEOMICS").json()
+    assert ho1["sample_summary"]["sample_count"] == 6
+    assert ho1["sample_summary"]["by_clinical_state"]["acute_cellular_rejection"] == 3
+    assert ho1["sample_summary"]["by_clinical_state"]["non_rejection_post_lt"] == 3
+
 
 def test_donor_liver_samples_filter_by_selection_state() -> None:
     response = client.get(
@@ -451,6 +456,20 @@ def test_direct_renal_monitoring_protein_endpoint_returns_pxd062924_evidence() -
     )
 
 
+def test_direct_acr_protein_endpoint_returns_ho1_evidence() -> None:
+    response = client.get("/api/features/HMOX1/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["protein_evidence"] if item["study_accession"] == "HO1_ACR_LIVER_TX_PROTEOMICS")
+    assert evidence["evidence_kind"] == "direct_transplant_protein_biomarker"
+    assert evidence["primary_uniprot"] == "P09601"
+    assert evidence["sample_scope"] == "recipient_serum_rejection_discovery_training_set"
+    assert any(
+        contrast["contrast_id"] == "acute_cellular_rejection_vs_non_rejection_post_lt"
+        for contrast in evidence["published_contrasts"]
+    )
+
+
 def test_protein_reference_downloads_are_available() -> None:
     response = client.get("/api/studies/PXD012615/downloads")
     assert response.status_code == 200
@@ -506,6 +525,18 @@ def test_direct_renal_monitoring_proteomics_downloads_are_available() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_direct_acr_proteomics_downloads_are_available() -> None:
+    response = client.get("/api/studies/HO1_ACR_LIVER_TX_PROTEOMICS/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "cohort_summary" in artifacts
+    assert "proteomics_summary" in artifacts
+    assert "protein_features" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -549,6 +580,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in proteome["processed_accessions"]
     assert "PXD062924" in proteome["registered_accessions"]
     assert "PXD062924" in proteome["processed_accessions"]
+    assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["registered_accessions"]
+    assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["processed_accessions"]
 
 
 def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
@@ -562,6 +595,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     assert "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/PXD062924/protein_features.json" in proteome["current_artifacts"]
+    assert "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert metabolome["readiness"] == "processed_feature_ready"
     assert microbiome["readiness"] == "processed_feature_ready"
     assert proteome["readiness"] == "protein_feature_direct_and_reference_ready"
@@ -629,6 +663,17 @@ def test_multiomics_source_registry_exposes_direct_renal_monitoring_proteomics_l
     assert payload["sample_origins"] == ["recipient_serum"]
     assert "impaired_kidney_function_post_lt" in payload["clinical_states"]
     assert "data/processed/PXD062924/protein_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_direct_acr_proteomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/HO1_ACR_LIVER_TX_PROTEOMICS")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "supplementary_table"
+    assert payload["local_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_origins"] == ["recipient_serum"]
+    assert "acute_cellular_rejection" in payload["clinical_states"]
+    assert "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json" in payload["processed_artifacts"]
 
 
 def test_source_type_registry_includes_supplementary_tables() -> None:
@@ -719,6 +764,15 @@ def test_dataset_triage_marks_direct_graft_aki_proteomics_processed() -> None:
     assert payload["triage_status"] == "processed_feature_ready"
     assert payload["priority"] == "P1"
     assert "ischemia/reperfusion-linked graft injury proteomics" in payload["next_action"]
+
+
+def test_dataset_triage_marks_direct_acr_proteomics_processed() -> None:
+    response = client.get("/api/dataset-triage/HO1_ACR_LIVER_TX_PROTEOMICS")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_feature_ready"
+    assert payload["priority"] == "P0"
+    assert "acute cellular rejection proteomics" in payload["next_action"]
 
 
 def test_data_model_schema_exposes_core_entities() -> None:
@@ -851,5 +905,7 @@ def test_injury_vs_rejection_use_case_links_direct_transplant_proteomics() -> No
     assert payload["readiness"] == "multimodal_injury_rejection_context_ready"
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in payload["supporting_datasets"]
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in payload["supporting_datasets"]
+    assert "HO1_ACR_LIVER_TX_PROTEOMICS" in payload["supporting_datasets"]
+    assert "HMOX1" in payload["markers"]
     assert any("serum proteomic biomarker evidence" in line for line in payload["current_evidence"])
     assert any("postreperfusion graft proteomics" in line for line in payload["current_evidence"])

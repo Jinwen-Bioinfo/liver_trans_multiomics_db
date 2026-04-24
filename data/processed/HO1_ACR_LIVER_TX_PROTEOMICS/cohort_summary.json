@@ -1,0 +1,27 @@
+{
+  "cohort_design": "published_iTRAQ_training_set",
+  "generated_at_utc": "2026-04-24T08:37:31.225536+00:00",
+  "group_counts": {
+    "acute_cellular_rejection": 3,
+    "non_rejection_post_lt": 3
+  },
+  "itraq_tag_mapping": {
+    "acute_cellular_rejection": [
+      "118",
+      "119",
+      "121"
+    ],
+    "non_rejection_post_lt": [
+      "113",
+      "115",
+      "117"
+    ]
+  },
+  "reported_selection_rule": {
+    "article_text_requirement": "p < 0.05",
+    "downregulated_threshold": "< 0.833",
+    "upregulated_threshold": "> 1.2"
+  },
+  "sample_scope": "recipient_serum_rejection_discovery_training_set",
+  "study_accession": "HO1_ACR_LIVER_TX_PROTEOMICS"
+}

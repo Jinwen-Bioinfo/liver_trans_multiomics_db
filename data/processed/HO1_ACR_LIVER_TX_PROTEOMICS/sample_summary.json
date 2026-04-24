@@ -1,0 +1,19 @@
+{
+  "by_assay_modality": {
+    "proteomics": 6
+  },
+  "by_clinical_state": {
+    "acute_cellular_rejection": 3,
+    "non_rejection_post_lt": 3
+  },
+  "by_sample_origin": {
+    "recipient_serum": 6
+  },
+  "generated_at_utc": "2026-04-24T08:37:31.225536+00:00",
+  "limitations": [
+    "Samples are a small iTRAQ discovery training set reconstructed from article text and supplementary Table S1 rather than a reusable sample-level intensity matrix.",
+    "This layer should be interpreted as acute-cellular-rejection biomarker discovery evidence, not as a validated classifier."
+  ],
+  "sample_count": 6,
+  "study_accession": "HO1_ACR_LIVER_TX_PROTEOMICS"
+}

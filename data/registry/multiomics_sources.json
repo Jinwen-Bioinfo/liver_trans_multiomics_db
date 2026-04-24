@@ -254,6 +254,77 @@
       }
     },
     {
+      "source_id": "HO1_ACR_LIVER_TX_PROTEOMICS",
+      "source_type": "supplementary_table",
+      "title": "Identification of HO-1 as a novel biomarker for graft acute cellular rejection and prognosis prediction after liver transplantation",
+      "publication": {
+        "journal": "Annals of Translational Medicine",
+        "year": 2020,
+        "pmid": "32309368",
+        "doi": "10.21037/atm.2020.03.79",
+        "url": "https://atm.amegroups.org/article/view/37242/html"
+      },
+      "data_repositories": [
+        {
+          "repository": "ATM article",
+          "url": "https://atm.amegroups.org/article/view/37242/html",
+          "evidence": "The full-text article describes a serum iTRAQ discovery training set for acute cellular rejection versus non-rejection after liver transplantation and reports the exact iTRAQ tag assignment for each group."
+        },
+        {
+          "repository": "Supplementary Table S1 PNG",
+          "url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB16-1466-R1.png",
+          "evidence": "Supplementary Table S1 exposes the six-patient training-set cohort metadata used for the iTRAQ discovery experiment."
+        },
+        {
+          "repository": "Supplementary Table S2 PNG",
+          "url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB17-2864-R1.png",
+          "evidence": "Supplementary Table S2 exposes the differential protein list used here as an OCR-recovered direct transplant proteomics feature layer, including HMOX1, BLVRA, ACLY, HDAC1, and CYP3A4."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "clinical_states": [
+        "acute_cellular_rejection",
+        "non_rejection_post_lt"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "blood_based_rejection_monitoring",
+        "acute_cellular_rejection",
+        "serum_biomarker_discovery"
+      ],
+      "reported_sample_scope": "Direct liver-transplant recipient serum proteomics from a six-sample iTRAQ discovery training set, exposed in V1 as an OCR-recovered published differential table for acute cellular rejection versus non-rejection after liver transplantation.",
+      "database_value": [
+        "Adds a second direct transplant serum proteomics layer focused specifically on rejection rather than renal dysfunction or biliary complications.",
+        "Makes HO-1 pathway features such as HMOX1, BLVRA, ACLY, and HDAC1 queryable alongside RNA, metabolite, and other protein layers.",
+        "Preserves a usable public rejection-proteomics signal even though the supplementary material is exposed as PNG tables rather than a reusable intensity matrix."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/proteomics_summary.json",
+        "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json",
+        "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source framed as OCR-recovered supplementary-table evidence rather than a reusable per-sample iTRAQ matrix.",
+        "Use HO-1 axis proteins such as HMOX1 and BLVRA to contextualize rejection-versus-injury interpretation without overstating validation performance.",
+        "Upgrade this layer only if a machine-readable supplementary table or sample-level reporter-ion matrix becomes public."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-24T08:45:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://atm.amegroups.org/article/view/37242/html",
+          "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB16-1466-R1.png",
+          "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB17-2864-R1.png"
+        ]
+      }
+    },
+    {
       "source_id": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
       "source_type": "supplementary_table",
       "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",

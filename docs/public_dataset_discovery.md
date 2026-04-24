@@ -151,6 +151,29 @@ Sources that do not count as primary database data:
 
 Direct liver-transplant modality signal counts are broad keyword/API labels and can overlap:
 
+## Current Sprint Note
+
+`HO1_ACR_LIVER_TX_PROTEOMICS` has now been promoted into the local database as an OCR-recovered direct serum rejection-proteomics layer.
+
+The next unresolved direct-proteomics follow-up after that promotion is `PXD010812`.
+
+Why it stays high priority:
+
+- it is a direct liver-transplant graft-tissue cohort
+- PRIDE exposes reusable MaxQuant processed outputs through `search.zip`
+- the public abstract explicitly describes proteomic analysis of ischemic and reperfused liver samples
+
+Why it is not promoted yet:
+
+- the remaining blocker is reporter-channel mapping
+- the currently inspected metadata are enough to confirm reusable processed files, but not yet enough to assign channels cleanly to ischemic versus reperfused graft states
+
+That fallback has already been converted into a usable local source by exploiting the publicly exposed supplementary PNG tables and article-text iTRAQ tag mapping:
+
+- `n=3` ACR vs `n=3` non-rejection
+- tags `118, 119, 121` for rejection and `113, 115, 117` for non-rejection
+- `287` OCR-recovered differential proteins from `Table S2`
+
 | Modality signal | Count |
 | --- | ---: |
 | bulk_transcriptomics | 115 |

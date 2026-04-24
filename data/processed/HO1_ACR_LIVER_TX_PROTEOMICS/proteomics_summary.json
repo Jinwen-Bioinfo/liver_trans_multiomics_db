@@ -1,0 +1,13 @@
+{
+  "contrast_ids": [
+    "acute_cellular_rejection_vs_non_rejection_post_lt"
+  ],
+  "effect_scale": "published_fold_change_ratio_ocr_recovered",
+  "generated_at_utc": "2026-04-24T08:37:31.225536+00:00",
+  "protein_count": 287,
+  "reported_dep_count_from_article": 287,
+  "sample_scope": "recipient_serum_rejection_discovery_training_set",
+  "study_accession": "HO1_ACR_LIVER_TX_PROTEOMICS",
+  "upregulated_in_acute_cellular_rejection": 173,
+  "upregulated_in_non_rejection_post_lt": 114
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T07:33:12.236659+00:00",
+  "generated_at_utc": "2026-04-24T08:39:49.445172+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -12,14 +12,14 @@
     "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build."
   },
   "summary": {
-    "candidate_count": 904,
+    "candidate_count": 905,
     "status_counts": {
       "controlled_access_register_only": 22,
       "defer_false_positive_or_adjacent": 373,
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 4,
+      "processed_feature_ready": 5,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
@@ -27,7 +27,7 @@
       "source_review_needed": 135
     },
     "priority_counts": {
-      "P0": 8,
+      "P0": 9,
       "P1": 101,
       "P2": 400,
       "P3": 395
@@ -39,13 +39,13 @@
       "methylation_cfDNA": 40,
       "microbiome": 42,
       "other": 3,
-      "proteomics": 165,
+      "proteomics": 166,
       "single_cell": 69,
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 109,
-    "ready_or_processed_count": 109
+    "p0_or_p1_count": 110,
+    "ready_or_processed_count": 110
   },
   "priority_queue": [
     {
@@ -190,6 +190,40 @@
       ],
       "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "HO1_ACR_LIVER_TX_PROTEOMICS",
+      "title": "Identification of HO-1 as a novel biomarker for graft acute cellular rejection and prognosis prediction after liver transplantation",
+      "repository": "ATM supplementary PNG tables",
+      "repository_url": "https://atm.amegroups.org/article/view/37242/html",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "acute cellular rejection proteomics",
+        "HO-1 axis biomarkers",
+        "direct serum rejection evidence"
+      ],
+      "next_action": "Use as a direct acute cellular rejection proteomics layer for serum ACR versus non-rejection after liver transplantation, while keeping it framed as OCR-recovered supplementary-table evidence rather than a reusable per-sample iTRAQ matrix.",
+      "triage_reason": "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
     },
     {
       "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
@@ -2634,37 +2668,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE281263",
-      "title": "Identification of a novel PDC-E2 epitope in Primary Biliary Cholangitis and application for engineered Treg therapy",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE281263",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "single_cell"
-      ],
-      "sample_origins": [
-        "not_curated"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -2810,6 +2813,40 @@
       ],
       "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "HO1_ACR_LIVER_TX_PROTEOMICS",
+      "title": "Identification of HO-1 as a novel biomarker for graft acute cellular rejection and prognosis prediction after liver transplantation",
+      "repository": "ATM supplementary PNG tables",
+      "repository_url": "https://atm.amegroups.org/article/view/37242/html",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "acute cellular rejection proteomics",
+        "HO-1 axis biomarkers",
+        "direct serum rejection evidence"
+      ],
+      "next_action": "Use as a direct acute cellular rejection proteomics layer for serum ACR versus non-rejection after liver transplantation, while keeping it framed as OCR-recovered supplementary-table evidence rather than a reusable per-sample iTRAQ matrix.",
+      "triage_reason": "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
     },
     {
       "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
@@ -7118,7 +7155,7 @@
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
+      "triage_reason": "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, but the reporter-channel mapping for ischemic versus reperfused graft samples still needs to be recovered before feature-level contrasts can be generated."
     },
     {
       "accession": "PXD011374",

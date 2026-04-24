@@ -1,0 +1,33 @@
+{
+  "raw_files": [
+    {
+      "bytes": 120884,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/article.html",
+      "sha256": "607fa7ae402c6714bfbd2a8374934a621b3fda6d87dc0adec3bd0007e537cb90",
+      "source_url": "https://atm.amegroups.org/article/view/37242/html"
+    },
+    {
+      "bytes": 44639,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s1.png",
+      "sha256": "b69409f5defde9e6338125f8e184f63cb05819615d0c48b8f44a4db2f4d31bf5",
+      "source_url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB16-1466-R1.png"
+    },
+    {
+      "bytes": 1556192,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s2.png",
+      "sha256": "1ced8a02518d05fe0599f3049591d4eb4b3ba765a6f550c0eebdbc699bf75e2b",
+      "source_url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB17-2864-R1.png"
+    },
+    {
+      "bytes": 455,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s1_ocr.txt",
+      "sha256": "ad3b3ed3f99724215fed4c76419d9f08701d56f7b6fb99259a8f2afebd19ce3a"
+    },
+    {
+      "bytes": 14995,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s2_ocr.txt",
+      "sha256": "2a125d8f0e451bfa3ed77825675d88fd1e1d2564e32a581eda3efee7fe5c412e"
+    }
+  ],
+  "study_accession": "HO1_ACR_LIVER_TX_PROTEOMICS"
+}

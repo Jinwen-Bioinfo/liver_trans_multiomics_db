@@ -564,6 +564,53 @@
       ]
     },
     {
+      "accession": "HO1_ACR_LIVER_TX_PROTEOMICS",
+      "repository": "ATM supplementary PNG tables",
+      "repository_url": "https://atm.amegroups.org/article/view/37242/html",
+      "title": "Identification of HO-1 as a novel biomarker for graft acute cellular rejection and prognosis prediction after liver transplantation",
+      "summary": "Direct liver-transplant serum proteomics evidence reconstructed from the Annals of Translational Medicine article and OCR-recovered Supplementary Table S2, covering a six-sample iTRAQ discovery training set for acute cellular rejection versus non-rejection after liver transplantation. This is direct rejection biomarker evidence, but it remains a published differential-table layer rather than a reusable per-sample proteomics matrix.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "acute_cellular_rejection",
+        "non_rejection_post_lt"
+      ],
+      "public_access": "open_article_with_supplementary_png_tables",
+      "curation_status": "curated_publication_summary",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_ocr_table_qc_pass_no_public_sample_matrix",
+      "featured_genes": [
+        "HMOX1",
+        "BLVRA",
+        "ACLY",
+        "HDAC1",
+        "CYP3A4"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "heme_metabolism",
+        "oxidative_stress_response",
+        "immune_activation",
+        "hepatic_metabolism_loss"
+      ],
+      "keywords": [
+        "liver transplant",
+        "acute cellular rejection",
+        "serum proteomics",
+        "iTRAQ",
+        "HO-1",
+        "supplementary table OCR"
+      ]
+    },
+    {
       "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
       "repository": "IJMS supplementary PDF table",
       "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",

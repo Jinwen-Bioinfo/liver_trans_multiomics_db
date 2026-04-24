@@ -1,0 +1,69 @@
+{
+  "cohort_verification": {
+    "article_text_tag_mapping": {
+      "acute_cellular_rejection": [
+        "118",
+        "119",
+        "121"
+      ],
+      "non_rejection_post_lt": [
+        "113",
+        "115",
+        "117"
+      ]
+    },
+    "table_s1_training_set_size": {
+      "acute_cellular_rejection": 3,
+      "non_rejection_post_lt": 3
+    }
+  },
+  "feature_extraction": {
+    "effect_scale": "published_fold_change_ratio_ocr_recovered",
+    "identifier_rule": "first token = UniProt accession after OCR normalization; last token before fold-change = gene symbol",
+    "parsed_downregulated_count": 114,
+    "parsed_feature_count": 287,
+    "parsed_upregulated_count": 173,
+    "reported_dep_count_from_article": 287,
+    "selection_rule": "Article states DEPs were selected with fold-change threshold and p<0.05, but per-feature p-values are not exposed in the OCR-recovered supplementary table.",
+    "table": "Supplementary Table S2"
+  },
+  "generated_at_utc": "2026-04-24T08:37:31.225536+00:00",
+  "limitations": [
+    "The source table was publicly exposed as a PNG image, so OCR recovery is used instead of a machine-readable author table.",
+    "Per-feature fold changes are available, but reusable per-feature p-values, raw reporter intensities, and sample-level abundances are not.",
+    "This layer is a small serum discovery training set for acute cellular rejection versus non-rejection after liver transplantation."
+  ],
+  "processing_script": "scripts/ingest_ho1_acr_liver_tx_proteomics.py",
+  "source_files": {
+    "article_html": {
+      "bytes": 120884,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/article.html",
+      "sha256": "607fa7ae402c6714bfbd2a8374934a621b3fda6d87dc0adec3bd0007e537cb90",
+      "source_url": "https://atm.amegroups.org/article/view/37242/html"
+    },
+    "table_s1_ocr": {
+      "bytes": 455,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s1_ocr.txt",
+      "sha256": "ad3b3ed3f99724215fed4c76419d9f08701d56f7b6fb99259a8f2afebd19ce3a"
+    },
+    "table_s1_png": {
+      "bytes": 44639,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s1.png",
+      "sha256": "b69409f5defde9e6338125f8e184f63cb05819615d0c48b8f44a4db2f4d31bf5",
+      "source_url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB16-1466-R1.png"
+    },
+    "table_s2_ocr": {
+      "bytes": 14995,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s2_ocr.txt",
+      "sha256": "2a125d8f0e451bfa3ed77825675d88fd1e1d2564e32a581eda3efee7fe5c412e"
+    },
+    "table_s2_png": {
+      "bytes": 1556192,
+      "path": "data/raw/HO1_ACR_LIVER_TX_PROTEOMICS/table_s2.png",
+      "sha256": "1ced8a02518d05fe0599f3049591d4eb4b3ba765a6f550c0eebdbc699bf75e2b",
+      "source_url": "https://cdn.amegroups.cn/journals/amepc/files/journals/16/articles/37242/public/37242-PB17-2864-R1.png"
+    }
+  },
+  "source_url": "https://atm.amegroups.org/article/view/37242/html",
+  "study_accession": "HO1_ACR_LIVER_TX_PROTEOMICS"
+}
