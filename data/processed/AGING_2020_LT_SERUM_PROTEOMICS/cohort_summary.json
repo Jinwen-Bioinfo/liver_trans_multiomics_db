@@ -1,0 +1,23 @@
+{
+  "clinical_group_counts": {
+    "acute_rejection": 10,
+    "healthy_control": 10,
+    "ischemic_type_biliary_lesion": 9,
+    "pre_transplant_end_stage_liver_disease": 10,
+    "stable_post_transplant": 10
+  },
+  "generated_at_utc": "2026-04-24T04:03:24.086362+00:00",
+  "limitations": [
+    "Sample identifiers are synthetic placeholders generated from published group counts.",
+    "No public per-sample protein intensity matrix was available; this cohort currently exposes group-level protein evidence only."
+  ],
+  "patient_count": 49,
+  "protein_feature_count": 3,
+  "reported_contexts": [
+    "perioperative_effectiveness",
+    "acute_rejection",
+    "ischemic_type_biliary_lesion"
+  ],
+  "sample_count": 49,
+  "study_accession": "AGING_2020_LT_SERUM_PROTEOMICS"
+}

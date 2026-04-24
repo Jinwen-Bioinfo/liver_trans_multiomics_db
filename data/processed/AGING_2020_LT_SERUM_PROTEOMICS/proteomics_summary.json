@@ -1,0 +1,26 @@
+{
+  "assay_modality": "proteomics",
+  "clinical_group_counts": {
+    "acute_rejection": 10,
+    "healthy_control": 10,
+    "ischemic_type_biliary_lesion": 9,
+    "pre_transplant_end_stage_liver_disease": 10,
+    "stable_post_transplant": 10
+  },
+  "feature_symbols": [
+    "ACLY",
+    "APOA1",
+    "FGA"
+  ],
+  "generated_at_utc": "2026-04-24T04:03:24.086362+00:00",
+  "limitations": [
+    "This source provides published serum protein biomarker evidence, not full unbiased tissue proteome quantification.",
+    "Per-sample protein values were not publicly reusable; feature records therefore expose group-level summaries and derived Welch contrasts only.",
+    "Stable post-transplant recipients, acute rejection, ischemic-type biliary lesion, and perioperative pre/post-transplant comparisons should be interpreted as related but distinct clinical contexts."
+  ],
+  "mapped_peak_count": 7,
+  "protein_feature_count": 3,
+  "sample_count": 49,
+  "sample_scope": "recipient_serum_complication_monitoring",
+  "study_accession": "AGING_2020_LT_SERUM_PROTEOMICS"
+}

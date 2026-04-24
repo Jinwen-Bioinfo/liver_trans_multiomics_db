@@ -5,10 +5,22 @@
       "title": "Molecular diagnosis of T cell-mediated rejection",
       "clinical_question": "Can public liver graft omics data identify molecular evidence that separates TCMR from no rejection?",
       "why_it_matters": "Histology-based rejection diagnosis can be ambiguous. A molecular evidence layer may help interpret borderline biopsies and prioritize validation markers.",
-      "primary_datasets": ["GSE145780"],
-      "supporting_datasets": ["HRA002091", "HRA007802"],
-      "markers": ["CXCL9", "CXCL10", "IFNG", "GZMB"],
-      "signatures": ["TCMR_IFNG_CYTOTOXIC"],
+      "primary_datasets": [
+        "GSE145780"
+      ],
+      "supporting_datasets": [
+        "HRA002091",
+        "HRA007802"
+      ],
+      "markers": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB"
+      ],
+      "signatures": [
+        "TCMR_IFNG_CYTOTOXIC"
+      ],
       "current_evidence": [
         "GSE145780 provides graft-liver bulk transcriptome evidence for TCMR versus no_rejection; full-platform gene-level contrasts are generated when differential_expression.json is present.",
         "CXCL9, CXCL10, IFNG, and GZMB remain pre-specified rejection markers, but they are now treated as marker evidence rather than proof of diagnostic performance."
@@ -18,7 +30,10 @@
         "Add single-cell localization for marker-producing cell types.",
         "Validate in independent bulk and single-cell liver transplant datasets."
       ],
-      "omics_layers": ["transcriptome_bulk", "single_cell"],
+      "omics_layers": [
+        "transcriptome_bulk",
+        "single_cell"
+      ],
       "readiness": "bulk_expression_statistical_demo"
     },
     {
@@ -26,30 +41,58 @@
       "title": "Separate early graft injury from rejection",
       "clinical_question": "Can molecular signatures distinguish early injury from TCMR when both may present with abnormal graft function?",
       "why_it_matters": "Early graft dysfunction may reflect ischemia/reperfusion injury, preservation damage, infection, drug toxicity, or rejection. Misclassification can alter immunosuppression decisions.",
-      "primary_datasets": ["GSE145780"],
-      "supporting_datasets": [],
-      "markers": ["CXCL9", "CXCL10", "IFNG", "GZMB"],
-      "signatures": ["TCMR_IFNG_CYTOTOXIC"],
+      "primary_datasets": [
+        "GSE145780"
+      ],
+      "supporting_datasets": [
+        "AGING_2020_LT_SERUM_PROTEOMICS"
+      ],
+      "markers": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB",
+        "ACLY",
+        "FGA"
+      ],
+      "signatures": [
+        "TCMR_IFNG_CYTOTOXIC"
+      ],
       "current_evidence": [
         "GSE145780 includes no_rejection, TCMR, early_injury, and fibrosis molecular states.",
-        "This use case requires full-gene contrasts and pathway-level injury signatures before it should be presented as evidence."
+        "AGING_2020_LT_SERUM_PROTEOMICS adds direct serum proteomic biomarker evidence separating stable post-transplant recipients from acute rejection and ischemic-type biliary lesion contexts through ACLY and FGA peak-linked protein features.",
+        "This use case still requires stronger independent tissue-level injury-versus-rejection cohorts before it should be presented as a resolved classifier."
       ],
       "next_validation": [
         "Add hypoxia, hepatocyte stress, and metabolic injury signatures.",
-        "Compare early_injury with TCMR using differential expression, pathway enrichment, and metabolome/proteome evidence where public data exist."
+        "Compare early_injury with TCMR using differential expression, pathway enrichment, and metabolome/proteome evidence where public data exist.",
+        "Validate whether serum ACLY and FGA shifts track biopsy-defined injury versus rejection in an independent cohort."
       ],
-      "omics_layers": ["transcriptome_bulk", "proteome", "metabolome"],
-      "readiness": "bulk_expression_contrast_pending_review"
+      "omics_layers": [
+        "transcriptome_bulk",
+        "proteome",
+        "metabolome"
+      ],
+      "readiness": "multimodal_injury_rejection_context_ready"
     },
     {
       "use_case_id": "GRAFT_FIBROSIS",
       "title": "Fibrosis and chronic graft injury biology",
       "clinical_question": "Which extracellular matrix and stromal signals track graft fibrosis or late chronic injury?",
       "why_it_matters": "Fibrosis is a major determinant of long-term graft function. A molecular view can help identify mechanism and candidate monitoring markers.",
-      "primary_datasets": ["GSE145780"],
-      "supporting_datasets": ["HRA002091", "HRA007802"],
-      "markers": ["COL1A1"],
-      "signatures": ["FIBROSIS_ECM"],
+      "primary_datasets": [
+        "GSE145780"
+      ],
+      "supporting_datasets": [
+        "HRA002091",
+        "HRA007802"
+      ],
+      "markers": [
+        "COL1A1"
+      ],
+      "signatures": [
+        "FIBROSIS_ECM"
+      ],
       "current_evidence": [
         "GSE145780 provides a small fibrosis group for graft-liver bulk transcriptome exploration.",
         "COL1A1 is marker evidence only; fibrosis should be upgraded to an ECM pathway/module after full-platform contrasts are generated."
@@ -58,7 +101,11 @@
         "Expand ECM marker set with COL3A1, ACTA2, TAGLN, LUM, DCN, and TGFBI where platform mappings are available.",
         "Use single-cell, proteome, and pathology-linked data to identify stromal, endothelial, and myeloid contributors."
       ],
-      "omics_layers": ["transcriptome_bulk", "single_cell", "proteome"],
+      "omics_layers": [
+        "transcriptome_bulk",
+        "single_cell",
+        "proteome"
+      ],
       "readiness": "marker_evidence_only"
     },
     {
@@ -66,9 +113,16 @@
       "title": "Molecular donor liver quality assessment",
       "clinical_question": "Can donor liver transcriptomics identify molecular features associated with accepted versus rejected donor organs?",
       "why_it_matters": "Better molecular context may help interpret marginal donors and organ utilization decisions.",
-      "primary_datasets": ["GSE243887"],
+      "primary_datasets": [
+        "GSE243887"
+      ],
       "supporting_datasets": [],
-      "markers": ["ALB", "CYP3A4", "HMOX1", "COL1A1"],
+      "markers": [
+        "ALB",
+        "CYP3A4",
+        "HMOX1",
+        "COL1A1"
+      ],
       "signatures": [],
       "current_evidence": [
         "GSE243887 provides 32 deceased donor liver RNA-seq biopsies with accepted versus rejected transplant-selection labels.",
@@ -80,7 +134,11 @@
         "Link expression evidence to histopathology metadata where reusable public tables are available.",
         "Treat accepted/rejected labels as donor organ selection status, not post-transplant graft outcome."
       ],
-      "omics_layers": ["transcriptome_bulk", "pathology_metadata", "metabolome"],
+      "omics_layers": [
+        "transcriptome_bulk",
+        "pathology_metadata",
+        "metabolome"
+      ],
       "readiness": "donor_expression_evidence_ready"
     },
     {
@@ -88,34 +146,68 @@
       "title": "Blood-based non-invasive graft monitoring",
       "clinical_question": "Can blood or PBMC molecular signatures reflect liver graft rejection or injury without relying on repeated biopsies?",
       "why_it_matters": "A blood-based evidence layer could support longitudinal monitoring and decide when biopsy is warranted.",
-      "primary_datasets": ["GSE200340"],
-      "supporting_datasets": ["HRA002091", "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY"],
-      "markers": ["CXCL10", "ISG15", "IFI27", "IL7R"],
+      "primary_datasets": [
+        "GSE200340"
+      ],
+      "supporting_datasets": [
+        "HRA002091",
+        "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+        "AGING_2020_LT_SERUM_PROTEOMICS"
+      ],
+      "markers": [
+        "CXCL10",
+        "ISG15",
+        "IFI27",
+        "IL7R",
+        "ACLY",
+        "FGA",
+        "APOA1"
+      ],
       "signatures": [],
       "current_evidence": [
         "GSE200340 provides 185 pediatric liver transplant whole-blood/PBMC RNA-seq samples across pre-transplant, early post-transplant, and late post-transplant time points.",
         "RSEM expected_count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus early/late post-transplant versus pre-transplant contrasts.",
         "CXCL10, ISG15, IFI27, and IL7R can now be queried as longitudinal blood monitoring markers.",
-        "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY adds 55 post-transplant serum metabolomics samples spanning TCMR, biliary complications, and post-transplant MASH with 134 absolute-concentration metabolite features."
+        "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY adds 55 post-transplant serum metabolomics samples spanning TCMR, biliary complications, and post-transplant MASH with 134 absolute-concentration metabolite features.",
+        "AGING_2020_LT_SERUM_PROTEOMICS adds direct liver-transplant serum proteomics biomarker evidence for ACLY, FGA, and APOA1 across perioperative, acute rejection, and ITBL contexts, with Welch contrasts derived from published group summary statistics."
       ],
       "next_validation": [
         "Recover or curate rejection outcome labels from publication supplementary material if publicly reusable.",
         "Compare blood interferon and T cell signatures with liver graft biopsy signatures.",
         "Treat the current layer as time-point monitoring evidence, not a rejection-outcome classifier.",
-        "Validate serum metabolite shifts in an independent graft pathology cohort before claiming non-invasive classification performance."
+        "Validate serum metabolite shifts in an independent graft pathology cohort before claiming non-invasive classification performance.",
+        "Keep the serum proteomics layer framed as published group-summary biomarker evidence until a reusable per-sample transplant proteome matrix is public."
       ],
-      "omics_layers": ["transcriptome_bulk", "proteome", "metabolome"],
-      "readiness": "blood_timepoint_expression_evidence_ready"
+      "omics_layers": [
+        "transcriptome_bulk",
+        "proteome",
+        "metabolome"
+      ],
+      "readiness": "blood_multimodal_monitoring_evidence_ready"
     },
     {
       "use_case_id": "SINGLE_CELL_MECHANISM",
       "title": "Single-cell mechanism of rejection",
       "clinical_question": "Which cell types produce rejection-associated markers and which immune compartments expand during graft rejection?",
       "why_it_matters": "Bulk molecular signals need cellular interpretation before they can guide mechanism, biomarkers, or therapeutic hypotheses.",
-      "primary_datasets": ["GSE189539"],
-      "supporting_datasets": ["GSE145780", "HRA002091", "HRA007802"],
-      "markers": ["CXCL9", "CXCL10", "NKG7", "GZMB", "LST1"],
-      "signatures": ["TCMR_IFNG_CYTOTOXIC"],
+      "primary_datasets": [
+        "GSE189539"
+      ],
+      "supporting_datasets": [
+        "GSE145780",
+        "HRA002091",
+        "HRA007802"
+      ],
+      "markers": [
+        "CXCL9",
+        "CXCL10",
+        "NKG7",
+        "GZMB",
+        "LST1"
+      ],
+      "signatures": [
+        "TCMR_IFNG_CYTOTOXIC"
+      ],
       "current_evidence": [
         "GSE189539 provides a public filtered single-cell graft-liver count matrix with 58,243 cells from before-LT cold perfusion and after-LT portal reperfusion samples.",
         "V1 exposes queryable marker evidence for EAD-associated immune niche genes including S100A12, GZMB, GZMK, NKG7, and related marker programs.",
@@ -126,7 +218,9 @@
         "Annotate CD8_TRM, myeloid, endothelial, B cell, and parenchymal compartments.",
         "Link cell-type marker expression back to bulk rejection signatures and independent rejection single-cell cohorts."
       ],
-      "omics_layers": ["single_cell"],
+      "omics_layers": [
+        "single_cell"
+      ],
       "readiness": "single_cell_marker_matrix_ready"
     },
     {
@@ -134,7 +228,9 @@
       "title": "Gut-liver axis after liver transplantation",
       "clinical_question": "Can microbiome features contextualize infection risk, immune activation, rejection-like inflammation, or immunosuppression exposure after liver transplantation?",
       "why_it_matters": "Post-transplant infection and immune dysregulation are clinically entangled. Microbiome evidence could add a non-host layer that transcriptomics alone cannot answer.",
-      "primary_datasets": ["DFI_MICROBIOME_LT_2024"],
+      "primary_datasets": [
+        "DFI_MICROBIOME_LT_2024"
+      ],
       "supporting_datasets": [],
       "markers": [],
       "signatures": [],
@@ -148,7 +244,10 @@
         "Reproduce the publication's multivariable infection-risk models before claiming predictive performance.",
         "Search MGnify/ENA/SRA for additional liver transplantation stool, bile, or blood microbiome accessions."
       ],
-      "omics_layers": ["microbiome", "metabolome"],
+      "omics_layers": [
+        "microbiome",
+        "metabolome"
+      ],
       "readiness": "feature_level_infection_evidence"
     },
     {
@@ -157,8 +256,16 @@
       "clinical_question": "How do tacrolimus, cyclosporine, mycophenolate, steroid exposure, and pharmacogenetic context relate to graft molecular injury or rejection states?",
       "why_it_matters": "Treatment decisions depend on balancing under-immunosuppression, toxicity, infection, and graft injury. This cannot be answered by expression alone.",
       "primary_datasets": [],
-      "supporting_datasets": ["GSE145780", "GSE200340"],
-      "markers": ["CYP3A4", "CYP3A5", "ABCB1", "POR"],
+      "supporting_datasets": [
+        "GSE145780",
+        "GSE200340"
+      ],
+      "markers": [
+        "CYP3A4",
+        "CYP3A5",
+        "ABCB1",
+        "POR"
+      ],
       "signatures": [],
       "current_evidence": [
         "No drug exposure, pharmacogenetic, or metabolite layer has been processed yet.",
@@ -168,7 +275,11 @@
         "Curate public datasets with immunosuppressant exposure, trough level, or pharmacogenetic metadata.",
         "Link drug metabolism genes, blood/liver expression, and metabolite/protein evidence."
       ],
-      "omics_layers": ["transcriptome_bulk", "metabolome", "immunogenetics"],
+      "omics_layers": [
+        "transcriptome_bulk",
+        "metabolome",
+        "immunogenetics"
+      ],
       "readiness": "metadata_model_ready"
     }
   ]

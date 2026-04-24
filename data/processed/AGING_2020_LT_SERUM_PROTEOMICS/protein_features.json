@@ -1,0 +1,636 @@
+{
+  "assay_modality": "proteomics",
+  "assay_scale": "relative_maldi_tof_peak_intensity",
+  "generated_at_utc": "2026-04-24T04:03:24.086362+00:00",
+  "limitations": [
+    "This source provides published serum protein biomarker evidence, not full unbiased tissue proteome quantification.",
+    "Per-sample protein values were not publicly reusable; feature records therefore expose group-level summaries and derived Welch contrasts only.",
+    "Stable post-transplant recipients, acute rejection, ischemic-type biliary lesion, and perioperative pre/post-transplant comparisons should be interpreted as related but distinct clinical contexts."
+  ],
+  "protein_count": 3,
+  "proteins": {
+    "ACLY": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "ACLY",
+      "limitations": [
+        "Feature evidence is reconstructed from published group summaries rather than a public per-sample intensity matrix.",
+        "This serum cohort mixes transplant effectiveness, acute rejection, and ischemic-type biliary lesion contexts.",
+        "Only peptide peaks with published protein identification and quantitative summaries are exposed."
+      ],
+      "mapped_peaks": [
+        {
+          "context": "perioperative_effectiveness",
+          "peak_id": "perioperative_peak_acly",
+          "peak_mz": "1949.82",
+          "peptide_sequence": "K.ILIIGGSIANFTNVAATFK.G",
+          "primary_uniprot": "P53396",
+          "protein_name": "ATP citrate lyase",
+          "published_global_p_value": 0.000126
+        },
+        {
+          "context": "acute_rejection",
+          "peak_id": "acute_rejection_peak_acly",
+          "peak_mz": "1950.06",
+          "peptide_sequence": "K.ILIIGGSIANFTNVAATFK.G",
+          "primary_uniprot": "P53396",
+          "protein_name": "ATP citrate lyase",
+          "published_global_p_value": 2.19e-05
+        },
+        {
+          "context": "ischemic_type_biliary_lesion",
+          "peak_id": "itbl_peak_acly",
+          "peak_mz": "1949.99",
+          "peptide_sequence": "K.ILIIGGSIANFTNVAATFK.G",
+          "primary_uniprot": "P53396",
+          "protein_name": "ATP citrate lyase",
+          "published_global_p_value": 0.000232
+        }
+      ],
+      "measurement_type": "maldi_tof_peak_intensity",
+      "primary_uniprot": "P53396",
+      "protein_name": "ATP citrate lyase",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.004189,
+          "case_mean": 35.35,
+          "case_n": 10,
+          "case_sd": 10.79,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_stable_post_transplant",
+          "control_mean": 18.03,
+          "control_n": 10,
+          "control_sd": 12.37,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 17.32,
+          "p_value": 0.003745,
+          "peak_mz": "1949.82",
+          "statistic_welch_t": 3.336691
+        },
+        {
+          "adj_p_value_bh": 1.5e-05,
+          "case_mean": 35.35,
+          "case_n": 10,
+          "case_sd": 10.79,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 3.16,
+          "control_n": 10,
+          "control_sd": 1.02,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 32.19,
+          "p_value": 5e-06,
+          "peak_mz": "1949.82",
+          "statistic_welch_t": 9.392207
+        },
+        {
+          "adj_p_value_bh": 0.004189,
+          "case_mean": 18.03,
+          "case_n": 10,
+          "case_sd": 12.37,
+          "case_state": "stable_post_transplant",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:stable_post_transplant_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 3.16,
+          "control_n": 10,
+          "control_sd": 1.02,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 14.87,
+          "p_value": 0.004189,
+          "peak_mz": "1949.82",
+          "statistic_welch_t": 3.788522
+        },
+        {
+          "adj_p_value_bh": 6.2e-05,
+          "case_mean": 34.55,
+          "case_n": 10,
+          "case_sd": 10.53,
+          "case_state": "healthy_control",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:healthy_control_vs_stable_post_transplant",
+          "control_mean": 12.0,
+          "control_n": 10,
+          "control_sd": 4.34,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 22.55,
+          "p_value": 4.2e-05,
+          "peak_mz": "1950.06",
+          "statistic_welch_t": 6.261075
+        },
+        {
+          "adj_p_value_bh": 1.5e-05,
+          "case_mean": 34.55,
+          "case_n": 10,
+          "case_sd": 10.53,
+          "case_state": "healthy_control",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:healthy_control_vs_acute_rejection",
+          "control_mean": 2.64,
+          "control_n": 10,
+          "control_sd": 0.87,
+          "control_state": "acute_rejection",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 31.91,
+          "p_value": 5e-06,
+          "peak_mz": "1950.06",
+          "statistic_welch_t": 9.550391
+        },
+        {
+          "adj_p_value_bh": 6.2e-05,
+          "case_mean": 12.0,
+          "case_n": 10,
+          "case_sd": 4.34,
+          "case_state": "stable_post_transplant",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:stable_post_transplant_vs_acute_rejection",
+          "control_mean": 2.64,
+          "control_n": 10,
+          "control_sd": 0.87,
+          "control_state": "acute_rejection",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 9.36,
+          "p_value": 6.2e-05,
+          "peak_mz": "1950.06",
+          "statistic_welch_t": 6.686994
+        },
+        {
+          "adj_p_value_bh": 0.001062,
+          "case_mean": 30.07,
+          "case_n": 10,
+          "case_sd": 12.69,
+          "case_state": "healthy_control",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:healthy_control_vs_stable_post_transplant",
+          "control_mean": 11.45,
+          "control_n": 10,
+          "control_sd": 4.36,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 18.62,
+          "p_value": 0.001062,
+          "peak_mz": "1949.99",
+          "statistic_welch_t": 4.388219
+        },
+        {
+          "adj_p_value_bh": 0.00036,
+          "case_mean": 30.07,
+          "case_n": 10,
+          "case_sd": 12.69,
+          "case_state": "healthy_control",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:healthy_control_vs_ischemic_type_biliary_lesion",
+          "control_mean": 4.87,
+          "control_n": 9,
+          "control_sd": 2.49,
+          "control_state": "ischemic_type_biliary_lesion",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 25.2,
+          "p_value": 0.00012,
+          "peak_mz": "1949.99",
+          "statistic_welch_t": 6.149541
+        },
+        {
+          "adj_p_value_bh": 0.001062,
+          "case_mean": 11.45,
+          "case_n": 10,
+          "case_sd": 4.36,
+          "case_state": "stable_post_transplant",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:stable_post_transplant_vs_ischemic_type_biliary_lesion",
+          "control_mean": 4.87,
+          "control_n": 9,
+          "control_sd": 2.49,
+          "control_state": "ischemic_type_biliary_lesion",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 6.58,
+          "p_value": 0.001026,
+          "peak_mz": "1949.99",
+          "statistic_welch_t": 4.088724
+        }
+      ],
+      "published_group_summaries": {
+        "acute_rejection": {
+          "acute_rejection": {
+            "mean": 2.64,
+            "n": 10,
+            "sd": 0.87
+          },
+          "healthy_control": {
+            "mean": 34.55,
+            "n": 10,
+            "sd": 10.53
+          },
+          "stable_post_transplant": {
+            "mean": 12.0,
+            "n": 10,
+            "sd": 4.34
+          }
+        },
+        "ischemic_type_biliary_lesion": {
+          "healthy_control": {
+            "mean": 30.07,
+            "n": 10,
+            "sd": 12.69
+          },
+          "ischemic_type_biliary_lesion": {
+            "mean": 4.87,
+            "n": 9,
+            "sd": 2.49
+          },
+          "stable_post_transplant": {
+            "mean": 11.45,
+            "n": 10,
+            "sd": 4.36
+          }
+        },
+        "perioperative_effectiveness": {
+          "healthy_control": {
+            "mean": 35.35,
+            "n": 10,
+            "sd": 10.79
+          },
+          "pre_transplant_end_stage_liver_disease": {
+            "mean": 3.16,
+            "n": 10,
+            "sd": 1.02
+          },
+          "stable_post_transplant": {
+            "mean": 18.03,
+            "n": 10,
+            "sd": 12.37
+          }
+        }
+      },
+      "sample_scope": "recipient_serum_complication_monitoring",
+      "summary_level": "group_level_published_means"
+    },
+    "APOA1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "APOA1",
+      "limitations": [
+        "Feature evidence is reconstructed from published group summaries rather than a public per-sample intensity matrix.",
+        "This serum cohort mixes transplant effectiveness, acute rejection, and ischemic-type biliary lesion contexts.",
+        "Only peptide peaks with published protein identification and quantitative summaries are exposed."
+      ],
+      "mapped_peaks": [
+        {
+          "context": "perioperative_effectiveness",
+          "peak_id": "perioperative_peak_apoa1",
+          "peak_mz": "4100.54",
+          "peptide_sequence": "Q.DEPPQSPWDRVKDLATVYVDVLKDSGRDYVSQFEGS.A",
+          "primary_uniprot": "P02647",
+          "protein_name": "Apolipoprotein A-I precursor",
+          "published_global_p_value": 0.000321
+        }
+      ],
+      "measurement_type": "maldi_tof_peak_intensity",
+      "primary_uniprot": "P02647",
+      "protein_name": "Apolipoprotein A-I precursor",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.016359,
+          "case_mean": 8.31,
+          "case_n": 10,
+          "case_sd": 2.18,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_stable_post_transplant",
+          "control_mean": 5.46,
+          "control_n": 10,
+          "control_sd": 2.6,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 2.85,
+          "p_value": 0.016359,
+          "peak_mz": "4100.54",
+          "statistic_welch_t": 2.656207
+        },
+        {
+          "adj_p_value_bh": 6e-06,
+          "case_mean": 8.31,
+          "case_n": 10,
+          "case_sd": 2.18,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 2.05,
+          "control_n": 10,
+          "control_sd": 1.66,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 6.26,
+          "p_value": 2e-06,
+          "peak_mz": "4100.54",
+          "statistic_welch_t": 7.224573
+        },
+        {
+          "adj_p_value_bh": 0.004757,
+          "case_mean": 5.46,
+          "case_n": 10,
+          "case_sd": 2.6,
+          "case_state": "stable_post_transplant",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:stable_post_transplant_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 2.05,
+          "control_n": 10,
+          "control_sd": 1.66,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 3.41,
+          "p_value": 0.003171,
+          "peak_mz": "4100.54",
+          "statistic_welch_t": 3.495717
+        }
+      ],
+      "published_group_summaries": {
+        "perioperative_effectiveness": {
+          "healthy_control": {
+            "mean": 8.31,
+            "n": 10,
+            "sd": 2.18
+          },
+          "pre_transplant_end_stage_liver_disease": {
+            "mean": 2.05,
+            "n": 10,
+            "sd": 1.66
+          },
+          "stable_post_transplant": {
+            "mean": 5.46,
+            "n": 10,
+            "sd": 2.6
+          }
+        }
+      },
+      "sample_scope": "recipient_serum_complication_monitoring",
+      "summary_level": "group_level_published_means"
+    },
+    "FGA": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "FGA",
+      "limitations": [
+        "Feature evidence is reconstructed from published group summaries rather than a public per-sample intensity matrix.",
+        "This serum cohort mixes transplant effectiveness, acute rejection, and ischemic-type biliary lesion contexts.",
+        "Only peptide peaks with published protein identification and quantitative summaries are exposed."
+      ],
+      "mapped_peaks": [
+        {
+          "context": "perioperative_effectiveness",
+          "peak_id": "perioperative_peak_fga",
+          "peak_mz": "2666.86",
+          "peptide_sequence": "A.DEAGSEADHEGTHSTKRGHAKSRPV.R",
+          "primary_uniprot": "P02671",
+          "protein_name": "Isoform 1 of Fibrinogen alpha chain precursor",
+          "published_global_p_value": 0.000605
+        },
+        {
+          "context": "acute_rejection",
+          "peak_id": "acute_rejection_peak_fga",
+          "peak_mz": "2087.90",
+          "peptide_sequence": "Y.KMADEAGSEADHEGTHSTKRGHAKSRPV.R",
+          "primary_uniprot": "P02671",
+          "protein_name": "Isoform 1 of Fibrinogen alpha chain precursor",
+          "published_global_p_value": 0.000906
+        },
+        {
+          "context": "ischemic_type_biliary_lesion",
+          "peak_id": "itbl_peak_fga",
+          "peak_mz": "2087.92",
+          "peptide_sequence": "Y.KMADEAGSEADHEGTHSTKRGHAKSRPV.R",
+          "primary_uniprot": "P02671",
+          "protein_name": "Isoform 1 of Fibrinogen alpha chain precursor",
+          "published_global_p_value": 0.000339
+        }
+      ],
+      "measurement_type": "maldi_tof_peak_intensity",
+      "primary_uniprot": "P02671",
+      "protein_name": "Isoform 1 of Fibrinogen alpha chain precursor",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.04876,
+          "case_mean": 29.98,
+          "case_n": 10,
+          "case_sd": 11.64,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_stable_post_transplant",
+          "control_mean": 19.38,
+          "control_n": 10,
+          "control_sd": 8.39,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 10.6,
+          "p_value": 0.032507,
+          "peak_mz": "2666.86",
+          "statistic_welch_t": 2.33613
+        },
+        {
+          "adj_p_value_bh": 0.00258,
+          "case_mean": 29.98,
+          "case_n": 10,
+          "case_sd": 11.64,
+          "case_state": "healthy_control",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:healthy_control_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 11.81,
+          "control_n": 10,
+          "control_sd": 7.78,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 18.17,
+          "p_value": 0.00086,
+          "peak_mz": "2666.86",
+          "statistic_welch_t": 4.103996
+        },
+        {
+          "adj_p_value_bh": 0.050951,
+          "case_mean": 19.38,
+          "case_n": 10,
+          "case_sd": 8.39,
+          "case_state": "stable_post_transplant",
+          "context": "perioperative_effectiveness",
+          "contrast_id": "perioperative_effectiveness:stable_post_transplant_vs_pre_transplant_end_stage_liver_disease",
+          "control_mean": 11.81,
+          "control_n": 10,
+          "control_sd": 7.78,
+          "control_state": "pre_transplant_end_stage_liver_disease",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 7.57,
+          "p_value": 0.050951,
+          "peak_mz": "2666.86",
+          "statistic_welch_t": 2.092146
+        },
+        {
+          "adj_p_value_bh": 0.002514,
+          "case_mean": 7.44,
+          "case_n": 10,
+          "case_sd": 2.02,
+          "case_state": "healthy_control",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:healthy_control_vs_stable_post_transplant",
+          "control_mean": 4.52,
+          "control_n": 10,
+          "control_sd": 1.38,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 2.92,
+          "p_value": 0.001676,
+          "peak_mz": "2087.90",
+          "statistic_welch_t": 3.774488
+        },
+        {
+          "adj_p_value_bh": 4.2e-05,
+          "case_mean": 7.44,
+          "case_n": 10,
+          "case_sd": 2.02,
+          "case_state": "healthy_control",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:healthy_control_vs_acute_rejection",
+          "control_mean": 2.7,
+          "control_n": 10,
+          "control_sd": 1.12,
+          "control_state": "acute_rejection",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 4.74,
+          "p_value": 1.4e-05,
+          "peak_mz": "2087.90",
+          "statistic_welch_t": 6.48962
+        },
+        {
+          "adj_p_value_bh": 0.004756,
+          "case_mean": 4.52,
+          "case_n": 10,
+          "case_sd": 1.38,
+          "case_state": "stable_post_transplant",
+          "context": "acute_rejection",
+          "contrast_id": "acute_rejection:stable_post_transplant_vs_acute_rejection",
+          "control_mean": 2.7,
+          "control_n": 10,
+          "control_sd": 1.12,
+          "control_state": "acute_rejection",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 1.82,
+          "p_value": 0.004756,
+          "peak_mz": "2087.90",
+          "statistic_welch_t": 3.23825
+        },
+        {
+          "adj_p_value_bh": 0.004237,
+          "case_mean": 6.94,
+          "case_n": 10,
+          "case_sd": 2.08,
+          "case_state": "healthy_control",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:healthy_control_vs_stable_post_transplant",
+          "control_mean": 4.16,
+          "control_n": 10,
+          "control_sd": 1.35,
+          "control_state": "stable_post_transplant",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 2.78,
+          "p_value": 0.002825,
+          "peak_mz": "2087.92",
+          "statistic_welch_t": 3.545244
+        },
+        {
+          "adj_p_value_bh": 0.000177,
+          "case_mean": 6.94,
+          "case_n": 10,
+          "case_sd": 2.08,
+          "case_state": "healthy_control",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:healthy_control_vs_ischemic_type_biliary_lesion",
+          "control_mean": 2.61,
+          "control_n": 9,
+          "control_sd": 0.75,
+          "control_state": "ischemic_type_biliary_lesion",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 4.33,
+          "p_value": 5.9e-05,
+          "peak_mz": "2087.92",
+          "statistic_welch_t": 6.153524
+        },
+        {
+          "adj_p_value_bh": 0.007159,
+          "case_mean": 4.16,
+          "case_n": 10,
+          "case_sd": 1.35,
+          "case_state": "stable_post_transplant",
+          "context": "ischemic_type_biliary_lesion",
+          "contrast_id": "ischemic_type_biliary_lesion:stable_post_transplant_vs_ischemic_type_biliary_lesion",
+          "control_mean": 2.61,
+          "control_n": 9,
+          "control_sd": 0.75,
+          "control_state": "ischemic_type_biliary_lesion",
+          "effect_scale": "relative_maldi_tof_peak_intensity",
+          "mean_difference": 1.55,
+          "p_value": 0.007159,
+          "peak_mz": "2087.92",
+          "statistic_welch_t": 3.133072
+        }
+      ],
+      "published_group_summaries": {
+        "acute_rejection": {
+          "acute_rejection": {
+            "mean": 2.7,
+            "n": 10,
+            "sd": 1.12
+          },
+          "healthy_control": {
+            "mean": 7.44,
+            "n": 10,
+            "sd": 2.02
+          },
+          "stable_post_transplant": {
+            "mean": 4.52,
+            "n": 10,
+            "sd": 1.38
+          }
+        },
+        "ischemic_type_biliary_lesion": {
+          "healthy_control": {
+            "mean": 6.94,
+            "n": 10,
+            "sd": 2.08
+          },
+          "ischemic_type_biliary_lesion": {
+            "mean": 2.61,
+            "n": 9,
+            "sd": 0.75
+          },
+          "stable_post_transplant": {
+            "mean": 4.16,
+            "n": 10,
+            "sd": 1.35
+          }
+        },
+        "perioperative_effectiveness": {
+          "healthy_control": {
+            "mean": 29.98,
+            "n": 10,
+            "sd": 11.64
+          },
+          "pre_transplant_end_stage_liver_disease": {
+            "mean": 11.81,
+            "n": 10,
+            "sd": 7.78
+          },
+          "stable_post_transplant": {
+            "mean": 19.38,
+            "n": 10,
+            "sd": 8.39
+          }
+        }
+      },
+      "sample_scope": "recipient_serum_complication_monitoring",
+      "summary_level": "group_level_published_means"
+    }
+  },
+  "sample_scope": "recipient_serum_complication_monitoring",
+  "source_url": "https://www.aging-us.com/article/103381/text",
+  "study_accession": "AGING_2020_LT_SERUM_PROTEOMICS"
+}

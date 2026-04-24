@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "bytes": 597949,
+      "label": "article_html",
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/article_text.html",
+      "sha256": "cd641feea91880df836f3f14615f40e6dfc2a8a2d55b548c5f9746e589df3ff6"
+    },
+    {
+      "bytes": 2479191,
+      "label": "article_pdf",
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics.pdf",
+      "sha256": "c95a1673f215418142315f80c3c828d5e2d5e2ed2c516061396e94c2443cc57d"
+    },
+    {
+      "bytes": 372115,
+      "label": "supplementary_figure_pdf",
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics_supplementary_figure.pdf",
+      "sha256": "bef781285489d443e7716debd26f18c13ccdd4851ec4496ce5959b1e72fcce87"
+    },
+    {
+      "bytes": 268445,
+      "label": "supplementary_tables_pdf",
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics_supplementary_tables.pdf",
+      "sha256": "e732f5d5de61c3fd611e5078d3ad4427ea29db4e9b16fb9207bc9296dbbe0571"
+    }
+  ],
+  "generated_at_utc": "2026-04-24T04:03:24.086362+00:00",
+  "study_accession": "AGING_2020_LT_SERUM_PROTEOMICS"
+}

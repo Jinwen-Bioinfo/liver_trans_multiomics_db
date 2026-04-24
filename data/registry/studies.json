@@ -7,18 +7,45 @@
       "title": "Liver transplant biopsy transcriptomics across normal, TCMR, early injury, and fibrosis states",
       "summary": "Bulk transcriptomic dataset for human liver transplant biopsies with clinically useful rejection and injury labels. This is a priority V1 dataset for rejection and graft injury signatures.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["bulk_rna"],
-      "sample_origins": ["graft_liver"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["no_rejection", "TCMR", "early_injury", "fibrosis"],
+      "omics_modalities": [
+        "bulk_rna"
+      ],
+      "sample_origins": [
+        "graft_liver"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "no_rejection",
+        "TCMR",
+        "early_injury",
+        "fibrosis"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "expression_evidence_ready",
       "qc_status": "metadata_qc_pass_expression_pending_full_qc",
-      "featured_genes": ["CXCL9", "CXCL10", "GZMB", "IFNG", "COL1A1"],
+      "featured_genes": [
+        "CXCL9",
+        "CXCL10",
+        "GZMB",
+        "IFNG",
+        "COL1A1"
+      ],
       "featured_cell_types": [],
-      "featured_pathways": ["interferon_gamma_response", "cytotoxicity", "extracellular_matrix"],
-      "keywords": ["liver transplant", "rejection", "TCMR", "biopsy", "fibrosis"]
+      "featured_pathways": [
+        "interferon_gamma_response",
+        "cytotoxicity",
+        "extracellular_matrix"
+      ],
+      "keywords": [
+        "liver transplant",
+        "rejection",
+        "TCMR",
+        "biopsy",
+        "fibrosis"
+      ]
     },
     {
       "accession": "GSE13440",
@@ -27,18 +54,42 @@
       "title": "Acute cellular rejection versus recurrent hepatitis C liver allograft transcriptome",
       "summary": "Human liver allograft microarray dataset comparing ACR-predominant graft biopsies with recurrent hepatitis C biopsies without ACR. This is a P0 independent replication candidate for rejection-associated transcriptome evidence.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["bulk_rna"],
-      "sample_origins": ["graft_liver_biopsy"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["ACR", "RHC_no_ACR"],
+      "omics_modalities": [
+        "bulk_rna"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "ACR",
+        "RHC_no_ACR"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "expression_evidence_ready",
       "qc_status": "metadata_qc_pass_expression_qc_pass",
-      "featured_genes": ["CXCL9", "CXCL10", "IFNG", "GZMB"],
+      "featured_genes": [
+        "CXCL9",
+        "CXCL10",
+        "IFNG",
+        "GZMB"
+      ],
       "featured_cell_types": [],
-      "featured_pathways": ["interferon_gamma_response", "cytotoxicity", "rejection"],
-      "keywords": ["liver transplant", "acute cellular rejection", "recurrent hepatitis C", "biopsy", "microarray"]
+      "featured_pathways": [
+        "interferon_gamma_response",
+        "cytotoxicity",
+        "rejection"
+      ],
+      "keywords": [
+        "liver transplant",
+        "acute cellular rejection",
+        "recurrent hepatitis C",
+        "biopsy",
+        "microarray"
+      ]
     },
     {
       "accession": "GSE11881",
@@ -47,18 +98,45 @@
       "title": "Operational tolerance PBMC transcriptomics in liver transplantation",
       "summary": "Human PBMC microarray dataset comparing operationally tolerant and non-tolerant liver transplant recipients. This is a P0 independent dataset for blood-based transplant immune monitoring.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["bulk_rna"],
-      "sample_origins": ["recipient_blood"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["operational_tolerance", "non_tolerant"],
+      "omics_modalities": [
+        "bulk_rna"
+      ],
+      "sample_origins": [
+        "recipient_blood"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "expression_evidence_ready",
       "qc_status": "metadata_qc_pass_expression_qc_pass",
-      "featured_genes": ["FOXP3", "IL10", "IFNG", "CXCL10"],
-      "featured_cell_types": ["PBMC", "T_cell", "B_cell"],
-      "featured_pathways": ["operational_tolerance", "immune_monitoring"],
-      "keywords": ["liver transplant", "operational tolerance", "PBMC", "blood", "microarray"]
+      "featured_genes": [
+        "FOXP3",
+        "IL10",
+        "IFNG",
+        "CXCL10"
+      ],
+      "featured_cell_types": [
+        "PBMC",
+        "T_cell",
+        "B_cell"
+      ],
+      "featured_pathways": [
+        "operational_tolerance",
+        "immune_monitoring"
+      ],
+      "keywords": [
+        "liver transplant",
+        "operational tolerance",
+        "PBMC",
+        "blood",
+        "microarray"
+      ]
     },
     {
       "accession": "GSE243887",
@@ -67,18 +145,44 @@
       "title": "Transcriptomic and histopathological profiling of accepted and rejected donor livers",
       "summary": "Public donor liver RNA-seq dataset with accepted/rejected organ labels and pathology context. This supports donor quality and organ utilization use cases.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["bulk_rna", "pathology_metadata"],
-      "sample_origins": ["donor_liver"],
-      "transplant_phases": ["donor_recovery", "pre_transplant"],
-      "clinical_states": ["accepted_donor_liver", "rejected_donor_liver"],
+      "omics_modalities": [
+        "bulk_rna",
+        "pathology_metadata"
+      ],
+      "sample_origins": [
+        "donor_liver"
+      ],
+      "transplant_phases": [
+        "donor_recovery",
+        "pre_transplant"
+      ],
+      "clinical_states": [
+        "accepted_donor_liver",
+        "rejected_donor_liver"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "expression_evidence_ready",
       "qc_status": "metadata_qc_pass_expression_qc_pass",
-      "featured_genes": ["CYP3A4", "ALB", "APOA1", "COL1A1", "HMOX1"],
+      "featured_genes": [
+        "CYP3A4",
+        "ALB",
+        "APOA1",
+        "COL1A1",
+        "HMOX1"
+      ],
       "featured_cell_types": [],
-      "featured_pathways": ["hepatocyte_metabolism", "stress_response", "fibrosis"],
-      "keywords": ["donor liver", "organ quality", "histopathology", "RNA-seq"]
+      "featured_pathways": [
+        "hepatocyte_metabolism",
+        "stress_response",
+        "fibrosis"
+      ],
+      "keywords": [
+        "donor liver",
+        "organ quality",
+        "histopathology",
+        "RNA-seq"
+      ]
     },
     {
       "accession": "HRA002091",
@@ -87,18 +191,48 @@
       "title": "Single-cell profiling of human liver transplantation rejection and stable graft states",
       "summary": "Human single-cell dataset associated with liver transplant rejection biology. V1 will use it for cell-type and marker evidence after access and file-level availability are checked.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["single_cell_rna"],
-      "sample_origins": ["graft_liver", "recipient_blood"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["stable", "rejection"],
+      "omics_modalities": [
+        "single_cell_rna"
+      ],
+      "sample_origins": [
+        "graft_liver",
+        "recipient_blood"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "stable",
+        "rejection"
+      ],
       "public_access": "metadata_or_controlled_to_verify",
       "curation_status": "registered",
       "processing_status": "pending",
       "qc_status": "pending",
-      "featured_genes": ["CXCL9", "CXCL10", "NKG7", "GZMB", "LST1"],
-      "featured_cell_types": ["CD8_TRM", "macrophage", "monocyte", "endothelial_cell"],
-      "featured_pathways": ["T_cell_activation", "antigen_presentation", "inflammatory_response"],
-      "keywords": ["single-cell", "liver transplant", "rejection", "immune atlas"]
+      "featured_genes": [
+        "CXCL9",
+        "CXCL10",
+        "NKG7",
+        "GZMB",
+        "LST1"
+      ],
+      "featured_cell_types": [
+        "CD8_TRM",
+        "macrophage",
+        "monocyte",
+        "endothelial_cell"
+      ],
+      "featured_pathways": [
+        "T_cell_activation",
+        "antigen_presentation",
+        "inflammatory_response"
+      ],
+      "keywords": [
+        "single-cell",
+        "liver transplant",
+        "rejection",
+        "immune atlas"
+      ]
     },
     {
       "accession": "HRA007802",
@@ -107,18 +241,44 @@
       "title": "Single-cell liver transplantation rejection cohort",
       "summary": "Companion or related human single-cell liver transplantation dataset for rejection/stable graft comparison. File-level public access and processed matrices need verification.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["single_cell_rna"],
-      "sample_origins": ["graft_liver"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["stable", "rejection"],
+      "omics_modalities": [
+        "single_cell_rna"
+      ],
+      "sample_origins": [
+        "graft_liver"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "stable",
+        "rejection"
+      ],
       "public_access": "metadata_or_controlled_to_verify",
       "curation_status": "registered",
       "processing_status": "pending",
       "qc_status": "pending",
-      "featured_genes": ["IFNG", "GZMB", "PRF1", "CXCL13"],
-      "featured_cell_types": ["CD8_TRM", "T_cell", "B_cell", "myeloid_cell"],
-      "featured_pathways": ["cytotoxicity", "interferon_gamma_response"],
-      "keywords": ["single-cell", "rejection", "human liver transplant"]
+      "featured_genes": [
+        "IFNG",
+        "GZMB",
+        "PRF1",
+        "CXCL13"
+      ],
+      "featured_cell_types": [
+        "CD8_TRM",
+        "T_cell",
+        "B_cell",
+        "myeloid_cell"
+      ],
+      "featured_pathways": [
+        "cytotoxicity",
+        "interferon_gamma_response"
+      ],
+      "keywords": [
+        "single-cell",
+        "rejection",
+        "human liver transplant"
+      ]
     },
     {
       "accession": "GSE200340",
@@ -127,18 +287,42 @@
       "title": "Blood transcriptomics for pediatric liver transplantation monitoring",
       "summary": "Whole blood/PBMC RNA-seq dataset for pediatric liver transplantation monitoring across pre-transplant, early post-transplant, and late post-transplant time points. This supports longitudinal blood monitoring evidence, not rejection-outcome classification.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["bulk_rna"],
-      "sample_origins": ["recipient_blood"],
-      "transplant_phases": ["pre_transplant", "post_transplant"],
-      "clinical_states": ["pre_transplant_blood", "early_post_transplant_blood", "late_post_transplant_blood"],
+      "omics_modalities": [
+        "bulk_rna"
+      ],
+      "sample_origins": [
+        "recipient_blood"
+      ],
+      "transplant_phases": [
+        "pre_transplant",
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "pre_transplant_blood",
+        "early_post_transplant_blood",
+        "late_post_transplant_blood"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "expression_evidence_ready",
       "qc_status": "metadata_qc_pass_expression_qc_pass_outcome_labels_unavailable",
-      "featured_genes": ["ISG15", "IFI27", "CXCL10", "IL7R"],
+      "featured_genes": [
+        "ISG15",
+        "IFI27",
+        "CXCL10",
+        "IL7R"
+      ],
       "featured_cell_types": [],
-      "featured_pathways": ["interferon_response", "immune_monitoring"],
-      "keywords": ["blood", "pediatric", "monitoring", "RNA-seq"]
+      "featured_pathways": [
+        "interferon_response",
+        "immune_monitoring"
+      ],
+      "keywords": [
+        "blood",
+        "pediatric",
+        "monitoring",
+        "RNA-seq"
+      ]
     },
     {
       "accession": "GSE189539",
@@ -147,18 +331,49 @@
       "title": "Single-cell landscape of human liver transplantation and early allograft dysfunction",
       "summary": "Human graft liver single-cell RNA-seq dataset sampled before liver transplantation during cold perfusion and after portal reperfusion. V1 exposes marker-level evidence across the public filtered matrix; cell-to-sample and cell-type metadata are not available in the GEO matrix.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["single_cell_rna"],
-      "sample_origins": ["graft_liver"],
-      "transplant_phases": ["intraoperative_pre_post_reperfusion"],
-      "clinical_states": ["cold_perfusion_before_lt", "portal_reperfusion_after_lt"],
+      "omics_modalities": [
+        "single_cell_rna"
+      ],
+      "sample_origins": [
+        "graft_liver"
+      ],
+      "transplant_phases": [
+        "intraoperative_pre_post_reperfusion"
+      ],
+      "clinical_states": [
+        "cold_perfusion_before_lt",
+        "portal_reperfusion_after_lt"
+      ],
       "public_access": "open",
       "curation_status": "curated_metadata",
       "processing_status": "single_cell_marker_evidence_ready",
       "qc_status": "metadata_qc_pass_marker_matrix_qc_pass_cell_metadata_unavailable",
-      "featured_genes": ["S100A12", "GZMB", "GZMK", "NKG7", "ALB"],
-      "featured_cell_types": ["MAIT_cell", "NK_cell", "neutrophil", "hepatocyte", "endothelial_cell"],
-      "featured_pathways": ["early_allograft_dysfunction", "cytotoxicity", "neutrophil_inflammation"],
-      "keywords": ["single-cell", "liver transplant", "early allograft dysfunction", "portal reperfusion", "immune niche"]
+      "featured_genes": [
+        "S100A12",
+        "GZMB",
+        "GZMK",
+        "NKG7",
+        "ALB"
+      ],
+      "featured_cell_types": [
+        "MAIT_cell",
+        "NK_cell",
+        "neutrophil",
+        "hepatocyte",
+        "endothelial_cell"
+      ],
+      "featured_pathways": [
+        "early_allograft_dysfunction",
+        "cytotoxicity",
+        "neutrophil_inflammation"
+      ],
+      "keywords": [
+        "single-cell",
+        "liver transplant",
+        "early allograft dysfunction",
+        "portal reperfusion",
+        "immune niche"
+      ]
     },
     {
       "accession": "DFI_MICROBIOME_LT_2024",
@@ -167,18 +382,45 @@
       "title": "Fecal metabolite and microbiome profiling of liver transplant recipients at risk for postoperative infection",
       "summary": "Public code and data repository for a Cell Host & Microbe liver transplantation study linking fecal metabolites, microbiome diversity, pathobiont expansion, and postoperative infection risk. This is the first direct non-transcriptomic liver transplant layer registered in the resource.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["metabolomics", "microbiome"],
-      "sample_origins": ["stool"],
-      "transplant_phases": ["peri_transplant", "post_transplant"],
-      "clinical_states": ["postoperative_infection", "no_postoperative_infection", "microbiome_dysbiosis", "pathobiont_expansion"],
+      "omics_modalities": [
+        "metabolomics",
+        "microbiome"
+      ],
+      "sample_origins": [
+        "stool"
+      ],
+      "transplant_phases": [
+        "peri_transplant",
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "postoperative_infection",
+        "no_postoperative_infection",
+        "microbiome_dysbiosis",
+        "pathobiont_expansion"
+      ],
       "public_access": "open_external_repository",
       "curation_status": "curated_external_metadata",
       "processing_status": "processed_feature_ready",
       "qc_status": "source_verified_feature_qc_pass_identifier_mapping_pending",
       "featured_genes": [],
       "featured_cell_types": [],
-      "featured_pathways": ["short_chain_fatty_acids", "secondary_bile_acids", "tryptophan_metabolism", "microbiome_dysbiosis"],
-      "keywords": ["liver transplant", "microbiome", "metabolomics", "fecal metabolites", "infection", "pathobiont", "supplementary data", "author repository"]
+      "featured_pathways": [
+        "short_chain_fatty_acids",
+        "secondary_bile_acids",
+        "tryptophan_metabolism",
+        "microbiome_dysbiosis"
+      ],
+      "keywords": [
+        "liver transplant",
+        "microbiome",
+        "metabolomics",
+        "fecal metabolites",
+        "infection",
+        "pathobiont",
+        "supplementary data",
+        "author repository"
+      ]
     },
     {
       "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
@@ -187,18 +429,40 @@
       "title": "Serum metabolomics for liver graft pathology discrimination",
       "summary": "Supplementary absolute-concentration serum metabolomics cohort from a liver transplantation study spanning biopsy-confirmed TCMR, biliary complications, and post-transplant MASH. This is a direct non-invasive graft pathology metabolomics layer derived from public supplementary Table S4.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["metabolomics"],
-      "sample_origins": ["recipient_serum"],
-      "transplant_phases": ["post_transplant"],
-      "clinical_states": ["TCMR", "biliary_complication", "post_transplant_mash"],
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "TCMR",
+        "biliary_complication",
+        "post_transplant_mash"
+      ],
       "public_access": "open_supplementary_table",
       "curation_status": "curated_supplementary_table",
       "processing_status": "processed_feature_ready",
       "qc_status": "source_verified_feature_qc_pass_absolute_concentration_table",
       "featured_genes": [],
       "featured_cell_types": [],
-      "featured_pathways": ["serotonin_metabolism", "amino_acid_metabolism", "acylcarnitine_metabolism", "graft_pathology_biomarkers"],
-      "keywords": ["liver transplant", "serum metabolomics", "TCMR", "biliary complications", "post-transplant MASH", "supplementary data"]
+      "featured_pathways": [
+        "serotonin_metabolism",
+        "amino_acid_metabolism",
+        "acylcarnitine_metabolism",
+        "graft_pathology_biomarkers"
+      ],
+      "keywords": [
+        "liver transplant",
+        "serum metabolomics",
+        "TCMR",
+        "biliary complications",
+        "post-transplant MASH",
+        "supplementary data"
+      ]
     },
     {
       "accession": "PXD012615",
@@ -207,18 +471,97 @@
       "title": "Human liver cells proteome",
       "summary": "Reference human liver cell proteome from PRIDE with MaxQuant protein groups summarized across hepatocyte, liver sinusoidal endothelial cell, Kupffer cell, and hepatic stellate cell compartments. It is not a transplant cohort, but it supports protein-level interpretation of liver graft and donor biology.",
       "organism": "Homo sapiens",
-      "omics_modalities": ["proteomics"],
-      "sample_origins": ["reference_liver_cells"],
-      "transplant_phases": ["reference"],
-      "clinical_states": ["reference_liver"],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "reference_liver_cells"
+      ],
+      "transplant_phases": [
+        "reference"
+      ],
+      "clinical_states": [
+        "reference_liver"
+      ],
       "public_access": "open",
       "curation_status": "curated_reference",
       "processing_status": "protein_feature_reference_ready",
       "qc_status": "source_verified_protein_feature_qc_pass_reference_not_transplant_cohort",
-      "featured_genes": ["CYP3A4", "COL1A1", "VWF", "LST1", "KRT19"],
-      "featured_cell_types": ["hepatocyte", "cholangiocyte", "stellate_cell", "endothelial_cell", "macrophage"],
-      "featured_pathways": ["hepatocyte_metabolism", "extracellular_matrix", "protein_secretion"],
-      "keywords": ["proteomics", "human liver", "reference atlas", "PRIDE"]
+      "featured_genes": [
+        "CYP3A4",
+        "COL1A1",
+        "VWF",
+        "LST1",
+        "KRT19"
+      ],
+      "featured_cell_types": [
+        "hepatocyte",
+        "cholangiocyte",
+        "stellate_cell",
+        "endothelial_cell",
+        "macrophage"
+      ],
+      "featured_pathways": [
+        "hepatocyte_metabolism",
+        "extracellular_matrix",
+        "protein_secretion"
+      ],
+      "keywords": [
+        "proteomics",
+        "human liver",
+        "reference atlas",
+        "PRIDE"
+      ]
+    },
+    {
+      "accession": "AGING_2020_LT_SERUM_PROTEOMICS",
+      "repository": "Aging-US supplementary",
+      "repository_url": "https://www.aging-us.com/article/103381/text",
+      "title": "Serum proteomic biomarkers for acute rejection and biliary complications after liver transplantation",
+      "summary": "Public serum proteomics biomarker layer reconstructed from Aging-US article and supplementary tables, covering stable post-transplant recipients, acute rejection, ischemic-type biliary lesion, perioperative pre-transplant end-stage liver disease, and healthy controls. This is direct liver-transplant proteomics evidence, but only at the published group-summary MALDI-TOF peak level rather than a reusable per-sample matrix.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "transplant_phases": [
+        "pre_transplant",
+        "perioperative",
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "stable_post_transplant",
+        "acute_rejection",
+        "ischemic_type_biliary_lesion",
+        "pre_transplant_end_stage_liver_disease",
+        "healthy_control"
+      ],
+      "public_access": "open_supplementary_tables",
+      "curation_status": "curated_publication_summary",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_summary_stat_qc_pass_no_public_sample_matrix",
+      "featured_genes": [
+        "ACLY",
+        "FGA",
+        "APOA1"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "citrate_metabolism",
+        "coagulation",
+        "lipoprotein_transport",
+        "biliary_complication_biomarkers"
+      ],
+      "keywords": [
+        "liver transplant",
+        "serum proteomics",
+        "acute rejection",
+        "ischemic-type biliary lesion",
+        "MALDI-TOF",
+        "supplementary tables"
+      ]
     }
   ]
 }

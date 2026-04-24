@@ -86,10 +86,16 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
         "scientific_value": ["liver proteome reference", "protein feature normalization"],
     },
+    "AGING_2020_LT_SERUM_PROTEOMICS": {
+        "priority": "P0",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
+        "scientific_value": ["acute rejection serum proteomics", "biliary complication biomarkers", "non-invasive graft monitoring"],
+    },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "priority": "P0",
-        "triage_status": "ready_to_ingest",
-        "next_action": "Download the public supplementary Table S4 metabolite concentration matrix, parse absolute serum metabolite values for TCMR, biliary complications, and post-transplant MASH, and expose feature-level contrasts with explicit cohort caveats.",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
         "scientific_value": ["direct post-transplant serum metabolomics", "TCMR vs biliary vs MASH discrimination", "non-invasive graft pathology biomarkers"],
     },
 }
@@ -114,6 +120,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["liver_reference"],
         "clinical_states": ["reference"],
+    },
+    "AGING_2020_LT_SERUM_PROTEOMICS": {
+        "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
+        "repository": "Aging-US supplementary",
+        "repository_url": "https://www.aging-us.com/article/103381/text",
+        "source_type": "supplementary_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["TCMR_or_ACR", "post_transplant_biliary_complications"],
     },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",

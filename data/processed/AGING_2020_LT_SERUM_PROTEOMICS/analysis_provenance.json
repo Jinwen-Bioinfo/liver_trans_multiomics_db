@@ -1,0 +1,86 @@
+{
+  "generated_at_utc": "2026-04-24T04:03:24.086362+00:00",
+  "identifier_mapping_rule": "MALDI-TOF peptide peak m/z values were mapped to UniProt/gene symbols using the article's sequence-identification Table 1.",
+  "limitations": [
+    "No public per-sample protein abundance matrix was available, so this layer is group-summary evidence rather than matrix-level proteomics.",
+    "Supplementary Tables provide peptide peak intensities; proteins are inferred through the article's explicit sequence-identification table.",
+    "Pairwise statistics are derived from reported means, SDs, and sample sizes and may not exactly reproduce the authors' original modeling choices."
+  ],
+  "methods": [
+    "Downloaded public Aging-US article text plus supplementary PDFs.",
+    "Mapped serum peptide peaks to proteins using the article's Table 1 sequence-identification section and Supplementary Figure 1.",
+    "Captured published group means and standard deviations for perioperative, acute rejection, and ITBL peak summaries from Supplementary Tables 2-4.",
+    "Derived pairwise contrasts from published summary statistics using Welch t-tests with Benjamini-Hochberg correction within each protein feature.",
+    "Generated synthetic sample placeholders from published group counts because public per-sample identifiers were not reusable."
+  ],
+  "normalization_rule": "Used published relative MALDI-TOF peak intensities exactly as reported; no cross-study normalization performed.",
+  "outputs": {
+    "cohort_summary": {
+      "bytes": 772,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/cohort_summary.json",
+      "sha256": "bf734aba1acef288561819907b576f17a4f0c90a63a9f39a9883fc831ad29e38"
+    },
+    "protein_features": {
+      "bytes": 23203,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
+      "sha256": "675ce223ab5d3b4169769985fa220d71d20e60b9653766b3c72adc807206dfd6"
+    },
+    "proteomics_summary": {
+      "bytes": 1061,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
+      "sha256": "4d60fd07182294df746a79fd3db6dcdff410bd2e05e411f3cb7a61ba973abc14"
+    },
+    "sample_summary": {
+      "bytes": 698,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/sample_summary.json",
+      "sha256": "ba5d1876ace727c8d3df1d3b5cde0793053386d7de47d4267900551322820ad2"
+    },
+    "samples": {
+      "bytes": 14658,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/samples.json",
+      "sha256": "f0ba9e8a74cce04d1bcd39a68ee57f2560883f2bd58f2d241da5475b49b08852"
+    },
+    "source_file_inventory": {
+      "bytes": 1192,
+      "path": "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/source_file_inventory.json",
+      "sha256": "70c22434de2a16eef9e099e71d145eca6ab69e4706b3fc2f4bb09298b8ff849d"
+    }
+  },
+  "parser": "scripts/ingest_aging_2020_serum_proteomics.py",
+  "source_extract_notes": {
+    "article_contains_table1_sequence_mapping": "ATP citrate lyase (ACLY), fibrinogen alpha chain (FGA), and apolipoprotein A-I precursor (APOA1) are explicitly named in the full text.",
+    "article_excerpt_contains_validation_means": "Full text reports ELISA mean \u00b1 SD values for ACLY and FGA in healthy control, stable post-transplant, and AR groups.",
+    "supplementary_tables_confirmed": "Supplementary Tables 2-4 include peak-level mean \u00b1 SD values for perioperative, AR, and ITBL contexts."
+  },
+  "source_files": {
+    "article_html": {
+      "bytes": 597949,
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/article_text.html",
+      "sha256": "cd641feea91880df836f3f14615f40e6dfc2a8a2d55b548c5f9746e589df3ff6",
+      "url": "https://www.aging-us.com/article/103381/text"
+    },
+    "article_pdf": {
+      "bytes": 2479191,
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics.pdf",
+      "sha256": "c95a1673f215418142315f80c3c828d5e2d5e2ed2c516061396e94c2443cc57d",
+      "url": "https://cdn.aging-us.com/article/103381/pdf.pdf"
+    },
+    "supplementary_figure_pdf": {
+      "bytes": 372115,
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics_supplementary_figure.pdf",
+      "sha256": "bef781285489d443e7716debd26f18c13ccdd4851ec4496ce5959b1e72fcce87",
+      "url": "https://cdn.aging-us.com/article/103381/supplementary/SD1/0/aging-v12i12-103381-supplementary-material-SD1.pdf"
+    },
+    "supplementary_tables_pdf": {
+      "bytes": 268445,
+      "path": "data/raw/AGING_2020_LT_SERUM_PROTEOMICS/aging_2020_liver_transplant_serum_proteomics_supplementary_tables.pdf",
+      "sha256": "e732f5d5de61c3fd611e5078d3ad4427ea29db4e9b16fb9207bc9296dbbe0571",
+      "url": "https://cdn.aging-us.com/article/103381/supplementary/SD2/0/aging-v12i12-103381-supplementary-material-SD2.pdf"
+    }
+  },
+  "study_accession": "AGING_2020_LT_SERUM_PROTEOMICS",
+  "text_hashes": {
+    "article_text_sha256": "cd641feea91880df836f3f14615f40e6dfc2a8a2d55b548c5f9746e589df3ff6",
+    "supplementary_tables_text_sha256": "20ec0c1e1cb22b26d789641d2ea96c1b200ebf2ff479a1312086bf4942d7991b"
+  }
+}

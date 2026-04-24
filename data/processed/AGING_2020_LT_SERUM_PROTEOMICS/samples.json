@@ -1,0 +1,394 @@
+[
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC08",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 8"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC09",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 9"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "healthy_control",
+    "sample_accession": "HC10",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "healthy control serum sample 10"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST08",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 8"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST09",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 9"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "stable_post_transplant",
+    "sample_accession": "POST10",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "stable post transplant serum sample 10"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE08",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 8"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE09",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 9"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "pre_transplant_end_stage_liver_disease",
+    "sample_accession": "PRE10",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "pre transplant end stage liver disease serum sample 10"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR08",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 8"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR09",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 9"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "acute_rejection",
+    "sample_accession": "AR10",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "acute rejection serum sample 10"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL08",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 8"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "ischemic_type_biliary_lesion",
+    "sample_accession": "ITBL09",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "recipient_serum",
+    "title": "ischemic type biliary lesion serum sample 9"
+  }
+]

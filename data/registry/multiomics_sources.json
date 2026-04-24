@@ -22,10 +22,19 @@
           "evidence": "Repository README links to Zenodo as the zipped data download option."
         }
       ],
-      "omics_modalities": ["metabolomics", "microbiome"],
-      "sample_origins": ["stool"],
+      "omics_modalities": [
+        "metabolomics",
+        "microbiome"
+      ],
+      "sample_origins": [
+        "stool"
+      ],
       "organism": "Homo sapiens",
-      "transplant_context": ["liver_transplantation", "peri_transplant", "postoperative_infection"],
+      "transplant_context": [
+        "liver_transplantation",
+        "peri_transplant",
+        "postoperative_infection"
+      ],
       "reported_sample_scope": "107 liver transplantation patients with fecal metabolites correlated to microbiome composition, pathobiont expansion, and postoperative infection.",
       "database_value": [
         "Adds a true non-transcriptomic liver transplant evidence layer.",
@@ -80,10 +89,18 @@
           "evidence": "Public supplementary ZIP contains Table S4.xlsx together with figures and methods."
         }
       ],
-      "omics_modalities": ["metabolomics"],
-      "sample_origins": ["recipient_serum"],
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
       "organism": "Homo sapiens",
-      "transplant_context": ["liver_transplantation", "post_transplant", "graft_pathology"],
+      "transplant_context": [
+        "liver_transplantation",
+        "post_transplant",
+        "graft_pathology"
+      ],
       "reported_sample_scope": "55 post-liver-transplant serum samples spanning biopsy-confirmed TCMR, biliary complications, and post-transplant MASH.",
       "database_value": [
         "Adds a direct post-transplant serum metabolomics evidence layer rather than a reference atlas.",
@@ -133,10 +150,16 @@
           "evidence": "PRIDE project metadata describes mass spectrometry proteomic analysis of human liver cell compartments."
         }
       ],
-      "omics_modalities": ["proteomics"],
-      "sample_origins": ["reference_liver_cells"],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "reference_liver_cells"
+      ],
       "organism": "Homo sapiens",
-      "transplant_context": ["liver_reference_atlas"],
+      "transplant_context": [
+        "liver_reference_atlas"
+      ],
       "reported_sample_scope": "Reference human liver cell proteome; not a liver transplantation cohort.",
       "database_value": [
         "Provides protein-level context for hepatocyte and non-parenchymal liver cell programs.",
@@ -156,7 +179,78 @@
       "source_check": {
         "checked_at_utc": "2026-04-23T03:30:00Z",
         "checked_by": "Codex",
-        "evidence_urls": ["https://www.ebi.ac.uk/pride/archive/projects/PXD012615"]
+        "evidence_urls": [
+          "https://www.ebi.ac.uk/pride/archive/projects/PXD012615"
+        ]
+      }
+    },
+    {
+      "source_id": "AGING_2020_LT_SERUM_PROTEOMICS",
+      "source_type": "supplementary_table",
+      "title": "Serum proteomic biomarkers for acute rejection and biliary complications after liver transplantation",
+      "publication": {
+        "journal": "Aging (Albany NY)",
+        "year": 2020,
+        "pmid": "32673533",
+        "doi": "10.18632/aging.103381",
+        "url": "https://www.aging-us.com/article/103381/text"
+      },
+      "data_repositories": [
+        {
+          "repository": "Aging-US article",
+          "url": "https://www.aging-us.com/article/103381/text",
+          "evidence": "The full-text article identifies ACLY, FGA, and APOA1 as liver-transplant serum proteomic biomarkers and links peaks to proteins in Table 1."
+        },
+        {
+          "repository": "Supplementary Table PDF",
+          "url": "https://cdn.aging-us.com/article/103381/supplementary/SD2/0/aging-v12i12-103381-supplementary-material-SD2.pdf",
+          "evidence": "Supplementary Tables 2-4 provide published group mean plus SD peak intensities for perioperative, acute rejection, and ITBL comparisons."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "clinical_states": [
+        "stable_post_transplant",
+        "acute_rejection",
+        "ischemic_type_biliary_lesion",
+        "pre_transplant_end_stage_liver_disease",
+        "healthy_control"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "blood_based_complication_monitoring",
+        "acute_rejection",
+        "ischemic_type_biliary_lesion",
+        "perioperative_transplant_effectiveness"
+      ],
+      "reported_sample_scope": "Direct liver-transplant recipient serum proteomics biomarker cohort reconstructed from published MALDI-TOF peak summaries; contrasts are available for stable post-transplant versus acute rejection, stable post-transplant versus ITBL, and perioperative pre/post-transplant effectiveness contexts.",
+      "database_value": [
+        "Adds a transplant-specific proteomics layer instead of only liver-cell reference proteomics.",
+        "Supports non-invasive graft monitoring by exposing ACLY, FGA, and APOA1 serum biomarker evidence across rejection and biliary-complication contexts.",
+        "Provides direct post-transplant protein evidence that can be interpreted alongside blood RNA and serum metabolomics layers."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
+        "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
+        "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source labeled as published group-summary serum biomarker evidence rather than a full per-sample proteomics matrix.",
+        "Cross-link ACLY, FGA, and APOA1 with blood transcriptomic and serum metabolomic evidence in non-invasive monitoring views.",
+        "Replace with a richer direct proteomics cohort if a public per-sample transplant proteome matrix becomes reusable."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-24T04:15:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.aging-us.com/article/103381/text",
+          "https://cdn.aging-us.com/article/103381/supplementary/SD2/0/aging-v12i12-103381-supplementary-material-SD2.pdf"
+        ]
       }
     }
   ]

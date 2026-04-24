@@ -748,6 +748,81 @@
         return entries.length ? { id: entries[0][0], detail: entries[0][1] } : null;
       }
 
+      function formatNumber(value, digits = 3) {
+        if (value === null || value === undefined || value === "") return "n/a";
+        const numeric = Number(value);
+        if (Number.isNaN(numeric)) return String(value);
+        if (Math.abs(numeric) >= 100) return numeric.toFixed(1);
+        if (Math.abs(numeric) >= 1) return numeric.toFixed(digits);
+        return numeric.toPrecision(2);
+      }
+
+      function renderProteinEvidenceBlock(evidence, featureLabel, compact = false) {
+        const title = evidence.evidence_kind === "direct_transplant_protein_biomarker"
+          ? `Direct transplant proteomics evidence: ${evidence.study_accession}`
+          : `Protein reference evidence: ${evidence.study_accession}`;
+        if (evidence.cell_type_summary) {
+          const summaries = Object.entries(evidence.cell_type_summary || {});
+          const maxMean = Math.max(...summaries.map(([, item]) => item.mean_log2_intensity || 0), 1);
+          return `
+            <div class="${compact ? "mini" : "detail-block"}">
+              <h3>${title}</h3>
+              <p>${evidence.protein_name || evidence.gene_symbol} · ${evidence.primary_uniprot}</p>
+              <div class="summary">
+                ${tag(evidence.assay_scale)}
+                ${tag(evidence.sample_scope)}
+                ${tag(`best compartment: ${evidence.best_cell_type_by_mean_log2_intensity || "not detected"}`)}
+              </div>
+              ${summaries.map(([cellType, item]) => `
+                <div class="bar-row">
+                  <span>${cellType}</span>
+                  <div class="bar"><span style="width:${Math.max(4, ((item.mean_log2_intensity || 0) / maxMean) * 100)}%"></span></div>
+                  <span>${item.mean_log2_intensity ?? ""}</span>
+                </div>
+              `).join("")}
+              ${(evidence.limitations || []).length ? `<p class="muted">${evidence.limitations[0]}</p>` : ""}
+              ${compact ? `<div class="actions"><button type="button" onclick="setRoute('feature/${featureLabel}')">Open feature</button></div>` : ""}
+            </div>
+          `;
+        }
+
+        const contrasts = (evidence.published_contrasts || []).slice(0, compact ? 2 : 4);
+        const peaks = (evidence.mapped_peaks || []).slice(0, compact ? 2 : 3);
+        return `
+          <div class="${compact ? "mini" : "detail-block"}">
+            <h3>${title}</h3>
+            <p>${evidence.protein_name || evidence.gene_symbol} · ${evidence.primary_uniprot}</p>
+            <div class="summary">
+              ${tag(evidence.assay_scale)}
+              ${tag(evidence.sample_scope)}
+              ${tag(evidence.measurement_type || "protein biomarker")}
+              ${tag(evidence.summary_level || "group summary")}
+            </div>
+            <p>${evidence.study_title || ""}</p>
+            ${peaks.length ? `
+              <div class="summary">
+                ${peaks.map((peak) => tag(`${peak.context}: m/z ${peak.peak_mz}`)).join("")}
+              </div>
+            ` : ""}
+            ${contrasts.length ? `
+              <ul>
+                ${contrasts.map((contrast) => `
+                  <li>
+                    <strong>${contrast.context}</strong>:
+                    ${contrast.case_state} vs ${contrast.control_state},
+                    delta ${formatNumber(contrast.mean_difference)},
+                    p ${formatNumber(contrast.p_value)},
+                    BH ${formatNumber(contrast.adj_p_value_bh)}
+                  </li>
+                `).join("")}
+              </ul>
+            ` : `<p class="muted">No published contrast summary available.</p>`}
+            ${(evidence.limitations || []).length ? `<p class="muted">${evidence.limitations[0]}</p>` : ""}
+            ${compact ? `<div class="actions"><button type="button" onclick="setRoute('feature/${featureLabel}')">Open feature</button></div>` : ""}
+          </div>
+        `;
+      }
+
       async function loadStudies() {
         const params = new URLSearchParams();
         const query = document.getElementById("query").value.trim();
@@ -1121,28 +1196,8 @@
         panel.innerHTML = `
           <div class="evidence-panel">
             <h2>${data.feature} Protein Evidence</h2>
-            <p class="lead">${data.evidence_count} processed proteomics reference datasets with queryable protein evidence.</p>
-            ${data.protein_evidence.map((evidence) => {
-              const summaries = Object.entries(evidence.cell_type_summary || {});
-              const maxMean = Math.max(...summaries.map(([, item]) => item.mean_log2_intensity || 0), 1);
-              return `
-                <div class="mini">
-                  <strong>${evidence.study_accession}</strong>
-                  <span>${evidence.primary_uniprot} · ${evidence.protein_name || evidence.gene_symbol}</span>
-                  <span>best reference compartment: ${evidence.best_cell_type_by_mean_log2_intensity || "not detected"}</span>
-                  ${summaries.map(([cellType, item]) => `
-                    <div class="bar-row">
-                      <span>${cellType}</span>
-                      <div class="bar"><span style="width:${Math.max(4, ((item.mean_log2_intensity || 0) / maxMean) * 100)}%"></span></div>
-                      <span>${item.mean_log2_intensity ?? ""}</span>
-                    </div>
-                  `).join("")}
-                  <div class="actions">
-                    <button type="button" onclick="setRoute('feature/${data.feature}')">Open feature</button>
-                  </div>
-                </div>
-              `;
-            }).join("")}
+            <p class="lead">${data.evidence_count} processed proteomics datasets with queryable protein evidence, including direct transplant cohorts and contextual liver reference layers.</p>
+            ${data.protein_evidence.map((evidence) => renderProteinEvidenceBlock(evidence, data.feature, true)).join("")}
           </div>
         `;
       }
@@ -1294,6 +1349,7 @@
             <p class="lead">${source.reported_sample_scope}</p>
             <div class="summary">
               ${tag(source.local_status)}
+              ${(source.transplant_context || []).map(tag).join("")}
               ${source.omics_modalities.map(tag).join("")}
               ${source.sample_origins.map(tag).join("")}
               ${(source.clinical_states || []).map(tag).join("")}
@@ -1358,6 +1414,7 @@
               ${source.omics_modalities.includes("metabolomics") ? `<button type="button" onclick="routeMultiomicsFeature('DFI_MICROBIOME_LT_2024', 'metabolite', '12-oxochenodeoxycholic acid')">Example metabolite</button>` : ""}
               ${source.omics_modalities.includes("microbiome") ? `<button type="button" onclick="routeMultiomicsFeature('DFI_MICROBIOME_LT_2024', 'taxon', 'Enterococcus faecium')">Example taxon</button>` : ""}
               ${source.source_id === "PXD012615" ? `<button type="button" onclick="setRoute('feature/CYP3A4')">Example protein-linked feature</button>` : ""}
+              ${source.source_id === "AGING_2020_LT_SERUM_PROTEOMICS" ? `<button type="button" onclick="setRoute('feature/ACLY')">Example transplant proteomics feature</button>` : ""}
             </div>
           </div>
         `;
@@ -1513,29 +1570,7 @@
                   </div>
                 </div>
               `).join("")}
-              ${protein.protein_evidence.map((evidence) => {
-                const summaries = Object.entries(evidence.cell_type_summary || {});
-                const maxMean = Math.max(...summaries.map(([, item]) => item.mean_log2_intensity || 0), 1);
-                return `
-                  <div class="detail-block">
-                    <h3>Protein reference evidence: ${evidence.study_accession}</h3>
-                    <p>${evidence.protein_name || evidence.gene_symbol} · ${evidence.primary_uniprot}</p>
-                    <div class="summary">
-                      ${tag(evidence.assay_scale)}
-                      ${tag(evidence.sample_scope)}
-                      ${tag(`best compartment: ${evidence.best_cell_type_by_mean_log2_intensity || "not detected"}`)}
-                    </div>
-                    ${summaries.map(([cellType, item]) => `
-                      <div class="bar-row">
-                        <span>${cellType}</span>
-                        <div class="bar"><span style="width:${Math.max(4, ((item.mean_log2_intensity || 0) / maxMean) * 100)}%"></span></div>
-                        <span>${item.mean_log2_intensity ?? ""}</span>
-                      </div>
-                    `).join("")}
-                    ${(evidence.limitations || []).length ? `<p class="muted">${evidence.limitations[0]}</p>` : ""}
-                  </div>
-                `;
-              }).join("")}
+              ${protein.protein_evidence.map((evidence) => renderProteinEvidenceBlock(evidence, normalized, false)).join("")}
             </div>
           </div>
         `;

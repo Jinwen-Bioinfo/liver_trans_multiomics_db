@@ -595,12 +595,19 @@ def get_feature_protein(symbol: str) -> dict[str, Any]:
                 "study_title": study["title"],
                 "repository": study["repository"],
                 "repository_url": study["repository_url"],
+                "processing_status": study.get("processing_status"),
                 "assay_scale": protein_payload.get("assay_scale"),
                 "sample_scope": protein_payload.get("sample_scope"),
                 "limitations": protein_payload.get("limitations", []),
                 **feature,
             }
         )
+    evidence.sort(
+        key=lambda item: (
+            0 if item.get("evidence_kind") == "direct_transplant_protein_biomarker" else 1,
+            item.get("study_accession", ""),
+        )
+    )
     return {
         "feature": symbol_upper,
         "feature_type": "gene_or_protein",
