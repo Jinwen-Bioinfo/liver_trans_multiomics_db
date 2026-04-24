@@ -38,9 +38,9 @@ Current triage output:
 
 | Metric | Count |
 | --- | ---: |
-| Candidate records in triage registry | 900 |
-| P0 records | 6 |
-| P1 records | 99 |
+| Candidate records in triage registry | 904 |
+| P0 records | 8 |
+| P1 records | 100 |
 | Ready or already processed records | 105 |
 | Controlled-access metadata-only records | 22 |
 | Deferred adjacent/false-positive records | 373 |
@@ -62,6 +62,7 @@ The current database already has:
 
 - `PXD012615` as liver-cell proteome reference
 - `AGING_2020_LT_SERUM_PROTEOMICS` as direct transplant serum biomarker evidence
+- `IJMS_2022_LT_GRAFT_AKI_PROTEOMICS` as direct postreperfusion graft-tissue proteomics evidence for early AKI context
 
 The next highest-value proteomics source to pursue is:
 
@@ -71,6 +72,7 @@ The next highest-value proteomics source to pursue is:
 
 Notes:
 
+- `IJMS_2022_LT_GRAFT_AKI_PROTEOMICS` now gives us a direct tissue proteomics layer, which is much closer to graft injury biology than serum biomarker-only evidence.
 - This is not a rejection-diagnosis cohort; it is a baseline withdrawal-risk / tolerance cohort.
 - It should feed the blood-monitoring and operational-tolerance tracks, not be mislabeled as biopsy-defined TCMR evidence.
 - The ingest decision depends on whether `DataSheet1` contains reusable protein-level tables instead of figures only.

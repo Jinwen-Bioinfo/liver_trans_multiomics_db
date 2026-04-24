@@ -252,6 +252,71 @@
           "https://cdn.aging-us.com/article/103381/supplementary/SD2/0/aging-v12i12-103381-supplementary-material-SD2.pdf"
         ]
       }
+    },
+    {
+      "source_id": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+      "source_type": "supplementary_table",
+      "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
+      "publication": {
+        "journal": "International Journal of Molecular Sciences",
+        "year": 2022,
+        "pmid": "36293252",
+        "doi": "10.3390/ijms231911929",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/"
+      },
+      "data_repositories": [
+        {
+          "repository": "PMC article",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+          "evidence": "The full article reports postreperfusion liver graft proteomics comparing recipients with moderate/severe early AKI versus recipients without AKI after liver transplantation."
+        },
+        {
+          "repository": "PMC cached PDF",
+          "url": "https://rcastoragev2.blob.core.windows.net/5c2e5a699d6f5e790237713eacc60869/PMC9569532.pdf",
+          "evidence": "Table 2 in the public PDF lists differential proteins with UniProt accession, gene symbol, fold change, and p value."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "moderate_severe_early_aki",
+        "no_early_aki"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "postreperfusion_graft_biopsy",
+        "early_graft_injury",
+        "early_aki_after_liver_transplant"
+      ],
+      "reported_sample_scope": "Direct liver-transplant graft-tissue proteomics from postreperfusion biopsies, exposed as a published differential protein table for moderate/severe early AKI versus no early AKI.",
+      "database_value": [
+        "Adds direct graft-tissue transplant proteomics instead of only serum biomarker evidence or liver reference proteomes.",
+        "Supports injury-context interpretation with inflammatory, endothelial, protease, and lipoprotein signals such as SAA2, PLA2G2A, PECAM1, and APOA1.",
+        "Provides a tissue proteomics bridge between graft transcriptomics and blood-based multimodal monitoring layers."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
+        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json",
+        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+        "Use it to contextualize injury-versus-rejection interpretation, especially for innate inflammation and endothelial activation markers.",
+        "Replace or extend it if a reusable transplant proteomics matrix with sample-level abundances becomes public."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-24T07:05:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+          "https://rcastoragev2.blob.core.windows.net/5c2e5a699d6f5e790237713eacc60869/PMC9569532.pdf"
+        ]
+      }
     }
   ]
 }

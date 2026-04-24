@@ -1,0 +1,128 @@
+[
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "moderate_severe_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "AKI07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "moderate severe early aki graft biopsy sample 7"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI01",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI02",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI03",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI04",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI05",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI06",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 6"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "no_early_aki",
+    "collection_timepoint": "postreperfusion_liver_graft_biopsy",
+    "sample_accession": "NOAKI07",
+    "sample_id_origin": "synthetic_group_placeholder_from_published_counts",
+    "sample_origin": "graft_liver_biopsy",
+    "title": "no early aki graft biopsy sample 7"
+  }
+]

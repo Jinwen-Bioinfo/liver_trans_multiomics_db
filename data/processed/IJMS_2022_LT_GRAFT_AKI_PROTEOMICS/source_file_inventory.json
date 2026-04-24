@@ -1,0 +1,18 @@
+{
+  "files": [
+    {
+      "bytes": 10488062,
+      "label": "article_pdf",
+      "path": "data/raw/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/ijms_2022_lt_graft_aki_proteomics.pdf",
+      "sha256": "29709a38d275a5657340ddd42301fc8254f8a51a12ee70380c83a2fbaf725bb2"
+    },
+    {
+      "bytes": 117464,
+      "label": "layout_text",
+      "path": "data/raw/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/ijms_2022_lt_graft_aki_proteomics.layout.txt",
+      "sha256": "23f8aada389887b89e3d2df6dd7ce6fb61cd41b702f3e9299d139ca077674280"
+    }
+  ],
+  "generated_at_utc": "2026-04-24T07:00:37.809215+00:00",
+  "study_accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS"
+}

@@ -98,6 +98,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
         "scientific_value": ["acute rejection serum proteomics", "biliary complication biomarkers", "non-invasive graft monitoring"],
     },
+    "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS": {
+        "priority": "P1",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+        "scientific_value": ["ischemia/reperfusion-linked graft injury proteomics", "postreperfusion graft biopsy", "early AKI tissue proteomics"],
+    },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "priority": "P0",
         "triage_status": "processed_feature_ready",
@@ -146,6 +152,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["plasma_serum"],
         "clinical_states": ["TCMR_or_ACR", "post_transplant_biliary_complications"],
+    },
+    "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS": {
+        "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
+        "repository": "IJMS supplementary PDF table",
+        "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+        "source_type": "supplementary_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["graft_liver_biopsy"],
+        "clinical_states": ["ischemia_reperfusion", "early_aki_after_liver_transplant"],
     },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T05:56:30.887346+00:00",
+  "generated_at_utc": "2026-04-24T07:03:07.459629+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -12,14 +12,14 @@
     "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build."
   },
   "summary": {
-    "candidate_count": 903,
+    "candidate_count": 904,
     "status_counts": {
       "controlled_access_register_only": 22,
       "defer_false_positive_or_adjacent": 373,
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 2,
+      "processed_feature_ready": 3,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
@@ -28,7 +28,7 @@
     },
     "priority_counts": {
       "P0": 8,
-      "P1": 99,
+      "P1": 100,
       "P2": 401,
       "P3": 395
     },
@@ -39,12 +39,12 @@
       "methylation_cfDNA": 40,
       "microbiome": 42,
       "other": 3,
-      "proteomics": 164,
+      "proteomics": 165,
       "single_cell": 69,
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 107,
+    "p0_or_p1_count": 108,
     "ready_or_processed_count": 105
   },
   "priority_queue": [
@@ -6143,6 +6143,41 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+    },
+    {
+      "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+      "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
+      "repository": "IJMS supplementary PDF table",
+      "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "ischemia_reperfusion",
+        "early_aki_after_liver_transplant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "ischemia/reperfusion-linked graft injury proteomics",
+        "postreperfusion graft biopsy",
+        "early AKI tissue proteomics"
+      ],
+      "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GSE262273",

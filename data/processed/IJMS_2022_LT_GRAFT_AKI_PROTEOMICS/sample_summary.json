@@ -1,0 +1,19 @@
+{
+  "by_assay_modality": {
+    "proteomics": 14
+  },
+  "by_clinical_state": {
+    "moderate_severe_early_aki": 7,
+    "no_early_aki": 7
+  },
+  "by_sample_origin": {
+    "graft_liver_biopsy": 14
+  },
+  "generated_at_utc": "2026-04-24T07:00:37.809215+00:00",
+  "limitations": [
+    "Sample identifiers are synthetic placeholders generated from published group counts.",
+    "The public article exposes a differential protein table, not a reusable per-sample abundance matrix."
+  ],
+  "sample_count": 14,
+  "study_accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS"
+}

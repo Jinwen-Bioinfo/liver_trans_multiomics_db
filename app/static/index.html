@@ -1415,6 +1415,7 @@
               ${source.omics_modalities.includes("microbiome") ? `<button type="button" onclick="routeMultiomicsFeature('DFI_MICROBIOME_LT_2024', 'taxon', 'Enterococcus faecium')">Example taxon</button>` : ""}
               ${source.source_id === "PXD012615" ? `<button type="button" onclick="setRoute('feature/CYP3A4')">Example protein-linked feature</button>` : ""}
               ${source.source_id === "AGING_2020_LT_SERUM_PROTEOMICS" ? `<button type="button" onclick="setRoute('feature/ACLY')">Example transplant proteomics feature</button>` : ""}
+              ${source.source_id === "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" ? `<button type="button" onclick="setRoute('feature/SAA2')">Example graft proteomics feature</button>` : ""}
             </div>
           </div>
         `;

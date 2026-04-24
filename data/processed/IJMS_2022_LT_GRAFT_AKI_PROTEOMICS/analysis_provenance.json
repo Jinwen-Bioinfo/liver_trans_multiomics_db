@@ -1,0 +1,68 @@
+{
+  "generated_at_utc": "2026-04-24T07:00:37.809215+00:00",
+  "identifier_mapping_rule": "Used the article's published UniProt accession and gene symbol columns directly from Table 2.",
+  "limitations": [
+    "No public per-sample intensity matrix was available, so this source is exposed as published differential-table evidence.",
+    "The PDF layout parser may miss a minority of wrapped rows; the article-reported total differential count is retained separately for provenance.",
+    "The source addresses early AKI / graft injury context and should not be treated as a rejection-specific classifier."
+  ],
+  "methods": [
+    "Downloaded the public PDF for the IJMS 2022 liver-transplant graft proteomics article.",
+    "Converted the PDF to layout-preserving plain text with pdftotext -layout.",
+    "Parsed Table 2 differential protein rows from the published PDF text.",
+    "Represented the reported early AKI versus no AKI comparison as a direct transplant graft-tissue proteomics evidence layer.",
+    "Applied Benjamini-Hochberg correction across the extracted published p-values for the exposed feature table.",
+    "Generated synthetic sample placeholders from the published cohort counts because public per-sample identifiers were not reusable."
+  ],
+  "normalization_rule": "Used the article's published average fold-change ratios and reported p-values as-is; no re-normalization or raw-spectrum reprocessing was performed.",
+  "outputs": {
+    "cohort_summary": {
+      "bytes": 622,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/cohort_summary.json",
+      "sha256": "0e753f1cbe9a08f9386d4acfe8f6d714a44138ad2219baacd86fde31212cd51b"
+    },
+    "protein_features": {
+      "bytes": 230970,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json",
+      "sha256": "1ce1fb97b734b7f5c7649ff79bfe35e57d4e9130b305d83abf6f4ba0a6f20d5b"
+    },
+    "proteomics_summary": {
+      "bytes": 2693,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
+      "sha256": "8261f565bdaadd7730a94430eec8a26f1b365ce9658f5942e756445a6cea8a47"
+    },
+    "sample_summary": {
+      "bytes": 561,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/sample_summary.json",
+      "sha256": "0d89d6c31580a0d7aa17feed33f14affde4d5026999efea690a28d9df63b5428"
+    },
+    "samples": {
+      "bytes": 5127,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/samples.json",
+      "sha256": "f121f5ed4963fb1dbd7c90463a512d60e6e61517419f2c6e45709553efcfb924"
+    },
+    "source_file_inventory": {
+      "bytes": 639,
+      "path": "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/source_file_inventory.json",
+      "sha256": "a95684dfb851158c1fc992bee5e4d3d11143ae9adbcb9feb8e1226dfd755004d"
+    }
+  },
+  "parser": "scripts/ingest_ijms_2022_lt_graft_aki_proteomics.py",
+  "source_files": {
+    "article_pdf": {
+      "bytes": 10488062,
+      "path": "data/raw/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/ijms_2022_lt_graft_aki_proteomics.pdf",
+      "sha256": "29709a38d275a5657340ddd42301fc8254f8a51a12ee70380c83a2fbaf725bb2",
+      "url": "https://rcastoragev2.blob.core.windows.net/5c2e5a699d6f5e790237713eacc60869/PMC9569532.pdf"
+    },
+    "layout_text": {
+      "bytes": 117464,
+      "path": "data/raw/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/ijms_2022_lt_graft_aki_proteomics.layout.txt",
+      "sha256": "23f8aada389887b89e3d2df6dd7ce6fb61cd41b702f3e9299d139ca077674280"
+    }
+  },
+  "study_accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+  "text_hashes": {
+    "layout_text_sha256": "23f8aada389887b89e3d2df6dd7ce6fb61cd41b702f3e9299d139ca077674280"
+  }
+}
