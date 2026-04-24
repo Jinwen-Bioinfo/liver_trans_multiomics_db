@@ -437,6 +437,20 @@ def test_direct_graft_aki_protein_endpoint_returns_ijms2022_evidence() -> None:
     )
 
 
+def test_direct_renal_monitoring_protein_endpoint_returns_pxd062924_evidence() -> None:
+    response = client.get("/api/features/B2M/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["protein_evidence"] if item["study_accession"] == "PXD062924")
+    assert evidence["evidence_kind"] == "direct_transplant_protein_biomarker"
+    assert evidence["primary_uniprot"] == "P61769"
+    assert evidence["sample_scope"] == "recipient_serum_renal_function_monitoring"
+    assert any(
+        contrast["contrast_id"] == "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt"
+        for contrast in evidence["published_contrasts"]
+    )
+
+
 def test_protein_reference_downloads_are_available() -> None:
     response = client.get("/api/studies/PXD012615/downloads")
     assert response.status_code == 200
@@ -460,6 +474,28 @@ def test_direct_transplant_proteomics_downloads_are_available() -> None:
 
 def test_direct_graft_aki_proteomics_downloads_are_available() -> None:
     response = client.get("/api/studies/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "cohort_summary" in artifacts
+    assert "proteomics_summary" in artifacts
+    assert "protein_features" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
+def test_direct_renal_monitoring_study_detail_is_available() -> None:
+    response = client.get("/api/studies/PXD062924")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["processing_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_summary"]["sample_count"] == 10
+    assert payload["sample_summary"]["by_clinical_state"]["normal_kidney_function_post_lt"] == 5
+    assert payload["sample_summary"]["by_clinical_state"]["impaired_kidney_function_post_lt"] == 4
+
+
+def test_direct_renal_monitoring_proteomics_downloads_are_available() -> None:
+    response = client.get("/api/studies/PXD062924/downloads")
     assert response.status_code == 200
     artifacts = {item["artifact"] for item in response.json()["downloads"]}
     assert "samples" in artifacts
@@ -511,6 +547,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in proteome["processed_accessions"]
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in proteome["registered_accessions"]
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in proteome["processed_accessions"]
+    assert "PXD062924" in proteome["registered_accessions"]
+    assert "PXD062924" in proteome["processed_accessions"]
 
 
 def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
@@ -523,6 +561,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     assert "data/processed/PXD012615/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
+    assert "data/processed/PXD062924/protein_features.json" in proteome["current_artifacts"]
     assert metabolome["readiness"] == "processed_feature_ready"
     assert microbiome["readiness"] == "processed_feature_ready"
     assert proteome["readiness"] == "protein_feature_direct_and_reference_ready"
@@ -581,6 +620,17 @@ def test_multiomics_source_registry_exposes_direct_graft_aki_proteomics_layer() 
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in payload["processed_artifacts"]
 
 
+def test_multiomics_source_registry_exposes_direct_renal_monitoring_proteomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/PXD062924")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "repository_accession"
+    assert payload["local_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_origins"] == ["recipient_serum"]
+    assert "impaired_kidney_function_post_lt" in payload["clinical_states"]
+    assert "data/processed/PXD062924/protein_features.json" in payload["processed_artifacts"]
+
+
 def test_source_type_registry_includes_supplementary_tables() -> None:
     response = client.get("/api/source-types")
     assert response.status_code == 200
@@ -618,6 +668,15 @@ def test_dataset_triage_marks_donor_liver_quality_processed() -> None:
     payload = response.json()
     assert payload["triage_status"] == "processed_expression"
     assert "donor-liver quality RNA-seq evidence" in payload["next_action"]
+
+
+def test_dataset_triage_marks_pxd062924_processed_feature_ready() -> None:
+    response = client.get("/api/dataset-triage/PXD062924")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_feature_ready"
+    assert payload["priority"] == "P1"
+    assert "kidney-function monitoring" in payload["next_action"]
 
 
 def test_dataset_triage_marks_blood_monitoring_processed() -> None:
@@ -777,10 +836,12 @@ def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> Non
     assert "GSE200340" in payload["primary_datasets"]
     assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in payload["supporting_datasets"]
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in payload["supporting_datasets"]
+    assert "PXD062924" in payload["supporting_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE200340"
     assert any("185 pediatric" in line for line in payload["current_evidence"])
     assert any("55 post-transplant serum metabolomics" in line for line in payload["current_evidence"])
     assert any("ACLY, FGA, and APOA1" in line for line in payload["current_evidence"])
+    assert any("45 differential proteins" in line for line in payload["current_evidence"])
 
 
 def test_injury_vs_rejection_use_case_links_direct_transplant_proteomics() -> None:

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T07:03:07.459629+00:00",
+  "generated_at_utc": "2026-04-24T07:33:12.236659+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -19,17 +19,17 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 3,
+      "processed_feature_ready": 4,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
       "ready_to_ingest": 99,
-      "source_review_needed": 136
+      "source_review_needed": 135
     },
     "priority_counts": {
       "P0": 8,
-      "P1": 100,
-      "P2": 401,
+      "P1": 101,
+      "P2": 400,
       "P3": 395
     },
     "modality_counts": {
@@ -44,8 +44,8 @@
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 108,
-    "ready_or_processed_count": 105
+    "p0_or_p1_count": 109,
+    "ready_or_processed_count": 109
   },
   "priority_queue": [
     {
@@ -157,6 +157,76 @@
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
+      "accession": "AGING_2020_LT_SERUM_PROTEOMICS",
+      "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
+      "repository": "Aging-US supplementary",
+      "repository_url": "https://www.aging-us.com/article/103381/text",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_biliary_complications"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "acute rejection serum proteomics",
+        "biliary complication biomarkers",
+        "non-invasive graft monitoring"
+      ],
+      "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
+      "repository": "MDPI supplementary",
+      "repository_url": "https://doi.org/10.3390/metabo14050254",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_nash_fibrosis"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "direct post-transplant serum metabolomics",
+        "TCMR vs biliary vs MASH discrimination",
+        "non-invasive graft pathology biomarkers"
+      ],
+      "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
+      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
+    },
+    {
       "accession": "GDS3282",
       "title": "Liver transplantation tolerance: peripheral blood mononuclear cells",
       "repository": "GEO",
@@ -263,76 +333,6 @@
       ],
       "next_action": "Download GEO matrix and metadata; test acute cellular rejection contrasts as an independent transcriptome replication layer.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "AGING_2020_LT_SERUM_PROTEOMICS",
-      "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
-      "repository": "Aging-US supplementary",
-      "repository_url": "https://www.aging-us.com/article/103381/text",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_feature_ready",
-      "priority": "P0",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "post_transplant_biliary_complications"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "acute rejection serum proteomics",
-        "biliary complication biomarkers",
-        "non-invasive graft monitoring"
-      ],
-      "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
-      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
-    },
-    {
-      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
-      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
-      "repository": "MDPI supplementary",
-      "repository_url": "https://doi.org/10.3390/metabo14050254",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_feature_ready",
-      "priority": "P0",
-      "omics_modalities": [
-        "metabolomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "post_transplant_nash_fibrosis"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "direct post-transplant serum metabolomics",
-        "TCMR vs biliary vs MASH discrimination",
-        "non-invasive graft pathology biomarkers"
-      ],
-      "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
-      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     },
     {
       "accession": "GSE200340",
@@ -442,6 +442,79 @@
       ],
       "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+      "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
+      "repository": "IJMS supplementary PDF table",
+      "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "ischemia_reperfusion",
+        "early_aki_after_liver_transplant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "ischemia/reperfusion-linked graft injury proteomics",
+        "postreperfusion graft biopsy",
+        "early AKI tissue proteomics"
+      ],
+      "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD062924",
+      "title": "Metabolomic and Proteomic Analysis of Renal Function After Liver Transplantation",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "metabolomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20250526",
+      "discovered_via": [
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant metabolomics",
+        "OmicsDI:liver transplant proteomics",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "post-transplant renal dysfunction monitoring",
+        "direct serum proteomics",
+        "blood-based complication evidence after liver transplantation"
+      ],
+      "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
+      "triage_reason": "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
     },
     {
       "accession": "E-MTAB-11688",
@@ -2592,70 +2665,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE282186",
-      "title": "Gene expression profiling of colorectal cancer liver metastases from liver transplantation.",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE282186",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "not_curated"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE283907",
-      "title": "Changes of energy metabolism-related proteins before and after donor liver transplantation in patients with ischemia-reperfusion injury",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE283907",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "donor_liver"
-      ],
-      "clinical_states": [
-        "ischemia_reperfusion",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -2768,6 +2777,76 @@
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
+      "accession": "AGING_2020_LT_SERUM_PROTEOMICS",
+      "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
+      "repository": "Aging-US supplementary",
+      "repository_url": "https://www.aging-us.com/article/103381/text",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_biliary_complications"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "acute rejection serum proteomics",
+        "biliary complication biomarkers",
+        "non-invasive graft monitoring"
+      ],
+      "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
+      "repository": "MDPI supplementary",
+      "repository_url": "https://doi.org/10.3390/metabo14050254",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P0",
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_nash_fibrosis"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "direct post-transplant serum metabolomics",
+        "TCMR vs biliary vs MASH discrimination",
+        "non-invasive graft pathology biomarkers"
+      ],
+      "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
+      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
+    },
+    {
       "accession": "GDS3282",
       "title": "Liver transplantation tolerance: peripheral blood mononuclear cells",
       "repository": "GEO",
@@ -2874,76 +2953,6 @@
       ],
       "next_action": "Download GEO matrix and metadata; test acute cellular rejection contrasts as an independent transcriptome replication layer.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "AGING_2020_LT_SERUM_PROTEOMICS",
-      "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
-      "repository": "Aging-US supplementary",
-      "repository_url": "https://www.aging-us.com/article/103381/text",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_feature_ready",
-      "priority": "P0",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "post_transplant_biliary_complications"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "acute rejection serum proteomics",
-        "biliary complication biomarkers",
-        "non-invasive graft monitoring"
-      ],
-      "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
-      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
-    },
-    {
-      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
-      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
-      "repository": "MDPI supplementary",
-      "repository_url": "https://doi.org/10.3390/metabo14050254",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_feature_ready",
-      "priority": "P0",
-      "omics_modalities": [
-        "metabolomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "post_transplant_nash_fibrosis"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "direct post-transplant serum metabolomics",
-        "TCMR vs biliary vs MASH discrimination",
-        "non-invasive graft pathology biomarkers"
-      ],
-      "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
-      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     },
     {
       "accession": "GSE200340",
@@ -3053,6 +3062,79 @@
       ],
       "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+      "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
+      "repository": "IJMS supplementary PDF table",
+      "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "ischemia_reperfusion",
+        "early_aki_after_liver_transplant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "ischemia/reperfusion-linked graft injury proteomics",
+        "postreperfusion graft biopsy",
+        "early AKI tissue proteomics"
+      ],
+      "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD062924",
+      "title": "Metabolomic and Proteomic Analysis of Renal Function After Liver Transplantation",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "metabolomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20250526",
+      "discovered_via": [
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant metabolomics",
+        "OmicsDI:liver transplant proteomics",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "post-transplant renal dysfunction monitoring",
+        "direct serum proteomics",
+        "blood-based complication evidence after liver transplantation"
+      ],
+      "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
+      "triage_reason": "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
     },
     {
       "accession": "E-MTAB-11688",
@@ -6143,41 +6225,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
-      "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
-      "repository": "IJMS supplementary PDF table",
-      "repository_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9569532/",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_feature_ready",
-      "priority": "P1",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy"
-      ],
-      "clinical_states": [
-        "ischemia_reperfusion",
-        "early_aki_after_liver_transplant"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "ischemia/reperfusion-linked graft injury proteomics",
-        "postreperfusion graft biopsy",
-        "early AKI tissue proteomics"
-      ],
-      "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
-      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GSE262273",
@@ -9547,40 +9594,6 @@
       "publication_date": "20250224",
       "discovered_via": [
         "OmicsDI:liver transplant proteomics"
-      ],
-      "scientific_value": [],
-      "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
-    },
-    {
-      "accession": "PXD062924",
-      "title": "Metabolomic and Proteomic Analysis of Renal Function After Liver Transplantation",
-      "repository": "pride",
-      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
-      "accession_family": "PRIDE",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "source_review_needed",
-      "priority": "P2",
-      "omics_modalities": [
-        "metabolomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens (Human)"
-      ],
-      "publication_date": "20250526",
-      "discovered_via": [
-        "OmicsDI:liver transplant",
-        "OmicsDI:liver transplant metabolomics",
-        "OmicsDI:liver transplant proteomics",
-        "OmicsDI:liver transplantation"
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",

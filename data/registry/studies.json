@@ -611,6 +611,55 @@
         "ijms",
         "published differential table"
       ]
+    },
+    {
+      "accession": "PXD062924",
+      "repository": "Frontiers article / PRIDE",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
+      "title": "Metabolomic and proteomic analyses of renal function after liver transplantation",
+      "summary": "Direct liver-transplant serum proteomics evidence reconstructed from the Frontiers 2025 published differential protein table, comparing recipients with normal versus impaired kidney function after liver transplantation. This is blood-based post-transplant complication evidence with PRIDE linkage, but currently at the published differential-table level rather than a reusable per-sample proteomics matrix.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "transplant_phases": [
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "normal_kidney_function_post_lt",
+        "impaired_kidney_function_post_lt",
+        "recovered_kidney_function_post_lt"
+      ],
+      "public_access": "open_article_table_with_pride_accession",
+      "curation_status": "curated_publication_summary",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_article_table_qc_pass_no_public_sample_matrix",
+      "featured_genes": [
+        "B2M",
+        "AMBP",
+        "TF",
+        "APOA1",
+        "SLPI"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "innate_immunity",
+        "plasma_lipoprotein_remodeling",
+        "platelet_degranulation",
+        "heme_scavenging",
+        "scavenger_receptor_uptake"
+      ],
+      "keywords": [
+        "liver transplant",
+        "serum proteomics",
+        "renal dysfunction",
+        "kidney function monitoring",
+        "pride",
+        "frontiers"
+      ]
     }
   ]
 }

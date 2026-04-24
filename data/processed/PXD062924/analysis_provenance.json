@@ -1,0 +1,76 @@
+{
+  "generated_at_utc": "2026-04-24T07:30:33.601996+00:00",
+  "identifier_mapping_rule": "Used the article's published UniProt accession column and resolved each accession to a primary gene symbol via UniProt REST.",
+  "limitations": [
+    "The public article provides a differential protein table, not a full sample-by-protein abundance matrix.",
+    "Group labels reflect post-transplant kidney-function trajectories and should not be mislabeled as rejection outcomes.",
+    "The recovered patient is described qualitatively in the article but is not represented by a reusable protein table in this V1 ingestion layer."
+  ],
+  "methods": [
+    "Downloaded the Frontiers full-text article landing page for the PXD062924 study.",
+    "Parsed article tables with pandas.read_html and extracted Table 3 differential proteins plus Table 4 Reactome pathways.",
+    "Mapped UniProt accessions to primary gene symbols with the public UniProt REST API.",
+    "Represented the published Normal-KF versus Impaired-KF protein table as a direct post-transplant serum proteomics evidence layer.",
+    "Applied Benjamini-Hochberg correction across the article-reported protein p-values for database query exposure.",
+    "Generated synthetic patient placeholders from the published cohort counts because a reusable per-sample protein intensity matrix was not exposed in this V1 layer."
+  ],
+  "normalization_rule": "Used the article's published fold-change ratios and p-values exactly as reported; no re-normalization or PRIDE raw-spectrum reprocessing was performed.",
+  "outputs": {
+    "cohort_summary": {
+      "bytes": 819,
+      "path": "data/processed/PXD062924/cohort_summary.json",
+      "sha256": "cfe4857285b0dfceed6a1c915d44b0db403e085c70b3a98a62056875abec616a"
+    },
+    "protein_features": {
+      "bytes": 121102,
+      "path": "data/processed/PXD062924/protein_features.json",
+      "sha256": "e2e1a9f90f9cd5d4811492a5ae6ba6dd5a617c65631029c1553d88eaa6d63460"
+    },
+    "proteomics_summary": {
+      "bytes": 1615,
+      "path": "data/processed/PXD062924/proteomics_summary.json",
+      "sha256": "2ec78d49ddea99aef27c8b6e923663a8128cd26c891fdc22353298c2666f4c81"
+    },
+    "sample_summary": {
+      "bytes": 707,
+      "path": "data/processed/PXD062924/sample_summary.json",
+      "sha256": "3778ed2adf118ccdefb1b3f1f6a6b58816f051229209cf060c76edbea1a5eb04"
+    },
+    "samples": {
+      "bytes": 4045,
+      "path": "data/processed/PXD062924/samples.json",
+      "sha256": "e632f082b3286f6337af0c5bba724327a0491eea5ae057403093321a7520b91f"
+    },
+    "source_file_inventory": {
+      "bytes": 990,
+      "path": "data/processed/PXD062924/source_file_inventory.json",
+      "sha256": "05c959c0ae65f7cbc4de361a606e91377d474d57b4442c5afd3e0eb23f564883"
+    }
+  },
+  "parser": "scripts/ingest_pxd062924_lt_renal_function_proteomics.py",
+  "source_files": {
+    "article_html": {
+      "bytes": 812391,
+      "path": "data/raw/PXD062924/pxd062924_frontiers_article.html",
+      "sha256": "e839631bd4d25aefca3706b4abc0eb0e0fa628b054830e98ac61186bda1a1c66",
+      "url": "https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2025.1572852/full"
+    },
+    "pathway_table_tsv": {
+      "bytes": 1131,
+      "path": "data/raw/PXD062924/pxd062924_table4_pathways.tsv",
+      "sha256": "89432a736d562948328693e39597b8eb0981cf3844c70bcd5901e843b8e6b40a"
+    },
+    "protein_table_tsv": {
+      "bytes": 3134,
+      "path": "data/raw/PXD062924/pxd062924_table3_proteins.tsv",
+      "sha256": "798e1e3cfcc54017434006e36134843839e3c064ef14e1ecb5ce4682220d13ec"
+    },
+    "uniprot_mapping_tsv": {
+      "bytes": 7118,
+      "path": "data/raw/PXD062924/pxd062924_uniprot_mapping.tsv",
+      "sha256": "088a38d87ee5b4c6637251c7b789522e4578963aee77f8c42a7bf918efc9d58b",
+      "url": "https://rest.uniprot.org/uniprotkb/search"
+    }
+  },
+  "study_accession": "PXD062924"
+}

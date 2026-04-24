@@ -1,0 +1,92 @@
+[
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "normal_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "NKF01",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "normal kidney function post lt patient 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "normal_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "NKF02",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "normal kidney function post lt patient 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "normal_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "NKF03",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "normal kidney function post lt patient 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "normal_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "NKF04",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "normal kidney function post lt patient 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "normal_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "NKF05",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "normal kidney function post lt patient 5"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "impaired_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "IKF01",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "impaired kidney function post lt patient 1"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "impaired_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "IKF02",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "impaired kidney function post lt patient 2"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "impaired_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "IKF03",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "impaired kidney function post lt patient 3"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "impaired_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "IKF04",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "impaired kidney function post lt patient 4"
+  },
+  {
+    "assay_modality": "proteomics",
+    "clinical_state": "recovered_kidney_function_post_lt",
+    "collection_timepoint": "patient_level_average_of_week2_and_week5_serum_profiles",
+    "sample_accession": "RKF01",
+    "sample_id_origin": "synthetic_patient_placeholder_from_published_group_counts",
+    "sample_origin": "recipient_serum",
+    "title": "recovered kidney function post lt patient 1"
+  }
+]

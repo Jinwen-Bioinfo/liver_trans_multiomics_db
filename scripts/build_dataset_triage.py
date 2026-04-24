@@ -104,6 +104,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
         "scientific_value": ["ischemia/reperfusion-linked graft injury proteomics", "postreperfusion graft biopsy", "early AKI tissue proteomics"],
     },
+    "PXD062924": {
+        "priority": "P1",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
+        "scientific_value": ["post-transplant renal dysfunction monitoring", "direct serum proteomics", "blood-based complication evidence after liver transplantation"],
+    },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "priority": "P0",
         "triage_status": "processed_feature_ready",
@@ -162,6 +168,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["graft_liver_biopsy"],
         "clinical_states": ["ischemia_reperfusion", "early_aki_after_liver_transplant"],
+    },
+    "PXD062924": {
+        "title": "Metabolomic and proteomic analyses of renal function after liver transplantation",
+        "repository": "PRIDE",
+        "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
+        "source_type": "repository_accession",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics", "metabolomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["post_transplant_renal_dysfunction"],
     },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
@@ -313,12 +329,13 @@ def score_sort_key(item: dict[str, Any]) -> tuple[int, str, str]:
         "processed_expression": 2,
         "processed_single_cell_marker": 3,
         "processed_protein_reference": 4,
-        "ready_to_ingest": 5,
-        "source_review_needed": 6,
-        "manual_review_needed": 7,
-        "registered_reference": 8,
-        "controlled_access_register_only": 9,
-        "defer_false_positive_or_adjacent": 10,
+        "processed_feature_ready": 5,
+        "ready_to_ingest": 6,
+        "source_review_needed": 7,
+        "manual_review_needed": 8,
+        "registered_reference": 9,
+        "controlled_access_register_only": 10,
+        "defer_false_positive_or_adjacent": 11,
     }
     return (
         priority_order.get(item["priority"], 9),
@@ -367,6 +384,8 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
         return "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
+    if candidate.get("accession") == "PXD062924":
+        return "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
     if status.startswith("processed"):
         return "Already has local processed artifacts and is part of the current demo evidence layer."
     if status == "ready_to_ingest":
@@ -464,6 +483,7 @@ def main() -> None:
                     "processed_expression",
                     "processed_single_cell_marker",
                     "processed_protein_reference",
+                    "processed_feature_ready",
                 }
             ),
         },

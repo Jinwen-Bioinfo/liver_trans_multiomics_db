@@ -90,12 +90,14 @@
       "registered_accessions": [
         "PXD012615",
         "AGING_2020_LT_SERUM_PROTEOMICS",
-        "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS"
+        "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+        "PXD062924"
       ],
       "processed_accessions": [
         "PXD012615",
         "AGING_2020_LT_SERUM_PROTEOMICS",
-        "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS"
+        "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+        "PXD062924"
       ],
       "current_artifacts": [
         "data/processed/PXD012615/proteomics_summary.json",
@@ -103,7 +105,9 @@
         "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
         "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
         "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
-        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json"
+        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json",
+        "data/processed/PXD062924/proteomics_summary.json",
+        "data/processed/PXD062924/protein_features.json"
       ],
       "readiness": "protein_feature_direct_and_reference_ready"
     },

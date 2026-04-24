@@ -317,6 +317,72 @@
           "https://rcastoragev2.blob.core.windows.net/5c2e5a699d6f5e790237713eacc60869/PMC9569532.pdf"
         ]
       }
+    },
+    {
+      "source_id": "PXD062924",
+      "source_type": "repository_accession",
+      "title": "Metabolomic and proteomic analyses of renal function after liver transplantation",
+      "publication": {
+        "journal": "Frontiers in Transplantation",
+        "year": 2025,
+        "pmid": "39440014",
+        "doi": "10.3389/frtra.2025.1572852",
+        "url": "https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2025.1572852/full"
+      },
+      "data_repositories": [
+        {
+          "repository": "Frontiers article",
+          "url": "https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2025.1572852/full",
+          "evidence": "The article body exposes Table 3 with 45 differential serum proteins separating Normal-KF from Impaired-KF after liver transplantation, plus Table 4 Reactome pathway annotations."
+        },
+        {
+          "repository": "PRIDE",
+          "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD062924",
+          "evidence": "The article links the direct post-transplant LC-MS/MS cohort to PRIDE accession PXD062924, confirming a real public repository record even though this V1 layer uses the published article table rather than a reusable per-sample matrix."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "clinical_states": [
+        "normal_kidney_function_post_lt",
+        "impaired_kidney_function_post_lt",
+        "recovered_kidney_function_post_lt"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "blood_based_post_transplant_monitoring",
+        "post_transplant_renal_dysfunction",
+        "kidney_function_recovery_after_liver_transplant"
+      ],
+      "reported_sample_scope": "Direct liver-transplant recipient serum proteomics cohort with week-2 and week-5 post-transplant sampling, exposed in V1 as a published differential protein table for Normal-KF versus Impaired-KF plus a separately described recovered patient.",
+      "database_value": [
+        "Adds a direct post-transplant serum proteomics layer tied to renal dysfunction rather than only rejection or biliary complication evidence.",
+        "Extends blood-based monitoring with proteins such as B2M, AMBP, TF, APOA1, and SLPI that can be interpreted alongside blood RNA and serum metabolomics layers.",
+        "Creates a bridge between transplant complication monitoring and PRIDE-linked proteomics provenance without overstating access to a full sample-by-protein matrix."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/PXD062924/proteomics_summary.json",
+        "data/processed/PXD062924/protein_features.json",
+        "data/processed/PXD062924/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source framed as published serum differential-table evidence rather than a reusable per-sample proteomics matrix.",
+        "Cross-link renal-dysfunction proteins such as B2M and AMBP with blood monitoring views without labeling them as rejection-specific biomarkers.",
+        "If a reusable processed intensity matrix becomes accessible from PRIDE or supplementary files, upgrade this source from article-table evidence to sample-level proteomics."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-24T07:35:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2025.1572852/full",
+          "https://www.ebi.ac.uk/pride/archive/projects/PXD062924"
+        ]
+      }
     }
   ]
 }

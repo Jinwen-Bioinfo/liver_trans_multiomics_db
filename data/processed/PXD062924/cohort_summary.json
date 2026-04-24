@@ -1,0 +1,19 @@
+{
+  "clinical_group_counts": {
+    "impaired_kidney_function_post_lt": 4,
+    "normal_kidney_function_post_lt": 5,
+    "recovered_kidney_function_post_lt": 1
+  },
+  "comparison_patient_count": 9,
+  "generated_at_utc": "2026-04-24T07:30:33.601996+00:00",
+  "limitations": [
+    "Sample identifiers are synthetic patient placeholders generated from published group counts.",
+    "The public article collected serum at week 2 and week 5 post-transplant, but the exposed comparison is interpreted at the patient-group level rather than as a reusable per-sample intensity matrix."
+  ],
+  "patient_count": 10,
+  "protein_feature_count": 45,
+  "reported_differential_protein_count": 45,
+  "reported_longitudinal_serum_collection_count": 20,
+  "reported_total_quantified_protein_count": 174,
+  "study_accession": "PXD062924"
+}

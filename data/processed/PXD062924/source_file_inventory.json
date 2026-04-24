@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "bytes": 812391,
+      "label": "article_html",
+      "path": "data/raw/PXD062924/pxd062924_frontiers_article.html",
+      "sha256": "e839631bd4d25aefca3706b4abc0eb0e0fa628b054830e98ac61186bda1a1c66"
+    },
+    {
+      "bytes": 3134,
+      "label": "protein_table_tsv",
+      "path": "data/raw/PXD062924/pxd062924_table3_proteins.tsv",
+      "sha256": "798e1e3cfcc54017434006e36134843839e3c064ef14e1ecb5ce4682220d13ec"
+    },
+    {
+      "bytes": 1131,
+      "label": "pathway_table_tsv",
+      "path": "data/raw/PXD062924/pxd062924_table4_pathways.tsv",
+      "sha256": "89432a736d562948328693e39597b8eb0981cf3844c70bcd5901e843b8e6b40a"
+    },
+    {
+      "bytes": 7118,
+      "label": "uniprot_mapping_tsv",
+      "path": "data/raw/PXD062924/pxd062924_uniprot_mapping.tsv",
+      "sha256": "088a38d87ee5b4c6637251c7b789522e4578963aee77f8c42a7bf918efc9d58b"
+    }
+  ],
+  "generated_at_utc": "2026-04-24T07:30:33.601996+00:00",
+  "study_accession": "PXD062924"
+}

@@ -1,0 +1,2848 @@
+{
+  "assay_modality": "proteomics",
+  "assay_scale": "published_average_abundance_log2_ratio",
+  "generated_at_utc": "2026-04-24T07:30:33.601996+00:00",
+  "limitations": [
+    "This source exposes a published serum proteomics differential table, not a reusable per-sample abundance matrix.",
+    "The article reports two longitudinal serum collections per patient, but this V1 protein layer is intentionally framed as a patient-group comparison between Normal-KF and Impaired-KF.",
+    "The main biological signal is post-transplant renal dysfunction monitoring rather than biopsy-defined rejection diagnosis."
+  ],
+  "protein_count": 45,
+  "proteins": {
+    "A1BG": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "A1BG",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P04217",
+      "protein_name": "Alpha-1B-glycoprotein (Alpha-1-B glycoprotein)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.378512,
+          "p_value": 0.0318,
+          "published_fold_change_average_value": 1.3
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Alpha-1B-glycoprotein",
+        "article_table_label": "Table 3",
+        "peptide_count": 16,
+        "reactome_pathway_indexes": [
+          3,
+          4,
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          },
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "AHSG": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "AHSG",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02765",
+      "protein_name": "Alpha-2-HS-glycoprotein (Alpha-2-Z-globulin) (Ba-alpha-2-glycoprotein) (Fetuin-A) [Cleaved into: Alpha-2-HS-glycoprotein chain A; Alpha-2-HS-glycoprotein chain B]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0249577,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.669027,
+          "p_value": 0.0068,
+          "published_fold_change_average_value": 1.59
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Alpha-2-HS-glycoprotein",
+        "article_table_label": "Table 3",
+        "peptide_count": 13,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          3,
+          4,
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          },
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "ALB": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "ALB",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02768",
+      "protein_name": "Albumin",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0433929,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.411426,
+          "p_value": 0.0405,
+          "published_fold_change_average_value": 1.33
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Albumin",
+        "article_table_label": "Table 3",
+        "peptide_count": 34,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          10
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          },
+          {
+            "entities_fdr": 0.00219,
+            "entities_found": 5,
+            "entities_p_value": 3.78e-05,
+            "entities_total": 99,
+            "pathway_id": "R-HSA-2168880",
+            "pathway_index": 5,
+            "pathway_name": "Scavenging of heme from plasma"
+          },
+          {
+            "entities_fdr": 0.00535,
+            "entities_found": 5,
+            "entities_p_value": 0.00013,
+            "entities_total": 129,
+            "pathway_id": "R-HSA-2173782",
+            "pathway_index": 7,
+            "pathway_name": "Binding and Uptake of Ligands by Scavenger Receptors"
+          },
+          {
+            "entities_fdr": 0.00968,
+            "entities_found": 3,
+            "entities_p_value": 0.000334,
+            "entities_total": 35,
+            "pathway_id": "R-HSA-8963899",
+            "pathway_index": 10,
+            "pathway_name": "Plasma lipoprotein remodeling"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "AMBP": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "AMBP",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02760",
+      "protein_name": "Protein AMBP (Protein HC) [Cleaved into: Alpha-1-microglobulin (EC 1.6.2.-) (Alpha-1 microglycoprotein) (Complex-forming glycoprotein heterogeneous in charge); Inter-alpha-trypsin inhibitor light chain (ITI-LC) (Bikunin) (EDC1) (HI-30) (Uronic-acid-rich protein); Trypstatin]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_impaired_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": -0.599462,
+          "p_value": 0.0378,
+          "published_fold_change_average_value": 0.66
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Protein AMBP",
+        "article_table_label": "Table 3",
+        "peptide_count": 12,
+        "reactome_pathway_indexes": [
+          5,
+          7
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00219,
+            "entities_found": 5,
+            "entities_p_value": 3.78e-05,
+            "entities_total": 99,
+            "pathway_id": "R-HSA-2168880",
+            "pathway_index": 5,
+            "pathway_name": "Scavenging of heme from plasma"
+          },
+          {
+            "entities_fdr": 0.00535,
+            "entities_found": 5,
+            "entities_p_value": 0.00013,
+            "entities_total": 129,
+            "pathway_id": "R-HSA-2173782",
+            "pathway_index": 7,
+            "pathway_name": "Binding and Uptake of Ligands by Scavenger Receptors"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "APCS": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "APCS",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02743",
+      "protein_name": "Serum amyloid P-component (SAP) (9.5S alpha-1-glycoprotein) [Cleaved into: Serum amyloid P-component(1-203)]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.485427,
+          "p_value": 0.0308,
+          "published_fold_change_average_value": 1.4
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Serum amyloid P-component",
+        "article_table_label": "Table 3",
+        "peptide_count": 6,
+        "reactome_pathway_indexes": [
+          9
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 4,
+            "entities_p_value": 0.000261,
+            "entities_total": 81,
+            "pathway_id": "R-HSA-977225",
+            "pathway_index": 9,
+            "pathway_name": "Amyloid fiber formation"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "APOA1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "APOA1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02647",
+      "protein_name": "Apolipoprotein A-I (Apo-AI) (ApoA-I) (Apolipoprotein A1) [Cleaved into: Proapolipoprotein A-I (ProapoA-I); Truncated apolipoprotein A-I (Apolipoprotein A-I(1-242))]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.475085,
+          "p_value": 0.0308,
+          "published_fold_change_average_value": 1.39
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Apolipoprotein A-I",
+        "article_table_label": "Table 3",
+        "peptide_count": 17,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          7,
+          9,
+          10
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          },
+          {
+            "entities_fdr": 0.00219,
+            "entities_found": 5,
+            "entities_p_value": 3.78e-05,
+            "entities_total": 99,
+            "pathway_id": "R-HSA-2168880",
+            "pathway_index": 5,
+            "pathway_name": "Scavenging of heme from plasma"
+          },
+          {
+            "entities_fdr": 0.00535,
+            "entities_found": 5,
+            "entities_p_value": 0.00013,
+            "entities_total": 129,
+            "pathway_id": "R-HSA-2173782",
+            "pathway_index": 7,
+            "pathway_name": "Binding and Uptake of Ligands by Scavenger Receptors"
+          },
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 4,
+            "entities_p_value": 0.000261,
+            "entities_total": 81,
+            "pathway_id": "R-HSA-977225",
+            "pathway_index": 9,
+            "pathway_name": "Amyloid fiber formation"
+          },
+          {
+            "entities_fdr": 0.00968,
+            "entities_found": 3,
+            "entities_p_value": 0.000334,
+            "entities_total": 35,
+            "pathway_id": "R-HSA-8963899",
+            "pathway_index": 10,
+            "pathway_name": "Plasma lipoprotein remodeling"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "APOA2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "APOA2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02652",
+      "protein_name": "Apolipoprotein A-II (Apo-AII) (ApoA-II) (Apolipoprotein A2) [Cleaved into: Proapolipoprotein A-II (ProapoA-II); Truncated apolipoprotein A-II (Apolipoprotein A-II(1-76))]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.02376,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.731183,
+          "p_value": 0.00463,
+          "published_fold_change_average_value": 1.66
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Apolipoprotein A-II",
+        "article_table_label": "Table 3",
+        "peptide_count": 4,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          10
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00968,
+            "entities_found": 3,
+            "entities_p_value": 0.000334,
+            "entities_total": 35,
+            "pathway_id": "R-HSA-8963899",
+            "pathway_index": 10,
+            "pathway_name": "Plasma lipoprotein remodeling"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "APOL1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "APOL1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "O14791",
+      "protein_name": "Apolipoprotein L1 (Apolipoprotein L) (Apo-L) (ApoL) (Apolipoprotein L-I) (ApoL-I)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0438,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.584963,
+          "p_value": 0.0438,
+          "published_fold_change_average_value": 1.5
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Apolipoprotein L1",
+        "article_table_label": "Table 3",
+        "peptide_count": 6,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          5,
+          7
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00219,
+            "entities_found": 5,
+            "entities_p_value": 3.78e-05,
+            "entities_total": 99,
+            "pathway_id": "R-HSA-2168880",
+            "pathway_index": 5,
+            "pathway_name": "Scavenging of heme from plasma"
+          },
+          {
+            "entities_fdr": 0.00535,
+            "entities_found": 5,
+            "entities_p_value": 0.00013,
+            "entities_total": 129,
+            "pathway_id": "R-HSA-2173782",
+            "pathway_index": 7,
+            "pathway_name": "Binding and Uptake of Ligands by Scavenger Receptors"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "B2M": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "B2M",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P61769",
+      "protein_name": "Beta-2-microglobulin [Cleaved into: Beta-2-microglobulin form pI 5.3]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.01008,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_impaired_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": -1.32193,
+          "p_value": 0.00104,
+          "published_fold_change_average_value": 0.4
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Beta-2-microglobulin",
+        "article_table_label": "Table 3",
+        "peptide_count": 3,
+        "reactome_pathway_indexes": [
+          6,
+          9
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          },
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 4,
+            "entities_p_value": 0.000261,
+            "entities_total": 81,
+            "pathway_id": "R-HSA-977225",
+            "pathway_index": 9,
+            "pathway_name": "Amyloid fiber formation"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "CFH": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "CFH",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P08603",
+      "protein_name": "Complement factor H (H factor 1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.432959,
+          "p_value": 0.0377,
+          "published_fold_change_average_value": 1.35
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Complement factor H",
+        "article_table_label": "Table 3",
+        "peptide_count": 40,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "CNGB3": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "CNGB3",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q9NQW8",
+      "protein_name": "Cyclic nucleotide-gated channel beta-3 (CNG channel beta-3) (Cone photoreceptor cGMP-gated channel subunit beta) (Cyclic nucleotide-gated cation channel beta-3) (Cyclic nucleotide-gated cation channel modulatory subunit)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0249577,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.505891,
+          "p_value": 0.00721,
+          "published_fold_change_average_value": 1.42
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Cyclic nucleotide-gated cation channel beta-3",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "CP": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "CP",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P00450",
+      "protein_name": "Ceruloplasmin (Cuproxidase ceruloplasmin) (EC 1.16.3.4) (Ferroxidase ceruloplasmin) (EC 1.16.3.1) (Glutathione peroxidase ceruloplasmin) (EC 1.11.1.9) (Glutathione-dependent peroxiredoxin ceruloplasmin) (EC 1.11.1.27)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0339,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.790772,
+          "p_value": 0.0113,
+          "published_fold_change_average_value": 1.73
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Ceruloplasmin",
+        "article_table_label": "Table 3",
+        "peptide_count": 39,
+        "reactome_pathway_indexes": [
+          1,
+          2
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "FCN3": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "FCN3",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "O75636",
+      "protein_name": "Ficolin-3 (Collagen/fibrinogen domain-containing lectin 3 p35) (Collagen/fibrinogen domain-containing protein 3) (H-ficolin) (Hakata antigen)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.02376,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.575312,
+          "p_value": 0.00321,
+          "published_fold_change_average_value": 1.49
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Ficolin-3",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "FETUB": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "FETUB",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q9UGM5",
+      "protein_name": "Fetuin-B (16G2) (Fetuin-like protein IRL685) (Gugu)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.02376,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.713696,
+          "p_value": 0.00528,
+          "published_fold_change_average_value": 1.64
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Fetuin-B",
+        "article_table_label": "Table 3",
+        "peptide_count": 2,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "GBP1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "GBP1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P32455",
+      "protein_name": "Guanylate-binding protein 1 (EC 3.6.1.-) (EC 3.6.5.-) (GTP-binding protein 1) (GBP-1) (HuGBP-1) (hGBP1) (Guanine nucleotide-binding protein 1) (Interferon-induced guanylate-binding protein 1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0438,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.356144,
+          "p_value": 0.0423,
+          "published_fold_change_average_value": 1.28
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Guanylate-binding protein 1",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "GC": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "GC",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02774",
+      "protein_name": "Vitamin D-binding protein (DBP) (VDB) (Gc protein-derived macrophage activating factor) (Gc-MAF) (GcMAF) (Gc-globulin) (Group-specific component) (Gc) (Vitamin D-binding protein-macrophage activating factor) (DBP-maf)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.389567,
+          "p_value": 0.0293,
+          "published_fold_change_average_value": 1.31
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Vitamin D-binding protein",
+        "article_table_label": "Table 3",
+        "peptide_count": 25,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "GSN": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "GSN",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P06396",
+      "protein_name": "Gelsolin (AGEL) (Actin-depolymerizing factor) (ADF) (Brevin)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0407045,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.555816,
+          "p_value": 0.0183,
+          "published_fold_change_average_value": 1.47
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Gelsolin",
+        "article_table_label": "Table 3",
+        "peptide_count": 20,
+        "reactome_pathway_indexes": [
+          6,
+          9
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          },
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 4,
+            "entities_p_value": 0.000261,
+            "entities_total": 81,
+            "pathway_id": "R-HSA-977225",
+            "pathway_index": 9,
+            "pathway_name": "Amyloid fiber formation"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "HABP2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "HABP2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q14520",
+      "protein_name": "Factor VII-activating protease (FSAP) (EC 3.4.21.-) (FVII activator) (Hepatocyte growth factor activator-like protein) (Hyaluronan-binding protein 2) (Plasma hyaluronan-binding protein) (PHBP) (Plasma hyaluronan-binding serine protease) (PHBSP) [Cleaved into: Factor VII-activating protease 50 kDa N-terminal heavy chain; Factor VII-activating protease 50 kDa N-terminal heavy chain alternate form; Factor VII-activating protease 27 kDa C-terminal light chain; Factor VII-activating protease 27 kDa C-terminal light chain alternate form]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.389567,
+          "p_value": 0.031,
+          "published_fold_change_average_value": 1.31
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Hyaluronan-binding protein 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "IGFALS": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "IGFALS",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P35858",
+      "protein_name": "Insulin-like growth factor-binding protein complex acid labile subunit (ALS)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0407045,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.411426,
+          "p_value": 0.0193,
+          "published_fold_change_average_value": 1.33
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Insulin-like growth factor-binding protein complex acid labile subunit",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          1
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "IGHG2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "IGHG2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P01859",
+      "protein_name": "Immunoglobulin heavy constant gamma 2 (Ig gamma-2 chain C region) (Ig gamma-2 chain C region DOT) (Ig gamma-2 chain C region TIL) (Ig gamma-2 chain C region ZIE)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.02376,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.713696,
+          "p_value": 0.00481,
+          "published_fold_change_average_value": 1.64
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Immunoglobulin heavy constant gamma 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 2,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "IGKC": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "IGKC",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P01834",
+      "protein_name": "Immunoglobulin kappa constant (Ig kappa chain C region) (Ig kappa chain C region AG) (Ig kappa chain C region CUM) (Ig kappa chain C region EU) (Ig kappa chain C region OU) (Ig kappa chain C region ROY) (Ig kappa chain C region TI)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.678072,
+          "p_value": 0.0334,
+          "published_fold_change_average_value": 1.6
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Immunoglobulin kappa constant",
+        "article_table_label": "Table 3",
+        "peptide_count": 5,
+        "reactome_pathway_indexes": [
+          5,
+          6,
+          7
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00219,
+            "entities_found": 5,
+            "entities_p_value": 3.78e-05,
+            "entities_total": 99,
+            "pathway_id": "R-HSA-2168880",
+            "pathway_index": 5,
+            "pathway_name": "Scavenging of heme from plasma"
+          },
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          },
+          {
+            "entities_fdr": 0.00535,
+            "entities_found": 5,
+            "entities_p_value": 0.00013,
+            "entities_total": 129,
+            "pathway_id": "R-HSA-2173782",
+            "pathway_index": 7,
+            "pathway_name": "Binding and Uptake of Ligands by Scavenger Receptors"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "KLKB1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "KLKB1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P03952",
+      "protein_name": "Plasma kallikrein (EC 3.4.21.34) (Fletcher factor) (Kininogenin) (Plasma prekallikrein) (PKK) [Cleaved into: Plasma kallikrein heavy chain; Plasma kallikrein light chain]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0407045,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.389567,
+          "p_value": 0.0199,
+          "published_fold_change_average_value": 1.31
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Plasma kallikrein",
+        "article_table_label": "Table 3",
+        "peptide_count": 6,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "MAST2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MAST2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q6P0Q8",
+      "protein_name": "Microtubule-associated serine/threonine-protein kinase 2 (EC 2.7.11.1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.432959,
+          "p_value": 0.0313,
+          "published_fold_change_average_value": 1.35
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Microtubule-associated serine/threonine-protein kinase 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "MLEC": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MLEC",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q14165",
+      "protein_name": "Malectin",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0407045,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.356144,
+          "p_value": 0.0193,
+          "published_fold_change_average_value": 1.28
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Malectin",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "MST1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MST1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P26927",
+      "protein_name": "Hepatocyte growth factor-like protein (Macrophage stimulatory protein) (Macrophage-stimulating protein) (MSP) [Cleaved into: Hepatocyte growth factor-like protein alpha chain; Hepatocyte growth factor-like protein beta chain]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0367941,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.475085,
+          "p_value": 0.0136,
+          "published_fold_change_average_value": 1.39
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Hepatocyte growth factor-like protein",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "MUC17": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MUC17",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q685J3",
+      "protein_name": "Mucin-17 (MUC-17) (Small intestinal mucin-3) (MUC-3)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.367371,
+          "p_value": 0.0295,
+          "published_fold_change_average_value": 1.29
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Mucin-17",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "MYO5B": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MYO5B",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q9ULV0",
+      "protein_name": "Unconventional myosin-Vb",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0367941,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.604071,
+          "p_value": 0.0139,
+          "published_fold_change_average_value": 1.52
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Unconventional myosin-Vb",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "NFE2L2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "NFE2L2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q16236",
+      "protein_name": "Nuclear factor erythroid 2-related factor 2 (NF-E2-related factor 2) (NFE2-related factor 2) (Nrf-2) (Nuclear factor, erythroid derived 2, like 2)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0428049,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.411426,
+          "p_value": 0.039,
+          "published_fold_change_average_value": 1.33
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Nuclear factor erythroid 2-related factor 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "P0DOX5": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "P0DOX5",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P0DOX5",
+      "protein_name": "Immunoglobulin gamma-1 heavy chain (Immunoglobulin gamma-1 heavy chain NIE)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.879706,
+          "p_value": 0.0237,
+          "published_fold_change_average_value": 1.84
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Immunoglobulin gamma-1 heavy chain",
+        "article_table_label": "Table 3",
+        "peptide_count": 12,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "PDZD2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PDZD2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "O15018",
+      "protein_name": "PDZ domain-containing protein 2 (Activated in prostate cancer protein) (PDZ domain-containing protein 3) [Cleaved into: Processed PDZ domain-containing protein 2]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.00945,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.650765,
+          "p_value": 0.00021,
+          "published_fold_change_average_value": 1.57
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "PDZ domain-containing protein 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "PIEZO1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PIEZO1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q92508",
+      "protein_name": "Piezo-type mechanosensitive ion channel component 1 (Membrane protein induced by beta-amyloid treatment) (Mib) (Protein FAM38A)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.378512,
+          "p_value": 0.0367,
+          "published_fold_change_average_value": 1.3
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Piezo-type mechanosensitive ion channel component 1",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "PON1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PON1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P27169",
+      "protein_name": "Serum paraoxonase/arylesterase 1 (PON 1) (EC 3.1.1.2) (EC 3.1.1.81) (EC 3.1.8.1) (Aromatic esterase 1) (A-esterase 1) (K-45) (Serum aryldialkylphosphatase 1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.695994,
+          "p_value": 0.0376,
+          "published_fold_change_average_value": 1.62
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Serum paraoxonase/arylesterase 1",
+        "article_table_label": "Table 3",
+        "peptide_count": 11,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "PTGDS": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PTGDS",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P41222",
+      "protein_name": "Prostaglandin-H2 D-isomerase (EC 5.3.99.2) (Beta-trace protein) (Cerebrin-28) (Glutathione-independent PGD synthase) (Lipocalin-type prostaglandin-D synthase) (L-PGDS) (Prostaglandin-D2 synthase) (PGD2 synthase) (PGDS) (PGDS2)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0339,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.356144,
+          "p_value": 0.0109,
+          "published_fold_change_average_value": 1.28
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Prostaglandin-H2 D-isomerase",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "PZP": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PZP",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P20742",
+      "protein_name": "Pregnancy zone protein (C3 and PZP-like alpha-2-macroglobulin domain-containing protein 6)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.594549,
+          "p_value": 0.0291,
+          "published_fold_change_average_value": 1.51
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Pregnancy zone protein",
+        "article_table_label": "Table 3",
+        "peptide_count": 2,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "S100A8": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "S100A8",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P05109",
+      "protein_name": "Protein S100-A8 (Calgranulin-A) (Calprotectin L1L subunit) (Cystic fibrosis antigen) (CFAG) (Leukocyte L1 complex light chain) (Migration inhibitory factor-related protein 8) (MRP-8) (p8) (S100 calcium-binding protein A8) (Urinary stone protein band A)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0438,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.863938,
+          "p_value": 0.0438,
+          "published_fold_change_average_value": 1.82
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Protein S100-A8",
+        "article_table_label": "Table 3",
+        "peptide_count": 2,
+        "reactome_pathway_indexes": [
+          6,
+          8
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          },
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 2,
+            "entities_p_value": 0.000251,
+            "entities_total": 6,
+            "pathway_id": "R-HSA-6799990",
+            "pathway_index": 8,
+            "pathway_name": "Metal sequestration by antimicrobial proteins"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "S100A9": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "S100A9",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P06702",
+      "protein_name": "Protein S100-A9 (Calgranulin-B) (Calprotectin L1H subunit) (Leukocyte L1 complex heavy chain) (Migration inhibitory factor-related protein 14) (MRP-14) (p14) (S100 calcium-binding protein A9)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.454176,
+          "p_value": 0.0262,
+          "published_fold_change_average_value": 1.37
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Protein S100-A9",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          6,
+          8
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          },
+          {
+            "entities_fdr": 0.00835,
+            "entities_found": 2,
+            "entities_p_value": 0.000251,
+            "entities_total": 6,
+            "pathway_id": "R-HSA-6799990",
+            "pathway_index": 8,
+            "pathway_name": "Metal sequestration by antimicrobial proteins"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "SEC16A": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "SEC16A",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "O15027",
+      "protein_name": "Protein transport protein Sec16A (SEC16 homolog A) (p250)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.01008,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.807355,
+          "p_value": 0.00112,
+          "published_fold_change_average_value": 1.75
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Protein transport protein Sec16A",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "SERPINA6": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "SERPINA6",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P08185",
+      "protein_name": "Corticosteroid-binding globulin (CBG) (Serpin A6) (Transcortin)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.464668,
+          "p_value": 0.0269,
+          "published_fold_change_average_value": 1.38
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Corticosteroid-binding globulin",
+        "article_table_label": "Table 3",
+        "peptide_count": 10,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "SERPIND1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "SERPIND1",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P05546",
+      "protein_name": "Heparin cofactor 2 (Heparin cofactor II) (HC-II) (Protease inhibitor leuserpin-2) (HLS2) (Serpin D1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.604071,
+          "p_value": 0.0363,
+          "published_fold_change_average_value": 1.52
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Heparin cofactor 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 19,
+        "reactome_pathway_indexes": [
+          1,
+          2
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "SKAP2": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "SKAP2",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "O75563",
+      "protein_name": "Src kinase-associated phosphoprotein 2 (Pyk2/RAFTK-associated protein) (Retinoic acid-induced protein 70) (SKAP55 homolog) (SKAP-55HOM) (SKAP-HOM) (Src family-associated phosphoprotein 2) (Src kinase-associated phosphoprotein 55-related protein) (Src-associated adapter protein with PH and SH3 domains)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.02376,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.400538,
+          "p_value": 0.0041,
+          "published_fold_change_average_value": 1.32
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Src kinase-associated phosphoprotein 2",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "SLPI": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "SLPI",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P03973",
+      "protein_name": "Antileukoproteinase (ALP) (BLPI) (HUSI-1) (Mucus proteinase inhibitor) (MPI) (Protease inhibitor WAP4) (Secretory leukocyte protease inhibitor) (Seminal proteinase inhibitor) (WAP four-disulfide core domain protein 4)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.01008,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.739848,
+          "p_value": 0.00101,
+          "published_fold_change_average_value": 1.67
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Antileukoproteinase",
+        "article_table_label": "Table 3",
+        "peptide_count": 2,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "TAB3": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "TAB3",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q8N5C8",
+      "protein_name": "TGF-beta-activated kinase 1 and MAP3K7-binding protein 3 (Mitogen-activated protein kinase kinase kinase 7-interacting protein 3) (NF-kappa-B-activating protein 1) (TAK1-binding protein 3) (TAB-3) (TGF-beta-activated kinase 1-binding protein 3)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0407045,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.722466,
+          "p_value": 0.0185,
+          "published_fold_change_average_value": 1.65
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "TGF-beta-activated kinase 1 and MAP3K7-binding protein 3",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          6
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00404,
+            "entities_found": 14,
+            "entities_p_value": 8.42e-05,
+            "entities_total": 1187,
+            "pathway_id": "R-HSA-168249",
+            "pathway_index": 6,
+            "pathway_name": "Innate Immune System"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "TAS2R14": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "TAS2R14",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "Q9NYV8",
+      "protein_name": "Taste receptor type 2 member 14 (T2R14) (Taste receptor family B member 1) (TRB1)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.0249577,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.765535,
+          "p_value": 0.00628,
+          "published_fold_change_average_value": 1.7
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Taste receptor type 2 member 14",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [],
+        "reactome_pathways": []
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "TF": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "TF",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P02787",
+      "protein_name": "Serotransferrin (Transferrin) (Beta-1 metal-binding globulin) (Siderophilin)",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.01008,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 0.613532,
+          "p_value": 0.000935,
+          "published_fold_change_average_value": 1.53
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Serotransferrin",
+        "article_table_label": "Table 3",
+        "peptide_count": 37,
+        "reactome_pathway_indexes": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 2.79e-07,
+            "entities_found": 9,
+            "entities_p_value": 9.55e-10,
+            "entities_total": 124,
+            "pathway_id": "R-HSA-381426",
+            "pathway_index": 1,
+            "pathway_name": "Regulation of Insulin-like Growth Factor (IGF) transport and uptake by Insulin-like Growth Factor Binding Proteins (IGFBPs)"
+          },
+          {
+            "entities_fdr": 1.04e-06,
+            "entities_found": 8,
+            "entities_p_value": 7.11e-09,
+            "entities_total": 107,
+            "pathway_id": "R-HSA-8957275",
+            "pathway_index": 2,
+            "pathway_name": "Post-translational protein phosphorylation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    },
+    "TMSB4X": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "TMSB4X",
+      "limitations": [
+        "This layer is reconstructed from the published differential serum proteomics table rather than a public per-sample abundance matrix.",
+        "Fold changes and p-values come from the article's reported Normal-KF versus Impaired-KF comparison and are not recomputed from raw PRIDE intensities.",
+        "The recovered patient is part of cohort-level context only; no reusable per-protein recovered-patient abundance table was publicly exposed in this V1 layer."
+      ],
+      "measurement_type": "published_serum_protein_abundance_ratio",
+      "primary_uniprot": "P62328",
+      "protein_name": "Thymosin beta-4 (T beta-4) (Fx) [Cleaved into: Hemoregulatory peptide AcSDKP (Ac-Ser-Asp-Lys-Pro) (N-acetyl-SDKP) (AcSDKP) (Seraspenide)]",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": 0.042525,
+          "case_n": 5,
+          "case_state": "normal_kidney_function_post_lt",
+          "context": "post_lt_renal_function_monitoring",
+          "contrast_id": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "control_n": 4,
+          "control_state": "impaired_kidney_function_post_lt",
+          "direction": "higher_in_normal_kidney_function_post_lt",
+          "effect_scale": "published_average_abundance_log2_ratio",
+          "mean_difference": 1.04264,
+          "p_value": 0.0361,
+          "published_fold_change_average_value": 2.06
+        }
+      ],
+      "reported_annotations": {
+        "article_protein_label": "Thymosin beta-4",
+        "article_table_label": "Table 3",
+        "peptide_count": 1,
+        "reactome_pathway_indexes": [
+          3,
+          4
+        ],
+        "reactome_pathways": [
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 9.05e-06,
+            "entities_total": 128,
+            "pathway_id": "R-HSA-114608",
+            "pathway_index": 3,
+            "pathway_name": "Platelet degranulation"
+          },
+          {
+            "entities_fdr": 0.00082,
+            "entities_found": 6,
+            "entities_p_value": 1.12e-05,
+            "entities_total": 133,
+            "pathway_id": "R-HSA-76005",
+            "pathway_index": 4,
+            "pathway_name": "Response to elevated platelet cytosolic Ca2+"
+          }
+        ]
+      },
+      "reported_group_counts": {
+        "impaired_kidney_function_post_lt": {
+          "n": 4
+        },
+        "normal_kidney_function_post_lt": {
+          "n": 5
+        },
+        "recovered_kidney_function_post_lt": {
+          "n": 1
+        }
+      },
+      "sample_scope": "recipient_serum_renal_function_monitoring",
+      "summary_level": "published_differential_table"
+    }
+  },
+  "reported_differential_protein_count": 45,
+  "reported_total_quantified_protein_count": 174,
+  "sample_scope": "recipient_serum_renal_function_monitoring",
+  "source_url": "https://www.frontiersin.org/journals/transplantation/articles/10.3389/frtra.2025.1572852/full",
+  "study_accession": "PXD062924"
+}
