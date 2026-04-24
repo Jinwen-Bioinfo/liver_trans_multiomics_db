@@ -86,6 +86,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
         "scientific_value": ["liver proteome reference", "protein feature normalization"],
     },
+    "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
+        "priority": "P1",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
+        "scientific_value": ["operational tolerance", "pediatric plasma proteomics", "immunosuppression withdrawal risk stratification"],
+    },
     "AGING_2020_LT_SERUM_PROTEOMICS": {
         "priority": "P0",
         "triage_status": "processed_feature_ready",
@@ -120,6 +126,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["liver_reference"],
         "clinical_states": ["reference"],
+    },
+    "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
+        "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+        "repository": "Frontiers supplementary",
+        "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+        "source_type": "supplementary_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["operational_tolerance", "non_tolerant"],
     },
     "AGING_2020_LT_SERUM_PROTEOMICS": {
         "title": "Serum proteomic biomarkers of liver transplant effectiveness, acute rejection, and ischemic-type biliary lesion",
@@ -331,6 +347,8 @@ def build_candidate_item(candidate: dict[str, Any]) -> dict[str, Any]:
 
 
 def triage_reason(status: str, candidate: dict[str, Any]) -> str:
+    if candidate.get("accession") == "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS":
+        return "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     if status.startswith("processed"):
@@ -392,7 +410,7 @@ def main() -> None:
                 "discovered_via": ["manual_curated_source"],
                 "scientific_value": curated["scientific_value"],
                 "next_action": curated["next_action"],
-                "triage_reason": "Manually curated source already registered outside the automated discovery payload.",
+                "triage_reason": triage_reason(curated["triage_status"], {"accession": accession}),
             }
         )
 

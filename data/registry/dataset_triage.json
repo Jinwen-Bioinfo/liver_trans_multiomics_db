@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T04:08:43.782597+00:00",
+  "generated_at_utc": "2026-04-24T05:56:30.887346+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -12,7 +12,7 @@
     "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build."
   },
   "summary": {
-    "candidate_count": 902,
+    "candidate_count": 903,
     "status_counts": {
       "controlled_access_register_only": 22,
       "defer_false_positive_or_adjacent": 373,
@@ -23,12 +23,12 @@
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
-      "ready_to_ingest": 98,
+      "ready_to_ingest": 99,
       "source_review_needed": 136
     },
     "priority_counts": {
       "P0": 8,
-      "P1": 98,
+      "P1": 99,
       "P2": 401,
       "P3": 395
     },
@@ -39,13 +39,13 @@
       "methylation_cfDNA": 40,
       "microbiome": 42,
       "other": 3,
-      "proteomics": 163,
+      "proteomics": 164,
       "single_cell": 69,
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 106,
-    "ready_or_processed_count": 104
+    "p0_or_p1_count": 107,
+    "ready_or_processed_count": 105
   },
   "priority_queue": [
     {
@@ -118,7 +118,7 @@
         "gut microbiome"
       ],
       "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GSE243887",
@@ -297,7 +297,7 @@
         "non-invasive graft monitoring"
       ],
       "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
@@ -332,7 +332,7 @@
         "non-invasive graft pathology biomarkers"
       ],
       "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     },
     {
       "accession": "GSE200340",
@@ -441,7 +441,7 @@
         "protein feature normalization"
       ],
       "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "E-MTAB-11688",
@@ -477,6 +477,41 @@
       ],
       "next_action": "Use ArrayExpress/BioStudies files to ingest post-transplant NASH and fibrosis transcriptome contrasts.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+    },
+    {
+      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+      "repository": "Frontiers supplementary",
+      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "ready_to_ingest",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "operational tolerance",
+        "pediatric plasma proteomics",
+        "immunosuppression withdrawal risk stratification"
+      ],
+      "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
+      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     },
     {
       "accession": "GSE113024",
@@ -2621,39 +2656,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE285476",
-      "title": "Decoding the Retn-Cap1 Pathway in Intermediate Monocytes Mediating Liver Allograft Rejection",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE285476",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "single_cell"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Rattus norvegicus"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_allograft",
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver allograft"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -2727,7 +2729,7 @@
         "gut microbiome"
       ],
       "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GSE243887",
@@ -2906,7 +2908,7 @@
         "non-invasive graft monitoring"
       ],
       "next_action": "Use as a direct post-transplant serum proteomics biomarker layer for acute rejection versus stable graft function and ischemic-type biliary lesion contrasts, while keeping it framed as published group-summary MALDI-TOF evidence rather than a full per-sample proteome matrix.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
@@ -2941,7 +2943,7 @@
         "non-invasive graft pathology biomarkers"
       ],
       "next_action": "Use as a processed direct serum metabolomics layer for TCMR, biliary complications, and post-transplant MASH, and extend interpretation with pathway-level metabolite modules without overstating cohort size or classification performance.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     },
     {
       "accession": "GSE200340",
@@ -3050,7 +3052,7 @@
         "protein feature normalization"
       ],
       "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
-      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "E-MTAB-11688",
@@ -3086,6 +3088,41 @@
       ],
       "next_action": "Use ArrayExpress/BioStudies files to ingest post-transplant NASH and fibrosis transcriptome contrasts.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+    },
+    {
+      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+      "repository": "Frontiers supplementary",
+      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "ready_to_ingest",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "operational tolerance",
+        "pediatric plasma proteomics",
+        "immunosuppression withdrawal risk stratification"
+      ],
+      "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
+      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     },
     {
       "accession": "GSE113024",

@@ -56,6 +56,25 @@ P0 build queue:
 | GSE11881 | ready to ingest | Download data and curate operational tolerance versus immune activation phenotypes. |
 | GSE13440 | ready to ingest | Download GEO matrix and metadata; test acute cellular rejection contrasts as an independent transcriptome replication layer. |
 
+## Next Proteomics Targets
+
+The current database already has:
+
+- `PXD012615` as liver-cell proteome reference
+- `AGING_2020_LT_SERUM_PROTEOMICS` as direct transplant serum biomarker evidence
+
+The next highest-value proteomics source to pursue is:
+
+| Accession/source | Status | Why it matters |
+| --- | --- | --- |
+| FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS | ready to ingest | Pediatric liver-transplant plasma proteomics aligned to immune tolerance vs non-tolerant withdrawal outcomes, with Frontiers XML exposing `DataSheet1.docx` as supplementary material. |
+
+Notes:
+
+- This is not a rejection-diagnosis cohort; it is a baseline withdrawal-risk / tolerance cohort.
+- It should feed the blood-monitoring and operational-tolerance tracks, not be mislabeled as biopsy-defined TCMR evidence.
+- The ingest decision depends on whether `DataSheet1` contains reusable protein-level tables instead of figures only.
+
 ## Literature Counts
 
 PubMed literature is much larger than the accession-level dataset map. The literature count artifact is:
