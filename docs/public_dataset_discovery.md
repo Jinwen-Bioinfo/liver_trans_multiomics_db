@@ -74,6 +74,7 @@ Notes:
 - This is not a rejection-diagnosis cohort; it is a baseline withdrawal-risk / tolerance cohort.
 - It should feed the blood-monitoring and operational-tolerance tracks, not be mislabeled as biopsy-defined TCMR evidence.
 - The ingest decision depends on whether `DataSheet1` contains reusable protein-level tables instead of figures only.
+- Current blocker: the article and OA metadata confirm supplementary material exists, but the direct machine-download path for `DataSheet1.docx` has not yet been resolved in the current environment.
 
 ## Literature Counts
 

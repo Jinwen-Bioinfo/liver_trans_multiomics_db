@@ -46,3 +46,25 @@ Promote to a processed layer only if `DataSheet1` exposes at least one of:
 - enough group-level statistics to reconstruct IT vs NIT protein evidence
 
 If the supplement only contains pathway figures or narrative summaries, keep it in triage and do not overstate readiness.
+
+## Current blocker
+
+As of 2026-04-24, the source is **scientifically promising but not yet machine-ingested** because:
+
+- Frontiers article XML confirms a supplementary `DataSheet1.docx`
+- NCBI OA metadata confirms an open-access package for `PMC13061671`
+- however, the directly reusable supplementary file was not yet retrievable through the current automated fetch paths in this environment
+
+So the source remains:
+
+- `ready_to_ingest` in triage
+- not yet promoted into `studies.json` / `multiomics_sources.json`
+- not yet exposed as a database protein layer
+
+## Immediate next step
+
+Resolve one of these access paths:
+
+1. download the Frontiers `DataSheet1.docx` manually or via a working OA-package mirror
+2. extract the actual supplement URL from a browser session with successful article asset resolution
+3. if neither path works, deprioritize for now and continue with the next public direct transplant proteomics cohort
