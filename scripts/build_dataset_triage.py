@@ -62,11 +62,68 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
         "scientific_value": ["postoperative infection", "fecal metabolome", "gut microbiome"],
     },
+    "GSE243887": {
+        "priority": "P0",
+        "triage_status": "processed_expression",
+        "next_action": "Use as donor-liver quality RNA-seq evidence, then extend interpretation with pathway/module scores while keeping accepted/rejected labels clearly separated from post-transplant graft outcomes.",
+        "scientific_value": ["donor liver quality", "accepted vs rejected donor liver", "direct donor liver RNA-seq evidence"],
+    },
+    "GSE200340": {
+        "priority": "P1",
+        "triage_status": "processed_expression",
+        "next_action": "Add publication-linked rejection outcome labels only if reusable public tables can be verified; keep the current layer framed as blood time-point monitoring evidence.",
+        "scientific_value": ["blood immune monitoring", "longitudinal pediatric liver transplant RNA-seq", "non-invasive time-point evidence"],
+    },
+    "GSE189539": {
+        "priority": "P1",
+        "triage_status": "processed_single_cell_marker",
+        "next_action": "Use as single-cell marker matrix evidence, and recover reusable cell-to-sample and cell-type annotations if available; until then keep the layer framed as public matrix marker/module evidence.",
+        "scientific_value": ["single-cell graft landscape", "early allograft dysfunction", "pathogenic immune niche"],
+    },
     "PXD012615": {
         "priority": "P1",
-        "triage_status": "registered_reference",
-        "next_action": "Use PRIDE metadata and protein tables as a human liver proteome reference layer; keep separate from transplant-specific evidence.",
+        "triage_status": "processed_protein_reference",
+        "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
         "scientific_value": ["liver proteome reference", "protein feature normalization"],
+    },
+    "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
+        "priority": "P0",
+        "triage_status": "ready_to_ingest",
+        "next_action": "Download the public supplementary Table S4 metabolite concentration matrix, parse absolute serum metabolite values for TCMR, biliary complications, and post-transplant MASH, and expose feature-level contrasts with explicit cohort caveats.",
+        "scientific_value": ["direct post-transplant serum metabolomics", "TCMR vs biliary vs MASH discrimination", "non-invasive graft pathology biomarkers"],
+    },
+}
+
+CURATED_MANUAL_SOURCE_METADATA = {
+    "DFI_MICROBIOME_LT_2024": {
+        "title": "Fecal metabolite and microbiome profiling of liver transplant recipients at risk for postoperative infection",
+        "repository": "external_curated_registry",
+        "repository_url": None,
+        "source_type": "author_repository",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["microbiome", "metabolomics"],
+        "sample_origins": ["stool"],
+        "clinical_states": ["postoperative_infection"],
+    },
+    "PXD012615": {
+        "title": "Human liver cells proteome",
+        "repository": "PRIDE",
+        "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",
+        "source_type": "repository_accession",
+        "directness": "reference_not_direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["liver_reference"],
+        "clinical_states": ["reference"],
+    },
+    "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
+        "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
+        "repository": "MDPI supplementary",
+        "repository_url": "https://doi.org/10.3390/metabo14050254",
+        "source_type": "supplementary_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["metabolomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["TCMR_or_ACR", "post_transplant_nash_fibrosis"],
     },
 }
 
@@ -205,12 +262,15 @@ def score_sort_key(item: dict[str, Any]) -> tuple[int, str, str]:
     status_order = {
         "processed_baseline": 0,
         "processed_summary": 1,
-        "ready_to_ingest": 2,
-        "source_review_needed": 3,
-        "manual_review_needed": 4,
-        "registered_reference": 5,
-        "controlled_access_register_only": 6,
-        "defer_false_positive_or_adjacent": 7,
+        "processed_expression": 2,
+        "processed_single_cell_marker": 3,
+        "processed_protein_reference": 4,
+        "ready_to_ingest": 5,
+        "source_review_needed": 6,
+        "manual_review_needed": 7,
+        "registered_reference": 8,
+        "controlled_access_register_only": 9,
+        "defer_false_positive_or_adjacent": 10,
     }
     return (
         priority_order.get(item["priority"], 9),
@@ -255,6 +315,8 @@ def build_candidate_item(candidate: dict[str, Any]) -> dict[str, Any]:
 
 
 def triage_reason(status: str, candidate: dict[str, Any]) -> str:
+    if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
+        return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     if status.startswith("processed"):
         return "Already has local processed artifacts and is part of the current demo evidence layer."
     if status == "ready_to_ingest":
@@ -294,20 +356,21 @@ def main() -> None:
     for accession, curated in CURATED_PRIORITY_ACCESSIONS.items():
         if accession in existing_accessions:
             continue
+        metadata = CURATED_MANUAL_SOURCE_METADATA.get(accession, {})
         candidates.append(
             {
                 "accession": accession,
-                "title": accession,
-                "repository": "external_curated_registry",
-                "repository_url": None,
+                "title": metadata.get("title", accession),
+                "repository": metadata.get("repository", "external_curated_registry"),
+                "repository_url": metadata.get("repository_url"),
                 "accession_family": accession_family(accession),
-                "source_type": "author_repository" if accession.startswith("DFI_") else source_type_for({"accession": accession}),
-                "directness": "direct_liver_transplant",
+                "source_type": metadata.get("source_type", source_type_for({"accession": accession})),
+                "directness": metadata.get("directness", "direct_liver_transplant"),
                 "triage_status": curated["triage_status"],
                 "priority": curated["priority"],
-                "omics_modalities": ["microbiome", "metabolomics"] if accession.startswith("DFI_") else ["proteomics"],
-                "sample_origins": ["stool"] if accession.startswith("DFI_") else ["liver_reference"],
-                "clinical_states": ["postoperative_infection"] if accession.startswith("DFI_") else ["reference"],
+                "omics_modalities": metadata.get("omics_modalities", ["proteomics"]),
+                "sample_origins": metadata.get("sample_origins", ["liver_reference"]),
+                "clinical_states": metadata.get("clinical_states", ["reference"]),
                 "organisms": ["Homo sapiens"],
                 "publication_date": None,
                 "discovered_via": ["manual_curated_source"],
@@ -328,6 +391,9 @@ def main() -> None:
         "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
         "triage_policy": {
             "ready_to_ingest": "Direct liver transplantation public repository accessions with likely reusable matrices or tables.",
+            "processed_expression": "Processed transcriptome-style evidence already exists locally and should stay above raw ingest candidates.",
+            "processed_single_cell_marker": "Processed single-cell marker/module evidence already exists locally.",
+            "processed_protein_reference": "Processed protein feature reference evidence already exists locally.",
             "source_review_needed": "Relevant non-transcriptomic or ambiguous public records requiring file-level verification.",
             "controlled_access_register_only": "Human controlled-access records; metadata only until permissions are resolved.",
             "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build.",
@@ -341,7 +407,14 @@ def main() -> None:
             "ready_or_processed_count": sum(
                 1
                 for item in candidates
-                if item["triage_status"] in {"ready_to_ingest", "processed_baseline", "processed_summary"}
+                if item["triage_status"] in {
+                    "ready_to_ingest",
+                    "processed_baseline",
+                    "processed_summary",
+                    "processed_expression",
+                    "processed_single_cell_marker",
+                    "processed_protein_reference",
+                }
             ),
         },
         "priority_queue": [

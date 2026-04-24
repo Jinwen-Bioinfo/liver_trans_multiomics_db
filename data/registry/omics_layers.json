@@ -69,11 +69,13 @@
         "Which bile acid, mitochondrial, urea-cycle, oxidative stress, and drug-metabolism programs track graft injury?",
         "Can metabolic readouts separate hepatocyte dysfunction from immune rejection?"
       ],
-      "registered_accessions": ["DFI_MICROBIOME_LT_2024"],
-      "processed_accessions": ["DFI_MICROBIOME_LT_2024"],
+      "registered_accessions": ["DFI_MICROBIOME_LT_2024", "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY"],
+      "processed_accessions": ["DFI_MICROBIOME_LT_2024", "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY"],
       "current_artifacts": [
         "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_summary.json",
-        "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json"
+        "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_summary.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json"
       ],
       "readiness": "processed_feature_ready"
     },

@@ -39,9 +39,9 @@ Current triage output:
 | Metric | Count |
 | --- | ---: |
 | Candidate records in triage registry | 900 |
-| P0 records | 5 |
+| P0 records | 6 |
 | P1 records | 99 |
-| Ready or already processed records | 103 |
+| Ready or already processed records | 105 |
 | Controlled-access metadata-only records | 22 |
 | Deferred adjacent/false-positive records | 373 |
 
@@ -51,6 +51,7 @@ P0 build queue:
 | --- | --- | --- |
 | GSE145780 | processed baseline | Keep as the initial INTERLIVER bulk-transcriptome baseline, but mark same-study marker evidence as exploratory until independently reproduced. |
 | DFI_MICROBIOME_LT_2024 | processed summary | Promote summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization. |
+| MDPI_METABO_2024_LT_GRAFT_PATHOLOGY | ready to ingest | Download supplementary Table S4 and expose serum metabolite contrasts for TCMR, biliary injury, and post-transplant MASH. |
 | GDS3282 | ready to ingest | Resolve to its GEO series/platform, download matrix, and map PBMC tolerance phenotypes. |
 | GSE11881 | ready to ingest | Download data and curate operational tolerance versus immune activation phenotypes. |
 | GSE13440 | ready to ingest | Download GEO matrix and metadata; test acute cellular rejection contrasts as an independent transcriptome replication layer. |
@@ -189,6 +190,7 @@ These should be manually verified first, then promoted into `data/registry/studi
 | GSE165568 | donor liver transcriptomics | Discarded human livers during normothermic machine perfusion. |
 | GSE290062 | small RNA / exosome | Plasma exosomal small RNAs after liver transplantation. |
 | DFI_MICROBIOME_LT_2024 | metabolomics + microbiome | Direct liver transplant fecal metabolite/microbiome infection-risk dataset from GitHub/Zenodo. |
+| MDPI_METABO_2024_LT_GRAFT_PATHOLOGY | serum metabolomics | Direct post-transplant serum metabolite cohort with public supplementary Table S4 for TCMR, biliary complications, and post-transplant MASH. |
 
 ## Immediate Build Implication
 

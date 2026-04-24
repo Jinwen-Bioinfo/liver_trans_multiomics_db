@@ -1,0 +1,442 @@
+[
+  {
+    "sample_accession": "S1",
+    "title": "Serum metabolomics S1",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S2",
+    "title": "Serum metabolomics S2",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S3",
+    "title": "Serum metabolomics S3",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S4",
+    "title": "Serum metabolomics S4",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S5",
+    "title": "Serum metabolomics S5",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S6",
+    "title": "Serum metabolomics S6",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S7",
+    "title": "Serum metabolomics S7",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S8",
+    "title": "Serum metabolomics S8",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S9",
+    "title": "Serum metabolomics S9",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S10",
+    "title": "Serum metabolomics S10",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "post_transplant_mash",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S11",
+    "title": "Serum metabolomics S11",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S12",
+    "title": "Serum metabolomics S12",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S13",
+    "title": "Serum metabolomics S13",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S14",
+    "title": "Serum metabolomics S14",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S15",
+    "title": "Serum metabolomics S15",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S16",
+    "title": "Serum metabolomics S16",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S17",
+    "title": "Serum metabolomics S17",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S18",
+    "title": "Serum metabolomics S18",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S19",
+    "title": "Serum metabolomics S19",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S20",
+    "title": "Serum metabolomics S20",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S21",
+    "title": "Serum metabolomics S21",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S22",
+    "title": "Serum metabolomics S22",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S23",
+    "title": "Serum metabolomics S23",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S24",
+    "title": "Serum metabolomics S24",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S25",
+    "title": "Serum metabolomics S25",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S26",
+    "title": "Serum metabolomics S26",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S27",
+    "title": "Serum metabolomics S27",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S28",
+    "title": "Serum metabolomics S28",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "TCMR",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S29",
+    "title": "Serum metabolomics S29",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S30",
+    "title": "Serum metabolomics S30",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S31",
+    "title": "Serum metabolomics S31",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S32",
+    "title": "Serum metabolomics S32",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S33",
+    "title": "Serum metabolomics S33",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S34",
+    "title": "Serum metabolomics S34",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S35",
+    "title": "Serum metabolomics S35",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S36",
+    "title": "Serum metabolomics S36",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S37",
+    "title": "Serum metabolomics S37",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S38",
+    "title": "Serum metabolomics S38",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S39",
+    "title": "Serum metabolomics S39",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S40",
+    "title": "Serum metabolomics S40",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S41",
+    "title": "Serum metabolomics S41",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S42",
+    "title": "Serum metabolomics S42",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S43",
+    "title": "Serum metabolomics S43",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S44",
+    "title": "Serum metabolomics S44",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S45",
+    "title": "Serum metabolomics S45",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S46",
+    "title": "Serum metabolomics S46",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S47",
+    "title": "Serum metabolomics S47",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S48",
+    "title": "Serum metabolomics S48",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S49",
+    "title": "Serum metabolomics S49",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S50",
+    "title": "Serum metabolomics S50",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S51",
+    "title": "Serum metabolomics S51",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S52",
+    "title": "Serum metabolomics S52",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S53",
+    "title": "Serum metabolomics S53",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S54",
+    "title": "Serum metabolomics S54",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  },
+  {
+    "sample_accession": "S55",
+    "title": "Serum metabolomics S55",
+    "sample_origin": "recipient_serum",
+    "clinical_state": "biliary_complication",
+    "assay_modality": "metabolomics",
+    "source_table": "Table S4.xlsx"
+  }
+]

@@ -371,15 +371,21 @@ def _flatten_multiomics_features(source_id: str) -> list[dict[str, Any]]:
     records: list[dict[str, Any]] = []
     metabolomics = load_multiomics_feature_payload(source_id, "metabolomics_features")
     if metabolomics:
-        for scope in ("qualitative", "quantitative"):
-            for feature in metabolomics.get(scope, {}).get("features", []):
-                records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
+        for scope, payload in metabolomics.items():
+            if scope in {"source_id", "generated_at_utc", "modality", "feature_count"}:
+                continue
+            if isinstance(payload, dict) and "features" in payload:
+                for feature in payload.get("features", []):
+                    records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
 
     microbiome = load_multiomics_feature_payload(source_id, "microbiome_features")
     if microbiome:
-        for scope in ("full_sample_set", "peri_transplant_set"):
-            for feature in microbiome.get(scope, {}).get("features", []):
-                records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
+        for scope, payload in microbiome.items():
+            if scope in {"source_id", "generated_at_utc", "modality", "feature_count"}:
+                continue
+            if isinstance(payload, dict) and "features" in payload:
+                for feature in payload.get("features", []):
+                    records.append({**feature, "assay_scope": feature.get("assay_scope", scope)})
     return records
 
 

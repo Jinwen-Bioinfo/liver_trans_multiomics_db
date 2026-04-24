@@ -160,6 +160,19 @@ def test_download_registry_exposes_processed_non_transcriptomic_artifacts() -> N
     assert "microbiome_features" in artifacts
 
 
+def test_download_registry_exposes_mdpi_serum_metabolomics_artifacts() -> None:
+    response = client.get("/api/studies/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "cohort_summary" in artifacts
+    assert "metabolomics_summary" in artifacts
+    assert "metabolomics_features" in artifacts
+    assert "source_file_inventory" in artifacts
+    assert "provenance" in artifacts
+
+
 def test_multiomics_feature_search_finds_metabolites() -> None:
     response = client.get(
         "/api/multiomics-features",
@@ -172,6 +185,20 @@ def test_multiomics_feature_search_finds_metabolites() -> None:
     assert feature["source_id"] == "DFI_MICROBIOME_LT_2024"
     assert feature["feature_type"] == "metabolite"
     assert "infection_positive_vs_negative" in feature["contrasts"]
+
+
+def test_multiomics_feature_search_finds_mdpi_serotonin() -> None:
+    response = client.get(
+        "/api/multiomics-features",
+        params={"query": "Serotonin", "modality": "metabolomics"},
+    )
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["count"] >= 1
+    feature = next(item for item in payload["features"] if item["source_id"] == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY")
+    assert feature["feature_type"] == "metabolite"
+    assert "TCMR_vs_biliary_complication" in feature["contrasts"]
+    assert feature["measurement"] == "uM"
 
 
 def test_multiomics_feature_search_finds_microbiome_taxa() -> None:
@@ -197,6 +224,17 @@ def test_multiomics_feature_detail_returns_full_record() -> None:
     payload = response.json()
     assert payload["display_name"].endswith("Enterococcus faecium")
     assert payload["contrasts"]["infection_positive_vs_negative"]["case_state"] == "infection_positive"
+
+
+def test_multiomics_feature_detail_returns_mdpi_metabolite_record() -> None:
+    response = client.get("/api/multiomics-features/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolite/serotonin")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["display_name"] == "Serotonin"
+    contrast = payload["contrasts"]["TCMR_vs_biliary_complication"]
+    assert contrast["case_state"] == "TCMR"
+    assert contrast["control_state"] == "biliary_complication"
+    assert contrast["effect_scale"] == "absolute_concentration_uM"
 
 
 def test_download_endpoint_serves_json_artifact() -> None:
@@ -397,6 +435,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     microbiome = client.get("/api/omics-layers/microbiome").json()
     proteome = client.get("/api/omics-layers/proteome").json()
     assert "DFI_MICROBIOME_LT_2024" in metabolome["registered_accessions"]
+    assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in metabolome["registered_accessions"]
+    assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in metabolome["processed_accessions"]
     assert "DFI_MICROBIOME_LT_2024" in microbiome["registered_accessions"]
     assert "PXD012615" in proteome["registered_accessions"]
     assert "PXD012615" in proteome["processed_accessions"]
@@ -407,6 +447,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     microbiome = client.get("/api/omics-layers/microbiome").json()
     proteome = client.get("/api/omics-layers/proteome").json()
     assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in metabolome["current_artifacts"]
+    assert "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json" in metabolome["current_artifacts"]
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in microbiome["current_artifacts"]
     assert "data/processed/PXD012615/protein_features.json" in proteome["current_artifacts"]
     assert metabolome["readiness"] == "processed_feature_ready"
@@ -424,6 +465,16 @@ def test_multiomics_source_registry_exposes_direct_liver_transplant_layer() -> N
     assert payload["local_status"] == "processed_feature_ready"
     assert "data/processed/DFI_MICROBIOME_LT_2024/metabolomics_features.json" in payload["processed_artifacts"]
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_mdpi_supplementary_metabolomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "supplementary_table"
+    assert payload["local_status"] == "processed_feature_ready"
+    assert payload["sample_origins"] == ["recipient_serum"]
+    assert "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json" in payload["processed_artifacts"]
 
 
 def test_multiomics_source_registry_exposes_protein_reference_layer() -> None:
@@ -454,6 +505,7 @@ def test_dataset_triage_exposes_priority_queue() -> None:
     assert "GSE145780" in accessions
     assert "GSE13440" in accessions
     assert "DFI_MICROBIOME_LT_2024" in accessions
+    assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in accessions
 
 
 def test_dataset_triage_detail_explains_next_action() -> None:
@@ -610,5 +662,7 @@ def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> Non
     payload = response.json()
     assert payload["readiness"] == "blood_timepoint_expression_evidence_ready"
     assert "GSE200340" in payload["primary_datasets"]
+    assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in payload["supporting_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE200340"
     assert any("185 pediatric" in line for line in payload["current_evidence"])
+    assert any("55 post-transplant serum metabolomics" in line for line in payload["current_evidence"])

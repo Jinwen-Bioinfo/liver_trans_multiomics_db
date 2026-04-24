@@ -89,18 +89,20 @@
       "clinical_question": "Can blood or PBMC molecular signatures reflect liver graft rejection or injury without relying on repeated biopsies?",
       "why_it_matters": "A blood-based evidence layer could support longitudinal monitoring and decide when biopsy is warranted.",
       "primary_datasets": ["GSE200340"],
-      "supporting_datasets": ["HRA002091"],
+      "supporting_datasets": ["HRA002091", "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY"],
       "markers": ["CXCL10", "ISG15", "IFI27", "IL7R"],
       "signatures": [],
       "current_evidence": [
         "GSE200340 provides 185 pediatric liver transplant whole-blood/PBMC RNA-seq samples across pre-transplant, early post-transplant, and late post-transplant time points.",
         "RSEM expected_count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus early/late post-transplant versus pre-transplant contrasts.",
-        "CXCL10, ISG15, IFI27, and IL7R can now be queried as longitudinal blood monitoring markers."
+        "CXCL10, ISG15, IFI27, and IL7R can now be queried as longitudinal blood monitoring markers.",
+        "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY adds 55 post-transplant serum metabolomics samples spanning TCMR, biliary complications, and post-transplant MASH with 134 absolute-concentration metabolite features."
       ],
       "next_validation": [
         "Recover or curate rejection outcome labels from publication supplementary material if publicly reusable.",
         "Compare blood interferon and T cell signatures with liver graft biopsy signatures.",
-        "Treat the current layer as time-point monitoring evidence, not a rejection-outcome classifier."
+        "Treat the current layer as time-point monitoring evidence, not a rejection-outcome classifier.",
+        "Validate serum metabolite shifts in an independent graft pathology cohort before claiming non-invasive classification performance."
       ],
       "omics_layers": ["transcriptome_bulk", "proteome", "metabolome"],
       "readiness": "blood_timepoint_expression_evidence_ready"

@@ -1,0 +1,16 @@
+{
+  "study_accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+  "generated_at_utc": "2026-04-24T03:21:40.555878+00:00",
+  "sample_count": 55,
+  "by_clinical_state": {
+    "TCMR": 18,
+    "biliary_complication": 27,
+    "post_transplant_mash": 10
+  },
+  "by_sample_origin": {
+    "recipient_serum": 55
+  },
+  "by_assay_modality": {
+    "metabolomics": 55
+  }
+}

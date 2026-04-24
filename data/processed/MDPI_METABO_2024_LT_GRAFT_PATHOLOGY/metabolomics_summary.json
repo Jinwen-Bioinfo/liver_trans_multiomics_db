@@ -1,0 +1,120 @@
+{
+  "source_id": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+  "generated_at_utc": "2026-04-24T03:21:40.555878+00:00",
+  "modality": "metabolomics",
+  "feature_count": 134,
+  "sample_count": 55,
+  "measurement_unit": "uM",
+  "clinical_group_counts": {
+    "TCMR": 18,
+    "biliary_complication": 27,
+    "post_transplant_mash": 10
+  },
+  "pairwise_contrasts": [
+    "TCMR_vs_biliary_complication",
+    "TCMR_vs_post_transplant_mash",
+    "biliary_complication_vs_post_transplant_mash"
+  ],
+  "top_features_by_variance": [
+    {
+      "display_name": "Glucose",
+      "variance": 22079187.991246
+    },
+    {
+      "display_name": "Lactic_acid",
+      "variance": 271055.757576
+    },
+    {
+      "display_name": "beta-Hydroxybutyric_acid",
+      "variance": 34174.602562
+    },
+    {
+      "display_name": "Uric_acid",
+      "variance": 25595.583838
+    },
+    {
+      "display_name": "Alanine",
+      "variance": 22676.277441
+    },
+    {
+      "display_name": "Glutamine",
+      "variance": 15897.032323
+    },
+    {
+      "display_name": "Glycine",
+      "variance": 8638.691582
+    },
+    {
+      "display_name": "Proline",
+      "variance": 5101.874768
+    },
+    {
+      "display_name": "Valine",
+      "variance": 4096.155502
+    },
+    {
+      "display_name": "Leucine",
+      "variance": 3964.71934
+    },
+    {
+      "display_name": "Glutamic_acid",
+      "variance": 3530.904626
+    },
+    {
+      "display_name": "SM_C16:0",
+      "variance": 3280.500711
+    },
+    {
+      "display_name": "Lysine",
+      "variance": 2288.23699
+    },
+    {
+      "display_name": "Methylhistidine",
+      "variance": 1912.982912
+    },
+    {
+      "display_name": "Creatinine",
+      "variance": 1851.37899
+    },
+    {
+      "display_name": "Taurine",
+      "variance": 1717.897724
+    },
+    {
+      "display_name": "Threonine",
+      "variance": 1419.958465
+    },
+    {
+      "display_name": "PC_aa_C38:6",
+      "variance": 1215.987326
+    },
+    {
+      "display_name": "Serine",
+      "variance": 1117.28534
+    },
+    {
+      "display_name": "Creatine",
+      "variance": 1025.18101
+    },
+    {
+      "display_name": "Citric_acid",
+      "variance": 867.92965
+    },
+    {
+      "display_name": "Tyrosine",
+      "variance": 810.571737
+    },
+    {
+      "display_name": "C0",
+      "variance": 718.410391
+    },
+    {
+      "display_name": "Trimethylamine_N-oxide",
+      "variance": 683.940509
+    },
+    {
+      "display_name": "Arginine",
+      "variance": 663.136613
+    }
+  ]
+}

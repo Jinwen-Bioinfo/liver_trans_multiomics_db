@@ -1,38 +1,40 @@
 {
-  "generated_at_utc": "2026-04-23T07:22:02.994674+00:00",
+  "generated_at_utc": "2026-04-24T03:14:53.379252+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
     "ready_to_ingest": "Direct liver transplantation public repository accessions with likely reusable matrices or tables.",
+    "processed_expression": "Processed transcriptome-style evidence already exists locally and should stay above raw ingest candidates.",
+    "processed_single_cell_marker": "Processed single-cell marker/module evidence already exists locally.",
+    "processed_protein_reference": "Processed protein feature reference evidence already exists locally.",
     "source_review_needed": "Relevant non-transcriptomic or ambiguous public records requiring file-level verification.",
     "controlled_access_register_only": "Human controlled-access records; metadata only until permissions are resolved.",
     "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build."
   },
   "summary": {
-    "candidate_count": 900,
+    "candidate_count": 901,
     "status_counts": {
       "controlled_access_register_only": 22,
       "defer_false_positive_or_adjacent": 373,
       "manual_review_needed": 265,
       "processed_baseline": 1,
-      "processed_summary": 1,
       "processed_expression": 2,
+      "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
-      "ready_to_ingest": 98,
-      "registered_reference": 0,
-      "source_review_needed": 136,
-      "processed_protein_reference": 1
+      "processed_summary": 1,
+      "ready_to_ingest": 99,
+      "source_review_needed": 136
     },
     "priority_counts": {
-      "P0": 5,
-      "P1": 99,
+      "P0": 7,
+      "P1": 98,
       "P2": 401,
       "P3": 395
     },
     "modality_counts": {
       "bulk_transcriptomics": 210,
       "genomics": 83,
-      "metabolomics": 69,
+      "metabolomics": 70,
       "methylation_cfDNA": 40,
       "microbiome": 42,
       "other": 3,
@@ -41,8 +43,8 @@
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 104,
-    "ready_or_processed_count": 107
+    "p0_or_p1_count": 105,
+    "ready_or_processed_count": 105
   },
   "priority_queue": [
     {
@@ -84,7 +86,7 @@
     },
     {
       "accession": "DFI_MICROBIOME_LT_2024",
-      "title": "DFI_MICROBIOME_LT_2024",
+      "title": "Fecal metabolite and microbiome profiling of liver transplant recipients at risk for postoperative infection",
       "repository": "external_curated_registry",
       "repository_url": null,
       "accession_family": "other",
@@ -116,6 +118,42 @@
       ],
       "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
       "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
+      "accession": "GSE243887",
+      "title": "Uncovering shared Molecular and Histopathological features of accepted versus rejected donor livers for transplantation",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243887",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_expression",
+      "priority": "P0",
+      "omics_modalities": [
+        "bulk_transcriptomics"
+      ],
+      "sample_origins": [
+        "donor_liver"
+      ],
+      "clinical_states": [
+        "post_transplant_nash_fibrosis",
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "donor liver quality",
+        "accepted vs rejected donor liver",
+        "direct donor liver RNA-seq evidence"
+      ],
+      "next_action": "Use as donor-liver quality RNA-seq evidence, then extend interpretation with pathway/module scores while keeping accepted/rejected labels clearly separated from post-transplant graft outcomes.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GDS3282",
@@ -226,6 +264,150 @@
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
+      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
+      "repository": "MDPI supplementary",
+      "repository_url": "https://doi.org/10.3390/metabo14050254",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "ready_to_ingest",
+      "priority": "P0",
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_nash_fibrosis"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "direct post-transplant serum metabolomics",
+        "TCMR vs biliary vs MASH discrimination",
+        "non-invasive graft pathology biomarkers"
+      ],
+      "next_action": "Download the public supplementary Table S4 metabolite concentration matrix, parse absolute serum metabolite values for TCMR, biliary complications, and post-transplant MASH, and expose feature-level contrasts with explicit cohort caveats.",
+      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
+      "accession": "GSE200340",
+      "title": "A network-based approach to identify expression modules underlying rejection in pediatric liver transplantation",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200340",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_expression",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "blood_pbmc"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant rejection"
+      ],
+      "scientific_value": [
+        "blood immune monitoring",
+        "longitudinal pediatric liver transplant RNA-seq",
+        "non-invasive time-point evidence"
+      ],
+      "next_action": "Add publication-linked rejection outcome labels only if reusable public tables can be verified; keep the current layer framed as blood time-point monitoring evidence.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "GSE189539",
+      "title": "A single-cell landscape of human liver transplantation reveals a pathogenic immune niche associated with early allograft dysfunction",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189539",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_single_cell_marker",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "single_cell"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "ischemia_reperfusion",
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:hepatic allograft",
+        "OmicsDI:liver allograft",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "single-cell graft landscape",
+        "early allograft dysfunction",
+        "pathogenic immune niche"
+      ],
+      "next_action": "Use as single-cell marker matrix evidence, and recover reusable cell-to-sample and cell-type annotations if available; until then keep the layer framed as public matrix marker/module evidence.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD012615",
+      "title": "Human liver cells proteome",
+      "repository": "PRIDE",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "reference_not_direct_liver_transplant",
+      "triage_status": "processed_protein_reference",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "liver_reference"
+      ],
+      "clinical_states": [
+        "reference"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "liver proteome reference",
+        "protein feature normalization"
+      ],
+      "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
+      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
       "accession": "E-MTAB-11688",
       "title": "Post-transplant (non-alcoholic steatohepatitis) NASH compared with transplanted normal controls",
       "repository": "biostudies-arrayexpress",
@@ -288,8 +470,8 @@
         "OmicsDI:liver transplantation"
       ],
       "scientific_value": [],
-      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
-      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
+      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
+      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
       "accession": "GSE11361",
@@ -904,45 +1086,6 @@
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
-      "accession": "GSE189539",
-      "title": "A single-cell landscape of human liver transplantation reveals a pathogenic immune niche associated with early allograft dysfunction",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189539",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_single_cell_marker",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "single_cell"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy"
-      ],
-      "clinical_states": [
-        "ischemia_reperfusion",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:hepatic allograft",
-        "OmicsDI:liver allograft",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [
-        "direct graft-liver single-cell RNA-seq",
-        "early allograft dysfunction and reperfusion injury biology",
-        "marker-level immune niche evidence"
-      ],
-      "next_action": "Use as a single-cell marker matrix evidence layer; expose whole-matrix marker detectability for EAD immune niche genes while flagging unavailable cell-to-sample metadata.",
-      "triage_reason": "Processed locally from GEO series metadata and public filtered single-cell count matrix."
-    },
-    {
       "accession": "GSE192989",
       "title": "Gene expression after liver transplantation",
       "repository": "GEO",
@@ -1127,45 +1270,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE200340",
-      "title": "A network-based approach to identify expression modules underlying rejection in pediatric liver transplantation",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200340",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_expression",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "blood_pbmc"
-      ],
-      "clinical_states": [
-        "pre_transplant_blood",
-        "early_post_transplant_blood",
-        "late_post_transplant_blood"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplant",
-        "OmicsDI:liver transplant rejection"
-      ],
-      "scientific_value": [
-        "pediatric liver transplant blood monitoring",
-        "pre versus post transplant longitudinal transcriptome",
-        "non-invasive immune monitoring"
-      ],
-      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
-      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
     },
     {
       "accession": "GSE201695",
@@ -1873,42 +1977,6 @@
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
-      "accession": "GSE243887",
-      "title": "Uncovering shared Molecular and Histopathological features of accepted versus rejected donor livers for transplantation",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243887",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_expression",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "donor_liver"
-      ],
-      "clinical_states": [
-        "post_transplant_nash_fibrosis",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [
-        "donor liver quality",
-        "accepted versus rejected donor organ RNA-seq",
-        "organ utilization molecular context"
-      ],
-      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
-      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
-    },
-    {
       "accession": "GSE246994",
       "title": "Transient tissue residency and lymphatic egress define human CD56bright NK cell homeostasis (scRNA-seq)",
       "repository": "GEO",
@@ -1935,13 +2003,9 @@
       "discovered_via": [
         "NCBI:gds_liver_transplant"
       ],
-      "scientific_value": [
-        "donor liver quality",
-        "accepted versus rejected donor organ RNA-seq",
-        "organ utilization molecular context"
-      ],
-      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
-      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
+      "scientific_value": [],
+      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
+      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
       "accession": "GSE249913",
@@ -1970,13 +2034,9 @@
         "NCBI:gds_liver_transplant",
         "OmicsDI:liver transplantation"
       ],
-      "scientific_value": [
-        "donor liver quality",
-        "accepted versus rejected donor organ RNA-seq",
-        "organ utilization molecular context"
-      ],
-      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
-      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
+      "scientific_value": [],
+      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
+      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
       "accession": "GSE25338",
@@ -2591,69 +2651,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE290062",
-      "title": "The Impact of Liver Transplantation on the Expression Profile of Small RNAs in Plasma Exosomes of Patients with Respiratory Symptoms Similar to Hepatopulmonary Syndrome",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE290062",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "small_rna"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE296316",
-      "title": "Hepatic NcoR1 deletion exacerbates ischemia and reperfusion (IR) induced liver injury regulated by NF-kB p65",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE296316",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "ischemia_reperfusion"
-      ],
-      "organisms": [
-        "Mus musculus"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -2696,7 +2693,7 @@
     },
     {
       "accession": "DFI_MICROBIOME_LT_2024",
-      "title": "DFI_MICROBIOME_LT_2024",
+      "title": "Fecal metabolite and microbiome profiling of liver transplant recipients at risk for postoperative infection",
       "repository": "external_curated_registry",
       "repository_url": null,
       "accession_family": "other",
@@ -2728,6 +2725,42 @@
       ],
       "next_action": "Promote current summaries into feature-level microbiome/metabolome tables with infection contrasts and compound/taxon normalization.",
       "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
+      "accession": "GSE243887",
+      "title": "Uncovering shared Molecular and Histopathological features of accepted versus rejected donor livers for transplantation",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243887",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_expression",
+      "priority": "P0",
+      "omics_modalities": [
+        "bulk_transcriptomics"
+      ],
+      "sample_origins": [
+        "donor_liver"
+      ],
+      "clinical_states": [
+        "post_transplant_nash_fibrosis",
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "donor liver quality",
+        "accepted vs rejected donor liver",
+        "direct donor liver RNA-seq evidence"
+      ],
+      "next_action": "Use as donor-liver quality RNA-seq evidence, then extend interpretation with pathway/module scores while keeping accepted/rejected labels clearly separated from post-transplant graft outcomes.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
       "accession": "GDS3282",
@@ -2838,6 +2871,150 @@
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
+      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
+      "repository": "MDPI supplementary",
+      "repository_url": "https://doi.org/10.3390/metabo14050254",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "ready_to_ingest",
+      "priority": "P0",
+      "omics_modalities": [
+        "metabolomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR",
+        "post_transplant_nash_fibrosis"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "direct post-transplant serum metabolomics",
+        "TCMR vs biliary vs MASH discrimination",
+        "non-invasive graft pathology biomarkers"
+      ],
+      "next_action": "Download the public supplementary Table S4 metabolite concentration matrix, parse absolute serum metabolite values for TCMR, biliary complications, and post-transplant MASH, and expose feature-level contrasts with explicit cohort caveats.",
+      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
+      "accession": "GSE200340",
+      "title": "A network-based approach to identify expression modules underlying rejection in pediatric liver transplantation",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200340",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_expression",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "blood_pbmc"
+      ],
+      "clinical_states": [
+        "TCMR_or_ACR"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant rejection"
+      ],
+      "scientific_value": [
+        "blood immune monitoring",
+        "longitudinal pediatric liver transplant RNA-seq",
+        "non-invasive time-point evidence"
+      ],
+      "next_action": "Add publication-linked rejection outcome labels only if reusable public tables can be verified; keep the current layer framed as blood time-point monitoring evidence.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "GSE189539",
+      "title": "A single-cell landscape of human liver transplantation reveals a pathogenic immune niche associated with early allograft dysfunction",
+      "repository": "GEO",
+      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189539",
+      "accession_family": "GEO Series",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_single_cell_marker",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "single_cell"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "ischemia_reperfusion",
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "NCBI:gds_liver_transplant",
+        "OmicsDI:hepatic allograft",
+        "OmicsDI:liver allograft",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "single-cell graft landscape",
+        "early allograft dysfunction",
+        "pathogenic immune niche"
+      ],
+      "next_action": "Use as single-cell marker matrix evidence, and recover reusable cell-to-sample and cell-type annotations if available; until then keep the layer framed as public matrix marker/module evidence.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD012615",
+      "title": "Human liver cells proteome",
+      "repository": "PRIDE",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "reference_not_direct_liver_transplant",
+      "triage_status": "processed_protein_reference",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "liver_reference"
+      ],
+      "clinical_states": [
+        "reference"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "liver proteome reference",
+        "protein feature normalization"
+      ],
+      "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
+      "triage_reason": "Manually curated source already registered outside the automated discovery payload."
+    },
+    {
       "accession": "E-MTAB-11688",
       "title": "Post-transplant (non-alcoholic steatohepatitis) NASH compared with transplanted normal controls",
       "repository": "biostudies-arrayexpress",
@@ -2920,9 +3097,7 @@
         "not_curated"
       ],
       "clinical_states": [
-        "pre_transplant_blood",
-        "early_post_transplant_blood",
-        "late_post_transplant_blood"
+        "TCMR_or_ACR"
       ],
       "organisms": [
         "Homo sapiens"
@@ -2932,13 +3107,9 @@
         "OmicsDI:liver transplant",
         "OmicsDI:liver transplant rejection"
       ],
-      "scientific_value": [
-        "pediatric liver transplant blood monitoring",
-        "pre versus post transplant longitudinal transcriptome",
-        "non-invasive immune monitoring"
-      ],
-      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
-      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
+      "scientific_value": [],
+      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
+      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
       "accession": "GSE118182",
@@ -3522,45 +3693,6 @@
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     },
     {
-      "accession": "GSE189539",
-      "title": "A single-cell landscape of human liver transplantation reveals a pathogenic immune niche associated with early allograft dysfunction",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE189539",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_single_cell_marker",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "single_cell"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy"
-      ],
-      "clinical_states": [
-        "ischemia_reperfusion",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:hepatic allograft",
-        "OmicsDI:liver allograft",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [
-        "direct graft-liver single-cell RNA-seq",
-        "early allograft dysfunction and reperfusion injury biology",
-        "marker-level immune niche evidence"
-      ],
-      "next_action": "Use as a single-cell marker matrix evidence layer; expose whole-matrix marker detectability for EAD immune niche genes while flagging unavailable cell-to-sample metadata.",
-      "triage_reason": "Processed locally from GEO series metadata and public filtered single-cell count matrix."
-    },
-    {
       "accession": "GSE192989",
       "title": "Gene expression after liver transplantation",
       "repository": "GEO",
@@ -3745,45 +3877,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE200340",
-      "title": "A network-based approach to identify expression modules underlying rejection in pediatric liver transplantation",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE200340",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_expression",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "blood_pbmc"
-      ],
-      "clinical_states": [
-        "pre_transplant_blood",
-        "early_post_transplant_blood",
-        "late_post_transplant_blood"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplant",
-        "OmicsDI:liver transplant rejection"
-      ],
-      "scientific_value": [
-        "pediatric liver transplant blood monitoring",
-        "pre versus post transplant longitudinal transcriptome",
-        "non-invasive immune monitoring"
-      ],
-      "next_action": "Use as a blood time-point monitoring evidence layer; expose pre, early post, and late post transplant log2CPM gene contrasts while keeping rejection-outcome labels unavailable.",
-      "triage_reason": "Processed locally from GEO series metadata and public RSEM gene-level supplementary archive."
     },
     {
       "accession": "GSE201695",
@@ -4489,42 +4582,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE243887",
-      "title": "Uncovering shared Molecular and Histopathological features of accepted versus rejected donor livers for transplantation",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE243887",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "processed_expression",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "donor_liver"
-      ],
-      "clinical_states": [
-        "post_transplant_nash_fibrosis",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [
-        "donor liver quality",
-        "accepted versus rejected donor organ RNA-seq",
-        "organ utilization molecular context"
-      ],
-      "next_action": "Use as the donor-liver quality RNA-seq evidence layer; expose accepted versus rejected donor-organ log2CPM gene contrasts with organ-selection caveats.",
-      "triage_reason": "Processed locally from GEO series metadata and public raw-count supplementary table."
     },
     {
       "accession": "GSE246994",
@@ -6011,40 +6068,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "PXD012615",
-      "title": "PXD012615",
-      "repository": "PRIDE",
-      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",
-      "accession_family": "PRIDE",
-      "source_type": "repository_accession",
-      "directness": "reference_liver_not_transplant_cohort",
-      "triage_status": "processed_protein_reference",
-      "priority": "P1",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "liver_reference"
-      ],
-      "clinical_states": [
-        "reference"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "liver proteome reference",
-        "protein feature normalization",
-        "cell-compartment protein context"
-      ],
-      "next_action": "Use as a processed human liver cell proteome reference layer; expose protein feature evidence while keeping it separate from transplant cohort contrasts.",
-      "triage_reason": "Processed locally from PRIDE MaxQuant proteinGroups.txt into queryable protein feature evidence."
     },
     {
       "accession": "GSE262273",

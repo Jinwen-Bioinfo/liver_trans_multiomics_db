@@ -1,0 +1,27 @@
+{
+  "source_id": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+  "generated_at_utc": "2026-04-24T03:21:40.555878+00:00",
+  "patient_count": 55,
+  "sample_count": 55,
+  "clinical_group_counts": {
+    "TCMR": 18,
+    "biliary_complication": 27,
+    "post_transplant_mash": 10
+  },
+  "pathology_groups": [
+    {
+      "clinical_state": "TCMR",
+      "sample_count": 18
+    },
+    {
+      "clinical_state": "biliary_complication",
+      "sample_count": 27
+    },
+    {
+      "clinical_state": "post_transplant_mash",
+      "sample_count": 10
+    }
+  ],
+  "measurement_unit": "uM",
+  "sample_origin": "recipient_serum"
+}

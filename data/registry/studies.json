@@ -181,6 +181,26 @@
       "keywords": ["liver transplant", "microbiome", "metabolomics", "fecal metabolites", "infection", "pathobiont", "supplementary data", "author repository"]
     },
     {
+      "accession": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "repository": "MDPI supplementary",
+      "repository_url": "https://doi.org/10.3390/metabo14050254",
+      "title": "Serum metabolomics for liver graft pathology discrimination",
+      "summary": "Supplementary absolute-concentration serum metabolomics cohort from a liver transplantation study spanning biopsy-confirmed TCMR, biliary complications, and post-transplant MASH. This is a direct non-invasive graft pathology metabolomics layer derived from public supplementary Table S4.",
+      "organism": "Homo sapiens",
+      "omics_modalities": ["metabolomics"],
+      "sample_origins": ["recipient_serum"],
+      "transplant_phases": ["post_transplant"],
+      "clinical_states": ["TCMR", "biliary_complication", "post_transplant_mash"],
+      "public_access": "open_supplementary_table",
+      "curation_status": "curated_supplementary_table",
+      "processing_status": "processed_feature_ready",
+      "qc_status": "source_verified_feature_qc_pass_absolute_concentration_table",
+      "featured_genes": [],
+      "featured_cell_types": [],
+      "featured_pathways": ["serotonin_metabolism", "amino_acid_metabolism", "acylcarnitine_metabolism", "graft_pathology_biomarkers"],
+      "keywords": ["liver transplant", "serum metabolomics", "TCMR", "biliary complications", "post-transplant MASH", "supplementary data"]
+    },
+    {
       "accession": "PXD012615",
       "repository": "PRIDE",
       "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD012615",

@@ -1,0 +1,46 @@
+{
+  "source_id": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+  "generated_at_utc": "2026-04-24T03:21:40.555878+00:00",
+  "parser": "scripts/ingest_mdpi_metabo_2024.py",
+  "source_urls": {
+    "article_pdf": "https://mdpi-res.com/d_attachment/metabolites/metabolites-14-00254/article_deploy/metabolites-14-00254.pdf",
+    "supplementary_zip": "https://mdpi-res.com/d_attachment/metabolites/metabolites-14-00254/article_deploy/metabolites-14-00254-s001.zip"
+  },
+  "source_files": [
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolites-14-00254.pdf",
+      "bytes": 2052310,
+      "sha256": "97ada1c1a65d4a10d944a21b49cd5258bdc60e5ba2b948f1df527f8d583c6c8c"
+    },
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolites-14-00254-s001.zip",
+      "bytes": 624406,
+      "sha256": "0e4a0deece974085964f6d1c755c139d5b75d12157eafd965ff87d2d9dcea2fa"
+    },
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/unpacked/Table S4.xlsx",
+      "bytes": 66226,
+      "sha256": "f2a8ce1c05770cc8445e9904369e58b8410990a4aab811cccfc6e4d31ecd0cb2"
+    }
+  ],
+  "methods": [
+    "Downloaded the public article PDF and supplementary ZIP from mdpi-res.com.",
+    "Parsed Supplementary Table S4.xlsx absolute metabolite concentrations for 55 serum samples.",
+    "Standardized pathology groups to TCMR, biliary_complication, and post_transplant_mash.",
+    "Computed exploratory pairwise Welch t-tests with Benjamini-Hochberg correction across metabolites for each contrast."
+  ],
+  "limitations": [
+    "This is a single-center post-transplant serum metabolomics cohort with modest sample size.",
+    "The public supplementary spreadsheet supports feature-level metabolite evidence, but not full reproduction of the paper's machine-learning workflow.",
+    "Deidentified clinical covariates beyond pathology class are not public in the supplementary spreadsheet."
+  ],
+  "outputs": [
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/samples.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/sample_summary.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/cohort_summary.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_summary.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/source_file_inventory.json",
+    "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/provenance.json"
+  ]
+}

@@ -354,6 +354,108 @@
         background: #fbfdfc;
       }
 
+      .route-banner {
+        margin-top: 18px;
+        padding: 12px 14px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: #f2f8f7;
+        display: none;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .route-banner strong {
+        font-size: 14px;
+      }
+
+      .route-banner span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .detail-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 14px;
+      }
+
+      .detail-block {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        background: var(--white);
+      }
+
+      .detail-block h3 {
+        margin: 0 0 10px;
+        font-size: 16px;
+      }
+
+      .detail-block p,
+      .detail-block li {
+        color: var(--muted);
+        line-height: 1.5;
+        font-size: 14px;
+      }
+
+      .detail-block ul {
+        margin: 8px 0 0;
+        padding-left: 18px;
+      }
+
+      .detail-block code {
+        font-size: 12px;
+      }
+
+      .evidence-stack {
+        display: grid;
+        gap: 12px;
+        margin-top: 14px;
+      }
+
+      .key-value {
+        display: grid;
+        gap: 8px;
+      }
+
+      .key-value div {
+        display: grid;
+        grid-template-columns: 130px minmax(0, 1fr);
+        gap: 10px;
+        align-items: start;
+        border-top: 1px solid var(--line);
+        padding-top: 8px;
+        font-size: 13px;
+      }
+
+      .key-value div:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .key-value strong {
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        color: var(--muted);
+      }
+
+      .empty-state {
+        border: 1px dashed var(--line);
+        border-radius: 8px;
+        padding: 14px;
+        color: var(--muted);
+        background: #fcfefd;
+        line-height: 1.5;
+      }
+
+      .muted {
+        color: var(--muted);
+      }
+
       .bar-row {
         display: grid;
         grid-template-columns: 130px minmax(0, 1fr) 70px;
@@ -457,6 +559,7 @@
               <option value="graft_liver">Graft liver</option>
               <option value="donor_liver">Donor liver</option>
               <option value="recipient_blood">Recipient blood</option>
+              <option value="recipient_serum">Recipient serum</option>
             </select>
             <select id="state">
               <option value="">All states</option>
@@ -474,6 +577,8 @@
             <div class="stat"><strong id="open-count">0</strong><span>open public records</span></div>
             <div class="stat"><strong id="modality-count">0</strong><span>modalities represented</span></div>
           </div>
+
+          <div id="active-route" class="route-banner"></div>
 
           <div id="use-cases" class="use-case-list"></div>
           <div id="gene-evidence"></div>
@@ -501,20 +606,36 @@
         <h2>Help</h2>
         <div class="grid">
           <div class="mini">
-            <strong>Dataset browser</strong>
-            <span>Filter studies by transplant state, omics modality, and sample origin.</span>
+            <strong>Start with a question</strong>
+            <span>Open a use case first if you want the shortest path from a clinical problem to the supporting public datasets and caveats.</span>
           </div>
           <div class="mini">
-            <strong>Gene evidence</strong>
-            <span>Use the search box for marker genes such as CXCL9, CXCL10, IFNG, GZMB, or COL1A1.</span>
+            <strong>Then inspect a study</strong>
+            <span>Each study detail view exposes sample composition, downloads, metadata provenance, analysis provenance, and the current claim boundary.</span>
           </div>
           <div class="mini">
-            <strong>Multi-omics features</strong>
-            <span>Search DFI metabolites and taxa such as oxochenodeoxycholic acid or Enterococcus faecium.</span>
+            <strong>Use feature search as the cross-omics entry</strong>
+            <span>Search genes like CXCL10, CYP3A4, COL1A1, VWF, or LST1 to see bulk RNA, single-cell, and protein evidence together.</span>
           </div>
           <div class="mini">
-            <strong>Submission status</strong>
-            <span>The NAR panel tracks what remains before a credible Database Issue pre-submission inquiry.</span>
+            <strong>Read the caveat before the claim</strong>
+            <span>Donor organ selection, longitudinal blood monitoring, single-cell matrix summaries, and proteome reference layers are kept separate so the database stays honest.</span>
+          </div>
+          <div class="mini">
+            <strong>Open the side panel deliberately</strong>
+            <span>Omics Layers shows what is actually processed. Ingest Queue shows what still needs work. Those are not the same thing.</span>
+          </div>
+          <div class="mini">
+            <strong>Downloads are part of the evidence</strong>
+            <span>Study detail pages expose sample tables, summaries, differential results, and analysis artifacts directly, so a collaborator can reproduce the visible evidence.</span>
+          </div>
+          <div class="mini">
+            <strong>Use the hash URL as a bookmark</strong>
+            <span>Routes like <code>#study/GSE243887</code>, <code>#use-case/DONOR_LIVER_QUALITY</code>, and <code>#feature/CYP3A4</code> reopen the same detail view.</span>
+          </div>
+          <div class="mini">
+            <strong>NAR readiness is not a vanity score</strong>
+            <span>The readiness panel is meant to surface missing infrastructure, documentation, and value-add, not to pretend the project is further along than it is.</span>
           </div>
         </div>
       </section>
@@ -531,9 +652,100 @@
 
     <script>
       const controls = ["query", "modality", "origin", "state"].map((id) => document.getElementById(id));
+      const detailPanel = document.getElementById("detail-panel");
+      const routeBanner = document.getElementById("active-route");
+      const anchorRoutes = new Set(["help", "about"]);
 
       function tag(value) {
         return `<span class="tag">${value}</span>`;
+      }
+
+      function escapeHtml(value) {
+        return String(value ?? "")
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function formatBytes(bytes) {
+        if (!bytes && bytes !== 0) return "";
+        if (bytes < 1024) return `${bytes} B`;
+        if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+        if (bytes < 1024 * 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+        return `${(bytes / (1024 * 1024 * 1024)).toFixed(1)} GB`;
+      }
+
+      function updateRouteBanner(label, hint) {
+        if (!label) {
+          routeBanner.style.display = "none";
+          routeBanner.innerHTML = "";
+          return;
+        }
+        routeBanner.style.display = "flex";
+        routeBanner.innerHTML = `<strong>${escapeHtml(label)}</strong><span>${escapeHtml(hint || "")}</span>`;
+      }
+
+      function setRoute(path) {
+        window.location.hash = path;
+      }
+
+      function renderStateTags(summary) {
+        if (!summary) return "";
+        return Object.entries(summary.by_clinical_state || {}).map(([label, count]) => tag(`${label}: ${count}`)).join("");
+      }
+
+      function renderDefaultDetail() {
+        detailPanel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>Detail workspace</h2>
+            <p class="lead">Open a study, use case, omics layer, triage item, or feature to inspect evidence, downloads, and limitations in one place.</p>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Useful routes</h3>
+                <ul>
+                  <li><code>#study/GSE243887</code> for donor liver RNA-seq detail</li>
+                  <li><code>#use-case/DONOR_LIVER_QUALITY</code> for a problem-centric evidence view</li>
+                  <li><code>#feature/CYP3A4</code> for cross-layer feature evidence</li>
+                  <li><code>#layer/proteome</code> for processed source coverage and artifact scope</li>
+                  <li><code>#source/DFI_MICROBIOME_LT_2024</code> for direct source-level provenance</li>
+                </ul>
+              </div>
+              <div class="detail-block">
+                <h3>How to read the evidence</h3>
+                <ul>
+                  <li>Bulk RNA layers provide exploratory database evidence, not full publication-grade differential pipelines.</li>
+                  <li>Single-cell and proteome layers may be reference context instead of transplant outcome evidence.</li>
+                  <li>Source views sit between registry metadata and feature pages: they are the right place to judge whether a layer is direct evidence or contextual reference.</li>
+                  <li>Every dataset should be interpreted with its sample origin, label meaning, and public artifact limits in mind.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      async function fetchJson(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error(`Request failed for ${url} (${response.status})`);
+        }
+        return response.json();
+      }
+
+      function syncQuery(value) {
+        document.getElementById("query").value = value;
+        loadStudies();
+        loadGeneEvidence();
+        loadProteinEvidence();
+        loadSingleCellEvidence();
+        loadMultiomicsEvidence();
+      }
+
+      function firstContrast(contrasts) {
+        const entries = Object.entries(contrasts || {});
+        return entries.length ? { id: entries[0][0], detail: entries[0][1] } : null;
       }
 
       async function loadStudies() {
@@ -547,8 +759,7 @@
         if (origin) params.set("sample_origin", origin);
         if (state) params.set("clinical_state", state);
 
-        const response = await fetch(`/api/studies?${params}`);
-        const data = await response.json();
+        const data = await fetchJson(`/api/studies?${params}`);
         document.getElementById("study-count").textContent = data.count;
         document.getElementById("open-count").textContent = data.studies.filter((study) => study.public_access === "open").length;
         const modalities = new Set(data.studies.flatMap((study) => study.omics_modalities));
@@ -559,33 +770,34 @@
           const summaryHtml = summary ? `
             <div class="summary">
               ${tag(`${summary.sample_count} samples`)}
-              ${Object.entries(summary.by_clinical_state).map(([label, count]) => tag(`${label}: ${count}`)).join("")}
+              ${renderStateTags(summary)}
             </div>
           ` : "";
           return `
-          <article class="dataset">
-            <h3>${study.accession}: ${study.title}</h3>
-            <p>${study.summary}</p>
-            ${summaryHtml}
-            <div class="tags">
-              ${study.omics_modalities.map(tag).join("")}
-              ${study.sample_origins.map(tag).join("")}
-              ${study.clinical_states.map(tag).join("")}
-              ${tag(study.public_access)}
-              ${tag(study.processing_status)}
-            </div>
-            <div class="actions">
-              <button type="button" data-action="details" data-accession="${study.accession}" onclick="showStudy('${study.accession}')">Details</button>
-              <button type="button" data-action="samples" data-accession="${study.accession}" onclick="showSamples('${study.accession}', '')">Samples</button>
-              <a class="link-button" href="${study.repository_url}" target="_blank" rel="noreferrer">Repository</a>
-            </div>
-          </article>
-        `}).join("");
+            <article class="dataset">
+              <h3>${study.accession}: ${study.title}</h3>
+              <p>${study.summary}</p>
+              ${summaryHtml}
+              <div class="tags">
+                ${study.omics_modalities.map(tag).join("")}
+                ${study.sample_origins.map(tag).join("")}
+                ${study.clinical_states.map(tag).join("")}
+                ${tag(study.public_access)}
+                ${tag(study.processing_status)}
+              </div>
+              <div class="actions">
+                <button type="button" onclick="setRoute('study/${study.accession}')">Details</button>
+                <button type="button" onclick="setRoute('samples/${study.accession}')">Samples</button>
+                ${study.featured_genes.slice(0, 2).map((gene) => `<button type="button" onclick="setRoute('feature/${gene}')">${gene}</button>`).join("")}
+                <a class="link-button" href="${study.repository_url}" target="_blank" rel="noreferrer">Repository</a>
+              </div>
+            </article>
+          `;
+        }).join("");
       }
 
       async function loadUseCases() {
-        const response = await fetch("/api/use-cases");
-        const data = await response.json();
+        const data = await fetchJson("/api/use-cases");
         document.getElementById("use-cases").innerHTML = data.use_cases.map((item) => `
           <article class="use-case">
             <h3>${item.title}</h3>
@@ -597,68 +809,165 @@
               ${tag(item.readiness)}
             </div>
             <div class="actions">
-              <button type="button" onclick="showUseCase('${item.use_case_id}')">Open question</button>
+              <button type="button" onclick="setRoute('use-case/${item.use_case_id}')">Open evidence</button>
+              ${item.markers.slice(0, 2).map((marker) => `<button type="button" onclick="setRoute('feature/${marker}')">${marker}</button>`).join("")}
             </div>
           </article>
         `).join("");
       }
 
-      async function showUseCase(useCaseId) {
-        const response = await fetch(`/api/use-cases/${useCaseId}`);
-        const item = await response.json();
-        document.getElementById("detail-panel").innerHTML = `
+      async function showUseCase(useCaseId, pushRoute = true) {
+        if (pushRoute) setRoute(`use-case/${useCaseId}`);
+        const item = await fetchJson(`/api/use-cases/${useCaseId}`);
+        updateRouteBanner(item.title, `${item.readiness} · ${item.primary_datasets.length} primary datasets`);
+        detailPanel.innerHTML = `
           <div class="evidence-panel">
             <h2>${item.title}</h2>
             <p class="lead">${item.why_it_matters}</p>
-            <strong>Current evidence</strong>
-            <ul>${item.current_evidence.map((line) => `<li>${line}</li>`).join("")}</ul>
-            <strong>Next validation</strong>
-            <ul>${item.next_validation.map((line) => `<li>${line}</li>`).join("")}</ul>
-            <div class="tags">
+            <div class="summary">
+              ${tag(item.readiness)}
               ${item.primary_datasets.map(tag).join("")}
               ${item.supporting_datasets.map(tag).join("")}
               ${(item.omics_layers || []).map(tag).join("")}
               ${item.signatures.map(tag).join("")}
             </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Clinical question</h3>
+                <p>${item.clinical_question}</p>
+                <h3>Current evidence</h3>
+                <ul>${item.current_evidence.map((line) => `<li>${line}</li>`).join("")}</ul>
+              </div>
+              <div class="detail-block">
+                <h3>Next validation</h3>
+                <ul>${item.next_validation.map((line) => `<li>${line}</li>`).join("")}</ul>
+                <h3>Open datasets</h3>
+                <div class="actions">
+                  ${item.primary_datasets.map((accession) => `<button type="button" onclick="setRoute('study/${accession}')">${accession}</button>`).join("")}
+                  ${item.markers.map((marker) => `<button type="button" onclick="setRoute('feature/${marker}')">${marker}</button>`).join("")}
+                </div>
+              </div>
+            </div>
+            ${item.primary_dataset_records?.length ? `
+              <div class="detail-block" style="margin-top:14px;">
+                <h3>Dataset readiness</h3>
+                <table class="sample-table">
+                  <thead><tr><th>Dataset</th><th>Modalities</th><th>Status</th><th>Origin</th></tr></thead>
+                  <tbody>
+                    ${item.primary_dataset_records.map((record) => `
+                      <tr>
+                        <td><button type="button" onclick="setRoute('study/${record.accession}')">${record.accession}</button></td>
+                        <td>${record.omics_modalities.join(", ")}</td>
+                        <td>${record.processing_status}</td>
+                        <td>${record.sample_origins.join(", ")}</td>
+                      </tr>
+                    `).join("")}
+                  </tbody>
+                </table>
+              </div>
+            ` : ""}
           </div>
         `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
-      async function showStudy(accession) {
-        const [detailResponse, downloadResponse] = await Promise.all([
-          fetch(`/api/studies/${accession}`),
-          fetch(`/api/studies/${accession}/downloads`)
+      async function showStudy(accession, pushRoute = true) {
+        if (pushRoute) setRoute(`study/${accession}`);
+        const [study, downloads, provenance] = await Promise.all([
+          fetchJson(`/api/studies/${accession}`),
+          fetchJson(`/api/studies/${accession}/downloads`),
+          fetch(`/api/studies/${accession}/provenance`).then((response) => response.ok ? response.json() : null)
         ]);
-        const study = await detailResponse.json();
-        const downloads = await downloadResponse.json();
         const summary = study.sample_summary;
-        document.getElementById("detail-panel").innerHTML = `
+        updateRouteBanner(study.accession, `${study.processing_status} · ${study.repository}`);
+        detailPanel.innerHTML = `
           <div class="evidence-panel">
             <h2>${study.accession}</h2>
             <p class="lead">${study.title}</p>
             <p>${study.summary}</p>
-            ${summary ? `<div class="summary">${tag(`${summary.sample_count} samples`)}${Object.entries(summary.by_clinical_state).map(([label, count]) => tag(`${label}: ${count}`)).join("")}</div>` : ""}
-            <div class="actions">
-              ${downloads.downloads.map((item) => `<a class="link-button" href="${item.url}" target="_blank" rel="noreferrer">${item.artifact}</a>`).join("")}
+            <div class="summary">
+              ${tag(study.processing_status)}
+              ${tag(study.public_access)}
+              ${study.omics_modalities.map(tag).join("")}
+              ${study.sample_origins.map(tag).join("")}
+              ${study.clinical_states.map(tag).join("")}
+              ${summary ? tag(`${summary.sample_count} samples`) : ""}
+              ${renderStateTags(summary)}
             </div>
+            <div class="actions">
+              <button type="button" onclick="setRoute('samples/${study.accession}')">Sample table</button>
+              <a class="link-button" href="${study.repository_url}" target="_blank" rel="noreferrer">Repository</a>
+              ${study.featured_genes.slice(0, 4).map((gene) => `<button type="button" onclick="setRoute('feature/${gene}')">${gene}</button>`).join("")}
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Study scope</h3>
+                <div class="key-value">
+                  <div><strong>Repository</strong><span>${study.repository}</span></div>
+                  <div><strong>Curation</strong><span>${study.curation_status}</span></div>
+                  <div><strong>QC</strong><span>${study.qc_status}</span></div>
+                  <div><strong>Phases</strong><span>${(study.transplant_phases || []).join(", ") || "Not curated"}</span></div>
+                </div>
+              </div>
+              <div class="detail-block">
+                <h3>Downloads</h3>
+                ${downloads.count ? `
+                  <div class="actions">
+                    ${downloads.downloads.map((item) => `<a class="link-button" href="${item.url}" target="_blank" rel="noreferrer">${item.artifact} (${formatBytes(item.bytes)})</a>`).join("")}
+                  </div>
+                ` : `<p>No processed download artifacts yet.</p>`}
+              </div>
+            </div>
+            ${provenance ? `
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <h3>Metadata provenance</h3>
+                  ${provenance.metadata_ingestion ? `
+                    <ul>
+                      <li>Parser: <code>${provenance.metadata_ingestion.parser || "n/a"}</code></li>
+                      <li>Generated: ${provenance.metadata_ingestion.generated_at_utc || "n/a"}</li>
+                      <li>Source file: ${provenance.metadata_ingestion.source_file?.path || provenance.metadata_ingestion.raw_path || "n/a"}</li>
+                    </ul>
+                  ` : `<p class="muted">No processed metadata provenance artifact.</p>`}
+                </div>
+                <div class="detail-block">
+                  <h3>Analysis provenance</h3>
+                  ${provenance.analysis ? `
+                    <ul>
+                      <li>Parser: <code>${provenance.analysis.parser || "n/a"}</code></li>
+                      <li>Generated: ${provenance.analysis.generated_at_utc || "n/a"}</li>
+                      <li>Methods: ${(provenance.analysis.methods || []).slice(0, 2).join(" ") || "n/a"}</li>
+                      <li>Limitations: ${(provenance.analysis.limitations || []).slice(0, 1).join(" ") || "n/a"}</li>
+                    </ul>
+                  ` : `<p class="muted">No processed analysis provenance artifact.</p>`}
+                </div>
+              </div>
+            ` : ""}
           </div>
         `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
-      async function showSamples(accession, clinicalState) {
+      async function showSamples(accession, clinicalState = "", pushRoute = true) {
+        if (pushRoute) {
+          setRoute(clinicalState ? `samples/${accession}/${clinicalState}` : `samples/${accession}`);
+        }
         const params = new URLSearchParams({ limit: "12" });
         if (clinicalState) params.set("clinical_state", clinicalState);
-        const response = await fetch(`/api/studies/${accession}/samples?${params}`);
-        const data = await response.json();
-        document.getElementById("detail-panel").innerHTML = `
+        const [data, study] = await Promise.all([
+          fetchJson(`/api/studies/${accession}/samples?${params}`),
+          fetchJson(`/api/studies/${accession}`)
+        ]);
+        const states = Object.keys(study.sample_summary?.by_clinical_state || {});
+        updateRouteBanner(`${accession} samples`, clinicalState ? `Filtered to ${clinicalState}` : "Showing first 12 matching samples");
+        detailPanel.innerHTML = `
           <div class="evidence-panel">
             <h2>${accession} Samples</h2>
             <p class="lead">${data.count} matching samples; showing ${data.samples.length}</p>
             <div class="actions">
-              <button type="button" onclick="showSamples('${accession}', 'TCMR')">TCMR</button>
-              <button type="button" onclick="showSamples('${accession}', 'no_rejection')">No rejection</button>
-              <button type="button" onclick="showSamples('${accession}', 'early_injury')">Early injury</button>
-              <button type="button" onclick="showSamples('${accession}', 'fibrosis')">Fibrosis</button>
+              <button type="button" onclick="setRoute('study/${accession}')">Study detail</button>
+              <button type="button" onclick="setRoute('samples/${accession}')">All</button>
+              ${states.map((state) => `<button type="button" onclick="setRoute('samples/${accession}/${state}')">${state}</button>`).join("")}
             </div>
             <table class="sample-table">
               <thead><tr><th>Sample</th><th>Title</th><th>State</th><th>Origin</th></tr></thead>
@@ -675,6 +984,7 @@
             </table>
           </div>
         `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       async function loadGeneEvidence() {
@@ -684,8 +994,7 @@
           panel.innerHTML = "";
           return;
         }
-        const response = await fetch(`/api/features/${encodeURIComponent(query)}/expression`);
-        const data = await response.json();
+        const data = await fetchJson(`/api/features/${encodeURIComponent(query)}/expression`);
         if (!data.evidence_count) {
           panel.innerHTML = "";
           return;
@@ -695,7 +1004,7 @@
             <h2>${data.feature} Expression Evidence</h2>
             <p class="lead">${data.evidence_count} processed datasets with queryable gene-level evidence.</p>
             ${data.expression_evidence.map((evidence) => {
-              const groups = Object.entries(evidence.group_summary);
+              const groups = Object.entries(evidence.group_summary || {});
               const maxMean = Math.max(...groups.map(([, item]) => Math.abs(item.mean || 0)), 1);
               const contrast = Object.values(evidence.statistical_contrasts || {})[0];
               return `
@@ -710,6 +1019,10 @@
                       <span>${item.mean}</span>
                     </div>
                   `).join("")}
+                  <div class="actions">
+                    <button type="button" onclick="setRoute('feature/${data.feature}')">Open feature</button>
+                    <button type="button" onclick="setRoute('study/${evidence.study_accession}')">${evidence.study_accession}</button>
+                  </div>
                 </div>
               `;
             }).join("")}
@@ -729,8 +1042,7 @@
         if (["metabolomics", "microbiome"].includes(selectedModality)) {
           params.set("modality", selectedModality);
         }
-        const response = await fetch(`/api/multiomics-features?${params}`);
-        const data = await response.json();
+        const data = await fetchJson(`/api/multiomics-features?${params}`);
         if (!data.count) {
           panel.innerHTML = "";
           return;
@@ -741,14 +1053,15 @@
             <p class="lead">${data.count} metabolite/taxon matches; showing ${data.features.length}</p>
             <div class="grid">
               ${data.features.map((feature) => {
-                const contrast = feature.contrasts && feature.contrasts.infection_positive_vs_negative;
+                const contrastEntry = firstContrast(feature.contrasts);
+                const contrast = contrastEntry && contrastEntry.detail;
                 return `
                   <div class="mini">
                     <strong>${feature.display_name}</strong>
                     <span>${feature.modality} · ${feature.feature_type} · ${feature.sample_count} samples</span>
-                    ${contrast ? `<span>infection Δmean: ${contrast.mean_difference}</span>` : ""}
+                    ${contrast ? `<span>${contrast.case_state} vs ${contrast.control_state}: Δmean ${contrast.mean_difference}</span>` : ""}
                     <div class="actions">
-                      <button type="button" onclick="showMultiomicsFeature('${feature.source_id}', '${feature.feature_type}', '${feature.feature_id}')">Details</button>
+                      <button type="button" onclick='routeMultiomicsFeature(${JSON.stringify(feature.source_id)}, ${JSON.stringify(feature.feature_type)}, ${JSON.stringify(feature.feature_id)})'>Details</button>
                     </div>
                   </div>
                 `;
@@ -765,8 +1078,7 @@
           panel.innerHTML = "";
           return;
         }
-        const response = await fetch(`/api/features/${encodeURIComponent(query)}/single-cell`);
-        const data = await response.json();
+        const data = await fetchJson(`/api/features/${encodeURIComponent(query)}/single-cell`);
         if (!data.evidence_count) {
           panel.innerHTML = "";
           return;
@@ -783,6 +1095,10 @@
                   <span>${evidence.cell_count} cells · ${evidence.sample_count} samples · ${evidence.assay_scale}</span>
                   <span>${summary.pct_cells_detected}% cells detected · mean log1p UMI ${summary.mean_log1p_umi_per_cell}</span>
                   <span>${evidence.cell_to_sample_mapping_status}</span>
+                  <div class="actions">
+                    <button type="button" onclick="setRoute('feature/${data.feature}')">Open feature</button>
+                    <button type="button" onclick="setRoute('study/${evidence.study_accession}')">${evidence.study_accession}</button>
+                  </div>
                 </div>
               `;
             }).join("")}
@@ -797,8 +1113,7 @@
           panel.innerHTML = "";
           return;
         }
-        const response = await fetch(`/api/features/${encodeURIComponent(query)}/protein`);
-        const data = await response.json();
+        const data = await fetchJson(`/api/features/${encodeURIComponent(query)}/protein`);
         if (!data.evidence_count) {
           panel.innerHTML = "";
           return;
@@ -822,6 +1137,9 @@
                       <span>${item.mean_log2_intensity ?? ""}</span>
                     </div>
                   `).join("")}
+                  <div class="actions">
+                    <button type="button" onclick="setRoute('feature/${data.feature}')">Open feature</button>
+                  </div>
                 </div>
               `;
             }).join("")}
@@ -829,11 +1147,19 @@
         `;
       }
 
-      async function showMultiomicsFeature(sourceId, featureType, featureId) {
-        const response = await fetch(`/api/multiomics-features/${sourceId}/${featureType}/${featureId}`);
-        const feature = await response.json();
-        const contrast = feature.contrasts && feature.contrasts.infection_positive_vs_negative;
-        document.getElementById("detail-panel").innerHTML = `
+      function routeMultiomicsFeature(sourceId, featureType, featureId) {
+        setRoute(`multiomics/${encodeURIComponent(sourceId)}/${encodeURIComponent(featureType)}/${encodeURIComponent(featureId)}`);
+      }
+
+      async function showMultiomicsFeature(sourceId, featureType, featureId, pushRoute = true) {
+        if (pushRoute) {
+          routeMultiomicsFeature(sourceId, featureType, featureId);
+        }
+        const feature = await fetchJson(`/api/multiomics-features/${sourceId}/${featureType}/${encodeURIComponent(featureId)}`);
+        const contrastEntry = firstContrast(feature.contrasts);
+        const contrast = contrastEntry && contrastEntry.detail;
+        updateRouteBanner(feature.display_name, `${feature.modality} · ${feature.feature_type}`);
+        detailPanel.innerHTML = `
           <div class="evidence-panel">
             <h2>${feature.display_name}</h2>
             <p class="lead">${feature.source_id} · ${feature.modality} · ${feature.feature_type} · ${feature.assay_scope}</p>
@@ -846,10 +1172,26 @@
             ${contrast ? `
               <p class="lead">${contrast.case_state} vs ${contrast.control_state}: Δmean ${contrast.mean_difference} on ${contrast.effect_scale}</p>
             ` : ""}
+            ${Object.entries(feature.contrasts || {}).length ? `
+              <table class="sample-table">
+                <thead><tr><th>Contrast</th><th>Case</th><th>Control</th><th>Δ Mean</th><th>FDR</th></tr></thead>
+                <tbody>
+                  ${Object.entries(feature.contrasts || {}).map(([contrastId, item]) => `
+                    <tr>
+                      <td>${contrastId}</td>
+                      <td>${item.case_state}</td>
+                      <td>${item.control_state}</td>
+                      <td>${item.mean_difference ?? ""}</td>
+                      <td>${item.adj_p_value_bh ?? ""}</td>
+                    </tr>
+                  `).join("")}
+                </tbody>
+              </table>
+            ` : ""}
             <table class="sample-table">
               <thead><tr><th>Group</th><th>n</th><th>Mean</th><th>Median</th><th>Min</th><th>Max</th></tr></thead>
               <tbody>
-                ${["all_samples", "infection_positive", "infection_negative"].map((group) => {
+                ${["all_samples", "TCMR", "biliary_complication", "post_transplant_mash", "infection_positive", "infection_negative"].map((group) => {
                   const item = feature[group] || {};
                   return `<tr><td>${group}</td><td>${item.n || 0}</td><td>${item.mean ?? ""}</td><td>${item.median ?? ""}</td><td>${item.min ?? ""}</td><td>${item.max ?? ""}</td></tr>`;
                 }).join("")}
@@ -857,12 +1199,12 @@
             </table>
           </div>
         `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
       }
 
       async function loadSignatureEvidence() {
         const panel = document.getElementById("signature-evidence");
-        const response = await fetch("/api/signatures/TCMR_IFNG_CYTOTOXIC/scores");
-        const data = await response.json();
+        const data = await fetchJson("/api/signatures/TCMR_IFNG_CYTOTOXIC/scores");
         if (!data.evidence_count) {
           panel.innerHTML = "";
           return;
@@ -886,8 +1228,7 @@
       }
 
       async function loadOmicsLayers() {
-        const response = await fetch("/api/omics-layers");
-        const data = await response.json();
+        const data = await fetchJson("/api/omics-layers");
         document.getElementById("omics-layers").innerHTML = data.omics_layers.map((layer) => `
           <article class="layer">
             <strong>${layer.label}</strong>
@@ -897,17 +1238,18 @@
               ${tag(`${layer.processed_accessions.length}/${layer.registered_accessions.length} processed`)}
               ${layer.registered_source_records.length ? tag(`${layer.registered_source_records.length} source`) : ""}
             </div>
+            <div class="actions">
+              <button type="button" onclick="setRoute('layer/${layer.layer_id}')">Open layer</button>
+            </div>
           </article>
         `).join("");
       }
 
       async function loadDatasetTriage() {
-        const [summaryResponse, queueResponse] = await Promise.all([
-          fetch("/api/dataset-triage?limit=1"),
-          fetch("/api/dataset-triage?priority=P0&limit=8")
+        const [summary, queue] = await Promise.all([
+          fetchJson("/api/dataset-triage?limit=1"),
+          fetchJson("/api/dataset-triage?priority=P0&limit=8")
         ]);
-        const summary = await summaryResponse.json();
-        const queue = await queueResponse.json();
         const counts = summary.summary || {};
         document.getElementById("triage-summary").innerHTML = `
           <div class="summary">
@@ -921,19 +1263,314 @@
             <strong>${item.accession}</strong>
             <span>${item.triage_status} · ${item.omics_modalities.slice(0, 2).join(", ")}</span>
             <span>${item.next_action}</span>
+            <div class="actions">
+              <button type="button" onclick="setRoute('triage/${item.accession}')">Open item</button>
+            </div>
           </article>
         `).join("");
       }
 
       async function loadReadiness() {
-        const response = await fetch("/api/nar/readiness");
-        const data = await response.json();
+        const data = await fetchJson("/api/nar/readiness");
         document.getElementById("readiness").innerHTML = data.criteria.map((item) => `
           <div class="check">
             <span>${item.criterion}</span>
             <span class="badge">${item.status}</span>
           </div>
         `).join("");
+      }
+
+      async function showSource(sourceId, pushRoute = true) {
+        if (pushRoute) setRoute(`source/${sourceId}`);
+        const [source, downloads, provenance] = await Promise.all([
+          fetchJson(`/api/multiomics-sources/${sourceId}`),
+          fetch(`/api/studies/${sourceId}/downloads`).then((response) => response.ok ? response.json() : { count: 0, downloads: [] }),
+          fetch(`/api/studies/${sourceId}/provenance`).then((response) => response.ok ? response.json() : null)
+        ]);
+        updateRouteBanner(source.source_id, `${source.local_status} · ${source.omics_modalities.join(", ")}`);
+        detailPanel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${source.title}</h2>
+            <p class="lead">${source.reported_sample_scope}</p>
+            <div class="summary">
+              ${tag(source.local_status)}
+              ${source.omics_modalities.map(tag).join("")}
+              ${source.sample_origins.map(tag).join("")}
+              ${(source.clinical_states || []).map(tag).join("")}
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Why this source matters</h3>
+                <ul>${(source.database_value || []).map((item) => `<li>${item}</li>`).join("")}</ul>
+                <div class="actions">
+                  ${(source.data_repositories || []).map((item) => `<a class="link-button" href="${item.url}" target="_blank" rel="noreferrer">${item.repository}</a>`).join("")}
+                </div>
+              </div>
+              <div class="detail-block">
+                <h3>Next ingest steps</h3>
+                <ul>${(source.next_ingest_steps || []).map((item) => `<li>${item}</li>`).join("")}</ul>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Processed artifacts</h3>
+                <ul>${(source.processed_artifacts || []).map((item) => `<li><code>${item}</code></li>`).join("")}</ul>
+              </div>
+              <div class="detail-block">
+                <h3>Downloads</h3>
+                ${downloads.count ? `
+                  <div class="actions">
+                    ${downloads.downloads.map((item) => `<a class="link-button" href="${item.url}" target="_blank" rel="noreferrer">${item.artifact} (${formatBytes(item.bytes)})</a>`).join("")}
+                  </div>
+                ` : `<p class="muted">No study-style download endpoint is currently exposed for this source.</p>`}
+              </div>
+            </div>
+            ${(source.source_check?.evidence_urls || []).length || provenance ? `
+              <div class="detail-grid">
+                <div class="detail-block">
+                  <h3>Validation and caveats</h3>
+                  <ul>
+                    ${(source.data_repositories || []).map((item) => `<li>${item.evidence}</li>`).join("")}
+                    ${(source.source_check?.evidence_urls || []).map((url) => `<li><code>${url}</code></li>`).join("")}
+                  </ul>
+                </div>
+                <div class="detail-block">
+                  <h3>Provenance snapshot</h3>
+                  ${provenance?.metadata_ingestion ? `
+                    <ul>
+                      <li>Metadata parser: <code>${provenance.metadata_ingestion.parser || "n/a"}</code></li>
+                      <li>Metadata generated: ${provenance.metadata_ingestion.generated_at_utc || "n/a"}</li>
+                    </ul>
+                  ` : ""}
+                  ${provenance?.analysis ? `
+                    <ul>
+                      <li>Analysis parser: <code>${provenance.analysis.parser || "n/a"}</code></li>
+                      <li>Analysis generated: ${provenance.analysis.generated_at_utc || "n/a"}</li>
+                      <li>Top limitation: ${(provenance.analysis.limitations || [])[0] || "n/a"}</li>
+                    </ul>
+                  ` : ""}
+                  ${!provenance ? `<p class="muted">No structured provenance endpoint is currently available for this source.</p>` : ""}
+                </div>
+              </div>
+            ` : ""}
+            <div class="actions">
+              <button type="button" onclick="setRoute('study/${source.source_id}')">Study record</button>
+              ${source.omics_modalities.includes("metabolomics") ? `<button type="button" onclick="routeMultiomicsFeature('DFI_MICROBIOME_LT_2024', 'metabolite', '12-oxochenodeoxycholic acid')">Example metabolite</button>` : ""}
+              ${source.omics_modalities.includes("microbiome") ? `<button type="button" onclick="routeMultiomicsFeature('DFI_MICROBIOME_LT_2024', 'taxon', 'Enterococcus faecium')">Example taxon</button>` : ""}
+              ${source.source_id === "PXD012615" ? `<button type="button" onclick="setRoute('feature/CYP3A4')">Example protein-linked feature</button>` : ""}
+            </div>
+          </div>
+        `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      async function showOmicsLayer(layerId, pushRoute = true) {
+        if (pushRoute) setRoute(`layer/${layerId}`);
+        const layer = await fetchJson(`/api/omics-layers/${layerId}`);
+        updateRouteBanner(layer.label, `${layer.readiness} · ${layer.processed_accessions.length}/${layer.registered_accessions.length} processed`);
+        detailPanel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${layer.label}</h2>
+            <p class="lead">${(layer.scientific_questions || []).join(" ")}</p>
+            <div class="summary">
+              ${tag(layer.readiness)}
+              ${layer.feature_types.map(tag).join("")}
+              ${layer.sample_origins.map(tag).join("")}
+              ${tag(`${layer.processed_accessions.length} processed`)}
+              ${tag(`${layer.registered_accessions.length} registered`)}
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Processed accessions</h3>
+                <div class="actions">
+                  ${layer.processed_accessions.map((accession) => `<button type="button" onclick="setRoute('study/${accession}')">${accession}</button>`).join("") || `<span class="muted">None yet</span>`}
+                  ${(layer.registered_source_records || []).map((source) => `<button type="button" onclick="setRoute('source/${source.source_id}')">${source.source_id}</button>`).join("")}
+                </div>
+              </div>
+              <div class="detail-block">
+                <h3>Registered but not yet ready</h3>
+                <div class="actions">
+                  ${layer.registered_accessions
+                    .filter((accession) => !layer.processed_accessions.includes(accession))
+                    .map((accession) => `<button type="button" onclick="setRoute('study/${accession}')">${accession}</button>`)
+                    .join("") || `<span class="muted">No backlog inside this layer.</span>`}
+                </div>
+              </div>
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Current artifacts</h3>
+                <ul>${(layer.current_artifacts || []).map((item) => `<li>${item}</li>`).join("")}</ul>
+              </div>
+              <div class="detail-block">
+                <h3>Scientific questions</h3>
+                <ul>${(layer.scientific_questions || []).map((item) => `<li>${item}</li>`).join("")}</ul>
+              </div>
+            </div>
+          </div>
+        `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      async function showTriageItem(accession, pushRoute = true) {
+        if (pushRoute) setRoute(`triage/${accession}`);
+        const item = await fetchJson(`/api/dataset-triage/${accession}`);
+        updateRouteBanner(item.accession, `${item.priority} · ${item.triage_status}`);
+        detailPanel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${item.accession}</h2>
+            <p class="lead">${item.summary}</p>
+            <div class="summary">
+              ${tag(item.priority)}
+              ${tag(item.triage_status)}
+              ${item.omics_modalities.map(tag).join("")}
+              ${(item.scientific_value || []).slice(0, 3).map(tag).join("")}
+            </div>
+            <div class="detail-grid">
+              <div class="detail-block">
+                <h3>Why this dataset matters</h3>
+                <p>${item.triage_reason}</p>
+                <h3>Next action</h3>
+                <p>${item.next_action}</p>
+              </div>
+              <div class="detail-block">
+                <h3>Routing</h3>
+                <div class="key-value">
+                  <div><strong>Repository</strong><span>${item.repository || "n/a"}</span></div>
+                  <div><strong>Directness</strong><span>${item.directness || "n/a"}</span></div>
+                  <div><strong>Status</strong><span>${item.local_status || "n/a"}</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      async function showFeature(symbol, pushRoute = true) {
+        const normalized = symbol.toUpperCase();
+        if (pushRoute) setRoute(`feature/${normalized}`);
+        syncQuery(normalized);
+        const [expression, singleCell, protein, entities] = await Promise.all([
+          fetchJson(`/api/features/${encodeURIComponent(normalized)}/expression`),
+          fetchJson(`/api/features/${encodeURIComponent(normalized)}/single-cell`),
+          fetchJson(`/api/features/${encodeURIComponent(normalized)}/protein`),
+          fetchJson(`/api/search?query=${encodeURIComponent(normalized)}`)
+        ]);
+        const evidenceCount = expression.evidence_count + singleCell.evidence_count + protein.evidence_count;
+        updateRouteBanner(normalized, `${evidenceCount} evidence records across bulk, single-cell, and protein layers`);
+        detailPanel.innerHTML = `
+          <div class="evidence-panel">
+            <h2>${normalized}</h2>
+            <p class="lead">Cross-layer feature view for a queryable symbol in the current public liver transplantation evidence model.</p>
+            <div class="summary">
+              ${tag(`${expression.evidence_count} bulk RNA`)}
+              ${tag(`${singleCell.evidence_count} single-cell`)}
+              ${tag(`${protein.evidence_count} protein`)}
+              ${entities.results.length ? entities.results.slice(0, 4).map((item) => tag(`${item.type}: ${item.label}`)).join("") : ""}
+            </div>
+            ${!evidenceCount ? `<div class="empty-state">No processed evidence layer currently exposes <strong>${normalized}</strong>. Try a known marker such as CXCL10, CYP3A4, COL1A1, VWF, or LST1.</div>` : ""}
+            <div class="evidence-stack">
+              ${expression.expression_evidence.map((evidence) => {
+                const groups = Object.entries(evidence.group_summary || {});
+                const contrast = Object.values(evidence.statistical_contrasts || {})[0];
+                const maxMean = Math.max(...groups.map(([, item]) => Math.abs(item.mean || 0)), 1);
+                return `
+                  <div class="detail-block">
+                    <h3>Bulk transcriptome: ${evidence.study_accession}</h3>
+                    <p>${evidence.study_title}</p>
+                    <div class="summary">
+                      ${tag(evidence.assay_scale)}
+                      ${tag(`${evidence.sample_count} samples`)}
+                      ${tag(`${evidence.probe_count} feature ids`)}
+                    </div>
+                    ${contrast ? `<p>${contrast.case_state} vs ${contrast.control_state}: mean difference ${contrast.mean_difference} on ${contrast.effect_scale}; BH-FDR ${Number(contrast.adj_p_value_bh).toExponential(2)}</p>` : `<p class="muted">No differential contrast currently exposed for this feature in the processed study artifact.</p>`}
+                    ${groups.map(([state, item]) => `
+                      <div class="bar-row">
+                        <span>${state}</span>
+                        <div class="bar"><span style="width:${Math.max(4, (Math.abs(item.mean || 0) / maxMean) * 100)}%"></span></div>
+                        <span>${item.mean}</span>
+                      </div>
+                    `).join("")}
+                    <div class="actions">
+                      <button type="button" onclick="setRoute('study/${evidence.study_accession}')">${evidence.study_accession}</button>
+                    </div>
+                  </div>
+                `;
+              }).join("")}
+              ${singleCell.single_cell_evidence.map((evidence) => `
+                <div class="detail-block">
+                  <h3>Single-cell matrix evidence: ${evidence.study_accession}</h3>
+                  <p>${evidence.study_title}</p>
+                  <div class="summary">
+                    ${tag(`${evidence.cell_count} cells`)}
+                    ${tag(`${evidence.sample_count} samples`)}
+                    ${tag(evidence.assay_scale)}
+                  </div>
+                  <p>${evidence.whole_matrix_summary?.pct_cells_detected}% cells detected; mean log1p UMI ${evidence.whole_matrix_summary?.mean_log1p_umi_per_cell}. ${evidence.cell_to_sample_mapping_status}</p>
+                  <div class="actions">
+                    <button type="button" onclick="setRoute('study/${evidence.study_accession}')">${evidence.study_accession}</button>
+                  </div>
+                </div>
+              `).join("")}
+              ${protein.protein_evidence.map((evidence) => {
+                const summaries = Object.entries(evidence.cell_type_summary || {});
+                const maxMean = Math.max(...summaries.map(([, item]) => item.mean_log2_intensity || 0), 1);
+                return `
+                  <div class="detail-block">
+                    <h3>Protein reference evidence: ${evidence.study_accession}</h3>
+                    <p>${evidence.protein_name || evidence.gene_symbol} · ${evidence.primary_uniprot}</p>
+                    <div class="summary">
+                      ${tag(evidence.assay_scale)}
+                      ${tag(evidence.sample_scope)}
+                      ${tag(`best compartment: ${evidence.best_cell_type_by_mean_log2_intensity || "not detected"}`)}
+                    </div>
+                    ${summaries.map(([cellType, item]) => `
+                      <div class="bar-row">
+                        <span>${cellType}</span>
+                        <div class="bar"><span style="width:${Math.max(4, ((item.mean_log2_intensity || 0) / maxMean) * 100)}%"></span></div>
+                        <span>${item.mean_log2_intensity ?? ""}</span>
+                      </div>
+                    `).join("")}
+                    ${(evidence.limitations || []).length ? `<p class="muted">${evidence.limitations[0]}</p>` : ""}
+                  </div>
+                `;
+              }).join("")}
+            </div>
+          </div>
+        `;
+        detailPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      async function handleRoute() {
+        const raw = window.location.hash.replace(/^#/, "");
+        if (!raw) {
+          updateRouteBanner("", "");
+          renderDefaultDetail();
+          return;
+        }
+        if (anchorRoutes.has(raw)) {
+          updateRouteBanner("", "");
+          renderDefaultDetail();
+          document.getElementById(raw)?.scrollIntoView({ behavior: "smooth", block: "start" });
+          return;
+        }
+        const parts = raw.split("/").map((part) => decodeURIComponent(part));
+        const [kind, ...rest] = parts;
+        try {
+          if (kind === "study" && rest[0]) return showStudy(rest[0], false);
+          if (kind === "samples" && rest[0]) return showSamples(rest[0], rest[1] || "", false);
+          if (kind === "use-case" && rest[0]) return showUseCase(rest[0], false);
+          if (kind === "layer" && rest[0]) return showOmicsLayer(rest[0], false);
+          if (kind === "source" && rest[0]) return showSource(rest[0], false);
+          if (kind === "triage" && rest[0]) return showTriageItem(rest[0], false);
+          if (kind === "feature" && rest[0]) return showFeature(rest[0], false);
+          if (kind === "multiomics" && rest.length >= 3) return showMultiomicsFeature(rest[0], rest[1], rest.slice(2).join("/"), false);
+          renderDefaultDetail();
+        } catch (error) {
+          updateRouteBanner("Route error", error.message);
+          detailPanel.innerHTML = `<div class="evidence-panel"><div class="empty-state">Could not load <code>#${escapeHtml(raw)}</code>. ${escapeHtml(error.message)}</div></div>`;
+        }
       }
 
       controls.forEach((control) => control.addEventListener("input", () => {
@@ -943,6 +1580,15 @@
         loadSingleCellEvidence();
         loadMultiomicsEvidence();
       }));
+      document.getElementById("query").addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+          const query = event.target.value.trim();
+          if (/^[A-Za-z0-9-]{2,20}$/.test(query)) {
+            setRoute(`feature/${query.toUpperCase()}`);
+          }
+        }
+      });
+      window.addEventListener("hashchange", handleRoute);
       loadStudies();
       loadUseCases();
       loadDatasetTriage();
@@ -953,6 +1599,8 @@
       loadMultiomicsEvidence();
       loadSignatureEvidence();
       loadReadiness();
+      renderDefaultDetail();
+      handleRoute();
     </script>
   </body>
 </html>

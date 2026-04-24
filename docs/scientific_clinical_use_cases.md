@@ -16,7 +16,7 @@ The resource asks:
 | Injury vs rejection | Can early injury be distinguished from immune rejection? | Full-platform contrast available; PXD012615 adds liver cell protein reference context; injury pathway/metabolome layers pending |
 | Fibrosis/chronic injury | Which ECM signals track graft fibrosis? | ECM marker-panel score and full-gene contrast in GSE145780; PXD012615 provides stellate-cell protein context for COL1A1 |
 | Donor liver quality | Can donor transcriptomics contextualize accepted vs rejected organs? | GSE243887 donor liver RNA-seq processed with accepted-vs-rejected log2CPM gene contrasts |
-| Blood monitoring | Can blood signatures support non-invasive graft monitoring? | GSE11881 PBMC tolerance contrast and GSE200340 pediatric blood time-point RNA-seq are processed |
+| Blood monitoring | Can blood or serum signatures support non-invasive graft monitoring? | GSE11881 PBMC tolerance contrast, GSE200340 pediatric blood time-point RNA-seq, and MDPI_METABO_2024_LT_GRAFT_PATHOLOGY serum metabolomics are processed |
 | Single-cell mechanism | Which cell types drive rejection markers and immune activation? | GSE189539 single-cell graft-liver matrix processed to marker/module evidence; cell metadata still needed for cell-type proportions |
 | Gut-liver microbiome/metabolome | Do microbial taxa and fecal metabolites associate with postoperative infection risk or immune dysregulation? | DFI_MICROBIOME_LT_2024 processed to feature-level metabolite and taxon summaries |
 | Immunosuppression pharmacogenomics | How do drug exposure and pharmacogenetic context relate to graft molecular state? | Metadata model ready; data discovery pending |
@@ -33,7 +33,7 @@ The resource asks:
    Use GSE189539 to expose searchable marker evidence across a public 58,243-cell graft-liver matrix for EAD-associated immune niche genes such as S100A12, GZMB, GZMK, and NKG7. This is deliberately presented as marker-level evidence because the GEO matrix does not include reusable cell-to-sample or cell-type metadata; cell-type proportion claims require recovered annotations or a full reanalysis.
 
 4. **Blood immune monitoring**
-   Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. Use GSE200340 to expose pediatric blood/PBMC RNA-seq evidence across pre-transplant, early post-transplant, and late post-transplant time points. These are intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
+   Use GSE11881 to expose PBMC expression evidence for operational tolerance versus non-tolerant liver transplant recipients. Use GSE200340 to expose pediatric blood/PBMC RNA-seq evidence across pre-transplant, early post-transplant, and late post-transplant time points. Use MDPI_METABO_2024_LT_GRAFT_PATHOLOGY to expose a direct post-transplant serum metabolomics layer across TCMR, biliary complications, and post-transplant MASH using public Supplementary Table S4 absolute concentrations. These are intentionally separated from graft biopsy evidence because tissue origin and clinical question differ.
 
 5. **Gut-liver infection-risk evidence**
    Use DFI_MICROBIOME_LT_2024 to expose stool metabolomics and microbiome features linked to postoperative infection status. The current resource provides 156 metabolite features and 769 MetaPhlAn taxon features with unadjusted infection-positive versus infection-negative summaries. These are searchable feature-level database records, not a reproduced clinical prediction model.

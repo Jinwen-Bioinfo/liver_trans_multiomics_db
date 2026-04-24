@@ -59,6 +59,63 @@
       }
     },
     {
+      "source_id": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+      "source_type": "supplementary_table",
+      "title": "Serum metabolomics for liver graft pathology prediction",
+      "publication": {
+        "journal": "Metabolites",
+        "year": 2024,
+        "doi": "10.3390/metabo14050254",
+        "url": "https://doi.org/10.3390/metabo14050254"
+      },
+      "data_repositories": [
+        {
+          "repository": "MDPI article",
+          "url": "https://doi.org/10.3390/metabo14050254",
+          "evidence": "The article text states that Supplementary Table S4 contains absolute metabolite concentrations for each sample."
+        },
+        {
+          "repository": "MDPI supplementary ZIP",
+          "url": "https://mdpi-res.com/d_attachment/metabolites/metabolites-14-00254/article_deploy/metabolites-14-00254-s001.zip",
+          "evidence": "Public supplementary ZIP contains Table S4.xlsx together with figures and methods."
+        }
+      ],
+      "omics_modalities": ["metabolomics"],
+      "sample_origins": ["recipient_serum"],
+      "organism": "Homo sapiens",
+      "transplant_context": ["liver_transplantation", "post_transplant", "graft_pathology"],
+      "reported_sample_scope": "55 post-liver-transplant serum samples spanning biopsy-confirmed TCMR, biliary complications, and post-transplant MASH.",
+      "database_value": [
+        "Adds a direct post-transplant serum metabolomics evidence layer rather than a reference atlas.",
+        "Supports non-invasive discrimination of TCMR, biliary complications, and metabolic graft injury.",
+        "Exposes public absolute concentration values that can be queried metabolite-by-metabolite."
+      ],
+      "local_status": "processed_feature_ready",
+      "processed_artifacts": [
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/samples.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/sample_summary.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/cohort_summary.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_summary.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/source_file_inventory.json",
+        "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Normalize metabolite names to HMDB, ChEBI, and PubChem identifiers where possible.",
+        "Link top metabolites to the paper's machine-learning ranking and public clinical covariates if reusable.",
+        "Validate serum metabolite shifts in an independent liver transplant cohort before claiming classifier-level generalization."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-24T03:30:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://doi.org/10.3390/metabo14050254",
+          "https://mdpi-res.com/d_attachment/metabolites/metabolites-14-00254/article_deploy/metabolites-14-00254-s001.zip",
+          "https://mdpi-res.com/d_attachment/metabolites/metabolites-14-00254/article_deploy/metabolites-14-00254.pdf"
+        ]
+      }
+    },
+    {
       "source_id": "PXD012615",
       "source_type": "repository_accession",
       "title": "Human liver cells proteome",

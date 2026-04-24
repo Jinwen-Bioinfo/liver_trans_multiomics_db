@@ -1,0 +1,32 @@
+{
+  "source_id": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+  "generated_at_utc": "2026-04-24T03:21:40.555878+00:00",
+  "raw_files": [
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolites-14-00254.pdf",
+      "bytes": 2052310,
+      "sha256": "97ada1c1a65d4a10d944a21b49cd5258bdc60e5ba2b948f1df527f8d583c6c8c"
+    },
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolites-14-00254-s001.zip",
+      "bytes": 624406,
+      "sha256": "0e4a0deece974085964f6d1c755c139d5b75d12157eafd965ff87d2d9dcea2fa"
+    },
+    {
+      "path": "data/raw/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/unpacked/Table S4.xlsx",
+      "bytes": 66226,
+      "sha256": "f2a8ce1c05770cc8445e9904369e58b8410990a4aab811cccfc6e4d31ecd0cb2"
+    }
+  ],
+  "supplementary_members": [
+    "Figure S1.pdf",
+    "Figure S2.pdf",
+    "Figure S3.pdf",
+    "Figure S4.pdf",
+    "Supplementary_Methods.pdf",
+    "Table S1.xlsx",
+    "Table S2.xlsx",
+    "Table S3.xlsx",
+    "Table S4.xlsx"
+  ]
+}
