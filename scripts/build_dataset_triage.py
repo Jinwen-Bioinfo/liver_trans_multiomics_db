@@ -401,8 +401,7 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
     if candidate.get("accession") == "HO1_ACR_LIVER_TX_PROTEOMICS":
         return "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
     if candidate.get("accession") == "PXD010812":
-
-        return "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, but the reporter-channel mapping for ischemic versus reperfused graft samples still needs to be recovered before feature-level contrasts can be generated."
+        return "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, including TQ01/TQ02/TQ03 batches with proteinGroups.txt and mqpar.xml, but the recovered MaxQuant experiment fields are blank so reporter-channel mapping for ischemic versus reperfused graft samples still cannot be defended."
 
     if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."

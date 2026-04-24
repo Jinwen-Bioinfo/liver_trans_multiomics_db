@@ -162,11 +162,14 @@ Why it stays high priority:
 - it is a direct liver-transplant graft-tissue cohort
 - PRIDE exposes reusable MaxQuant processed outputs through `search.zip`
 - the public abstract explicitly describes proteomic analysis of ischemic and reperfused liver samples
+- the archive structure now appears recoverable enough to confirm three MaxQuant batches (`TQ01`, `TQ02`, `TQ03`) with `proteinGroups.txt`, `evidence.txt`, `mqpar.xml`, and `tables.pdf`
 
 Why it is not promoted yet:
 
-- the remaining blocker is reporter-channel mapping
-- the currently inspected metadata are enough to confirm reusable processed files, but not yet enough to assign channels cleanly to ischemic versus reperfused graft states
+- the remaining blocker is still reporter-channel mapping
+- `mqpar.xml` confirms a `TMT6plex` reporter-ion design with active channels `126/127/128/130`, but the MaxQuant `<experiments>` field is blank
+- the embedded `tables.pdf` is generic MaxQuant documentation, not a sample-design sheet
+- so the currently inspected metadata are enough to confirm reusable processed files, but not yet enough to assign channels cleanly to ischemic versus reperfused graft states
 
 That fallback has already been converted into a usable local source by exploiting the publicly exposed supplementary PNG tables and article-text iTRAQ tag mapping:
 

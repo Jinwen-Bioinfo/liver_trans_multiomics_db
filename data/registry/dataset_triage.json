@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T08:39:49.445172+00:00",
+  "generated_at_utc": "2026-04-24T09:03:22.612308+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -7155,7 +7155,7 @@
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, but the reporter-channel mapping for ischemic versus reperfused graft samples still needs to be recovered before feature-level contrasts can be generated."
+      "triage_reason": "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, including TQ01/TQ02/TQ03 batches with proteinGroups.txt and mqpar.xml, but the recovered MaxQuant experiment fields are blank so reporter-channel mapping for ischemic versus reperfused graft samples still cannot be defended."
     },
     {
       "accession": "PXD011374",
