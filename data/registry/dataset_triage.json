@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-24T09:03:22.612308+00:00",
+  "generated_at_utc": "2026-04-25T02:19:22.184915+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -19,17 +19,17 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 5,
+      "processed_feature_ready": 6,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
       "ready_to_ingest": 99,
-      "source_review_needed": 135
+      "source_review_needed": 134
     },
     "priority_counts": {
       "P0": 9,
-      "P1": 101,
-      "P2": 400,
+      "P1": 102,
+      "P2": 399,
       "P3": 395
     },
     "modality_counts": {
@@ -44,8 +44,8 @@
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 110,
-    "ready_or_processed_count": 110
+    "p0_or_p1_count": 111,
+    "ready_or_processed_count": 111
   },
   "priority_queue": [
     {
@@ -549,6 +549,39 @@
       ],
       "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
       "triage_reason": "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
+    },
+    {
+      "accession": "S-EPMC6493459",
+      "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics.",
+      "repository": "biostudies-literature",
+      "repository_url": "https://www.omicsdi.org/dataset/biostudies-literature/S-EPMC6493459",
+      "accession_family": "other",
+      "source_type": "literature_or_index_record",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics",
+        "unknown"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [],
+      "publication_date": null,
+      "discovered_via": [
+        "OmicsDI:liver transplant proteomics"
+      ],
+      "scientific_value": [
+        "peri-transplant serum proteomics",
+        "pre-versus-post transplant blood context",
+        "retinol-metabolism and S100P/AOX1 biomarker context"
+      ],
+      "next_action": "Use as a direct peri-transplant serum proteomics layer for healthy-control versus pre-transplant HCC recipient contrasts, while keeping it framed as a partial published-table timecourse layer rather than a reusable per-sample iTRAQ matrix.",
+      "triage_reason": "The public Oncotarget full text exposes the peri-transplant liver-transplant serum iTRAQ study design, a partial visible pre-transplant versus healthy-control protein table including S100P, and a retinol-metabolism subset including AOX1 and ADH-family proteins."
     },
     {
       "accession": "E-MTAB-11688",
@@ -2633,41 +2666,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE277334",
-      "title": "Defining an NK cell-enriched rejection-like phenotype in liver transplant biopsies from the INTERLIVER study",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE277334",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "post_transplant_nash_fibrosis"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:INTERLIVER",
-        "OmicsDI:liver transplant",
-        "OmicsDI:liver transplant biopsy",
-        "OmicsDI:liver transplant rejection"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -3172,6 +3170,39 @@
       ],
       "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
       "triage_reason": "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
+    },
+    {
+      "accession": "S-EPMC6493459",
+      "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics.",
+      "repository": "biostudies-literature",
+      "repository_url": "https://www.omicsdi.org/dataset/biostudies-literature/S-EPMC6493459",
+      "accession_family": "other",
+      "source_type": "literature_or_index_record",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics",
+        "unknown"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [],
+      "publication_date": null,
+      "discovered_via": [
+        "OmicsDI:liver transplant proteomics"
+      ],
+      "scientific_value": [
+        "peri-transplant serum proteomics",
+        "pre-versus-post transplant blood context",
+        "retinol-metabolism and S100P/AOX1 biomarker context"
+      ],
+      "next_action": "Use as a direct peri-transplant serum proteomics layer for healthy-control versus pre-transplant HCC recipient contrasts, while keeping it framed as a partial published-table timecourse layer rather than a reusable per-sample iTRAQ matrix.",
+      "triage_reason": "The public Oncotarget full text exposes the peri-transplant liver-transplant serum iTRAQ study design, a partial visible pre-transplant versus healthy-control protein table including S100P, and a retinol-metabolism subset including AOX1 and ADH-family proteins."
     },
     {
       "accession": "E-MTAB-11688",
@@ -9932,35 +9963,6 @@
       "publication_date": null,
       "discovered_via": [
         "OmicsDI:liver transplant cell-free DNA"
-      ],
-      "scientific_value": [],
-      "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
-    },
-    {
-      "accession": "S-EPMC6493459",
-      "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics.",
-      "repository": "biostudies-literature",
-      "repository_url": "https://www.omicsdi.org/dataset/biostudies-literature/S-EPMC6493459",
-      "accession_family": "other",
-      "source_type": "literature_or_index_record",
-      "directness": "direct_liver_transplant",
-      "triage_status": "source_review_needed",
-      "priority": "P2",
-      "omics_modalities": [
-        "proteomics",
-        "unknown"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [],
-      "publication_date": null,
-      "discovered_via": [
-        "OmicsDI:liver transplant proteomics"
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",

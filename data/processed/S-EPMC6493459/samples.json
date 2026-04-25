@@ -1,0 +1,407 @@
+[
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_01",
+    "patient_index": 1,
+    "sample_accession": "HC_01",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_02",
+    "patient_index": 2,
+    "sample_accession": "HC_02",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_03",
+    "patient_index": 3,
+    "sample_accession": "HC_03",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_04",
+    "patient_index": 4,
+    "sample_accession": "HC_04",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_05",
+    "patient_index": 5,
+    "sample_accession": "HC_05",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_06",
+    "patient_index": 6,
+    "sample_accession": "HC_06",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_07",
+    "patient_index": 7,
+    "sample_accession": "HC_07",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_08",
+    "patient_index": 8,
+    "sample_accession": "HC_08",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "healthy_control",
+    "cohort_role": "control",
+    "participant_id": "HC_09",
+    "patient_index": 9,
+    "sample_accession": "HC_09",
+    "sample_origin": "recipient_serum",
+    "timepoint": "healthy_baseline"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_01",
+    "patient_index": 1,
+    "sample_accession": "LT_01_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_01",
+    "patient_index": 1,
+    "sample_accession": "LT_01_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_01",
+    "patient_index": 1,
+    "sample_accession": "LT_01_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_01",
+    "patient_index": 1,
+    "sample_accession": "LT_01_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_02",
+    "patient_index": 2,
+    "sample_accession": "LT_02_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_02",
+    "patient_index": 2,
+    "sample_accession": "LT_02_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_02",
+    "patient_index": 2,
+    "sample_accession": "LT_02_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_02",
+    "patient_index": 2,
+    "sample_accession": "LT_02_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_03",
+    "patient_index": 3,
+    "sample_accession": "LT_03_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_03",
+    "patient_index": 3,
+    "sample_accession": "LT_03_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_03",
+    "patient_index": 3,
+    "sample_accession": "LT_03_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_03",
+    "patient_index": 3,
+    "sample_accession": "LT_03_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_04",
+    "patient_index": 4,
+    "sample_accession": "LT_04_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_04",
+    "patient_index": 4,
+    "sample_accession": "LT_04_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_04",
+    "patient_index": 4,
+    "sample_accession": "LT_04_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_04",
+    "patient_index": 4,
+    "sample_accession": "LT_04_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_05",
+    "patient_index": 5,
+    "sample_accession": "LT_05_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_05",
+    "patient_index": 5,
+    "sample_accession": "LT_05_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_05",
+    "patient_index": 5,
+    "sample_accession": "LT_05_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_05",
+    "patient_index": 5,
+    "sample_accession": "LT_05_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_06",
+    "patient_index": 6,
+    "sample_accession": "LT_06_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_06",
+    "patient_index": 6,
+    "sample_accession": "LT_06_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_06",
+    "patient_index": 6,
+    "sample_accession": "LT_06_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_06",
+    "patient_index": 6,
+    "sample_accession": "LT_06_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_07",
+    "patient_index": 7,
+    "sample_accession": "LT_07_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_07",
+    "patient_index": 7,
+    "sample_accession": "LT_07_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_07",
+    "patient_index": 7,
+    "sample_accession": "LT_07_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_07",
+    "patient_index": 7,
+    "sample_accession": "LT_07_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_08",
+    "patient_index": 8,
+    "sample_accession": "LT_08_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_08",
+    "patient_index": 8,
+    "sample_accession": "LT_08_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_08",
+    "patient_index": 8,
+    "sample_accession": "LT_08_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_08",
+    "patient_index": 8,
+    "sample_accession": "LT_08_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  },
+  {
+    "clinical_state": "pre_transplant_hcc_lt_candidate",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_09",
+    "patient_index": 9,
+    "sample_accession": "LT_09_PRE_TRANSPLANT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "pre_transplant"
+  },
+  {
+    "clinical_state": "post_lt_day_1",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_09",
+    "patient_index": 9,
+    "sample_accession": "LT_09_DAY_1_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_1_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_3",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_09",
+    "patient_index": 9,
+    "sample_accession": "LT_09_DAY_3_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_3_post_lt"
+  },
+  {
+    "clinical_state": "post_lt_day_7",
+    "cohort_role": "lt_recipient",
+    "participant_id": "LT_09",
+    "patient_index": 9,
+    "sample_accession": "LT_09_DAY_7_POST_LT",
+    "sample_origin": "recipient_serum",
+    "timepoint": "day_7_post_lt"
+  }
+]

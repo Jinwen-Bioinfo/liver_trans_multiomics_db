@@ -1,0 +1,15 @@
+{
+  "generated_at_utc": "2026-04-25T02:17:28.427472+00:00",
+  "limitations": [
+    "The same nine liver-transplant patients were sampled across four peri-transplant timepoints, so this is a repeated-measures cohort rather than five independent groups.",
+    "The published proteomics tables exposed only the pre-transplant versus healthy-control differential subset in machine-readable article text.",
+    "No reusable per-sample iTRAQ intensity matrix or complete post-transplant differential table was publicly exposed in this V1 layer."
+  ],
+  "lt_patient_count": 9,
+  "participant_count": 18,
+  "protein_feature_count": 28,
+  "reported_pre_lt_upregulated_count": 112,
+  "reported_total_identified_protein_count": 1399,
+  "sample_count": 45,
+  "study_accession": "S-EPMC6493459"
+}

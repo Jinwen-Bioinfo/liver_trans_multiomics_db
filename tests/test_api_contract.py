@@ -470,6 +470,20 @@ def test_direct_acr_protein_endpoint_returns_ho1_evidence() -> None:
     )
 
 
+def test_direct_peri_transplant_protein_endpoint_returns_sepmc6493459_evidence() -> None:
+    response = client.get("/api/features/S100P/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["protein_evidence"] if item["study_accession"] == "S-EPMC6493459")
+    assert evidence["evidence_kind"] == "direct_transplant_protein_biomarker"
+    assert evidence["primary_uniprot"] == "P25815"
+    assert evidence["sample_scope"] == "recipient_serum_peri_transplant_hcc_timecourse"
+    assert any(
+        contrast["contrast_id"] == "pre_transplant_hcc_lt_candidate_vs_healthy_control"
+        for contrast in evidence["published_contrasts"]
+    )
+
+
 def test_protein_reference_downloads_are_available() -> None:
     response = client.get("/api/studies/PXD012615/downloads")
     assert response.status_code == 200
@@ -582,6 +596,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "PXD062924" in proteome["processed_accessions"]
     assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["registered_accessions"]
     assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["processed_accessions"]
+    assert "S-EPMC6493459" in proteome["registered_accessions"]
+    assert "S-EPMC6493459" in proteome["processed_accessions"]
 
 
 def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
@@ -596,6 +612,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/PXD062924/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
+    assert "data/processed/S-EPMC6493459/protein_features.json" in proteome["current_artifacts"]
     assert metabolome["readiness"] == "processed_feature_ready"
     assert microbiome["readiness"] == "processed_feature_ready"
     assert proteome["readiness"] == "protein_feature_direct_and_reference_ready"
@@ -674,6 +691,17 @@ def test_multiomics_source_registry_exposes_direct_acr_proteomics_layer() -> Non
     assert payload["sample_origins"] == ["recipient_serum"]
     assert "acute_cellular_rejection" in payload["clinical_states"]
     assert "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_peri_transplant_serum_proteomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/S-EPMC6493459")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "article_table"
+    assert payload["local_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_origins"] == ["recipient_serum"]
+    assert "pre_transplant_hcc_lt_candidate" in payload["clinical_states"]
+    assert "data/processed/S-EPMC6493459/protein_features.json" in payload["processed_artifacts"]
 
 
 def test_source_type_registry_includes_supplementary_tables() -> None:
@@ -891,11 +919,13 @@ def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> Non
     assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in payload["supporting_datasets"]
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in payload["supporting_datasets"]
     assert "PXD062924" in payload["supporting_datasets"]
+    assert "S-EPMC6493459" in payload["supporting_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE200340"
     assert any("185 pediatric" in line for line in payload["current_evidence"])
     assert any("55 post-transplant serum metabolomics" in line for line in payload["current_evidence"])
     assert any("ACLY, FGA, and APOA1" in line for line in payload["current_evidence"])
     assert any("45 differential proteins" in line for line in payload["current_evidence"])
+    assert any("S-EPMC6493459 adds direct peri-transplant serum iTRAQ proteomics" in line for line in payload["current_evidence"])
 
 
 def test_injury_vs_rejection_use_case_links_direct_transplant_proteomics() -> None:

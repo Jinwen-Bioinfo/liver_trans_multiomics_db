@@ -707,6 +707,57 @@
         "pride",
         "frontiers"
       ]
+    },
+    {
+      "accession": "S-EPMC6493459",
+      "repository": "Oncotarget article",
+      "repository_url": "https://www.oncotarget.com/article/26761/text/",
+      "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics",
+      "summary": "Direct liver-transplant serum proteomics evidence reconstructed from the public Oncotarget full-text article, covering healthy controls and a peri-transplant HCC recipient timecourse with pre-transplant plus day 1/day 3/day 7 post-transplant sampling. This is direct blood-based transplant proteomics context, but currently only at the partial published-table level rather than a reusable per-sample iTRAQ matrix.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "transplant_phases": [
+        "pre_transplant",
+        "perioperative",
+        "post_transplant"
+      ],
+      "clinical_states": [
+        "healthy_control",
+        "pre_transplant_hcc_lt_candidate",
+        "post_lt_day_1",
+        "post_lt_day_3",
+        "post_lt_day_7"
+      ],
+      "public_access": "open_article_table",
+      "curation_status": "curated_publication_summary",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_article_table_qc_pass_partial_feature_coverage",
+      "featured_genes": [
+        "S100P",
+        "AOX1",
+        "ADH1A",
+        "ADH1B",
+        "SPP1"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "retinol_metabolism",
+        "peri_transplant_serum_reset",
+        "hcc_associated_serum_proteins"
+      ],
+      "keywords": [
+        "liver transplant",
+        "serum proteomics",
+        "iTRAQ",
+        "peri-transplant timecourse",
+        "HCC",
+        "article table"
+      ]
     }
   ]
 }

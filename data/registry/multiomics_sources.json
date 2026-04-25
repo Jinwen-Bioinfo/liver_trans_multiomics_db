@@ -454,6 +454,68 @@
           "https://www.ebi.ac.uk/pride/archive/projects/PXD062924"
         ]
       }
+    },
+    {
+      "source_id": "S-EPMC6493459",
+      "source_type": "article_table",
+      "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics",
+      "publication": {
+        "journal": "Oncotarget",
+        "year": 2019,
+        "pmid": "31069013",
+        "doi": "10.18632/oncotarget.26761",
+        "url": "https://www.oncotarget.com/article/26761/text/"
+      },
+      "data_repositories": [
+        {
+          "repository": "Oncotarget article",
+          "url": "https://www.oncotarget.com/article/26761/text/",
+          "evidence": "The public full text exposes the peri-transplant serum iTRAQ study design, Table 3 cohort structure, a partial visible Table 1 with top pre-transplant versus healthy-control proteins, and Table 2 retinol-metabolism proteins."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_serum"
+      ],
+      "clinical_states": [
+        "healthy_control",
+        "pre_transplant_hcc_lt_candidate",
+        "post_lt_day_1",
+        "post_lt_day_3",
+        "post_lt_day_7"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "blood_based_peri_transplant_monitoring",
+        "pre_transplant_hcc_context",
+        "peri_transplant_timecourse"
+      ],
+      "reported_sample_scope": "Direct liver-transplant recipient serum iTRAQ cohort with repeated pre-transplant and day 1/day 3/day 7 post-transplant sampling; V1 exposes only the visible pre-transplant versus healthy-control published protein rows.",
+      "database_value": [
+        "Adds peri-transplant serum proteomics context rather than only complication- or rejection-specific snapshots.",
+        "Makes proteins such as S100P, AOX1, ADH1A, ADH1B, and SPP1 queryable in a direct liver-transplant blood layer.",
+        "Provides a bridge between pre-transplant disease context and early post-transplant blood monitoring without pretending to expose a full sample-level iTRAQ matrix."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/S-EPMC6493459/proteomics_summary.json",
+        "data/processed/S-EPMC6493459/protein_features.json",
+        "data/processed/S-EPMC6493459/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source framed as partial article-table evidence rather than a reusable per-sample iTRAQ matrix.",
+        "Use it for peri-transplant serum context and retinol-metabolism interpretation, not for rejection-specific classification.",
+        "Upgrade the layer only if a full feature table or sample-level matrix becomes public."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-25T02:30:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.oncotarget.com/article/26761/text/"
+        ]
+      }
     }
   ]
 }

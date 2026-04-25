@@ -1,0 +1,53 @@
+{
+  "assay_modality": "proteomics",
+  "clinical_group_counts": {
+    "healthy_control": 9,
+    "post_lt_day_1": 9,
+    "post_lt_day_3": 9,
+    "post_lt_day_7": 9,
+    "pre_transplant_hcc_lt_candidate": 9
+  },
+  "feature_symbols": [
+    "A0A0C4DH43",
+    "ACTA2",
+    "ADH1A",
+    "ADH1B",
+    "ADH4",
+    "ADH6",
+    "AOX1",
+    "C1ORF174",
+    "CLTC",
+    "COL12A1",
+    "ENDOGL1",
+    "GC",
+    "H3C1",
+    "HBB",
+    "HEL-9",
+    "HIST1H4L",
+    "IGLV",
+    "ITGA5",
+    "ITGB4",
+    "KRT71",
+    "OVGP1",
+    "PADI4",
+    "RAC2",
+    "RRAGA",
+    "S100P",
+    "SPP1",
+    "V1-4",
+    "VH4-34"
+  ],
+  "generated_at_utc": "2026-04-25T02:17:28.427472+00:00",
+  "limitations": [
+    "The article identifies 1,399 proteins overall, but the public full text exposes only a partial visible subset of protein rows suitable for V1 database query.",
+    "This V1 layer intentionally exposes only the directly published pre-transplant versus healthy-control iTRAQ ratios; it does not claim complete longitudinal post-transplant feature coverage.",
+    "No reusable per-feature p-values were exposed in the public article text for these protein rows."
+  ],
+  "participant_count": 18,
+  "protein_feature_count": 28,
+  "reported_pre_lt_upregulated_count": 112,
+  "reported_total_identified_protein_count": 1399,
+  "sample_count": 45,
+  "sample_scope": "recipient_serum_peri_transplant_hcc_timecourse",
+  "study_accession": "S-EPMC6493459"
+}

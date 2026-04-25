@@ -116,6 +116,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
         "scientific_value": ["post-transplant renal dysfunction monitoring", "direct serum proteomics", "blood-based complication evidence after liver transplantation"],
     },
+    "S-EPMC6493459": {
+        "priority": "P1",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct peri-transplant serum proteomics layer for healthy-control versus pre-transplant HCC recipient contrasts, while keeping it framed as a partial published-table timecourse layer rather than a reusable per-sample iTRAQ matrix.",
+        "scientific_value": ["peri-transplant serum proteomics", "pre-versus-post transplant blood context", "retinol-metabolism and S100P/AOX1 biomarker context"],
+    },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "priority": "P0",
         "triage_status": "processed_feature_ready",
@@ -194,6 +200,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics", "metabolomics"],
         "sample_origins": ["plasma_serum"],
         "clinical_states": ["post_transplant_renal_dysfunction"],
+    },
+    "S-EPMC6493459": {
+        "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics",
+        "repository": "Oncotarget article",
+        "repository_url": "https://www.oncotarget.com/article/26761/text/",
+        "source_type": "article_table",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["plasma_serum"],
+        "clinical_states": ["peri_transplant_monitoring", "pre_transplant_hcc_context"],
     },
     "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY": {
         "title": "Harnessing Metabolites as Serum Biomarkers for Liver Graft Pathology Prediction Using Machine Learning",
@@ -407,6 +423,8 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."
     if candidate.get("accession") == "PXD062924":
         return "Frontiers article Table 3 exposes 45 differential serum proteins for normal versus impaired kidney-function monitoring after liver transplantation, and the linked PRIDE accession documents the direct post-transplant cohort."
+    if candidate.get("accession") == "S-EPMC6493459":
+        return "The public Oncotarget full text exposes the peri-transplant liver-transplant serum iTRAQ study design, a partial visible pre-transplant versus healthy-control protein table including S100P, and a retinol-metabolism subset including AOX1 and ADH-family proteins."
     if status.startswith("processed"):
         return "Already has local processed artifacts and is part of the current demo evidence layer."
     if status == "ready_to_ingest":

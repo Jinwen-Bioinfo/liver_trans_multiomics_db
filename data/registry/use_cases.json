@@ -167,7 +167,8 @@
         "HRA002091",
         "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
         "AGING_2020_LT_SERUM_PROTEOMICS",
-        "PXD062924"
+        "PXD062924",
+        "S-EPMC6493459"
       ],
       "markers": [
         "CXCL10",
@@ -179,7 +180,9 @@
         "APOA1",
         "B2M",
         "AMBP",
-        "TF"
+        "TF",
+        "S100P",
+        "AOX1"
       ],
       "signatures": [],
       "current_evidence": [
@@ -188,7 +191,8 @@
         "CXCL10, ISG15, IFI27, and IL7R can now be queried as longitudinal blood monitoring markers.",
         "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY adds 55 post-transplant serum metabolomics samples spanning TCMR, biliary complications, and post-transplant MASH with 134 absolute-concentration metabolite features.",
         "AGING_2020_LT_SERUM_PROTEOMICS adds direct liver-transplant serum proteomics biomarker evidence for ACLY, FGA, and APOA1 across perioperative, acute rejection, and ITBL contexts, with Welch contrasts derived from published group summary statistics.",
-        "PXD062924 adds direct post-transplant serum proteomics evidence for normal versus impaired kidney function after liver transplantation, exposing 45 differential proteins with PRIDE-linked provenance and highlighting markers such as B2M, AMBP, TF, APOA1, and SLPI."
+        "PXD062924 adds direct post-transplant serum proteomics evidence for normal versus impaired kidney function after liver transplantation, exposing 45 differential proteins with PRIDE-linked provenance and highlighting markers such as B2M, AMBP, TF, APOA1, and SLPI.",
+        "S-EPMC6493459 adds direct peri-transplant serum iTRAQ proteomics context for healthy controls versus pre-transplant HCC recipients, exposing partial published-table evidence for S100P, AOX1, and ADH-family proteins while documenting day 1/day 3/day 7 post-transplant sampling."
       ],
       "next_validation": [
         "Recover or curate rejection outcome labels from publication supplementary material if publicly reusable.",
@@ -196,7 +200,8 @@
         "Treat the current layer as time-point monitoring evidence, not a rejection-outcome classifier.",
         "Validate serum metabolite shifts in an independent graft pathology cohort before claiming non-invasive classification performance.",
         "Keep the serum proteomics layer framed as published group-summary biomarker evidence until a reusable per-sample transplant proteome matrix is public.",
-        "Keep the PXD062924 proteomics layer framed as post-transplant renal-dysfunction monitoring evidence rather than rejection-specific classification, and upgrade it only if a reusable sample-level protein matrix becomes public."
+        "Keep the PXD062924 proteomics layer framed as post-transplant renal-dysfunction monitoring evidence rather than rejection-specific classification, and upgrade it only if a reusable sample-level protein matrix becomes public.",
+        "Keep S-EPMC6493459 framed as partial peri-transplant serum context rather than a complete longitudinal sample-level proteomics matrix."
       ],
       "omics_layers": [
         "transcriptome_bulk",

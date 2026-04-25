@@ -49,15 +49,20 @@ If the supplement only contains pathway figures or narrative summaries, keep it 
 
 ## Current blocker
 
-As of 2026-04-24, the source is **scientifically promising but not yet machine-ingested** because:
+As of 2026-04-25, the source is **scientifically promising but not yet machine-ingested** because:
 
-- Frontiers article XML confirms a supplementary `DataSheet1.docx`
+- Frontiers article HTML and `__NUXT_DATA__` confirm a supplementary attachment with:
+  - `@_xlink:href = DataSheet1.docx`
+  - `@_mimetype = application/vnd.openxmlformats-officedocument.wordprocessingml.document`
 - NCBI OA metadata confirms an open-access package for `PMC13061671`
-- however, the directly reusable supplementary file was not yet retrievable through the current automated fetch paths in this environment
+- the obvious public asset paths were tested and failed:
+  - standard `frontiersin.org/.../file/DataSheet1.docx` patterns returned `404`
+  - `public-pages-files-2025.frontiersin.org/.../DataSheet1.docx` patterns also returned `404`
+- so the blocker is now narrow and concrete: **the supplement filename is public, but the resolved downloadable asset URL is still missing**
 
 So the source remains:
 
-- `ready_to_ingest` in triage
+- `ready_to_ingest` in triage from a scientific-priority perspective, but still blocked at the asset-resolution step
 - not yet promoted into `studies.json` / `multiomics_sources.json`
 - not yet exposed as a database protein layer
 

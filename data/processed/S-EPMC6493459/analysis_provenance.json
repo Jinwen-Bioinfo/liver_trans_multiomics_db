@@ -1,0 +1,58 @@
+{
+  "generated_at_utc": "2026-04-25T02:17:28.427472+00:00",
+  "identifier_mapping_rule": "Used the UniProt accessions and gene symbols explicitly visible in the article text tables; no secondary remapping service was required.",
+  "limitations": [
+    "The public article text exposes only partial feature rows and does not provide a complete reusable sample-by-protein intensity matrix.",
+    "Post-transplant day 1/day 3/day 7 comparisons are present at the study-design level but not as reusable feature tables in this V1 ingestion layer.",
+    "This cohort is centered on HCC recipients undergoing transplantation, so the evidence should not be overstated as general rejection monitoring."
+  ],
+  "methods": [
+    "Downloaded the Oncotarget full-text article landing page for the peri-transplant serum iTRAQ study.",
+    "Curated directly visible protein rows from Table 1 (partial upregulated list) and Table 2 (retinol-metabolism subset) into a queryable published-table evidence layer.",
+    "Represented the cohort as repeated-measures serum placeholders spanning healthy controls plus pre-transplant and day 1/day 3/day 7 post-transplant sampling.",
+    "Computed log2 fold-change summaries from the article-reported Ratio_B_114/A_113 values for database display only."
+  ],
+  "normalization_rule": "Used the article-reported iTRAQ pre-transplant versus healthy-control ratios exactly as shown; no raw-spectrum reprocessing or additional normalization was performed.",
+  "outputs": {
+    "cohort_summary": {
+      "bytes": 784,
+      "path": "data/processed/S-EPMC6493459/cohort_summary.json",
+      "sha256": "b795469345df87c27f32e5ea952ccd5bff3dbcd1b0c1d4406dd1a5c0c3c5db6c"
+    },
+    "protein_features": {
+      "bytes": 71490,
+      "path": "data/processed/S-EPMC6493459/protein_features.json",
+      "sha256": "fa3753a3be9aecc1f6b2f830e9f227cc5d34f37f5bd4ac5c5925e927cb419442"
+    },
+    "proteomics_summary": {
+      "bytes": 1431,
+      "path": "data/processed/S-EPMC6493459/proteomics_summary.json",
+      "sha256": "329330b82c84ce45a1fd71fe39194458a16c2a3fea5bcf8c25a76a4b8e07f267"
+    },
+    "sample_summary": {
+      "bytes": 1002,
+      "path": "data/processed/S-EPMC6493459/sample_summary.json",
+      "sha256": "c0f6fb51e478940968f23d3426d961d10c06af24ec9ae17552b4d5a4b95cbef3"
+    },
+    "samples": {
+      "bytes": 11667,
+      "path": "data/processed/S-EPMC6493459/samples.json",
+      "sha256": "5094db6013bfe2d377af8aec25578b18cd983f287aaac47573ec7b4674ece3d9"
+    },
+    "source_file_inventory": {
+      "bytes": 317,
+      "path": "data/processed/S-EPMC6493459/source_file_inventory.json",
+      "sha256": "7ce6e4d0bc2650b48682707a5532f83f8dddd04db3055f2e82724d24336cd2cd"
+    }
+  },
+  "parser": "scripts/ingest_sepmc6493459_lt_serum_proteomics.py",
+  "source_files": {
+    "article_html": {
+      "bytes": 4096,
+      "path": "data/raw/S-EPMC6493459/article.html",
+      "sha256": "d39d1261ba90bee5f8f497b187c6762864fba41d027f463897ab7b3669a3e26c",
+      "url": "https://www.oncotarget.com/article/26761/text/"
+    }
+  },
+  "study_accession": "S-EPMC6493459"
+}

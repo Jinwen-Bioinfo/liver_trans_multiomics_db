@@ -1,0 +1,12 @@
+{
+  "files": [
+    {
+      "bytes": 4096,
+      "label": "article_html",
+      "path": "data/raw/S-EPMC6493459/article.html",
+      "sha256": "d39d1261ba90bee5f8f497b187c6762864fba41d027f463897ab7b3669a3e26c"
+    }
+  ],
+  "generated_at_utc": "2026-04-25T02:17:28.427472+00:00",
+  "study_accession": "S-EPMC6493459"
+}
