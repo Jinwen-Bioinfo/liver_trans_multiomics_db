@@ -94,7 +94,8 @@
         "HO1_ACR_LIVER_TX_PROTEOMICS",
         "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
         "PXD062924",
-        "S-EPMC6493459"
+        "S-EPMC6493459",
+        "PXD046355"
       ],
       "processed_accessions": [
         "PXD012615",
@@ -103,23 +104,26 @@
         "HO1_ACR_LIVER_TX_PROTEOMICS",
         "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
         "PXD062924",
-        "S-EPMC6493459"
+        "S-EPMC6493459",
+        "PXD046355"
       ],
       "current_artifacts": [
-        "data/processed/PXD012615/proteomics_summary.json",
-        "data/processed/PXD012615/protein_features.json",
-        "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
         "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
-        "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/proteomics_summary.json",
+        "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
         "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json",
-        "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/proteomics_summary.json",
+        "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/proteomics_summary.json",
         "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json",
-        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
+        "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/proteomics_summary.json",
         "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json",
-        "data/processed/PXD062924/proteomics_summary.json",
+        "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
+        "data/processed/PXD012615/protein_features.json",
+        "data/processed/PXD012615/proteomics_summary.json",
+        "data/processed/PXD046355/protein_features.json",
+        "data/processed/PXD046355/proteomics_summary.json",
         "data/processed/PXD062924/protein_features.json",
-        "data/processed/S-EPMC6493459/proteomics_summary.json",
-        "data/processed/S-EPMC6493459/protein_features.json"
+        "data/processed/PXD062924/proteomics_summary.json",
+        "data/processed/S-EPMC6493459/protein_features.json",
+        "data/processed/S-EPMC6493459/proteomics_summary.json"
       ],
       "readiness": "protein_feature_direct_and_reference_ready"
     },

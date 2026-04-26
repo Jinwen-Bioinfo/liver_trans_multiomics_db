@@ -1,0 +1,28 @@
+{
+  "files": [
+    {
+      "bytes": 4931082,
+      "label": "pride_search_engine_report",
+      "path": "data/raw/PXD046355/NMP_Bile_Proteomics_Report.txt",
+      "sha256": "b46d2c48f3f6324d09a6ae67bc22cc2beddfbd816e111edf6b4a8a269fd98372"
+    },
+    {
+      "bytes": 11730715,
+      "label": "nature_source_data_xlsx",
+      "path": "data/raw/PXD046355/source_data.xlsx",
+      "sha256": "96cf76c7ff1e700190ca33287abfdbe3082d08620ddfa6dcc1abb205377f6bf4"
+    },
+    {
+      "bytes": 4128357,
+      "label": "nature_supplementary_pdf",
+      "path": "data/raw/PXD046355/supplementary_information.pdf",
+      "sha256": "749a8b8568143521891f973ff1b9c9fc58243ba92e1bfef5cda319a1da08be7b"
+    },
+    {
+      "bytes": 24215,
+      "label": "nature_supplementary_text",
+      "path": "data/raw/PXD046355/supplementary_information.txt",
+      "sha256": "56fd25bfd8b8086dc1271375920b282138573446ca812a85db2a9a4d5da0b18e"
+    }
+  ]
+}

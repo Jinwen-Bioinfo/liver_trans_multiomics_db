@@ -502,6 +502,20 @@ def test_direct_peri_transplant_protein_endpoint_returns_sepmc6493459_evidence()
     )
 
 
+def test_direct_donor_bile_protein_endpoint_returns_pxd046355_evidence() -> None:
+    response = client.get("/api/features/FCGBP/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(item for item in payload["protein_evidence"] if item["study_accession"] == "PXD046355")
+    assert evidence["evidence_kind"] == "direct_transplant_protein_biomarker"
+    assert evidence["primary_uniprot"] == "Q9Y6R7"
+    assert evidence["sample_scope"] == "donor_bile_nmp_viability_timecourse"
+    assert any(
+        contrast["contrast_id"] == "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_30min"
+        for contrast in evidence["published_contrasts"]
+    )
+
+
 def test_protein_reference_downloads_are_available() -> None:
     response = client.get("/api/studies/PXD012615/downloads")
     assert response.status_code == 200
@@ -569,6 +583,28 @@ def test_direct_acr_proteomics_downloads_are_available() -> None:
     assert "analysis_provenance" in artifacts
 
 
+def test_direct_donor_bile_proteomics_study_detail_is_available() -> None:
+    response = client.get("/api/studies/PXD046355")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["processing_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_summary"]["sample_count"] == 142
+    assert payload["sample_summary"]["by_clinical_state"]["high_biliary_viability_donor_liver"] == 98
+    assert payload["sample_summary"]["by_clinical_state"]["low_biliary_viability_donor_liver"] == 44
+
+
+def test_direct_donor_bile_proteomics_downloads_are_available() -> None:
+    response = client.get("/api/studies/PXD046355/downloads")
+    assert response.status_code == 200
+    artifacts = {item["artifact"] for item in response.json()["downloads"]}
+    assert "samples" in artifacts
+    assert "sample_summary" in artifacts
+    assert "cohort_summary" in artifacts
+    assert "proteomics_summary" in artifacts
+    assert "protein_features" in artifacts
+    assert "analysis_provenance" in artifacts
+
+
 def test_omics_layer_registry_is_multimodal() -> None:
     response = client.get("/api/omics-layers")
     assert response.status_code == 200
@@ -606,6 +642,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "DFI_MICROBIOME_LT_2024" in microbiome["registered_accessions"]
     assert "PXD012615" in proteome["registered_accessions"]
     assert "PXD012615" in proteome["processed_accessions"]
+    assert "PXD046355" in proteome["registered_accessions"]
+    assert "PXD046355" in proteome["processed_accessions"]
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in proteome["registered_accessions"]
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in proteome["processed_accessions"]
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in proteome["registered_accessions"]
@@ -628,6 +666,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     assert "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json" in metabolome["current_artifacts"]
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in microbiome["current_artifacts"]
     assert "data/processed/PXD012615/protein_features.json" in proteome["current_artifacts"]
+    assert "data/processed/PXD046355/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
@@ -668,6 +707,17 @@ def test_multiomics_source_registry_exposes_protein_reference_layer() -> None:
     assert payload["local_status"] == "protein_feature_reference_ready"
     assert "proteomics" in payload["omics_modalities"]
     assert "data/processed/PXD012615/protein_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_direct_donor_bile_proteomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/PXD046355")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "repository_accession"
+    assert payload["local_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_origins"] == ["donor_liver"]
+    assert "high_biliary_viability_donor_liver" in payload["clinical_states"]
+    assert "data/processed/PXD046355/protein_features.json" in payload["processed_artifacts"]
 
 
 def test_multiomics_source_registry_exposes_direct_transplant_proteomics_layer() -> None:
@@ -808,6 +858,15 @@ def test_dataset_triage_marks_protein_reference_processed() -> None:
     assert "human liver cell proteome reference" in payload["next_action"]
 
 
+def test_dataset_triage_marks_donor_bile_proteomics_processed() -> None:
+    response = client.get("/api/dataset-triage/PXD046355")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["triage_status"] == "processed_feature_ready"
+    assert payload["priority"] == "P1"
+    assert "bile proteomics layer" in payload["next_action"]
+
+
 def test_dataset_triage_marks_direct_transplant_proteomics_processed() -> None:
     response = client.get("/api/dataset-triage/AGING_2020_LT_SERUM_PROTEOMICS")
     assert response.status_code == 200
@@ -917,7 +976,8 @@ def test_donor_liver_quality_use_case_links_processed_expression() -> None:
     response = client.get("/api/use-cases/DONOR_LIVER_QUALITY")
     assert response.status_code == 200
     payload = response.json()
-    assert payload["readiness"] == "donor_expression_evidence_ready"
+    assert payload["readiness"] == "donor_multimodal_evidence_ready"
+    assert "PXD046355" in payload["supporting_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE243887"
     assert any("log2(CPM + 1)" in line for line in payload["current_evidence"])
 

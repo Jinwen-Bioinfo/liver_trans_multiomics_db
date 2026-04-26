@@ -587,6 +587,71 @@
           "https://www.oncotarget.com/article/26761/text/"
         ]
       }
+    },
+    {
+      "source_id": "PXD046355",
+      "source_type": "repository_accession",
+      "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
+      "publication": {
+        "journal": "Nature Communications",
+        "year": 2023,
+        "doi": "10.1038/s41467-023-43368-y",
+        "url": "https://www.nature.com/articles/s41467-023-43368-y"
+      },
+      "data_repositories": [
+        {
+          "repository": "PRIDE",
+          "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+          "evidence": "The PRIDE project exposes NMP_Bile_Proteomics_Report.txt, a reusable sample-level protein-group quantity matrix with 142 bile samples."
+        },
+        {
+          "repository": "Nature source data",
+          "url": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-43368-y/MediaObjects/41467_2023_43368_MOESM4_ESM.xlsx",
+          "evidence": "The source-data workbook exposes sample IDs, donor-liver numbers, timepoints, and biliary-viability labels that can be joined back to the PRIDE matrix."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "donor_liver"
+      ],
+      "clinical_states": [
+        "high_biliary_viability_donor_liver",
+        "low_biliary_viability_donor_liver"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "donor_liver_quality",
+        "normothermic_machine_perfusion",
+        "biliary_viability"
+      ],
+      "reported_sample_scope": "Direct donor-liver bile proteomics during normothermic machine perfusion, with 142 sample-level protein-group profiles spanning 55 donor livers and recoverable high-versus-low biliary viability labels.",
+      "database_value": [
+        "Adds one of the first sample-level donor-liver proteomics layers in the project, rather than another article-only differential marker summary.",
+        "Extends donor-quality interpretation beyond accepted-versus-rejected RNA-seq by exposing bile proteins linked to biliary viability during machine perfusion.",
+        "Provides queryable proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ in a direct donor-organ context."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/PXD046355/proteomics_summary.json",
+        "data/processed/PXD046355/protein_features.json",
+        "data/processed/PXD046355/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep the primary V1 framing on donor-liver biliary viability at 30min and 150min rather than recipient outcome prediction.",
+        "Recover a defensible full-sample transplantability mapping only if the Nature supplements expose it beyond the current figure-linked subset.",
+        "Consider a dedicated machine-perfusion viability use case if additional donor-liver perfusion cohorts become public."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-26T05:45:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+          "https://www.nature.com/articles/s41467-023-43368-y",
+          "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-43368-y/MediaObjects/41467_2023_43368_MOESM4_ESM.xlsx"
+        ]
+      }
     }
   ]
 }

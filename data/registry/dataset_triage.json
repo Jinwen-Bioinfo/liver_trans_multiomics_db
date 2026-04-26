@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-26T02:51:17.793305+00:00",
+  "generated_at_utc": "2026-04-26T05:40:24.882922+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -19,17 +19,17 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 7,
+      "processed_feature_ready": 8,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
       "ready_to_ingest": 98,
-      "source_review_needed": 134
+      "source_review_needed": 133
     },
     "priority_counts": {
       "P0": 9,
-      "P1": 102,
-      "P2": 399,
+      "P1": 103,
+      "P2": 398,
       "P3": 395
     },
     "modality_counts": {
@@ -44,8 +44,8 @@
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 111,
-    "ready_or_processed_count": 111
+    "p0_or_p1_count": 112,
+    "ready_or_processed_count": 112
   },
   "priority_queue": [
     {
@@ -545,6 +545,41 @@
         "early AKI tissue proteomics"
       ],
       "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD046355",
+      "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy",
+        "donor_liver"
+      ],
+      "clinical_states": [
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20231121",
+      "discovered_via": [
+        "OmicsDI:liver transplant proteomics"
+      ],
+      "scientific_value": [
+        "sample-level donor bile proteomics",
+        "normothermic machine perfusion viability",
+        "biliary regeneration and donor organ quality"
+      ],
+      "next_action": "Use as a direct donor-liver bile proteomics layer for high-versus-low biliary viability during normothermic machine perfusion, while keeping the V1 framing on donor-organ viability rather than recipient post-transplant outcome prediction.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
@@ -2632,40 +2667,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE276531",
-      "title": "Hypothermic oxygenated machine perfusion influences the immunogenicity of donor livers in humans",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE276531",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy",
-        "donor_liver"
-      ],
-      "clinical_states": [
-        "TCMR_or_ACR",
-        "ischemia_reperfusion",
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant",
-        "OmicsDI:liver transplant rejection"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -3166,6 +3167,41 @@
         "early AKI tissue proteomics"
       ],
       "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
+      "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD046355",
+      "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy",
+        "donor_liver"
+      ],
+      "clinical_states": [
+        "donor_graft_quality"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20231121",
+      "discovered_via": [
+        "OmicsDI:liver transplant proteomics"
+      ],
+      "scientific_value": [
+        "sample-level donor bile proteomics",
+        "normothermic machine perfusion viability",
+        "biliary regeneration and donor organ quality"
+      ],
+      "next_action": "Use as a direct donor-liver bile proteomics layer for high-versus-low biliary viability during normothermic machine perfusion, while keeping the V1 framing on donor-organ viability rather than recipient post-transplant outcome prediction.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
@@ -9471,37 +9507,6 @@
       "discovered_via": [
         "OmicsDI:liver transplant proteomics",
         "OmicsDI:liver transplant rejection"
-      ],
-      "scientific_value": [],
-      "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
-    },
-    {
-      "accession": "PXD046355",
-      "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
-      "repository": "pride",
-      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
-      "accession_family": "PRIDE",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "source_review_needed",
-      "priority": "P2",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "graft_liver_biopsy",
-        "donor_liver"
-      ],
-      "clinical_states": [
-        "donor_graft_quality"
-      ],
-      "organisms": [
-        "Homo sapiens (Human)"
-      ],
-      "publication_date": "20231121",
-      "discovered_via": [
-        "OmicsDI:liver transplant proteomics"
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",

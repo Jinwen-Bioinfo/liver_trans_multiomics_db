@@ -1,0 +1,29 @@
+{
+  "assay_modality": "proteomics",
+  "assay_scale": "log2_pg_quantity",
+  "clinical_group_counts": {
+    "high_biliary_viability_donor_liver": 98,
+    "low_biliary_viability_donor_liver": 44
+  },
+  "contrast_ids": [
+    "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_150min",
+    "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_30min"
+  ],
+  "donor_liver_count": 55,
+  "gene_query_count": 4493,
+  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "limitations": [
+    "Low-biliary-viability end-of-perfusion samples are sparse (n=2), so V1 only exposes 30min and 150min viability contrasts.",
+    "Sample-level transplantability annotations are only recoverable for a subset of figure-linked samples and are therefore not used as the primary contrast axis in this layer."
+  ],
+  "protein_group_count": 4408,
+  "sample_count": 142,
+  "sample_origin": "donor_liver",
+  "sample_scope": "donor_bile_nmp_viability_timecourse",
+  "source_id": "PXD046355",
+  "timepoint_counts": {
+    "150min": 54,
+    "30min": 55,
+    "End": 33
+  }
+}

@@ -86,6 +86,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a processed human liver cell proteome reference, then cross-link protein feature pages with RNA and single-cell evidence while keeping this layer separate from transplant-specific outcome claims.",
         "scientific_value": ["liver proteome reference", "protein feature normalization"],
     },
+    "PXD046355": {
+        "priority": "P1",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct donor-liver bile proteomics layer for high-versus-low biliary viability during normothermic machine perfusion, while keeping the V1 framing on donor-organ viability rather than recipient post-transplant outcome prediction.",
+        "scientific_value": ["sample-level donor bile proteomics", "normothermic machine perfusion viability", "biliary regeneration and donor organ quality"],
+    },
     "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
         "priority": "P1",
         "triage_status": "processed_feature_ready",
@@ -150,6 +156,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["liver_reference"],
         "clinical_states": ["reference"],
+    },
+    "PXD046355": {
+        "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
+        "repository": "PRIDE / Nature source data",
+        "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+        "source_type": "repository_accession",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["donor_liver"],
+        "clinical_states": ["donor_graft_quality", "biliary_viability"],
     },
     "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
         "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",

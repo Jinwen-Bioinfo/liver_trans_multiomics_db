@@ -804,6 +804,52 @@
         "HCC",
         "article table"
       ]
+    },
+    {
+      "accession": "PXD046355",
+      "repository": "PRIDE / Nature source data",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",
+      "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",
+      "summary": "Direct donor-liver bile proteomics during normothermic machine perfusion, using a reusable PRIDE protein-group matrix joined to Nature source-data biliary-viability labels. This supports donor-quality and biliary-regeneration interpretation across 30min and 150min perfusion timepoints, but it should not be framed as recipient post-transplant outcome evidence.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "donor_liver"
+      ],
+      "transplant_phases": [
+        "pre_transplant",
+        "ex_vivo_machine_perfusion"
+      ],
+      "clinical_states": [
+        "high_biliary_viability_donor_liver",
+        "low_biliary_viability_donor_liver"
+      ],
+      "public_access": "open",
+      "curation_status": "curated_public_repository",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_pride_report_qc_pass_sample_level_viability_metadata_recovered",
+      "featured_genes": [
+        "FCGBP",
+        "ANPEP",
+        "ACE2",
+        "DPP4",
+        "CTSZ"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "biliary_regeneration",
+        "epithelial_secretory_program",
+        "innate_immunity"
+      ],
+      "keywords": [
+        "donor liver",
+        "normothermic machine perfusion",
+        "bile proteomics",
+        "biliary viability",
+        "organ quality"
+      ]
     }
   ]
 }

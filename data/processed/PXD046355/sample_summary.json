@@ -1,0 +1,20 @@
+{
+  "by_assay_modality": {
+    "proteomics": 142
+  },
+  "by_clinical_state": {
+    "high_biliary_viability_donor_liver": 98,
+    "low_biliary_viability_donor_liver": 44
+  },
+  "by_collection_timepoint": {
+    "150min": 54,
+    "30min": 55,
+    "End": 33
+  },
+  "by_sample_origin": {
+    "donor_liver": 142
+  },
+  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "sample_count": 142,
+  "study_accession": "PXD046355"
+}

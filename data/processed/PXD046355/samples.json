@@ -1,0 +1,2558 @@
+[
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "34",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "13",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_170",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_170"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "43",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_172",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_172"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "38",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_174",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_174"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "33",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_177",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_177"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "40",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_180",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_180"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "35",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "13",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_183",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_183"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "45",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_186",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_186"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "36",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_189",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_189"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "44",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_192",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_192"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "39",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_195",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_195"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "37",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_197",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_197"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "46",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_200",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_200"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "32",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_203",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_203"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "42",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_206",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_206"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "41",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_209",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_209"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "47",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_212",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_212"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "48",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_214",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_214"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "49",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_217",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_217"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "50",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_219",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_219"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "52",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_222",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_222"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "51",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "3",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_224",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_224"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "54",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_227",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_227"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "56",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_229",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_229"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "53",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_231",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_231"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "55",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_233",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_233"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "1",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_02",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_02"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "2",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_04",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_04"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "3",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_07",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_07"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "4",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_12",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_12"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "5",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_16",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_16"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "6",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_21",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_21"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "7",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_26",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_26"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "9",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_30",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_30"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "10",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_33",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_33"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "11",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_38",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_38"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "12",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_40",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_40"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "13",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_42",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_42"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "14",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_45",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_45"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "15",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_48",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_48"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "16",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_51",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_51"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "17",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_54",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_54"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "18",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_57",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_57"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "19",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_64",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_64"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "20",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_67",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_67"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "21",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_73",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_73"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "22",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_76",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_76"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "23",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_81",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_81"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "24",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_84",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_84"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "25",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_87",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_87"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "26",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "2",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_90",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_90"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "27",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_92",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_92"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "28",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_97",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_97"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "29",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_101",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_101"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "30",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "14",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_104",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_104"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "30min",
+    "donor_liver_number": "31",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_108",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_108"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "34",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "13",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_171",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_171"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "43",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_173",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_173"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "38",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_175",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_175"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "33",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_178",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_178"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "40",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_181",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_181"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "35",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "13",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_184",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_184"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "45",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_187",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_187"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "36",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_190",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_190"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "44",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_193",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_193"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "39",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_196",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_196"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "37",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_198",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_198"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "46",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_201",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_201"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "32",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_204",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_204"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "42",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_207",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_207"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "41",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_210",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_210"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "47",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_213",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_213"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "48",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_215",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_215"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "49",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_218",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_218"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "50",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_220",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_220"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "52",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_223",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_223"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "51",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "3",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_225",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_225"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "54",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_228",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_228"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "56",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_230",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_230"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "53",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_232",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_232"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "55",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_234",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_234"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "1",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_03",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_03"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "2",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_05",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_05"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "3",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_09",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_09"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "4",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_14",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_14"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "5",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_17",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_17"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "6",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_22",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_22"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "9",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_31",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_31"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "10",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_34",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_34"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "11",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_39",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_39"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "12",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_41",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_41"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "13",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_43",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_43"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "14",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_46",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_46"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "15",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_50",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_50"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "16",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_52",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_52"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "17",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_55",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_55"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "18",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_58",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_58"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "19",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_65",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_65"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "20",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_69",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_69"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "21",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_74",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_74"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "22",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_78",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_78"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "23",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_83",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_83"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "24",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_85",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_85"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "25",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_88",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_88"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "26",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "2",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_91",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_91"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "27",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_93",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_93"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "28",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_98",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_98"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "29",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_102",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_102"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "30",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "14",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_106",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_106"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "150min",
+    "donor_liver_number": "31",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_109",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_109"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "38",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_176",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_176"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "33",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_179",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_179"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "40",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_182",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_182"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "End",
+    "donor_liver_number": "35",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "13",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_185",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_185"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "45",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_188",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_188"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "36",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "12",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_191",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_191"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "44",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_194",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_194"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "37",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_199",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_199"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "46",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_202",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_202"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "32",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "4",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_205",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_205"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "42",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_208",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_208"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "41",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_211",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_211"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "48",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_216",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_216"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "50",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_221",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_221"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "51",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "3",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_226",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_226"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "55",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_235",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_235"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "2",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_06",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_06"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "3",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "11",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_10",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_10"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "4",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_15",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_15"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "6",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_24",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_24"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "7",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_27",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_27"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "10",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "6",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_36",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_36"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "16",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_53",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_53"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "18",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "10",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_60",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_60"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "19",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_66",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_66"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "20",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": true,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "8",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_71",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_71"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "21",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_75",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_75"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "low_biliary_viability_donor_liver",
+    "clinical_state_raw": "Low",
+    "collection_timepoint": "End",
+    "donor_liver_number": "22",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "Low",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_80",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_80"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "24",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_86",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_86"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "25",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_89",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_89"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "27",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "5",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_94",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_94"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "28",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "7",
+      "total_bdi_score_group": "Low"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_100",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_100"
+  },
+  {
+    "assay_modality": "proteomics",
+    "biospecimen": "bile_during_normothermic_machine_perfusion",
+    "clinical_state": "high_biliary_viability_donor_liver",
+    "clinical_state_raw": "High",
+    "collection_timepoint": "End",
+    "donor_liver_number": "29",
+    "metadata_annotations": {
+      "bdi_group_recovered_from_merged_cell_layout": false,
+      "biliary_viability_score_group": "High",
+      "total_bdi_score": "9",
+      "total_bdi_score_group": "High"
+    },
+    "sample_accession": "NMP_Bile_Proteomics_103",
+    "sample_origin": "donor_liver",
+    "source_table": "Figure 3a metadata + Figure 2e viability labels",
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_103"
+  }
+]

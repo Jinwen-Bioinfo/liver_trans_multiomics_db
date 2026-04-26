@@ -167,30 +167,37 @@
       "primary_datasets": [
         "GSE243887"
       ],
-      "supporting_datasets": [],
+      "supporting_datasets": [
+        "PXD046355"
+      ],
       "markers": [
         "ALB",
         "CYP3A4",
         "HMOX1",
-        "COL1A1"
+        "COL1A1",
+        "FCGBP",
+        "ANPEP"
       ],
       "signatures": [],
       "current_evidence": [
         "GSE243887 provides 32 deceased donor liver RNA-seq biopsies with accepted versus rejected transplant-selection labels.",
         "Raw count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus accepted_donor_liver versus rejected_donor_liver Welch-test contrasts.",
-        "ALB, CYP3A4, APOA1, HMOX1, and COL1A1 can now be queried as donor-liver quality marker evidence."
+        "ALB, CYP3A4, APOA1, HMOX1, and COL1A1 can now be queried as donor-liver quality marker evidence.",
+        "PXD046355 adds 142 donor-liver bile proteomics samples across 55 machine-perfused human donor livers, exposing high-versus-low biliary viability contrasts at 30min and 150min for proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ."
       ],
       "next_validation": [
         "Add hepatocyte function, stress response, and fibrosis module scores for donor-quality interpretation.",
         "Link expression evidence to histopathology metadata where reusable public tables are available.",
-        "Treat accepted/rejected labels as donor organ selection status, not post-transplant graft outcome."
+        "Treat accepted/rejected labels as donor organ selection status, not post-transplant graft outcome.",
+        "Treat PXD046355 as donor-organ viability biology during machine perfusion, not as recipient post-transplant outcome evidence."
       ],
       "omics_layers": [
         "transcriptome_bulk",
         "pathology_metadata",
-        "metabolome"
+        "metabolome",
+        "proteome"
       ],
-      "readiness": "donor_expression_evidence_ready"
+      "readiness": "donor_multimodal_evidence_ready"
     },
     {
       "use_case_id": "BLOOD_MONITORING",

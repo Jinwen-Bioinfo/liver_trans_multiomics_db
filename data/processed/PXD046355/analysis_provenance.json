@@ -1,0 +1,21 @@
+{
+  "contrast_method": "Welch two-sample t-test across high versus low biliary-viability donor livers within each timepoint, with Benjamini-Hochberg FDR per contrast.",
+  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "identifier_mapping_rule": "Used the report's PG.Genes column as the gene-query surface and duplicated semicolon-delimited gene aliases for direct lookup; primary_uniprot is the first accession listed in PG.ProteinAccessions.",
+  "limitations": [
+    "Protein-group quantities come from the public PRIDE search-engine output report and are summarized at the gene-query level.",
+    "This V1 layer focuses on donor-liver biliary viability rather than post-transplant recipient outcome classification.",
+    "Sample-level transplantability is intentionally not used as the main contrast because only a figure-linked subset exposes explicit transplant labels.",
+    "Merged-cell layout in the source-data workbook means some BDI annotations are inferred by carry-forward within the same sheet and therefore treated as descriptive metadata only.",
+    "The current public supplement cleanly supports 30min and 150min viability contrasts, while low-viability end-perfusion samples are too sparse for a stable third contrast."
+  ],
+  "normalization_rule": "Exploratory contrasts are computed on log2(PG.Quantity + 1) values from the public PRIDE report.",
+  "processing_script": "scripts/ingest_pxd046355_donor_bile_proteomics.py",
+  "sample_metadata_rule": "Recovered sample IDs, liver numbers, and timepoints from Nature source-data Figure 3a; recovered liver-level biliary-viability labels from Figure 2e and joined them by donor liver number.",
+  "source_urls": {
+    "article": "https://www.nature.com/articles/s41467-023-43368-y",
+    "pride_report": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2023/11/PXD046355/NMP_Bile_Proteomics_Report.txt",
+    "source_data_xlsx": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-43368-y/MediaObjects/41467_2023_43368_MOESM4_ESM.xlsx",
+    "supplementary_pdf": "https://static-content.springer.com/esm/art%3A10.1038%2Fs41467-023-43368-y/MediaObjects/41467_2023_43368_MOESM1_ESM.pdf"
+  }
+}

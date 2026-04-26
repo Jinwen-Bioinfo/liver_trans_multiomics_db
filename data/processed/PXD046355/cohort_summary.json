@@ -1,0 +1,16 @@
+{
+  "clinical_group_counts": {
+    "high_biliary_viability_donor_liver": 98,
+    "low_biliary_viability_donor_liver": 44
+  },
+  "context": "bile proteomics during normothermic machine perfusion of discarded donor livers",
+  "donor_liver_count": 55,
+  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "liver_level_biliary_viability_counts": {
+    "high_biliary_viability_donor_liver": 34,
+    "low_biliary_viability_donor_liver": 21
+  },
+  "sample_count": 142,
+  "sample_origin": "donor_liver",
+  "source_id": "PXD046355"
+}
