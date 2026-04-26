@@ -1,0 +1,83 @@
+{
+  "article_url": "https://clinicalproteomicsjournal.biomedcentral.com/articles/10.1186/s12014-021-09333-x",
+  "generated_at_utc": "2026-04-26T06:02:24.694088+00:00",
+  "identifier_mapping_rule": "Gene-level features use the representative protein-group row with the best adjusted recurrence contrast p-value, falling back to higher detected-sample coverage when needed.",
+  "input_members": {
+    "combined/experimentalDesignTemplate.txt": {
+      "compressed_size": 446,
+      "compression_method": 8,
+      "local_header_offset": 7080642405,
+      "uncompressed_size": 4790
+    },
+    "combined/txt/parameters.txt": {
+      "compressed_size": 746,
+      "compression_method": 8,
+      "local_header_offset": 12044176755,
+      "uncompressed_size": 1777
+    },
+    "combined/txt/proteinGroups.txt": {
+      "compressed_size": 3219126,
+      "compression_method": 8,
+      "local_header_offset": 12053738573,
+      "uncompressed_size": 12755588
+    },
+    "combined/txt/summary.txt": {
+      "compressed_size": 11519,
+      "compression_method": 8,
+      "local_header_offset": 12060155889,
+      "uncompressed_size": 38444
+    }
+  },
+  "label_recovery_rule": "Supplementary Figure S1 panel C red labels map to recurrent cases and blue labels map to non-recurrent cases; this recovers 11 published discovery-set samples and leaves Sample 8 unlabeled.",
+  "limitations": [
+    "The direct PRIDE design exposes 12 samples, but only 11 have published recurrence labels recoverable from Supplementary Figure S1.",
+    "This layer does not attempt to recreate the article's Perseus imputation pipeline and therefore should not be represented as a full publication-grade differential reanalysis.",
+    "The cohort is restricted to HCC beyond Milan criteria and should be interpreted as tumor-explant recurrence-risk biology rather than general liver-transplant rejection biology."
+  ],
+  "local_files": [
+    {
+      "bytes": 4790,
+      "label": "experimental_design_template",
+      "path": "data/raw/PXD022881/experimentalDesignTemplate.txt",
+      "sha256": "4125618259d626186a9c3aaa6c2048ac88cae7151626c96ec8a321c5b61248bf"
+    },
+    {
+      "bytes": 38444,
+      "label": "maxquant_summary",
+      "path": "data/raw/PXD022881/summary.txt",
+      "sha256": "24390b7d9773bf62f4b8e60c0dbdb1e1b77d3aea850fcce73414fef59e0538a3"
+    },
+    {
+      "bytes": 1777,
+      "label": "maxquant_parameters",
+      "path": "data/raw/PXD022881/parameters.txt",
+      "sha256": "6f2c6a32f0d09229951f127d68e376dea82ca4ca9f1819de904a166a9f05951d"
+    },
+    {
+      "bytes": 12755588,
+      "label": "protein_groups",
+      "path": "data/raw/PXD022881/proteinGroups.txt",
+      "sha256": "fe43639f0fe99d7a1896c7bfbaf94b3cfe0fcfbcdaaf170e7fe150530af97b3a"
+    },
+    {
+      "bytes": 1239412,
+      "label": "supplementary_figure_s1_pdf",
+      "path": "data/raw/PXD022881/supplementary_figure_s1.pdf",
+      "sha256": "e33d7134cd82129237d609d4272ea6659cabdb5695c85000298eb4a793060b4c"
+    },
+    {
+      "bytes": 496,
+      "label": "supplementary_figure_s1_text",
+      "path": "data/raw/PXD022881/supplementary_figure_s1.txt",
+      "sha256": "54c528f4248b2f4278ea9af9de3107025f53c8b3a5a6de1c9ea82f1ec5cd8de3"
+    }
+  ],
+  "normalization_method": "Observed MaxQuant LFQ intensities transformed as log2(LFQ intensity) for detected values only.",
+  "processing_script": "scripts/ingest_pxd022881_hcc_recurrence_proteomics.py",
+  "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+  "source_urls": {
+    "combined_zip": "https://ftp.pride.ebi.ac.uk/pride/data/archive/2022/02/PXD022881/combined.zip",
+    "supplementary_figure_s1_pdf": "https://static-content.springer.com/esm/art%3A10.1186%2Fs12014-021-09333-x/MediaObjects/12014_2021_9333_MOESM1_ESM.pdf"
+  },
+  "study_accession": "PXD022881"
+}

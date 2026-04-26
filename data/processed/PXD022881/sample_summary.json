@@ -1,0 +1,12 @@
+{
+  "by_clinical_state": {
+    "no_post_lt_hcc_recurrence": 4,
+    "subsequent_post_lt_hcc_recurrence": 7
+  },
+  "fraction_count_per_sample": [
+    10
+  ],
+  "published_analysis_subset_sample_count": 11,
+  "sample_count": 12,
+  "unlabeled_design_sample_count": 1
+}

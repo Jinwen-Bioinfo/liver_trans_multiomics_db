@@ -123,6 +123,41 @@
       "readiness": "marker_evidence_only"
     },
     {
+      "use_case_id": "POST_LT_HCC_RECURRENCE",
+      "title": "Post-transplant HCC recurrence-risk biology",
+      "clinical_question": "Can liver-transplant tumor-explant omics identify molecular features associated with subsequent hepatocellular carcinoma recurrence after transplantation beyond Milan criteria?",
+      "why_it_matters": "Post-transplant HCC recurrence remains clinically devastating, and explant-level molecular context may help refine surveillance intensity or future transplant-selection logic.",
+      "primary_datasets": [
+        "PXD022881"
+      ],
+      "supporting_datasets": [
+        "S-EPMC6493459"
+      ],
+      "markers": [
+        "ALDH1A1",
+        "LGALS3",
+        "LGALS3BP",
+        "S100A10",
+        "ANXA2"
+      ],
+      "signatures": [],
+      "current_evidence": [
+        "PXD022881 provides a reusable MaxQuant LFQ tumor-explant proteomics matrix for a beyond-Milan liver-transplant HCC cohort, with recurrence labels recoverable for an 11-sample published discovery subset (7 recurrent vs 4 non-recurrent).",
+        "Observed LFQ intensities are exposed as log2-scale group summaries plus recurrent-versus-non-recurrent Welch contrasts across 6,196 gene-level protein features.",
+        "ALDH1A1, LGALS3, and LGALS3BP are now queryable in a direct post-transplant HCC recurrence-risk proteomics layer anchored to the same study that reported them as key predictors.",
+        "S-EPMC6493459 adds peri-transplant serum HCC context but should be treated as supportive blood-side biology rather than a recurrence-labeled validation cohort."
+      ],
+      "next_validation": [
+        "Recover public validation-cohort protein tables or orthogonal explant staining data if they become reusable.",
+        "Keep Sample 8 excluded from recurrence contrasts unless a defensible public label path emerges.",
+        "Treat this layer as tumor-explant prognostic biology beyond Milan criteria, not as a blood-based recurrence classifier."
+      ],
+      "omics_layers": [
+        "proteome"
+      ],
+      "readiness": "direct_hcc_recurrence_proteomics_ready"
+    },
+    {
       "use_case_id": "OPERATIONAL_TOLERANCE",
       "title": "Operational tolerance and withdrawal risk",
       "clinical_question": "Can public blood-based molecular data identify transplant recipients who are more likely to tolerate immunosuppression withdrawal?",

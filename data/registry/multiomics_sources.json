@@ -589,6 +589,71 @@
       }
     },
     {
+      "source_id": "PXD022881",
+      "source_type": "repository_accession",
+      "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
+      "publication": {
+        "journal": "Clinical Proteomics",
+        "year": 2021,
+        "doi": "10.1186/s12014-021-09333-x",
+        "url": "https://clinicalproteomicsjournal.biomedcentral.com/articles/10.1186/s12014-021-09333-x"
+      },
+      "data_repositories": [
+        {
+          "repository": "PRIDE",
+          "url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+          "evidence": "The PRIDE project exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt, summary.txt, parameters.txt, and proteinGroups.txt for the tumor-explant LFQ cohort."
+        },
+        {
+          "repository": "Clinical Proteomics supplementary",
+          "url": "https://static-content.springer.com/esm/art%3A10.1186%2Fs12014-021-09333-x/MediaObjects/12014_2021_9333_MOESM1_ESM.pdf",
+          "evidence": "Supplementary Figure S1 panel C labels recurrent cases in red and non-recurrent cases in blue, making the 11-sample published discovery subset recoverable from the PRIDE design."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_liver_explant_tumor"
+      ],
+      "clinical_states": [
+        "subsequent_post_lt_hcc_recurrence",
+        "no_post_lt_hcc_recurrence"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "post_transplant_hcc_recurrence_risk",
+        "beyond_milan_hcc",
+        "tumor_explant_biology"
+      ],
+      "reported_sample_scope": "Direct liver-transplant HCC tumor-explant MaxQuant LFQ proteomics with 12 public design samples, of which 11 are label-recoverable as recurrent versus non-recurrent beyond-Milan cases from Supplementary Figure S1.",
+      "database_value": [
+        "Adds one of the few reusable sample-level tumor-explant proteomics matrices in the project rather than another narrow article-only marker panel.",
+        "Makes ALDH1A1, LGALS3, LGALS3BP, S100A10, ANXA2, and thousands of additional gene-level protein features queryable in a direct post-transplant HCC recurrence-risk context.",
+        "Provides a clean example of partial but defensible sample-label recovery: 11 labeled discovery-set samples are used for recurrence contrasts while the extra PRIDE design sample stays explicitly unlabeled."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/PXD022881/proteomics_summary.json",
+        "data/processed/PXD022881/protein_features.json",
+        "data/processed/PXD022881/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep the clinical framing on tumor-explant recurrence-risk biology beyond Milan criteria rather than on rejection or non-invasive monitoring.",
+        "Treat recurrence contrasts as a published 11-sample subset layer, because Sample 8 is present in the PRIDE design but not labeled in the article supplement.",
+        "Upgrade to a fuller clinical layer only if supplementary clinical tables or validation-cohort matrices become publicly reusable."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-26T08:30:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+          "https://clinicalproteomicsjournal.biomedcentral.com/articles/10.1186/s12014-021-09333-x",
+          "https://static-content.springer.com/esm/art%3A10.1186%2Fs12014-021-09333-x/MediaObjects/12014_2021_9333_MOESM1_ESM.pdf"
+        ]
+      }
+    },
+    {
       "source_id": "PXD046355",
       "source_type": "repository_accession",
       "title": "Bile proteome reveals biliary regeneration during normothermic preservation of human donor livers",

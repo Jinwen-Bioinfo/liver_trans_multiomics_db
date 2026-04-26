@@ -92,6 +92,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a direct donor-liver bile proteomics layer for high-versus-low biliary viability during normothermic machine perfusion, while keeping the V1 framing on donor-organ viability rather than recipient post-transplant outcome prediction.",
         "scientific_value": ["sample-level donor bile proteomics", "normothermic machine perfusion viability", "biliary regeneration and donor organ quality"],
     },
+    "PXD022881": {
+        "priority": "P1",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use as a direct HCC tumor-explant proteomics layer for post-transplant recurrence risk beyond Milan criteria, while keeping the recurrence labels restricted to the 11-sample published subset recovered from Supplementary Figure S1.",
+        "scientific_value": ["sample-level HCC tumor explant proteomics", "post-transplant HCC recurrence risk", "beyond Milan tumor biology"],
+    },
     "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
         "priority": "P1",
         "triage_status": "processed_feature_ready",
@@ -166,6 +172,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics"],
         "sample_origins": ["donor_liver"],
         "clinical_states": ["donor_graft_quality", "biliary_viability"],
+    },
+    "PXD022881": {
+        "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
+        "repository": "PRIDE / Clinical Proteomics supplementary",
+        "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+        "source_type": "repository_accession",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["recipient_liver_explant_tumor"],
+        "clinical_states": ["post_transplant_hcc_recurrence_risk"],
     },
     "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
         "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
@@ -434,6 +450,8 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
         return "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
     if candidate.get("accession") == "PXD010812":
         return "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, including TQ01/TQ02/TQ03 batches with proteinGroups.txt and mqpar.xml, but the recovered MaxQuant experiment fields are blank so reporter-channel mapping for ischemic versus reperfused graft samples still cannot be defended."
+    if candidate.get("accession") == "PXD022881":
+        return "PRIDE exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt and proteinGroups.txt for 12 HCC tumor-explant samples, while Supplementary Figure S1 makes 11 of those samples label-recoverable as recurrent versus non-recurrent beyond-Milan liver-transplant cases."
 
     if candidate.get("accession") == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY":
         return "Public article text states that Supplementary Table S4 contains per-sample absolute metabolite concentrations for a liver transplant serum cohort spanning TCMR, biliary complications, and post-transplant MASH."

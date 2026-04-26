@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-26T05:40:24.882922+00:00",
+  "generated_at_utc": "2026-04-26T06:05:36.328090+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -19,17 +19,17 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 8,
+      "processed_feature_ready": 9,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
       "ready_to_ingest": 98,
-      "source_review_needed": 133
+      "source_review_needed": 132
     },
     "priority_counts": {
       "P0": 9,
-      "P1": 103,
-      "P2": 398,
+      "P1": 104,
+      "P2": 397,
       "P3": 395
     },
     "modality_counts": {
@@ -44,8 +44,8 @@
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 112,
-    "ready_or_processed_count": 112
+    "p0_or_p1_count": 113,
+    "ready_or_processed_count": 113
   },
   "priority_queue": [
     {
@@ -546,6 +546,43 @@
       ],
       "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD022881",
+      "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "not_curated"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20220222",
+      "discovered_via": [
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant proteomics",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "sample-level HCC tumor explant proteomics",
+        "post-transplant HCC recurrence risk",
+        "beyond Milan tumor biology"
+      ],
+      "next_action": "Use as a direct HCC tumor-explant proteomics layer for post-transplant recurrence risk beyond Milan criteria, while keeping the recurrence labels restricted to the 11-sample published subset recovered from Supplementary Figure S1.",
+      "triage_reason": "PRIDE exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt and proteinGroups.txt for 12 HCC tumor-explant samples, while Supplementary Figure S1 makes 11 of those samples label-recoverable as recurrent versus non-recurrent beyond-Milan liver-transplant cases."
     },
     {
       "accession": "PXD046355",
@@ -2637,36 +2674,6 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "GSE275008",
-      "title": "Blood Gene Expression Profiling in Patients with Idiosyncratic Drug-Induced Liver Injury",
-      "repository": "GEO",
-      "repository_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE275008",
-      "accession_family": "GEO Series",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "bulk_transcriptomics"
-      ],
-      "sample_origins": [
-        "blood_pbmc"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "NCBI:gds_liver_transplant"
-      ],
-      "scientific_value": [],
-      "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
-      "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
     }
   ],
   "candidates": [
@@ -3168,6 +3175,43 @@
       ],
       "next_action": "Use as an ischemia/reperfusion-linked graft injury proteomics layer for moderate/severe early AKI versus no early AKI, while keeping it framed as published differential-table tissue proteomics rather than a per-sample intensity matrix.",
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
+    },
+    {
+      "accession": "PXD022881",
+      "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
+      "repository": "pride",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "bulk_transcriptomics",
+        "proteomics"
+      ],
+      "sample_origins": [
+        "not_curated"
+      ],
+      "clinical_states": [
+        "not_curated"
+      ],
+      "organisms": [
+        "Homo sapiens (Human)"
+      ],
+      "publication_date": "20220222",
+      "discovered_via": [
+        "OmicsDI:liver transplant",
+        "OmicsDI:liver transplant proteomics",
+        "OmicsDI:liver transplantation"
+      ],
+      "scientific_value": [
+        "sample-level HCC tumor explant proteomics",
+        "post-transplant HCC recurrence risk",
+        "beyond Milan tumor biology"
+      ],
+      "next_action": "Use as a direct HCC tumor-explant proteomics layer for post-transplant recurrence risk beyond Milan criteria, while keeping the recurrence labels restricted to the 11-sample published subset recovered from Supplementary Figure S1.",
+      "triage_reason": "PRIDE exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt and proteinGroups.txt for 12 HCC tumor-explant samples, while Supplementary Figure S1 makes 11 of those samples label-recoverable as recurrent versus non-recurrent beyond-Milan liver-transplant cases."
     },
     {
       "accession": "PXD046355",
@@ -7310,39 +7354,6 @@
       ],
       "publication_date": "20200515",
       "discovered_via": [
-        "OmicsDI:liver transplantation"
-      ],
-      "scientific_value": [],
-      "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
-    },
-    {
-      "accession": "PXD022881",
-      "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
-      "repository": "pride",
-      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
-      "accession_family": "PRIDE",
-      "source_type": "repository_accession",
-      "directness": "direct_liver_transplant",
-      "triage_status": "source_review_needed",
-      "priority": "P2",
-      "omics_modalities": [
-        "bulk_transcriptomics",
-        "proteomics"
-      ],
-      "sample_origins": [
-        "not_curated"
-      ],
-      "clinical_states": [
-        "not_curated"
-      ],
-      "organisms": [
-        "Homo sapiens (Human)"
-      ],
-      "publication_date": "20220222",
-      "discovered_via": [
-        "OmicsDI:liver transplant",
-        "OmicsDI:liver transplant proteomics",
         "OmicsDI:liver transplantation"
       ],
       "scientific_value": [],

@@ -1,0 +1,377 @@
+{
+  "samples": [
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 1,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample1",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 1"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 2,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample2",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 2"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "no_post_lt_hcc_recurrence",
+      "clinical_state_raw": "no_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 3,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample3",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 3"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "no_post_lt_hcc_recurrence",
+      "clinical_state_raw": "no_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 4,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample4",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 4"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 5,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample5",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 5"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 6,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample6",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 6"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 7,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample7",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 7"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": null,
+      "clinical_state_raw": null,
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": "Present in PRIDE experimental design and LFQ matrix, but absent from the published 11-sample PCA-labeled subset.",
+        "experiment_id": 8,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": false
+      },
+      "published_analysis_subset_included": false,
+      "sample_accession": "HCC_LiverTissue_Sample8",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 8"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 9,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample9",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 9"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "no_post_lt_hcc_recurrence",
+      "clinical_state_raw": "no_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 10,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample10",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 10"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "no_post_lt_hcc_recurrence",
+      "clinical_state_raw": "no_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 11,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample11",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 11"
+    },
+    {
+      "assay_modality": "proteomics",
+      "biospecimen": "hcc_tumor_explant_at_liver_transplant",
+      "clinical_state": "subsequent_post_lt_hcc_recurrence",
+      "clinical_state_raw": "subsequent_post_lt_hcc_recurrence",
+      "collection_timepoint": "transplant_explant",
+      "metadata_annotations": {
+        "excluded_or_unlabeled_reason": null,
+        "experiment_id": 12,
+        "fraction_count": 10,
+        "fractions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "label_recovery_rule": "Supplementary Figure S1 panel C labels recurrent samples in red and non-recurrent samples in blue.",
+        "published_analysis_subset_included": true
+      },
+      "published_analysis_subset_included": true,
+      "sample_accession": "HCC_LiverTissue_Sample12",
+      "sample_origin": "recipient_liver_explant_tumor",
+      "source_table": "experimentalDesignTemplate.txt + Supplementary Figure S1 PCA labels",
+      "title": "HCC tumor explant proteomics sample 12"
+    }
+  ],
+  "study_accession": "PXD022881"
+}

@@ -69,7 +69,8 @@ The next highest-value proteomics source to pursue is:
 
 | Accession/source | Status | Why it matters |
 | --- | --- | --- |
-| FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS | ready to ingest | Pediatric liver-transplant plasma proteomics aligned to immune tolerance vs non-tolerant withdrawal outcomes, with Frontiers XML exposing `DataSheet1.docx` as supplementary material. |
+| FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS | processed feature ready | Pediatric liver-transplant plasma proteomics aligned to immune tolerance vs non-tolerant withdrawal outcomes, currently exposed as a conservative article-figure marker layer while `DataSheet1.docx` remains unresolved. |
+| PXD022881 | processed feature ready | PRIDE MaxQuant LFQ tumor-explant proteomics for beyond-Milan liver-transplant HCC, with 12 design samples and an 11-sample recurrence-vs-non-recurrence subset recovered from Supplementary Figure S1. |
 
 Notes:
 

@@ -1,0 +1,14 @@
+{
+  "clinical_states": [
+    "subsequent_post_lt_hcc_recurrence",
+    "no_post_lt_hcc_recurrence"
+  ],
+  "contrast_id": "subsequent_post_lt_hcc_recurrence_vs_no_post_lt_hcc_recurrence",
+  "contrast_ready_protein_group_count": 4908,
+  "effect_scale": "log2_lfq_intensity",
+  "protein_group_count": 6152,
+  "published_analysis_subset_sample_count": 11,
+  "queryable_gene_feature_count": 6196,
+  "sample_count": 12,
+  "unlabeled_design_sample_count": 1
+}

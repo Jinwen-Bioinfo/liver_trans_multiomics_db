@@ -806,6 +806,53 @@
       ]
     },
     {
+      "accession": "PXD022881",
+      "repository": "PRIDE / Clinical Proteomics supplementary",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD022881",
+      "title": "Combined Protein Signature of ALDH1A1, LGALS3, LGALS3BP Predicts Cancer Recurrence Post-Liver Transplantation Beyond Milan Hepatocellular Carcinoma",
+      "summary": "Direct HCC tumor-explant proteomics from liver-transplant recipients transplanted beyond Milan criteria, reconstructed from a reusable PRIDE MaxQuant LFQ matrix plus recurrence labels recovered for the 11-sample published discovery subset from Supplementary Figure S1. This supports post-transplant HCC recurrence-risk biology, but one design sample remains unlabeled and excluded from recurrence contrasts.",
+      "organism": "Homo sapiens",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_liver_explant_tumor"
+      ],
+      "transplant_phases": [
+        "at_transplant_explant"
+      ],
+      "clinical_states": [
+        "subsequent_post_lt_hcc_recurrence",
+        "no_post_lt_hcc_recurrence"
+      ],
+      "public_access": "open",
+      "curation_status": "curated_public_repository_plus_figure_recovered_labels",
+      "processing_status": "protein_feature_direct_evidence_ready",
+      "qc_status": "source_verified_pride_maxquant_qc_pass_partial_subset_label_recovery",
+      "featured_genes": [
+        "ALDH1A1",
+        "LGALS3",
+        "LGALS3BP",
+        "S100A10",
+        "ANXA2"
+      ],
+      "featured_cell_types": [],
+      "featured_pathways": [
+        "galectin_axis",
+        "aldehyde_metabolism",
+        "post_transplant_hcc_recurrence_risk"
+      ],
+      "keywords": [
+        "liver transplant",
+        "HCC",
+        "tumor explant",
+        "proteomics",
+        "LFQ",
+        "post-transplant recurrence",
+        "beyond Milan"
+      ]
+    },
+    {
       "accession": "PXD046355",
       "repository": "PRIDE / Nature source data",
       "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD046355",

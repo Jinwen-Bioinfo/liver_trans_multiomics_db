@@ -1,0 +1,9 @@
+{
+  "published_analysis_subset_sample_count": 11,
+  "published_case_n": 7,
+  "published_control_n": 4,
+  "sample_count": 12,
+  "unlabeled_design_samples": [
+    "HCC_LiverTissue_Sample8"
+  ]
+}
