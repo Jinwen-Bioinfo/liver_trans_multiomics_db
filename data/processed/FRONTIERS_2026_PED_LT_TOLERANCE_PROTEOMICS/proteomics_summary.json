@@ -1,0 +1,28 @@
+{
+  "assay_modality": "proteomics",
+  "clinical_group_counts": {
+    "non_tolerant": 5,
+    "operational_tolerance": 5
+  },
+  "feature_symbols": [
+    "FCGR3B",
+    "HDAC1",
+    "MAPK1",
+    "PADI4"
+  ],
+  "generated_at_utc": "2026-04-26T02:49:19.176784+00:00",
+  "limitations": [
+    "The discovery proteomics cohort contains only 10 baseline plasma samples (5 IT, 5 NIT).",
+    "The unresolved DataSheet1 supplement means this V1 layer is intentionally limited to article-figure marker evidence rather than a broad differential table.",
+    "Only HDAC1 has an explicitly reported downstream plasma validation cohort in the article text."
+  ],
+  "protein_feature_count": 4,
+  "reported_dep_down_in_it": 420,
+  "reported_dep_up_in_it": 382,
+  "reported_total_discovery_dep_count": 802,
+  "reported_validation_hdac1_auc": 0.81,
+  "sample_count": 10,
+  "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+  "study_accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+  "validation_sample_count": 39
+}

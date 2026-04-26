@@ -88,8 +88,8 @@ CURATED_PRIORITY_ACCESSIONS = {
     },
     "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS": {
         "priority": "P1",
-        "triage_status": "ready_to_ingest",
-        "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
+        "triage_status": "processed_feature_ready",
+        "next_action": "Use the current article-figure V1 marker layer for pediatric baseline withdrawal-risk stratification, and upgrade it if the unresolved DataSheet1 supplementary proteomics table becomes directly downloadable.",
         "scientific_value": ["operational tolerance", "pediatric plasma proteomics", "immunosuppression withdrawal risk stratification"],
     },
     "AGING_2020_LT_SERUM_PROTEOMICS": {
@@ -413,7 +413,7 @@ def build_candidate_item(candidate: dict[str, Any]) -> dict[str, Any]:
 
 def triage_reason(status: str, candidate: dict[str, Any]) -> str:
     if candidate.get("accession") == "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS":
-        return "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
+        return "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes; the current database layer exposes a conservative article-figure marker panel while the full supplementary table remains unresolved."
     if candidate.get("accession") == "HO1_ACR_LIVER_TX_PROTEOMICS":
         return "The public ATM article exposes exact iTRAQ tag mapping for rejection versus non-rejection serum samples and Supplementary Table S2 provides an OCR-recoverable differential protein list centered on the HO-1 axis."
     if candidate.get("accession") == "PXD010812":

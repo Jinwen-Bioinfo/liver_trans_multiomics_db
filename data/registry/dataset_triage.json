@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-25T02:19:22.184915+00:00",
+  "generated_at_utc": "2026-04-26T02:51:17.793305+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -19,11 +19,11 @@
       "manual_review_needed": 265,
       "processed_baseline": 1,
       "processed_expression": 2,
-      "processed_feature_ready": 6,
+      "processed_feature_ready": 7,
       "processed_protein_reference": 1,
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
-      "ready_to_ingest": 99,
+      "ready_to_ingest": 98,
       "source_review_needed": 134
     },
     "priority_counts": {
@@ -478,6 +478,41 @@
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
+      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+      "repository": "Frontiers supplementary",
+      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "operational tolerance",
+        "pediatric plasma proteomics",
+        "immunosuppression withdrawal risk stratification"
+      ],
+      "next_action": "Use the current article-figure V1 marker layer for pediatric baseline withdrawal-risk stratification, and upgrade it if the unresolved DataSheet1 supplementary proteomics table becomes directly downloadable.",
+      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes; the current database layer exposes a conservative article-figure marker panel while the full supplementary table remains unresolved."
+    },
+    {
       "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
       "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
       "repository": "IJMS supplementary PDF table",
@@ -617,41 +652,6 @@
       ],
       "next_action": "Use ArrayExpress/BioStudies files to ingest post-transplant NASH and fibrosis transcriptome contrasts.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
-      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
-      "repository": "Frontiers supplementary",
-      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "operational_tolerance",
-        "non_tolerant"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "operational tolerance",
-        "pediatric plasma proteomics",
-        "immunosuppression withdrawal risk stratification"
-      ],
-      "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
-      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     },
     {
       "accession": "GSE113024",
@@ -3099,6 +3099,41 @@
       "triage_reason": "Already has local processed artifacts and is part of the current demo evidence layer."
     },
     {
+      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+      "repository": "Frontiers supplementary",
+      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+      "accession_family": "other",
+      "source_type": "supplementary_table",
+      "directness": "direct_liver_transplant",
+      "triage_status": "processed_feature_ready",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "plasma_serum"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "operational tolerance",
+        "pediatric plasma proteomics",
+        "immunosuppression withdrawal risk stratification"
+      ],
+      "next_action": "Use the current article-figure V1 marker layer for pediatric baseline withdrawal-risk stratification, and upgrade it if the unresolved DataSheet1 supplementary proteomics table becomes directly downloadable.",
+      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes; the current database layer exposes a conservative article-figure marker panel while the full supplementary table remains unresolved."
+    },
+    {
       "accession": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
       "title": "Liver graft proteomics reveals potential incipient mechanisms behind early renal dysfunction after liver transplantation",
       "repository": "IJMS supplementary PDF table",
@@ -3238,41 +3273,6 @@
       ],
       "next_action": "Use ArrayExpress/BioStudies files to ingest post-transplant NASH and fibrosis transcriptome contrasts.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
-    },
-    {
-      "accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
-      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
-      "repository": "Frontiers supplementary",
-      "repository_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
-      "accession_family": "other",
-      "source_type": "supplementary_table",
-      "directness": "direct_liver_transplant",
-      "triage_status": "ready_to_ingest",
-      "priority": "P1",
-      "omics_modalities": [
-        "proteomics"
-      ],
-      "sample_origins": [
-        "plasma_serum"
-      ],
-      "clinical_states": [
-        "operational_tolerance",
-        "non_tolerant"
-      ],
-      "organisms": [
-        "Homo sapiens"
-      ],
-      "publication_date": null,
-      "discovered_via": [
-        "manual_curated_source"
-      ],
-      "scientific_value": [
-        "operational tolerance",
-        "pediatric plasma proteomics",
-        "immunosuppression withdrawal risk stratification"
-      ],
-      "next_action": "Download the Frontiers supplementary DataSheet1 proteomics tables for the pediatric planned-withdrawal cohort, expose IT versus NIT plasma protein contrasts, and keep the layer framed as baseline withdrawal-risk/tolerance evidence rather than post-biopsy rejection diagnosis.",
-      "triage_reason": "Frontiers XML exposes a supplementary DataSheet1.docx and the article explicitly reports baseline pediatric liver-transplant plasma proteomics comparing immune-tolerant versus non-tolerant withdrawal outcomes."
     },
     {
       "accession": "GSE113024",

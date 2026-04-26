@@ -456,6 +456,77 @@
       }
     },
     {
+      "source_id": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+      "source_type": "article_figure",
+      "title": "Neutrophil-associated plasma proteomics identifies HDAC1 as a baseline biomarker of immune tolerance during immunosuppressant withdrawal after pediatric liver transplantation",
+      "publication": {
+        "journal": "Frontiers in Immunology",
+        "year": 2026,
+        "pmid": "41972122",
+        "doi": "10.3389/fimmu.2026.1800926",
+        "url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full"
+      },
+      "data_repositories": [
+        {
+          "repository": "Frontiers article",
+          "url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+          "evidence": "The article text and PDF expose a 10-sample baseline plasma proteomics discovery cohort (IT 5 vs NIT 5), report 802 DEPs, and explicitly discuss HDAC1, FCGR3B, PADI4, and MAPK1 in the tolerance-risk marker panel."
+        },
+        {
+          "repository": "Frontiers PDF",
+          "url": "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/pdf",
+          "evidence": "Figure 6 and the Results section provide marker-level separation for neutrophil/NET-associated proteins between immune-tolerant and non-tolerant recipients."
+        },
+        {
+          "repository": "Frontiers XML",
+          "url": "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/xml",
+          "evidence": "The XML confirms that a supplementary DataSheet1.docx exists, but the exact downloadable asset URL remains unresolved in this environment."
+        }
+      ],
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "recipient_plasma"
+      ],
+      "clinical_states": [
+        "operational_tolerance",
+        "non_tolerant"
+      ],
+      "organism": "Homo sapiens",
+      "transplant_context": [
+        "blood_based_tolerance_monitoring",
+        "planned_immunosuppression_withdrawal",
+        "baseline_withdrawal_risk_stratification"
+      ],
+      "reported_sample_scope": "Direct pediatric liver-transplant baseline plasma proteomics from a 10-sample discovery cohort, implemented in V1 as article-figure marker evidence and linked to a separate 39-sample HDAC1 ELISA validation cohort.",
+      "database_value": [
+        "Adds direct proteomics evidence for operational tolerance and immunosuppression-withdrawal risk, complementing GSE11881 PBMC transcriptomics.",
+        "Makes HDAC1, FCGR3B, PADI4, and MAPK1 queryable as baseline blood markers in pediatric liver transplantation.",
+        "Preserves a scientifically meaningful tolerance-proteomics layer even before the full DataSheet1 supplementary table is resolvable."
+      ],
+      "local_status": "protein_feature_direct_evidence_ready",
+      "processed_artifacts": [
+        "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/proteomics_summary.json",
+        "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json",
+        "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/analysis_provenance.json"
+      ],
+      "next_ingest_steps": [
+        "Keep this source framed as article-figure marker evidence rather than a full per-protein supplementary table.",
+        "Upgrade the layer if DataSheet1.docx becomes directly downloadable and can expose the wider differential protein set.",
+        "Interpret the current signal as baseline withdrawal-risk stratification rather than biopsy-proven rejection diagnosis."
+      ],
+      "source_check": {
+        "checked_at_utc": "2026-04-26T02:50:00Z",
+        "checked_by": "Codex",
+        "evidence_urls": [
+          "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+          "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/pdf",
+          "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/xml"
+        ]
+      }
+    },
+    {
       "source_id": "S-EPMC6493459",
       "source_type": "article_table",
       "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics",

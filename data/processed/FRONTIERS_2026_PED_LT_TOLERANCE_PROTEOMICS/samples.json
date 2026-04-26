@@ -1,0 +1,92 @@
+[
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "operational_tolerance",
+    "participant_id": "IT_DISCOVERY_01",
+    "sample_accession": "IT_DISCOVERY_01",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "non_tolerant",
+    "participant_id": "NIT_DISCOVERY_01",
+    "sample_accession": "NIT_DISCOVERY_01",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "operational_tolerance",
+    "participant_id": "IT_DISCOVERY_02",
+    "sample_accession": "IT_DISCOVERY_02",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "non_tolerant",
+    "participant_id": "NIT_DISCOVERY_02",
+    "sample_accession": "NIT_DISCOVERY_02",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "operational_tolerance",
+    "participant_id": "IT_DISCOVERY_03",
+    "sample_accession": "IT_DISCOVERY_03",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "non_tolerant",
+    "participant_id": "NIT_DISCOVERY_03",
+    "sample_accession": "NIT_DISCOVERY_03",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "operational_tolerance",
+    "participant_id": "IT_DISCOVERY_04",
+    "sample_accession": "IT_DISCOVERY_04",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "non_tolerant",
+    "participant_id": "NIT_DISCOVERY_04",
+    "sample_accession": "NIT_DISCOVERY_04",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "operational_tolerance",
+    "participant_id": "IT_DISCOVERY_05",
+    "sample_accession": "IT_DISCOVERY_05",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  },
+  {
+    "assay_modality": "proteomics",
+    "assay_role": "discovery_dia_proteomics",
+    "clinical_state": "non_tolerant",
+    "participant_id": "NIT_DISCOVERY_05",
+    "sample_accession": "NIT_DISCOVERY_05",
+    "sample_origin": "recipient_plasma",
+    "timepoint": "baseline_before_withdrawal"
+  }
+]

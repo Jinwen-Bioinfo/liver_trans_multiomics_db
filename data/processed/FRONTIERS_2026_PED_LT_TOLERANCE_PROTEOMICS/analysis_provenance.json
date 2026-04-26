@@ -1,0 +1,70 @@
+{
+  "generated_at_utc": "2026-04-26T02:49:19.176784+00:00",
+  "identifier_mapping_rule": "Used canonical gene symbols and UniProt accessions for proteins explicitly named in the article text and figure panels.",
+  "limitations": [
+    "DataSheet1.docx is referenced in the article metadata but remained unresolved as a downloadable public asset in this environment.",
+    "This layer preserves a narrow marker panel rather than the full 802-protein differential set.",
+    "Exact effect sizes were not reverse-engineered from the figure graphics."
+  ],
+  "methods": [
+    "Downloaded the Frontiers article HTML, PDF, and XML records for the pediatric immunosuppression-withdrawal proteomics study.",
+    "Confirmed that the article XML exposes a supplementary asset named DataSheet1.docx, but the actual downloadable asset URL could not be resolved through tested public paths in this environment.",
+    "Recovered a conservative V1 marker panel from article text and Figure 6, preserving only proteins explicitly discussed in the Results section and associated figure panels.",
+    "Recorded HDAC1 validation context from the article's 39-sample plasma ELISA cohort."
+  ],
+  "normalization_rule": "No raw or supplementary proteomics table was available; this V1 layer stores article-figure directionality and validation context without inferred quantitative normalization.",
+  "outputs": {
+    "cohort_summary": {
+      "bytes": 877,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/cohort_summary.json",
+      "sha256": "4d663a75c397a149c5f28a09c7bb003b518ee7429be43ef7440d21d74ea741c8"
+    },
+    "protein_features": {
+      "bytes": 10533,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json",
+      "sha256": "221afbeb15b661f0a797f3249c67c194bdcb8b8f19a342572e3b3a595e5437ff"
+    },
+    "proteomics_summary": {
+      "bytes": 1023,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/proteomics_summary.json",
+      "sha256": "9c61f9e02c9067e39a6234fd47bd012269f75749693bea22daa1d218d0f2b846"
+    },
+    "sample_summary": {
+      "bytes": 985,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/sample_summary.json",
+      "sha256": "d222744ee79f73815c46d21c3607c4d1c2d1bf18cd91abc49b71033593f017a8"
+    },
+    "samples": {
+      "bytes": 3058,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/samples.json",
+      "sha256": "3f5aafb7421af4c8603715bf80a696b858978f4609b24dbcf4093cacdf0eeee8"
+    },
+    "source_file_inventory": {
+      "bytes": 838,
+      "path": "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/source_file_inventory.json",
+      "sha256": "fa7d106ad01967d9a5132d45893589a63edae6b446a27408d43dfb550a05d96c"
+    }
+  },
+  "parser": "scripts/ingest_frontiers_2026_ped_lt_tolerance_proteomics.py",
+  "source_files": {
+    "article_html": {
+      "bytes": 859909,
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.html",
+      "sha256": "e6935c656acc58d56614ff02afba7efd6dde3019bc261d23e1c2da13598b70bd",
+      "url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full"
+    },
+    "article_pdf": {
+      "bytes": 5843904,
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.pdf",
+      "sha256": "6f70d6062ac6a600f61a862aca6630b0da46f85968c35e5860242bc77a2ed7dd",
+      "url": "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/pdf"
+    },
+    "article_xml": {
+      "bytes": 139133,
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.xml",
+      "sha256": "0b0e46229098434e2d7edc1bc82b2be9968d13bcc8a418619d32341b4c2c9179",
+      "url": "https://public-pages-files-2025.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/xml"
+    }
+  },
+  "study_accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS"
+}

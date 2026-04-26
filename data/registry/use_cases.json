@@ -123,6 +123,43 @@
       "readiness": "marker_evidence_only"
     },
     {
+      "use_case_id": "OPERATIONAL_TOLERANCE",
+      "title": "Operational tolerance and withdrawal risk",
+      "clinical_question": "Can public blood-based molecular data identify transplant recipients who are more likely to tolerate immunosuppression withdrawal?",
+      "why_it_matters": "A credible tolerance evidence layer could reduce unnecessary long-term immunosuppression while avoiding avoidable rejection risk.",
+      "primary_datasets": [
+        "GSE11881"
+      ],
+      "supporting_datasets": [
+        "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS"
+      ],
+      "markers": [
+        "FOXP3",
+        "IL10",
+        "IFNG",
+        "HDAC1",
+        "FCGR3B",
+        "PADI4",
+        "MAPK1"
+      ],
+      "signatures": [],
+      "current_evidence": [
+        "GSE11881 provides PBMC microarray evidence for operational_tolerance versus non_tolerant liver transplant recipients.",
+        "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS adds direct pediatric baseline plasma proteomics from a planned-withdrawal cohort, with a 10-sample discovery set (IT 5 vs NIT 5), 802 reported DEPs, and an HDAC1-focused 39-sample ELISA validation cohort.",
+        "The current Frontiers layer is intentionally narrow: it exposes article-figure marker evidence for HDAC1, FCGR3B, PADI4, and MAPK1 while the unresolved DataSheet1 supplement blocks full-table ingest."
+      ],
+      "next_validation": [
+        "Resolve the Frontiers DataSheet1 supplementary file to upgrade the proteomics layer beyond the current marker panel.",
+        "Compare PBMC tolerance signatures with baseline plasma proteomics to distinguish shared versus modality-specific tolerance programs.",
+        "Treat the current proteomics layer as withdrawal-risk stratification evidence, not as a fully validated clinical decision rule."
+      ],
+      "omics_layers": [
+        "transcriptome_bulk",
+        "proteome"
+      ],
+      "readiness": "blood_tolerance_multimodal_evidence_ready"
+    },
+    {
       "use_case_id": "DONOR_LIVER_QUALITY",
       "title": "Molecular donor liver quality assessment",
       "clinical_question": "Can donor liver transcriptomics identify molecular features associated with accepted versus rejected donor organs?",
@@ -168,6 +205,7 @@
         "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
         "AGING_2020_LT_SERUM_PROTEOMICS",
         "PXD062924",
+        "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
         "S-EPMC6493459"
       ],
       "markers": [
@@ -182,7 +220,8 @@
         "AMBP",
         "TF",
         "S100P",
-        "AOX1"
+        "AOX1",
+        "HDAC1"
       ],
       "signatures": [],
       "current_evidence": [
@@ -192,6 +231,7 @@
         "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY adds 55 post-transplant serum metabolomics samples spanning TCMR, biliary complications, and post-transplant MASH with 134 absolute-concentration metabolite features.",
         "AGING_2020_LT_SERUM_PROTEOMICS adds direct liver-transplant serum proteomics biomarker evidence for ACLY, FGA, and APOA1 across perioperative, acute rejection, and ITBL contexts, with Welch contrasts derived from published group summary statistics.",
         "PXD062924 adds direct post-transplant serum proteomics evidence for normal versus impaired kidney function after liver transplantation, exposing 45 differential proteins with PRIDE-linked provenance and highlighting markers such as B2M, AMBP, TF, APOA1, and SLPI.",
+        "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS adds baseline pediatric plasma proteomics for planned immunosuppression withdrawal, exposing a focused marker panel around HDAC1, FCGR3B, PADI4, and MAPK1 while the full supplementary table remains unresolved.",
         "S-EPMC6493459 adds direct peri-transplant serum iTRAQ proteomics context for healthy controls versus pre-transplant HCC recipients, exposing partial published-table evidence for S100P, AOX1, and ADH-family proteins while documenting day 1/day 3/day 7 post-transplant sampling."
       ],
       "next_validation": [
@@ -201,6 +241,7 @@
         "Validate serum metabolite shifts in an independent graft pathology cohort before claiming non-invasive classification performance.",
         "Keep the serum proteomics layer framed as published group-summary biomarker evidence until a reusable per-sample transplant proteome matrix is public.",
         "Keep the PXD062924 proteomics layer framed as post-transplant renal-dysfunction monitoring evidence rather than rejection-specific classification, and upgrade it only if a reusable sample-level protein matrix becomes public.",
+        "Keep the Frontiers pediatric tolerance proteomics layer framed as a narrow article-figure marker panel until the unresolved DataSheet1 supplement can be recovered.",
         "Keep S-EPMC6493459 framed as partial peri-transplant serum context rather than a complete longitudinal sample-level proteomics matrix."
       ],
       "omics_layers": [

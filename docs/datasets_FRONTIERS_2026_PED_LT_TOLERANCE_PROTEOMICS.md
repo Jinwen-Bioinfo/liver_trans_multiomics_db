@@ -37,15 +37,16 @@ If the supplementary table is downloadable and machine-readable, this source cou
 - the first proteomics layer in the database explicitly aligned to `operational_tolerance / withdrawal risk`
 - a natural protein complement to blood-based transcriptome monitoring use cases
 
-## Planned ingest decision
+## V1 ingest decision
 
-Promote to a processed layer only if `DataSheet1` exposes at least one of:
+The original full-table ingest is still blocked on `DataSheet1.docx`, but the source has now been promoted as a **restricted V1 article-figure marker layer** because the public PDF and Results text already expose:
 
-- per-protein abundance table
-- differential protein list with effect size and significance
-- enough group-level statistics to reconstruct IT vs NIT protein evidence
+- the discovery cohort size (`IT = 5`, `NIT = 5`)
+- the validation cohort size (`IT = 17`, `NIT = 22`)
+- the discovery DEP count (`802`)
+- explicit marker-level discussion for `HDAC1`, `FCGR3B`, `PADI4`, and `MAPK1`
 
-If the supplement only contains pathway figures or narrative summaries, keep it in triage and do not overstate readiness.
+That means the source is now usable, but only at a narrow marker-panel level.
 
 ## Current blocker
 
@@ -60,11 +61,12 @@ As of 2026-04-25, the source is **scientifically promising but not yet machine-i
   - `public-pages-files-2025.frontiersin.org/.../DataSheet1.docx` patterns also returned `404`
 - so the blocker is now narrow and concrete: **the supplement filename is public, but the resolved downloadable asset URL is still missing**
 
-So the source remains:
+So the source now exists in two states at once:
 
-- `ready_to_ingest` in triage from a scientific-priority perspective, but still blocked at the asset-resolution step
-- not yet promoted into `studies.json` / `multiomics_sources.json`
-- not yet exposed as a database protein layer
+- **implemented as V1**: article-figure marker evidence
+- **still blocked for full ingest**: unresolved `DataSheet1.docx` asset URL
+
+In other words, we no longer need to wait to expose the source at all, but we should still revisit it if the supplementary file becomes downloadable.
 
 ## Immediate next step
 
@@ -72,4 +74,4 @@ Resolve one of these access paths:
 
 1. download the Frontiers `DataSheet1.docx` manually or via a working OA-package mirror
 2. extract the actual supplement URL from a browser session with successful article asset resolution
-3. if neither path works, deprioritize for now and continue with the next public direct transplant proteomics cohort
+3. upgrade the current V1 article-figure layer into a wider supplementary-table layer once exact per-protein rows become available

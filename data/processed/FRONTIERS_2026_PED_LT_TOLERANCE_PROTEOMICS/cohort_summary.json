@@ -1,0 +1,15 @@
+{
+  "discovery_proteomics_n": 10,
+  "generated_at_utc": "2026-04-26T02:49:19.176784+00:00",
+  "limitations": [
+    "The reusable feature layer is restricted to the 10-sample discovery proteomics subset rather than the full 31-patient withdrawal cohort.",
+    "Feature-level values are reconstructed from article text and figure panels because the supplementary DataSheet1 asset URL remains unresolved in this environment.",
+    "Exact per-feature effect sizes are not publicly readable from the article figures, so this V1 layer preserves directionality and validation context rather than sample-level abundance matrices."
+  ],
+  "planned_withdrawal_cohort_n": 31,
+  "protein_feature_count": 4,
+  "reported_total_discovery_dep_count": 802,
+  "reported_validation_hdac1_auc": 0.81,
+  "study_accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+  "validation_elisa_n": 39
+}

@@ -1,0 +1,24 @@
+{
+  "files": [
+    {
+      "bytes": 859909,
+      "label": "article_html",
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.html",
+      "sha256": "e6935c656acc58d56614ff02afba7efd6dde3019bc261d23e1c2da13598b70bd"
+    },
+    {
+      "bytes": 5843904,
+      "label": "article_pdf",
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.pdf",
+      "sha256": "6f70d6062ac6a600f61a862aca6630b0da46f85968c35e5860242bc77a2ed7dd"
+    },
+    {
+      "bytes": 139133,
+      "label": "article_xml",
+      "path": "data/raw/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/article.xml",
+      "sha256": "0b0e46229098434e2d7edc1bc82b2be9968d13bcc8a418619d32341b4c2c9179"
+    }
+  ],
+  "generated_at_utc": "2026-04-26T02:49:19.176784+00:00",
+  "study_accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS"
+}

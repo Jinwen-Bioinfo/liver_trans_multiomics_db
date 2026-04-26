@@ -470,6 +470,24 @@ def test_direct_acr_protein_endpoint_returns_ho1_evidence() -> None:
     )
 
 
+def test_direct_tolerance_protein_endpoint_returns_frontiers2026_evidence() -> None:
+    response = client.get("/api/features/FCGR3B/protein")
+    assert response.status_code == 200
+    payload = response.json()
+    evidence = next(
+        item
+        for item in payload["protein_evidence"]
+        if item["study_accession"] == "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS"
+    )
+    assert evidence["evidence_kind"] == "direct_transplant_protein_biomarker"
+    assert evidence["primary_uniprot"] == "O75015"
+    assert evidence["sample_scope"] == "recipient_plasma_withdrawal_tolerance_discovery_set"
+    assert any(
+        contrast["contrast_id"] == "operational_tolerance_vs_non_tolerant"
+        for contrast in evidence["published_contrasts"]
+    )
+
+
 def test_direct_peri_transplant_protein_endpoint_returns_sepmc6493459_evidence() -> None:
     response = client.get("/api/features/S100P/protein")
     assert response.status_code == 200
@@ -594,6 +612,8 @@ def test_non_transcriptomic_layers_have_registered_external_sources() -> None:
     assert "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS" in proteome["processed_accessions"]
     assert "PXD062924" in proteome["registered_accessions"]
     assert "PXD062924" in proteome["processed_accessions"]
+    assert "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS" in proteome["registered_accessions"]
+    assert "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS" in proteome["processed_accessions"]
     assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["registered_accessions"]
     assert "HO1_ACR_LIVER_TX_PROTEOMICS" in proteome["processed_accessions"]
     assert "S-EPMC6493459" in proteome["registered_accessions"]
@@ -609,6 +629,7 @@ def test_non_transcriptomic_layer_details_link_feature_artifacts() -> None:
     assert "data/processed/DFI_MICROBIOME_LT_2024/microbiome_features.json" in microbiome["current_artifacts"]
     assert "data/processed/PXD012615/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
+    assert "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/PXD062924/protein_features.json" in proteome["current_artifacts"]
     assert "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json" in proteome["current_artifacts"]
@@ -680,6 +701,17 @@ def test_multiomics_source_registry_exposes_direct_renal_monitoring_proteomics_l
     assert payload["sample_origins"] == ["recipient_serum"]
     assert "impaired_kidney_function_post_lt" in payload["clinical_states"]
     assert "data/processed/PXD062924/protein_features.json" in payload["processed_artifacts"]
+
+
+def test_multiomics_source_registry_exposes_pediatric_tolerance_proteomics_layer() -> None:
+    response = client.get("/api/multiomics-sources/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["source_type"] == "article_figure"
+    assert payload["local_status"] == "protein_feature_direct_evidence_ready"
+    assert payload["sample_origins"] == ["recipient_plasma"]
+    assert "operational_tolerance" in payload["clinical_states"]
+    assert "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json" in payload["processed_artifacts"]
 
 
 def test_multiomics_source_registry_exposes_direct_acr_proteomics_layer() -> None:
@@ -919,13 +951,25 @@ def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> Non
     assert "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" in payload["supporting_datasets"]
     assert "AGING_2020_LT_SERUM_PROTEOMICS" in payload["supporting_datasets"]
     assert "PXD062924" in payload["supporting_datasets"]
+    assert "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS" in payload["supporting_datasets"]
     assert "S-EPMC6493459" in payload["supporting_datasets"]
     assert payload["primary_dataset_records"][0]["accession"] == "GSE200340"
     assert any("185 pediatric" in line for line in payload["current_evidence"])
     assert any("55 post-transplant serum metabolomics" in line for line in payload["current_evidence"])
     assert any("ACLY, FGA, and APOA1" in line for line in payload["current_evidence"])
     assert any("45 differential proteins" in line for line in payload["current_evidence"])
+    assert any("baseline pediatric plasma proteomics" in line for line in payload["current_evidence"])
     assert any("S-EPMC6493459 adds direct peri-transplant serum iTRAQ proteomics" in line for line in payload["current_evidence"])
+
+
+def test_operational_tolerance_use_case_links_frontiers_proteomics() -> None:
+    response = client.get("/api/use-cases/OPERATIONAL_TOLERANCE")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["readiness"] == "blood_tolerance_multimodal_evidence_ready"
+    assert "GSE11881" in payload["primary_datasets"]
+    assert "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS" in payload["supporting_datasets"]
+    assert any("802 reported DEPs" in line for line in payload["current_evidence"])
 
 
 def test_injury_vs_rejection_use_case_links_direct_transplant_proteomics() -> None:

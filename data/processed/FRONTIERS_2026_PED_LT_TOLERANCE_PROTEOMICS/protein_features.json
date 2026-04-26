@@ -1,0 +1,236 @@
+{
+  "assay_modality": "proteomics",
+  "assay_scale": "article_figure_relative_expression_level",
+  "generated_at_utc": "2026-04-26T02:49:19.176784+00:00",
+  "limitations": [
+    "The discovery proteomics cohort contains only 10 baseline plasma samples (5 IT, 5 NIT).",
+    "The unresolved DataSheet1 supplement means this V1 layer is intentionally limited to article-figure marker evidence rather than a broad differential table.",
+    "Only HDAC1 has an explicitly reported downstream plasma validation cohort in the article text."
+  ],
+  "protein_count": 4,
+  "proteins": {
+    "FCGR3B": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "FCGR3B",
+      "limitations": [
+        "This layer is reconstructed from article text and figure panels rather than a downloadable supplementary protein table or sample-level matrix.",
+        "Directionality is preserved, but exact fold changes and reusable per-feature p-values are not exposed in the article figure panels.",
+        "The main clinical framing is baseline withdrawal-risk stratification in pediatric liver transplantation, not biopsy-proven rejection diagnosis."
+      ],
+      "measurement_type": "dia_plasma_proteomics_article_figure_signal",
+      "primary_uniprot": "O75015",
+      "protein_name": "Low affinity immunoglobulin gamma Fc region receptor III-B",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": null,
+          "case_n": 5,
+          "case_state": "operational_tolerance",
+          "context": "baseline_withdrawal_tolerance_risk",
+          "contrast_id": "operational_tolerance_vs_non_tolerant",
+          "control_n": 5,
+          "control_state": "non_tolerant",
+          "direction": "lower_in_operational_tolerance",
+          "effect_scale": "article_figure_relative_expression_level",
+          "feature_level_p_value_available": false,
+          "mean_difference": null,
+          "p_value": null,
+          "reported_significance_symbol": "***",
+          "selection_rule": "Article text and Figure 6A/6B report group separation for this protein in baseline IT versus NIT plasma proteomics."
+        }
+      ],
+      "reported_annotations": {
+        "figure_panels": [
+          "Figure 6A",
+          "Figure 6B"
+        ],
+        "narrative_basis": "Named in the Results text as showing group-level differences accompanying lower HDAC1 in IT.",
+        "reported_dep_down_in_it": 420,
+        "reported_dep_up_in_it": 382,
+        "reported_total_discovery_dep_count": 802,
+        "supplementary_asset_unresolved": "DataSheet1.docx",
+        "validation": null
+      },
+      "reported_group_counts": {
+        "non_tolerant": {
+          "n": 5
+        },
+        "operational_tolerance": {
+          "n": 5
+        }
+      },
+      "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+      "summary_level": "article_figure_marker_panel"
+    },
+    "HDAC1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "HDAC1",
+      "limitations": [
+        "This layer is reconstructed from article text and figure panels rather than a downloadable supplementary protein table or sample-level matrix.",
+        "Directionality is preserved, but exact fold changes and reusable per-feature p-values are not exposed in the article figure panels.",
+        "The main clinical framing is baseline withdrawal-risk stratification in pediatric liver transplantation, not biopsy-proven rejection diagnosis."
+      ],
+      "measurement_type": "dia_plasma_proteomics_article_figure_signal",
+      "primary_uniprot": "Q13547",
+      "protein_name": "Histone deacetylase 1",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": null,
+          "case_n": 5,
+          "case_state": "operational_tolerance",
+          "context": "baseline_withdrawal_tolerance_risk",
+          "contrast_id": "operational_tolerance_vs_non_tolerant",
+          "control_n": 5,
+          "control_state": "non_tolerant",
+          "direction": "lower_in_operational_tolerance",
+          "effect_scale": "article_figure_relative_expression_level",
+          "feature_level_p_value_available": false,
+          "mean_difference": null,
+          "p_value": null,
+          "reported_significance_symbol": null,
+          "selection_rule": "Article text and Figure 6A/6B report group separation for this protein in baseline IT versus NIT plasma proteomics."
+        }
+      ],
+      "reported_annotations": {
+        "figure_panels": [
+          "Figure 4C",
+          "Figure 6A",
+          "Figure 6B",
+          "Figure 7"
+        ],
+        "narrative_basis": "Explicitly described as lower in IT and prioritized as the candidate marker; validation plasma ELISA AUC reported as 0.81.",
+        "reported_dep_down_in_it": 420,
+        "reported_dep_up_in_it": 382,
+        "reported_total_discovery_dep_count": 802,
+        "supplementary_asset_unresolved": "DataSheet1.docx",
+        "validation": {
+          "assay": "ELISA",
+          "validation_auc": 0.81,
+          "validation_case_n": 17,
+          "validation_case_state": "operational_tolerance",
+          "validation_control_n": 22,
+          "validation_control_state": "non_tolerant"
+        }
+      },
+      "reported_group_counts": {
+        "non_tolerant": {
+          "n": 5
+        },
+        "operational_tolerance": {
+          "n": 5
+        }
+      },
+      "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+      "summary_level": "article_figure_marker_panel"
+    },
+    "MAPK1": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "MAPK1",
+      "limitations": [
+        "This layer is reconstructed from article text and figure panels rather than a downloadable supplementary protein table or sample-level matrix.",
+        "Directionality is preserved, but exact fold changes and reusable per-feature p-values are not exposed in the article figure panels.",
+        "The main clinical framing is baseline withdrawal-risk stratification in pediatric liver transplantation, not biopsy-proven rejection diagnosis."
+      ],
+      "measurement_type": "dia_plasma_proteomics_article_figure_signal",
+      "primary_uniprot": "P28482",
+      "protein_name": "Mitogen-activated protein kinase 1",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": null,
+          "case_n": 5,
+          "case_state": "operational_tolerance",
+          "context": "baseline_withdrawal_tolerance_risk",
+          "contrast_id": "operational_tolerance_vs_non_tolerant",
+          "control_n": 5,
+          "control_state": "non_tolerant",
+          "direction": "lower_in_operational_tolerance",
+          "effect_scale": "article_figure_relative_expression_level",
+          "feature_level_p_value_available": false,
+          "mean_difference": null,
+          "p_value": null,
+          "reported_significance_symbol": "*",
+          "selection_rule": "Article text and Figure 6A/6B report group separation for this protein in baseline IT versus NIT plasma proteomics."
+        }
+      ],
+      "reported_annotations": {
+        "figure_panels": [
+          "Figure 6A",
+          "Figure 6B"
+        ],
+        "narrative_basis": "Named in the Results text as a differential neutrophil-program protein between IT and NIT.",
+        "reported_dep_down_in_it": 420,
+        "reported_dep_up_in_it": 382,
+        "reported_total_discovery_dep_count": 802,
+        "supplementary_asset_unresolved": "DataSheet1.docx",
+        "validation": null
+      },
+      "reported_group_counts": {
+        "non_tolerant": {
+          "n": 5
+        },
+        "operational_tolerance": {
+          "n": 5
+        }
+      },
+      "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+      "summary_level": "article_figure_marker_panel"
+    },
+    "PADI4": {
+      "evidence_kind": "direct_transplant_protein_biomarker",
+      "gene_symbol": "PADI4",
+      "limitations": [
+        "This layer is reconstructed from article text and figure panels rather than a downloadable supplementary protein table or sample-level matrix.",
+        "Directionality is preserved, but exact fold changes and reusable per-feature p-values are not exposed in the article figure panels.",
+        "The main clinical framing is baseline withdrawal-risk stratification in pediatric liver transplantation, not biopsy-proven rejection diagnosis."
+      ],
+      "measurement_type": "dia_plasma_proteomics_article_figure_signal",
+      "primary_uniprot": "Q9UM07",
+      "protein_name": "Protein-arginine deiminase type-4",
+      "published_contrasts": [
+        {
+          "adj_p_value_bh": null,
+          "case_n": 5,
+          "case_state": "operational_tolerance",
+          "context": "baseline_withdrawal_tolerance_risk",
+          "contrast_id": "operational_tolerance_vs_non_tolerant",
+          "control_n": 5,
+          "control_state": "non_tolerant",
+          "direction": "lower_in_operational_tolerance",
+          "effect_scale": "article_figure_relative_expression_level",
+          "feature_level_p_value_available": false,
+          "mean_difference": null,
+          "p_value": null,
+          "reported_significance_symbol": "**",
+          "selection_rule": "Article text and Figure 6A/6B report group separation for this protein in baseline IT versus NIT plasma proteomics."
+        }
+      ],
+      "reported_annotations": {
+        "figure_panels": [
+          "Figure 6A",
+          "Figure 6B"
+        ],
+        "narrative_basis": "Named in the Results text as a differential neutrophil/NET-associated protein between IT and NIT.",
+        "reported_dep_down_in_it": 420,
+        "reported_dep_up_in_it": 382,
+        "reported_total_discovery_dep_count": 802,
+        "supplementary_asset_unresolved": "DataSheet1.docx",
+        "validation": null
+      },
+      "reported_group_counts": {
+        "non_tolerant": {
+          "n": 5
+        },
+        "operational_tolerance": {
+          "n": 5
+        }
+      },
+      "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+      "summary_level": "article_figure_marker_panel"
+    }
+  },
+  "reported_dep_down_in_it": 420,
+  "reported_dep_up_in_it": 382,
+  "reported_total_discovery_dep_count": 802,
+  "sample_scope": "recipient_plasma_withdrawal_tolerance_discovery_set",
+  "source_url": "https://www.frontiersin.org/journals/immunology/articles/10.3389/fimmu.2026.1800926/full",
+  "study_accession": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS"
+}
