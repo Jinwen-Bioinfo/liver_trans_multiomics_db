@@ -5,11 +5,16 @@
   },
   "context": "bile proteomics during normothermic machine perfusion of discarded donor livers",
   "donor_liver_count": 55,
-  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "generated_at_utc": "2026-04-26T05:47:16.344889+00:00",
   "liver_level_biliary_viability_counts": {
     "high_biliary_viability_donor_liver": 34,
     "low_biliary_viability_donor_liver": 21
   },
+  "liver_level_transplantability_counts": {
+    "non_transplanted_donor_liver": 15,
+    "transplanted_donor_liver": 29
+  },
+  "liver_level_transplantability_unmapped_count": 11,
   "sample_count": 142,
   "sample_origin": "donor_liver",
   "source_id": "PXD046355"

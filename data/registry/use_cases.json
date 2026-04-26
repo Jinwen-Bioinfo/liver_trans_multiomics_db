@@ -183,13 +183,13 @@
         "GSE243887 provides 32 deceased donor liver RNA-seq biopsies with accepted versus rejected transplant-selection labels.",
         "Raw count evidence is normalized as log2(CPM + 1) and exposed as gene-level summaries plus accepted_donor_liver versus rejected_donor_liver Welch-test contrasts.",
         "ALB, CYP3A4, APOA1, HMOX1, and COL1A1 can now be queried as donor-liver quality marker evidence.",
-        "PXD046355 adds 142 donor-liver bile proteomics samples across 55 machine-perfused human donor livers, exposing high-versus-low biliary viability contrasts at 30min and 150min for proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ."
+        "PXD046355 adds 142 donor-liver bile proteomics samples across 55 machine-perfused human donor livers, exposing high-versus-low biliary viability contrasts at 30min and 150min for proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ, plus a partial transplanted-versus-non-transplanted subset covering 114 samples from 44 donor livers."
       ],
       "next_validation": [
         "Add hepatocyte function, stress response, and fibrosis module scores for donor-quality interpretation.",
         "Link expression evidence to histopathology metadata where reusable public tables are available.",
         "Treat accepted/rejected labels as donor organ selection status, not post-transplant graft outcome.",
-        "Treat PXD046355 as donor-organ viability biology during machine perfusion, not as recipient post-transplant outcome evidence."
+        "Treat PXD046355 as donor-organ viability biology during machine perfusion; the transplanted-versus-non-transplanted labels are only public for a 114-sample subset and should not be treated as a complete recipient-outcome layer."
       ],
       "omics_layers": [
         "transcriptome_bulk",

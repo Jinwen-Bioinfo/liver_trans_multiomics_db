@@ -10,12 +10,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "13",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_170",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_170"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_170",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -28,12 +33,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_172",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_172"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_172",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -46,12 +56,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_174",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_174"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_174",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -64,12 +79,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_177",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_177"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_177",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -82,12 +102,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_180",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_180"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_180",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -100,12 +125,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "13",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_183",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_183"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_183",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -118,12 +148,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_186",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_186"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_186",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -136,12 +171,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_189",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_189"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_189",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -154,12 +194,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_192",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_192"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_192",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -172,12 +217,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_195",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_195"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_195",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -190,12 +240,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_197",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_197"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_197",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -208,12 +263,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_200",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_200"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_200",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -226,12 +286,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_203",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_203"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_203",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -244,12 +309,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_206",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_206"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_206",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -262,12 +332,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_209",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_209"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_209",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -280,12 +355,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_212",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_212"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_212",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -298,12 +378,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_214",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_214"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_214",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -316,12 +401,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_217",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_217"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_217",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -334,12 +424,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_219",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_219"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_219",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -352,12 +447,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_222",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_222"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_222",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -370,12 +470,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "3",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_224",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_224"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_224",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -388,12 +493,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_227",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_227"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_227",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -406,12 +516,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_229",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_229"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_229",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -424,12 +539,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_231",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_231"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_231",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -442,12 +562,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_233",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_233"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_233",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -460,12 +585,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_02",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_02"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_02",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -478,12 +608,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_04",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_04"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_04",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -496,12 +631,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_07",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_07"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_07",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -514,12 +654,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_12",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_12"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_12",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -532,12 +677,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_16",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_16"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_16",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -550,12 +700,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_21",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_21"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_21",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -568,12 +723,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_26",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_26"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_26",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -586,12 +746,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_30",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_30"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_30",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -604,12 +769,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_33",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_33"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_33",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -622,12 +792,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_38",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_38"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_38",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -640,12 +815,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_40",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_40"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_40",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -658,12 +838,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_42",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_42"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_42",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -676,12 +861,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_45",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_45"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_45",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -694,12 +884,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_48",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_48"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_48",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -712,12 +907,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_51",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_51"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_51",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -730,12 +930,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_54",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_54"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_54",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -748,12 +953,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_57",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_57"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_57",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -766,12 +976,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_64",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_64"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_64",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -784,12 +999,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_67",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_67"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_67",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -802,12 +1022,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_73",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_73"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_73",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -820,12 +1045,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_76",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_76"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_76",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -838,12 +1068,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_81",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_81"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_81",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -856,12 +1091,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_84",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_84"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_84",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -874,12 +1114,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_87",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_87"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_87",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -892,12 +1137,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "2",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_90",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_90"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_90",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -910,12 +1160,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_92",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_92"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_92",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -928,12 +1183,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_97",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_97"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_97",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -946,12 +1206,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_101",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_101"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_101",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -964,12 +1229,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "14",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_104",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_104"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_104",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -982,12 +1252,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_108",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_108"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_108",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1000,12 +1275,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "13",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_171",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_171"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_171",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1018,12 +1298,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_173",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_173"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_173",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1036,12 +1321,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_175",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_175"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_175",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1054,12 +1344,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_178",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_178"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_178",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1072,12 +1367,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_181",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_181"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_181",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1090,12 +1390,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "13",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_184",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_184"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_184",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1108,12 +1413,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_187",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_187"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_187",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1126,12 +1436,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_190",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_190"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_190",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1144,12 +1459,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_193",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_193"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_193",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1162,12 +1482,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_196",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_196"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_196",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1180,12 +1505,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_198",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_198"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_198",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1198,12 +1528,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_201",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_201"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_201",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1216,12 +1551,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_204",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_204"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_204",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1234,12 +1574,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_207",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_207"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_207",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1252,12 +1597,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_210",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_210"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_210",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1270,12 +1620,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_213",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_213"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_213",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1288,12 +1643,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_215",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_215"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_215",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1306,12 +1666,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_218",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_218"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_218",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1324,12 +1689,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_220",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_220"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_220",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1342,12 +1712,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_223",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_223"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_223",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1360,12 +1735,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "3",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_225",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_225"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_225",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1378,12 +1758,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_228",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_228"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_228",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1396,12 +1781,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_230",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_230"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_230",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1414,12 +1804,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_232",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_232"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_232",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1432,12 +1827,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_234",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_234"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_234",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1450,12 +1850,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_03",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_03"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_03",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1468,12 +1873,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_05",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_05"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_05",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1486,12 +1896,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_09",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_09"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_09",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1504,12 +1919,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_14",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_14"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_14",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1522,12 +1942,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_17",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_17"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_17",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1540,12 +1965,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_22",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_22"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_22",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1558,12 +1988,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_31",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_31"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_31",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1576,12 +2011,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_34",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_34"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_34",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1594,12 +2034,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_39",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_39"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_39",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1612,12 +2057,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_41",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_41"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_41",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1630,12 +2080,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_43",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_43"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_43",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1648,12 +2103,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_46",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_46"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_46",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1666,12 +2126,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_50",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_50"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_50",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1684,12 +2149,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_52",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_52"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_52",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1702,12 +2172,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_55",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_55"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_55",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1720,12 +2195,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_58",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_58"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_58",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1738,12 +2218,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_65",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_65"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_65",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1756,12 +2241,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_69",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_69"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_69",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1774,12 +2264,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_74",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_74"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_74",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1792,12 +2287,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_78",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_78"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_78",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1810,12 +2310,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_83",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_83"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_83",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -1828,12 +2333,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_85",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_85"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_85",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1846,12 +2356,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_88",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_88"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_88",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1864,12 +2379,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "2",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_91",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_91"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_91",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1882,12 +2402,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_93",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_93"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_93",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1900,12 +2425,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_98",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_98"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_98",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1918,12 +2448,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_102",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_102"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_102",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1936,12 +2471,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "14",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "non_transplanted_donor_liver",
+      "transplantability_status_raw": "Non-transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_106",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_106"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_106",
+    "transplantability_status": "non_transplanted_donor_liver",
+    "transplantability_status_raw": "Non-transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1954,12 +2494,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_109",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_109"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_109",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1972,12 +2517,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_176",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_176"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_176",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -1990,12 +2540,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_179",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_179"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_179",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2008,12 +2563,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_182",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_182"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_182",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2026,12 +2586,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "13",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_185",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_185"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_185",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2044,12 +2609,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_188",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_188"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_188",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2062,12 +2632,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "12",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_191",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_191"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_191",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2080,12 +2655,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_194",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_194"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_194",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2098,12 +2678,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_199",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_199"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_199",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2116,12 +2701,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_202",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_202"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_202",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2134,12 +2724,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "4",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_205",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_205"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_205",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2152,12 +2747,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_208",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_208"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_208",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2170,12 +2770,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_211",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_211"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_211",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2188,12 +2793,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_216",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_216"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_216",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2206,12 +2816,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_221",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_221"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_221",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2224,12 +2839,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "3",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_226",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_226"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_226",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2242,12 +2862,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_235",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_235"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_235",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2260,12 +2885,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_06",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_06"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_06",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2278,12 +2908,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "11",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_10",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_10"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_10",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2296,12 +2931,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_15",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_15"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_15",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2314,12 +2954,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_24",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_24"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_24",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2332,12 +2977,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_27",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_27"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_27",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2350,12 +3000,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "6",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_36",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_36"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_36",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2368,12 +3023,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_53",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_53"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_53",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2386,12 +3046,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "10",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_60",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_60"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_60",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2404,12 +3069,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_66",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_66"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_66",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2422,12 +3092,17 @@
       "bdi_group_recovered_from_merged_cell_layout": true,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "8",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": false,
+      "transplantability_status": null,
+      "transplantability_status_raw": null
     },
     "sample_accession": "NMP_Bile_Proteomics_71",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_71"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_71",
+    "transplantability_status": null,
+    "transplantability_status_raw": null
   },
   {
     "assay_modality": "proteomics",
@@ -2440,12 +3115,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_75",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_75"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_75",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2458,12 +3138,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "Low",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_80",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_80"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_80",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2476,12 +3161,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_86",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_86"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_86",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2494,12 +3184,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_89",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_89"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_89",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2512,12 +3207,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "5",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_94",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_94"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_94",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2530,12 +3230,17 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "7",
-      "total_bdi_score_group": "Low"
+      "total_bdi_score_group": "Low",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_100",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_100"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_100",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   },
   {
     "assay_modality": "proteomics",
@@ -2548,11 +3253,16 @@
       "bdi_group_recovered_from_merged_cell_layout": false,
       "biliary_viability_score_group": "High",
       "total_bdi_score": "9",
-      "total_bdi_score_group": "High"
+      "total_bdi_score_group": "High",
+      "transplantability_publicly_mapped": true,
+      "transplantability_status": "transplanted_donor_liver",
+      "transplantability_status_raw": "Transplanted"
     },
     "sample_accession": "NMP_Bile_Proteomics_103",
     "sample_origin": "donor_liver",
     "source_table": "Figure 3a metadata + Figure 2e viability labels",
-    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_103"
+    "title": "NMP donor bile proteomics NMP_Bile_Proteomics_103",
+    "transplantability_status": "transplanted_donor_liver",
+    "transplantability_status_raw": "Transplanted"
   }
 ]

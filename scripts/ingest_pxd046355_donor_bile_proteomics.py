@@ -41,6 +41,12 @@ SUPPLEMENT_TEXT_PATH = RAW_DIR / "supplementary_information.txt"
 HIGH_STATE = "high_biliary_viability_donor_liver"
 LOW_STATE = "low_biliary_viability_donor_liver"
 STATE_MAP = {"High": HIGH_STATE, "Low": LOW_STATE}
+TRANSPLANTED_STATE = "transplanted_donor_liver"
+NON_TRANSPLANTED_STATE = "non_transplanted_donor_liver"
+TRANSPLANT_STATE_MAP = {
+    "Transplanted": TRANSPLANTED_STATE,
+    "Non-transplanted": NON_TRANSPLANTED_STATE,
+}
 CONTRAST_TIMEPOINTS = ("30min", "150min")
 
 NS = {
@@ -199,7 +205,27 @@ def parse_liver_metadata() -> dict[str, dict[str, Any]]:
     return metadata
 
 
-def parse_sample_metadata(liver_metadata: dict[str, dict[str, Any]]) -> list[dict[str, Any]]:
+def parse_transplant_metadata() -> dict[tuple[str, str], dict[str, Any]]:
+    rows = normalize_sheet_table(read_sheet_rows(SOURCE_DATA_PATH, "Figure 4a"))
+    mapped: dict[tuple[str, str], dict[str, Any]] = {}
+    timepoint_map = {"T10": "30min", "T18": "150min", "Tend": "End"}
+    for row in rows:
+        liver_number = row["Liver number"]
+        timepoint = timepoint_map.get(row["Timepoint"], row["Timepoint"])
+        mapped[(liver_number, timepoint)] = {
+            "sample_accession": row["Sample"],
+            "transplant_status_raw": row["Transplant"],
+            "transplant_status": TRANSPLANT_STATE_MAP.get(row["Transplant"]),
+            "biliary_viability_score_group_raw": row.get("Biliary viability score group"),
+            "total_bdi_score_group_raw": row.get("Total BDI score group"),
+        }
+    return mapped
+
+
+def parse_sample_metadata(
+    liver_metadata: dict[str, dict[str, Any]],
+    transplant_metadata: dict[tuple[str, str], dict[str, Any]],
+) -> list[dict[str, Any]]:
     rows = normalize_sheet_table(read_sheet_rows(SOURCE_DATA_PATH, "Figure 3a"))
     samples: list[dict[str, Any]] = []
     for row in rows:
@@ -207,6 +233,7 @@ def parse_sample_metadata(liver_metadata: dict[str, dict[str, Any]]) -> list[dic
         liver_meta = liver_metadata[liver_number]
         timepoint = row["Timepoint"]
         sample_id = row["Sample"]
+        transplant_meta = transplant_metadata.get((liver_number, timepoint))
         samples.append(
             {
                 "sample_accession": sample_id,
@@ -218,6 +245,8 @@ def parse_sample_metadata(liver_metadata: dict[str, dict[str, Any]]) -> list[dic
                 "assay_modality": "proteomics",
                 "collection_timepoint": timepoint,
                 "donor_liver_number": liver_number,
+                "transplantability_status": transplant_meta["transplant_status"] if transplant_meta else None,
+                "transplantability_status_raw": transplant_meta["transplant_status_raw"] if transplant_meta else None,
                 "source_table": "Figure 3a metadata + Figure 2e viability labels",
                 "metadata_annotations": {
                     "biliary_viability_score_group": liver_meta["biliary_viability_score_group_raw"],
@@ -226,6 +255,9 @@ def parse_sample_metadata(liver_metadata: dict[str, dict[str, Any]]) -> list[dic
                     "bdi_group_recovered_from_merged_cell_layout": liver_meta[
                         "bdi_group_recovered_from_merged_cell_layout"
                     ],
+                    "transplantability_status": transplant_meta["transplant_status"] if transplant_meta else None,
+                    "transplantability_status_raw": transplant_meta["transplant_status_raw"] if transplant_meta else None,
+                    "transplantability_publicly_mapped": transplant_meta is not None,
                 },
             }
         )
@@ -269,6 +301,12 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
     contrast_rows: dict[str, list[dict[str, Any]]] = {
         f"{HIGH_STATE}_vs_{LOW_STATE}_at_{timepoint}": [] for timepoint in CONTRAST_TIMEPOINTS
     }
+    contrast_rows.update(
+        {
+            f"{TRANSPLANTED_STATE}_vs_{NON_TRANSPLANTED_STATE}_at_{timepoint}": []
+            for timepoint in CONTRAST_TIMEPOINTS
+        }
+    )
     proteins: dict[str, dict[str, Any]] = {}
     protein_group_count = 0
     sample_ids_from_report: list[str] = []
@@ -293,6 +331,9 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
             per_timepoint: dict[str, dict[str, list[float]]] = {
                 timepoint: {HIGH_STATE: [], LOW_STATE: []} for timepoint in CONTRAST_TIMEPOINTS
             }
+            transplant_per_timepoint: dict[str, dict[str, list[float]]] = {
+                timepoint: {TRANSPLANTED_STATE: [], NON_TRANSPLANTED_STATE: []} for timepoint in CONTRAST_TIMEPOINTS
+            }
             all_log2_values: list[float] = []
             detected_sample_count = 0
 
@@ -315,6 +356,7 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
                         "sample_accession": sample_id,
                         "collection_timepoint": sample_meta["collection_timepoint"],
                         "clinical_state": sample_meta["clinical_state"],
+                        "transplantability_status": sample_meta.get("transplantability_status"),
                         "log2_pg_quantity": round_or_none(log2_value),
                     }
                 )
@@ -322,6 +364,9 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
                 state = sample_meta["clinical_state"]
                 if timepoint in per_timepoint and state in per_timepoint[timepoint]:
                     per_timepoint[timepoint][state].append(log2_value)
+                transplant_status = sample_meta.get("transplantability_status")
+                if timepoint in transplant_per_timepoint and transplant_status in transplant_per_timepoint[timepoint]:
+                    transplant_per_timepoint[timepoint][transplant_status].append(log2_value)
 
             if not detected_sample_count:
                 continue
@@ -341,16 +386,21 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
                 "detected_sample_count": detected_sample_count,
                 "all_samples": numeric_summary(all_log2_values),
                 "group_summaries": {},
+                "secondary_group_summaries": {},
                 "published_contrasts": [],
                 "limitations": [
                     "This layer uses the PRIDE search-engine protein-group quantity report as the quantitative matrix and Nature source-data sheets for sample metadata recovery.",
                     "Biliary-viability labels are recovered at the donor-liver level from Figure 2e and joined onto bile samples by liver number; they should be interpreted as donor-organ viability context rather than post-transplant recipient outcome.",
                     "Total BDI score/group metadata are partially inferred from merged-cell supplementary layout and are retained as descriptive annotations rather than the primary contrast definition.",
+                    "Transplantability labels are only public for a subset of donor livers through Figure 4a-derived sample mappings, so transplanted-versus-non-transplanted contrasts are secondary and partial rather than whole-cohort analyses.",
                 ],
                 "reported_annotations": {
                     "timepoints_observed": sorted({item["collection_timepoint"] for item in samples}),
                     "reported_gene_symbols": gene_symbols,
                     "reported_sample_value_count": detected_sample_count,
+                    "transplantability_mapped_sample_count": sum(
+                        1 for item in sample_values if item.get("transplantability_status") is not None
+                    ),
                 },
                 "reported_group_counts": {
                     HIGH_STATE: {"n": sum(1 for sample in samples if sample["clinical_state"] == HIGH_STATE)},
@@ -392,6 +442,46 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
                     }
                 )
 
+                transplant_case_values = transplant_per_timepoint[timepoint][TRANSPLANTED_STATE]
+                transplant_control_values = transplant_per_timepoint[timepoint][NON_TRANSPLANTED_STATE]
+                base_feature["secondary_group_summaries"][timepoint] = {
+                    TRANSPLANTED_STATE: numeric_summary(transplant_case_values),
+                    NON_TRANSPLANTED_STATE: numeric_summary(transplant_control_values),
+                }
+                transplant_contrast_id = f"{TRANSPLANTED_STATE}_vs_{NON_TRANSPLANTED_STATE}_at_{timepoint}"
+                transplant_contrast = {
+                    "contrast_id": transplant_contrast_id,
+                    "context": f"donor_bile_nmp_{timepoint}_partial_transplantability_subset",
+                    "case_state": TRANSPLANTED_STATE,
+                    "control_state": NON_TRANSPLANTED_STATE,
+                    "case_n": len(transplant_case_values),
+                    "control_n": len(transplant_control_values),
+                    "effect_scale": "log2_pg_quantity",
+                    "mean_difference": None,
+                    "p_value": None,
+                    "partial_subset_only": True,
+                }
+                if len(transplant_case_values) >= 2 and len(transplant_control_values) >= 2:
+                    transplant_contrast["mean_difference"] = round_or_none(
+                        (sum(transplant_case_values) / len(transplant_case_values))
+                        - (sum(transplant_control_values) / len(transplant_control_values))
+                    )
+                    test = stats.ttest_ind(
+                        transplant_case_values,
+                        transplant_control_values,
+                        equal_var=False,
+                        nan_policy="omit",
+                    )
+                    transplant_contrast["p_value"] = round_or_none(float(test.pvalue))
+                base_feature["published_contrasts"].append(transplant_contrast)
+                contrast_rows[transplant_contrast_id].append(
+                    {
+                        "gene_symbol": gene_symbols[0],
+                        "primary_uniprot": primary_uniprot,
+                        "p_value": transplant_contrast["p_value"],
+                    }
+                )
+
             for gene_symbol in gene_symbols:
                 proteins[gene_symbol] = {
                     **base_feature,
@@ -419,10 +509,22 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
         "gene_query_count": len(proteins),
         "clinical_group_counts": dict(sorted(Counter(sample["clinical_state"] for sample in samples).items())),
         "timepoint_counts": dict(sorted(Counter(sample["collection_timepoint"] for sample in samples).items())),
+        "transplantability_mapped_sample_counts": dict(
+            sorted(
+                Counter(
+                    sample["transplantability_status"]
+                    for sample in samples
+                    if sample.get("transplantability_status") is not None
+                ).items()
+            )
+        ),
+        "transplantability_unmapped_sample_count": sum(
+            1 for sample in samples if sample.get("transplantability_status") is None
+        ),
         "contrast_ids": sorted(contrast_rows),
         "limitations": [
             "Low-biliary-viability end-of-perfusion samples are sparse (n=2), so V1 only exposes 30min and 150min viability contrasts.",
-            "Sample-level transplantability annotations are only recoverable for a subset of figure-linked samples and are therefore not used as the primary contrast axis in this layer.",
+            "Sample-level transplantability annotations are only recoverable for a subset of figure-linked samples and are therefore exposed as a secondary partial metadata layer rather than the primary contrast axis in this layer.",
         ],
     }
 
@@ -431,7 +533,8 @@ def parse_report_matrix(samples: list[dict[str, Any]]) -> tuple[dict[str, dict[s
 
 def build_outputs() -> dict[str, Any]:
     liver_metadata = parse_liver_metadata()
-    samples = parse_sample_metadata(liver_metadata)
+    transplant_metadata = parse_transplant_metadata()
+    samples = parse_sample_metadata(liver_metadata, transplant_metadata)
     proteins, proteomics_summary = parse_report_matrix(samples)
 
     sample_summary = {
@@ -442,6 +545,18 @@ def build_outputs() -> dict[str, Any]:
         "by_sample_origin": {"donor_liver": len(samples)},
         "by_assay_modality": {"proteomics": len(samples)},
         "by_collection_timepoint": dict(sorted(Counter(sample["collection_timepoint"] for sample in samples).items())),
+        "by_transplantability_status": dict(
+            sorted(
+                Counter(
+                    sample["transplantability_status"]
+                    for sample in samples
+                    if sample.get("transplantability_status") is not None
+                ).items()
+            )
+        ),
+        "transplantability_unmapped_sample_count": sum(
+            1 for sample in samples if sample.get("transplantability_status") is None
+        ),
     }
 
     cohort_summary = {
@@ -452,6 +567,31 @@ def build_outputs() -> dict[str, Any]:
         "clinical_group_counts": sample_summary["by_clinical_state"],
         "liver_level_biliary_viability_counts": dict(
             sorted(Counter(meta["clinical_state"] for meta in liver_metadata.values()).items())
+        ),
+        "liver_level_transplantability_counts": dict(
+            sorted(
+                Counter(
+                    sample_set.pop()
+                    for sample_set in (
+                        {
+                            sample["transplantability_status"]
+                            for sample in samples
+                            if sample["donor_liver_number"] == liver_number
+                            and sample.get("transplantability_status") is not None
+                        }
+                        for liver_number in sorted({sample["donor_liver_number"] for sample in samples}, key=int)
+                    )
+                    if len(sample_set) == 1
+                ).items()
+            )
+        ),
+        "liver_level_transplantability_unmapped_count": sum(
+            1
+            for liver_number in {sample["donor_liver_number"] for sample in samples}
+            if not any(
+                sample["donor_liver_number"] == liver_number and sample.get("transplantability_status") is not None
+                for sample in samples
+            )
         ),
         "sample_origin": "donor_liver",
         "context": "bile proteomics during normothermic machine perfusion of discarded donor livers",
@@ -485,12 +625,14 @@ def build_outputs() -> dict[str, Any]:
         },
         "identifier_mapping_rule": "Used the report's PG.Genes column as the gene-query surface and duplicated semicolon-delimited gene aliases for direct lookup; primary_uniprot is the first accession listed in PG.ProteinAccessions.",
         "sample_metadata_rule": "Recovered sample IDs, liver numbers, and timepoints from Nature source-data Figure 3a; recovered liver-level biliary-viability labels from Figure 2e and joined them by donor liver number.",
+        "secondary_metadata_rule": "Recovered transplanted versus non-transplanted sample labels from Nature source-data Figure 4a and joined them to Figure 3a by donor liver number plus matched timepoint.",
         "normalization_rule": "Exploratory contrasts are computed on log2(PG.Quantity + 1) values from the public PRIDE report.",
-        "contrast_method": "Welch two-sample t-test across high versus low biliary-viability donor livers within each timepoint, with Benjamini-Hochberg FDR per contrast.",
+        "contrast_method": "Welch two-sample t-test across high versus low biliary-viability donor livers within each timepoint, with Benjamini-Hochberg FDR per contrast; transplanted-versus-non-transplanted contrasts are exposed only for the public figure-linked subset with mapped labels.",
         "limitations": protein_features["limitations"]
         + [
             "Merged-cell layout in the source-data workbook means some BDI annotations are inferred by carry-forward within the same sheet and therefore treated as descriptive metadata only.",
             "The current public supplement cleanly supports 30min and 150min viability contrasts, while low-viability end-perfusion samples are too sparse for a stable third contrast.",
+            "Transplantability labels cover 114 of 142 samples and 44 of 55 donor livers; unmapped livers are left unlabeled rather than imputed.",
         ],
     }
 

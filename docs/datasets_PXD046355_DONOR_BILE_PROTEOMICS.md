@@ -48,7 +48,8 @@ From Nature source-data sheets we can recover:
 ### Partially recoverable metadata
 
 - total BDI score / BDI group appears in source data but some rows rely on merged-cell layout
-- transplantability is visible in figure-linked subsets rather than the full matrix, so it should not be used as the primary V1 contrast without extra reconstruction
+- transplantability is visible for a defensible public subset: `114` samples from `44` donor livers can be labeled as `Transplanted` or `Non-transplanted` by joining Figure 4a back to Figure 3a via liver number and timepoint
+- the remaining `28` samples from `11` donor livers should stay unlabeled rather than be imputed
 
 ## Current V1 decision
 
@@ -58,6 +59,9 @@ This source is strong enough for a **sample-level V1 proteomics layer** if we ke
 - main contrast axis:
   - `high_biliary_viability_donor_liver`
   - `low_biliary_viability_donor_liver`
+- secondary public subset axis:
+  - `transplanted_donor_liver`
+  - `non_transplanted_donor_liver`
 - main timepoints:
   - `30min`
   - `150min`

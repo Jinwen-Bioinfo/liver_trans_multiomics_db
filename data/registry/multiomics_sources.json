@@ -626,11 +626,11 @@
         "normothermic_machine_perfusion",
         "biliary_viability"
       ],
-      "reported_sample_scope": "Direct donor-liver bile proteomics during normothermic machine perfusion, with 142 sample-level protein-group profiles spanning 55 donor livers and recoverable high-versus-low biliary viability labels.",
+      "reported_sample_scope": "Direct donor-liver bile proteomics during normothermic machine perfusion, with 142 sample-level protein-group profiles spanning 55 donor livers, recoverable high-versus-low biliary viability labels, and a public transplanted-versus-non-transplanted subset covering 114 samples from 44 donor livers.",
       "database_value": [
         "Adds one of the first sample-level donor-liver proteomics layers in the project, rather than another article-only differential marker summary.",
         "Extends donor-quality interpretation beyond accepted-versus-rejected RNA-seq by exposing bile proteins linked to biliary viability during machine perfusion.",
-        "Provides queryable proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ in a direct donor-organ context."
+        "Provides queryable proteins such as FCGBP, ANPEP, ACE2, DPP4, and CTSZ in a direct donor-organ context, with secondary transplanted-versus-non-transplanted subset evidence where public labels are recoverable."
       ],
       "local_status": "protein_feature_direct_evidence_ready",
       "processed_artifacts": [
@@ -640,7 +640,7 @@
       ],
       "next_ingest_steps": [
         "Keep the primary V1 framing on donor-liver biliary viability at 30min and 150min rather than recipient outcome prediction.",
-        "Recover a defensible full-sample transplantability mapping only if the Nature supplements expose it beyond the current figure-linked subset.",
+        "Treat transplanted-versus-non-transplanted contrasts as a public subset layer only, because 28 samples from 11 donor livers remain unlabeled in the current public source-data path.",
         "Consider a dedicated machine-perfusion viability use case if additional donor-liver perfusion cohorts become public."
       ],
       "source_check": {

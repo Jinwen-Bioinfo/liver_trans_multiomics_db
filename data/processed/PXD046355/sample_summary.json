@@ -14,7 +14,12 @@
   "by_sample_origin": {
     "donor_liver": 142
   },
-  "generated_at_utc": "2026-04-26T05:38:29.100750+00:00",
+  "by_transplantability_status": {
+    "non_transplanted_donor_liver": 30,
+    "transplanted_donor_liver": 84
+  },
+  "generated_at_utc": "2026-04-26T05:47:16.344889+00:00",
   "sample_count": 142,
-  "study_accession": "PXD046355"
+  "study_accession": "PXD046355",
+  "transplantability_unmapped_sample_count": 28
 }

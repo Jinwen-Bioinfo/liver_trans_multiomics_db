@@ -514,6 +514,10 @@ def test_direct_donor_bile_protein_endpoint_returns_pxd046355_evidence() -> None
         contrast["contrast_id"] == "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_30min"
         for contrast in evidence["published_contrasts"]
     )
+    assert any(
+        contrast["contrast_id"] == "transplanted_donor_liver_vs_non_transplanted_donor_liver_at_30min"
+        for contrast in evidence["published_contrasts"]
+    )
 
 
 def test_protein_reference_downloads_are_available() -> None:
@@ -591,6 +595,9 @@ def test_direct_donor_bile_proteomics_study_detail_is_available() -> None:
     assert payload["sample_summary"]["sample_count"] == 142
     assert payload["sample_summary"]["by_clinical_state"]["high_biliary_viability_donor_liver"] == 98
     assert payload["sample_summary"]["by_clinical_state"]["low_biliary_viability_donor_liver"] == 44
+    assert payload["sample_summary"]["by_transplantability_status"]["transplanted_donor_liver"] == 84
+    assert payload["sample_summary"]["by_transplantability_status"]["non_transplanted_donor_liver"] == 30
+    assert payload["sample_summary"]["transplantability_unmapped_sample_count"] == 28
 
 
 def test_direct_donor_bile_proteomics_downloads_are_available() -> None:
