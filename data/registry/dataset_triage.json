@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-26T06:05:36.328090+00:00",
+  "generated_at_utc": "2026-04-27T01:40:59.094019+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -9619,7 +9619,7 @@
       ],
       "scientific_value": [],
       "next_action": "Inspect repository or publication supplements for reusable matrices; promote only if feature-level data can be obtained.",
-      "triage_reason": "Relevant modality signal exists, but reusable feature-level files must be verified before ingest."
+      "triage_reason": "PRIDE exposes a reusable PCLS_report.txt matrix with 118 sample columns and 6,028 protein-group rows for this human donor-liver machine-perfusion study, but the public files currently in hand do not yet map PCLS_Sample identifiers to donor, temperature, and timepoint."
     },
     {
       "accession": "PXD060743",

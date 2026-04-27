@@ -52,6 +52,8 @@ Additional recovered design facts:
   - `127`
   - `128`
   - `130`
+- the complete PRIDE archive is locally readable and contains valid `mqpar.xml`, `summary.txt`, and `proteinGroups.txt` files for all three batches
+- `proteinGroups.txt` exposes `Reporter intensity 0/1/2/3` columns for every batch, confirming that the reusable quantitative signal is reporter-channel based rather than only peptide-identification metadata
 
 ## Current blocker
 
@@ -65,7 +67,29 @@ What still needs to be resolved:
 - whether `TQ01`, `TQ02`, and `TQ03` are biological replicates, technical batches, or mixed designs
 - whether the three MaxQuant batches can be merged without introducing ambiguous sample duplication
 
-Critically, the recovered `mqpar.xml` files leave the `<experiments>` block empty, so the batch-level MaxQuant parameters do not record sample-group labels. `tables.pdf` is the generic MaxQuant column-definition manual, not an experiment-design sheet. So the channel-to-state mapping is still not recoverable from the already inspected public metadata alone.
+Critically, the recovered `mqpar.xml` files leave the `<experiments>` block empty, so the batch-level MaxQuant parameters do not record sample-group labels. `tables.pdf` is the generic MaxQuant column-definition manual, not an experiment-design sheet.
+
+## What can now be inferred, but not yet claimed as ground truth
+
+The public article figures and the now-readable PRIDE archive push the dataset closer to usability than before:
+
+- the ATC abstract and workflow figure explicitly frame the proteomic comparison as **re-perfused livers versus pre-implantation livers**
+- many named proteins from the co-regulation figure (`HBB`, `HBG2`, `CA1`, `SLC4A1`, `PLIN2`, `JUNB`, `HBA1`, `MMP9`, `SLC2A1`, `PADI4`) show a repeated within-batch pattern
+- in nearly all of those examples:
+  - `Reporter intensity 1 > Reporter intensity 0`
+  - `Reporter intensity 3 > Reporter intensity 2`
+
+That pattern strongly suggests a paired layout within each batch, most plausibly:
+
+- one pre-implantation / reperfused pair in channels `0 -> 1`
+- one pre-implantation / reperfused pair in channels `2 -> 3`
+
+and therefore a high-confidence working hypothesis:
+
+- channels `0` and `2` correspond to pre-implantation samples
+- channels `1` and `3` correspond to reperfused samples
+
+However, this is still an **inference from directional consistency**, not an author-exposed sample sheet. The public metadata do not yet say this explicitly, and that distinction matters for a database layer intended to support publication-grade provenance.
 
 ## Status decision
 
@@ -77,12 +101,12 @@ Rationale:
 
 - processed protein-level outputs are publicly reusable
 - direct transplant relevance is high
-- matrix-level ingest should wait until reporter-channel interpretation is defensible
+- matrix-level ingest should wait until reporter-channel interpretation is defensible from an explicit public design source rather than a strong but still inferred pattern
 
 ## Next step
 
 The next recovery pass should focus on:
 
-1. extracting the experimental design from `tables.pdf` or related embedded documentation
-2. checking whether any PRIDE-associated metadata outside `mqpar.xml` expose channel labels
-3. only then promoting `PXD010812` to a direct proteomics ingest script
+1. finding any author-exposed sample sheet, supplementary table, or repository-side metadata that explicitly ties channels to pre-implantation versus reperfused graft samples
+2. checking whether any associated article figure legends or non-PRIDE repository assets encode chip/channel semantics more explicitly
+3. only then promoting `PXD010812` to a direct proteomics ingest script, unless the project deliberately chooses to support an explicitly labeled `inferred_state_mapping` exploratory layer

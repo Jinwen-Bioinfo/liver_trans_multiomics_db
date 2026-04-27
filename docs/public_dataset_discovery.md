@@ -172,6 +172,39 @@ Why it is not promoted yet:
 - the embedded `tables.pdf` is generic MaxQuant documentation, not a sample-design sheet
 - so the currently inspected metadata are enough to confirm reusable processed files, but not yet enough to assign channels cleanly to ischemic versus reperfused graft states
 
+`PXD056736` is now the next promising machine-perfusion follow-up behind `PXD010812`.
+
+Why it stays interesting:
+
+- PRIDE exposes a reusable `PCLS_report.txt` sample-level protein matrix
+- the matrix already contains `6,028` protein-group rows and `118` quantitative sample columns
+- the linked article is a direct human donor-liver machine-perfusion study, not an indirect liver model
+
+Why it is not promoted yet:
+
+- the public matrix columns are named only as `PCLS_Sample_*`
+- current article text is enough to recover the broad design (`18` donor livers, `37°C` vs `40°C`, `0/3/24/48 h`) but not enough to map each matrix column to donor, timepoint, and temperature
+- the Figshare supplementary record is visible, but the actual supplementary file has not yet been recovered cleanly in this execution environment
+
+So `PXD056736` should remain a serious `source_review_needed` target rather than being prematurely promoted.
+
+`PXD061119` has also moved up the queue because it is no longer just an article citation.
+
+What is now confirmed:
+
+- the Nature Communications article states that `94` derivation-cohort samples were suitable for proteomics
+- the article links those proteomics data to iProX accession `PXD061119`
+- iProX public endpoints expose a downloadable `Protein_matrix.txt`
+- that matrix contains `94` sample columns, matching the article's proteomics cohort size exactly
+
+What still blocks promotion:
+
+- the sample columns are labeled only as `L###`
+- the public matrix alone does not map those IDs to recurrence, survival, or molecular subgroup labels
+- the likely key metadata live in the article `Source Data` and `Supplementary Data 1` files, which are visible in PMC XML but not yet recoverable cleanly in this execution environment
+
+So `PXD061119` now looks like one of the strongest next direct-proteomics candidates after the current blocker queue.
+
 That fallback has already been converted into a usable local source by exploiting the publicly exposed supplementary PNG tables and article-text iTRAQ tag mapping:
 
 - `n=3` ACR vs `n=3` non-rejection
