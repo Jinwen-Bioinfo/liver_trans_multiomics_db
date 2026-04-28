@@ -207,6 +207,32 @@ What still blocks promotion:
 
 So `PXD061119` now looks like one of the strongest next direct-proteomics candidates after the current blocker queue.
 
+`PXD067270` has now become an even stronger immediate follow-up than it first appeared.
+
+What is now confirmed:
+
+- PRIDE FTP for `PXD067270` is public and directly browsable
+- the project exposes a `Link_between_files.xlsx` workbook
+- that workbook explicitly maps all `48` acquisitions to:
+  - graft IDs `M1` to `M16`
+  - time points `B1`, `B2`, `B3`
+- PRIDE project metadata explicitly states:
+  - `16` donor livers
+  - `48` biopsies
+  - the clinical objective is association with **biliary complications**
+- the article snippet also exposes a supporting-information package `LIV-46-0-s001.docx` with:
+  - viability tables
+  - biliary-complication tables
+  - proteomics differential tables
+
+Why it is not promoted yet:
+
+- the workbook solves sample-to-timepoint mapping, but not yet sample-to-outcome mapping
+- the current environment still has not recovered the actual `LIV-46-0-s001.docx` binary, so `M1-M16` cannot yet be joined to complication status from a public table
+- the public PRIDE directory exposes `.pdResult` result bundles, but a reusable protein-level matrix still needs to be recovered or exported in a lightweight way
+
+So `PXD067270` should now be treated as the **next best direct graft-tissue proteomics target** after the current `PXD061119` blocker closure, with a smaller remaining gap than the older unresolved candidates.
+
 That fallback has already been converted into a usable local source by exploiting the publicly exposed supplementary PNG tables and article-text iTRAQ tag mapping:
 
 - `n=3` ACR vs `n=3` non-rejection

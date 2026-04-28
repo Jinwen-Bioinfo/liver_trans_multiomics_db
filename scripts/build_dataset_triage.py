@@ -128,6 +128,12 @@ CURATED_PRIORITY_ACCESSIONS = {
         "next_action": "Use as a direct post-transplant serum proteomics layer for normal versus impaired kidney-function monitoring, while keeping it framed as a published differential-table evidence layer rather than a reusable per-sample PRIDE intensity matrix.",
         "scientific_value": ["post-transplant renal dysfunction monitoring", "direct serum proteomics", "blood-based complication evidence after liver transplantation"],
     },
+    "PXD067270": {
+        "priority": "P1",
+        "triage_status": "source_review_needed",
+        "next_action": "Promote this to a sample-level graft-tissue proteomics layer once the public outcome annotation for M1-M16 grafts is recovered; PRIDE already exposes the full B1/B2/B3 biopsy file mapping through Link_between_files.xlsx.",
+        "scientific_value": ["sample-level graft tissue proteomics", "normothermic machine perfusion timecourse", "post-transplant biliary complication biology"],
+    },
     "S-EPMC6493459": {
         "priority": "P1",
         "triage_status": "processed_feature_ready",
@@ -232,6 +238,16 @@ CURATED_MANUAL_SOURCE_METADATA = {
         "omics_modalities": ["proteomics", "metabolomics"],
         "sample_origins": ["plasma_serum"],
         "clinical_states": ["post_transplant_renal_dysfunction"],
+    },
+    "PXD067270": {
+        "title": "Proteomic profiling during normothermic perfusion predicts liver graft quality and outcomes after transplantation",
+        "repository": "PRIDE / Liver International supporting information",
+        "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD067270",
+        "source_type": "repository_accession",
+        "directness": "direct_liver_transplant",
+        "omics_modalities": ["proteomics"],
+        "sample_origins": ["graft_liver_biopsy"],
+        "clinical_states": ["donor_graft_quality", "biliary_complications", "ischemia_reperfusion"],
     },
     "S-EPMC6493459": {
         "title": "Comparative proteomic analysis of human serum before and after liver transplantation using quantitative proteomics",
@@ -454,6 +470,8 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
         return "PRIDE exposes a reusable PCLS_report.txt matrix with 118 sample columns and 6,028 protein-group rows for this human donor-liver machine-perfusion study, but the public files currently in hand do not yet map PCLS_Sample identifiers to donor, temperature, and timepoint."
     if candidate.get("accession") == "PXD061119":
         return "iProX exposes a reusable Protein_matrix.txt with 94 sample columns matching the article's proteomics cohort size, but the recovered Nature supplementary files and iProX XML metadata still do not map L### sample identifiers to recurrence, survival, or subgroup labels."
+    if candidate.get("accession") == "PXD067270":
+        return "PRIDE exposes a direct liver-graft proteomics project with 48 biopsies from 16 transplanted grafts, and Link_between_files.xlsx already maps each raw/pdResult file to graft M1-M16 and timepoints B1/B2/B3; the remaining blocker is recovering the public per-graft biliary-complication annotation and reusable protein-level matrix from the supporting-information/docx layer."
     if candidate.get("accession") == "PXD022881":
         return "PRIDE exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt and proteinGroups.txt for 12 HCC tumor-explant samples, while Supplementary Figure S1 makes 11 of those samples label-recoverable as recurrent versus non-recurrent beyond-Milan liver-transplant cases."
 

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-04-28T11:34:29.491128+00:00",
+  "generated_at_utc": "2026-04-28T11:44:04.397353+00:00",
   "source_discovery_file": "data/discovery/public_liver_tx_dataset_discovery.json",
   "scope": "Executable triage of public liver transplantation omics candidates for LiverTx-OmicsDB ingest planning.",
   "triage_policy": {
@@ -12,7 +12,7 @@
     "defer_false_positive_or_adjacent": "Automated broad-search matches that should not drive the database build."
   },
   "summary": {
-    "candidate_count": 905,
+    "candidate_count": 906,
     "status_counts": {
       "controlled_access_register_only": 22,
       "defer_false_positive_or_adjacent": 373,
@@ -24,11 +24,11 @@
       "processed_single_cell_marker": 1,
       "processed_summary": 1,
       "ready_to_ingest": 98,
-      "source_review_needed": 132
+      "source_review_needed": 133
     },
     "priority_counts": {
       "P0": 9,
-      "P1": 104,
+      "P1": 105,
       "P2": 397,
       "P3": 395
     },
@@ -39,12 +39,12 @@
       "methylation_cfDNA": 40,
       "microbiome": 42,
       "other": 3,
-      "proteomics": 166,
+      "proteomics": 167,
       "single_cell": 69,
       "small_rna": 26,
       "unknown": 523
     },
-    "p0_or_p1_count": 113,
+    "p0_or_p1_count": 114,
     "ready_or_processed_count": 113
   },
   "priority_queue": [
@@ -6373,6 +6373,42 @@
       "scientific_value": [],
       "next_action": "Verify repository files, download public matrices or supplementary tables, then map samples to standardized transplant states.",
       "triage_reason": "Public repository accession appears directly liver-transplant related and likely has reusable expression or omics data."
+    },
+    {
+      "accession": "PXD067270",
+      "title": "Proteomic profiling during normothermic perfusion predicts liver graft quality and outcomes after transplantation",
+      "repository": "PRIDE / Liver International supporting information",
+      "repository_url": "https://www.ebi.ac.uk/pride/archive/projects/PXD067270",
+      "accession_family": "PRIDE",
+      "source_type": "repository_accession",
+      "directness": "direct_liver_transplant",
+      "triage_status": "source_review_needed",
+      "priority": "P1",
+      "omics_modalities": [
+        "proteomics"
+      ],
+      "sample_origins": [
+        "graft_liver_biopsy"
+      ],
+      "clinical_states": [
+        "donor_graft_quality",
+        "biliary_complications",
+        "ischemia_reperfusion"
+      ],
+      "organisms": [
+        "Homo sapiens"
+      ],
+      "publication_date": null,
+      "discovered_via": [
+        "manual_curated_source"
+      ],
+      "scientific_value": [
+        "sample-level graft tissue proteomics",
+        "normothermic machine perfusion timecourse",
+        "post-transplant biliary complication biology"
+      ],
+      "next_action": "Promote this to a sample-level graft-tissue proteomics layer once the public outcome annotation for M1-M16 grafts is recovered; PRIDE already exposes the full B1/B2/B3 biopsy file mapping through Link_between_files.xlsx.",
+      "triage_reason": "PRIDE exposes a direct liver-graft proteomics project with 48 biopsies from 16 transplanted grafts, and Link_between_files.xlsx already maps each raw/pdResult file to graft M1-M16 and timepoints B1/B2/B3; the remaining blocker is recovering the public per-graft biliary-complication annotation and reusable protein-level matrix from the supporting-information/docx layer."
     },
     {
       "accession": "GSE262273",

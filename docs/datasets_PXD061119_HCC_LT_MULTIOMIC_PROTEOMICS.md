@@ -35,7 +35,7 @@ This source is stronger than a metadata-only entry because the iProX public proj
 
 The matrix is publicly reachable through the iProX download controller and is already confirmed to contain:
 
-- `132` protein rows
+- `4,578` protein rows
 - `97` total columns
 - `94` quantitative sample columns
 - three annotation columns:
