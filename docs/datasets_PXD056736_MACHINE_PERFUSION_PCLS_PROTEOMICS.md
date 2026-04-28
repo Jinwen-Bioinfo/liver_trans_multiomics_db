@@ -75,14 +75,22 @@ That is consistent with mixed acquisition batches or omitted non-PCLS acquisitio
 
 ## Supplementary-material status
 
-The article points to supplementary material on Figshare and states that additional data are available in supplementary materials. However, in the current execution environment:
+The article points to supplementary material on Figshare and states that additional data are available in supplementary materials.
 
-- the Figshare metadata API is reachable
-- the supplementary file record is visible
-- direct file download currently fails because the redirected object-store request is not completing cleanly here
-- PMC supplementary file URLs are additionally protected by a Recaptcha challenge in this environment
+That supplementary PDF is now recoverable by:
 
-So the most likely route to finish this source is to recover the supplementary PDF or source-data attachment from a network path that does not inject those download barriers.
+- reading the Figshare API record
+- resolving the signed `ndownloader.figshare.com` redirect
+- requesting the signed object-store URL over plain `http`
+
+The recovered supplementary PDF confirms several important design facts:
+
+- whole-organ perfusion experiments are labeled `Exp 1` to `Exp 8`
+- the whole-organ temperature increase occurs from `-15 min (37°C)` to `0 min (40°C)`
+- the whole-organ timecourse runs over `3 hours`
+- the supplement explicitly describes PCLS proteomics as `40°C vs 37°C` at `3 h`, `24 h`, and `48 h`
+
+So the supplement validates the biology and timing scheme, but it still does not expose a table that maps `PCLS_Sample_*` identifiers from `PCLS_report.txt` back to donor, timepoint, and temperature.
 
 ## Status decision
 
@@ -100,6 +108,6 @@ Rationale:
 
 The next recovery pass should focus on:
 
-1. obtaining the Figshare supplementary PDF from a working network path
-2. checking whether that supplement or any source-data file maps `PCLS_Sample_*` IDs to donor, timepoint, and temperature
+1. checking whether any additional Figshare or article-linked source-data artifact maps `PCLS_Sample_*` IDs to donor, timepoint, and temperature
+2. checking whether the PRIDE-side raw-file naming pattern can be linked to those factors from explicit public metadata
 3. promoting the source only after those labels can be assigned from explicit public metadata rather than acquisition-order guessing

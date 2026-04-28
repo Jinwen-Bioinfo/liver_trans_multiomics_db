@@ -452,6 +452,8 @@ def triage_reason(status: str, candidate: dict[str, Any]) -> str:
         return "PRIDE exposes a reusable MaxQuant search.zip archive for this direct liver-transplant ischemia/reperfusion cohort, including TQ01/TQ02/TQ03 batches with proteinGroups.txt and mqpar.xml, but the recovered MaxQuant experiment fields are blank so reporter-channel mapping for ischemic versus reperfused graft samples still cannot be defended."
     if candidate.get("accession") == "PXD056736":
         return "PRIDE exposes a reusable PCLS_report.txt matrix with 118 sample columns and 6,028 protein-group rows for this human donor-liver machine-perfusion study, but the public files currently in hand do not yet map PCLS_Sample identifiers to donor, temperature, and timepoint."
+    if candidate.get("accession") == "PXD061119":
+        return "iProX exposes a reusable Protein_matrix.txt with 94 sample columns matching the article's proteomics cohort size, but the recovered Nature supplementary files and iProX XML metadata still do not map L### sample identifiers to recurrence, survival, or subgroup labels."
     if candidate.get("accession") == "PXD022881":
         return "PRIDE exposes a reusable MaxQuant combined.zip bundle with experimentalDesignTemplate.txt and proteinGroups.txt for 12 HCC tumor-explant samples, while Supplementary Figure S1 makes 11 of those samples label-recoverable as recurrent versus non-recurrent beyond-Milan liver-transplant cases."
 

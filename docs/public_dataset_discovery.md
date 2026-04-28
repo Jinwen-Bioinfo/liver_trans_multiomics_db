@@ -196,12 +196,14 @@ What is now confirmed:
 - the article links those proteomics data to iProX accession `PXD061119`
 - iProX public endpoints expose a downloadable `Protein_matrix.txt`
 - that matrix contains `94` sample columns, matching the article's proteomics cohort size exactly
+- Nature supplementary assets `MOESM1`, `MOESM3`, and `MOESM6` are directly recoverable from `static-content.springer.com`
+- iProX project and subproject XML files are directly recoverable
 
 What still blocks promotion:
 
 - the sample columns are labeled only as `L###`
-- the public matrix alone does not map those IDs to recurrence, survival, or molecular subgroup labels
-- the likely key metadata live in the article `Source Data` and `Supplementary Data 1` files, which are visible in PMC XML but not yet recoverable cleanly in this execution environment
+- neither the recovered Nature supplementary files nor the iProX XML files currently map those IDs to recurrence, survival, or molecular subgroup labels
+- the likely missing piece is either an unrecovered source-data panel for the derivation-cohort proteomics figure set or non-public clinical/sample annotation
 
 So `PXD061119` now looks like one of the strongest next direct-proteomics candidates after the current blocker queue.
 

@@ -69,18 +69,37 @@ The PMC XML confirms that the article has:
 - `Source Data`
 - a stated data-availability paragraph that points to the iProX proteomics deposition
 
-Those supplementary files are likely where sample-to-subgroup mapping lives.
+Those supplementary files are the most likely place where sample-to-subgroup mapping would live.
 
-## Environment-specific blocker
+## What has now been checked directly
 
-In the current execution environment:
+The recovery path is now much stronger than before:
 
-- PMC article XML is accessible
-- iProX metadata and file-list endpoints are accessible
-- the processed `Protein_matrix.txt` is downloadable
-- but PMC-hosted supplementary file downloads are currently blocked by a Recaptcha challenge here
+- the Nature article page exposes direct `static-content.springer.com` links for:
+  - `41467_2025_59745_MOESM1_ESM.docx`
+  - `41467_2025_59745_MOESM3_ESM.xlsx`
+  - `41467_2025_59745_MOESM6_ESM.xlsx`
+- all three files are now locally recoverable
+- the iProX project XML and subproject XML are also directly recoverable
 
-So the missing piece is not the proteomics matrix itself, but the public metadata needed to assign biological labels to the `L###` columns.
+What those files do and do not provide:
+
+- `MOESM1`:
+  - contains supplementary figures and aggregate supplementary tables
+  - confirms cohort-level summaries for the derivation cohort (`n = 100`) and validation cohort (`n = 80`)
+  - contains a transcriptomic validation signature table
+  - does **not** expose `L###`-level proteomics sample mapping
+- `MOESM3`:
+  - contains the validation-cohort high-expression gene lists used for transcriptomic grouping
+  - does **not** expose proteomics sample IDs
+- `MOESM6`:
+  - contains source-data sheets for figure panels (`Figure 5`, `Figure 6`, `Figure S11`)
+  - does **not** contain the derivation-cohort proteomics matrix or `L###` sample annotations
+- iProX XML:
+  - confirms the public file list and public download routes
+  - does **not** include assay/sample metadata linking `L###` to recurrence, survival, or subgroup
+
+So the missing piece is no longer download access. The missing piece is still the public metadata needed to assign biological labels to the `L###` columns.
 
 ## Status decision
 
@@ -92,12 +111,12 @@ Rationale:
 
 - a direct sample-level transplant proteomics matrix is already public
 - the cohort size is strong enough to matter
-- but promoting this to an ingest layer should wait until the `L###` sample labels can be mapped to explicit public outcomes or subgroups
+- but promoting this to an ingest layer should wait until the `L###` sample labels can be mapped to explicit public outcomes or subgroups, or until a clearly defined unsupervised exploratory layer is intentionally chosen
 
 ## Next step
 
 The next recovery pass should focus on:
 
-1. obtaining the article `Source Data` and `Supplementary Data 1` files from a path that bypasses the current PMC download challenge
-2. checking whether those files map `L###` samples to transcriptomic/proteomic subgroup labels and recurrence/survival metadata
+1. checking whether any additional Nature-hosted source-data artifact beyond `MOESM6` contains the hidden derivation-cohort panel used for `Figure 2D–G`
+2. checking whether any iProX-side metadata outside the project XML expose assay/sample annotations for `L###`
 3. promoting `PXD061119` once that sample mapping is explicit enough for a defensible post-LT HCC proteomics layer
