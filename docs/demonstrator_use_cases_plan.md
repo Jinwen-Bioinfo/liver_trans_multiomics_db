@@ -268,6 +268,12 @@ Each use case should get a markdown report containing:
 - caveats
 - next validation needs
 
+Initial artifacts:
+
+- [case_report_injury_vs_rejection.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_injury_vs_rejection.md)
+- [case_report_donor_liver_quality.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_donor_liver_quality.md)
+- [case_report_blood_monitoring.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_blood_monitoring.md)
+
 ### 4. Product integration targets
 
 Each use case page should eventually show:

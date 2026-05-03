@@ -283,6 +283,10 @@ Execution detail:
 - See [demonstrator_use_cases_plan.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_use_cases_plan.md) for the concrete scope, evidence stacks, current gaps, and next-week deliverables for these first three demonstrator workflows.
 - See [demonstrator_evidence_tables.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_evidence_tables.md) and [demonstrator_evidence_tables.json](/Users/jinwen/Program/liver_trans_multiomics_db/data/registry/demonstrator_evidence_tables.json) for the first machine-readable and human-readable evidence-grade artifact.
 - See [demonstrator_cross_omics_mappings.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_cross_omics_mappings.md) and [demonstrator_cross_omics_mappings.json](/Users/jinwen/Program/liver_trans_multiomics_db/data/registry/demonstrator_cross_omics_mappings.json) for the first question-oriented cross-omics integration scaffold.
+- See the first case-report layer for narrative demonstrators:
+  - [case_report_injury_vs_rejection.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_injury_vs_rejection.md)
+  - [case_report_donor_liver_quality.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_donor_liver_quality.md)
+  - [case_report_blood_monitoring.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/case_report_blood_monitoring.md)
 
 ### Weeks 3-4
 
