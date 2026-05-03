@@ -894,7 +894,13 @@
       async function showUseCase(useCaseId, pushRoute = true) {
         if (pushRoute) setRoute(`use-case/${useCaseId}`);
         const item = await fetchJson(`/api/use-cases/${useCaseId}`);
-        updateRouteBanner(item.title, `${item.readiness} · ${item.primary_datasets.length} primary datasets`);
+        const evidenceRecords = item.demonstrator_evidence_table?.records || [];
+        const mappingGroups = item.demonstrator_mapping_table?.mapping_groups || [];
+        const evidenceGrades = [...new Set(evidenceRecords.map((record) => record.evidence_grade))];
+        updateRouteBanner(
+          item.title,
+          `${item.readiness} · ${item.primary_datasets.length} primary datasets · ${evidenceRecords.length} graded evidence records`
+        );
         detailPanel.innerHTML = `
           <div class="evidence-panel">
             <h2>${item.title}</h2>
@@ -905,6 +911,7 @@
               ${item.supporting_datasets.map(tag).join("")}
               ${(item.omics_layers || []).map(tag).join("")}
               ${item.signatures.map(tag).join("")}
+              ${evidenceGrades.map((grade) => tag(`evidence ${grade}`)).join("")}
             </div>
             <div class="detail-grid">
               <div class="detail-block">
@@ -923,6 +930,68 @@
                 </div>
               </div>
             </div>
+            ${evidenceRecords.length ? `
+              <div class="detail-block" style="margin-top:14px;">
+                <h3>Evidence-grade table</h3>
+                <p class="muted">This table makes evidence strength visible so sample-level matrices, feature-level contrasts, marker layers, reference context, and unresolved candidate layers are not conflated.</p>
+                <table class="sample-table">
+                  <thead><tr><th>Dataset</th><th>Origin</th><th>Modality</th><th>Contrast</th><th>Grade</th><th>Main caveat</th></tr></thead>
+                  <tbody>
+                    ${evidenceRecords.map((record) => `
+                      <tr>
+                        <td>${[...item.primary_datasets, ...item.supporting_datasets].includes(record.dataset) ? `<button type="button" onclick="setRoute('study/${record.dataset}')">${record.dataset}</button>` : escapeHtml(record.dataset)}</td>
+                        <td>${escapeHtml(record.sample_origin)}</td>
+                        <td>${escapeHtml(record.modality)}</td>
+                        <td>${escapeHtml(record.contrast || "n/a")}</td>
+                        <td><strong>${escapeHtml(record.evidence_grade)}</strong></td>
+                        <td>${escapeHtml(record.main_caveat)}</td>
+                      </tr>
+                    `).join("")}
+                  </tbody>
+                </table>
+              </div>
+            ` : ""}
+            ${mappingGroups.length ? `
+              <div class="detail-block" style="margin-top:14px;">
+                <h3>Cross-omics mapping groups</h3>
+                <p class="muted">These are question-oriented biological themes that connect genes, proteins, metabolites, and pathways without pretending every linked layer has the same evidence strength.</p>
+                <div class="evidence-stack">
+                  ${mappingGroups.map((group) => `
+                    <div class="detail-block">
+                      <h3>${escapeHtml(group.label)}</h3>
+                      <p>${escapeHtml(group.biological_theme)}</p>
+                      <div class="summary">
+                        ${(group.pathway_context || []).map(tag).join("")}
+                      </div>
+                      <p><strong>Interpretation scope:</strong> ${escapeHtml(group.interpretation_scope)}</p>
+                      <div class="summary">
+                        ${(group.entities?.genes || []).map((gene) => `<button type="button" onclick="setRoute('feature/${gene}')">${gene}</button>`).join("")}
+                        ${(group.entities?.proteins || []).filter((protein) => !(group.entities?.genes || []).includes(protein)).map((protein) => `<button type="button" onclick="setRoute('feature/${protein}')">${protein}</button>`).join("")}
+                        ${(group.entities?.metabolites || []).map((met) => tag(`metabolite: ${met}`)).join("")}
+                        ${(group.entities?.taxa || []).map((taxon) => tag(`taxon: ${taxon}`)).join("")}
+                      </div>
+                      <ul>
+                        ${(group.evidence_support || []).map((support) => `
+                          <li>
+                            <strong>${escapeHtml(support.dataset)}</strong> · ${escapeHtml(support.modality)} · grade ${escapeHtml(support.evidence_grade)} · ${escapeHtml(support.contrast)}
+                          </li>
+                        `).join("")}
+                      </ul>
+                      <p class="muted">${escapeHtml(group.main_caveat)}</p>
+                    </div>
+                  `).join("")}
+                </div>
+              </div>
+            ` : ""}
+            ${item.demonstrator_case_report_path ? `
+              <div class="detail-block" style="margin-top:14px;">
+                <h3>Case report</h3>
+                <p class="muted">A narrative markdown report exists in the local project for this demonstrator workflow.</p>
+                <div class="summary">
+                  ${tag(item.demonstrator_case_report_path)}
+                </div>
+              </div>
+            ` : ""}
             ${item.primary_dataset_records?.length ? `
               <div class="detail-block" style="margin-top:14px;">
                 <h3>Dataset readiness</h3>

@@ -14,6 +14,8 @@ OMICS_LAYER_REGISTRY = ROOT / "data" / "registry" / "omics_layers.json"
 MULTIOMICS_SOURCE_REGISTRY = ROOT / "data" / "registry" / "multiomics_sources.json"
 SOURCE_TYPE_REGISTRY = ROOT / "data" / "registry" / "source_types.json"
 DATASET_TRIAGE_REGISTRY = ROOT / "data" / "registry" / "dataset_triage.json"
+DEMONSTRATOR_EVIDENCE_REGISTRY = ROOT / "data" / "registry" / "demonstrator_evidence_tables.json"
+DEMONSTRATOR_MAPPING_REGISTRY = ROOT / "data" / "registry" / "demonstrator_cross_omics_mappings.json"
 DATA_MODEL_SCHEMA = ROOT / "data" / "schema" / "livertx_omicsdb_schema.json"
 PROCESSED_DIR = ROOT / "data" / "processed"
 DOWNLOAD_ARTIFACTS = {
@@ -77,6 +79,34 @@ def list_source_types() -> dict[str, Any]:
 def load_dataset_triage_payload() -> dict[str, Any]:
     with DATASET_TRIAGE_REGISTRY.open("r", encoding="utf-8") as handle:
         return json.load(handle)
+
+
+@lru_cache(maxsize=1)
+def load_demonstrator_evidence_payload() -> dict[str, Any]:
+    with DEMONSTRATOR_EVIDENCE_REGISTRY.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+@lru_cache(maxsize=1)
+def load_demonstrator_mapping_payload() -> dict[str, Any]:
+    with DEMONSTRATOR_MAPPING_REGISTRY.open("r", encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def get_demonstrator_evidence(use_case_id: str) -> dict[str, Any] | None:
+    use_case_id = use_case_id.upper()
+    for item in load_demonstrator_evidence_payload().get("demonstrator_use_cases", []):
+        if item.get("use_case_id", "").upper() == use_case_id:
+            return item
+    return None
+
+
+def get_demonstrator_mapping(use_case_id: str) -> dict[str, Any] | None:
+    use_case_id = use_case_id.upper()
+    for item in load_demonstrator_mapping_payload().get("use_cases", []):
+        if item.get("use_case_id", "").upper() == use_case_id:
+            return item
+    return None
 
 
 def list_dataset_triage(
@@ -223,6 +253,8 @@ def list_use_cases() -> list[dict[str, Any]]:
     signatures = {signature["signature_id"]: signature for signature in load_signatures()}
     enriched = []
     for use_case in load_use_cases():
+        evidence_table = get_demonstrator_evidence(use_case["use_case_id"])
+        mapping_table = get_demonstrator_mapping(use_case["use_case_id"])
         enriched.append(
             {
                 **use_case,
@@ -231,11 +263,25 @@ def list_use_cases() -> list[dict[str, Any]]:
                     for accession in use_case.get("primary_datasets", [])
                     if accession in studies
                 ],
+                "supporting_dataset_records": [
+                    studies[accession]
+                    for accession in use_case.get("supporting_datasets", [])
+                    if accession in studies
+                ],
                 "signature_records": [
                     signatures[signature_id]
                     for signature_id in use_case.get("signatures", [])
                     if signature_id in signatures
                 ],
+                "demonstrator_evidence_table": evidence_table,
+                "demonstrator_mapping_table": mapping_table,
+                "demonstrator_case_report_path": (
+                    {
+                        "INJURY_VS_REJECTION": "docs/case_report_injury_vs_rejection.md",
+                        "DONOR_LIVER_QUALITY": "docs/case_report_donor_liver_quality.md",
+                        "BLOOD_MONITORING": "docs/case_report_blood_monitoring.md",
+                    }.get(use_case["use_case_id"])
+                ),
             }
         )
     return enriched

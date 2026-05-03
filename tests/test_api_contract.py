@@ -1042,6 +1042,17 @@ def test_donor_liver_quality_use_case_links_processed_expression() -> None:
     assert any("log2(CPM + 1)" in line for line in payload["current_evidence"])
 
 
+def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
+    response = client.get("/api/use-cases/DONOR_LIVER_QUALITY")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["demonstrator_evidence_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
+    assert any(record["dataset"] == "PXD046355" for record in payload["demonstrator_evidence_table"]["records"])
+    assert payload["demonstrator_mapping_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
+    assert any(group["mapping_group_id"] == "donor_quality_biliary_viability_surface_program" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
+    assert payload["demonstrator_case_report_path"] == "docs/case_report_donor_liver_quality.md"
+
+
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
     response = client.get("/api/use-cases/HOST_MICROBIOME_INFECTION_REJECTION")
     assert response.status_code == 200
@@ -1082,6 +1093,16 @@ def test_blood_monitoring_use_case_links_processed_timepoint_expression() -> Non
     assert any("S-EPMC6493459 adds direct peri-transplant serum iTRAQ proteomics" in line for line in payload["current_evidence"])
 
 
+def test_blood_monitoring_use_case_exposes_cross_omics_assets() -> None:
+    response = client.get("/api/use-cases/BLOOD_MONITORING")
+    assert response.status_code == 200
+    payload = response.json()
+    assert len(payload["demonstrator_evidence_table"]["records"]) >= 6
+    assert any(record["dataset"] == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" for record in payload["demonstrator_evidence_table"]["records"])
+    assert any(group["mapping_group_id"] == "blood_monitoring_energy_lipid_metabolites" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
+    assert payload["demonstrator_case_report_path"] == "docs/case_report_blood_monitoring.md"
+
+
 def test_operational_tolerance_use_case_links_frontiers_proteomics() -> None:
     response = client.get("/api/use-cases/OPERATIONAL_TOLERANCE")
     assert response.status_code == 200
@@ -1113,3 +1134,12 @@ def test_injury_vs_rejection_use_case_links_direct_transplant_proteomics() -> No
     assert "HMOX1" in payload["markers"]
     assert any("serum proteomic biomarker evidence" in line for line in payload["current_evidence"])
     assert any("postreperfusion graft proteomics" in line for line in payload["current_evidence"])
+
+
+def test_injury_vs_rejection_use_case_exposes_demonstrator_assets() -> None:
+    response = client.get("/api/use-cases/INJURY_VS_REJECTION")
+    assert response.status_code == 200
+    payload = response.json()
+    assert any(record["dataset"] == "GSE145780" and record["evidence_grade"] == "A" for record in payload["demonstrator_evidence_table"]["records"])
+    assert any(group["mapping_group_id"] == "injury_rejection_ifng_cytotoxic" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
+    assert payload["demonstrator_case_report_path"] == "docs/case_report_injury_vs_rejection.md"
