@@ -1022,6 +1022,11 @@ def test_use_case_registry_exposes_scientific_questions() -> None:
     assert "HOST_MICROBIOME_INFECTION_REJECTION" in ids
     assert "POST_LT_HCC_RECURRENCE" in ids
 
+    donor = next(item for item in payload["use_cases"] if item["use_case_id"] == "DONOR_LIVER_QUALITY")
+    assert donor["demonstrator_evidence_summary"]["record_count"] >= 3
+    assert donor["demonstrator_evidence_summary"]["grade_counts"]["A"] >= 1
+    assert donor["demonstrator_mapping_group_count"] >= 3
+
 
 def test_use_case_detail_links_data_and_signatures() -> None:
     response = client.get("/api/use-cases/MOLECULAR_TCMR_DIAGNOSIS")
@@ -1046,6 +1051,7 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     response = client.get("/api/use-cases/DONOR_LIVER_QUALITY")
     assert response.status_code == 200
     payload = response.json()
+    pxd046355 = next(record for record in payload["demonstrator_evidence_table"]["records"] if record["dataset"] == "PXD046355")
     assert payload["demonstrator_evidence_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
     assert any(record["dataset"] == "PXD046355" for record in payload["demonstrator_evidence_table"]["records"])
     assert payload["demonstrator_mapping_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
@@ -1053,6 +1059,9 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     assert payload["demonstrator_case_report_path"] == "docs/case_report_donor_liver_quality.md"
     assert "recipient-outcome predictor" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert payload["demonstrator_case_report"]["bottom_line"].startswith("This is already one of the most compelling")
+    assert any(link["artifact"] == "protein_features" for link in pxd046355["artifact_links"])
+    pxd067270 = next(record for record in payload["demonstrator_evidence_table"]["records"] if record["dataset"] == "PXD067270")
+    assert any(doc["filename"] == "datasets_PXD067270_GRAFT_QUALITY_PROTEOMICS.md" for doc in pxd067270["document_links"])
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
@@ -1099,12 +1108,14 @@ def test_blood_monitoring_use_case_exposes_cross_omics_assets() -> None:
     response = client.get("/api/use-cases/BLOOD_MONITORING")
     assert response.status_code == 200
     payload = response.json()
+    mdpi = next(record for record in payload["demonstrator_evidence_table"]["records"] if record["dataset"] == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY")
     assert len(payload["demonstrator_evidence_table"]["records"]) >= 6
     assert any(record["dataset"] == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" for record in payload["demonstrator_evidence_table"]["records"])
     assert any(group["mapping_group_id"] == "blood_monitoring_energy_lipid_metabolites" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
     assert payload["demonstrator_case_report_path"] == "docs/case_report_blood_monitoring.md"
     assert "a validated non-invasive rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert any("split the product view" in step for step in payload["demonstrator_case_report"]["recommended_next_step"])
+    assert any(link["artifact"] == "metabolomics_features" for link in mdpi["artifact_links"])
 
 
 def test_operational_tolerance_use_case_links_frontiers_proteomics() -> None:

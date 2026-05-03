@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from functools import lru_cache
 from pathlib import Path
+from collections import Counter
 from typing import Any
 
 
@@ -43,6 +44,7 @@ DOWNLOAD_ARTIFACTS = {
     "single_cell_marker_summary": "single_cell_marker_summary.json",
     "single_cell_module_summary": "single_cell_module_summary.json",
 }
+DOWNLOAD_ARTIFACTS_BY_FILENAME = {filename: artifact for artifact, filename in DOWNLOAD_ARTIFACTS.items()}
 
 
 @lru_cache(maxsize=1)
@@ -162,6 +164,44 @@ def load_case_report(use_case_id: str) -> dict[str, Any] | None:
         "not_yet_supports": _parse_markdown_list(sections.get("What It Does Not Yet Support", [])),
         "recommended_next_step": _parse_markdown_list(sections.get("Recommended Next Step", [])),
         "bottom_line": body("Bottom Line"),
+    }
+
+
+def enrich_demonstrator_record(record: dict[str, Any]) -> dict[str, Any]:
+    dataset = record.get("dataset")
+    artifact_links: list[dict[str, str]] = []
+    doc_links: list[dict[str, str]] = []
+    for raw_path in record.get("artifact_paths", []):
+        path = Path(raw_path)
+        filename = path.name
+        artifact = DOWNLOAD_ARTIFACTS_BY_FILENAME.get(filename)
+        if artifact and dataset:
+            artifact_links.append(
+                {
+                    "artifact": artifact,
+                    "filename": filename,
+                    "api_path": f"/api/studies/{dataset}/downloads/{artifact}",
+                }
+            )
+        else:
+            doc_links.append(
+                {
+                    "path": raw_path,
+                    "filename": filename,
+                }
+            )
+    return {
+        **record,
+        "artifact_links": artifact_links,
+        "document_links": doc_links,
+    }
+
+
+def summarize_demonstrator_evidence(records: list[dict[str, Any]]) -> dict[str, Any]:
+    counts = Counter(record.get("evidence_grade") for record in records if record.get("evidence_grade"))
+    return {
+        "record_count": len(records),
+        "grade_counts": dict(sorted(counts.items())),
     }
 
 
@@ -311,6 +351,7 @@ def list_use_cases() -> list[dict[str, Any]]:
     for use_case in load_use_cases():
         evidence_table = get_demonstrator_evidence(use_case["use_case_id"])
         mapping_table = get_demonstrator_mapping(use_case["use_case_id"])
+        enriched_records = [enrich_demonstrator_record(record) for record in evidence_table.get("records", [])] if evidence_table else []
         enriched.append(
             {
                 **use_case,
@@ -329,8 +370,17 @@ def list_use_cases() -> list[dict[str, Any]]:
                     for signature_id in use_case.get("signatures", [])
                     if signature_id in signatures
                 ],
-                "demonstrator_evidence_table": evidence_table,
+                "demonstrator_evidence_table": (
+                    {
+                        **evidence_table,
+                        "records": enriched_records,
+                    }
+                    if evidence_table
+                    else None
+                ),
                 "demonstrator_mapping_table": mapping_table,
+                "demonstrator_evidence_summary": summarize_demonstrator_evidence(enriched_records) if evidence_table else None,
+                "demonstrator_mapping_group_count": len(mapping_table.get("mapping_groups", [])) if mapping_table else 0,
                 "demonstrator_case_report_path": (
                     str(CASE_REPORT_PATHS[use_case["use_case_id"]].relative_to(ROOT))
                     if use_case["use_case_id"] in CASE_REPORT_PATHS

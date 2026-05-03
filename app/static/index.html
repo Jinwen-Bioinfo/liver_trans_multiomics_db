@@ -877,11 +877,18 @@
           <article class="use-case">
             <h3>${item.title}</h3>
             <p>${item.clinical_question}</p>
+            ${item.demonstrator_evidence_summary ? `
+              <p class="muted">
+                ${item.demonstrator_evidence_summary.record_count} graded evidence records ·
+                ${item.demonstrator_mapping_group_count || 0} cross-omics groups
+              </p>
+            ` : ""}
             <div class="tags">
               ${item.primary_datasets.map(tag).join("")}
               ${(item.omics_layers || []).map(tag).join("")}
               ${item.markers.slice(0, 4).map(tag).join("")}
               ${tag(item.readiness)}
+              ${Object.entries(item.demonstrator_evidence_summary?.grade_counts || {}).map(([grade, count]) => tag(`grade ${grade}: ${count}`)).join("")}
             </div>
             <div class="actions">
               <button type="button" onclick="setRoute('use-case/${item.use_case_id}')">Open evidence</button>
@@ -935,7 +942,7 @@
                 <h3>Evidence-grade table</h3>
                 <p class="muted">This table makes evidence strength visible so sample-level matrices, feature-level contrasts, marker layers, reference context, and unresolved candidate layers are not conflated.</p>
                 <table class="sample-table">
-                  <thead><tr><th>Dataset</th><th>Origin</th><th>Modality</th><th>Contrast</th><th>Grade</th><th>Main caveat</th></tr></thead>
+                  <thead><tr><th>Dataset</th><th>Origin</th><th>Modality</th><th>Contrast</th><th>Grade</th><th>Artifacts</th><th>Main caveat</th></tr></thead>
                   <tbody>
                     ${evidenceRecords.map((record) => `
                       <tr>
@@ -944,6 +951,12 @@
                         <td>${escapeHtml(record.modality)}</td>
                         <td>${escapeHtml(record.contrast || "n/a")}</td>
                         <td><strong>${escapeHtml(record.evidence_grade)}</strong></td>
+                        <td>
+                          <div class="actions">
+                            ${(record.artifact_links || []).slice(0, 4).map((artifact) => `<a class="link-button" href="${artifact.api_path}" target="_blank" rel="noreferrer">${escapeHtml(artifact.artifact)}</a>`).join("")}
+                            ${(record.document_links || []).slice(0, 2).map((doc) => tag(doc.filename)).join("")}
+                          </div>
+                        </td>
                         <td>${escapeHtml(record.main_caveat)}</td>
                       </tr>
                     `).join("")}
