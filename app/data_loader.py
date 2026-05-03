@@ -30,6 +30,7 @@ QUICKSTART_DOCS = {
     "demonstrator_plan_doc": "docs/demonstrator_use_cases_plan.md",
     "evidence_tables_doc": "docs/demonstrator_evidence_tables.md",
     "cross_omics_doc": "docs/demonstrator_cross_omics_mappings.md",
+    "resource_status_doc": "docs/resource_status.md",
 }
 GLOSSARY_TERMS = [
     {"term": "Evidence Grade A", "definition": "Reusable sample-level matrix or directly queryable cohort table with defensible contrast reconstruction."},
@@ -68,6 +69,56 @@ REVIEWER_WALKTHROUGH = {
         },
     ],
 }
+RESOURCE_STATUS = {
+    "resource": "LiverTx-OmicsDB",
+    "document_path": "docs/resource_status.md",
+    "sections": [
+        {
+            "section_id": "release",
+            "label": "Release",
+            "status": "in_progress",
+            "summary": "Local prototype and anonymous API exist, but public deployment and DOI-backed release are still missing.",
+            "next_steps": [
+                "Deploy a stable reviewable URL",
+                "Add a public domain",
+                "Create a DOI-backed release snapshot",
+            ],
+        },
+        {
+            "section_id": "help_and_tutorials",
+            "label": "Help and tutorials",
+            "status": "in_progress",
+            "summary": "Help section, quickstart, glossary, and reviewer walkthrough now exist, but the live product still needs tighter tutorial surfacing.",
+            "next_steps": [
+                "Surface glossary and reviewer walkthrough more directly in the portal",
+                "Tighten first-time user tutorial flow",
+                "Expand reviewer-facing examples in the live product",
+            ],
+        },
+        {
+            "section_id": "qc_and_provenance",
+            "label": "QC and provenance",
+            "status": "planned",
+            "summary": "Processed downloads and study-level provenance exist in parts of the resource, but a unified QC/provenance status page does not yet exist.",
+            "next_steps": [
+                "Create a unified reviewer-facing QC/provenance page",
+                "Add study-level QC pages",
+                "Add release-level provenance summary",
+            ],
+        },
+        {
+            "section_id": "maintenance_and_contact",
+            "label": "Maintenance and contact",
+            "status": "planned",
+            "summary": "Current contact is GitHub issues, but a proper maintenance, contact, and update policy is still missing.",
+            "next_steps": [
+                "Add public contact and maintenance page",
+                "Define release cadence",
+                "Define archival snapshot policy",
+            ],
+        },
+    ],
+}
 RESOURCE_METADATA = {
     "resource": "LiverTx-OmicsDB",
     "version": "0.1.0",
@@ -89,6 +140,7 @@ RESOURCE_METADATA = {
         "north_star_doc": "docs/project_north_star.md",
         "nar_readiness_doc": "docs/nar_submission_readiness.md",
         "resource_policy_doc": "docs/resource_release_and_citation.md",
+        "resource_status_doc": "docs/resource_status.md",
         "glossary_doc": "docs/glossary.md",
         "reviewer_tutorial_doc": "docs/reviewer_walkthrough.md",
     },
@@ -278,6 +330,7 @@ def get_quickstart() -> dict[str, Any]:
         "demonstrator_plan_doc": QUICKSTART_DOCS["demonstrator_plan_doc"],
         "evidence_tables_doc": QUICKSTART_DOCS["evidence_tables_doc"],
         "cross_omics_doc": QUICKSTART_DOCS["cross_omics_doc"],
+        "resource_status_doc": QUICKSTART_DOCS["resource_status_doc"],
         "resource_policy_doc": RESOURCE_METADATA["documentation"]["resource_policy_doc"],
         "journey_count": len(QUICKSTART_JOURNEYS),
         "journeys": QUICKSTART_JOURNEYS,
@@ -299,6 +352,10 @@ def get_glossary() -> dict[str, Any]:
 
 def get_reviewer_walkthrough() -> dict[str, Any]:
     return REVIEWER_WALKTHROUGH
+
+
+def get_resource_status() -> dict[str, Any]:
+    return RESOURCE_STATUS
 
 
 @lru_cache(maxsize=1)

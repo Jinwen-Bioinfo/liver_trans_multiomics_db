@@ -21,6 +21,7 @@ def test_quickstart_endpoint_exposes_demonstrator_journeys() -> None:
     assert payload["north_star_doc"] == "docs/project_north_star.md"
     assert payload["quickstart_doc"] == "docs/user_quickstart.md"
     assert payload["resource_policy_doc"] == "docs/resource_release_and_citation.md"
+    assert payload["resource_status_doc"] == "docs/resource_status.md"
     assert payload["demonstrator_plan_doc"] == "docs/demonstrator_use_cases_plan.md"
     journey_ids = {journey["journey_id"] for journey in payload["journeys"]}
     assert "injury_vs_rejection_walkthrough" in journey_ids
@@ -45,6 +46,7 @@ def test_resource_metadata_endpoint_exposes_release_and_contact_context() -> Non
     assert payload["citation"]["status"] == "provisional_no_doi"
     assert payload["documentation"]["quickstart_doc"] == "docs/user_quickstart.md"
     assert payload["documentation"]["resource_policy_doc"] == "docs/resource_release_and_citation.md"
+    assert payload["documentation"]["resource_status_doc"] == "docs/resource_status.md"
     assert payload["documentation"]["glossary_doc"] == "docs/glossary.md"
     assert payload["documentation"]["reviewer_tutorial_doc"] == "docs/reviewer_walkthrough.md"
     assert any("DOI-backed citation" in item for item in payload["next_release_priorities"])
@@ -71,6 +73,20 @@ def test_reviewer_walkthrough_endpoint_exposes_review_paths() -> None:
     labels = {path["label"] for path in payload["paths"]}
     assert "Donor quality differentiator" in labels
     assert "Blood multi-omics context" in labels
+
+
+def test_resource_status_endpoint_exposes_release_qc_and_tutorial_state() -> None:
+    response = client.get("/api/resource-status")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["resource"] == "LiverTx-OmicsDB"
+    assert payload["document_path"] == "docs/resource_status.md"
+    sections = {section["section_id"]: section for section in payload["sections"]}
+    assert sections["release"]["status"] == "in_progress"
+    assert sections["help_and_tutorials"]["status"] == "in_progress"
+    assert sections["qc_and_provenance"]["status"] == "planned"
+    assert sections["maintenance_and_contact"]["status"] == "planned"
+    assert any("stable reviewable URL" in item for item in sections["release"]["next_steps"])
 
 
 def test_study_registry_lists_priority_accessions() -> None:

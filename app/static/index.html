@@ -672,6 +672,7 @@
               <li><code>docs/reviewer_walkthrough.md</code> for a focused review path through the three strongest differentiators</li>
               <li><code>docs/glossary.md</code> for stable meanings of evidence grades and claim boundaries</li>
               <li><code>/api/resource-metadata</code> for current release, citation, and contact posture</li>
+              <li><code>/api/resource-status</code> for the current reviewer-facing release/QC/tutorial state</li>
             </ul>
           </div>
           <div class="detail-block">
@@ -807,6 +808,7 @@
               ${tag(quickstart.demonstrator_plan_doc)}
               ${tag(quickstart.evidence_tables_doc)}
               ${tag(quickstart.cross_omics_doc)}
+              ${quickstart.resource_status_doc ? tag(quickstart.resource_status_doc) : ""}
               ${quickstart.resource_policy_doc ? tag(quickstart.resource_policy_doc) : ""}
             </div>
             <div class="evidence-stack">

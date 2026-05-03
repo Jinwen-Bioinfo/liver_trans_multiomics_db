@@ -10,6 +10,7 @@ from app.data_loader import (
     get_glossary,
     get_quickstart,
     get_resource_metadata,
+    get_resource_status,
     get_reviewer_walkthrough,
     get_study,
     get_download_path,
@@ -77,6 +78,11 @@ def glossary() -> dict[str, object]:
 @app.get("/api/reviewer-walkthrough")
 def reviewer_walkthrough() -> dict[str, object]:
     return get_reviewer_walkthrough()
+
+
+@app.get("/api/resource-status")
+def resource_status() -> dict[str, object]:
+    return get_resource_status()
 
 
 @app.get("/api/studies")
