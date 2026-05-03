@@ -278,6 +278,10 @@ Deliverables:
 - evidence-grade labels
 - initial question reports with caveats
 
+Execution detail:
+
+- See [demonstrator_use_cases_plan.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_use_cases_plan.md) for the concrete scope, evidence stacks, current gaps, and next-week deliverables for these first three demonstrator workflows.
+
 ### Weeks 3-4
 
 Turn those demonstrators into product workflows:
