@@ -119,6 +119,7 @@ RESOURCE_STATUS = {
         },
     ],
 }
+QC_STATUS_DOC = "docs/qc_and_provenance_status.md"
 RESOURCE_METADATA = {
     "resource": "LiverTx-OmicsDB",
     "version": "0.1.0",
@@ -141,6 +142,7 @@ RESOURCE_METADATA = {
         "nar_readiness_doc": "docs/nar_submission_readiness.md",
         "resource_policy_doc": "docs/resource_release_and_citation.md",
         "resource_status_doc": "docs/resource_status.md",
+        "qc_status_doc": QC_STATUS_DOC,
         "glossary_doc": "docs/glossary.md",
         "reviewer_tutorial_doc": "docs/reviewer_walkthrough.md",
     },
@@ -356,6 +358,47 @@ def get_reviewer_walkthrough() -> dict[str, Any]:
 
 def get_resource_status() -> dict[str, Any]:
     return RESOURCE_STATUS
+
+
+def get_qc_status() -> dict[str, Any]:
+    studies = load_studies()
+    processed_accessions = [
+        study["accession"]
+        for study in studies
+        if study.get("processing_status") == "processed"
+        or load_study_sample_summary(study["accession"]) is not None
+    ]
+    provenance_ready = [
+        study["accession"]
+        for study in studies
+        if load_study_provenance(study["accession"]) is not None
+    ]
+    downloadable = [
+        study["accession"]
+        for study in studies
+        if available_study_downloads(study["accession"])
+    ]
+    return {
+        "resource": "LiverTx-OmicsDB",
+        "document_path": QC_STATUS_DOC,
+        "registered_study_count": len(studies),
+        "processed_study_count": len(processed_accessions),
+        "processed_accessions": processed_accessions,
+        "provenance_ready_study_count": len(provenance_ready),
+        "provenance_ready_accessions": provenance_ready,
+        "downloadable_artifact_study_count": len(downloadable),
+        "downloadable_artifact_accessions": downloadable,
+        "current_gaps": [
+            "Dedicated study-level QC pages are still missing.",
+            "Release-level provenance summary is not yet exposed.",
+            "Cross-modality QC expectations are not yet surfaced in one user-facing place.",
+        ],
+        "next_steps": [
+            "Build study-level QC pages for the main processed cohorts.",
+            "Add a release-level provenance summary for the current build.",
+            "Expose QC/provenance status directly from the live portal.",
+        ],
+    }
 
 
 @lru_cache(maxsize=1)

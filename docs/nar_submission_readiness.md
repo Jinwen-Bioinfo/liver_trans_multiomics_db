@@ -40,9 +40,9 @@ Strategic anchor:
 
 - [ ] Verify file-level public access for each accession.
 - [ ] Store original sample labels and standardized transplant labels.
-- [ ] Add study-level QC pages.
+- [~] Add study-level QC pages. A reviewer-facing QC/provenance status page now exists in `docs/qc_and_provenance_status.md` and `/api/qc-status`, but dedicated per-study QC pages remain pending.
 - [ ] Add data download endpoints for normalized matrices and derived tables. Transcriptome summaries/contrasts, DFI metabolomics/microbiome feature tables, GSE189539 single-cell marker summaries, and PXD012615 protein feature tables are already downloadable.
-- [ ] Add provenance for every derived result. Baseline provenance exists for processed GEO studies and the DFI feature ingest; release-level provenance remains pending.
+- [~] Add provenance for every derived result. Baseline provenance exists for many processed studies, and QC/provenance status is now summarized in `docs/qc_and_provenance_status.md`; release-level provenance remains pending.
 - [ ] Add release versioning.
 
 ### V2: Value-Added Biology

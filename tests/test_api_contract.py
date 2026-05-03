@@ -47,6 +47,7 @@ def test_resource_metadata_endpoint_exposes_release_and_contact_context() -> Non
     assert payload["documentation"]["quickstart_doc"] == "docs/user_quickstart.md"
     assert payload["documentation"]["resource_policy_doc"] == "docs/resource_release_and_citation.md"
     assert payload["documentation"]["resource_status_doc"] == "docs/resource_status.md"
+    assert payload["documentation"]["qc_status_doc"] == "docs/qc_and_provenance_status.md"
     assert payload["documentation"]["glossary_doc"] == "docs/glossary.md"
     assert payload["documentation"]["reviewer_tutorial_doc"] == "docs/reviewer_walkthrough.md"
     assert any("DOI-backed citation" in item for item in payload["next_release_priorities"])
@@ -87,6 +88,20 @@ def test_resource_status_endpoint_exposes_release_qc_and_tutorial_state() -> Non
     assert sections["qc_and_provenance"]["status"] == "planned"
     assert sections["maintenance_and_contact"]["status"] == "planned"
     assert any("stable reviewable URL" in item for item in sections["release"]["next_steps"])
+
+
+def test_qc_status_endpoint_exposes_processed_coverage_and_gaps() -> None:
+    response = client.get("/api/qc-status")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["resource"] == "LiverTx-OmicsDB"
+    assert payload["document_path"] == "docs/qc_and_provenance_status.md"
+    assert payload["registered_study_count"] >= 8
+    assert payload["processed_study_count"] >= 5
+    assert payload["provenance_ready_study_count"] >= 4
+    assert payload["downloadable_artifact_study_count"] >= 4
+    assert "study-level qc pages" in " ".join(payload["current_gaps"]).lower()
+    assert any("release-level provenance summary" in step for step in payload["next_steps"])
 
 
 def test_study_registry_lists_priority_accessions() -> None:

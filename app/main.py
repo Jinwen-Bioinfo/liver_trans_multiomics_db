@@ -9,6 +9,7 @@ from app.data_loader import (
     filter_study_samples,
     get_glossary,
     get_quickstart,
+    get_qc_status,
     get_resource_metadata,
     get_resource_status,
     get_reviewer_walkthrough,
@@ -83,6 +84,11 @@ def reviewer_walkthrough() -> dict[str, object]:
 @app.get("/api/resource-status")
 def resource_status() -> dict[str, object]:
     return get_resource_status()
+
+
+@app.get("/api/qc-status")
+def qc_status() -> dict[str, object]:
+    return get_qc_status()
 
 
 @app.get("/api/studies")
