@@ -24,6 +24,13 @@ CASE_REPORT_PATHS = {
     "DONOR_LIVER_QUALITY": ROOT / "docs" / "case_report_donor_liver_quality.md",
     "BLOOD_MONITORING": ROOT / "docs" / "case_report_blood_monitoring.md",
 }
+QUICKSTART_DOCS = {
+    "quickstart_doc": "docs/user_quickstart.md",
+    "north_star_doc": "docs/project_north_star.md",
+    "demonstrator_plan_doc": "docs/demonstrator_use_cases_plan.md",
+    "evidence_tables_doc": "docs/demonstrator_evidence_tables.md",
+    "cross_omics_doc": "docs/demonstrator_cross_omics_mappings.md",
+}
 DOWNLOAD_ARTIFACTS = {
     "samples": "samples.json",
     "sample_summary": "sample_summary.json",
@@ -78,6 +85,86 @@ EVIDENCE_GRADE_LEGEND = {
     "R": "Reference context layer used for interpretation rather than direct transplant outcome inference.",
     "M": "Metadata-only or unresolved candidate layer that informs prioritization but does not yet provide downloadable evidence.",
 }
+QUICKSTART_JOURNEYS = [
+    {
+        "journey_id": "injury_vs_rejection_walkthrough",
+        "label": "Early injury versus rejection",
+        "entry_route": "#use-case/INJURY_VS_REJECTION",
+        "goal": "See how the resource separates rejection-leaning tissue programs from injury-context proteomics and serum marker layers.",
+        "steps": [
+            {
+                "kind": "use_case",
+                "target": "INJURY_VS_REJECTION",
+                "label": "Open the question page",
+                "why": "Start with the graded evidence and claim boundary instead of jumping straight to one dataset.",
+            },
+            {
+                "kind": "study",
+                "target": "GSE145780",
+                "label": "Inspect the bulk tissue anchor",
+                "why": "This is the strongest current transcriptomic rejection-versus-injury context layer.",
+            },
+            {
+                "kind": "feature",
+                "target": "CXCL10",
+                "label": "Check a rejection-leaning marker",
+                "why": "Cross-layer feature pages show whether a signal is tissue, blood, or proteomic context.",
+            },
+        ],
+    },
+    {
+        "journey_id": "donor_quality_walkthrough",
+        "label": "Donor liver quality and viability",
+        "entry_route": "#use-case/DONOR_LIVER_QUALITY",
+        "goal": "Understand how accepted/rejected donor RNA evidence and biliary viability proteomics are kept separate from recipient outcome claims.",
+        "steps": [
+            {
+                "kind": "use_case",
+                "target": "DONOR_LIVER_QUALITY",
+                "label": "Open the donor-quality question page",
+                "why": "This page is the cleanest example of transplant-specific evidence organization in the current build.",
+            },
+            {
+                "kind": "study",
+                "target": "GSE243887",
+                "label": "Inspect the accepted-versus-rejected donor RNA layer",
+                "why": "This is the main donor-selection transcriptomic anchor.",
+            },
+            {
+                "kind": "feature",
+                "target": "CYP3A4",
+                "label": "Trace a hepatocyte competence marker",
+                "why": "Feature detail helps connect donor-quality interpretation across transcriptome and proteome context.",
+            },
+        ],
+    },
+    {
+        "journey_id": "blood_monitoring_walkthrough",
+        "label": "Blood monitoring and tolerance context",
+        "entry_route": "#use-case/BLOOD_MONITORING",
+        "goal": "Walk through how blood RNA, metabolomics, and serum/plasma proteomics are presented as monitoring context without overclaiming clinical performance.",
+        "steps": [
+            {
+                "kind": "use_case",
+                "target": "BLOOD_MONITORING",
+                "label": "Open the blood-monitoring question page",
+                "why": "This is the richest current multi-omics demonstrator and the easiest place to see evidence grading in action.",
+            },
+            {
+                "kind": "study",
+                "target": "GSE200340",
+                "label": "Review the longitudinal blood transcriptomics layer",
+                "why": "It anchors the monitoring story with reusable sample-level blood evidence.",
+            },
+            {
+                "kind": "feature",
+                "target": "CXCL10",
+                "label": "Trace a blood inflammatory marker",
+                "why": "This shows how transcript, metabolite, and proteomic context are kept distinct on the feature side.",
+            },
+        ],
+    },
+]
 
 
 @lru_cache(maxsize=1)
@@ -113,6 +200,19 @@ def load_source_type_payload() -> dict[str, Any]:
 
 def list_source_types() -> dict[str, Any]:
     return load_source_type_payload()
+
+
+def get_quickstart() -> dict[str, Any]:
+    return {
+        "resource": "LiverTx-OmicsDB",
+        "quickstart_doc": QUICKSTART_DOCS["quickstart_doc"],
+        "north_star_doc": QUICKSTART_DOCS["north_star_doc"],
+        "demonstrator_plan_doc": QUICKSTART_DOCS["demonstrator_plan_doc"],
+        "evidence_tables_doc": QUICKSTART_DOCS["evidence_tables_doc"],
+        "cross_omics_doc": QUICKSTART_DOCS["cross_omics_doc"],
+        "journey_count": len(QUICKSTART_JOURNEYS),
+        "journeys": QUICKSTART_JOURNEYS,
+    }
 
 
 @lru_cache(maxsize=1)

@@ -7,6 +7,7 @@ from fastapi.staticfiles import StaticFiles
 from app.data_loader import (
     available_study_downloads,
     filter_study_samples,
+    get_quickstart,
     get_study,
     get_download_path,
     get_dataset_triage,
@@ -53,6 +54,11 @@ def portal() -> FileResponse:
 @app.get("/api/health")
 def health() -> dict[str, str]:
     return {"status": "ok", "resource": "LiverTx-OmicsDB"}
+
+
+@app.get("/api/quickstart")
+def quickstart() -> dict[str, object]:
+    return get_quickstart()
 
 
 @app.get("/api/studies")

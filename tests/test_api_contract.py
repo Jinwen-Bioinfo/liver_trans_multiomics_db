@@ -12,6 +12,25 @@ def test_health_endpoint() -> None:
     assert response.json()["status"] == "ok"
 
 
+def test_quickstart_endpoint_exposes_demonstrator_journeys() -> None:
+    response = client.get("/api/quickstart")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["resource"] == "LiverTx-OmicsDB"
+    assert payload["journey_count"] >= 3
+    assert payload["north_star_doc"] == "docs/project_north_star.md"
+    assert payload["quickstart_doc"] == "docs/user_quickstart.md"
+    assert payload["demonstrator_plan_doc"] == "docs/demonstrator_use_cases_plan.md"
+    journey_ids = {journey["journey_id"] for journey in payload["journeys"]}
+    assert "injury_vs_rejection_walkthrough" in journey_ids
+    assert "donor_quality_walkthrough" in journey_ids
+    assert "blood_monitoring_walkthrough" in journey_ids
+    donor = next(journey for journey in payload["journeys"] if journey["journey_id"] == "donor_quality_walkthrough")
+    assert donor["entry_route"] == "#use-case/DONOR_LIVER_QUALITY"
+    assert any(step["kind"] == "study" and step["target"] == "GSE243887" for step in donor["steps"])
+    assert any(step["kind"] == "feature" and step["target"] == "CYP3A4" for step in donor["steps"])
+
+
 def test_study_registry_lists_priority_accessions() -> None:
     response = client.get("/api/studies")
     assert response.status_code == 200
