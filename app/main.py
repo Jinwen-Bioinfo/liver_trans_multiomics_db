@@ -11,6 +11,7 @@ from app.data_loader import (
     get_quickstart,
     get_qc_status,
     get_resource_metadata,
+    get_reviewer_dashboard,
     get_resource_status,
     get_reviewer_walkthrough,
     get_study,
@@ -89,6 +90,11 @@ def resource_status() -> dict[str, object]:
 @app.get("/api/qc-status")
 def qc_status() -> dict[str, object]:
     return get_qc_status()
+
+
+@app.get("/api/reviewer-dashboard")
+def reviewer_dashboard() -> dict[str, object]:
+    return get_reviewer_dashboard()
 
 
 @app.get("/api/studies")

@@ -120,6 +120,7 @@ RESOURCE_STATUS = {
     ],
 }
 QC_STATUS_DOC = "docs/qc_and_provenance_status.md"
+REVIEWER_DASHBOARD_DOC = "docs/reviewer_dashboard.md"
 RESOURCE_METADATA = {
     "resource": "LiverTx-OmicsDB",
     "version": "0.1.0",
@@ -145,6 +146,7 @@ RESOURCE_METADATA = {
         "qc_status_doc": QC_STATUS_DOC,
         "glossary_doc": "docs/glossary.md",
         "reviewer_tutorial_doc": "docs/reviewer_walkthrough.md",
+        "reviewer_dashboard_doc": REVIEWER_DASHBOARD_DOC,
     },
     "next_release_priorities": [
         "Public deployment with a stable reviewable URL",
@@ -398,6 +400,19 @@ def get_qc_status() -> dict[str, Any]:
             "Add a release-level provenance summary for the current build.",
             "Expose QC/provenance status directly from the live portal.",
         ],
+    }
+
+
+def get_reviewer_dashboard() -> dict[str, Any]:
+    return {
+        "resource": "LiverTx-OmicsDB",
+        "document_path": REVIEWER_DASHBOARD_DOC,
+        "resource_metadata": get_resource_metadata(),
+        "resource_status": get_resource_status(),
+        "qc_status": get_qc_status(),
+        "quickstart": get_quickstart(),
+        "reviewer_walkthrough": get_reviewer_walkthrough(),
+        "nar_readiness": nar_readiness(),
     }
 
 

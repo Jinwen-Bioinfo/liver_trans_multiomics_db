@@ -50,6 +50,7 @@ def test_resource_metadata_endpoint_exposes_release_and_contact_context() -> Non
     assert payload["documentation"]["qc_status_doc"] == "docs/qc_and_provenance_status.md"
     assert payload["documentation"]["glossary_doc"] == "docs/glossary.md"
     assert payload["documentation"]["reviewer_tutorial_doc"] == "docs/reviewer_walkthrough.md"
+    assert payload["documentation"]["reviewer_dashboard_doc"] == "docs/reviewer_dashboard.md"
     assert any("DOI-backed citation" in item for item in payload["next_release_priorities"])
 
 
@@ -102,6 +103,20 @@ def test_qc_status_endpoint_exposes_processed_coverage_and_gaps() -> None:
     assert payload["downloadable_artifact_study_count"] >= 4
     assert "study-level qc pages" in " ".join(payload["current_gaps"]).lower()
     assert any("release-level provenance summary" in step for step in payload["next_steps"])
+
+
+def test_reviewer_dashboard_endpoint_aggregates_resource_state() -> None:
+    response = client.get("/api/reviewer-dashboard")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["resource"] == "LiverTx-OmicsDB"
+    assert payload["document_path"] == "docs/reviewer_dashboard.md"
+    assert payload["resource_metadata"]["version"] == "0.1.0"
+    assert payload["resource_status"]["document_path"] == "docs/resource_status.md"
+    assert payload["qc_status"]["document_path"] == "docs/qc_and_provenance_status.md"
+    assert payload["quickstart"]["journey_count"] >= 3
+    assert payload["reviewer_walkthrough"]["path_count"] >= 3
+    assert payload["nar_readiness"]["target_journal"] == "Nucleic Acids Research Database Issue"
 
 
 def test_study_registry_lists_priority_accessions() -> None:
