@@ -669,6 +669,15 @@
           .replaceAll("'", "&#39;");
       }
 
+      function artifactStatusLabel(status) {
+        return {
+          downloadable_evidence: "downloadable evidence",
+          documentation_only: "documentation only",
+          mixed_delivery: "downloads + docs",
+          unlisted: "unlisted"
+        }[status] || status;
+      }
+
       function formatBytes(bytes) {
         if (!bytes && bytes !== 0) return "";
         if (bytes < 1024) return `${bytes} B`;
@@ -920,6 +929,15 @@
               ${item.signatures.map(tag).join("")}
               ${evidenceGrades.map((grade) => tag(`evidence ${grade}`)).join("")}
             </div>
+            ${item.demonstrator_sections?.length ? `
+              <div class="detail-block" style="margin-top:14px;">
+                <h3>Evidence overview</h3>
+                <p class="muted">This demonstrator view is organized so we can keep overall evidence context, dataset-level artifacts, biological interpretation, and practical limits distinct.</p>
+                <div class="summary">
+                  ${item.demonstrator_sections.map(tag).join("")}
+                </div>
+              </div>
+            ` : ""}
             <div class="detail-grid">
               <div class="detail-block">
                 <h3>Clinical question</h3>
@@ -939,7 +957,7 @@
             </div>
             ${evidenceRecords.length ? `
               <div class="detail-block" style="margin-top:14px;">
-                <h3>Evidence-grade table</h3>
+                <h3>Dataset-level evidence</h3>
                 <p class="muted">This table makes evidence strength visible so sample-level matrices, feature-level contrasts, marker layers, reference context, and unresolved candidate layers are not conflated.</p>
                 <table class="sample-table">
                   <thead><tr><th>Dataset</th><th>Origin</th><th>Modality</th><th>Contrast</th><th>Grade</th><th>Artifacts</th><th>Main caveat</th></tr></thead>
@@ -952,10 +970,21 @@
                         <td>${escapeHtml(record.contrast || "n/a")}</td>
                         <td><strong>${escapeHtml(record.evidence_grade)}</strong></td>
                         <td>
-                          <div class="actions">
-                            ${(record.artifact_links || []).slice(0, 4).map((artifact) => `<a class="link-button" href="${artifact.api_path}" target="_blank" rel="noreferrer">${escapeHtml(artifact.artifact)}</a>`).join("")}
-                            ${(record.document_links || []).slice(0, 2).map((doc) => tag(doc.filename)).join("")}
+                          <div class="summary">
+                            ${tag(artifactStatusLabel(record.artifact_summary?.status || "unlisted"))}
+                            ${record.artifact_summary?.downloadable_count ? tag(`${record.artifact_summary.downloadable_count} downloads`) : ""}
+                            ${record.artifact_summary?.document_count ? tag(`${record.artifact_summary.document_count} docs`) : ""}
                           </div>
+                          ${(record.artifact_links || []).length ? `
+                            <div class="actions">
+                              ${(record.artifact_links || []).slice(0, 4).map((artifact) => `<a class="link-button" href="${artifact.api_path}" target="_blank" rel="noreferrer" title="${escapeHtml(artifact.filename)}">${escapeHtml(artifact.label || artifact.artifact)}</a>`).join("")}
+                            </div>
+                          ` : ""}
+                          ${(record.document_links || []).length ? `
+                            <div class="summary">
+                              ${(record.document_links || []).slice(0, 3).map((doc) => tag(doc.filename)).join("")}
+                            </div>
+                          ` : ""}
                         </td>
                         <td>${escapeHtml(record.main_caveat)}</td>
                       </tr>
@@ -966,7 +995,7 @@
             ` : ""}
             ${mappingGroups.length ? `
               <div class="detail-block" style="margin-top:14px;">
-                <h3>Cross-omics mapping groups</h3>
+                <h3>Biological interpretation</h3>
                 <p class="muted">These are question-oriented biological themes that connect genes, proteins, metabolites, and pathways without pretending every linked layer has the same evidence strength.</p>
                 <div class="evidence-stack">
                   ${mappingGroups.map((group) => `
@@ -998,7 +1027,7 @@
             ` : ""}
             ${item.demonstrator_case_report_path ? `
               <div class="detail-block" style="margin-top:14px;">
-                <h3>Case report</h3>
+                <h3>Practical boundary</h3>
                 <p class="muted">A narrative markdown report exists for this demonstrator workflow, and the key support/limitation statements are surfaced below so the use-case page can stand on its own.</p>
                 <div class="summary">
                   ${tag(item.demonstrator_case_report_path)}

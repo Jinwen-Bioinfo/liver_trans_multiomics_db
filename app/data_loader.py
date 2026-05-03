@@ -45,6 +45,32 @@ DOWNLOAD_ARTIFACTS = {
     "single_cell_module_summary": "single_cell_module_summary.json",
 }
 DOWNLOAD_ARTIFACTS_BY_FILENAME = {filename: artifact for artifact, filename in DOWNLOAD_ARTIFACTS.items()}
+DEMONSTRATOR_SECTION_ORDER = [
+    "Evidence overview",
+    "Dataset-level evidence",
+    "Biological interpretation",
+    "Practical boundary",
+]
+ARTIFACT_LABELS = {
+    "samples": "Sample table",
+    "sample_summary": "Sample summary",
+    "provenance": "Source provenance",
+    "analysis_provenance": "Analysis provenance",
+    "gene_expression_summary": "Gene summary",
+    "gene_sample_values": "Sample-level expression",
+    "differential_expression": "Differential expression",
+    "signature_scores": "Signature scores",
+    "source_file_inventory": "Source file inventory",
+    "cohort_summary": "Cohort summary",
+    "metabolomics_summary": "Metabolomics summary",
+    "metabolomics_features": "Metabolite feature table",
+    "microbiome_summary": "Microbiome summary",
+    "microbiome_features": "Microbiome feature table",
+    "proteomics_summary": "Proteomics summary",
+    "protein_features": "Protein feature table",
+    "single_cell_marker_summary": "Single-cell marker summary",
+    "single_cell_module_summary": "Single-cell module summary",
+}
 
 
 @lru_cache(maxsize=1)
@@ -179,6 +205,7 @@ def enrich_demonstrator_record(record: dict[str, Any]) -> dict[str, Any]:
             artifact_links.append(
                 {
                     "artifact": artifact,
+                    "label": ARTIFACT_LABELS.get(artifact, artifact.replace("_", " ")),
                     "filename": filename,
                     "api_path": f"/api/studies/{dataset}/downloads/{artifact}",
                 }
@@ -190,10 +217,24 @@ def enrich_demonstrator_record(record: dict[str, Any]) -> dict[str, Any]:
                     "filename": filename,
                 }
             )
+    if artifact_links and doc_links:
+        artifact_status = "mixed_delivery"
+    elif artifact_links:
+        artifact_status = "downloadable_evidence"
+    elif doc_links:
+        artifact_status = "documentation_only"
+    else:
+        artifact_status = "unlisted"
     return {
         **record,
         "artifact_links": artifact_links,
         "document_links": doc_links,
+        "artifact_summary": {
+            "status": artifact_status,
+            "downloadable_count": len(artifact_links),
+            "document_count": len(doc_links),
+            "downloadable_artifacts": [item["artifact"] for item in artifact_links],
+        },
     }
 
 
@@ -203,6 +244,21 @@ def summarize_demonstrator_evidence(records: list[dict[str, Any]]) -> dict[str, 
         "record_count": len(records),
         "grade_counts": dict(sorted(counts.items())),
     }
+
+
+def build_demonstrator_sections(
+    evidence_records: list[dict[str, Any]],
+    mapping_table: dict[str, Any] | None,
+    case_report: dict[str, Any] | None,
+) -> list[str]:
+    sections: list[str] = []
+    if evidence_records:
+        sections.extend(["Evidence overview", "Dataset-level evidence"])
+    if mapping_table and mapping_table.get("mapping_groups"):
+        sections.append("Biological interpretation")
+    if case_report:
+        sections.append("Practical boundary")
+    return [section for section in DEMONSTRATOR_SECTION_ORDER if section in sections]
 
 
 def list_dataset_triage(
@@ -351,6 +407,7 @@ def list_use_cases() -> list[dict[str, Any]]:
     for use_case in load_use_cases():
         evidence_table = get_demonstrator_evidence(use_case["use_case_id"])
         mapping_table = get_demonstrator_mapping(use_case["use_case_id"])
+        case_report = load_case_report(use_case["use_case_id"])
         enriched_records = [enrich_demonstrator_record(record) for record in evidence_table.get("records", [])] if evidence_table else []
         enriched.append(
             {
@@ -381,12 +438,13 @@ def list_use_cases() -> list[dict[str, Any]]:
                 "demonstrator_mapping_table": mapping_table,
                 "demonstrator_evidence_summary": summarize_demonstrator_evidence(enriched_records) if evidence_table else None,
                 "demonstrator_mapping_group_count": len(mapping_table.get("mapping_groups", [])) if mapping_table else 0,
+                "demonstrator_sections": build_demonstrator_sections(enriched_records, mapping_table, case_report),
                 "demonstrator_case_report_path": (
                     str(CASE_REPORT_PATHS[use_case["use_case_id"]].relative_to(ROOT))
                     if use_case["use_case_id"] in CASE_REPORT_PATHS
                     else None
                 ),
-                "demonstrator_case_report": load_case_report(use_case["use_case_id"]),
+                "demonstrator_case_report": case_report,
             }
         )
     return enriched

@@ -1057,11 +1057,16 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     assert payload["demonstrator_mapping_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
     assert any(group["mapping_group_id"] == "donor_quality_biliary_viability_surface_program" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
     assert payload["demonstrator_case_report_path"] == "docs/case_report_donor_liver_quality.md"
-    assert "recipient-outcome predictor" in payload["demonstrator_case_report"]["not_yet_supports"]
+    assert "a recipient-outcome predictor" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert payload["demonstrator_case_report"]["bottom_line"].startswith("This is already one of the most compelling")
     assert any(link["artifact"] == "protein_features" for link in pxd046355["artifact_links"])
+    assert pxd046355["artifact_summary"]["status"] == "downloadable_evidence"
+    assert pxd046355["artifact_summary"]["downloadable_count"] >= 3
     pxd067270 = next(record for record in payload["demonstrator_evidence_table"]["records"] if record["dataset"] == "PXD067270")
     assert any(doc["filename"] == "datasets_PXD067270_GRAFT_QUALITY_PROTEOMICS.md" for doc in pxd067270["document_links"])
+    assert pxd067270["artifact_summary"]["status"] == "documentation_only"
+    assert "Dataset-level evidence" in payload["demonstrator_sections"]
+    assert "Practical boundary" in payload["demonstrator_sections"]
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
@@ -1116,6 +1121,8 @@ def test_blood_monitoring_use_case_exposes_cross_omics_assets() -> None:
     assert "a validated non-invasive rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert any("split the product view" in step for step in payload["demonstrator_case_report"]["recommended_next_step"])
     assert any(link["artifact"] == "metabolomics_features" for link in mdpi["artifact_links"])
+    assert mdpi["artifact_summary"]["status"] == "downloadable_evidence"
+    assert "Biological interpretation" in payload["demonstrator_sections"]
 
 
 def test_operational_tolerance_use_case_links_frontiers_proteomics() -> None:
@@ -1160,3 +1167,4 @@ def test_injury_vs_rejection_use_case_exposes_demonstrator_assets() -> None:
     assert payload["demonstrator_case_report_path"] == "docs/case_report_injury_vs_rejection.md"
     assert "a validated injury-versus-rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert "structured multimodal context" in payload["demonstrator_case_report"]["bottom_line"]
+    assert "Evidence overview" in payload["demonstrator_sections"]
