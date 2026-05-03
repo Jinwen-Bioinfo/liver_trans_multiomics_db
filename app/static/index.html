@@ -731,6 +731,15 @@
                 </ul>
               </div>
             </div>
+            <div class="detail-block" style="margin-top:14px;">
+              <h3>Suggested starting points</h3>
+              <p class="muted">If you want the fastest way to understand what this resource already does well, start with one of the three demonstrator questions below.</p>
+              <div class="actions">
+                <button type="button" onclick="setRoute('use-case/INJURY_VS_REJECTION')">Early injury vs rejection</button>
+                <button type="button" onclick="setRoute('use-case/DONOR_LIVER_QUALITY')">Donor liver quality</button>
+                <button type="button" onclick="setRoute('use-case/BLOOD_MONITORING')">Blood monitoring</button>
+              </div>
+            </div>
           </div>
         `;
       }
@@ -1037,20 +1046,24 @@
                 <div class="summary">
                   ${tag(item.demonstrator_case_report_path)}
                 </div>
-                ${item.demonstrator_case_report?.already_supports?.length ? `
-                  <h3>What this already supports</h3>
-                  <ul>${item.demonstrator_case_report.already_supports.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                ${item.demonstrator_claim_boundary ? `
+                  <div class="detail-grid">
+                    <div class="detail-block">
+                      <h3>${escapeHtml(item.demonstrator_claim_boundary.supports_title)}</h3>
+                      <ul>${(item.demonstrator_claim_boundary.supports || []).map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                    </div>
+                    <div class="detail-block">
+                      <h3>${escapeHtml(item.demonstrator_claim_boundary.limitations_title)}</h3>
+                      <ul>${(item.demonstrator_claim_boundary.limitations || []).map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                    </div>
+                  </div>
                 ` : ""}
-                ${item.demonstrator_case_report?.not_yet_supports?.length ? `
-                  <h3>What this does not yet support</h3>
-                  <ul>${item.demonstrator_case_report.not_yet_supports.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
-                ` : ""}
-                ${item.demonstrator_case_report?.recommended_next_step?.length ? `
+                ${item.demonstrator_claim_boundary?.next_steps?.length ? `
                   <h3>Recommended next step</h3>
-                  <ul>${item.demonstrator_case_report.recommended_next_step.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                  <ul>${item.demonstrator_claim_boundary.next_steps.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
                 ` : ""}
-                ${item.demonstrator_case_report?.bottom_line ? `
-                  <p class="muted"><strong>Bottom line:</strong> ${escapeHtml(item.demonstrator_case_report.bottom_line)}</p>
+                ${item.demonstrator_claim_boundary?.bottom_line ? `
+                  <p class="muted"><strong>Bottom line:</strong> ${escapeHtml(item.demonstrator_claim_boundary.bottom_line)}</p>
                 ` : ""}
               </div>
             ` : ""}

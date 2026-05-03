@@ -1069,6 +1069,9 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     assert "Practical boundary" in payload["demonstrator_sections"]
     assert payload["demonstrator_evidence_grade_legend"]["A"].startswith("Reusable sample-level")
     assert payload["demonstrator_evidence_grade_legend"]["M"].startswith("Metadata-only")
+    assert payload["demonstrator_claim_boundary"]["supports_title"] == "What current evidence supports"
+    assert payload["demonstrator_claim_boundary"]["limitations_title"] == "What remains out of scope"
+    assert "a recipient-outcome predictor" in payload["demonstrator_claim_boundary"]["limitations"]
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
@@ -1170,3 +1173,4 @@ def test_injury_vs_rejection_use_case_exposes_demonstrator_assets() -> None:
     assert "a validated injury-versus-rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
     assert "structured multimodal context" in payload["demonstrator_case_report"]["bottom_line"]
     assert "Evidence overview" in payload["demonstrator_sections"]
+    assert len(payload["demonstrator_claim_boundary"]["supports"]) >= 3

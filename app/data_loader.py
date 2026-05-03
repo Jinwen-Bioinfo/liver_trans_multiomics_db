@@ -268,6 +268,19 @@ def build_demonstrator_sections(
     return [section for section in DEMONSTRATOR_SECTION_ORDER if section in sections]
 
 
+def build_claim_boundary(case_report: dict[str, Any] | None) -> dict[str, Any] | None:
+    if not case_report:
+        return None
+    return {
+        "supports_title": "What current evidence supports",
+        "limitations_title": "What remains out of scope",
+        "supports": case_report.get("already_supports", []),
+        "limitations": case_report.get("not_yet_supports", []),
+        "next_steps": case_report.get("recommended_next_step", []),
+        "bottom_line": case_report.get("bottom_line"),
+    }
+
+
 def list_dataset_triage(
     *,
     status: str | None = None,
@@ -447,6 +460,7 @@ def list_use_cases() -> list[dict[str, Any]]:
                 "demonstrator_evidence_grade_legend": EVIDENCE_GRADE_LEGEND if evidence_table else None,
                 "demonstrator_mapping_group_count": len(mapping_table.get("mapping_groups", [])) if mapping_table else 0,
                 "demonstrator_sections": build_demonstrator_sections(enriched_records, mapping_table, case_report),
+                "demonstrator_claim_boundary": build_claim_boundary(case_report),
                 "demonstrator_case_report_path": (
                     str(CASE_REPORT_PATHS[use_case["use_case_id"]].relative_to(ROOT))
                     if use_case["use_case_id"] in CASE_REPORT_PATHS
