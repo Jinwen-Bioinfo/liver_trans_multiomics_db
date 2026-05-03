@@ -236,6 +236,11 @@ Each use case should get a table with:
 - artifact path
 - main caveat
 
+Initial artifact:
+
+- [demonstrator_evidence_tables.json](/Users/jinwen/Program/liver_trans_multiomics_db/data/registry/demonstrator_evidence_tables.json)
+- [demonstrator_evidence_tables.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_evidence_tables.md)
+
 ### 2. Cross-omics mapping table
 
 Each use case should get a compact mapping file that links:

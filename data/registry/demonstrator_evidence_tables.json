@@ -1,0 +1,227 @@
+{
+  "generated_at_utc": "2026-05-03T00:00:00+00:00",
+  "scope": "Evidence-grade tables for the first three demonstrator use cases in LiverTx-OmicsDB.",
+  "evidence_grade_definition": {
+    "A": "Reusable sample-level matrix with explicit per-sample labels.",
+    "B": "Reusable feature-level table with explicit group contrasts.",
+    "C": "Marker-layer evidence recovered from article figures, partial tables, or group-summary biomarker reports.",
+    "R": "Reference context layer used for interpretation, not direct transplant outcome claims.",
+    "M": "Metadata-model or unresolved candidate layer; useful for planning but not yet a user-facing evidence layer."
+  },
+  "demonstrator_use_cases": [
+    {
+      "use_case_id": "INJURY_VS_REJECTION",
+      "title": "Early injury versus rejection",
+      "clinical_question": "Can public molecular evidence distinguish early graft injury or ischemia/reperfusion-linked dysfunction from true immune rejection?",
+      "records": [
+        {
+          "dataset": "GSE145780",
+          "sample_origin": "graft_liver_biopsy",
+          "modality": "bulk_transcriptomics",
+          "contrast": "TCMR_vs_no_rejection",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/GSE145780/differential_expression.json",
+            "data/processed/GSE145780/gene_expression_summary.json",
+            "data/processed/GSE145780/signature_scores.json",
+            "data/processed/GSE145780/analysis_provenance.json"
+          ],
+          "main_caveat": "This is the strongest current tissue-level anchor, but same-study marker evidence is still exploratory until independently reproduced."
+        },
+        {
+          "dataset": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+          "sample_origin": "graft_liver_biopsy",
+          "modality": "proteomics",
+          "contrast": "moderate_severe_early_aki_vs_no_early_aki",
+          "evidence_grade": "B",
+          "artifact_paths": [
+            "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/protein_features.json",
+            "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/proteomics_summary.json",
+            "data/processed/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS/analysis_provenance.json"
+          ],
+          "main_caveat": "Direct graft-tissue proteomics is valuable for injury context, but this is an early-AKI proxy layer rather than a direct injury-versus-rejection classifier."
+        },
+        {
+          "dataset": "AGING_2020_LT_SERUM_PROTEOMICS",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "stable_post_transplant_vs_acute_rejection",
+          "evidence_grade": "C",
+          "artifact_paths": [
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/analysis_provenance.json"
+          ],
+          "main_caveat": "This is published group-summary serum biomarker evidence, not a reusable per-sample transplant proteome matrix."
+        },
+        {
+          "dataset": "HO1_ACR_LIVER_TX_PROTEOMICS",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "acute_cellular_rejection_vs_non_rejection_post_lt",
+          "evidence_grade": "C",
+          "artifact_paths": [
+            "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/protein_features.json",
+            "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/proteomics_summary.json",
+            "data/processed/HO1_ACR_LIVER_TX_PROTEOMICS/analysis_provenance.json"
+          ],
+          "main_caveat": "This is a small six-sample discovery-set proteomics layer and should remain marker-level evidence until independently replicated."
+        },
+        {
+          "dataset": "PXD012615",
+          "sample_origin": "liver_reference",
+          "modality": "proteomics_reference",
+          "contrast": null,
+          "evidence_grade": "R",
+          "artifact_paths": [
+            "data/processed/PXD012615/protein_features.json",
+            "data/processed/PXD012615/proteomics_summary.json"
+          ],
+          "main_caveat": "This layer supports liver-cell interpretation only and must not be treated as direct transplant injury or rejection evidence."
+        }
+      ]
+    },
+    {
+      "use_case_id": "DONOR_LIVER_QUALITY",
+      "title": "Donor liver quality and graft viability",
+      "clinical_question": "Can donor-organ molecular features contextualize accepted versus rejected livers and machine-perfusion viability biology?",
+      "records": [
+        {
+          "dataset": "GSE243887",
+          "sample_origin": "donor_liver",
+          "modality": "bulk_transcriptomics",
+          "contrast": "accepted_donor_liver_vs_rejected_donor_liver",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/GSE243887/differential_expression.json",
+            "data/processed/GSE243887/gene_expression_summary.json",
+            "data/processed/GSE243887/analysis_provenance.json"
+          ],
+          "main_caveat": "Accepted versus rejected labels describe donor-organ selection status, not post-transplant recipient outcomes."
+        },
+        {
+          "dataset": "PXD046355",
+          "sample_origin": "donor_liver_bile",
+          "modality": "proteomics",
+          "contrast": "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_150min",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/PXD046355/protein_features.json",
+            "data/processed/PXD046355/proteomics_summary.json",
+            "data/processed/PXD046355/analysis_provenance.json"
+          ],
+          "main_caveat": "This is donor-organ viability biology during machine perfusion, not a complete recipient-outcome layer."
+        },
+        {
+          "dataset": "PXD067270",
+          "sample_origin": "graft_liver_biopsy",
+          "modality": "proteomics",
+          "contrast": "B1_vs_B2_vs_B3 sample mapping recovered; biliary-complication outcome annotation unresolved",
+          "evidence_grade": "M",
+          "artifact_paths": [
+            "docs/datasets_PXD067270_GRAFT_QUALITY_PROTEOMICS.md"
+          ],
+          "main_caveat": "Sample-to-timepoint mapping is public, but per-graft complication labels and a lightweight reusable protein matrix still need recovery before this can be promoted."
+        }
+      ]
+    },
+    {
+      "use_case_id": "BLOOD_MONITORING",
+      "title": "Blood-based monitoring and tolerance context",
+      "clinical_question": "Can blood, PBMC, plasma, serum, metabolite, and proteomic evidence support non-invasive monitoring and tolerance-related stratification?",
+      "records": [
+        {
+          "dataset": "GSE200340",
+          "sample_origin": "recipient_blood",
+          "modality": "bulk_transcriptomics",
+          "contrast": "early_post_transplant_blood_vs_pre_transplant_blood",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/GSE200340/differential_expression.json",
+            "data/processed/GSE200340/gene_expression_summary.json",
+            "data/processed/GSE200340/analysis_provenance.json"
+          ],
+          "main_caveat": "This layer currently supports longitudinal blood monitoring, not a biopsy-validated rejection-outcome classifier."
+        },
+        {
+          "dataset": "GSE11881",
+          "sample_origin": "blood_pbmc",
+          "modality": "bulk_transcriptomics",
+          "contrast": "operational_tolerance_vs_non_tolerant",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/GSE11881/differential_expression.json",
+            "data/processed/GSE11881/gene_expression_summary.json",
+            "data/processed/GSE11881/analysis_provenance.json"
+          ],
+          "main_caveat": "This is a tolerance-focused PBMC layer and should not be collapsed into generic rejection-monitoring claims."
+        },
+        {
+          "dataset": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+          "sample_origin": "plasma_serum",
+          "modality": "metabolomics",
+          "contrast": "TCMR_vs_biliary_complication",
+          "evidence_grade": "A",
+          "artifact_paths": [
+            "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_features.json",
+            "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/metabolomics_summary.json",
+            "data/processed/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY/provenance.json"
+          ],
+          "main_caveat": "This is a strong serum metabolomics layer, but independent validation is still needed before claiming non-invasive classification performance."
+        },
+        {
+          "dataset": "PXD062924",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+          "evidence_grade": "B",
+          "artifact_paths": [
+            "data/processed/PXD062924/protein_features.json",
+            "data/processed/PXD062924/proteomics_summary.json",
+            "data/processed/PXD062924/analysis_provenance.json"
+          ],
+          "main_caveat": "This is post-transplant renal-dysfunction monitoring evidence, not rejection-specific blood proteomics."
+        },
+        {
+          "dataset": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "operational_tolerance_vs_non_tolerant",
+          "evidence_grade": "C",
+          "artifact_paths": [
+            "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/protein_features.json",
+            "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/proteomics_summary.json",
+            "data/processed/FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS/analysis_provenance.json"
+          ],
+          "main_caveat": "This is currently an article-figure marker panel while the unresolved DataSheet1 supplement blocks full-table promotion."
+        },
+        {
+          "dataset": "S-EPMC6493459",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "healthy_control_vs_pre_transplant_end_stage_liver_disease",
+          "evidence_grade": "C",
+          "artifact_paths": [
+            "data/processed/S-EPMC6493459/protein_features.json",
+            "data/processed/S-EPMC6493459/proteomics_summary.json",
+            "data/processed/S-EPMC6493459/analysis_provenance.json"
+          ],
+          "main_caveat": "This is partial peri-transplant serum context rather than a complete longitudinal sample-level proteomics matrix."
+        },
+        {
+          "dataset": "AGING_2020_LT_SERUM_PROTEOMICS",
+          "sample_origin": "plasma_serum",
+          "modality": "proteomics",
+          "contrast": "stable_post_transplant_vs_acute_rejection",
+          "evidence_grade": "C",
+          "artifact_paths": [
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/protein_features.json",
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/proteomics_summary.json",
+            "data/processed/AGING_2020_LT_SERUM_PROTEOMICS/analysis_provenance.json"
+          ],
+          "main_caveat": "This is useful serum biomarker context, but it remains group-summary evidence rather than a reusable sample-level transplant proteome matrix."
+        }
+      ]
+    }
+  ]
+}

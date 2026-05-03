@@ -281,6 +281,7 @@ Deliverables:
 Execution detail:
 
 - See [demonstrator_use_cases_plan.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_use_cases_plan.md) for the concrete scope, evidence stacks, current gaps, and next-week deliverables for these first three demonstrator workflows.
+- See [demonstrator_evidence_tables.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_evidence_tables.md) and [demonstrator_evidence_tables.json](/Users/jinwen/Program/liver_trans_multiomics_db/data/registry/demonstrator_evidence_tables.json) for the first machine-readable and human-readable evidence-grade artifact.
 
 ### Weeks 3-4
 
