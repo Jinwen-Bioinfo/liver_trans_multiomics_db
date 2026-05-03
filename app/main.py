@@ -8,6 +8,7 @@ from app.data_loader import (
     available_study_downloads,
     filter_study_samples,
     get_quickstart,
+    get_resource_metadata,
     get_study,
     get_download_path,
     get_dataset_triage,
@@ -59,6 +60,11 @@ def health() -> dict[str, str]:
 @app.get("/api/quickstart")
 def quickstart() -> dict[str, object]:
     return get_quickstart()
+
+
+@app.get("/api/resource-metadata")
+def resource_metadata() -> dict[str, object]:
+    return get_resource_metadata()
 
 
 @app.get("/api/studies")

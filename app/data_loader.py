@@ -31,6 +31,35 @@ QUICKSTART_DOCS = {
     "evidence_tables_doc": "docs/demonstrator_evidence_tables.md",
     "cross_omics_doc": "docs/demonstrator_cross_omics_mappings.md",
 }
+RESOURCE_METADATA = {
+    "resource": "LiverTx-OmicsDB",
+    "version": "0.1.0",
+    "release_status": "local_pre_public_prototype",
+    "public_url_status": "not_yet_public",
+    "repository_url": "https://github.com/Jinwen-Bioinfo/liver_trans_multiomics_db",
+    "preferred_contact": {
+        "channel": "github_issues",
+        "label": "GitHub issues",
+        "url": "https://github.com/Jinwen-Bioinfo/liver_trans_multiomics_db/issues",
+    },
+    "citation": {
+        "status": "provisional_no_doi",
+        "preferred_text": "LiverTx-OmicsDB project repository, accessed via the public GitHub source until a DOI-backed release is minted.",
+        "repository_url": "https://github.com/Jinwen-Bioinfo/liver_trans_multiomics_db",
+    },
+    "documentation": {
+        "quickstart_doc": "docs/user_quickstart.md",
+        "north_star_doc": "docs/project_north_star.md",
+        "nar_readiness_doc": "docs/nar_submission_readiness.md",
+        "resource_policy_doc": "docs/resource_release_and_citation.md",
+    },
+    "next_release_priorities": [
+        "Public deployment with a stable reviewable URL",
+        "DOI-backed citation and release snapshot",
+        "User-facing QC and provenance summary pages",
+        "Contact, maintenance, and update policy page",
+    ],
+}
 DOWNLOAD_ARTIFACTS = {
     "samples": "samples.json",
     "sample_summary": "sample_summary.json",
@@ -210,9 +239,14 @@ def get_quickstart() -> dict[str, Any]:
         "demonstrator_plan_doc": QUICKSTART_DOCS["demonstrator_plan_doc"],
         "evidence_tables_doc": QUICKSTART_DOCS["evidence_tables_doc"],
         "cross_omics_doc": QUICKSTART_DOCS["cross_omics_doc"],
+        "resource_policy_doc": RESOURCE_METADATA["documentation"]["resource_policy_doc"],
         "journey_count": len(QUICKSTART_JOURNEYS),
         "journeys": QUICKSTART_JOURNEYS,
     }
+
+
+def get_resource_metadata() -> dict[str, Any]:
+    return RESOURCE_METADATA
 
 
 @lru_cache(maxsize=1)

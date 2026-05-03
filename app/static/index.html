@@ -606,6 +606,10 @@
         <h2>Help</h2>
         <div class="grid">
           <div class="mini">
+            <strong>Follow a demonstrator journey first</strong>
+            <span>The quickest serious introduction is to start with the donor quality, injury-versus-rejection, or blood-monitoring walkthrough rather than searching random accessions.</span>
+          </div>
+          <div class="mini">
             <strong>Start with a question</strong>
             <span>Open a use case first if you want the shortest path from a clinical problem to the supporting public datasets and caveats.</span>
           </div>
@@ -637,6 +641,29 @@
             <strong>NAR readiness is not a vanity score</strong>
             <span>The readiness panel is meant to surface missing infrastructure, documentation, and value-add, not to pretend the project is further along than it is.</span>
           </div>
+        </div>
+        <div class="detail-grid" style="margin-top:18px;">
+          <div class="detail-block">
+            <h3>Suggested walkthroughs</h3>
+            <ul>
+              <li><code>#use-case/INJURY_VS_REJECTION</code> then <code>#study/GSE145780</code> then <code>#feature/CXCL10</code></li>
+              <li><code>#use-case/DONOR_LIVER_QUALITY</code> then <code>#study/GSE243887</code> then <code>#feature/CYP3A4</code></li>
+              <li><code>#use-case/BLOOD_MONITORING</code> then <code>#study/GSE200340</code> then <code>#feature/CXCL10</code></li>
+            </ul>
+          </div>
+          <div class="detail-block">
+            <h3>Release and citation status</h3>
+            <ul>
+              <li>Current version: <code>0.1.0</code></li>
+              <li>Current status: local pre-public prototype</li>
+              <li>Preferred contact: GitHub repository issues until a public deployment and contact page exist</li>
+              <li>Preferred citation is still provisional until a DOI-backed release is created</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mini" style="margin-top:14px;">
+          <strong>Static file review is not the full product</strong>
+          <span>If you open <code>file://</code> directly, you can review layout and content, but the full API-backed experience requires the FastAPI portal route rather than the static file alone.</span>
         </div>
       </section>
 
@@ -758,6 +785,7 @@
               ${tag(quickstart.demonstrator_plan_doc)}
               ${tag(quickstart.evidence_tables_doc)}
               ${tag(quickstart.cross_omics_doc)}
+              ${quickstart.resource_policy_doc ? tag(quickstart.resource_policy_doc) : ""}
             </div>
             <div class="evidence-stack">
               ${quickstart.journeys.map((journey) => `

@@ -31,9 +31,10 @@ Strategic anchor:
 - [x] Curated accession registry.
 - [x] NAR readiness endpoint.
 - [x] Initial help section.
+- [x] Quickstart journeys and user quickstart guide.
 - [ ] Production deployment.
 - [ ] Public domain name.
-- [ ] Contact email and citation page.
+- [~] Contact and citation policy page. Current state is GitHub-issues contact plus provisional repository citation in `docs/resource_release_and_citation.md`; public contact email and DOI-backed citation remain pending.
 
 ### V1: Curation Depth
 
@@ -61,7 +62,7 @@ Strategic anchor:
 - [ ] Plain-text pre-submission inquiry.
 - [ ] Comparison against GEO, NGDC, PRIDE, MetaboLights, MGnify, and transplant-specific resources.
 - [ ] Data availability and legal/ethical statement.
-- [ ] Help/tutorial pages complete.
+- [~] Help/tutorial pages complete. `docs/user_quickstart.md`, the `/api/quickstart` endpoint, and demonstrator journeys now exist; reviewer-facing tutorial polish and glossary remain pending.
 - [ ] Maintenance plan and update policy.
 
 ## Practical Acceptance Strategy
