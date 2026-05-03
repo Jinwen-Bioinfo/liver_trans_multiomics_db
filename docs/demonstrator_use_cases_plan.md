@@ -251,6 +251,11 @@ Each use case should get a compact mapping file that links:
 - taxa when relevant
 - pathways
 
+Initial artifact:
+
+- [demonstrator_cross_omics_mappings.json](/Users/jinwen/Program/liver_trans_multiomics_db/data/registry/demonstrator_cross_omics_mappings.json)
+- [demonstrator_cross_omics_mappings.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/demonstrator_cross_omics_mappings.md)
+
 ### 3. Question report
 
 Each use case should get a markdown report containing:

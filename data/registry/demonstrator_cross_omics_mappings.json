@@ -1,0 +1,518 @@
+{
+  "generated_at_utc": "2026-05-03T00:00:00+00:00",
+  "scope": "First-pass cross-omics mapping groups for the three LiverTx-OmicsDB demonstrator use cases.",
+  "notes": [
+    "These mappings are question-oriented integration groups, not claims of direct mechanistic causality.",
+    "A mapping group can be supported by mixed evidence grades; users should inspect the linked evidence tables before treating a group as validated.",
+    "Taxon links are left empty for these three demonstrators because the first wave focuses on tissue, blood, serum, and donor-organ contexts rather than gut-liver microbiome use cases."
+  ],
+  "use_cases": [
+    {
+      "use_case_id": "INJURY_VS_REJECTION",
+      "title": "Early injury versus rejection",
+      "mapping_groups": [
+        {
+          "mapping_group_id": "injury_rejection_ifng_cytotoxic",
+          "label": "IFN-gamma chemokine and cytotoxic rejection program",
+          "biological_theme": "Adaptive immune rejection with interferon signaling and cytotoxic effector activity.",
+          "pathway_context": [
+            "Interferon-gamma signaling",
+            "T-cell activation",
+            "Cytotoxic lymphocyte effector program"
+          ],
+          "entities": {
+            "genes": [
+              "CXCL9",
+              "CXCL10",
+              "IFNG",
+              "GZMB"
+            ],
+            "proteins": [],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "GSE145780",
+              "modality": "bulk_transcriptomics",
+              "evidence_grade": "A",
+              "contrast": "TCMR_vs_no_rejection",
+              "entity_support": [
+                "CXCL9",
+                "CXCL10",
+                "IFNG",
+                "GZMB"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the cleanest current rejection-leaning anchor in the first demonstrator set.",
+          "main_caveat": "This group is still dominated by a single primary biopsy dataset and should not be presented as a clinically validated rejection classifier."
+        },
+        {
+          "mapping_group_id": "injury_rejection_heme_oxidative_stress",
+          "label": "Heme metabolism and oxidative-stress response",
+          "biological_theme": "Stress-response biology that may rise in injury contexts and can overlap with inflammatory graft dysfunction.",
+          "pathway_context": [
+            "Heme degradation",
+            "Oxidative stress response",
+            "Cellular stress adaptation"
+          ],
+          "entities": {
+            "genes": [
+              "HMOX1",
+              "BLVRA",
+              "HDAC1"
+            ],
+            "proteins": [
+              "HMOX1",
+              "BLVRA",
+              "HDAC1"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "HO1_ACR_LIVER_TX_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "acute_cellular_rejection_vs_non_rejection_post_lt",
+              "entity_support": [
+                "HMOX1",
+                "BLVRA",
+                "HDAC1"
+              ]
+            }
+          ],
+          "interpretation_scope": "Useful as a bridge between rejection-associated serum proteomics and broader graft-stress biology.",
+          "main_caveat": "Current support is a small discovery-set serum layer and should be treated as marker context, not definitive biology."
+        },
+        {
+          "mapping_group_id": "injury_rejection_endothelial_acute_phase",
+          "label": "Endothelial injury and acute-phase inflammation",
+          "biological_theme": "Innate inflammatory and endothelial perturbation signatures linked to early graft injury and postreperfusion dysfunction.",
+          "pathway_context": [
+            "Acute phase response",
+            "Endothelial activation",
+            "Innate inflammatory signaling"
+          ],
+          "entities": {
+            "genes": [
+              "PECAM1",
+              "PLA2G2A",
+              "SAA2",
+              "CTSC"
+            ],
+            "proteins": [
+              "PECAM1",
+              "PLA2G2A",
+              "SAA2",
+              "CTSC"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "IJMS_2022_LT_GRAFT_AKI_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "B",
+              "contrast": "moderate_severe_early_aki_vs_no_early_aki",
+              "entity_support": [
+                "SAA2",
+                "PLA2G2A",
+                "PECAM1",
+                "CTSC"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the main proteomic counterweight to the TCMR-centric transcriptome signal and helps keep injury distinct from rejection.",
+          "main_caveat": "The cohort captures early AKI-linked graft injury, which is relevant but not identical to all early injury states in clinical liver transplantation."
+        },
+        {
+          "mapping_group_id": "injury_rejection_coagulation_lipid_transport",
+          "label": "Coagulation, lipid transport, and metabolic stress",
+          "biological_theme": "Systemic graft dysfunction context reflected in serum proteins related to coagulation and lipid handling.",
+          "pathway_context": [
+            "Coagulation cascade",
+            "Lipoprotein transport",
+            "Central carbon and lipid metabolism"
+          ],
+          "entities": {
+            "genes": [
+              "FGA",
+              "APOA1",
+              "ACLY"
+            ],
+            "proteins": [
+              "FGA",
+              "APOA1",
+              "ACLY"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "AGING_2020_LT_SERUM_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "stable_post_transplant_vs_acute_rejection",
+              "entity_support": [
+                "FGA",
+                "APOA1",
+                "ACLY"
+              ]
+            },
+            {
+              "dataset": "HO1_ACR_LIVER_TX_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "acute_cellular_rejection_vs_non_rejection_post_lt",
+              "entity_support": [
+                "ACLY"
+              ]
+            }
+          ],
+          "interpretation_scope": "This group is useful for explaining why blood evidence may reflect broader graft physiology rather than rejection alone.",
+          "main_caveat": "Serum proteins in this group are biologically informative but are not specific enough to separate injury and rejection on their own."
+        }
+      ]
+    },
+    {
+      "use_case_id": "DONOR_LIVER_QUALITY",
+      "title": "Donor liver quality and graft viability",
+      "mapping_groups": [
+        {
+          "mapping_group_id": "donor_quality_hepatocyte_function",
+          "label": "Hepatocyte synthetic and xenobiotic-metabolism competence",
+          "biological_theme": "Preserved hepatocyte identity and metabolic competence in donor organs.",
+          "pathway_context": [
+            "Hepatocyte functional state",
+            "Drug metabolism and xenobiotic processing",
+            "Protein synthesis and secretion"
+          ],
+          "entities": {
+            "genes": [
+              "ALB",
+              "CYP3A4",
+              "APOA1"
+            ],
+            "proteins": [
+              "ALB",
+              "CYP3A4",
+              "APOA1"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "GSE243887",
+              "modality": "bulk_transcriptomics",
+              "evidence_grade": "A",
+              "contrast": "accepted_donor_liver_vs_rejected_donor_liver",
+              "entity_support": [
+                "ALB",
+                "CYP3A4",
+                "APOA1"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the primary donor-quality transcriptomic axis and should anchor donor-organ interpretation in V1.",
+          "main_caveat": "Selection-status labels reflect donor-organ acceptance decisions rather than downstream recipient graft survival."
+        },
+        {
+          "mapping_group_id": "donor_quality_stress_fibrosis",
+          "label": "Stress-response and extracellular-matrix remodeling",
+          "biological_theme": "Oxidative stress and matrix remodeling that may mark suboptimal donor-organ biology.",
+          "pathway_context": [
+            "Oxidative stress response",
+            "Extracellular matrix remodeling",
+            "Fibrogenic activation"
+          ],
+          "entities": {
+            "genes": [
+              "HMOX1",
+              "COL1A1"
+            ],
+            "proteins": [
+              "HMOX1",
+              "COL1A1"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "GSE243887",
+              "modality": "bulk_transcriptomics",
+              "evidence_grade": "A",
+              "contrast": "accepted_donor_liver_vs_rejected_donor_liver",
+              "entity_support": [
+                "HMOX1",
+                "COL1A1"
+              ]
+            }
+          ],
+          "interpretation_scope": "This group provides the stress-and-fibrosis side of donor-quality interpretation that complements hepatocyte competence markers.",
+          "main_caveat": "A compact marker set is useful for interpretation, but full donor-quality module scoring still needs to be formalized."
+        },
+        {
+          "mapping_group_id": "donor_quality_biliary_viability_surface_program",
+          "label": "Biliary and epithelial viability surface program",
+          "biological_theme": "Proteins linked to biliary viability and donor-organ surface remodeling during machine perfusion.",
+          "pathway_context": [
+            "Biliary viability biology",
+            "Epithelial surface remodeling",
+            "Perfusion-linked donor-organ adaptation"
+          ],
+          "entities": {
+            "genes": [
+              "FCGBP",
+              "ANPEP",
+              "ACE2",
+              "DPP4",
+              "CTSZ"
+            ],
+            "proteins": [
+              "FCGBP",
+              "ANPEP",
+              "ACE2",
+              "DPP4",
+              "CTSZ"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "PXD046355",
+              "modality": "proteomics",
+              "evidence_grade": "A",
+              "contrast": "high_biliary_viability_donor_liver_vs_low_biliary_viability_donor_liver_at_150min",
+              "entity_support": [
+                "FCGBP",
+                "ANPEP",
+                "ACE2",
+                "DPP4",
+                "CTSZ"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the main proteomic viability layer for donor quality and machine-perfusion biology in the current build.",
+          "main_caveat": "These signals speak most directly to donor-organ viability during machine perfusion and should not be overtranslated into recipient-outcome claims."
+        }
+      ]
+    },
+    {
+      "use_case_id": "BLOOD_MONITORING",
+      "title": "Blood-based monitoring and tolerance context",
+      "mapping_groups": [
+        {
+          "mapping_group_id": "blood_monitoring_interferon_inflammation",
+          "label": "Interferon and inflammatory blood-monitoring program",
+          "biological_theme": "Inflammatory and interferon-linked blood programs that may reflect systemic graft perturbation.",
+          "pathway_context": [
+            "Type I and II interferon signaling",
+            "Inflammatory chemokine response",
+            "Immune activation in blood"
+          ],
+          "entities": {
+            "genes": [
+              "CXCL10",
+              "ISG15",
+              "IFI27"
+            ],
+            "proteins": [],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "GSE200340",
+              "modality": "bulk_transcriptomics",
+              "evidence_grade": "A",
+              "contrast": "early_post_transplant_blood_vs_pre_transplant_blood",
+              "entity_support": [
+                "CXCL10",
+                "ISG15",
+                "IFI27"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the clearest blood-RNA monitoring axis in the current database.",
+          "main_caveat": "These markers support longitudinal monitoring but do not yet prove biopsy-equivalent rejection classification."
+        },
+        {
+          "mapping_group_id": "blood_monitoring_tolerance_homeostasis",
+          "label": "Tolerance and immune homeostasis program",
+          "biological_theme": "Blood-based immune regulation and withdrawal-risk stratification.",
+          "pathway_context": [
+            "Immune homeostasis",
+            "Tolerance-associated regulation",
+            "Withdrawal-risk biology"
+          ],
+          "entities": {
+            "genes": [
+              "IL7R",
+              "FOXP3",
+              "IL10",
+              "IFNG",
+              "HDAC1",
+              "FCGR3B",
+              "PADI4",
+              "MAPK1"
+            ],
+            "proteins": [
+              "HDAC1",
+              "FCGR3B",
+              "PADI4",
+              "MAPK1"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "GSE11881",
+              "modality": "bulk_transcriptomics",
+              "evidence_grade": "A",
+              "contrast": "operational_tolerance_vs_non_tolerant",
+              "entity_support": [
+                "IL7R",
+                "FOXP3",
+                "IL10",
+                "IFNG"
+              ]
+            },
+            {
+              "dataset": "FRONTIERS_2026_PED_LT_TOLERANCE_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "operational_tolerance_vs_non_tolerant",
+              "entity_support": [
+                "HDAC1",
+                "FCGR3B",
+                "PADI4",
+                "MAPK1"
+              ]
+            }
+          ],
+          "interpretation_scope": "This group should anchor the tolerance side of the blood demonstrator and remain separate from generic injury-monitoring claims.",
+          "main_caveat": "Current proteomic support is still a narrow marker layer rather than a full sample-level tolerance proteome."
+        },
+        {
+          "mapping_group_id": "blood_monitoring_serum_protein_stress",
+          "label": "Serum protein stress, transport, and renal/hepatic complication context",
+          "biological_theme": "Circulating proteins reflecting graft dysfunction, complication context, and systemic stress rather than a single transplant phenotype.",
+          "pathway_context": [
+            "Acute phase and transport proteins",
+            "Renal and hepatic dysfunction context",
+            "Circulating complication biomarkers"
+          ],
+          "entities": {
+            "genes": [
+              "ACLY",
+              "FGA",
+              "APOA1",
+              "B2M",
+              "AMBP",
+              "TF",
+              "S100P",
+              "AOX1"
+            ],
+            "proteins": [
+              "ACLY",
+              "FGA",
+              "APOA1",
+              "B2M",
+              "AMBP",
+              "TF",
+              "S100P",
+              "AOX1"
+            ],
+            "metabolites": [],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "AGING_2020_LT_SERUM_PROTEOMICS",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "stable_post_transplant_vs_acute_rejection",
+              "entity_support": [
+                "ACLY",
+                "FGA",
+                "APOA1"
+              ]
+            },
+            {
+              "dataset": "PXD062924",
+              "modality": "proteomics",
+              "evidence_grade": "B",
+              "contrast": "normal_kidney_function_post_lt_vs_impaired_kidney_function_post_lt",
+              "entity_support": [
+                "B2M",
+                "AMBP",
+                "TF",
+                "APOA1"
+              ]
+            },
+            {
+              "dataset": "S-EPMC6493459",
+              "modality": "proteomics",
+              "evidence_grade": "C",
+              "contrast": "healthy_control_vs_pre_transplant_end_stage_liver_disease",
+              "entity_support": [
+                "S100P",
+                "AOX1"
+              ]
+            }
+          ],
+          "interpretation_scope": "This is the main serum-proteomics bridge layer for the blood demonstrator, but it mixes multiple complication contexts intentionally.",
+          "main_caveat": "These proteins provide broad monitoring context and should not be treated as a single coherent rejection-specific serum signature."
+        },
+        {
+          "mapping_group_id": "blood_monitoring_energy_lipid_metabolites",
+          "label": "Energy, amino-acid, and lipid metabolism context",
+          "biological_theme": "Serum metabolite shifts that may help separate inflammatory, biliary, and metabolic graft pathology contexts.",
+          "pathway_context": [
+            "Central carbon metabolism",
+            "Mitochondrial and redox metabolism",
+            "Lipid and amino-acid handling"
+          ],
+          "entities": {
+            "genes": [],
+            "proteins": [],
+            "metabolites": [
+              "Glucose",
+              "Lactic_acid",
+              "Citric_acid",
+              "Taurine",
+              "Trimethylamine_N-oxide"
+            ],
+            "taxa": []
+          },
+          "evidence_support": [
+            {
+              "dataset": "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY",
+              "modality": "metabolomics",
+              "evidence_grade": "A",
+              "contrast": "TCMR_vs_biliary_complication",
+              "entity_support": [
+                "Glucose",
+                "Lactic_acid",
+                "Citric_acid",
+                "Taurine",
+                "Trimethylamine_N-oxide"
+              ]
+            }
+          ],
+          "interpretation_scope": "This group gives the blood demonstrator a true non-transcriptomic, non-proteomic layer tied to post-transplant pathology context.",
+          "main_caveat": "These metabolites come from a strong pathology-context cohort, but they still require independent validation before clinical monitoring claims."
+        }
+      ]
+    }
+  ]
+}
