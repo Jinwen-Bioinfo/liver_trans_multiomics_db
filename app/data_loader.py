@@ -31,6 +31,43 @@ QUICKSTART_DOCS = {
     "evidence_tables_doc": "docs/demonstrator_evidence_tables.md",
     "cross_omics_doc": "docs/demonstrator_cross_omics_mappings.md",
 }
+GLOSSARY_TERMS = [
+    {"term": "Evidence Grade A", "definition": "Reusable sample-level matrix or directly queryable cohort table with defensible contrast reconstruction."},
+    {"term": "Evidence Grade B", "definition": "Reusable feature-level or group-level processed evidence with structured contrasts but not a full reusable sample matrix."},
+    {"term": "Evidence Grade C", "definition": "Marker-level or figure-recovered evidence that is still useful, but narrower and less reusable than sample-level or feature-level layers."},
+    {"term": "Evidence Grade R", "definition": "Reference context used for interpretation rather than direct transplant outcome inference."},
+    {"term": "Evidence Grade M", "definition": "Metadata-only or unresolved candidate layer that informs prioritization but does not yet provide downloadable evidence."},
+    {"term": "Claim boundary", "definition": "The explicit statement of what the current evidence can support and what remains out of scope."},
+    {"term": "Demonstrator use case", "definition": "A question-first workflow chosen to prove that the resource can deliver an end-to-end scientific narrative, not just dataset lookup."},
+    {"term": "Sample origin", "definition": "The biological material source for a dataset or evidence layer, such as donor liver biopsy, graft liver biopsy, blood, serum, plasma, PBMC, stool, or bile."},
+    {"term": "Direct transplant evidence", "definition": "A dataset or layer derived from liver-transplant-relevant samples and labels, rather than a generic liver reference context."},
+    {"term": "Reference context", "definition": "A contextual layer that helps interpret a signal without directly supporting transplant outcome claims."},
+    {"term": "Provenance", "definition": "The record of where a source came from, how it was downloaded, processed, normalized, and exposed in the resource."},
+    {"term": "Quickstart journey", "definition": "A curated path through use-case, study, and feature views that helps a user understand a scientific question with minimal wandering."},
+    {"term": "Reviewer walkthrough", "definition": "A structured set of checkpoints intended for reviewers to verify the resource's main differentiators quickly."},
+]
+REVIEWER_WALKTHROUGH = {
+    "resource": "LiverTx-OmicsDB",
+    "document_path": "docs/reviewer_walkthrough.md",
+    "path_count": 3,
+    "paths": [
+        {
+            "label": "Donor quality differentiator",
+            "entry_route": "#use-case/DONOR_LIVER_QUALITY",
+            "targets": ["#study/GSE243887", "#study/PXD046355", "#feature/CYP3A4"],
+        },
+        {
+            "label": "Injury versus rejection framing",
+            "entry_route": "#use-case/INJURY_VS_REJECTION",
+            "targets": ["#study/GSE145780", "#study/IJMS_2022_LT_GRAFT_AKI_PROTEOMICS", "#feature/CXCL10"],
+        },
+        {
+            "label": "Blood multi-omics context",
+            "entry_route": "#use-case/BLOOD_MONITORING",
+            "targets": ["#study/GSE200340", "#study/MDPI_METABO_2024_LT_GRAFT_PATHOLOGY", "#feature/CXCL10"],
+        },
+    ],
+}
 RESOURCE_METADATA = {
     "resource": "LiverTx-OmicsDB",
     "version": "0.1.0",
@@ -52,6 +89,8 @@ RESOURCE_METADATA = {
         "north_star_doc": "docs/project_north_star.md",
         "nar_readiness_doc": "docs/nar_submission_readiness.md",
         "resource_policy_doc": "docs/resource_release_and_citation.md",
+        "glossary_doc": "docs/glossary.md",
+        "reviewer_tutorial_doc": "docs/reviewer_walkthrough.md",
     },
     "next_release_priorities": [
         "Public deployment with a stable reviewable URL",
@@ -247,6 +286,19 @@ def get_quickstart() -> dict[str, Any]:
 
 def get_resource_metadata() -> dict[str, Any]:
     return RESOURCE_METADATA
+
+
+def get_glossary() -> dict[str, Any]:
+    return {
+        "resource": "LiverTx-OmicsDB",
+        "document_path": "docs/glossary.md",
+        "term_count": len(GLOSSARY_TERMS),
+        "terms": GLOSSARY_TERMS,
+    }
+
+
+def get_reviewer_walkthrough() -> dict[str, Any]:
+    return REVIEWER_WALKTHROUGH
 
 
 @lru_cache(maxsize=1)

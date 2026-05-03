@@ -7,8 +7,10 @@ from fastapi.staticfiles import StaticFiles
 from app.data_loader import (
     available_study_downloads,
     filter_study_samples,
+    get_glossary,
     get_quickstart,
     get_resource_metadata,
+    get_reviewer_walkthrough,
     get_study,
     get_download_path,
     get_dataset_triage,
@@ -65,6 +67,16 @@ def quickstart() -> dict[str, object]:
 @app.get("/api/resource-metadata")
 def resource_metadata() -> dict[str, object]:
     return get_resource_metadata()
+
+
+@app.get("/api/glossary")
+def glossary() -> dict[str, object]:
+    return get_glossary()
+
+
+@app.get("/api/reviewer-walkthrough")
+def reviewer_walkthrough() -> dict[str, object]:
+    return get_reviewer_walkthrough()
 
 
 @app.get("/api/studies")

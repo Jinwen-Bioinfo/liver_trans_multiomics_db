@@ -45,7 +45,32 @@ def test_resource_metadata_endpoint_exposes_release_and_contact_context() -> Non
     assert payload["citation"]["status"] == "provisional_no_doi"
     assert payload["documentation"]["quickstart_doc"] == "docs/user_quickstart.md"
     assert payload["documentation"]["resource_policy_doc"] == "docs/resource_release_and_citation.md"
+    assert payload["documentation"]["glossary_doc"] == "docs/glossary.md"
+    assert payload["documentation"]["reviewer_tutorial_doc"] == "docs/reviewer_walkthrough.md"
     assert any("DOI-backed citation" in item for item in payload["next_release_priorities"])
+
+
+def test_glossary_endpoint_exposes_key_resource_terms() -> None:
+    response = client.get("/api/glossary")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["term_count"] >= 10
+    terms = {item["term"] for item in payload["terms"]}
+    assert "Evidence Grade A" in terms
+    assert "Reference context" in terms
+    assert "Claim boundary" in terms
+
+
+def test_reviewer_walkthrough_endpoint_exposes_review_paths() -> None:
+    response = client.get("/api/reviewer-walkthrough")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["resource"] == "LiverTx-OmicsDB"
+    assert payload["path_count"] >= 3
+    assert payload["document_path"] == "docs/reviewer_walkthrough.md"
+    labels = {path["label"] for path in payload["paths"]}
+    assert "Donor quality differentiator" in labels
+    assert "Blood multi-omics context" in labels
 
 
 def test_study_registry_lists_priority_accessions() -> None:
