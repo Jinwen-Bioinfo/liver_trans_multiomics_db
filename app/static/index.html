@@ -986,10 +986,25 @@
             ${item.demonstrator_case_report_path ? `
               <div class="detail-block" style="margin-top:14px;">
                 <h3>Case report</h3>
-                <p class="muted">A narrative markdown report exists in the local project for this demonstrator workflow.</p>
+                <p class="muted">A narrative markdown report exists for this demonstrator workflow, and the key support/limitation statements are surfaced below so the use-case page can stand on its own.</p>
                 <div class="summary">
                   ${tag(item.demonstrator_case_report_path)}
                 </div>
+                ${item.demonstrator_case_report?.already_supports?.length ? `
+                  <h3>What this already supports</h3>
+                  <ul>${item.demonstrator_case_report.already_supports.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                ` : ""}
+                ${item.demonstrator_case_report?.not_yet_supports?.length ? `
+                  <h3>What this does not yet support</h3>
+                  <ul>${item.demonstrator_case_report.not_yet_supports.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                ` : ""}
+                ${item.demonstrator_case_report?.recommended_next_step?.length ? `
+                  <h3>Recommended next step</h3>
+                  <ul>${item.demonstrator_case_report.recommended_next_step.map((line) => `<li>${escapeHtml(line)}</li>`).join("")}</ul>
+                ` : ""}
+                ${item.demonstrator_case_report?.bottom_line ? `
+                  <p class="muted"><strong>Bottom line:</strong> ${escapeHtml(item.demonstrator_case_report.bottom_line)}</p>
+                ` : ""}
               </div>
             ` : ""}
             ${item.primary_dataset_records?.length ? `

@@ -18,6 +18,11 @@ DEMONSTRATOR_EVIDENCE_REGISTRY = ROOT / "data" / "registry" / "demonstrator_evid
 DEMONSTRATOR_MAPPING_REGISTRY = ROOT / "data" / "registry" / "demonstrator_cross_omics_mappings.json"
 DATA_MODEL_SCHEMA = ROOT / "data" / "schema" / "livertx_omicsdb_schema.json"
 PROCESSED_DIR = ROOT / "data" / "processed"
+CASE_REPORT_PATHS = {
+    "INJURY_VS_REJECTION": ROOT / "docs" / "case_report_injury_vs_rejection.md",
+    "DONOR_LIVER_QUALITY": ROOT / "docs" / "case_report_donor_liver_quality.md",
+    "BLOOD_MONITORING": ROOT / "docs" / "case_report_blood_monitoring.md",
+}
 DOWNLOAD_ARTIFACTS = {
     "samples": "samples.json",
     "sample_summary": "sample_summary.json",
@@ -107,6 +112,57 @@ def get_demonstrator_mapping(use_case_id: str) -> dict[str, Any] | None:
         if item.get("use_case_id", "").upper() == use_case_id:
             return item
     return None
+
+
+def _parse_markdown_list(lines: list[str]) -> list[str]:
+    items: list[str] = []
+    for raw in lines:
+        line = raw.strip()
+        if not line:
+            continue
+        if line.startswith("- "):
+            items.append(line[2:].strip())
+            continue
+        if len(line) > 2 and line[0].isdigit() and line[1:3] in {". ", ") "}:
+            items.append(line[3:].strip())
+    return items
+
+
+def _parse_markdown_section_map(text: str) -> dict[str, list[str]]:
+    sections: dict[str, list[str]] = {}
+    current: str | None = None
+    for raw in text.splitlines():
+        line = raw.rstrip()
+        if line.startswith("## "):
+            current = line[3:].strip()
+            sections[current] = []
+            continue
+        if current is not None:
+            sections[current].append(line)
+    return sections
+
+
+@lru_cache(maxsize=8)
+def load_case_report(use_case_id: str) -> dict[str, Any] | None:
+    path = CASE_REPORT_PATHS.get(use_case_id.upper())
+    if path is None or not path.exists():
+        return None
+    text = path.read_text(encoding="utf-8")
+    sections = _parse_markdown_section_map(text)
+
+    def body(name: str) -> str:
+        lines = [line for line in sections.get(name, []) if line.strip()]
+        return "\n".join(lines).strip()
+
+    return {
+        "path": str(path.relative_to(ROOT)),
+        "question": body("Question"),
+        "why_this_matters": body("Why This Matters"),
+        "already_supports": _parse_markdown_list(sections.get("What This Demonstrator Already Supports", [])),
+        "not_yet_supports": _parse_markdown_list(sections.get("What It Does Not Yet Support", [])),
+        "recommended_next_step": _parse_markdown_list(sections.get("Recommended Next Step", [])),
+        "bottom_line": body("Bottom Line"),
+    }
 
 
 def list_dataset_triage(
@@ -276,12 +332,11 @@ def list_use_cases() -> list[dict[str, Any]]:
                 "demonstrator_evidence_table": evidence_table,
                 "demonstrator_mapping_table": mapping_table,
                 "demonstrator_case_report_path": (
-                    {
-                        "INJURY_VS_REJECTION": "docs/case_report_injury_vs_rejection.md",
-                        "DONOR_LIVER_QUALITY": "docs/case_report_donor_liver_quality.md",
-                        "BLOOD_MONITORING": "docs/case_report_blood_monitoring.md",
-                    }.get(use_case["use_case_id"])
+                    str(CASE_REPORT_PATHS[use_case["use_case_id"]].relative_to(ROOT))
+                    if use_case["use_case_id"] in CASE_REPORT_PATHS
+                    else None
                 ),
+                "demonstrator_case_report": load_case_report(use_case["use_case_id"]),
             }
         )
     return enriched

@@ -1051,6 +1051,8 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     assert payload["demonstrator_mapping_table"]["use_case_id"] == "DONOR_LIVER_QUALITY"
     assert any(group["mapping_group_id"] == "donor_quality_biliary_viability_surface_program" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
     assert payload["demonstrator_case_report_path"] == "docs/case_report_donor_liver_quality.md"
+    assert "recipient-outcome predictor" in payload["demonstrator_case_report"]["not_yet_supports"]
+    assert payload["demonstrator_case_report"]["bottom_line"].startswith("This is already one of the most compelling")
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
@@ -1101,6 +1103,8 @@ def test_blood_monitoring_use_case_exposes_cross_omics_assets() -> None:
     assert any(record["dataset"] == "MDPI_METABO_2024_LT_GRAFT_PATHOLOGY" for record in payload["demonstrator_evidence_table"]["records"])
     assert any(group["mapping_group_id"] == "blood_monitoring_energy_lipid_metabolites" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
     assert payload["demonstrator_case_report_path"] == "docs/case_report_blood_monitoring.md"
+    assert "a validated non-invasive rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
+    assert any("split the product view" in step for step in payload["demonstrator_case_report"]["recommended_next_step"])
 
 
 def test_operational_tolerance_use_case_links_frontiers_proteomics() -> None:
@@ -1143,3 +1147,5 @@ def test_injury_vs_rejection_use_case_exposes_demonstrator_assets() -> None:
     assert any(record["dataset"] == "GSE145780" and record["evidence_grade"] == "A" for record in payload["demonstrator_evidence_table"]["records"])
     assert any(group["mapping_group_id"] == "injury_rejection_ifng_cytotoxic" for group in payload["demonstrator_mapping_table"]["mapping_groups"])
     assert payload["demonstrator_case_report_path"] == "docs/case_report_injury_vs_rejection.md"
+    assert "a validated injury-versus-rejection classifier" in payload["demonstrator_case_report"]["not_yet_supports"]
+    assert "structured multimodal context" in payload["demonstrator_case_report"]["bottom_line"]
