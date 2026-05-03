@@ -936,6 +936,11 @@
                 <div class="summary">
                   ${item.demonstrator_sections.map(tag).join("")}
                 </div>
+                ${item.demonstrator_evidence_grade_legend ? `
+                  <ul>
+                    ${Object.entries(item.demonstrator_evidence_grade_legend).map(([grade, meaning]) => `<li><strong>Grade ${escapeHtml(grade)}</strong>: ${escapeHtml(meaning)}</li>`).join("")}
+                  </ul>
+                ` : ""}
               </div>
             ` : ""}
             <div class="detail-grid">

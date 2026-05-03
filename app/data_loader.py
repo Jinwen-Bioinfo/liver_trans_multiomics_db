@@ -71,6 +71,13 @@ ARTIFACT_LABELS = {
     "single_cell_marker_summary": "Single-cell marker summary",
     "single_cell_module_summary": "Single-cell module summary",
 }
+EVIDENCE_GRADE_LEGEND = {
+    "A": "Reusable sample-level matrix or directly queryable cohort table with defensible contrast reconstruction.",
+    "B": "Feature-level or group-level processed evidence with structured contrasts but not a full reusable sample matrix.",
+    "C": "Marker-level or figure-recovered evidence that is still useful, but narrower and less reusable.",
+    "R": "Reference context layer used for interpretation rather than direct transplant outcome inference.",
+    "M": "Metadata-only or unresolved candidate layer that informs prioritization but does not yet provide downloadable evidence.",
+}
 
 
 @lru_cache(maxsize=1)
@@ -437,6 +444,7 @@ def list_use_cases() -> list[dict[str, Any]]:
                 ),
                 "demonstrator_mapping_table": mapping_table,
                 "demonstrator_evidence_summary": summarize_demonstrator_evidence(enriched_records) if evidence_table else None,
+                "demonstrator_evidence_grade_legend": EVIDENCE_GRADE_LEGEND if evidence_table else None,
                 "demonstrator_mapping_group_count": len(mapping_table.get("mapping_groups", [])) if mapping_table else 0,
                 "demonstrator_sections": build_demonstrator_sections(enriched_records, mapping_table, case_report),
                 "demonstrator_case_report_path": (

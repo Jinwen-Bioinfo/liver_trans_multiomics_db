@@ -1067,6 +1067,8 @@ def test_donor_liver_quality_use_case_exposes_demonstrator_assets() -> None:
     assert pxd067270["artifact_summary"]["status"] == "documentation_only"
     assert "Dataset-level evidence" in payload["demonstrator_sections"]
     assert "Practical boundary" in payload["demonstrator_sections"]
+    assert payload["demonstrator_evidence_grade_legend"]["A"].startswith("Reusable sample-level")
+    assert payload["demonstrator_evidence_grade_legend"]["M"].startswith("Metadata-only")
 
 
 def test_gut_liver_axis_use_case_links_feature_level_dfi_source() -> None:
