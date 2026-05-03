@@ -4,6 +4,10 @@ This document converts NAR Database Issue expectations into build requirements f
 
 Current target: **pre-submission inquiry for the NAR Database Issue after the database is fully functional online**.
 
+Strategic anchor:
+
+- See [project_north_star.md](/Users/jinwen/Program/liver_trans_multiomics_db/docs/project_north_star.md) for the question-first scope, evidence model, anti-drift rules, and 8-week execution track that should govern all NAR-facing build decisions.
+
 ## Hard Gates
 
 | NAR expectation | Build requirement | Current status |
