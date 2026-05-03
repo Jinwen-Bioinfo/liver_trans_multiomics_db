@@ -121,6 +121,7 @@ RESOURCE_STATUS = {
 }
 QC_STATUS_DOC = "docs/qc_and_provenance_status.md"
 REVIEWER_DASHBOARD_DOC = "docs/reviewer_dashboard.md"
+STUDY_QC_PRIORITIES_DOC = "docs/study_qc_priorities.md"
 RESOURCE_METADATA = {
     "resource": "LiverTx-OmicsDB",
     "version": "0.1.0",
@@ -144,6 +145,7 @@ RESOURCE_METADATA = {
         "resource_policy_doc": "docs/resource_release_and_citation.md",
         "resource_status_doc": "docs/resource_status.md",
         "qc_status_doc": QC_STATUS_DOC,
+        "study_qc_priorities_doc": STUDY_QC_PRIORITIES_DOC,
         "glossary_doc": "docs/glossary.md",
         "reviewer_tutorial_doc": "docs/reviewer_walkthrough.md",
         "reviewer_dashboard_doc": REVIEWER_DASHBOARD_DOC,
@@ -410,9 +412,41 @@ def get_reviewer_dashboard() -> dict[str, Any]:
         "resource_metadata": get_resource_metadata(),
         "resource_status": get_resource_status(),
         "qc_status": get_qc_status(),
+        "study_qc_priorities": get_study_qc_priorities(),
         "quickstart": get_quickstart(),
         "reviewer_walkthrough": get_reviewer_walkthrough(),
         "nar_readiness": nar_readiness(),
+    }
+
+
+def get_study_qc_priorities() -> dict[str, Any]:
+    priorities = [
+        {
+            "accession": "GSE145780",
+            "role": "graft biopsy bulk RNA anchor for injury-versus-rejection framing",
+            "entry_route": "#study/GSE145780",
+        },
+        {
+            "accession": "GSE243887",
+            "role": "donor-organ RNA anchor for donor-quality interpretation",
+            "entry_route": "#study/GSE243887",
+        },
+        {
+            "accession": "GSE200340",
+            "role": "blood/PBMC monitoring RNA anchor for non-invasive follow-up context",
+            "entry_route": "#study/GSE200340",
+        },
+        {
+            "accession": "PXD046355",
+            "role": "direct donor-liver bile proteomics anchor for biliary viability context",
+            "entry_route": "#study/PXD046355",
+        },
+    ]
+    return {
+        "resource": "LiverTx-OmicsDB",
+        "document_path": STUDY_QC_PRIORITIES_DOC,
+        "priority_count": len(priorities),
+        "priorities": priorities,
     }
 
 

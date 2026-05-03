@@ -114,9 +114,20 @@ def test_reviewer_dashboard_endpoint_aggregates_resource_state() -> None:
     assert payload["resource_metadata"]["version"] == "0.1.0"
     assert payload["resource_status"]["document_path"] == "docs/resource_status.md"
     assert payload["qc_status"]["document_path"] == "docs/qc_and_provenance_status.md"
+    assert payload["study_qc_priorities"]["document_path"] == "docs/study_qc_priorities.md"
+    assert payload["study_qc_priorities"]["priority_count"] >= 4
     assert payload["quickstart"]["journey_count"] >= 3
     assert payload["reviewer_walkthrough"]["path_count"] >= 3
     assert payload["nar_readiness"]["target_journal"] == "Nucleic Acids Research Database Issue"
+
+
+def test_study_qc_priorities_endpoint_lists_first_anchor_cohorts() -> None:
+    response = client.get("/api/study-qc-priorities")
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["document_path"] == "docs/study_qc_priorities.md"
+    accessions = {item["accession"] for item in payload["priorities"]}
+    assert {"GSE145780", "GSE243887", "GSE200340", "PXD046355"}.issubset(accessions)
 
 
 def test_study_registry_lists_priority_accessions() -> None:

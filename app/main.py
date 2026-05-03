@@ -14,6 +14,7 @@ from app.data_loader import (
     get_reviewer_dashboard,
     get_resource_status,
     get_reviewer_walkthrough,
+    get_study_qc_priorities,
     get_study,
     get_download_path,
     get_dataset_triage,
@@ -95,6 +96,11 @@ def qc_status() -> dict[str, object]:
 @app.get("/api/reviewer-dashboard")
 def reviewer_dashboard() -> dict[str, object]:
     return get_reviewer_dashboard()
+
+
+@app.get("/api/study-qc-priorities")
+def study_qc_priorities() -> dict[str, object]:
+    return get_study_qc_priorities()
 
 
 @app.get("/api/studies")
